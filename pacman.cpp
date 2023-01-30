@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-#include "include/Ghost.h"
+#include "Ghost.h"
 
 SDL_Window* pWindow = nullptr;
 SDL_Surface* win_surf = nullptr;
@@ -36,6 +36,9 @@ void draw()
     SDL_BlitScaled(plancheSprites, &src_bg, win_surf, &bg);
 
     Ghost g(1,1);
+
+    printf("%d\n", g.getX());
+    printf("%d\n", g.getY());
 
     // petit truc pour faire tourner le fantome
     SDL_Rect* ghost_in = nullptr;

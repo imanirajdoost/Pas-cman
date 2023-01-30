@@ -150,6 +150,33 @@ pacman.cpp.s:
 	$(MAKE) -f CMakeFiles/PacMan.dir/build.make CMakeFiles/PacMan.dir/pacman.cpp.s
 .PHONY : pacman.cpp.s
 
+src/Ghost.o: src/Ghost.cpp.o
+
+.PHONY : src/Ghost.o
+
+# target to build an object file
+src/Ghost.cpp.o:
+	$(MAKE) -f CMakeFiles/PacMan.dir/build.make CMakeFiles/PacMan.dir/src/Ghost.cpp.o
+.PHONY : src/Ghost.cpp.o
+
+src/Ghost.i: src/Ghost.cpp.i
+
+.PHONY : src/Ghost.i
+
+# target to preprocess a source file
+src/Ghost.cpp.i:
+	$(MAKE) -f CMakeFiles/PacMan.dir/build.make CMakeFiles/PacMan.dir/src/Ghost.cpp.i
+.PHONY : src/Ghost.cpp.i
+
+src/Ghost.s: src/Ghost.cpp.s
+
+.PHONY : src/Ghost.s
+
+# target to generate assembly for a file
+src/Ghost.cpp.s:
+	$(MAKE) -f CMakeFiles/PacMan.dir/build.make CMakeFiles/PacMan.dir/src/Ghost.cpp.s
+.PHONY : src/Ghost.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -162,6 +189,9 @@ help:
 	@echo "... pacman.o"
 	@echo "... pacman.i"
 	@echo "... pacman.s"
+	@echo "... src/Ghost.o"
+	@echo "... src/Ghost.i"
+	@echo "... src/Ghost.s"
 .PHONY : help
 
 

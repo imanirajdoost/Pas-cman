@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/PacMan.dir/pacman.cpp.o"
+  "CMakeFiles/PacMan.dir/src/Ghost.cpp.o"
   "PacMan"
   "PacMan.pdb"
 )

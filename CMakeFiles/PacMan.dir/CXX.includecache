@@ -6,15 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/home/vincent/Etudes/M1/S2/PA/pas-cman/include/Ghost.h
-
 /home/vincent/Etudes/M1/S2/PA/pas-cman/pacman.cpp
 SDL.h
 -
 iostream
 -
-include/Ghost.h
-/home/vincent/Etudes/M1/S2/PA/pas-cman/include/Ghost.h
+Ghost.h
+/home/vincent/Etudes/M1/S2/PA/pas-cman/Ghost.h
 
 /usr/include/SDL2/SDL.h
 SDL_main.h
@@ -619,4 +617,6 @@ close_code.h
 /usr/include/SDL2/begin_code.h
 
 /usr/include/SDL2/close_code.h
+
+include/Ghost.h
 

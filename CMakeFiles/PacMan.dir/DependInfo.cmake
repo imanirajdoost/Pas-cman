@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/vincent/Etudes/M1/S2/PA/pas-cman/pacman.cpp" "/home/vincent/Etudes/M1/S2/PA/pas-cman/CMakeFiles/PacMan.dir/pacman.cpp.o"
+  "/home/vincent/Etudes/M1/S2/PA/pas-cman/src/Ghost.cpp" "/home/vincent/Etudes/M1/S2/PA/pas-cman/CMakeFiles/PacMan.dir/src/Ghost.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -15,8 +16,9 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  "include"
+  "src"
   "/usr/include/SDL2"
-  "/include"
   )
 
 # Targets to which this target links.
