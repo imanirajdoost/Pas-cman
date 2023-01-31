@@ -51,8 +51,13 @@ void Ghost::setY(int y) {
 void Ghost::draw(SDL_Surface* plancheSprites, SDL_Surface *win_surf) {
 
     _ghost_in = &(_r_sprite);
+    SDL_Rect ghost_in2 = *_ghost_in;
+    
+    if (_animationCounter%4 == 0) {
+        ghost_in2.x += 17;
+    }
 
-    SDL_BlitScaled(plancheSprites, _ghost_in, win_surf, &rect);
+    SDL_BlitScaled(plancheSprites, &ghost_in2, win_surf, &rect);
 }
 
 
