@@ -6,5 +6,5 @@ CXX_FLAGS =
 
 CXX_DEFINES = -DSDL_MAIN_HANDLED
 
-CXX_INCLUDES = -I/home/vincent/Etudes/M1/S2/PA/pas-cman/include -I/home/vincent/Etudes/M1/S2/PA/pas-cman/src -I/usr/include/SDL2 
+CXX_INCLUDES = -I"/home/iman/Bureau/Master/sil/prog avancee/pas-cman/include" -I"/home/iman/Bureau/Master/sil/prog avancee/pas-cman/src" -I/usr/include/SDL2 
 

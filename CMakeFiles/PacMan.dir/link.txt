@@ -1,1 +1,1 @@
-/usr/bin/c++     CMakeFiles/PacMan.dir/src/Ghost.cpp.o CMakeFiles/PacMan.dir/pacman.cpp.o  -o PacMan  -lSDL2 
+/usr/bin/c++     CMakeFiles/PacMan.dir/src/Dot.cpp.o CMakeFiles/PacMan.dir/src/Ghost.cpp.o CMakeFiles/PacMan.dir/src/Player.cpp.o CMakeFiles/PacMan.dir/pacman.cpp.o  -o PacMan  -lSDL2 

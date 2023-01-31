@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/vincent/Etudes/M1/S2/PA/pas-cman
+CMAKE_SOURCE_DIR = "/home/iman/Bureau/Master/sil/prog avancee/pas-cman"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/vincent/Etudes/M1/S2/PA/pas-cman
+CMAKE_BINARY_DIR = "/home/iman/Bureau/Master/sil/prog avancee/pas-cman"
 
 # Include any dependencies generated for this target.
 include CMakeFiles/PacMan.dir/depend.make
@@ -57,45 +57,75 @@ include CMakeFiles/PacMan.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/PacMan.dir/flags.make
 
+CMakeFiles/PacMan.dir/src/Dot.cpp.o: CMakeFiles/PacMan.dir/flags.make
+CMakeFiles/PacMan.dir/src/Dot.cpp.o: src/Dot.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/iman/Bureau/Master/sil/prog avancee/pas-cman/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/PacMan.dir/src/Dot.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PacMan.dir/src/Dot.cpp.o -c "/home/iman/Bureau/Master/sil/prog avancee/pas-cman/src/Dot.cpp"
+
+CMakeFiles/PacMan.dir/src/Dot.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PacMan.dir/src/Dot.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/iman/Bureau/Master/sil/prog avancee/pas-cman/src/Dot.cpp" > CMakeFiles/PacMan.dir/src/Dot.cpp.i
+
+CMakeFiles/PacMan.dir/src/Dot.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PacMan.dir/src/Dot.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/iman/Bureau/Master/sil/prog avancee/pas-cman/src/Dot.cpp" -o CMakeFiles/PacMan.dir/src/Dot.cpp.s
+
 CMakeFiles/PacMan.dir/src/Ghost.cpp.o: CMakeFiles/PacMan.dir/flags.make
 CMakeFiles/PacMan.dir/src/Ghost.cpp.o: src/Ghost.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vincent/Etudes/M1/S2/PA/pas-cman/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/PacMan.dir/src/Ghost.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PacMan.dir/src/Ghost.cpp.o -c /home/vincent/Etudes/M1/S2/PA/pas-cman/src/Ghost.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/iman/Bureau/Master/sil/prog avancee/pas-cman/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/PacMan.dir/src/Ghost.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PacMan.dir/src/Ghost.cpp.o -c "/home/iman/Bureau/Master/sil/prog avancee/pas-cman/src/Ghost.cpp"
 
 CMakeFiles/PacMan.dir/src/Ghost.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PacMan.dir/src/Ghost.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vincent/Etudes/M1/S2/PA/pas-cman/src/Ghost.cpp > CMakeFiles/PacMan.dir/src/Ghost.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/iman/Bureau/Master/sil/prog avancee/pas-cman/src/Ghost.cpp" > CMakeFiles/PacMan.dir/src/Ghost.cpp.i
 
 CMakeFiles/PacMan.dir/src/Ghost.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PacMan.dir/src/Ghost.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vincent/Etudes/M1/S2/PA/pas-cman/src/Ghost.cpp -o CMakeFiles/PacMan.dir/src/Ghost.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/iman/Bureau/Master/sil/prog avancee/pas-cman/src/Ghost.cpp" -o CMakeFiles/PacMan.dir/src/Ghost.cpp.s
+
+CMakeFiles/PacMan.dir/src/Player.cpp.o: CMakeFiles/PacMan.dir/flags.make
+CMakeFiles/PacMan.dir/src/Player.cpp.o: src/Player.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/iman/Bureau/Master/sil/prog avancee/pas-cman/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/PacMan.dir/src/Player.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PacMan.dir/src/Player.cpp.o -c "/home/iman/Bureau/Master/sil/prog avancee/pas-cman/src/Player.cpp"
+
+CMakeFiles/PacMan.dir/src/Player.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PacMan.dir/src/Player.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/iman/Bureau/Master/sil/prog avancee/pas-cman/src/Player.cpp" > CMakeFiles/PacMan.dir/src/Player.cpp.i
+
+CMakeFiles/PacMan.dir/src/Player.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PacMan.dir/src/Player.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/iman/Bureau/Master/sil/prog avancee/pas-cman/src/Player.cpp" -o CMakeFiles/PacMan.dir/src/Player.cpp.s
 
 CMakeFiles/PacMan.dir/pacman.cpp.o: CMakeFiles/PacMan.dir/flags.make
 CMakeFiles/PacMan.dir/pacman.cpp.o: pacman.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vincent/Etudes/M1/S2/PA/pas-cman/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/PacMan.dir/pacman.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PacMan.dir/pacman.cpp.o -c /home/vincent/Etudes/M1/S2/PA/pas-cman/pacman.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/iman/Bureau/Master/sil/prog avancee/pas-cman/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/PacMan.dir/pacman.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PacMan.dir/pacman.cpp.o -c "/home/iman/Bureau/Master/sil/prog avancee/pas-cman/pacman.cpp"
 
 CMakeFiles/PacMan.dir/pacman.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PacMan.dir/pacman.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vincent/Etudes/M1/S2/PA/pas-cman/pacman.cpp > CMakeFiles/PacMan.dir/pacman.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/iman/Bureau/Master/sil/prog avancee/pas-cman/pacman.cpp" > CMakeFiles/PacMan.dir/pacman.cpp.i
 
 CMakeFiles/PacMan.dir/pacman.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PacMan.dir/pacman.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vincent/Etudes/M1/S2/PA/pas-cman/pacman.cpp -o CMakeFiles/PacMan.dir/pacman.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/iman/Bureau/Master/sil/prog avancee/pas-cman/pacman.cpp" -o CMakeFiles/PacMan.dir/pacman.cpp.s
 
 # Object files for target PacMan
 PacMan_OBJECTS = \
+"CMakeFiles/PacMan.dir/src/Dot.cpp.o" \
 "CMakeFiles/PacMan.dir/src/Ghost.cpp.o" \
+"CMakeFiles/PacMan.dir/src/Player.cpp.o" \
 "CMakeFiles/PacMan.dir/pacman.cpp.o"
 
 # External object files for target PacMan
 PacMan_EXTERNAL_OBJECTS =
 
+PacMan: CMakeFiles/PacMan.dir/src/Dot.cpp.o
 PacMan: CMakeFiles/PacMan.dir/src/Ghost.cpp.o
+PacMan: CMakeFiles/PacMan.dir/src/Player.cpp.o
 PacMan: CMakeFiles/PacMan.dir/pacman.cpp.o
 PacMan: CMakeFiles/PacMan.dir/build.make
 PacMan: CMakeFiles/PacMan.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/vincent/Etudes/M1/S2/PA/pas-cman/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable PacMan"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/iman/Bureau/Master/sil/prog avancee/pas-cman/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable PacMan"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/PacMan.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -108,6 +138,6 @@ CMakeFiles/PacMan.dir/clean:
 .PHONY : CMakeFiles/PacMan.dir/clean
 
 CMakeFiles/PacMan.dir/depend:
-	cd /home/vincent/Etudes/M1/S2/PA/pas-cman && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/vincent/Etudes/M1/S2/PA/pas-cman /home/vincent/Etudes/M1/S2/PA/pas-cman /home/vincent/Etudes/M1/S2/PA/pas-cman /home/vincent/Etudes/M1/S2/PA/pas-cman /home/vincent/Etudes/M1/S2/PA/pas-cman/CMakeFiles/PacMan.dir/DependInfo.cmake --color=$(COLOR)
+	cd "/home/iman/Bureau/Master/sil/prog avancee/pas-cman" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/home/iman/Bureau/Master/sil/prog avancee/pas-cman" "/home/iman/Bureau/Master/sil/prog avancee/pas-cman" "/home/iman/Bureau/Master/sil/prog avancee/pas-cman" "/home/iman/Bureau/Master/sil/prog avancee/pas-cman" "/home/iman/Bureau/Master/sil/prog avancee/pas-cman/CMakeFiles/PacMan.dir/DependInfo.cmake" --color=$(COLOR)
 .PHONY : CMakeFiles/PacMan.dir/depend
 

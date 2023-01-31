@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/vincent/Etudes/M1/S2/PA/pas-cman
+CMAKE_SOURCE_DIR = "/home/iman/Bureau/Master/sil/prog avancee/pas-cman"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/vincent/Etudes/M1/S2/PA/pas-cman
+CMAKE_BINARY_DIR = "/home/iman/Bureau/Master/sil/prog avancee/pas-cman"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/vincent/Etudes/M1/S2/PA/pas-cman/CMakeFiles /home/vincent/Etudes/M1/S2/PA/pas-cman/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/iman/Bureau/Master/sil/prog avancee/pas-cman/CMakeFiles" "/home/iman/Bureau/Master/sil/prog avancee/pas-cman/CMakeFiles/progress.marks"
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/vincent/Etudes/M1/S2/PA/pas-cman/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/iman/Bureau/Master/sil/prog avancee/pas-cman/CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
@@ -150,6 +150,33 @@ pacman.cpp.s:
 	$(MAKE) -f CMakeFiles/PacMan.dir/build.make CMakeFiles/PacMan.dir/pacman.cpp.s
 .PHONY : pacman.cpp.s
 
+src/Dot.o: src/Dot.cpp.o
+
+.PHONY : src/Dot.o
+
+# target to build an object file
+src/Dot.cpp.o:
+	$(MAKE) -f CMakeFiles/PacMan.dir/build.make CMakeFiles/PacMan.dir/src/Dot.cpp.o
+.PHONY : src/Dot.cpp.o
+
+src/Dot.i: src/Dot.cpp.i
+
+.PHONY : src/Dot.i
+
+# target to preprocess a source file
+src/Dot.cpp.i:
+	$(MAKE) -f CMakeFiles/PacMan.dir/build.make CMakeFiles/PacMan.dir/src/Dot.cpp.i
+.PHONY : src/Dot.cpp.i
+
+src/Dot.s: src/Dot.cpp.s
+
+.PHONY : src/Dot.s
+
+# target to generate assembly for a file
+src/Dot.cpp.s:
+	$(MAKE) -f CMakeFiles/PacMan.dir/build.make CMakeFiles/PacMan.dir/src/Dot.cpp.s
+.PHONY : src/Dot.cpp.s
+
 src/Ghost.o: src/Ghost.cpp.o
 
 .PHONY : src/Ghost.o
@@ -177,6 +204,33 @@ src/Ghost.cpp.s:
 	$(MAKE) -f CMakeFiles/PacMan.dir/build.make CMakeFiles/PacMan.dir/src/Ghost.cpp.s
 .PHONY : src/Ghost.cpp.s
 
+src/Player.o: src/Player.cpp.o
+
+.PHONY : src/Player.o
+
+# target to build an object file
+src/Player.cpp.o:
+	$(MAKE) -f CMakeFiles/PacMan.dir/build.make CMakeFiles/PacMan.dir/src/Player.cpp.o
+.PHONY : src/Player.cpp.o
+
+src/Player.i: src/Player.cpp.i
+
+.PHONY : src/Player.i
+
+# target to preprocess a source file
+src/Player.cpp.i:
+	$(MAKE) -f CMakeFiles/PacMan.dir/build.make CMakeFiles/PacMan.dir/src/Player.cpp.i
+.PHONY : src/Player.cpp.i
+
+src/Player.s: src/Player.cpp.s
+
+.PHONY : src/Player.s
+
+# target to generate assembly for a file
+src/Player.cpp.s:
+	$(MAKE) -f CMakeFiles/PacMan.dir/build.make CMakeFiles/PacMan.dir/src/Player.cpp.s
+.PHONY : src/Player.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -189,9 +243,15 @@ help:
 	@echo "... pacman.o"
 	@echo "... pacman.i"
 	@echo "... pacman.s"
+	@echo "... src/Dot.o"
+	@echo "... src/Dot.i"
+	@echo "... src/Dot.s"
 	@echo "... src/Ghost.o"
 	@echo "... src/Ghost.i"
 	@echo "... src/Ghost.s"
+	@echo "... src/Player.o"
+	@echo "... src/Player.i"
+	@echo "... src/Player.s"
 .PHONY : help
 
 
