@@ -36,6 +36,10 @@ int Ghost::getY() {
     return rect.y;
 }
 
+SDL_Rect* Ghost::getGhostIn() {
+    return _ghost_in;
+}
+
 void Ghost::setX(int x) {
     rect.x = x;
 }
@@ -48,13 +52,7 @@ void Ghost::draw(SDL_Surface* plancheSprites, SDL_Surface *win_surf) {
 
     _ghost_in = &(_r_sprite);
 
-    // ici on change entre les 2 sprites sources pour une jolie animation.
-    SDL_Rect ghost_in2 = *_ghost_in;
-    /*if ((_animationCounter/4)%2)
-        _animationCounter = 0;
-        ghost_in2.x += 17;*/
-
-    SDL_BlitScaled(plancheSprites, &ghost_in2, win_surf, &ghost);
+    SDL_BlitScaled(plancheSprites, _ghost_in, win_surf, &rect);
 }
 
 
@@ -70,7 +68,7 @@ void Blinky::move() {
     if (_animationCounter == 0) {
         rect.x++;
     }
-    std::cout << rect.x << std::endl;
+    _animationCounter = (_animationCounter+1)%4;
 }
 
 Pinky::Pinky(int x, int y): Ghost(x, y) {
@@ -80,6 +78,13 @@ Pinky::Pinky(int x, int y): Ghost(x, y) {
     _u_sprite = pinky_u;
 }
 
+void Pinky::move() {
+    if (_animationCounter == 0) {
+        rect.x++;
+    }
+    _animationCounter = (_animationCounter+1)%4;
+}
+
 Inky::Inky(int x, int y): Ghost(x, y) {
     _r_sprite = inky_r;
     _l_sprite = inky_l;
@@ -87,10 +92,24 @@ Inky::Inky(int x, int y): Ghost(x, y) {
     _u_sprite = inky_u;
 }
 
+void Inky::move() {
+    if (_animationCounter == 0) {
+        rect.x++;
+    }
+    _animationCounter = (_animationCounter+1)%4;
+}
+
 Clyde::Clyde(int x, int y): Ghost(x, y) {
     _r_sprite = clyde_r;
     _l_sprite = clyde_l;
     _d_sprite = clyde_d;
     _u_sprite = clyde_u;
+}
+
+void Clyde::move() {
+    if (_animationCounter == 0) {
+        rect.x++;
+    }
+    _animationCounter = (_animationCounter+1)%4;
 }
 

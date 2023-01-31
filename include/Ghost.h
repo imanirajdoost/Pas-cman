@@ -30,7 +30,7 @@ class Ghost: public GameObject {
     SDL_Rect* _ghost_in = nullptr;
 
     protected:
-    SDL_Rect ghost;
+    
     SDL_Rect _r_sprite;
     SDL_Rect _l_sprite;
     SDL_Rect _d_sprite;
@@ -41,10 +41,12 @@ class Ghost: public GameObject {
     Ghost(int x, int y);
     int getX();
     int getY();
+    SDL_Rect getRect();
     void setX(int x);
     void setY(int Y);
     void draw(SDL_Surface* plancheSprites, SDL_Surface *win_surf);
     void move();
+    SDL_Rect* getGhostIn();
     
 };
 
