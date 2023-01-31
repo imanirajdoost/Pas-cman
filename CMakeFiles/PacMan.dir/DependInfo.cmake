@@ -4,8 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/vincent/Etudes/M1/S2/PA/pas-cman/pacman.cpp" "/home/vincent/Etudes/M1/S2/PA/pas-cman/CMakeFiles/PacMan.dir/pacman.cpp.o"
-  "/home/vincent/Etudes/M1/S2/PA/pas-cman/src/Ghost.cpp" "/home/vincent/Etudes/M1/S2/PA/pas-cman/CMakeFiles/PacMan.dir/src/Ghost.cpp.o"
+  "/home/iman/Bureau/Master/sil/prog avancee/pas-cman/pacman.cpp" "/home/iman/Bureau/Master/sil/prog avancee/pas-cman/CMakeFiles/PacMan.dir/pacman.cpp.o"
+  "/home/iman/Bureau/Master/sil/prog avancee/pas-cman/src/Dot.cpp" "/home/iman/Bureau/Master/sil/prog avancee/pas-cman/CMakeFiles/PacMan.dir/src/Dot.cpp.o"
+  "/home/iman/Bureau/Master/sil/prog avancee/pas-cman/src/Ghost.cpp" "/home/iman/Bureau/Master/sil/prog avancee/pas-cman/CMakeFiles/PacMan.dir/src/Ghost.cpp.o"
+  "/home/iman/Bureau/Master/sil/prog avancee/pas-cman/src/Player.cpp" "/home/iman/Bureau/Master/sil/prog avancee/pas-cman/CMakeFiles/PacMan.dir/src/Player.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

@@ -49,6 +49,10 @@ CMakeFiles/PacMan.dir/pacman.cpp.o: /usr/include/SDL2/begin_code.h
 CMakeFiles/PacMan.dir/pacman.cpp.o: /usr/include/SDL2/close_code.h
 CMakeFiles/PacMan.dir/pacman.cpp.o: include/Ghost.h
 
+CMakeFiles/PacMan.dir/src/Dot.cpp.o: src/Dot.cpp
+CMakeFiles/PacMan.dir/src/Dot.cpp.o: include/Dot.h
+CMakeFiles/PacMan.dir/src/Dot.cpp.o: include/GameObject.h
+
 CMakeFiles/PacMan.dir/src/Ghost.cpp.o: src/Ghost.cpp
 CMakeFiles/PacMan.dir/src/Ghost.cpp.o: /usr/include/SDL2/SDL.h
 CMakeFiles/PacMan.dir/src/Ghost.cpp.o: /usr/include/SDL2/SDL_assert.h
@@ -96,4 +100,9 @@ CMakeFiles/PacMan.dir/src/Ghost.cpp.o: /usr/include/SDL2/SDL_video.h
 CMakeFiles/PacMan.dir/src/Ghost.cpp.o: /usr/include/SDL2/begin_code.h
 CMakeFiles/PacMan.dir/src/Ghost.cpp.o: /usr/include/SDL2/close_code.h
 CMakeFiles/PacMan.dir/src/Ghost.cpp.o: include/Ghost.h
+
+CMakeFiles/PacMan.dir/src/Player.cpp.o: src/Player.cpp
+CMakeFiles/PacMan.dir/src/Player.cpp.o: include/Dot.h
+CMakeFiles/PacMan.dir/src/Player.cpp.o: include/GameObject.h
+CMakeFiles/PacMan.dir/src/Player.cpp.o: include/Player.h
 
