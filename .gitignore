@@ -3,4 +3,7 @@ cmake_install.cmake
 CMakeFiles/
 CMakeFiles/**/*
 CMakeFiles/*
+.idea/
+.vscode/
+Makefile
 PacMan
