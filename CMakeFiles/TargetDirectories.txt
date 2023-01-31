@@ -1,3 +1,0 @@
-/home/iman/Bureau/Master/sil/prog avancee/pas-cman/CMakeFiles/rebuild_cache.dir
-/home/iman/Bureau/Master/sil/prog avancee/pas-cman/CMakeFiles/edit_cache.dir
-/home/iman/Bureau/Master/sil/prog avancee/pas-cman/CMakeFiles/PacMan.dir
