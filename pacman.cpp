@@ -34,36 +34,11 @@ void draw()
 {
     SDL_SetColorKey(plancheSprites, false, 0);
     SDL_BlitScaled(plancheSprites, &src_bg, win_surf, &bg);
-
-    // petit truc pour faire tourner le fantome
-    SDL_Rect* ghost_in = nullptr;
-    switch (count/128)
-    {
-        case 0:
-            ghost_in = &(ghost_r);
-            ghost.x++;
-            break;
-        case 1:
-            ghost_in = &(ghost_d);
-            ghost.y++;
-            break;
-        case 2:
-            ghost_in = &(ghost_l);
-            ghost.x--;
-            break;
-        case 3:
-            ghost_in = &(ghost_u);
-            ghost.y--;
-            break;
-    }
-    count =(count+1)%(512);
         
     // couleur transparente
     SDL_SetColorKey(plancheSprites, true, 0);
     // copie du sprite zoomé
-    blinky.move();
     blinky.draw(plancheSprites, win_surf);
-	// SDL_BlitScaled(plancheSprites, &ghost_in2, win_surf, &ghost);
 }
 
 
@@ -102,6 +77,9 @@ int main(int argc, char** argv)
             puts("LEFT");
         if (keys[SDL_SCANCODE_RIGHT])
             puts("RIGHT");
+
+        
+        blinky.move();
 
         // AFFICHAGE
 		draw();

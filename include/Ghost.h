@@ -2,6 +2,7 @@
 #define GHOST_H
 
 #include <SDL.h>
+#include "GameObject.h"
 
 extern SDL_Rect blinky_r; 
 extern SDL_Rect blinky_l; 
@@ -24,9 +25,8 @@ extern SDL_Rect clyde_d;
 extern SDL_Rect clyde_u;
 
 
-class Ghost {
+class Ghost: public GameObject {
     private:
-    int _animationCounter = 0;
     SDL_Rect* _ghost_in = nullptr;
 
     protected:
@@ -35,6 +35,7 @@ class Ghost {
     SDL_Rect _l_sprite;
     SDL_Rect _d_sprite;
     SDL_Rect _u_sprite;
+    int _animationCounter = 0;
     
     public:
     Ghost(int x, int y);
@@ -52,6 +53,7 @@ class Blinky: public Ghost {
     using Ghost::move;
     public:
         Blinky(int x, int y);
+        void move();
 };
 
 class Pinky: public Ghost {
@@ -59,6 +61,7 @@ class Pinky: public Ghost {
     using Ghost::move;
     public:
         Pinky(int x, int y);
+        void move();
 };
 
 class Inky: public Ghost {
@@ -66,6 +69,7 @@ class Inky: public Ghost {
     using Ghost::move;
     public:
         Inky(int x, int y);
+        void move();
 };
 
 class Clyde: public Ghost {
@@ -73,6 +77,7 @@ class Clyde: public Ghost {
     using Ghost::move;
     public:
         Clyde(int x, int y);
+        void move();
 };
 
 #endif
