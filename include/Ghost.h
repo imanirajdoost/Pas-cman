@@ -47,33 +47,41 @@ class Ghost: public MovableGameObject {
 class Blinky: public Ghost {
     using Ghost::Ghost;
     using MovableGameObject::move;
+    using MovableGameObject::draw;
     public:
         Blinky(int x, int y);
-        virtual void move(Map map);
+        virtual void move(Map map) override;
+        void draw(SDL_Surface* plancheSprites, SDL_Surface *win_surf);
 };
 
 class Pinky: public Ghost {
     using Ghost::Ghost;
     using MovableGameObject::move;
+    using MovableGameObject::draw;
     public:
         Pinky(int x, int y);
-        virtual void move(Map map);
+        virtual void move(Map map) override;
+        void draw(SDL_Surface* plancheSprites, SDL_Surface *win_surf);
 };
 
 class Inky: public Ghost {
     using Ghost::Ghost;
     using MovableGameObject::move;
+    using MovableGameObject::draw;
     public:
         Inky(int x, int y);
-        virtual void move(Map map);
+        virtual void move(Map map) override;
+        void draw(SDL_Surface* plancheSprites, SDL_Surface *win_surf);
 };
 
 class Clyde: public Ghost {
     using Ghost::Ghost;
     using MovableGameObject::move;
+    using MovableGameObject::draw;
     public:
         Clyde(int x, int y);
-        virtual void move(Map map);
+        virtual void move(Map map) override;
+        void draw(SDL_Surface* plancheSprites, SDL_Surface *win_surf);
 };
 
 #endif

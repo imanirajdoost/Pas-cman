@@ -14,6 +14,9 @@ enum moveDirection
 };
 
 class MovableGameObject : public GameObject {
+    private:
+        SDL_Rect * _sprite_in = nullptr;
+
     public:
         int getX();
         int getY();
@@ -21,7 +24,7 @@ class MovableGameObject : public GameObject {
         void setX(int x);
         void setY(int Y);
         void draw(SDL_Surface* plancheSprites, SDL_Surface *win_surf);
-        virtual void move(Map map);
+        virtual void move(Map map) {};
         SDL_Rect getNextPos();
 };
 
