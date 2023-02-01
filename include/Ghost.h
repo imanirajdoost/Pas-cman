@@ -40,7 +40,7 @@ class Blinky: public Ghost {
     using MovableGameObject::setNextPos;
     public:
         Blinky(int x, int y);
-        virtual void setNextPos(Map map) override;
+        virtual void setNextPos(Map map, MoveDirection direction) override;
 };
 
 class Pinky: public Ghost {
@@ -48,7 +48,7 @@ class Pinky: public Ghost {
     using MovableGameObject::setNextPos;
     public:
         Pinky(int x, int y);
-        virtual void setNextPos(Map map) override;
+        virtual void setNextPos(Map map, MoveDirection direction) override;
 };
 
 class Inky: public Ghost {
@@ -56,7 +56,7 @@ class Inky: public Ghost {
     using MovableGameObject::setNextPos;
     public:
         Inky(int x, int y);
-        virtual void setNextPos(Map map) override;
+        virtual void setNextPos(Map map, MoveDirection direction) override;
 };
 
 class Clyde: public Ghost {
@@ -64,7 +64,7 @@ class Clyde: public Ghost {
     using MovableGameObject::setNextPos;
     public:
         Clyde(int x, int y);
-        virtual void setNextPos(Map map) override;
+        virtual void setNextPos(Map map, MoveDirection direction) override;
 };
 
 #endif

@@ -4,13 +4,13 @@
 #include "GameObject.h"
 #include "Map.h"
 
-enum moveDirection 
+enum MoveDirection 
 {   
-    none = 0,
-    up = 1, 
-    down = 2, 
-    left = 3,
-    right = 4
+    NONE = 0,
+    UP = 1, 
+    DOWN = 2, 
+    LEFT = 3,
+    RIGHT = 4
 };
 
 class MovableGameObject : public GameObject {
@@ -28,7 +28,7 @@ class MovableGameObject : public GameObject {
         void setY(int Y);
         void draw(SDL_Surface* plancheSprites, SDL_Surface *win_surf);
         SDL_Rect getNextPos();
-        virtual void setNextPos(Map map) {};
+        virtual void setNextPos(Map map, MoveDirection direction) {};
         void resetNextPos();
         void move();
 };

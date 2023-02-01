@@ -83,22 +83,28 @@ int main(int argc, char** argv)
 			}
 		}
 
+        MoveDirection nextPlayerMove = NONE;
+
         // Gestion du clavier        
         int nbk;
         const Uint8* keys = SDL_GetKeyboardState(&nbk);
         if (keys[SDL_SCANCODE_ESCAPE])
             quit = true;
         if (keys[SDL_SCANCODE_LEFT])
-            puts("LEFT");
-        if (keys[SDL_SCANCODE_RIGHT])
-            puts("RIGHT");
+            nextPlayerMove = LEFT;
+        else if (keys[SDL_SCANCODE_RIGHT])
+            nextPlayerMove = RIGHT;
+        else if (keys[SDL_SCANCODE_UP])
+            nextPlayerMove = UP;
+        else if (keys[SDL_SCANCODE_DOWN])
+            nextPlayerMove = DOWN;
 
         // AFFICHAGE
 
-        blinky.setNextPos(gameMap);
-        pinky.setNextPos(gameMap);
-        inky.setNextPos(gameMap);
-        clyde.setNextPos(gameMap);
+        blinky.setNextPos(gameMap, NONE);
+        pinky.setNextPos(gameMap, NONE);
+        inky.setNextPos(gameMap, NONE);
+        clyde.setNextPos(gameMap, NONE);
 
         if (!CollisionManager::isCollision(gameMap, blinky.getNextPos(), GHOST)) {
             blinky.move();
@@ -122,6 +128,21 @@ int main(int argc, char** argv)
             clyde.move();
         } else {
             clyde.resetNextPos();
+        }
+
+
+        player.setNextPos(gameMap, nextPlayerMove);
+
+        //std::cout << "x: " << player.getNextPos().x << std::endl;
+        //std::cout << "y: " << player.getNextPos().y << std::endl;
+
+        std::cout << CollisionManager::isCollision(gameMap, player.getNextPos(), PACMAN) << std::endl; 
+
+        // TODO: COLLISION WITH COIN PREVENTS MOVING
+        if (!CollisionManager::isCollision(gameMap, player.getNextPos(), PACMAN)) {
+            player.move();
+        } else {
+            player.resetNextPos();
         }
 
 		draw();

@@ -23,6 +23,26 @@ Player::Player(int x, int y, const int initHealth) {
     _u_sprite = player_u;
 }
 
+void Player::setNextPos(Map map, MoveDirection direction) {
+
+    switch (direction)
+    {
+        case LEFT:
+            _next_pos.x--;
+            break;
+        case RIGHT:
+            _next_pos.x++;
+            break;
+        case UP:
+            _next_pos.y++;
+            break;
+        case DOWN:
+            _next_pos.y--;
+            break;
+    }
+
+}
+
 void Player::eat(Dot dotToEat) {
     dotToEat.getEaten();
     // @todo increase score
