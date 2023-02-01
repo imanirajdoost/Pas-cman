@@ -5,7 +5,10 @@
 #include "Dot.h"
 
 // get pacman's sprite from the sprite sheet
-extern SDL_Rect player_sp;
+extern SDL_Rect player_r;
+extern SDL_Rect player_l;
+extern SDL_Rect player_d;
+extern SDL_Rect player_u;
 
 /**
  * Main pac-man player object

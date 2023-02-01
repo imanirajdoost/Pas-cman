@@ -3,11 +3,19 @@
 #include <typeinfo>
 
 // get pacman's sprite from the sprite sheet
-SDL_Rect player_sp = {9,4, 16,16};
+SDL_Rect player_r = { 21, 9, 16, 16 }; 
+SDL_Rect player_l = { 37,161, 16,16 }; 
+SDL_Rect player_d = { 105,161, 16,16 }; 
+SDL_Rect player_u = { 71,161, 16,16 };
 
 Player::Player(const int initHealth) {
     _health = initHealth;
     // @todo : Update health UI
+
+    _r_sprite = player_r;
+    _l_sprite = player_l;
+    _d_sprite = player_d;
+    _u_sprite = player_u;
 }
 
 void Player::eat(Dot dotToEat) {
