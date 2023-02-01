@@ -21,9 +21,9 @@ void MovableGameObject::draw(SDL_Surface* plancheSprites, SDL_Surface *win_surf)
     _sprite_in = &(_r_sprite);
     SDL_Rect sprite_in2 = *_sprite_in;
     
-    if (_animationCounter%4 == 0) {
-        sprite_in2.x += 17;
-    }
+    // if (_animationCounter%4 == 0) {
+    //     sprite_in2.x += 17;
+    // }
 
     SDL_BlitScaled(plancheSprites, &sprite_in2, win_surf, &rect);
 }

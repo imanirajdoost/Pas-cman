@@ -3,10 +3,10 @@
 #include <typeinfo>
 
 // get pacman's sprite from the sprite sheet
-SDL_Rect player_r = { 21, 9, 16, 16 }; 
-SDL_Rect player_l = { 37,161, 16,16 }; 
-SDL_Rect player_d = { 105,161, 16,16 }; 
-SDL_Rect player_u = { 71,161, 16,16 };
+SDL_Rect player_r = { 20, 89, 16, 16 }; 
+SDL_Rect player_l = { 46,89, 16,16 }; 
+SDL_Rect player_d = { 109,89, 16,16 }; 
+SDL_Rect player_u = { 75,89, 16,16 };
 
 Player::Player(int x, int y, const int initHealth) {
     _health = initHealth;
