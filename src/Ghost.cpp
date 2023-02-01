@@ -25,6 +25,10 @@ SDL_Rect clyde_u = { 71,180, 16,16 };
 Ghost::Ghost(int x, int y) {
     rect.x = x;
     rect.y = y;
+
+    _next_pos.x = x;
+    _next_pos.y = y;
+    
     rect.w = 32;
     rect.h = 32;
 }
@@ -40,7 +44,7 @@ Blinky::Blinky(int x, int y): Ghost(x, y) {
 
 void Blinky::setNextPos(Map map) {
     if (_animationCounter == 0) {
-        rect.x++;
+        _next_pos.x++;
     }
     _animationCounter = (_animationCounter+1)%4;
 }
@@ -54,7 +58,7 @@ Pinky::Pinky(int x, int y): Ghost(x, y) {
 
 void Pinky::setNextPos(Map map) {
     if (_animationCounter == 0) {
-        rect.x++;
+        _next_pos.x++;
     }
     _animationCounter = (_animationCounter+1)%4;
 }
@@ -68,7 +72,7 @@ Inky::Inky(int x, int y): Ghost(x, y) {
 
 void Inky::setNextPos(Map map) {
     if (_animationCounter == 0) {
-        rect.x++;
+        _next_pos.x++;
     }
     _animationCounter = (_animationCounter+1)%4;
 }
@@ -82,7 +86,7 @@ Clyde::Clyde(int x, int y): Ghost(x, y) {
 
 void Clyde::setNextPos(Map map) {
     if (_animationCounter == 0) {
-        rect.x++;
+        _next_pos.x++;
     }
     _animationCounter = (_animationCounter+1)%4;
 }
