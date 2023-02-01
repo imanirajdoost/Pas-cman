@@ -4,10 +4,13 @@
 #include "MovableGameObject.h"
 #include "Dot.h"
 
+// get pacman's sprite from the sprite sheet
+extern SDL_Rect player_sp;
+
 /**
  * Main pac-man player object
 */
-class Player : MovableGameObject {
+class Player : public MovableGameObject {
 
 private:
     int _health;                    // Player's health
@@ -18,11 +21,6 @@ public:
     void eat(Dot dotToEat);         // Action to eat a Dot
     void die();                     // Die when hit by a ghost
     void gameOver();                // Game over when no more health is remaining
-
-    int getX();
-    int getY();
-
-    void move(moveDirection dir);   // moves the player based on the given direction
 };
 
 #endif

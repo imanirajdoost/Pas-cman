@@ -8,6 +8,9 @@ class Dot : StaticGameObject {
 public:
     void getEaten();
 
+protected:
+    unsigned int _score;
+
 };
 
 #endif

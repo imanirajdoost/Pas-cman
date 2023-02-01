@@ -5,6 +5,7 @@
 #include "Map.h"
 #include "CollisionManager.h"
 #include "MovableGameObject.h"
+#include "Player.h"
 
 
 SDL_Window* pWindow = nullptr;
@@ -25,7 +26,8 @@ int count;
 Blinky blinky(34, 34); 
 Pinky pinky(70, 34); 
 Inky inky(100, 34); 
-Clyde clyde(130, 34); 
+Clyde clyde(130, 34);
+Player player(2);
 
 Map gameMap;
 
@@ -52,6 +54,8 @@ void draw()
     pinky.draw(plancheSprites, win_surf);
     inky.draw(plancheSprites, win_surf);
     clyde.draw(plancheSprites, win_surf);
+
+    player.draw(plancheSprites, win_surf);
 }
 
 
