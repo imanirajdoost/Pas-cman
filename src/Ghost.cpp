@@ -29,10 +29,6 @@ Ghost::Ghost(int x, int y) {
     rect.h = 32;
 }
 
-SDL_Rect* Ghost::getGhostIn() {
-    return _ghost_in;
-}
-
 
 Blinky::Blinky(int x, int y): Ghost(x, y) {
     _r_sprite = blinky_r;

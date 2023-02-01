@@ -27,20 +27,11 @@ extern SDL_Rect clyde_u;
 
 
 class Ghost: public MovableGameObject {
-    private:
-    SDL_Rect* _ghost_in = nullptr;
-
     protected: 
-    SDL_Rect _r_sprite;
-    SDL_Rect _l_sprite;
-    SDL_Rect _d_sprite;
-    SDL_Rect _u_sprite;
-    int _animationCounter = 0;
     bool isVulnerable = false;
     
     public:
     Ghost(int x, int y);
-    SDL_Rect* getGhostIn();
     
 };
 

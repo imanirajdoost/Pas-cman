@@ -19,11 +19,11 @@ void MovableGameObject::setY(int y) {
 void MovableGameObject::draw(SDL_Surface* plancheSprites, SDL_Surface *win_surf) {
 
     _sprite_in = &(_r_sprite);
-    SDL_Rect sprite_in2 = *sprite_in;
+    SDL_Rect sprite_in2 = *_sprite_in;
     
     if (_animationCounter%4 == 0) {
-        ghost_in2.x += 17;
+        sprite_in2.x += 17;
     }
 
-    SDL_BlitScaled(plancheSprites, &sprite2, win_surf, &rect);
+    SDL_BlitScaled(plancheSprites, &sprite_in2, win_surf, &rect);
 }
