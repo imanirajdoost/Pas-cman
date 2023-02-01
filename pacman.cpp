@@ -3,6 +3,8 @@
 #include <iostream>
 
 #include "Ghost.h"
+#include "Map.h"
+#include "CollisionManager.h"
 
 SDL_Window* pWindow = nullptr;
 SDL_Surface* win_surf = nullptr;
@@ -23,6 +25,8 @@ Blinky blinky(34, 34);
 Pinky pinky(70, 34); 
 Inky inky(100, 34); 
 Clyde clyde(130, 34); 
+
+Map gameMap;
 
 void init()
 {
@@ -88,10 +92,10 @@ int main(int argc, char** argv)
 
         // AFFICHAGE
 
-        blinky.move();
-        pinky.move();
-        inky.move();
-        clyde.move();
+        blinky.move(gameMap);
+        pinky.move(gameMap);
+        inky.move(gameMap);
+        clyde.move(gameMap);
 
 		draw();
 		SDL_UpdateWindowSurface(pWindow); 

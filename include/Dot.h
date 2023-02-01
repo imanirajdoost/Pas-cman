@@ -1,9 +1,9 @@
 #ifndef DOT_H
 #define DOT_H
 
-#include "GameObject.h"
+#include "StaticGameObject.h"
 
-class Dot : GameObject {
+class Dot : StaticGameObject {
 
 public:
     void getEaten();

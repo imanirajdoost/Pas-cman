@@ -5,6 +5,15 @@ Player::Player(const int initHealth) {
     // @todo : Update health UI
 }
 
+int Player::getX() {
+    return rect.x;
+}
+
+
+int Player::getY() {
+    return rect.y;
+}
+
 void Player::eat(Dot dotToEat) {
     dotToEat.getEaten();
     // @todo increase score

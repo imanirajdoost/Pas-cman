@@ -2,7 +2,8 @@
 #define GHOST_H
 
 #include <SDL.h>
-#include "GameObject.h"
+#include "MovableGameObject.h"
+#include "Map.h"
 
 extern SDL_Rect blinky_r; 
 extern SDL_Rect blinky_l; 
@@ -25,7 +26,7 @@ extern SDL_Rect clyde_d;
 extern SDL_Rect clyde_u;
 
 
-class Ghost: public GameObject {
+class Ghost: public MovableGameObject {
     private:
     SDL_Rect* _ghost_in = nullptr;
 
@@ -39,47 +40,40 @@ class Ghost: public GameObject {
     
     public:
     Ghost(int x, int y);
-    int getX();
-    int getY();
-    SDL_Rect getRect();
-    void setX(int x);
-    void setY(int Y);
-    void draw(SDL_Surface* plancheSprites, SDL_Surface *win_surf);
-    void move();
     SDL_Rect* getGhostIn();
     
 };
 
 class Blinky: public Ghost {
     using Ghost::Ghost;
-    using Ghost::move;
+    using MovableGameObject::move;
     public:
         Blinky(int x, int y);
-        void move();
+        virtual void move(Map map);
 };
 
 class Pinky: public Ghost {
     using Ghost::Ghost;
-    using Ghost::move;
+    using MovableGameObject::move;
     public:
         Pinky(int x, int y);
-        void move();
+        virtual void move(Map map);
 };
 
 class Inky: public Ghost {
     using Ghost::Ghost;
-    using Ghost::move;
+    using MovableGameObject::move;
     public:
         Inky(int x, int y);
-        void move();
+        virtual void move(Map map);
 };
 
 class Clyde: public Ghost {
     using Ghost::Ghost;
-    using Ghost::move;
+    using MovableGameObject::move;
     public:
         Clyde(int x, int y);
-        void move();
+        virtual void move(Map map);
 };
 
 #endif

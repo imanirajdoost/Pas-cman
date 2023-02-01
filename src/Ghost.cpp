@@ -1,5 +1,6 @@
-#include "Ghost.h"
 #include <iostream>
+
+#include "Ghost.h"
 
 SDL_Rect blinky_r = { 3,123, 16,16 }; 
 SDL_Rect blinky_l = { 37,123, 16,16 }; 
@@ -28,36 +29,8 @@ Ghost::Ghost(int x, int y) {
     rect.h = 32;
 }
 
-int Ghost:: getX() {
-    return rect.x;
-}
-
-int Ghost::getY() {
-    return rect.y;
-}
-
 SDL_Rect* Ghost::getGhostIn() {
     return _ghost_in;
-}
-
-void Ghost::setX(int x) {
-    rect.x = x;
-}
-
-void Ghost::setY(int y) {
-    rect.y = y;
-}
-
-void Ghost::draw(SDL_Surface* plancheSprites, SDL_Surface *win_surf) {
-
-    _ghost_in = &(_r_sprite);
-    SDL_Rect ghost_in2 = *_ghost_in;
-    
-    if (_animationCounter%4 == 0) {
-        ghost_in2.x += 17;
-    }
-
-    SDL_BlitScaled(plancheSprites, &ghost_in2, win_surf, &rect);
 }
 
 
@@ -69,7 +42,7 @@ Blinky::Blinky(int x, int y): Ghost(x, y) {
 }
 
 
-void Blinky::move() {
+void Blinky::move(Map map) {
     if (_animationCounter == 0) {
         rect.x++;
     }
@@ -83,7 +56,7 @@ Pinky::Pinky(int x, int y): Ghost(x, y) {
     _u_sprite = pinky_u;
 }
 
-void Pinky::move() {
+void Pinky::move(Map map) {
     if (_animationCounter == 0) {
         rect.x++;
     }
@@ -97,7 +70,7 @@ Inky::Inky(int x, int y): Ghost(x, y) {
     _u_sprite = inky_u;
 }
 
-void Inky::move() {
+void Inky::move(Map map) {
     if (_animationCounter == 0) {
         rect.x++;
     }
@@ -111,7 +84,7 @@ Clyde::Clyde(int x, int y): Ghost(x, y) {
     _u_sprite = clyde_u;
 }
 
-void Clyde::move() {
+void Clyde::move(Map map) {
     if (_animationCounter == 0) {
         rect.x++;
     }
