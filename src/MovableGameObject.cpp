@@ -32,6 +32,10 @@ SDL_Rect MovableGameObject::getNextPos() {
     return _next_pos;
 }
 
+void MovableGameObject::resetNextPos() {
+    _next_pos = rect;
+}
+
 void MovableGameObject::move() {
     rect.x = _next_pos.x;
     rect.y = _next_pos.y;

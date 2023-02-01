@@ -18,4 +18,7 @@ enum COLOBJ {
 class CollisionManager {
     public:
         static bool isCollision(Map map, SDL_Rect targetPos, COLOBJ obj);
+        static int collisionMatrix[7][7];
+};
 
+#endif

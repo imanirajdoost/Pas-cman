@@ -100,12 +100,29 @@ int main(int argc, char** argv)
         inky.setNextPos(gameMap);
         clyde.setNextPos(gameMap);
 
-        std::cout << CollisionManager::isCollision(gameMap, blinky.getNextPos(), GHOST) << std::endl;
+        if (!CollisionManager::isCollision(gameMap, blinky.getNextPos(), GHOST)) {
+            blinky.move();
+        } else {
+            blinky.resetNextPos();
+        }
 
-        blinky.move();
-        pinky.move();
-        inky.move();
-        clyde.move();
+        if (!CollisionManager::isCollision(gameMap, pinky.getNextPos(), GHOST)) {
+            pinky.move();
+        } else {
+            pinky.resetNextPos();
+        }
+        
+        if (!CollisionManager::isCollision(gameMap, inky.getNextPos(), GHOST)) {
+            inky.move();
+        } else {
+            inky.resetNextPos();
+        }
+        
+        if (!CollisionManager::isCollision(gameMap, clyde.getNextPos(), GHOST)) {
+            clyde.move();
+        } else {
+            clyde.resetNextPos();
+        }
 
 		draw();
 		SDL_UpdateWindowSurface(pWindow); 
