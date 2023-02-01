@@ -37,34 +37,34 @@ class Ghost: public MovableGameObject {
 
 class Blinky: public Ghost {
     using Ghost::Ghost;
-    using MovableGameObject::move;
+    using MovableGameObject::setNextPos;
     public:
         Blinky(int x, int y);
-        virtual void move(Map map) override;
+        virtual void setNextPos(Map map) override;
 };
 
 class Pinky: public Ghost {
     using Ghost::Ghost;
-    using MovableGameObject::move;
+    using MovableGameObject::setNextPos;
     public:
         Pinky(int x, int y);
-        virtual void move(Map map) override;
+        virtual void setNextPos(Map map) override;
 };
 
 class Inky: public Ghost {
     using Ghost::Ghost;
-    using MovableGameObject::move;
+    using MovableGameObject::setNextPos;
     public:
         Inky(int x, int y);
-        virtual void move(Map map) override;
+        virtual void setNextPos(Map map) override;
 };
 
 class Clyde: public Ghost {
     using Ghost::Ghost;
-    using MovableGameObject::move;
+    using MovableGameObject::setNextPos;
     public:
         Clyde(int x, int y);
-        virtual void move(Map map) override;
+        virtual void setNextPos(Map map) override;
 };
 
 #endif

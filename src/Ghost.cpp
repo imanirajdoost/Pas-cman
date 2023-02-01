@@ -38,7 +38,7 @@ Blinky::Blinky(int x, int y): Ghost(x, y) {
 }
 
 
-void Blinky::move(Map map) {
+void Blinky::setNextPos(Map map) {
     if (_animationCounter == 0) {
         rect.x++;
     }
@@ -52,7 +52,7 @@ Pinky::Pinky(int x, int y): Ghost(x, y) {
     _u_sprite = pinky_u;
 }
 
-void Pinky::move(Map map) {
+void Pinky::setNextPos(Map map) {
     if (_animationCounter == 0) {
         rect.x++;
     }
@@ -66,7 +66,7 @@ Inky::Inky(int x, int y): Ghost(x, y) {
     _u_sprite = inky_u;
 }
 
-void Inky::move(Map map) {
+void Inky::setNextPos(Map map) {
     if (_animationCounter == 0) {
         rect.x++;
     }
@@ -80,7 +80,7 @@ Clyde::Clyde(int x, int y): Ghost(x, y) {
     _u_sprite = clyde_u;
 }
 
-void Clyde::move(Map map) {
+void Clyde::setNextPos(Map map) {
     if (_animationCounter == 0) {
         rect.x++;
     }

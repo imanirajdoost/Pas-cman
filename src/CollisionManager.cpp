@@ -4,7 +4,6 @@
 #include <SDL.h>
 #include <iostream>
 
-template <typename T>
 bool CollisionManager::isCollision(Map map, SDL_Rect targetPos, COLOBJ obj) {
 
     MTYPE nextMapTile = map.map[targetPos.y][targetPos.x];
@@ -14,23 +13,22 @@ bool CollisionManager::isCollision(Map map, SDL_Rect targetPos, COLOBJ obj) {
     switch (nextMapTile) {
         case COIN:
         case BCOIN:
-            nextTileObjType = COIN;
+            nextTileObjType = CCOIN;
             break;
         case WALL:
-            nextTileObjType = WALL;
+            nextTileObjType = CWALL;
             break;
         case TPR:
         case TPL:
             nextTileObjType = TP;
             break;
         case DOOR:
-            nextTileObjType = DOOR;
+            nextTileObjType = CDOOR;
             break;
         case EMPTY:
-            nextTileObjType = EMPTY;
+            nextTileObjType = CEMPTY;
             break;
     }
 
-    return CollisionManager::collisionMatrix[obj][nextTileObjType] == 1;
-
+    return CollisionManager::collisionMatrix[obj][nextTileObjType] == 1;    
 }
