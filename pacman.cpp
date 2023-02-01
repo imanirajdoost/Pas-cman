@@ -1,11 +1,11 @@
 #include <SDL.h>
-
 #include <iostream>
 
 #include "Ghost.h"
 #include "Map.h"
 #include "CollisionManager.h"
 #include "MovableGameObject.h"
+
 
 SDL_Window* pWindow = nullptr;
 SDL_Surface* win_surf = nullptr;
