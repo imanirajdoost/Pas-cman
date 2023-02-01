@@ -26,7 +26,7 @@ class MovableGameObject : public GameObject {
         void setY(int Y);
         void draw(SDL_Surface* plancheSprites, SDL_Surface *win_surf);
         SDL_Rect getNextPos();
-        virtual void setNextPos(Map map);
+        virtual void setNextPos(Map map) {};
         void move();
 };
 

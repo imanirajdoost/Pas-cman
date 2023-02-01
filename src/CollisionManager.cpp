@@ -4,6 +4,16 @@
 #include <SDL.h>
 #include <iostream>
 
+int CollisionManager::collisionMatrix[7][7] = {
+            {0,1,1,1,1,1,0},
+            {1,0,1,0,1,0,0},
+            {1,1,0,0,0,0,0},
+            {1,0,0,0,0,0,0},
+            {1,1,0,0,0,0,0},
+            {1,0,0,0,0,0,0},
+            {0,0,0,0,0,0,0}, 
+        };
+
 bool CollisionManager::isCollision(Map map, SDL_Rect targetPos, COLOBJ obj) {
 
     MTYPE nextMapTile = map.map[targetPos.y][targetPos.x];
