@@ -19,7 +19,7 @@ private:
     int _health;                    // Player's health
 
 public:
-    Player(const int initHealth);   // Constructor that initilalizes player with the given health
+    Player(int x, int y, const int initHealth);   // Constructor that initilalizes player with the given health
 
     void eat(Dot dotToEat);         // Action to eat a Dot
     void die();                     // Die when hit by a ghost

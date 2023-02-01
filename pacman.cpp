@@ -26,7 +26,7 @@ Blinky blinky(34, 34);
 Pinky pinky(70, 34); 
 Inky inky(100, 34); 
 Clyde clyde(130, 34);
-Player player(2);
+Player player(32,32,2);
 
 Map gameMap;
 

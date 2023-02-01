@@ -8,9 +8,14 @@ SDL_Rect player_l = { 37,161, 16,16 };
 SDL_Rect player_d = { 105,161, 16,16 }; 
 SDL_Rect player_u = { 71,161, 16,16 };
 
-Player::Player(const int initHealth) {
+Player::Player(int x, int y, const int initHealth) {
     _health = initHealth;
     // @todo : Update health UI
+
+    rect.x = x;
+    rect.y = y;
+    rect.w = 32;
+    rect.h = 32;
 
     _r_sprite = player_r;
     _l_sprite = player_l;
