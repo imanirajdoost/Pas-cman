@@ -1,21 +1,19 @@
-#include "Map.h"
-
 #include <SDL.h>
 
-class CollisionManager {
+#include "Map.h"
 
-    public:
 enum COLOBJ {
     PACMAN,
     GHOST,
-    WALL,
-    COIN,
+    CWALL,
+    CCOIN,
     TP,
-    DOOR, 
-    EMPTY
+    CDOOR, 
+    CEMPTY
 };
 
-        template <typename T>
+class CollisionManager {
+    public:
         static bool isCollision(Map map, SDL_Rect targetPos, COLOBJ obj);
         static constexpr int collisionMatrix[7][7] = {
             {0,1,1,1,1,1,0},
@@ -26,5 +24,4 @@ enum COLOBJ {
             {1,0,0,0,0,0,0},
             {0,0,0,0,0,0,0}, 
         };
-
 };

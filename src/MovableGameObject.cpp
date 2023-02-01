@@ -27,3 +27,12 @@ void MovableGameObject::draw(SDL_Surface* plancheSprites, SDL_Surface *win_surf)
 
     SDL_BlitScaled(plancheSprites, &sprite_in2, win_surf, &rect);
 }
+
+SDL_Rect MovableGameObject::getNextPos() {
+    return _next_pos;
+}
+
+void MovableGameObject::move() {
+    rect.x = _next_pos.x;
+    rect.y = _next_pos.y;
+}

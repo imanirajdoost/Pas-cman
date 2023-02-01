@@ -21,7 +21,6 @@ SDL_Rect ghost_d = { 105,123, 16,16 };
 SDL_Rect ghost_u = { 71,123, 16,16 }; 
 SDL_Rect ghost = { 34,34, 32,32 };     // ici scale x2
 
-int count;
 
 Blinky blinky(34, 34); 
 Pinky pinky(70, 34); 
@@ -37,7 +36,6 @@ void init()
 	win_surf = SDL_GetWindowSurface(pWindow);
 
 	plancheSprites = SDL_LoadBMP("./pacman_sprites.bmp");
-    count = 0;
 }
 
 
@@ -97,10 +95,17 @@ int main(int argc, char** argv)
 
         // AFFICHAGE
 
-        blinky.move(gameMap);
-        pinky.move(gameMap);
-        inky.move(gameMap);
-        clyde.move(gameMap);
+        blinky.setNextPos(gameMap);
+        pinky.setNextPos(gameMap);
+        inky.setNextPos(gameMap);
+        clyde.setNextPos(gameMap);
+
+        std::cout << CollisionManager::isCollision(gameMap, blinky.getNextPos(), GHOST) << std::endl;
+
+        blinky.move();
+        pinky.move();
+        inky.move();
+        clyde.move();
 
 		draw();
 		SDL_UpdateWindowSurface(pWindow); 
