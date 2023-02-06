@@ -22,11 +22,11 @@ SDL_Rect ghost_u = { 71,123, 16,16 };
 SDL_Rect ghost = { 34,34, 32,32 };     // ici scale x2
 
 
-Blinky blinky(34, 34); 
-Pinky pinky(70, 34); 
-Inky inky(100, 34); 
-Clyde clyde(130, 34);
-Player player(32,32,2);
+Blinky blinky{34, 34};
+Pinky pinky{70, 34};
+Inky inky{100, 34};
+Clyde clyde{130, 34};
+Player player{32,32,2};
 
 Map gameMap;
 
