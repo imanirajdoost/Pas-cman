@@ -1,6 +1,7 @@
 #include "Player.h"
 #include "DotBig.h"
 #include <typeinfo>
+#include "GameVars.h"
 
 // get pacman's sprite from the sprite sheet
 SDL_Rect player_r = { 20, 89, 16, 16 }; 
@@ -28,16 +29,16 @@ void Player::setNextPos(const Map& map, const MoveDirection& direction) {
     switch (direction)
     {
         case MoveDirection::LEFT:
-            _next_pos.x--;
+            _next_pos.x -= speed;
             break;
         case MoveDirection::RIGHT:
-            _next_pos.x++;
+            _next_pos.x += speed;
             break;
         case MoveDirection::UP:
-            _next_pos.y++;
+            _next_pos.y -= speed;
             break;
         case MoveDirection::DOWN:
-            _next_pos.y--;
+            _next_pos.y += speed;
             break;
     }
 

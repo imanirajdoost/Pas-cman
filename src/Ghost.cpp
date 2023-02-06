@@ -47,6 +47,8 @@ void Blinky::setNextPos(const Map& map, const MoveDirection& direction) {
         _next_pos.x++;
     }
     _animationCounter = (_animationCounter+1)%4;
+
+    setMoveDirection(direction);
 }
 
 Pinky::Pinky(int x, int y): Ghost(x, y) {
@@ -61,6 +63,8 @@ void Pinky::setNextPos(const Map& map, const MoveDirection& direction) {
         _next_pos.x++;
     }
     _animationCounter = (_animationCounter+1)%4;
+
+    setMoveDirection(direction);
 }
 
 Inky::Inky(int x, int y): Ghost(x, y) {
@@ -75,6 +79,8 @@ void Inky::setNextPos(const Map& map, const MoveDirection& direction) {
         _next_pos.x++;
     }
     _animationCounter = (_animationCounter+1)%4;
+
+    setMoveDirection(direction);
 }
 
 Clyde::Clyde(int x, int y): Ghost(x, y) {
@@ -89,5 +95,7 @@ void Clyde::setNextPos(const Map& map, const MoveDirection& direction) {
         _next_pos.x++;
     }
     _animationCounter = (_animationCounter+1)%4;
+
+    setMoveDirection(direction);
 }
 

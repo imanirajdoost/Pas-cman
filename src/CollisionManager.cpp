@@ -15,20 +15,15 @@ int CollisionManager::collisionMatrix[7][7] = {
             {0,0,0,0,0,0,0}, 
         };
 
-bool CollisionManager::isCollision(const Map& map, const SDL_Rect& targetPos, const COLOBJ& obj) {
+bool CollisionManager::isCollision(const Map& map, const SDL_Rect& targetPos, const COLOBJ& obj, const SDL_Rect& collisionOffset) {
 
-    // std::cout << "x: " << targetPos.x << std::endl;
-    // std::cout << "y: " << targetPos.y << std::endl;
+    SDL_Rect targetPosWithOffset = targetPos;
+    targetPosWithOffset.x += collisionOffset.x * collisionOffset.w;
+    targetPosWithOffset.y += collisionOffset.y * collisionOffset.h;
 
-    int mapX = targetPos.x/TILESIZE;
-    int mapY = targetPos.y/TILESIZE;
+    
 
-    // std::cout << "mapx: " << mapX << std::endl;
-    // std::cout << "mapy: " << mapY << std::endl;
-
-    // std::cout << "tile: " << map.map[mapX][mapY] << std::endl; 
-
-    MTYPE nextMapTile = map.map[mapX][mapY];
+    MTYPE nextMapTile = getNextCOLOBJ(map, targetPosWithOffset);
 
     COLOBJ nextTileObjType;
 
@@ -54,3 +49,14 @@ bool CollisionManager::isCollision(const Map& map, const SDL_Rect& targetPos, co
 
     return CollisionManager::collisionMatrix[static_cast<int>(obj)][static_cast<int>(nextTileObjType)] == 1;
 }
+
+MTYPE CollisionManager::getNextCOLOBJ(const Map& map, const SDL_Rect& targetPos) {
+    
+    int mapX = targetPos.x/TILESIZE;
+    int mapY = targetPos.y/TILESIZE;
+
+    MTYPE nextMapTile = map.map[mapY][mapX];
+
+    return nextMapTile;
+}
+
