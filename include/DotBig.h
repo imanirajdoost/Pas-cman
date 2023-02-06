@@ -3,7 +3,7 @@
 
 #include "Dot.h"
 
-class DotBig : Dot {
+class DotBig : public Dot {
 
 };
 

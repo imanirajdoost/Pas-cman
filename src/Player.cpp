@@ -23,7 +23,7 @@ Player::Player(int x, int y, const int initHealth) {
     _u_sprite = player_u;
 }
 
-void Player::setNextPos(Map map, MoveDirection direction) {
+void Player::setNextPos(const Map& map, const MoveDirection& direction) {
 
     switch (direction)
     {

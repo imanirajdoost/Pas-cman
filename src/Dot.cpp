@@ -1,5 +1,5 @@
 #include "Dot.h"
 
-void Dot:: getEaten() {
+void Dot:: getEaten() const{
     // @todo implement get eaten
 }

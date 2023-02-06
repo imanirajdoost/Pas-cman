@@ -2,33 +2,33 @@
 
 #include "Ghost.h"
 
-SDL_Rect blinky_r = { 3,123, 16,16 }; 
-SDL_Rect blinky_l = { 37,123, 16,16 }; 
-SDL_Rect blinky_d = { 105,123, 16,16 }; 
+SDL_Rect blinky_r = { 3,123, 16,16 };
+SDL_Rect blinky_l = { 37,123, 16,16 };
+SDL_Rect blinky_d = { 105,123, 16,16 };
 SDL_Rect blinky_u = { 71,123, 16,16 };
 
-SDL_Rect pinky_r = { 3,142, 16,16 }; 
-SDL_Rect pinky_l = { 37,142, 16,16 }; 
-SDL_Rect pinky_d = { 105,142, 16,16 }; 
+SDL_Rect pinky_r = { 3,142, 16,16 };
+SDL_Rect pinky_l = { 37,142, 16,16 };
+SDL_Rect pinky_d = { 105,142, 16,16 };
 SDL_Rect pinky_u = { 71,142, 16,16 };
 
-SDL_Rect inky_r = { 3,161, 16,16 }; 
-SDL_Rect inky_l = { 37,161, 16,16 }; 
-SDL_Rect inky_d = { 105,161, 16,16 }; 
+SDL_Rect inky_r = { 3,161, 16,16 };
+SDL_Rect inky_l = { 37,161, 16,16 };
+SDL_Rect inky_d = { 105,161, 16,16 };
 SDL_Rect inky_u = { 71,161, 16,16 };
 
-SDL_Rect clyde_r = { 3,180, 16,16 }; 
-SDL_Rect clyde_l = { 37,180, 16,16 }; 
-SDL_Rect clyde_d = { 105,180, 16,16 }; 
+SDL_Rect clyde_r = { 3,180, 16,16 };
+SDL_Rect clyde_l = { 37,180, 16,16 };
+SDL_Rect clyde_d = { 105,180, 16,16 };
 SDL_Rect clyde_u = { 71,180, 16,16 };
 
-Ghost::Ghost(int x, int y) {
+Ghost::Ghost(int x, int y){
     rect.x = x;
     rect.y = y;
 
     _next_pos.x = x;
     _next_pos.y = y;
-    
+
     rect.w = 32;
     rect.h = 32;
 }
@@ -42,7 +42,7 @@ Blinky::Blinky(int x, int y): Ghost(x, y) {
 }
 
 
-void Blinky::setNextPos(Map map, MoveDirection direction) {
+void Blinky::setNextPos(const Map& map, const MoveDirection& direction) {
     if (_animationCounter == 0) {
         _next_pos.x++;
     }
@@ -56,7 +56,7 @@ Pinky::Pinky(int x, int y): Ghost(x, y) {
     _u_sprite = pinky_u;
 }
 
-void Pinky::setNextPos(Map map, MoveDirection direction) {
+void Pinky::setNextPos(const Map& map, const MoveDirection& direction) {
     if (_animationCounter == 0) {
         _next_pos.x++;
     }
@@ -70,7 +70,7 @@ Inky::Inky(int x, int y): Ghost(x, y) {
     _u_sprite = inky_u;
 }
 
-void Inky::setNextPos(Map map, MoveDirection direction) {
+void Inky::setNextPos(const Map& map, const MoveDirection& direction) {
     if (_animationCounter == 0) {
         _next_pos.x++;
     }
@@ -84,7 +84,7 @@ Clyde::Clyde(int x, int y): Ghost(x, y) {
     _u_sprite = clyde_u;
 }
 
-void Clyde::setNextPos(Map map, MoveDirection direction) {
+void Clyde::setNextPos(const Map& map, const MoveDirection& direction) {
     if (_animationCounter == 0) {
         _next_pos.x++;
     }

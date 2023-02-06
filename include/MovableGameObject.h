@@ -21,14 +21,14 @@ class MovableGameObject : public GameObject {
         SDL_Rect _next_pos;
 
     public:
-        int getX();
-        int getY();
-        SDL_Rect getRect();
+        int getX() const;
+        int getY() const;
+        SDL_Rect getRect() const;
         void setX(int x);
         void setY(int Y);
-        void draw(SDL_Surface* plancheSprites, SDL_Surface *win_surf);
-        SDL_Rect getNextPos();
-        virtual void setNextPos(Map map, MoveDirection direction) {};
+        void draw(SDL_Surface* plancheSprites, SDL_Surface* win_surf);
+        SDL_Rect getNextPos() const;
+        virtual void setNextPos(const Map& map, const MoveDirection& direction) = 0;
         void resetNextPos();
         void move();
 };

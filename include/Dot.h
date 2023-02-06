@@ -3,10 +3,10 @@
 
 #include "StaticGameObject.h"
 
-class Dot : StaticGameObject {
+class Dot : public StaticGameObject {
 
 public:
-    void getEaten();
+    void getEaten() const;
 
 protected:
     unsigned int _score;

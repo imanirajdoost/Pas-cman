@@ -106,25 +106,25 @@ int main(int argc, char** argv)
         inky.setNextPos(gameMap, NONE);
         clyde.setNextPos(gameMap, NONE);
 
-        if (!CollisionManager::isCollision(gameMap, blinky.getNextPos(), GHOST)) {
+        if (!CollisionManager::isCollision(gameMap, blinky.getNextPos(), COLOBJ::GHOST)) {
             blinky.move();
         } else {
             blinky.resetNextPos();
         }
 
-        if (!CollisionManager::isCollision(gameMap, pinky.getNextPos(), GHOST)) {
+        if (!CollisionManager::isCollision(gameMap, pinky.getNextPos(), COLOBJ::GHOST)) {
             pinky.move();
         } else {
             pinky.resetNextPos();
         }
         
-        if (!CollisionManager::isCollision(gameMap, inky.getNextPos(), GHOST)) {
+        if (!CollisionManager::isCollision(gameMap, inky.getNextPos(), COLOBJ::GHOST)) {
             inky.move();
         } else {
             inky.resetNextPos();
         }
         
-        if (!CollisionManager::isCollision(gameMap, clyde.getNextPos(), GHOST)) {
+        if (!CollisionManager::isCollision(gameMap, clyde.getNextPos(), COLOBJ::GHOST)) {
             clyde.move();
         } else {
             clyde.resetNextPos();
@@ -136,10 +136,10 @@ int main(int argc, char** argv)
         //std::cout << "x: " << player.getNextPos().x << std::endl;
         //std::cout << "y: " << player.getNextPos().y << std::endl;
 
-        std::cout << CollisionManager::isCollision(gameMap, player.getNextPos(), PACMAN) << std::endl; 
+        std::cout << CollisionManager::isCollision(gameMap, player.getNextPos(), COLOBJ::PACMAN) << std::endl;
 
         // TODO: COLLISION WITH COIN PREVENTS MOVING
-        if (!CollisionManager::isCollision(gameMap, player.getNextPos(), PACMAN)) {
+        if (!CollisionManager::isCollision(gameMap, player.getNextPos(), COLOBJ::PACMAN)) {
             player.move();
         } else {
             player.resetNextPos();

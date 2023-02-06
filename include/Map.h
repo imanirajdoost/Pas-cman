@@ -1,7 +1,7 @@
 #ifndef MAP_H
 #define MAP_H
 
-enum MTYPE {
+enum class MTYPE {
     COIN,
     WALL,
     DOOR,

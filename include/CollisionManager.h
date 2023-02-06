@@ -5,7 +5,7 @@
 
 #include "Map.h"
 
-enum COLOBJ {
+enum class COLOBJ {
     PACMAN,
     GHOST,
     CWALL,
@@ -17,7 +17,7 @@ enum COLOBJ {
 
 class CollisionManager {
     public:
-        static bool isCollision(Map map, SDL_Rect targetPos, COLOBJ obj);
+        static bool isCollision(const Map& map, const SDL_Rect& targetPos, const COLOBJ& obj);
         static int collisionMatrix[7][7];
 };
 

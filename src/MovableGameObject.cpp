@@ -1,10 +1,10 @@
 #include "MovableGameObject.h"
 
-int MovableGameObject::getX() {
+int MovableGameObject::getX() const{
     return rect.x;
 }
 
-int MovableGameObject::getY() {
+int MovableGameObject::getY() const{
     return rect.y;
 }
 
@@ -16,7 +16,7 @@ void MovableGameObject::setY(int y) {
     rect.y = y;
 }
 
-void MovableGameObject::draw(SDL_Surface* plancheSprites, SDL_Surface *win_surf) {
+void MovableGameObject::draw(SDL_Surface* plancheSprites, SDL_Surface* win_surf) {
 
     _sprite_in = &(_r_sprite);
     SDL_Rect sprite_in2 = *_sprite_in;
@@ -28,7 +28,7 @@ void MovableGameObject::draw(SDL_Surface* plancheSprites, SDL_Surface *win_surf)
     SDL_BlitScaled(plancheSprites, &sprite_in2, win_surf, &rect);
 }
 
-SDL_Rect MovableGameObject::getNextPos() {
+SDL_Rect MovableGameObject::getNextPos() const{
     return _next_pos;
 }
 

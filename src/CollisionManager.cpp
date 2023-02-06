@@ -15,7 +15,7 @@ int CollisionManager::collisionMatrix[7][7] = {
             {0,0,0,0,0,0,0}, 
         };
 
-bool CollisionManager::isCollision(Map map, SDL_Rect targetPos, COLOBJ obj) {
+bool CollisionManager::isCollision(const Map& map, const SDL_Rect& targetPos, const COLOBJ& obj) {
 
     // std::cout << "x: " << targetPos.x << std::endl;
     // std::cout << "y: " << targetPos.y << std::endl;
@@ -35,22 +35,22 @@ bool CollisionManager::isCollision(Map map, SDL_Rect targetPos, COLOBJ obj) {
     switch (nextMapTile) {
         case COIN:
         case BCOIN:
-            nextTileObjType = CCOIN;
+            nextTileObjType = COLOBJ::CCOIN;
             break;
         case WALL:
-            nextTileObjType = CWALL;
+            nextTileObjType = COLOBJ::CWALL;
             break;
         case TPR:
         case TPL:
-            nextTileObjType = TP;
+            nextTileObjType = COLOBJ::TP;
             break;
         case DOOR:
-            nextTileObjType = CDOOR;
+            nextTileObjType = COLOBJ::CDOOR;
             break;
         case EMPTY:
-            nextTileObjType = CEMPTY;
+            nextTileObjType = COLOBJ::CEMPTY;
             break;
     }
 
-    return CollisionManager::collisionMatrix[obj][nextTileObjType] == 1;    
+    return CollisionManager::collisionMatrix[static_cast<int>(obj)][static_cast<int>(nextTileObjType)] == 1;
 }
