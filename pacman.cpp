@@ -131,8 +131,6 @@ int main(int argc, char** argv)
         } else {
             clyde.resetNextPos();
         }
-
-
         player.setNextPos(gameMap, nextPlayerMove);
 
         SDL_Rect nextPos = player.getNextPos();
