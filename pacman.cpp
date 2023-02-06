@@ -83,7 +83,7 @@ int main(int argc, char** argv)
 			}
 		}
 
-        MoveDirection nextPlayerMove = NONE;
+        MoveDirection nextPlayerMove = MoveDirection::NONE;
 
         // Gestion du clavier        
         int nbk;
@@ -91,20 +91,20 @@ int main(int argc, char** argv)
         if (keys[SDL_SCANCODE_ESCAPE])
             quit = true;
         if (keys[SDL_SCANCODE_LEFT])
-            nextPlayerMove = LEFT;
+            nextPlayerMove = MoveDirection::LEFT;
         else if (keys[SDL_SCANCODE_RIGHT])
-            nextPlayerMove = RIGHT;
+            nextPlayerMove = MoveDirection::RIGHT;
         else if (keys[SDL_SCANCODE_UP])
-            nextPlayerMove = UP;
+            nextPlayerMove = MoveDirection::UP;
         else if (keys[SDL_SCANCODE_DOWN])
-            nextPlayerMove = DOWN;
+            nextPlayerMove = MoveDirection::DOWN;
 
         // AFFICHAGE
 
-        blinky.setNextPos(gameMap, NONE);
-        pinky.setNextPos(gameMap, NONE);
-        inky.setNextPos(gameMap, NONE);
-        clyde.setNextPos(gameMap, NONE);
+        blinky.setNextPos(gameMap, MoveDirection::NONE);
+        pinky.setNextPos(gameMap, MoveDirection::NONE);
+        inky.setNextPos(gameMap, MoveDirection::NONE);
+        clyde.setNextPos(gameMap, MoveDirection::NONE);
 
         if (!CollisionManager::isCollision(gameMap, blinky.getNextPos(), COLOBJ::GHOST)) {
             blinky.move();

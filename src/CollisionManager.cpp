@@ -33,21 +33,21 @@ bool CollisionManager::isCollision(const Map& map, const SDL_Rect& targetPos, co
     COLOBJ nextTileObjType;
 
     switch (nextMapTile) {
-        case COIN:
-        case BCOIN:
+        case MTYPE::COIN:
+        case MTYPE::BCOIN:
             nextTileObjType = COLOBJ::CCOIN;
             break;
-        case WALL:
+        case MTYPE::WALL:
             nextTileObjType = COLOBJ::CWALL;
             break;
-        case TPR:
-        case TPL:
+        case MTYPE::TPR:
+        case MTYPE::TPL:
             nextTileObjType = COLOBJ::TP;
             break;
-        case DOOR:
+        case MTYPE::DOOR:
             nextTileObjType = COLOBJ::CDOOR;
             break;
-        case EMPTY:
+        case MTYPE::EMPTY:
             nextTileObjType = COLOBJ::CEMPTY;
             break;
     }

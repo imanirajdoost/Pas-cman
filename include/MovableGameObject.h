@@ -4,7 +4,7 @@
 #include "GameObject.h"
 #include "Map.h"
 
-enum MoveDirection 
+enum class MoveDirection
 {   
     NONE = 0,
     UP = 1, 

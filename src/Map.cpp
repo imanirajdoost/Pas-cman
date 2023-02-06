@@ -1,10 +1,8 @@
 #include <iostream>
 #include "Map.h"
 
-Map::Map() {}
-
 template <typename T>
-MTYPE Map::getCurrentTileType(T gameObject) {
+MTYPE Map::getCurrentTileType(const T& gameObject) const{
 
     int px_x = gameObject->getX();
     int px_y = gameObject->getY();

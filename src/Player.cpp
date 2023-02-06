@@ -8,8 +8,8 @@ SDL_Rect player_l = { 46,89, 16,16 };
 SDL_Rect player_d = { 109,89, 16,16 }; 
 SDL_Rect player_u = { 75,89, 16,16 };
 
-Player::Player(int x, int y, const int initHealth) {
-    _health = initHealth;
+Player::Player(int x, int y, const int initHealth) : _health{initHealth} {
+    // _health = initHealth;
     // @todo : Update health UI
 
     rect.x = x;
@@ -27,23 +27,23 @@ void Player::setNextPos(const Map& map, const MoveDirection& direction) {
 
     switch (direction)
     {
-        case LEFT:
+        case MoveDirection::LEFT:
             _next_pos.x--;
             break;
-        case RIGHT:
+        case MoveDirection::RIGHT:
             _next_pos.x++;
             break;
-        case UP:
+        case MoveDirection::UP:
             _next_pos.y++;
             break;
-        case DOWN:
+        case MoveDirection::DOWN:
             _next_pos.y--;
             break;
     }
 
 }
 
-void Player::eat(Dot dotToEat) {
+void Player::eat(const Dot& dotToEat) const {
     dotToEat.getEaten();
     // @todo increase score
     // if((typeid(dotToEat) == typeid(DotBig)) {
