@@ -108,25 +108,25 @@ int main(int argc, char** argv)
         inky.setNextPos(gameMap, MoveDirection::NONE);
         clyde.setNextPos(gameMap, MoveDirection::NONE);
 
-        if (!CollisionManager::isCollision(gameMap, blinky.getNextPos(), COLOBJ::GHOST, SDL_Rect())) {
+        if (!CollisionManager::isCollision(gameMap, blinky.getNextPos(), MTYPE::GHOST, SDL_Rect())) {
             blinky.move();
         } else {
             blinky.resetNextPos();
         }
 
-        if (!CollisionManager::isCollision(gameMap, pinky.getNextPos(), COLOBJ::GHOST, SDL_Rect())) {
+        if (!CollisionManager::isCollision(gameMap, pinky.getNextPos(), MTYPE::GHOST, SDL_Rect())) {
             pinky.move();
         } else {
             pinky.resetNextPos();
         }
         
-        if (!CollisionManager::isCollision(gameMap, inky.getNextPos(), COLOBJ::GHOST, SDL_Rect())) {
+        if (!CollisionManager::isCollision(gameMap, inky.getNextPos(), MTYPE::GHOST, SDL_Rect())) {
             inky.move();
         } else {
             inky.resetNextPos();
         }
         
-        if (!CollisionManager::isCollision(gameMap, clyde.getNextPos(), COLOBJ::GHOST, SDL_Rect())) {
+        if (!CollisionManager::isCollision(gameMap, clyde.getNextPos(), MTYPE::GHOST, SDL_Rect())) {
             clyde.move();
         } else {
             clyde.resetNextPos();
@@ -143,22 +143,21 @@ int main(int argc, char** argv)
 
         collisionOffset.x = nextPlayerMove == MoveDirection::RIGHT ? 1 : 0;
         collisionOffset.y = nextPlayerMove == MoveDirection::LEFT ? 1 : 0;
-
-        //std::cout << CollisionManager::isCollision(gameMap, nextPos, COLOBJ::PACMAN, collisionOffset) << std::endl;
         
-        std::cout << "x: " << player.getNextPos().x << std::endl;
-        std::cout << "y: " << player.getNextPos().y << std::endl;
+        //std::cout << "x: " << player.getNextPos().x << std::endl;
+        //std::cout << "y: " << player.getNextPos().y << std::endl;
 
         // TODO: COLLISION WITH COIN PREVENTS MOVING
-        if (!CollisionManager::isCollision(gameMap, nextPos, COLOBJ::PACMAN, collisionOffset)) {
+        if (!CollisionManager::isCollision(gameMap, nextPos, MTYPE::PACMAN, collisionOffset)) {
             player.move();
         } else {
             MTYPE nextCol = CollisionManager::getNextCOLOBJ(gameMap, player.getNextPos());
-            if (nextCol == MTYPE::COIN || nextCol == MTYPE::BCOIN) {
+            if (nextCol == MTYPE::ITEM) {
                 //TODO: delete coin
                 gameMap.map[nextPos.y/32][nextPos.x/32] = MTYPE::EMPTY;
                 player.move();
             } else {
+                std::cout << CollisionManager::isCollision(gameMap, nextPos, MTYPE::PACMAN, collisionOffset) << std::endl;
                 player.resetNextPos();
             }
         }
