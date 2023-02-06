@@ -38,25 +38,25 @@ class Ghost: public MovableGameObject {
 class Blinky: public Ghost {
     public:
         Blinky(int x, int y);
-        void setNextPos(const Map& map, const MoveDirection& direction) override;
+        void setNextPos(const MTYPE[27][21], const MoveDirection& direction) override;
 };
 
 class Pinky: public Ghost {
     public:
         Pinky(int x, int y);
-        void setNextPos(const Map& map, const MoveDirection& direction) override;
+        void setNextPos(const MTYPE[27][21], const MoveDirection& direction) override;
 };
 
 class Inky: public Ghost {
     public:
         Inky(int x, int y);
-        void setNextPos(const Map& map, const MoveDirection& direction) override;
+        void setNextPos(const MTYPE[27][21], const MoveDirection& direction) override;
 };
 
 class Clyde: public Ghost {
     public:
         Clyde(int x, int y);
-        void setNextPos(const Map& map, const MoveDirection& direction) override;
+        void setNextPos(const MTYPE[27][21], const MoveDirection& direction) override;
 };
 
 #endif

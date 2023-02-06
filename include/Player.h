@@ -24,7 +24,7 @@ public:
     void eat(const Dot& dotToEat) const;         // Action to eat a Dot
     void die();                                  // Die when hit by a ghost
     void gameOver();                             // Game over when no more health is remaining
-    virtual void setNextPos(const Map& map, const MoveDirection& direction) override;
+    virtual void setNextPos(const MTYPE map[27][21], const MoveDirection& direction) override;
 
 };
 

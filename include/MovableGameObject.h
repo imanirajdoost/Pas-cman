@@ -20,7 +20,7 @@ class MovableGameObject : public GameObject {
     protected:
         SDL_Rect _next_pos;
         int speed = 4;
-        MoveDirection direction;
+        MoveDirection direction = MoveDirection::NONE;
 
     public:
         int getX() const;
@@ -33,7 +33,7 @@ class MovableGameObject : public GameObject {
 
         void draw(SDL_Surface* plancheSprites, SDL_Surface* win_surf);
         SDL_Rect getNextPos() const;
-        virtual void setNextPos(const Map& map, const MoveDirection& direction) = 0;
+        virtual void setNextPos(const MTYPE map[27][21], const MoveDirection& direction) = 0;
         void resetNextPos();
         void move();
 };
