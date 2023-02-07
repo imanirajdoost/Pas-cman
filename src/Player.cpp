@@ -26,6 +26,8 @@ Player::Player(int x, int y, const int initHealth) : _health{initHealth} {
 
 void Player::setNextPos(const std::vector<std::vector<MTYPE>>& map, const MoveDirection& direction) {
 
+    setMoveDirection(direction);
+
     switch (direction)
     {
         case MoveDirection::LEFT:

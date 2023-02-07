@@ -12,6 +12,7 @@
 SDL_Window* pWindow = nullptr;
 SDL_Surface* win_surf = nullptr;
 SDL_Surface* plancheSprites = nullptr;
+SDL_Renderer* renderer = nullptr;
 
 SDL_Rect src_bg = { 368,3, 168,216 }; // x,y, w,h (0,0) en haut a gauche
 SDL_Rect bg = { 0,0, 672,864 }; // ici scale x4
@@ -34,6 +35,8 @@ void init()
 {
 	pWindow = SDL_CreateWindow("PacMan", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 700, 900, SDL_WINDOW_SHOWN);
 	win_surf = SDL_GetWindowSurface(pWindow);
+
+    renderer = SDL_CreateRenderer(pWindow, -1, SDL_RENDERER_SOFTWARE);
 
 	plancheSprites = SDL_LoadBMP("./pacman_sprites.bmp");
 
@@ -63,6 +66,16 @@ void draw()
     for (int i = 0; i < dotSmalls.size(); ++i) {
         dotSmalls[i].get()->draw(plancheSprites, win_surf);
     }
+
+    SDL_SetRenderDrawColor(renderer, 255, 0, 0, 127);
+    SDL_RenderClear( renderer );
+    SDL_Rect fdp = player.getRect();
+    // Render rect
+    SDL_RenderFillRect( renderer, &(fdp) );
+
+    // Render the rect to the screen
+    SDL_RenderPresent(renderer);
+
 }
 
 
@@ -76,6 +89,9 @@ int main(int argc, char** argv)
     }
 
 	init();
+
+
+
     // BOUCLE PRINCIPALE
 	bool quit = false;
 	while (!quit)
@@ -117,25 +133,25 @@ int main(int argc, char** argv)
         inky.setNextPos(Map::map, MoveDirection::NONE);
         clyde.setNextPos(Map::map, MoveDirection::NONE);
 
-        if (!CollisionManager::isCollision(Map::map, blinky.getNextPos(), MTYPE::GHOST, SDL_Rect())) {
+        if (!CollisionManager::isCollision(Map::map, blinky, MTYPE::GHOST, SDL_Rect())) {
             blinky.move();
         } else {
             blinky.resetNextPos();
         }
 
-        if (!CollisionManager::isCollision(Map::map, pinky.getNextPos(), MTYPE::GHOST, SDL_Rect())) {
+        if (!CollisionManager::isCollision(Map::map, pinky, MTYPE::GHOST, SDL_Rect())) {
             pinky.move();
         } else {
             pinky.resetNextPos();
         }
         
-        if (!CollisionManager::isCollision(Map::map, inky.getNextPos(), MTYPE::GHOST, SDL_Rect())) {
+        if (!CollisionManager::isCollision(Map::map, inky, MTYPE::GHOST, SDL_Rect())) {
             inky.move();
         } else {
             inky.resetNextPos();
         }
         
-        if (!CollisionManager::isCollision(Map::map, clyde.getNextPos(), MTYPE::GHOST, SDL_Rect())) {
+        if (!CollisionManager::isCollision(Map::map, clyde, MTYPE::GHOST, SDL_Rect())) {
             clyde.move();
         } else {
             clyde.resetNextPos();
@@ -153,7 +169,7 @@ int main(int argc, char** argv)
         collisionOffset.y = nextPlayerMove == MoveDirection::DOWN ? 1 : 0;
     
 
-        if (!CollisionManager::isCollision(Map::map, nextPos, MTYPE::PACMAN, collisionOffset)) {
+        if (!CollisionManager::isCollision(Map::map, player, MTYPE::PACMAN, collisionOffset)) {
             player.setMoveDirection(nextPlayerMove);
             player.move();
         } else {
