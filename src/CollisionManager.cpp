@@ -5,7 +5,7 @@
 #include <SDL.h>
 #include <iostream>
 
-int CollisionManager::collisionMatrix[7][7] = {
+std::vector<std::vector<int>> CollisionManager::collisionMatrix = {
             {0,1,0,1,1,0,1},
             {1,0,0,1,0,0,0},
             {0,0,0,0,0,0,0},
