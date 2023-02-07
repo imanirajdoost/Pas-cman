@@ -24,7 +24,6 @@ class MovableGameObject : public GameObject {
     public:
         int getX() const;
         int getY() const;
-        SDL_Rect getRect() const;
         void setX(int x);
         void setY(int Y);
         MoveDirection getMoveDirection() const;

@@ -9,6 +9,8 @@
 #include "GameController.h"
 #include "DotSmall.h"
 
+#define DEBUG_MODE 1
+
 SDL_Window* pWindow = nullptr;
 SDL_Surface* win_surf = nullptr;
 SDL_Surface* plancheSprites = nullptr;
@@ -46,6 +48,16 @@ void init()
     }
 }
 
+void draw_collider(const GameObject& obj, int r = 255, int g = 0, int b = 9) {
+    // set renderer color
+    SDL_SetRenderDrawColor(renderer, r, g, b, 255);
+    //SDL_RenderClear( renderer );
+    SDL_Rect debugRect = obj.getRect();
+    // Render rect
+    SDL_RenderDrawRect(renderer, &debugRect);
+    // Render the rect to the screen
+    SDL_RenderPresent(renderer);
+}
 
 // fonction qui met à jour la surface de la fenetre "win_surf"
 void draw()
@@ -63,22 +75,23 @@ void draw()
 
     player.draw(plancheSprites, win_surf);
 
-    for (int i = 0; i < dotSmalls.size(); ++i) {
-        dotSmalls[i].get()->draw(plancheSprites, win_surf);
+    for (auto & dotSmall : dotSmalls) {
+        dotSmall->draw(plancheSprites, win_surf);
     }
 
-    SDL_SetRenderDrawColor(renderer, 255, 0, 0, 127);
-    SDL_RenderClear( renderer );
-    SDL_Rect fdp = player.getRect();
-    // Render rect
-    SDL_RenderFillRect( renderer, &(fdp) );
+    if(DEBUG_MODE) {
+        // Draw the collider boxes on the screen
+        draw_collider(player);
+        draw_collider(blinky);
+        draw_collider(pinky);
+        draw_collider(inky);
+        draw_collider(clyde);
 
-    // Render the rect to the screen
-    SDL_RenderPresent(renderer);
-
+//        for (auto & dotSmall : dotSmalls) {
+//            draw_collider(*dotSmall);
+//        }
+    }
 }
-
-
 
 int main(int argc, char** argv)
 {

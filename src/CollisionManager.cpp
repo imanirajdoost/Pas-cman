@@ -55,7 +55,6 @@ MTYPE CollisionManager::getNextCOLOBJ(const std::vector<std::vector<MTYPE>>& map
     int mapY = targetPos.y/TILESIZE;
 
     MTYPE nextMapTile = map[mapY][mapX];
-    std::cout << mapY << ", " << mapX << std::endl;
 
     return nextMapTile;
 }

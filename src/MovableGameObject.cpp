@@ -10,10 +10,6 @@ int MovableGameObject::getY() const{
     return rect.y;
 }
 
-SDL_Rect MovableGameObject::getRect() const {
-    return rect;
-}
-
 void MovableGameObject::setX(int x) {
     rect.x = x;
 }

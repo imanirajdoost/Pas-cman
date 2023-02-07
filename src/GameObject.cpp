@@ -26,3 +26,7 @@ void GameObject::draw(SDL_Surface* plancheSprites, SDL_Surface* win_surf) {
 
     SDL_BlitScaled(plancheSprites, &sprite_in2, win_surf, &drawRect);
 }
+
+SDL_Rect GameObject::getRect() const {
+    return rect;
+}
