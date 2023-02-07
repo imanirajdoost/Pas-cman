@@ -23,13 +23,11 @@ SDL_Rect ghost_u = { 71,123, 16,16 };
 SDL_Rect ghost = { 34,34, 32,32 };     // ici scale x2
 
 
-Blinky blinky{34, 34};
-Pinky pinky{70, 34};
-Inky inky{100, 34};
-Clyde clyde{130, 34};
+Blinky blinky{32, 32};
+Pinky pinky{64, 32};
+Inky inky{96, 32};
+Clyde clyde{128, 32};
 Player player{32,32,2};
-
-Map gameMap;
 
 void init()
 {
@@ -86,7 +84,7 @@ int main(int argc, char** argv)
 			}
 		}
 
-        MoveDirection nextPlayerMove = MoveDirection::NONE;
+        MoveDirection nextPlayerMove = player.getMoveDirection();
 
         // Gestion du clavier        
         int nbk;
@@ -104,37 +102,36 @@ int main(int argc, char** argv)
 
         // AFFICHAGE
 
-        player.setMoveDirection(nextPlayerMove);
+        blinky.setNextPos(Map::map, MoveDirection::NONE);
+        pinky.setNextPos(Map::map, MoveDirection::NONE);
+        inky.setNextPos(Map::map, MoveDirection::NONE);
+        clyde.setNextPos(Map::map, MoveDirection::NONE);
 
-        blinky.setNextPos(gameMap, MoveDirection::NONE);
-        pinky.setNextPos(gameMap, MoveDirection::NONE);
-        inky.setNextPos(gameMap, MoveDirection::NONE);
-        clyde.setNextPos(gameMap, MoveDirection::NONE);
-
-        if (!CollisionManager::isCollision(gameMap, blinky.getNextPos(), MTYPE::GHOST, SDL_Rect())) {
+        if (!CollisionManager::isCollision(Map::map, blinky.getNextPos(), MTYPE::GHOST, SDL_Rect())) {
             blinky.move();
         } else {
             blinky.resetNextPos();
         }
 
-        if (!CollisionManager::isCollision(gameMap, pinky.getNextPos(), MTYPE::GHOST, SDL_Rect())) {
+        if (!CollisionManager::isCollision(Map::map, pinky.getNextPos(), MTYPE::GHOST, SDL_Rect())) {
             pinky.move();
         } else {
             pinky.resetNextPos();
         }
         
-        if (!CollisionManager::isCollision(gameMap, inky.getNextPos(), MTYPE::GHOST, SDL_Rect())) {
+        if (!CollisionManager::isCollision(Map::map, inky.getNextPos(), MTYPE::GHOST, SDL_Rect())) {
             inky.move();
         } else {
             inky.resetNextPos();
         }
         
-        if (!CollisionManager::isCollision(gameMap, clyde.getNextPos(), MTYPE::GHOST, SDL_Rect())) {
+        if (!CollisionManager::isCollision(Map::map, clyde.getNextPos(), MTYPE::GHOST, SDL_Rect())) {
             clyde.move();
         } else {
             clyde.resetNextPos();
         }
-        player.setNextPos(gameMap, nextPlayerMove);
+        
+        player.setNextPos(Map::map, nextPlayerMove);
 
         SDL_Rect nextPos = player.getNextPos();
 
@@ -144,22 +141,32 @@ int main(int argc, char** argv)
 
         collisionOffset.x = nextPlayerMove == MoveDirection::RIGHT ? 1 : 0;
         collisionOffset.y = nextPlayerMove == MoveDirection::LEFT ? 1 : 0;
-        
-        //std::cout << "x: " << player.getNextPos().x << std::endl;
-        //std::cout << "y: " << player.getNextPos().y << std::endl;
+    
 
         // TODO: COLLISION WITH COIN PREVENTS MOVING
-        if (!CollisionManager::isCollision(gameMap, nextPos, MTYPE::PACMAN, collisionOffset)) {
+        if (!CollisionManager::isCollision(Map::map, nextPos, MTYPE::PACMAN, collisionOffset)) {
             player.move();
+            player.setMoveDirection(nextPlayerMove);
         } else {
-            MTYPE nextCol = CollisionManager::getNextCOLOBJ(gameMap, player.getNextPos());
+            MTYPE nextCol = CollisionManager::getNextCOLOBJ(Map::map, player.getNextPos());
             if (nextCol == MTYPE::ITEM) {
                 //TODO: delete coin
-                gameMap.map[nextPos.y/32][nextPos.x/32] = MTYPE::EMPTY;
+                Map::map[nextPos.y/32][nextPos.x/32] = MTYPE::EMPTY;
                 player.move();
+                player.setMoveDirection(nextPlayerMove);
             } else {
+<<<<<<< HEAD
                 // std::cout << CollisionManager::isCollision(gameMap, nextPos, MTYPE::PACMAN, collisionOffset) << std::endl;
                 player.resetNextPos();
+=======
+                if (player.getMoveDirection() != nextPlayerMove) {
+                    player.resetNextPos(); // resetting next move
+                    player.setNextPos(Map::map, player.getMoveDirection());
+                    player.move();
+                } else {
+                    player.resetNextPos();
+                }
+>>>>>>> f76c7534341274e07904208a80051352f9e420ff
             }
         }
 
