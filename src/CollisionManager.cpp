@@ -23,8 +23,8 @@ bool CollisionManager::isCollision(const Map& map, const SDL_Rect& targetPos, co
 
     MTYPE nextMapTile = getNextCOLOBJ(map, targetPosWithOffset);
 
-    if (obj == MTYPE::PACMAN)
-        std::cout << static_cast<int>(nextMapTile) << std::endl;
+    //if (obj == MTYPE::PACMAN)
+        //std::cout << static_cast<int>(nextMapTile) << std::endl;
 
     return CollisionManager::collisionMatrix[static_cast<int>(obj)][static_cast<int>(nextMapTile)] == 1;
 }

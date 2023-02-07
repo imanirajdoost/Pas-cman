@@ -6,13 +6,14 @@
 #include "CollisionManager.h"
 #include "MovableGameObject.h"
 #include "Player.h"
+#include "GameController.h"
 
 
 SDL_Window* pWindow = nullptr;
 SDL_Surface* win_surf = nullptr;
 SDL_Surface* plancheSprites = nullptr;
 
-SDL_Rect src_bg = { 200,3, 168,216 }; // x,y, w,h (0,0) en haut a gauche
+SDL_Rect src_bg = { 368,3, 168,216 }; // x,y, w,h (0,0) en haut a gauche
 SDL_Rect bg = { 4,4, 672,864 }; // ici scale x4
 
 SDL_Rect ghost_r = { 3,123, 16,16 }; 
@@ -36,6 +37,8 @@ void init()
 	win_surf = SDL_GetWindowSurface(pWindow);
 
 	plancheSprites = SDL_LoadBMP("./pacman_sprites.bmp");
+
+    GameController::spawnDotObjects();
 }
 
 
@@ -155,7 +158,7 @@ int main(int argc, char** argv)
                 gameMap.map[nextPos.y/32][nextPos.x/32] = MTYPE::EMPTY;
                 player.move();
             } else {
-                std::cout << CollisionManager::isCollision(gameMap, nextPos, MTYPE::PACMAN, collisionOffset) << std::endl;
+                // std::cout << CollisionManager::isCollision(gameMap, nextPos, MTYPE::PACMAN, collisionOffset) << std::endl;
                 player.resetNextPos();
             }
         }

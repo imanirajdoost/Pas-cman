@@ -1,6 +1,10 @@
 #ifndef MAP_H
 #define MAP_H
 
+#include <vector>
+
+using namespace std;
+
 enum class MTYPE {
     PACMAN,
     GHOST,
@@ -13,8 +17,9 @@ enum class MTYPE {
 
 class Map {
 public:
-    
-    static MTYPE map[27][21];
+
+    // original map size is [27][21]
+    static vector<vector<MTYPE>> map;
 
     template <typename T>
     MTYPE getCurrentTileType(const T& gameObject) const;
