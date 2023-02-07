@@ -14,13 +14,12 @@ SDL_Surface* win_surf = nullptr;
 SDL_Surface* plancheSprites = nullptr;
 
 SDL_Rect src_bg = { 368,3, 168,216 }; // x,y, w,h (0,0) en haut a gauche
-SDL_Rect bg = { 4,4, 672,864 }; // ici scale x4
+SDL_Rect bg = { 0,0, 672,864 }; // ici scale x4
 
-SDL_Rect ghost_r = { 3,123, 16,16 }; 
-SDL_Rect ghost_l = { 37,123, 16,16 }; 
-SDL_Rect ghost_d = { 105,123, 16,16 }; 
-SDL_Rect ghost_u = { 71,123, 16,16 }; 
-SDL_Rect ghost = { 34,34, 32,32 };     // ici scale x2
+SDL_Rect ghost_r = { 3,123, 14,14 }; 
+SDL_Rect ghost_l = { 37,123, 14,14 }; 
+SDL_Rect ghost_d = { 105,123, 14,14 }; 
+SDL_Rect ghost_u = { 71,123, 14,14 }; 
 
 
 Blinky blinky{32, 32};
@@ -78,6 +77,8 @@ int main(int argc, char** argv)
 	bool quit = false;
 	while (!quit)
 	{
+        GameController::animationCounter++;
+        
 		SDL_Event event;
 		while (!quit && SDL_PollEvent(&event))
 		{
@@ -146,12 +147,12 @@ int main(int argc, char** argv)
         collisionOffset.w = player.getRect().h;
 
         collisionOffset.x = nextPlayerMove == MoveDirection::RIGHT ? 1 : 0;
-        collisionOffset.y = nextPlayerMove == MoveDirection::LEFT ? 1 : 0;
+        collisionOffset.y = nextPlayerMove == MoveDirection::DOWN ? 1 : 0;
     
 
         if (!CollisionManager::isCollision(Map::map, nextPos, MTYPE::PACMAN, collisionOffset)) {
-            player.move();
             player.setMoveDirection(nextPlayerMove);
+            player.move();
         } else {
             MTYPE nextCol = CollisionManager::getNextCOLOBJ(Map::map, player.getNextPos());
             if (nextCol == MTYPE::ITEM) {
@@ -175,7 +176,7 @@ int main(int argc, char** argv)
 		SDL_UpdateWindowSurface(pWindow); 
         // LIMITE A 60 FPS
 		SDL_Delay(16); // utiliser SDL_GetTicks64() pour plus de precisions
-	}
+    }
     SDL_Quit(); // ON SORT
     return 0;
 }

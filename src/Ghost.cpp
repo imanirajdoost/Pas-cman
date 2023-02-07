@@ -1,6 +1,8 @@
 #include <iostream>
 
 #include "Ghost.h"
+#include "GameVars.h"
+#include "GameController.h"
 
 SDL_Rect blinky_r = { 3,123, 16,16 };
 SDL_Rect blinky_l = { 37,123, 16,16 };
@@ -29,8 +31,8 @@ Ghost::Ghost(int x, int y){
     _next_pos.x = x;
     _next_pos.y = y;
 
-    rect.w = 32;
-    rect.h = 32;
+    rect.w = TILESIZE;
+    rect.h = TILESIZE;
 }
 
 
@@ -43,10 +45,9 @@ Blinky::Blinky(int x, int y): Ghost(x, y) {
 
 
 void Blinky::setNextPos(const std::vector<std::vector<MTYPE>>& map, const MoveDirection& direction) {
-    if (_animationCounter == 0) {
+    if (GameController::animationCounter%4 == 0) {
         _next_pos.x++;
     }
-    _animationCounter = (_animationCounter+1)%4;
 
     setMoveDirection(direction);
 }
@@ -59,10 +60,9 @@ Pinky::Pinky(int x, int y): Ghost(x, y) {
 }
 
 void Pinky::setNextPos(const std::vector<std::vector<MTYPE>>& map, const MoveDirection& direction) {
-    if (_animationCounter == 0) {
+    if (GameController::animationCounter%4 == 0) {
         _next_pos.x++;
     }
-    _animationCounter = (_animationCounter+1)%4;
 
     setMoveDirection(direction);
 }
@@ -75,10 +75,9 @@ Inky::Inky(int x, int y): Ghost(x, y) {
 }
 
 void Inky::setNextPos(const std::vector<std::vector<MTYPE>>& map, const MoveDirection& direction) {
-    if (_animationCounter == 0) {
+    if (GameController::animationCounter%4 == 0) {
         _next_pos.x++;
     }
-    _animationCounter = (_animationCounter+1)%4;
 
     setMoveDirection(direction);
 }
@@ -91,10 +90,9 @@ Clyde::Clyde(int x, int y): Ghost(x, y) {
 }
 
 void Clyde::setNextPos(const std::vector<std::vector<MTYPE>>& map, const MoveDirection& direction) {
-    if (_animationCounter == 0) {
+    if (GameController::animationCounter%4 == 0) {
         _next_pos.x++;
     }
-    _animationCounter = (_animationCounter+1)%4;
 
     setMoveDirection(direction);
 }

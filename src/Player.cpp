@@ -15,8 +15,8 @@ Player::Player(int x, int y, const int initHealth) : _health{initHealth} {
 
     rect.x = x;
     rect.y = y;
-    rect.w = 32;
-    rect.h = 32;
+    rect.w = 14;
+    rect.h = 14;
 
     _r_sprite = player_r;
     _l_sprite = player_l;

@@ -16,8 +16,7 @@ protected:
     SDL_Rect _l_sprite;
     SDL_Rect _d_sprite;
     SDL_Rect _u_sprite;
-    
-    int _animationCounter = 0;
+
 };
 
 #endif

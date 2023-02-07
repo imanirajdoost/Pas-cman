@@ -31,7 +31,6 @@ class MovableGameObject : public GameObject {
         void setMoveDirection(const MoveDirection& newDirection);
         void setDirectionSprite(const MoveDirection& newDirection);
 
-//        void draw(SDL_Surface* plancheSprites, SDL_Surface* win_surf);
         SDL_Rect getNextPos() const;
         virtual void setNextPos(const std::vector<std::vector<MTYPE>>& map, const MoveDirection& direction) = 0;
         void resetNextPos();

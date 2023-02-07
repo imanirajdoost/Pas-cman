@@ -6,6 +6,8 @@
 
 using namespace std;
 
+int GameController::animationCounter = 0;
+
 void GameController::spawnDotObjects() {
     auto map = Map::map;
 

@@ -18,17 +18,9 @@ std::vector<std::vector<int>> CollisionManager::collisionMatrix = {
 bool CollisionManager::isCollision(const std::vector<std::vector<MTYPE>>& map, const SDL_Rect& targetPos, const MTYPE& obj, const SDL_Rect& collisionOffset) {
 
     SDL_Rect targetPosWithOffset = targetPos;
-    int nb_tilesX = targetPos.x / 32;
-    int nb_tilesY = targetPos.y / 32;
-    if (targetPos.x%32 != 0) {
-        targetPosWithOffset.x = (nb_tilesX + collisionOffset.x)*TILESIZE;
-    }
-    if (targetPos.y%32 != 0) {
-        targetPosWithOffset.y = (nb_tilesY + collisionOffset.y)*TILESIZE;
-    }
 
-    //targetPosWithOffset.x += collisionOffset.x * collisionOffset.w;
-    //targetPosWithOffset.y += collisionOffset.y * collisionOffset.h;
+    targetPosWithOffset.x += collisionOffset.x * TILESIZE;
+    targetPosWithOffset.y += collisionOffset.y * TILESIZE;
 
     MTYPE nextMapTile = getNextCOLOBJ(map, targetPosWithOffset);
 

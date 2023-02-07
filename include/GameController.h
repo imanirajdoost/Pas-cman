@@ -5,6 +5,9 @@
 
 class GameController {
 public:
+
+    static int animationCounter;
+
     static void spawnDotObjects();
     static void spawnGameObject(const MTYPE& objToSpawn, int x, int y);
 };
