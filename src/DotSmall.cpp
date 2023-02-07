@@ -6,5 +6,8 @@ DotSmall::DotSmall(int x, int y) : Dot(x, y){
     rect.x = x;
     rect.y = y;
 
+    rect.w = 10;
+    rect.h = 10;
+
     _r_sprite = sp_dot_small;
 }
