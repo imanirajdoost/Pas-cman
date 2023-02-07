@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.7)
 
 project(PacMan LANGUAGES CXX)
 
+add_compile_options(-gdwarf-4)
+
 find_package(SDL2 REQUIRED)
 
 

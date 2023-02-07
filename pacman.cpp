@@ -28,7 +28,7 @@ Inky inky{96, 32};
 Clyde clyde{128, 32};
 Player player{32,32,2};
 
-std::vector<DotSmall> dotSmalls;
+std::vector<shared_ptr<DotSmall>> dotSmalls;
 
 void init()
 {
@@ -37,7 +37,10 @@ void init()
 
 	plancheSprites = SDL_LoadBMP("./pacman_sprites.bmp");
 
-    //dotSmalls = GameController::spawnDotObjects();
+    auto dots = GameController::spawnDotObjects();
+    for (const auto dot : dots) {
+        dotSmalls.push_back(dot);
+    }
 }
 
 
@@ -58,7 +61,7 @@ void draw()
     player.draw(plancheSprites, win_surf);
 
     for (int i = 0; i < dotSmalls.size(); ++i) {
-        //dotSmalls[i].draw();
+        dotSmalls[i].get()->draw(plancheSprites, win_surf);
     }
 }
 
