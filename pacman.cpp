@@ -7,7 +7,7 @@
 #include "MovableGameObject.h"
 #include "Player.h"
 #include "GameController.h"
-
+#include "DotSmall.h"
 
 SDL_Window* pWindow = nullptr;
 SDL_Surface* win_surf = nullptr;
@@ -38,7 +38,7 @@ void init()
 
 	plancheSprites = SDL_LoadBMP("./pacman_sprites.bmp");
 
-    dotSmalls = GameController::spawnDotObjects();
+    //dotSmalls = GameController::spawnDotObjects();
 }
 
 
@@ -59,7 +59,7 @@ void draw()
     player.draw(plancheSprites, win_surf);
 
     for (int i = 0; i < dotSmalls.size(); ++i) {
-        dotSmalls[i].draw();
+        //dotSmalls[i].draw();
     }
 }
 
@@ -149,7 +149,6 @@ int main(int argc, char** argv)
         collisionOffset.y = nextPlayerMove == MoveDirection::LEFT ? 1 : 0;
     
 
-        // TODO: COLLISION WITH COIN PREVENTS MOVING
         if (!CollisionManager::isCollision(Map::map, nextPos, MTYPE::PACMAN, collisionOffset)) {
             player.move();
             player.setMoveDirection(nextPlayerMove);
@@ -161,10 +160,6 @@ int main(int argc, char** argv)
                 player.move();
                 player.setMoveDirection(nextPlayerMove);
             } else {
-
-                // std::cout << CollisionManager::isCollision(gameMap, nextPos, MTYPE::PACMAN, collisionOffset) << std::endl;
-                //player.resetNextPos();
-
                 if (player.getMoveDirection() != nextPlayerMove) {
                     player.resetNextPos(); // resetting next move
                     player.setNextPos(Map::map, player.getMoveDirection());
