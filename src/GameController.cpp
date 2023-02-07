@@ -27,9 +27,7 @@ void GameController::spawnGameObject(const MTYPE& objToSpawn) {
     switch (objToSpawn) {
         case MTYPE::ITEM:
             auto dotSmall = make_unique<DotSmall>();
-            dotSmall.setPos();
-            break;
-        default:
+//            dotSmall.setPos();
             break;
     }
 }

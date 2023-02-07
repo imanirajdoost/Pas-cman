@@ -3,6 +3,7 @@
 
 #include "GameObject.h"
 #include "Map.h"
+#include <memory>
 
 enum class MoveDirection
 {   
@@ -33,7 +34,7 @@ class MovableGameObject : public GameObject {
 
         void draw(SDL_Surface* plancheSprites, SDL_Surface* win_surf);
         SDL_Rect getNextPos() const;
-        virtual void setNextPos(const MTYPE map[27][21], const MoveDirection& direction) = 0;
+        virtual void setNextPos(const std::vector<std::vector<MTYPE>>& map, const MoveDirection& direction) = 0;
         void resetNextPos();
         void move();
 };

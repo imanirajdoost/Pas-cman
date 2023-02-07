@@ -155,10 +155,10 @@ int main(int argc, char** argv)
                 player.move();
                 player.setMoveDirection(nextPlayerMove);
             } else {
-<<<<<<< HEAD
+
                 // std::cout << CollisionManager::isCollision(gameMap, nextPos, MTYPE::PACMAN, collisionOffset) << std::endl;
-                player.resetNextPos();
-=======
+                //player.resetNextPos();
+
                 if (player.getMoveDirection() != nextPlayerMove) {
                     player.resetNextPos(); // resetting next move
                     player.setNextPos(Map::map, player.getMoveDirection());
@@ -166,7 +166,7 @@ int main(int argc, char** argv)
                 } else {
                     player.resetNextPos();
                 }
->>>>>>> f76c7534341274e07904208a80051352f9e420ff
+
             }
         }
 
