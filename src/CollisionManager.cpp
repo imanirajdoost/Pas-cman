@@ -32,16 +32,11 @@ bool CollisionManager::isCollision(const MTYPE map[27][21], const SDL_Rect& targ
 
     MTYPE nextMapTile = getNextCOLOBJ(map, targetPosWithOffset);
 
-<<<<<<< HEAD
-    //if (obj == MTYPE::PACMAN)
-        //std::cout << static_cast<int>(nextMapTile) << std::endl;
-=======
     if (obj == MTYPE::PACMAN)
         //std::cout << "next tile: " << static_cast<int>(nextMapTile) << std::endl;
         //std::cout << "x: " << targetPosWithOffset.x/32 << std::endl;
         //std::cout << "y: " << targetPosWithOffset.y/32 << std::endl;
         std::cout << static_cast<int>(map[targetPosWithOffset.y/32][targetPosWithOffset.x/32]) << std::endl;
->>>>>>> f76c7534341274e07904208a80051352f9e420ff
 
     return CollisionManager::collisionMatrix[static_cast<int>(obj)][static_cast<int>(nextMapTile)] == 1;
 }
