@@ -4,6 +4,8 @@
 #include "GameObject.h"
 
 class StaticGameObject : public GameObject {
+public:
+    void setPos(int x, int y);
 
 };
 

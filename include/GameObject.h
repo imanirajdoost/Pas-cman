@@ -4,6 +4,10 @@
 #include <SDL.h>
 
 class GameObject {
+private:
+        SDL_Rect * _sprite_in = nullptr;
+public:
+    void draw(SDL_Surface* plancheSprites, SDL_Surface* win_surf);
 
 protected:
     SDL_Rect rect;

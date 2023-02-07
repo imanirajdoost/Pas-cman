@@ -6,6 +6,7 @@
 class Dot : public StaticGameObject {
 
 public:
+    Dot(int x, int y);
     void getEaten() const;
 
 protected:

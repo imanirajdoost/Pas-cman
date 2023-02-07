@@ -15,8 +15,8 @@ enum class MoveDirection
 };
 
 class MovableGameObject : public GameObject {
-    private:
-        SDL_Rect * _sprite_in = nullptr;
+//    private:
+//        SDL_Rect * _sprite_in = nullptr;
 
     protected:
         SDL_Rect _next_pos;
@@ -32,7 +32,7 @@ class MovableGameObject : public GameObject {
         MoveDirection getMoveDirection() const;
         void setMoveDirection(const MoveDirection& newDirection);
 
-        void draw(SDL_Surface* plancheSprites, SDL_Surface* win_surf);
+//        void draw(SDL_Surface* plancheSprites, SDL_Surface* win_surf);
         SDL_Rect getNextPos() const;
         virtual void setNextPos(const std::vector<std::vector<MTYPE>>& map, const MoveDirection& direction) = 0;
         void resetNextPos();

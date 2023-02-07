@@ -6,7 +6,7 @@
 class GameController {
 public:
     static void spawnDotObjects();
-    static void spawnGameObject(const MTYPE& objToSpawn);
+    static void spawnGameObject(const MTYPE& objToSpawn, int x, int y);
 };
 
 

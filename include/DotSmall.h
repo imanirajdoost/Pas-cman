@@ -3,8 +3,11 @@
 
 #include "Dot.h"
 
-class DotSmall : public Dot {
+extern SDL_Rect sp_dot_small;
 
+class DotSmall : public Dot {
+public:
+    DotSmall(int x, int y);
 };
 
 #endif
