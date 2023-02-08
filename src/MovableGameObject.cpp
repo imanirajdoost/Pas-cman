@@ -28,6 +28,11 @@ void MovableGameObject::setMoveDirection(const MoveDirection& newDirection) {
     setDirectionSprite(newDirection);
 }
 
+void MovableGameObject::resetMoveDirection() {
+    setMoveDirection(lastDirection);
+}
+
+
 void MovableGameObject::setDirectionSprite(const MoveDirection& newDirection) {
     switch (newDirection) {
         case MoveDirection::DOWN:

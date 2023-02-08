@@ -26,6 +26,7 @@ Player::Player(int x, int y, const int initHealth) : _health{initHealth} {
 
 void Player::setNextPos(const std::vector<std::vector<MTYPE>>& map, const MoveDirection& direction) {
 
+    lastDirection = getMoveDirection();
     setMoveDirection(direction);
 
     switch (direction)
@@ -65,4 +66,12 @@ void Player::die() {
 
 void Player::gameOver() {
     // @todo show game over UI or reset the game
+}
+
+MoveDirection Player::getMoveIntent() const{
+    return moveIntent;
+}
+
+void Player::setMoveIntent(const MoveDirection& direction) {
+    moveIntent = direction;
 }

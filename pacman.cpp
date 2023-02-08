@@ -141,28 +141,36 @@ int main(int argc, char **argv) {
             }
         }
 
-        MoveDirection nextPlayerMove = player.getMoveDirection();
+        MoveDirection nextPlayerMove = player.getMoveIntent();
 
         // Gestion du clavier        
         int nbk;
         const Uint8 *keys = SDL_GetKeyboardState(&nbk);
         if (keys[SDL_SCANCODE_ESCAPE])
             quit = true;
-        if (keys[SDL_SCANCODE_LEFT])
+        if (keys[SDL_SCANCODE_LEFT]) {
             nextPlayerMove = MoveDirection::LEFT;
-        else if (keys[SDL_SCANCODE_RIGHT])
+            player.setMoveIntent(MoveDirection::LEFT);
+        }
+        else if (keys[SDL_SCANCODE_RIGHT]) {
             nextPlayerMove = MoveDirection::RIGHT;
-        else if (keys[SDL_SCANCODE_UP])
+            player.setMoveIntent(MoveDirection::RIGHT);
+        }
+        else if (keys[SDL_SCANCODE_UP]) {
             nextPlayerMove = MoveDirection::UP;
-        else if (keys[SDL_SCANCODE_DOWN])
+            player.setMoveIntent(MoveDirection::UP);
+        }
+        else if (keys[SDL_SCANCODE_DOWN]) {
             nextPlayerMove = MoveDirection::DOWN;
+            player.setMoveIntent(MoveDirection::DOWN);
+        }
 
         // AFFICHAGE
 
-        blinky.setNextPos(Map::map, MoveDirection::NONE);
-        pinky.setNextPos(Map::map, MoveDirection::NONE);
-        inky.setNextPos(Map::map, MoveDirection::NONE);
-        clyde.setNextPos(Map::map, MoveDirection::NONE);
+        blinky.setNextPos(Map::map, MoveDirection::RIGHT);
+        pinky.setNextPos(Map::map, MoveDirection::RIGHT);
+        inky.setNextPos(Map::map, MoveDirection::RIGHT);
+        clyde.setNextPos(Map::map, MoveDirection::RIGHT);
 
         if (!CollisionManager::isCollision(Map::map, blinky, MTYPE::GHOST, SDL_Rect())) {
             blinky.move();
@@ -201,30 +209,22 @@ int main(int argc, char **argv) {
 
 
         MTYPE nextCol = CollisionManager::getNextCOLOBJ(Map::map, player.getNextPos());
-        if (!CollisionManager::isCollision(Map::map, player, MTYPE::PACMAN, collisionOffset)) {
-            player.setMoveDirection(nextPlayerMove);
-            player.move();
-        } else {
-            if (player.getMoveDirection() != nextPlayerMove) {
-                player.resetNextPos(); // resetting next move
-                player.setNextPos(Map::map, player.getMoveDirection());
-                player.move();
-            }
-            
+        if (!CollisionManager::isCollision(Map::map, player, MTYPE::PACMAN, collisionOffset) || nextCol == MTYPE::ITEM) {
             if (nextCol == MTYPE::ITEM) {
                 //TODO: delete coin
                 Map::map[nextPos.y / 32][nextPos.x / 32] = MTYPE::EMPTY;
+            }
+            player.setMoveDirection(nextPlayerMove);
+            player.move();
+        } else {
+            player.resetMoveDirection();
+            if (player.getMoveDirection() != nextPlayerMove) {
+                std::cout << "fdp" << std::endl;
+                player.resetNextPos(); // resetting next move
+                player.setNextPos(Map::map, player.getMoveDirection());
                 player.move();
-                player.setMoveDirection(nextPlayerMove);
             } else {
-                if (player.getMoveDirection() != nextPlayerMove) {
-                    player.resetNextPos(); // resetting next move
-                    player.setNextPos(Map::map, player.getMoveDirection());
-                    player.move();
-                } else {
-                    player.resetNextPos();
-                }
-
+                player.resetNextPos();
             }
         }
 

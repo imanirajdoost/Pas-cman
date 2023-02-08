@@ -20,6 +20,7 @@ class MovableGameObject : public GameObject {
         SDL_Rect _next_pos;
         int speed = 4;
         MoveDirection direction = MoveDirection::NONE;
+        MoveDirection lastDirection = MoveDirection::NONE;
 
     public:
         int getX() const;
@@ -29,6 +30,7 @@ class MovableGameObject : public GameObject {
         MoveDirection getMoveDirection() const;
         void setMoveDirection(const MoveDirection& newDirection);
         void setDirectionSprite(const MoveDirection& newDirection);
+        void resetMoveDirection();
 
         SDL_Rect getNextPos() const;
         virtual void setNextPos(const std::vector<std::vector<MTYPE>>& map, const MoveDirection& direction) = 0;
