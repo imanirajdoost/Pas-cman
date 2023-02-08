@@ -211,11 +211,8 @@ int main(int argc, char **argv) {
         } else {
             if (nextCol == MTYPE::ITEM) {
                 //TODO: delete coin
-<<<<<<< Updated upstream
                 std::cout << "Coin en (" << nextPos.x / 32 << ", " << nextPos.y / 32 << ")" << std::endl;
-=======
                 player.eat(*GameController::dots.at(0).get());
->>>>>>> Stashed changes
                 Map::map[nextPos.y / 32][nextPos.x / 32] = MTYPE::EMPTY;
             } else if (nextCol == MTYPE::TP) {
                 SDL_Rect nextPos = player.getNextPos();
