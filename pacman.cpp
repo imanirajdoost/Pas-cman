@@ -11,7 +11,6 @@
 #include "GameVars.h"
 
 #define DEBUG_MODE 1
-bool grid_drawn = false;
 
 SDL_Window *pWindow = nullptr;
 SDL_Surface *win_surf = nullptr;
@@ -48,8 +47,6 @@ void draw_grid(int r = 255, int g = 0, int b = 0) {
     }
 
     SDL_RenderPresent(renderer);
-
-    grid_drawn = true;
 }
 
 void init() {
