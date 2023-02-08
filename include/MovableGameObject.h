@@ -29,6 +29,7 @@ class MovableGameObject : public GameObject {
         int getY() const;
         void setX(int x);
         void setY(int Y);
+        int getSpeed() const;
         MoveDirection getMoveDirection() const;
         void setMoveDirection(const MoveDirection& newDirection);
         void setDirectionSprite(const MoveDirection& newDirection);

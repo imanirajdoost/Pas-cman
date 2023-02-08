@@ -60,6 +60,10 @@ SDL_Rect MovableGameObject::getNextPos() const{
     return _next_pos;
 }
 
+int MovableGameObject::getSpeed() const {
+    return speed;
+}
+
 void MovableGameObject::resetNextPos() {
     _next_pos = rect;
 }

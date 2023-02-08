@@ -30,7 +30,7 @@ Blinky blinky{32, 32};
 Pinky pinky{64, 32};
 Inky inky{96, 32};
 Clyde clyde{128, 32};
-Player player{32, 32, 2};
+Player player{320, 640, 2};
 
 std::vector<shared_ptr<DotSmall>> dotSmalls;
 
@@ -224,10 +224,44 @@ int main(int argc, char **argv) {
                 player.setRawNextPos(nextPos);
             }
             player.resetMoveDirection();
+            
             if (player.getMoveDirection() != nextPlayerMove) {
-                player.resetNextPos(); // resetting next move
-                player.setNextPos(Map::map, player.getMoveDirection());
-                player.move();
+                bool isWall = false;
+                switch (player.getMoveDirection()) {
+                    case MoveDirection::RIGHT:
+                        isWall = Map::map[player.getY()/32][(player.getX()/32)+1] == MTYPE::WALL;
+                        break;
+                    case MoveDirection::LEFT:
+                    case MoveDirection::UP:
+                        isWall = Map::map[player.getY()/32][(player.getX()/32)] == MTYPE::WALL;
+                        break;
+                    case MoveDirection::DOWN:
+                        isWall = Map::map[(player.getY()/32) + 1][player.getX()/32] == MTYPE::WALL;
+                        break;
+                }    
+                if (!isWall) {
+                    player.resetNextPos(); // resetting next move
+                    player.setNextPos(Map::map, player.getMoveDirection());
+                    player.move();
+                } else {
+                    if (player.getX() % 32 != 0) {
+                        if (player.getMoveDirection() == MoveDirection::LEFT) { // not ok
+                            player.setX(player.getX() + player.getSpeed());
+                        } else if (player.getMoveDirection() == MoveDirection::RIGHT) { // ok
+                            player.setX(player.getX() - player.getSpeed());
+                        }
+                    }
+
+                    if (player.getY() % 32 != 0) {
+                        if (player.getMoveDirection() == MoveDirection::DOWN) { // ok
+                            player.setY(player.getY() - player.getSpeed());
+                        } else if (player.getMoveDirection() == MoveDirection::UP) { // not ok
+                            player.setY(player.getY() + player.getSpeed());
+                        }
+                    }
+
+                    player.resetNextPos();
+                }
             } else {
                 player.resetNextPos();
             }
