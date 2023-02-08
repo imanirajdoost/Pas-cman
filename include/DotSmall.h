@@ -4,10 +4,12 @@
 #include "Dot.h"
 
 extern SDL_Rect sp_dot_small;
+static int dotHeight = 10;
 
 class DotSmall : public Dot {
 public:
     DotSmall(int x, int y);
+    static int getRectHeight();
 };
 
 #endif

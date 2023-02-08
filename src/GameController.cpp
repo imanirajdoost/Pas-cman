@@ -1,6 +1,7 @@
 #include "GameController.h"
 
 #include <iostream>
+#include "GameVars.h"
 
 using namespace std;
 
@@ -16,13 +17,9 @@ vector<shared_ptr<DotSmall>> GameController::spawnDotObjects() {
     {
         for (int j = 0; j < map[i].size(); j++)
         {
-            smallDots.push_back(spawnDotSmall(32, 32));
-//            if(map[i][j] == MTYPE::ITEM)
-//                cout << "* ";
-//            else
-//                cout << "- ";
+            if(map[i][j] == MTYPE::ITEM)
+                smallDots.push_back(spawnDotSmall(j * TILESIZE + DotSmall::getRectHeight(), i * TILESIZE + DotSmall::getRectHeight()));
         }
-        //cout << endl;
     }
 
     return smallDots;
