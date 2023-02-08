@@ -10,6 +10,7 @@ class DotSmall : public Dot {
 public:
     DotSmall(int x, int y);
     static int getRectHeight();
+    void getEaten(const Dot& dot) const override;
 };
 
 #endif

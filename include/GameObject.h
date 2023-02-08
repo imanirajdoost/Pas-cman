@@ -7,6 +7,7 @@ class GameObject {
 public:
     void draw(SDL_Surface* plancheSprites, SDL_Surface* win_surf);
     SDL_Rect getRect() const;
+    void destroyObject(GameObject& obj);
 
 protected:
     SDL_Rect * _sprite_in = nullptr;

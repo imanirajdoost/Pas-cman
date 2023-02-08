@@ -32,8 +32,6 @@ Inky inky{96, 32};
 Clyde clyde{128, 32};
 Player player{32, 32, 2};
 
-std::vector<shared_ptr<DotSmall>> dotSmalls;
-
 void draw_grid(int r = 255, int g = 0, int b = 0) {
     SDL_SetRenderDrawColor(renderer, r, g, b, 255);
     auto map = Map::map;
@@ -58,10 +56,11 @@ void init() {
     plancheSprites = SDL_LoadBMP("./pacman_sprites.bmp");
 
     // Initialize dots on the screen
-    auto dots = GameController::spawnDotObjects();
-    for (const auto &dot: dots) {
-        dotSmalls.push_back(dot);
-    }
+    GameController::initDots();
+//    auto dots = GameController::spawnDotObjects();
+//    for (const auto &dot: dots) {
+//        dots.push_back(dot);
+//    }
 }
 
 void draw_collider(const GameObject &obj, int r = 255, int g = 0, int b = 9) {
@@ -90,7 +89,7 @@ void draw() {
 
     player.draw(plancheSprites, win_surf);
 
-    for (auto &dotSmall: dotSmalls) {
+    for (auto &dotSmall: GameController::dots) {
         dotSmall->draw(plancheSprites, win_surf);
     }
 
@@ -106,7 +105,7 @@ void draw() {
         draw_collider(inky);
         draw_collider(clyde);
 
-//        for (auto & dotSmall : dotSmalls) {
+//        for (auto & dotSmall : dots) {
 //            draw_collider(*dotSmall);
 //        }
     }
@@ -212,7 +211,11 @@ int main(int argc, char **argv) {
         } else {
             if (nextCol == MTYPE::ITEM) {
                 //TODO: delete coin
+<<<<<<< Updated upstream
                 std::cout << "Coin en (" << nextPos.x / 32 << ", " << nextPos.y / 32 << ")" << std::endl;
+=======
+                player.eat(*GameController::dots.at(0).get());
+>>>>>>> Stashed changes
                 Map::map[nextPos.y / 32][nextPos.x / 32] = MTYPE::EMPTY;
             } else if (nextCol == MTYPE::TP) {
                 SDL_Rect nextPos = player.getNextPos();

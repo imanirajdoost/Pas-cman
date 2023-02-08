@@ -6,6 +6,14 @@
 using namespace std;
 
 int GameController::animationCounter = 0;
+uint GameController::playerScore = 0;
+std::vector<shared_ptr<DotSmall>> GameController::dots;
+
+u_short GameController::dotIndex = 0;
+
+void GameController::initDots() {
+    GameController::dots = spawnDotObjects();
+}
 
 vector<shared_ptr<DotSmall>> GameController::spawnDotObjects() {
 
@@ -39,5 +47,16 @@ vector<shared_ptr<DotSmall>> GameController::spawnDotObjects() {
 shared_ptr<DotSmall> GameController::spawnDotSmall(int x, int y) {
     auto dotSmall = make_shared<DotSmall>(x, y);
     dotSmall->setPos(x,y);
+    dotSmall->setIndex(GameController::dotIndex++);
     return dotSmall;
+}
+
+void GameController::addScore(uint scoreToAdd) {
+    playerScore += scoreToAdd;
+    cout << "Score: " << playerScore << endl;
+}
+
+void GameController::deleteObject(const Dot& dot) {
+//    auto targetToDel = dots[dot.getIndex()].get();
+    GameController::dots.erase(GameController::dots.begin() + dot.getIndex());
 }

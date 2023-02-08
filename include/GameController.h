@@ -9,12 +9,20 @@ using namespace std;
 
 class GameController {
 public:
-
+    static std::vector<shared_ptr<DotSmall>> dots;
+    static uint playerScore;
     static int animationCounter;
-    static void spawnGameObject(const MTYPE& objToSpawn, int x, int y);
 //    static GameObject spawnGameObject(const MTYPE& objToSpawn,int x, int y);
     static shared_ptr<DotSmall> spawnDotSmall(int x, int y);
     static vector<shared_ptr<DotSmall>> spawnDotObjects();
+    static void initDots();
+
+    static void addScore(uint scoreToAdd);
+
+    static void deleteObject(const Dot& dot);
+
+private:
+    static u_short dotIndex;
 };
 
 

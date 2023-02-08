@@ -2,6 +2,7 @@
 #include "DotBig.h"
 #include <typeinfo>
 #include "GameVars.h"
+#include "GameController.h"
 
 // get pacman's sprite from the sprite sheet
 SDL_Rect player_r = { 20, 89, 16, 16 }; 
@@ -48,11 +49,7 @@ void Player::setNextPos(const std::vector<std::vector<MTYPE>>& map, const MoveDi
 }
 
 void Player::eat(const Dot& dotToEat) const {
-    dotToEat.getEaten();
-    // @todo increase score
-    // if((typeid(dotToEat) == typeid(DotBig)) {
-    //     std::cout << " Dot big has been eaten" << std::endl;
-    // }
+    dotToEat.getEaten(dotToEat);
 }
 
 void Player::die() {

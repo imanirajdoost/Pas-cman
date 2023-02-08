@@ -7,11 +7,12 @@ class Dot : public StaticGameObject {
 
 public:
     Dot(int x, int y);
-    void getEaten() const;
+    virtual void getEaten(const Dot& dot) const = 0;
+    void setIndex(u_short indexToSet);
+    u_short getIndex() const;
 
-protected:
-    unsigned int _score;
-
+private:
+    u_short index;
 };
 
 #endif
