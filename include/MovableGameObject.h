@@ -23,6 +23,8 @@ class MovableGameObject : public GameObject {
         MoveDirection lastDirection = MoveDirection::NONE;
 
     public:
+        MovableGameObject();
+
         int getX() const;
         int getY() const;
         void setX(int x);

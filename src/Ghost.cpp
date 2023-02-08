@@ -46,7 +46,7 @@ Blinky::Blinky(int x, int y): Ghost(x, y) {
 
 void Blinky::setNextPos(const std::vector<std::vector<MTYPE>>& map, const MoveDirection& direction) {
     if (GameController::animationCounter%4 == 0) {
-        _next_pos.x++;
+        _next_pos.x += speed;
     }
 
     setMoveDirection(direction);
@@ -61,7 +61,7 @@ Pinky::Pinky(int x, int y): Ghost(x, y) {
 
 void Pinky::setNextPos(const std::vector<std::vector<MTYPE>>& map, const MoveDirection& direction) {
     if (GameController::animationCounter%4 == 0) {
-        _next_pos.x++;
+        _next_pos.x += speed;
     }
 
     setMoveDirection(direction);
@@ -76,7 +76,7 @@ Inky::Inky(int x, int y): Ghost(x, y) {
 
 void Inky::setNextPos(const std::vector<std::vector<MTYPE>>& map, const MoveDirection& direction) {
     if (GameController::animationCounter%4 == 0) {
-        _next_pos.x++;
+        _next_pos.x += speed;
     }
 
     setMoveDirection(direction);
@@ -91,7 +91,7 @@ Clyde::Clyde(int x, int y): Ghost(x, y) {
 
 void Clyde::setNextPos(const std::vector<std::vector<MTYPE>>& map, const MoveDirection& direction) {
     if (GameController::animationCounter%4 == 0) {
-        _next_pos.x++;
+        _next_pos.x += speed;
     }
 
     setMoveDirection(direction);

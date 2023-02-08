@@ -17,6 +17,7 @@ protected:
     SDL_Rect _d_sprite;
     SDL_Rect _u_sprite;
 
+    bool isAnimated = false;
 };
 
 #endif

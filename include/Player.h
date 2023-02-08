@@ -26,6 +26,8 @@ public:
     void die();                                  // Die when hit by a ghost
     void gameOver();                             // Game over when no more health is remaining
     virtual void setNextPos(const std::vector<std::vector<MTYPE>>& map, const MoveDirection& direction) override;
+    
+    void setRawNextPos(const SDL_Rect nextPos);
 
     MoveDirection getMoveIntent() const;
     void setMoveIntent(const MoveDirection& direction);

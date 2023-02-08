@@ -2,6 +2,10 @@
 
 #include <iostream>
 
+MovableGameObject::MovableGameObject() {
+    isAnimated = true;
+}
+
 int MovableGameObject::getX() const{
     return rect.x;
 }

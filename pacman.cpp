@@ -204,19 +204,27 @@ int main(int argc, char **argv) {
         collisionOffset.x = nextPlayerMove == MoveDirection::RIGHT ? 1 : 0;
         collisionOffset.y = nextPlayerMove == MoveDirection::DOWN ? 1 : 0;
 
-
         MTYPE nextCol = CollisionManager::getNextCOLOBJ(Map::map, player.getNextPos());
-        if (!CollisionManager::isCollision(Map::map, player, MTYPE::PACMAN, collisionOffset) || nextCol == MTYPE::ITEM) {
-            if (nextCol == MTYPE::ITEM) {
-                //TODO: delete coin
-                Map::map[nextPos.y / 32][nextPos.x / 32] = MTYPE::EMPTY;
-            }
+
+        if (!CollisionManager::isCollision(Map::map, player, MTYPE::PACMAN, collisionOffset)) {
             player.setMoveDirection(nextPlayerMove);
             player.move();
         } else {
+            if (nextCol == MTYPE::ITEM) {
+                //TODO: delete coin
+                std::cout << "Coin en (" << nextPos.x / 32 << ", " << nextPos.y / 32 << ")" << std::endl;
+                Map::map[nextPos.y / 32][nextPos.x / 32] = MTYPE::EMPTY;
+            } else if (nextCol == MTYPE::TP) {
+                SDL_Rect nextPos = player.getNextPos();
+                if (player.getX() == 0) {
+                    nextPos.x = 20*TILESIZE;
+                } else if (player.getX() == 21*TILESIZE) {
+                    nextPos.x = 0;
+                }
+                player.setRawNextPos(nextPos);
+            }
             player.resetMoveDirection();
             if (player.getMoveDirection() != nextPlayerMove) {
-                std::cout << "fdp" << std::endl;
                 player.resetNextPos(); // resetting next move
                 player.setNextPos(Map::map, player.getMoveDirection());
                 player.move();

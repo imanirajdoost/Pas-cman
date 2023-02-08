@@ -23,19 +23,19 @@ bool CollisionManager::isCollision(const std::vector<std::vector<MTYPE>>& map, c
     targetPosWithOffset.x += collisionOffset.x * TILESIZE;
     targetPosWithOffset.y += collisionOffset.y * TILESIZE;
 
-    MTYPE TAGUEULE;
+    MTYPE offsetColObj;
     SDL_Rect targetPos = targetPosWithOffset;
 
     switch (direction) {
         case MoveDirection::UP:
         case MoveDirection::DOWN:
             targetPos.x += TILESIZE-1;
-            TAGUEULE = getNextCOLOBJ(map, targetPos);
+            offsetColObj = getNextCOLOBJ(map, targetPos);
             break;
         case MoveDirection::RIGHT:
         case MoveDirection::LEFT:
             targetPos.y += TILESIZE-1;
-            TAGUEULE = getNextCOLOBJ(map, targetPos);
+            offsetColObj = getNextCOLOBJ(map, targetPos);
 
             break;
         default:
@@ -46,7 +46,7 @@ bool CollisionManager::isCollision(const std::vector<std::vector<MTYPE>>& map, c
     MTYPE nextMapTile = getNextCOLOBJ(map, targetPosWithOffset);
 
     return CollisionManager::collisionMatrix[static_cast<int>(obj)][static_cast<int>(nextMapTile)] ||
-            CollisionManager::collisionMatrix[static_cast<int>(obj)][static_cast<int>(TAGUEULE)];
+            CollisionManager::collisionMatrix[static_cast<int>(obj)][static_cast<int>(offsetColObj)];
 }
 
 MTYPE CollisionManager::getNextCOLOBJ(const std::vector<std::vector<MTYPE>>& map, const SDL_Rect& targetPos) {

@@ -75,3 +75,7 @@ MoveDirection Player::getMoveIntent() const{
 void Player::setMoveIntent(const MoveDirection& direction) {
     moveIntent = direction;
 }
+
+void Player::setRawNextPos(const SDL_Rect nextPos) {
+    _next_pos = nextPos;
+}

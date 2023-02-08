@@ -10,7 +10,7 @@ void GameObject::draw(SDL_Surface* plancheSprites, SDL_Surface* win_surf) {
 
     SDL_Rect sprite_in2 = *_sprite_in;
 
-    if ((GameController::animationCounter/ANIMATION_FRAME_RATE)%2 == 1) {
+    if (isAnimated && (GameController::animationCounter/ANIMATION_FRAME_RATE)%2 == 1) {
         sprite_in2.x += 14;
     }
 
