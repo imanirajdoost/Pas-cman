@@ -22,7 +22,7 @@ vector<shared_ptr<DotSmall>> GameController::spawnDotObjects() {
 //            else
 //                cout << "- ";
         }
-        cout << endl;
+        //cout << endl;
     }
 
     return smallDots;

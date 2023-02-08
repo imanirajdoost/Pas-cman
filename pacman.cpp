@@ -19,7 +19,7 @@ SDL_Surface *plancheSprites = nullptr;
 SDL_Renderer *renderer = nullptr;
 
 SDL_Rect src_bg = {368, 3, 168, 216}; // x,y, w,h (0,0) en haut a gauche
-SDL_Rect bg = {0, 0, 672, 864}; // ici scale x4
+SDL_Rect bg = {2, 2, 672, 864}; // ici scale x4
 
 SDL_Rect ghost_r = {3, 123, 14, 14};
 SDL_Rect ghost_l = {37, 123, 14, 14};
@@ -200,11 +200,17 @@ int main(int argc, char **argv) {
         collisionOffset.y = nextPlayerMove == MoveDirection::DOWN ? 1 : 0;
 
 
+        MTYPE nextCol = CollisionManager::getNextCOLOBJ(Map::map, player.getNextPos());
         if (!CollisionManager::isCollision(Map::map, player, MTYPE::PACMAN, collisionOffset)) {
             player.setMoveDirection(nextPlayerMove);
             player.move();
         } else {
-            MTYPE nextCol = CollisionManager::getNextCOLOBJ(Map::map, player.getNextPos());
+            if (player.getMoveDirection() != nextPlayerMove) {
+                player.resetNextPos(); // resetting next move
+                player.setNextPos(Map::map, player.getMoveDirection());
+                player.move();
+            }
+            
             if (nextCol == MTYPE::ITEM) {
                 //TODO: delete coin
                 Map::map[nextPos.y / 32][nextPos.x / 32] = MTYPE::EMPTY;
