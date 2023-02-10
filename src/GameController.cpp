@@ -53,7 +53,7 @@ shared_ptr<DotSmall> GameController::spawnDotSmall(int x, int y) {
 
 void GameController::addScore(uint scoreToAdd) {
     playerScore += scoreToAdd;
-    cout << "Score: " << playerScore << endl;
+    // cout << "Score: " << playerScore << endl;
 }
 
 void GameController::deleteObject(const Dot& dot) {
