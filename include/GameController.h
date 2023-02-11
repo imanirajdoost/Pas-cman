@@ -19,7 +19,7 @@ public:
 
     static void addScore(uint scoreToAdd);
 
-    static void deleteObject(const Dot& dot);
+    static bool deleteObject(const Dot& dot);
 
 private:
     static u_short dotIndex;

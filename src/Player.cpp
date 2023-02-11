@@ -78,7 +78,7 @@ SDL_Rect Player::getNextStepRect(MoveDirection dir) {
     return nextStepRect;
 }
 
-void Player::eat(const Dot &dotToEat) const {
+void Player::eat(Dot &dotToEat) const {
     dotToEat.getEaten(dotToEat);
 }
 
@@ -168,4 +168,16 @@ void Player::controlMove() {
 
     if (shouldMove)
         move();
+}
+
+void Player::move() {
+    MovableGameObject::move();
+
+    // Check for collision with coins
+    for (auto i = GameController::dots.begin(); i < GameController::dots.end(); ++i) {
+        if (CollisionManager::hasCollision(getRect(), i->get()->getRect())) {
+            eat(*i->get());
+            break;
+        }
+    }
 }

@@ -5,11 +5,15 @@
 
 class Dot : public StaticGameObject {
 
+protected:
+    bool isEaten;
+
 public:
     Dot(int x, int y);
-    virtual void getEaten(const Dot& dot) const = 0;
+    virtual void getEaten(const Dot& dot) = 0;
     void setIndex(u_short indexToSet);
     u_short getIndex() const;
+    bool hasBeenEaten() const;
 
 private:
     u_short index;

@@ -22,12 +22,14 @@ private:
 public:
     Player(int x, int y, int initHealth);   // Constructor that initilalizes player with the given health
 
-    void eat(const Dot& dotToEat) const;         // Action to eat a Dot
+    void eat(Dot& dotToEat) const;         // Action to eat a Dot
     void die();                                  // Die when hit by a ghost
     void gameOver();                             // Game over when no more health is remaining
     virtual void setNextPos(const std::vector<std::vector<MTYPE>>& map, const MoveDirection& direction) override;
     void controlMove();
     SDL_Rect getNextStepRect(MoveDirection dir);
+
+    void move() override;
     
     void setRawNextPos(const SDL_Rect nextPos);
 

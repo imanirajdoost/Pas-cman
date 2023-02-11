@@ -10,7 +10,7 @@
 #include "DotSmall.h"
 #include "GameVars.h"
 
-#define DEBUG_MODE 1
+#define DEBUG_MODE 0
 
 SDL_Window *pWindow = nullptr;
 SDL_Surface *win_surf = nullptr;
@@ -206,7 +206,7 @@ int main(int argc, char **argv) {
 
         // player.setNextPos(Map::map, nextPlayerMove);
 
-        // Only move if player is in the middle of the Tile and the tile facing at the direction is not a wall
+        // Control movement of the player based on the given input
         player.controlMove();
 
 //        vector<Collider> colliderList = CollisionManager::getRectsAtDirection(player.getRect(),nextPlayerMove);

@@ -53,10 +53,21 @@ shared_ptr<DotSmall> GameController::spawnDotSmall(int x, int y) {
 
 void GameController::addScore(uint scoreToAdd) {
     playerScore += scoreToAdd;
-    // cout << "Score: " << playerScore << endl;
+    cout << "Score: " << playerScore << endl;
 }
 
-void GameController::deleteObject(const Dot& dot) {
+bool GameController::deleteObject(const Dot& dot) {
 //    auto targetToDel = dots[dot.getIndex()].get();
-    GameController::dots.erase(GameController::dots.begin() + dot.getIndex());
+
+    for (auto i = GameController::dots.begin(); i < GameController::dots.end(); ++i) {
+        if(dot.getIndex() == i->get()->getIndex() && !dot.hasBeenEaten()) {
+            GameController::dots.erase(i);
+            GameController::addScore(10);
+            return true;
+        }
+    }
+    return false;
+
+//    if(!dot.hasBeenEaten())
+//        GameController::dots.erase(GameController::dots.begin() + dot.getIndex());
 }
