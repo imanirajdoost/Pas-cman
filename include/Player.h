@@ -18,6 +18,7 @@ class Player : public MovableGameObject {
 private:
     int _health;                    // Player's health
     MoveDirection moveIntent = MoveDirection::NONE;
+    static int PLAYER_MOVE_THRESHOLD;
 
 public:
     Player(int x, int y, int initHealth);   // Constructor that initilalizes player with the given health

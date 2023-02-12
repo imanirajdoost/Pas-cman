@@ -2,6 +2,7 @@
 #include "DotBig.h"
 #include <typeinfo>
 #include <iostream>
+#include <cmath>
 #include "GameVars.h"
 #include "GameController.h"
 #include "CollisionManager.h"
@@ -11,6 +12,8 @@ SDL_Rect player_r = {20, 89, 16, 16};
 SDL_Rect player_l = {46, 89, 16, 16};
 SDL_Rect player_d = {109, 89, 16, 16};
 SDL_Rect player_u = {75, 89, 16, 16};
+
+int Player::PLAYER_MOVE_THRESHOLD = 6;
 
 Player::Player(int x, int y, int initHealth) : _health{initHealth} {
     // _health = initHealth;
@@ -148,8 +151,13 @@ void Player::controlMove() {
             shouldMove = true;
         } else {
             // Check for center to change vertical or horizontal axis
-            if (rect.x + (rect.w / 2) == currentRect.x + (currentRect.w / 2) &&
-                rect.y + (rect.y / 2) == currentRect.y + (currentRect.y / 2)) {
+            // Add a threshold so that the position changing is not pixel perfect
+            if (abs((rect.x + (rect.w / 2)) - (currentRect.x + (currentRect.w / 2))) <= Player::PLAYER_MOVE_THRESHOLD &&
+                abs((rect.y + (rect.h / 2)) - (currentRect.y + (currentRect.h / 2))) <= Player::PLAYER_MOVE_THRESHOLD) {
+                // Reset position of the player if it has been changed based on the margin
+                setX(currentRect.x);
+                setY(currentRect.y);
+                resetNextPos();
                 setNextPos(Map::map, moveIntent);
                 shouldMove = true;
             } else {

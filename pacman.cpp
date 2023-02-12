@@ -10,7 +10,7 @@
 #include "DotSmall.h"
 #include "GameVars.h"
 
-#define DEBUG_MODE 0
+#define DEBUG_MODE 1
 
 SDL_Window *pWindow = nullptr;
 SDL_Surface *win_surf = nullptr;
