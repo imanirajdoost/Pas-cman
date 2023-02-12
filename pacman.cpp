@@ -48,7 +48,7 @@ void draw_grid(int r = 255, int g = 0, int b = 0) {
 }
 
 void init() {
-    pWindow = SDL_CreateWindow("PacMan", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 700, 900, SDL_WINDOW_SHOWN);
+    pWindow = SDL_CreateWindow("PacMan", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 900, 900, SDL_WINDOW_SHOWN);
     win_surf = SDL_GetWindowSurface(pWindow);
 
     renderer = SDL_CreateRenderer(pWindow, -1, SDL_RENDERER_SOFTWARE);
