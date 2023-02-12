@@ -3,8 +3,8 @@
 
 #include "Dot.h"
 
-extern SDL_Rect sp_dot_small;
-static int dotHeight = 10;
+extern SDL_Rect sp_dot_big;
+static int smallDotHeight = 10;
 
 class DotSmall : public Dot {
 public:
