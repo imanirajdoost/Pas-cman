@@ -9,6 +9,7 @@
 #include "GameController.h"
 #include "DotSmall.h"
 #include "GameVars.h"
+#include "UIController.h"
 
 #define DEBUG_MODE 1
 
@@ -30,9 +31,9 @@ Blinky blinky{32, 32};
 Pinky pinky{64, 32};
 Inky inky{96, 32};
 Clyde clyde{128, 32};
-Player player{320, 640, 2};
+Player player{32, 32, 2};
 
-std::vector<shared_ptr<DotSmall>> dotSmalls;
+UIController uiController;
 
 void draw_grid(int r = 255, int g = 0, int b = 0) {
     SDL_SetRenderDrawColor(renderer, r, g, b, 255);
@@ -50,7 +51,7 @@ void draw_grid(int r = 255, int g = 0, int b = 0) {
 }
 
 void init() {
-    pWindow = SDL_CreateWindow("PacMan", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 700, 900, SDL_WINDOW_SHOWN);
+    pWindow = SDL_CreateWindow("PacMan", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 900, 900, SDL_WINDOW_SHOWN);
     win_surf = SDL_GetWindowSurface(pWindow);
 
     renderer = SDL_CreateRenderer(pWindow, -1, SDL_RENDERER_SOFTWARE);
@@ -58,10 +59,11 @@ void init() {
     plancheSprites = SDL_LoadBMP("./pacman_sprites.bmp");
 
     // Initialize dots on the screen
-    auto dots = GameController::spawnDotObjects();
-    for (const auto &dot: dots) {
-        dotSmalls.push_back(dot);
-    }
+    GameController::initDots();
+
+    uiController.writeOnUI("test","test",0,0);
+
+    player.setMoveIntent(MoveDirection::NONE);
 }
 
 void draw_collider(const GameObject &obj, int r = 255, int g = 0, int b = 9) {
@@ -90,14 +92,17 @@ void draw() {
 
     player.draw(plancheSprites, win_surf);
 
-    for (auto &dotSmall: dotSmalls) {
+    // Draw UI
+    uiController.drawUI(plancheSprites,win_surf);
+
+    for (auto &dotSmall: GameController::dots) {
         dotSmall->draw(plancheSprites, win_surf);
     }
 
     if (DEBUG_MODE) {
 
         // draw the level grid
-        draw_grid(100,100,20);
+        draw_grid(100, 100, 20);
 
         // Draw the collider boxes on the screen
         draw_collider(player);
@@ -106,7 +111,7 @@ void draw() {
         draw_collider(inky);
         draw_collider(clyde);
 
-//        for (auto & dotSmall : dotSmalls) {
+//        for (auto & dotSmall : dots) {
 //            draw_collider(*dotSmall);
 //        }
     }
@@ -148,16 +153,13 @@ int main(int argc, char **argv) {
         if (keys[SDL_SCANCODE_LEFT]) {
             nextPlayerMove = MoveDirection::LEFT;
             player.setMoveIntent(MoveDirection::LEFT);
-        }
-        else if (keys[SDL_SCANCODE_RIGHT]) {
+        } else if (keys[SDL_SCANCODE_RIGHT]) {
             nextPlayerMove = MoveDirection::RIGHT;
             player.setMoveIntent(MoveDirection::RIGHT);
-        }
-        else if (keys[SDL_SCANCODE_UP]) {
+        } else if (keys[SDL_SCANCODE_UP]) {
             nextPlayerMove = MoveDirection::UP;
             player.setMoveIntent(MoveDirection::UP);
-        }
-        else if (keys[SDL_SCANCODE_DOWN]) {
+        } else if (keys[SDL_SCANCODE_DOWN]) {
             nextPlayerMove = MoveDirection::DOWN;
             player.setMoveIntent(MoveDirection::DOWN);
         }
@@ -193,79 +195,80 @@ int main(int argc, char **argv) {
             clyde.resetNextPos();
         }
 
-        player.setNextPos(Map::map, nextPlayerMove);
+//        player.setNextPos(Map::char_map, nextPlayerMove);
+//        SDL_Rect nextPos = player.getNextPos();
 
-        SDL_Rect nextPos = player.getNextPos();
+//        SDL_Rect collisionOffset;
+//        collisionOffset.w = player.getRect().w;
+//        collisionOffset.w = player.getRect().h;
+//
+//        collisionOffset.x = nextPlayerMove == MoveDirection::RIGHT ? 1 : 0;
+//        collisionOffset.y = nextPlayerMove == MoveDirection::DOWN ? 1 : 0;
 
-        SDL_Rect collisionOffset;
-        collisionOffset.w = player.getRect().w;
-        collisionOffset.w = player.getRect().h;
+//        MTYPE nextCol = CollisionManager::getNextCOLOBJ(Map::char_map, player.getNextPos());
+        // MTYPE nextCol = CollisionManager::getObjectTypeAt(CollisionManager::getRectAtDirection(player.getRect(),nextPlayerMove));
 
-        collisionOffset.x = nextPlayerMove == MoveDirection::RIGHT ? 1 : 0;
-        collisionOffset.y = nextPlayerMove == MoveDirection::DOWN ? 1 : 0;
+        // player.setNextPos(Map::char_map, nextPlayerMove);
 
-        MTYPE nextCol = CollisionManager::getNextCOLOBJ(Map::map, player.getNextPos());
+        // Control movement of the player based on the given input
+        player.controlMove();
 
-        if (!CollisionManager::isCollision(Map::map, player, MTYPE::PACMAN, collisionOffset)) {
-            player.setMoveDirection(nextPlayerMove);
-            player.move();
-        } else {
-            if (nextCol == MTYPE::ITEM) {
-                //TODO: delete coin
-                std::cout << "Coin en (" << nextPos.x / 32 << ", " << nextPos.y / 32 << ")" << std::endl;
-                Map::map[nextPos.y / 32][nextPos.x / 32] = MTYPE::EMPTY;
-            } else if (nextCol == MTYPE::TP) {
-                SDL_Rect nextPos = player.getNextPos();
-                if (player.getX() == 0) {
-                    nextPos.x = 20*TILESIZE;
-                } else if (player.getX() == 21*TILESIZE) {
-                    nextPos.x = 0;
-                }
-                player.setRawNextPos(nextPos);
-            }
-            player.resetMoveDirection();
-            
-            if (player.getMoveDirection() != nextPlayerMove) {
-                bool isWall = false;
-                switch (player.getMoveDirection()) {
-                    case MoveDirection::RIGHT:
-                        isWall = Map::map[player.getY()/32][(player.getX()/32)+1] == MTYPE::WALL;
-                        break;
-                    case MoveDirection::LEFT:
-                    case MoveDirection::UP:
-                        isWall = Map::map[player.getY()/32][(player.getX()/32)] == MTYPE::WALL;
-                        break;
-                    case MoveDirection::DOWN:
-                        isWall = Map::map[(player.getY()/32) + 1][player.getX()/32] == MTYPE::WALL;
-                        break;
-                }    
-                if (!isWall) {
-                    player.resetNextPos(); // resetting next move
-                    player.setNextPos(Map::map, player.getMoveDirection());
-                    player.move();
-                } else {
-                    if (player.getX() % 32 != 0) {
-                        if (player.getMoveDirection() == MoveDirection::LEFT) { // not ok
-                            player.setX(player.getX() + player.getSpeed());
-                        } else if (player.getMoveDirection() == MoveDirection::RIGHT) { // ok
-                            player.setX(player.getX() - player.getSpeed());
-                        }
-                    }
+//        vector<Collider> colliderList = CollisionManager::getRectsAtDirection(player.getRect(),nextPlayerMove);
+//        bool isCollidingWithWall = false;
 
-                    if (player.getY() % 32 != 0) {
-                        if (player.getMoveDirection() == MoveDirection::DOWN) { // ok
-                            player.setY(player.getY() - player.getSpeed());
-                        } else if (player.getMoveDirection() == MoveDirection::UP) { // not ok
-                            player.setY(player.getY() + player.getSpeed());
-                        }
-                    }
+//        for (auto collider: colliderList) {
+//            if(collider.getType() == MTYPE::WALL) {
+//                player.resetNextPos();
+//                player.resetMoveDirection();
+//                isCollidingWithWall = true;
+//                break;
+//            }
+//        }
+//
+//        if(!isCollidingWithWall)
+//            player.move();
+//
+//        if(isCollidingWithWall)
+//            cout << "HAS COLLISION WITH WALL" << endl;
+//        else
+//            cout << "NO COLLISION WITH WALL" << endl;
 
-                    player.resetNextPos();
-                }
-            } else {
-                player.resetNextPos();
-            }
-        }
+//        if (CollisionManager::hasCollision(player.getRect(), CollisionManager::getRectAtDirection(player.getRect(),nextPlayerMove)) &&
+//                nextCol == MTYPE::WALL) {
+//            cout << "HAS COLLISION" << endl;
+//            player.resetNextPos();
+//        } else {
+//            cout << "NO COLLISION" << endl;
+//            player.move();
+//        }
+
+//        if (!CollisionManager::isCollision(Map::char_map, player, MTYPE::PACMAN, collisionOffset)) {
+//            player.setMoveDirection(nextPlayerMove);
+//            player.move();
+//        } else {
+//            if (nextCol == MTYPE::ITEM) {
+//                //TODO: delete coin
+//                // std::cout << "Coin en (" << nextPos.x / 32 << ", " << nextPos.y / 32 << ")" << std::endl;
+//                player.eat(*GameController::dots.at(0).get());
+//                Map::char_map[nextPos.y / 32][nextPos.x / 32] = MTYPE::EMPTY;
+//            } else if (nextCol == MTYPE::TP) {
+//                SDL_Rect nextPos = player.getNextPos();
+//                if (player.getX() == 0) {
+//                    nextPos.x = 20*TILESIZE;
+//                } else if (player.getX() == 21*TILESIZE) {
+//                    nextPos.x = 0;
+//                }
+//                player.setRawNextPos(nextPos);
+//            }
+//            player.resetMoveDirection();
+//            if (player.getMoveDirection() != nextPlayerMove) {
+//                player.resetNextPos(); // resetting next move
+//                player.setNextPos(Map::char_map, player.getMoveDirection());
+//                player.move();
+//            } else {
+//                player.resetNextPos();
+//            }
+//        }
 
         draw();
         SDL_UpdateWindowSurface(pWindow);

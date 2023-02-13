@@ -18,7 +18,7 @@ enum class MTYPE {
 class Map {
 public:
 
-    // original map size is [27][21]
+    // original char_map size is [27][21]
     static vector<vector<MTYPE>> map;
 
     template <typename T>

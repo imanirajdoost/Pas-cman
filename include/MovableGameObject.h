@@ -38,7 +38,7 @@ class MovableGameObject : public GameObject {
         SDL_Rect getNextPos() const;
         virtual void setNextPos(const std::vector<std::vector<MTYPE>>& map, const MoveDirection& direction) = 0;
         void resetNextPos();
-        void move();
+        virtual void move();
 };
 
 #endif
