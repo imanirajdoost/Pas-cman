@@ -9,6 +9,7 @@
 #include "GameController.h"
 #include "DotSmall.h"
 #include "GameVars.h"
+#include "UIController.h"
 
 #define DEBUG_MODE 1
 
@@ -31,6 +32,8 @@ Pinky pinky{64, 32};
 Inky inky{96, 32};
 Clyde clyde{128, 32};
 Player player{32, 32, 2};
+
+UIController uiController;
 
 void draw_grid(int r = 255, int g = 0, int b = 0) {
     SDL_SetRenderDrawColor(renderer, r, g, b, 255);
@@ -57,10 +60,8 @@ void init() {
 
     // Initialize dots on the screen
     GameController::initDots();
-//    auto dots = GameController::spawnDotObjects();
-//    for (const auto &dot: dots) {
-//        dots.push_back(dot);
-//    }
+
+    uiController.writeOnUI("test","test",0,0);
 
     player.setMoveIntent(MoveDirection::NONE);
 }
@@ -90,6 +91,9 @@ void draw() {
     clyde.draw(plancheSprites, win_surf);
 
     player.draw(plancheSprites, win_surf);
+
+    // Draw UI
+    uiController.drawUI(plancheSprites,win_surf);
 
     for (auto &dotSmall: GameController::dots) {
         dotSmall->draw(plancheSprites, win_surf);
@@ -191,7 +195,7 @@ int main(int argc, char **argv) {
             clyde.resetNextPos();
         }
 
-//        player.setNextPos(Map::map, nextPlayerMove);
+//        player.setNextPos(Map::char_map, nextPlayerMove);
 //        SDL_Rect nextPos = player.getNextPos();
 
 //        SDL_Rect collisionOffset;
@@ -201,10 +205,10 @@ int main(int argc, char **argv) {
 //        collisionOffset.x = nextPlayerMove == MoveDirection::RIGHT ? 1 : 0;
 //        collisionOffset.y = nextPlayerMove == MoveDirection::DOWN ? 1 : 0;
 
-//        MTYPE nextCol = CollisionManager::getNextCOLOBJ(Map::map, player.getNextPos());
+//        MTYPE nextCol = CollisionManager::getNextCOLOBJ(Map::char_map, player.getNextPos());
         // MTYPE nextCol = CollisionManager::getObjectTypeAt(CollisionManager::getRectAtDirection(player.getRect(),nextPlayerMove));
 
-        // player.setNextPos(Map::map, nextPlayerMove);
+        // player.setNextPos(Map::char_map, nextPlayerMove);
 
         // Control movement of the player based on the given input
         player.controlMove();
@@ -238,7 +242,7 @@ int main(int argc, char **argv) {
 //            player.move();
 //        }
 
-//        if (!CollisionManager::isCollision(Map::map, player, MTYPE::PACMAN, collisionOffset)) {
+//        if (!CollisionManager::isCollision(Map::char_map, player, MTYPE::PACMAN, collisionOffset)) {
 //            player.setMoveDirection(nextPlayerMove);
 //            player.move();
 //        } else {
@@ -246,7 +250,7 @@ int main(int argc, char **argv) {
 //                //TODO: delete coin
 //                // std::cout << "Coin en (" << nextPos.x / 32 << ", " << nextPos.y / 32 << ")" << std::endl;
 //                player.eat(*GameController::dots.at(0).get());
-//                Map::map[nextPos.y / 32][nextPos.x / 32] = MTYPE::EMPTY;
+//                Map::char_map[nextPos.y / 32][nextPos.x / 32] = MTYPE::EMPTY;
 //            } else if (nextCol == MTYPE::TP) {
 //                SDL_Rect nextPos = player.getNextPos();
 //                if (player.getX() == 0) {
@@ -259,7 +263,7 @@ int main(int argc, char **argv) {
 //            player.resetMoveDirection();
 //            if (player.getMoveDirection() != nextPlayerMove) {
 //                player.resetNextPos(); // resetting next move
-//                player.setNextPos(Map::map, player.getMoveDirection());
+//                player.setNextPos(Map::char_map, player.getMoveDirection());
 //                player.move();
 //            } else {
 //                player.resetNextPos();

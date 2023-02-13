@@ -42,7 +42,7 @@ MTYPE Map::getCurrentTileType(const T& gameObject) const{
     int map_y = px_y / 32;
 
     if ((map_x < 0 || map_x > 20) || (map_y < 0 || map_y > 26)) {
-        std::cerr << "An error with the map coordonites (dont know how to fucking spell that word) has occured\n" << std::endl;
+        std::cerr << "An error with the char_map coordonites (dont know how to fucking spell that word) has occured\n" << std::endl;
     }
 
     return map[map_y][map_x];
