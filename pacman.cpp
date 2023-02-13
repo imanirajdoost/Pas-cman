@@ -33,8 +33,6 @@ Inky inky{96, 32};
 Clyde clyde{128, 32};
 Player player{32, 32, 2};
 
-UIController uiController;
-
 void draw_grid(int r = 255, int g = 0, int b = 0) {
     SDL_SetRenderDrawColor(renderer, r, g, b, 255);
     auto map = Map::map;
@@ -60,8 +58,11 @@ void init() {
 
     // Initialize dots on the screen
     GameController::initDots();
+    UIController::init();
 
-    uiController.writeOnUI("test","test",0,0);
+    UIController::writeOnUI("score_static", "score", 700, 10);
+    UIController::writeOnUI(UIController::SCORE_TEXT_DYNAMIC, "0", UIController::SCORE_TEXT_DYNAMIC_POSX,
+                            UIController::SCORE_TEXT_DYNAMIC_POSY);
 
     player.setMoveIntent(MoveDirection::NONE);
 }
@@ -93,7 +94,7 @@ void draw() {
     player.draw(plancheSprites, win_surf);
 
     // Draw UI
-    uiController.drawUI(plancheSprites,win_surf);
+    UIController::drawUI(plancheSprites, win_surf);
 
     for (auto &dotSmall: GameController::dots) {
         dotSmall->draw(plancheSprites, win_surf);
