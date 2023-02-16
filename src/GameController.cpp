@@ -3,6 +3,7 @@
 #include <iostream>
 #include "GameVars.h"
 #include "DotBig.h"
+#include "UIController.h"
 
 using namespace std;
 
@@ -72,7 +73,8 @@ shared_ptr<DotBig> GameController::spawnDotBig(int x, int y) {
 
 void GameController::addScore(uint scoreToAdd) {
     playerScore += scoreToAdd;
-    cout << "Score: " << playerScore << endl;
+    UIController::writeScore(playerScore);
+//    cout << "Score: " << playerScore << endl;
 }
 
 bool GameController::deleteObject(const Dot &dot, uint score) {
