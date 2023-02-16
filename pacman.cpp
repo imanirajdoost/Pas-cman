@@ -26,6 +26,8 @@ SDL_Rect ghost_l = {37, 123, 14, 14};
 SDL_Rect ghost_d = {105, 123, 14, 14};
 SDL_Rect ghost_u = {71, 123, 14, 14};
 
+SDL_Rect blackBg = {0, 0, 1, 1};
+SDL_Rect UIRect  = {700, 0, 200, 200};
 
 Blinky blinky{32, 32};
 Pinky pinky{64, 32};
@@ -82,6 +84,7 @@ void draw_collider(const GameObject &obj, int r = 255, int g = 0, int b = 9) {
 void draw() {
     SDL_SetColorKey(plancheSprites, false, 0);
     SDL_BlitScaled(plancheSprites, &src_bg, win_surf, &bg);
+    SDL_BlitScaled(plancheSprites, &blackBg, win_surf, &UIRect);
 
     // couleur transparente
     SDL_SetColorKey(plancheSprites, true, 0);
