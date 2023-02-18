@@ -11,7 +11,8 @@ DotBig::DotBig(int x, int y) : Dot(x, y){
     rect.w = bigDotHeight;
     rect.h = bigDotHeight;
 
-    _r_sprite = sp_dot_big;
+    current_sp = make_shared<SDL_Rect>(sp_dot_big);
+//    _r_sprite = sp_dot_big;
 }
 
 int DotBig::getRectHeight() {

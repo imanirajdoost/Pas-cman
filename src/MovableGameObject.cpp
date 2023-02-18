@@ -1,6 +1,7 @@
 #include "MovableGameObject.h"
 
 #include <iostream>
+#include <utility>
 
 MovableGameObject::MovableGameObject() {
     isAnimated = true;
@@ -40,17 +41,21 @@ void MovableGameObject::resetMoveDirection() {
 void MovableGameObject::setDirectionSprite(const MoveDirection& newDirection) {
     switch (newDirection) {
         case MoveDirection::DOWN:
-            _sprite_in = &(_d_sprite);
+            setAnimation("move_down");
+//            current_sp = &(_d_sprite);
             break;
         case MoveDirection::UP:
-            _sprite_in = &(_u_sprite);
+            setAnimation("move_up");
+//            current_sp = &(_u_sprite);
             break;
         case MoveDirection::LEFT:
-            _sprite_in = &(_l_sprite);
+            setAnimation("move_left");
+//            current_sp = &(_l_sprite);
             break;
         case MoveDirection::RIGHT:
+            setAnimation("move_right");
         default:
-            _sprite_in = &(_r_sprite);
+//            current_sp = &(_r_sprite);
             break;
     }
 }

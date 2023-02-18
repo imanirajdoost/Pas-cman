@@ -5,27 +5,6 @@
 #include "MovableGameObject.h"
 #include "Map.h"
 
-extern SDL_Rect blinky_r; 
-extern SDL_Rect blinky_l; 
-extern SDL_Rect blinky_d; 
-extern SDL_Rect blinky_u;
-
-extern SDL_Rect pinky_r; 
-extern SDL_Rect pinky_l; 
-extern SDL_Rect pinky_d;
-extern SDL_Rect pinky_u;
-
-extern SDL_Rect inky_r; 
-extern SDL_Rect inky_l; 
-extern SDL_Rect inky_d; 
-extern SDL_Rect inky_u;
-
-extern SDL_Rect clyde_r; 
-extern SDL_Rect clyde_l; 
-extern SDL_Rect clyde_d; 
-extern SDL_Rect clyde_u;
-
-
 class Ghost: public MovableGameObject {
     protected: 
     bool isVulnerable = false;
@@ -39,24 +18,60 @@ class Blinky: public Ghost {
     public:
         Blinky(int x, int y);
         void setNextPos(const std::vector<std::vector<MTYPE>>& map, const MoveDirection& direction) override;
+private:
+    static SDL_Rect blinky_r1;
+    static SDL_Rect blinky_r2;
+    static SDL_Rect blinky_l1;
+    static SDL_Rect blinky_l2;
+    static SDL_Rect blinky_d1;
+    static SDL_Rect blinky_d2;
+    static SDL_Rect blinky_u1;
+    static SDL_Rect blinky_u2;
 };
 
 class Pinky: public Ghost {
     public:
         Pinky(int x, int y);
         void setNextPos(const std::vector<std::vector<MTYPE>>& map, const MoveDirection& direction) override;
+private:
+    static SDL_Rect pinky_r1;
+    static SDL_Rect pinky_r2;
+    static SDL_Rect pinky_l1;
+    static SDL_Rect pinky_l2;
+    static SDL_Rect pinky_d1;
+    static SDL_Rect pinky_d2;
+    static SDL_Rect pinky_u1;
+    static SDL_Rect pinky_u2;
 };
 
 class Inky: public Ghost {
     public:
         Inky(int x, int y);
         void setNextPos(const std::vector<std::vector<MTYPE>>& map, const MoveDirection& direction) override;
+private:
+    static SDL_Rect inky_r1;
+    static SDL_Rect inky_r2;
+    static SDL_Rect inky_l1;
+    static SDL_Rect inky_l2;
+    static SDL_Rect inky_d1;
+    static SDL_Rect inky_d2;
+    static SDL_Rect inky_u1;
+    static SDL_Rect inky_u2;
 };
 
 class Clyde: public Ghost {
     public:
         Clyde(int x, int y);
         void setNextPos(const std::vector<std::vector<MTYPE>>& map, const MoveDirection& direction) override;
+private:
+    static SDL_Rect clyde_r1;
+    static SDL_Rect clyde_r2;
+    static SDL_Rect clyde_l1;
+    static SDL_Rect clyde_l2;
+    static SDL_Rect clyde_d1;
+    static SDL_Rect clyde_d2;
+    static SDL_Rect clyde_u1;
+    static SDL_Rect clyde_u2;
 };
 
 #endif

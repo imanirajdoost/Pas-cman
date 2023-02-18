@@ -4,12 +4,6 @@
 #include "MovableGameObject.h"
 #include "Dot.h"
 
-// get pacman's sprite from the sprite sheet
-extern SDL_Rect player_r;
-extern SDL_Rect player_l;
-extern SDL_Rect player_d;
-extern SDL_Rect player_u;
-
 /**
  * Main pac-man player object
 */
@@ -20,19 +14,29 @@ private:
     MoveDirection moveIntent = MoveDirection::NONE;
     static int PLAYER_MOVE_THRESHOLD;
 
+    // get pacman's sprite from the sprite sheet
+    static SDL_Rect player_r1;
+    static SDL_Rect player_r2;
+    static SDL_Rect player_l1;
+    static SDL_Rect player_l2;
+    static SDL_Rect player_d1;
+    static SDL_Rect player_d2;
+    static SDL_Rect player_u1;
+    static SDL_Rect player_u2;
+
 public:
     Player(int x, int y, int initHealth);   // Constructor that initilalizes player with the given health
 
     void eat(Dot& dotToEat) const;         // Action to eat a Dot
     void die();                                  // Die when hit by a ghost
     void gameOver();                             // Game over when no more health is remaining
-    virtual void setNextPos(const std::vector<std::vector<MTYPE>>& map, const MoveDirection& direction) override;
+    void setNextPos(const std::vector<std::vector<MTYPE>>& map, const MoveDirection& direction) override;
     void controlMove();
     SDL_Rect getNextStepRect(MoveDirection dir);
 
     void move() override;
     
-    void setRawNextPos(const SDL_Rect nextPos);
+    void setRawNextPos(SDL_Rect nextPos);
 
     MoveDirection getMoveIntent() const;
     void setMoveIntent(const MoveDirection& direction);

@@ -164,7 +164,6 @@ void UIController::drawUI(SDL_Surface *plancheSprites, SDL_Surface *win_surf) {
         posRect.h = UIController::FONT_SIZE;
 
         for (auto it = rects.begin(); it != rects.end(); ++it) {
-            cout << "map count: " << rects.size() << endl;
             SDL_BlitScaled(plancheSprites, it->get(), win_surf, &posRect);
             posRect.x += UIController::FONT_SPACE;
         }

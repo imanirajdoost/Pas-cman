@@ -1,17 +1,20 @@
 #include "Player.h"
 #include "DotBig.h"
-#include <typeinfo>
 #include <iostream>
 #include <cmath>
-#include "GameVars.h"
+#include <utility>
 #include "GameController.h"
 #include "CollisionManager.h"
 
 // get pacman's sprite from the sprite sheet
-SDL_Rect player_r = {20, 89, 16, 16};
-SDL_Rect player_l = {46, 89, 16, 16};
-SDL_Rect player_d = {109, 89, 16, 16};
-SDL_Rect player_u = {75, 89, 16, 16};
+SDL_Rect Player::player_r1 = {21, 90, 14, 14};
+SDL_Rect Player::player_r2 = {34, 90, 14, 14};
+SDL_Rect Player::player_l1 = {47, 90, 14, 14};
+SDL_Rect Player::player_l2 = {61, 90, 14, 14};
+SDL_Rect Player::player_d1 = {110, 90, 14, 14};
+SDL_Rect Player::player_d2 = {127, 90, 14, 14};
+SDL_Rect Player::player_u1 = {76, 90, 14, 14};
+SDL_Rect Player::player_u2 = {93, 90, 14, 14};
 
 int Player::PLAYER_MOVE_THRESHOLD = 6;
 
@@ -21,13 +24,24 @@ Player::Player(int x, int y, int initHealth) : _health{initHealth} {
 
     rect.x = x;
     rect.y = y;
+
+    // Set the size of the player rect
     rect.w = 32;
     rect.h = 32;
 
-    _r_sprite = player_r;
-    _l_sprite = player_l;
-    _d_sprite = player_d;
-    _u_sprite = player_u;
+    // Set default animation and sprite and add animations
+    addAnimation({"default", {Player::player_r1, Player::player_r2}});
+    addAnimation({"move_up", {Player::player_u1, Player::player_u2}});
+    addAnimation({"move_down", {Player::player_d1, Player::player_d2}});
+    addAnimation({"move_left", {Player::player_l1, Player::player_l2}});
+    addAnimation({"move_right", {Player::player_r1, Player::player_r2}});
+
+    setAnimation("default");
+
+//    _r_sprite = player_r;
+//    _l_sprite = player_l;
+//    _d_sprite = player_d;
+//    _u_sprite = player_u;
 }
 
 void Player::setNextPos(const std::vector<std::vector<MTYPE>> &map, const MoveDirection &direction) {

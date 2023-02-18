@@ -11,7 +11,8 @@ DotSmall::DotSmall(int x, int y) : Dot(x, y) {
     rect.w = smallDotHeight;
     rect.h = smallDotHeight;
 
-    _r_sprite = sp_dot_small;
+    current_sp = make_shared<SDL_Rect>(sp_dot_small);
+//    _r_sprite = sp_dot_small;
 }
 
 int DotSmall::getRectHeight() {
