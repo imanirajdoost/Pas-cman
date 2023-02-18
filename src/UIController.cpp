@@ -1,3 +1,4 @@
+#include <iostream>
 #include "../include/UIController.h"
 
 int UIController::FONT_SIZE = 16;
@@ -49,10 +50,10 @@ SDL_Rect UIController::symbol_Slash = {92, 53, 7, 7};
 SDL_Rect UIController::symbol_Exclamation = {100, 53, 7, 7};
 SDL_Rect UIController::symbol_Comma = {109, 50, 8, 8};
 
-std::map<std::string, SDL_Rect> UIController::char_map;
-std::map<std::string, std::tuple<std::string, std::vector<SDL_Rect>, int, int>> UIController::name_txt_maps;
+map<string, SDL_Rect> UIController::char_map;
+vector<shared_ptr<tuple<string, string, int, int, vector<shared_ptr<SDL_Rect>>>>> UIController::name_txt_maps;
 
-std::string UIController::SCORE_TEXT_DYNAMIC = "score_dynamic";
+string UIController::SCORE_TEXT_DYNAMIC = "score_dynamic";
 int UIController::SCORE_TEXT_DYNAMIC_POSX = 700;
 int UIController::SCORE_TEXT_DYNAMIC_POSY = 50;
 
@@ -104,47 +105,74 @@ void UIController::init() {
     UIController::char_map.emplace(",", symbol_Comma);
 }
 
-void UIController::writeOnUI(const std::string &id, const std::string &text, int posX, int posY) {
-
-    // Check to see if ID already exists
-    if (UIController::name_txt_maps.find(id) != UIController::name_txt_maps.end()) {
-        // id is found, erase it to replace the content
-        // @TODO: This can be optimized
-        UIController::name_txt_maps.erase(id);
+shared_ptr<tuple<string, string, int, int, vector<shared_ptr<SDL_Rect>>>> UIController::isIdExists(const string &id) {
+    for (auto item: name_txt_maps) {
+        auto id_target = get<0>(*item);
+        if (id_target == id)
+            return item;
     }
+    return nullptr;
+}
+
+void UIController::writeOnUI(const string &id, const string &text, int posX, int posY) {
 
     // Rectangles that draw the text
-    std::vector<SDL_Rect> rectsToDraw;
+    vector<shared_ptr<SDL_Rect>> rectsToDraw;
 
     // Get each character of the text as rect
     for (auto ch: text) {
-        rectsToDraw.push_back(UIController::char_map.at(std::string{ch}));
+        rectsToDraw.push_back(make_shared<SDL_Rect>(UIController::char_map.at(string{ch})));
     }
 
-    // create a tuple with text string and its rects
-    std::tuple<std::string, std::vector<SDL_Rect>, int, int> tuple;
-    tuple = std::make_tuple(text, rectsToDraw, posX, posY);
+    // Check to see if ID already exists
+    auto target_tuple = isIdExists(id);
+//    shared_ptr<tuple<string, string, int, int, shared_ptr<vector<SDL_Rect>>>> target_tuple = nullptr;
+    if (target_tuple != nullptr) {
+
+        // id is found, erase it to replace the content
+        auto rects = get<4>(*target_tuple);
+
+        rects.clear();
+
+        get<2>(*target_tuple) = posX;
+        get<3>(*target_tuple) = posY;
+
+        get<1>(*target_tuple) = text;
+
+        get<4>(*target_tuple) = rectsToDraw;
+//        UIController::name_txt_maps.erase(id);
+    } else {
+        // create a tuple with text string and its rects
+        target_tuple = make_shared<tuple<string, string, int, int, vector<shared_ptr<SDL_Rect>>>>(
+                make_tuple(id, text, posX, posY, rectsToDraw));
+
+        UIController::name_txt_maps.push_back(target_tuple);
+    }
 
     // Add the tuple to the list of things to draw to the screen
-    UIController::name_txt_maps.emplace(id, tuple);
+//    if (UIController::name_txt_maps.find(id) == UIController::name_txt_maps.end())
+//    UIController::name_txt_maps.emplace(id, tuple);
 }
 
 void UIController::drawUI(SDL_Surface *plancheSprites, SDL_Surface *win_surf) {
-    for (auto item: UIController::name_txt_maps) {
-        auto rects = std::get<1>(std::get<1>(item));
+    for (auto j = UIController::name_txt_maps.begin(); j < UIController::name_txt_maps.end(); j++) {
+        auto rects = get<4>(*j->get());
         SDL_Rect posRect;
-        posRect.x = std::get<2>(std::get<1>(item));
-        posRect.y = std::get<3>(std::get<1>(item));
+        posRect.x = get<2>(*j->get());
+        posRect.y = get<3>(*j->get());
         posRect.w = UIController::FONT_SIZE;
         posRect.h = UIController::FONT_SIZE;
-        for (auto rect: rects) {
-            SDL_BlitScaled(plancheSprites, &rect, win_surf, &posRect);
+
+        for (auto it = rects.begin(); it != rects.end(); ++it) {
+            cout << "map count: " << rects.size() << endl;
+            SDL_BlitScaled(plancheSprites, it->get(), win_surf, &posRect);
             posRect.x += UIController::FONT_SPACE;
         }
+
     }
 }
 
 void UIController::writeScore(uint score) {
-    writeOnUI(UIController::SCORE_TEXT_DYNAMIC, std::to_string(score), UIController::SCORE_TEXT_DYNAMIC_POSX,
+    writeOnUI(UIController::SCORE_TEXT_DYNAMIC, to_string(score), UIController::SCORE_TEXT_DYNAMIC_POSX,
               UIController::SCORE_TEXT_DYNAMIC_POSY);
 }

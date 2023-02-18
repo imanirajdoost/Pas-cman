@@ -11,7 +11,7 @@
 #include "GameVars.h"
 #include "UIController.h"
 
-#define DEBUG_MODE 1
+#define DEBUG_MODE 0
 
 SDL_Window *pWindow = nullptr;
 SDL_Surface *win_surf = nullptr;
@@ -84,6 +84,7 @@ void draw_collider(const GameObject &obj, int r = 255, int g = 0, int b = 9) {
 void draw() {
     SDL_SetColorKey(plancheSprites, false, 0);
     SDL_BlitScaled(plancheSprites, &src_bg, win_surf, &bg);
+    // @TODO: This is a hack to avoid writing on top of the previous rect, improve this
     SDL_BlitScaled(plancheSprites, &blackBg, win_surf, &UIRect);
 
     // couleur transparente

@@ -7,16 +7,22 @@
 #include <SDL2/SDL_surface.h>
 #include <vector>
 #include <tuple>
+#include <memory>
+
+using namespace std;
 
 class UIController {
 public:
 
     static void init();
+
     static void drawUI(SDL_Surface *plancheSprites, SDL_Surface *win_surf);
-    static void writeOnUI(const std::string& id, const std::string &text, int posX, int posY);
+
+    static void writeOnUI(const string &id, const string &text, int posX, int posY);
+
     static void writeScore(uint score);
 
-    static std::string SCORE_TEXT_DYNAMIC;
+    static string SCORE_TEXT_DYNAMIC;
     static int SCORE_TEXT_DYNAMIC_POSX;
     static int SCORE_TEXT_DYNAMIC_POSY;
 
@@ -67,11 +73,13 @@ private:
     static SDL_Rect symbol_Exclamation;
     static SDL_Rect symbol_Comma;
 
-    static std::map<std::string, SDL_Rect> char_map;
-    static std::map<std::string, std::tuple<std::string, std::vector<SDL_Rect>, int, int>> name_txt_maps;
+    static map<string, SDL_Rect> char_map;
+    static vector<shared_ptr<tuple<string, string, int, int, vector<shared_ptr<SDL_Rect>>>>> name_txt_maps;
 
     static int FONT_SIZE;
     static int FONT_SPACE;
+
+    static shared_ptr<tuple<string, string, int, int, vector<shared_ptr<SDL_Rect>>>> isIdExists(const string &id);
 };
 
 #endif //PAS_CMAN_UICONTROLLER_H
