@@ -9,7 +9,7 @@ using namespace std;
 
 class GameObject {
 public:
-    GameObject();
+    explicit GameObject(SDL_Rect defaultSprite);
     void draw(SDL_Surface* plancheSprites, SDL_Surface* win_surf);
     SDL_Rect getRect() const;
     void destroyObject(GameObject& obj);

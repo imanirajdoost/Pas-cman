@@ -10,14 +10,15 @@ class Ghost: public MovableGameObject {
     bool isVulnerable = false;
     
     public:
-    Ghost(int x, int y);
+    Ghost(SDL_Rect defaultSprite, int x, int y);
     
 };
 
 class Blinky: public Ghost {
     public:
-        Blinky(int x, int y);
-        void setNextPos(const std::vector<std::vector<MTYPE>>& map, const MoveDirection& direction) override;
+    Blinky(SDL_Rect defaultSprite, int x, int y);
+
+    void setNextPos(const std::vector<std::vector<MTYPE>>& map, const MoveDirection& direction) override;
 private:
     static SDL_Rect blinky_r1;
     static SDL_Rect blinky_r2;
@@ -31,7 +32,7 @@ private:
 
 class Pinky: public Ghost {
     public:
-        Pinky(int x, int y);
+        Pinky(SDL_Rect defaultSprite, int x, int y);
         void setNextPos(const std::vector<std::vector<MTYPE>>& map, const MoveDirection& direction) override;
 private:
     static SDL_Rect pinky_r1;
@@ -46,7 +47,7 @@ private:
 
 class Inky: public Ghost {
     public:
-        Inky(int x, int y);
+        Inky(SDL_Rect defaultSprite, int x, int y);
         void setNextPos(const std::vector<std::vector<MTYPE>>& map, const MoveDirection& direction) override;
 private:
     static SDL_Rect inky_r1;
@@ -61,7 +62,7 @@ private:
 
 class Clyde: public Ghost {
     public:
-        Clyde(int x, int y);
+        Clyde(SDL_Rect defaultSprite, int x, int y);
         void setNextPos(const std::vector<std::vector<MTYPE>>& map, const MoveDirection& direction) override;
 private:
     static SDL_Rect clyde_r1;

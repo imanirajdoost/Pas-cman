@@ -23,7 +23,7 @@ class MovableGameObject : public GameObject {
         MoveDirection lastDirection = MoveDirection::NONE;
 
     public:
-        MovableGameObject();
+        explicit MovableGameObject(SDL_Rect defaultSprite);
 
         int getX() const;
         int getY() const;

@@ -4,7 +4,7 @@
 
 SDL_Rect sp_dot_small = {4, 81, 2, 2};
 
-DotSmall::DotSmall(int x, int y) : Dot(x, y) {
+DotSmall::DotSmall(int x, int y) : Dot(SDL_Rect(), x, y) {
     rect.x = x;
     rect.y = y;
 

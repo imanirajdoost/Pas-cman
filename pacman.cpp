@@ -7,11 +7,10 @@
 #include "MovableGameObject.h"
 #include "Player.h"
 #include "GameController.h"
-#include "DotSmall.h"
 #include "GameVars.h"
 #include "UIController.h"
 
-#define DEBUG_MODE 0
+#define DEBUG_MODE 1
 
 SDL_Window *pWindow = nullptr;
 SDL_Surface *win_surf = nullptr;
@@ -21,19 +20,20 @@ SDL_Renderer *renderer = nullptr;
 SDL_Rect src_bg = {368, 3, 168, 216}; // x,y, w,h (0,0) en haut a gauche
 SDL_Rect bg = {2, 2, 672, 864}; // ici scale x4
 
-SDL_Rect ghost_r = {3, 123, 14, 14};
-SDL_Rect ghost_l = {37, 123, 14, 14};
-SDL_Rect ghost_d = {105, 123, 14, 14};
-SDL_Rect ghost_u = {71, 123, 14, 14};
+SDL_Rect blinky_default = {3, 123, 14, 14};
+SDL_Rect pinky_default = {4, 142, 14, 14};
+SDL_Rect inky_default = {4, 160, 14, 14};
+SDL_Rect clyde_default = {4, 178, 14, 14};
+SDL_Rect player_default = {21, 90, 13, 14};
 
 SDL_Rect blackBg = {0, 0, 1, 1};
 SDL_Rect UIRect  = {700, 0, 200, 200};
 
-Blinky blinky{32, 32};
-Pinky pinky{64, 32};
-Inky inky{96, 32};
-Clyde clyde{128, 32};
-Player player{32, 32, 2};
+Blinky blinky{blinky_default, 32, 32};
+Pinky pinky{pinky_default, 64, 32};
+Inky inky{inky_default, 96, 32};
+Clyde clyde{clyde_default, 128, 32};
+Player player{player_default, 32, 32, 2};
 
 void draw_grid(int r = 255, int g = 0, int b = 0) {
     SDL_SetRenderDrawColor(renderer, r, g, b, 255);

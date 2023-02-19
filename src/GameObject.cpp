@@ -3,24 +3,22 @@
 #include "GameVars.h"
 #include "GameController.h"
 
-GameObject::GameObject() {
-    animation_frame = 0;
-}
-
 void GameObject::draw(SDL_Surface *plancheSprites, SDL_Surface *win_surf) {
 
     if (current_sp == nullptr) {
         current_sp = make_shared<SDL_Rect>(default_sp);
     }
 
-    SDL_Rect sprite_in2 = *current_sp;
+//    SDL_Rect sprite_in2 = *current_sp;
 
-    if (isAnimated && current_anim != nullptr && (GameController::animationCounter / ANIMATION_FRAME_RATE) % 2 == 1) {
+    if (isAnimated && current_anim != nullptr && GameController::animationCounter % ANIMATION_FRAME_RATE == 0) {
         const auto &anim_rects = current_anim->getSpritesList();
         if (animation_frame >= anim_rects.size())
             animation_frame = 0;
 
-        sprite_in2 = anim_rects[animation_frame];
+        cout << "Anim frame: " << animation_frame << " rects size: " << anim_rects.size() << " anim counter:" << GameController::animationCounter << endl;
+
+        current_sp = make_shared<SDL_Rect>(anim_rects[animation_frame]);
         animation_frame++;
 //        sprite_in2.x += 14;
     }
@@ -35,7 +33,7 @@ void GameObject::draw(SDL_Surface *plancheSprites, SDL_Surface *win_surf) {
         drawRect.y += rect.h / 2;
     }
 
-    SDL_BlitScaled(plancheSprites, &sprite_in2, win_surf, &drawRect);
+    SDL_BlitScaled(plancheSprites, current_sp.get(), win_surf, &drawRect);
 }
 
 SDL_Rect GameObject::getRect() const {
@@ -86,7 +84,15 @@ void GameObject::startAnimation() {
 }
 
 void GameObject::addAnimation(const Animation& anim) {
+    for (auto& a:animation_list) {
+        if(a.getName() == anim.getName())
+            return;
+    }
     animation_list.push_back(anim);
+}
+
+GameObject::GameObject(SDL_Rect defaultSprite) : default_sp{defaultSprite} {
+    animation_frame = 0;
 }
 ////////////////
 // END OF ANIMATION

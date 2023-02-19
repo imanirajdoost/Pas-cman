@@ -18,7 +18,8 @@ SDL_Rect Player::player_u2 = {93, 90, 14, 14};
 
 int Player::PLAYER_MOVE_THRESHOLD = 6;
 
-Player::Player(int x, int y, int initHealth) : _health{initHealth} {
+Player::Player(SDL_Rect defaultSprite, int x, int y, int initHealth) : MovableGameObject(defaultSprite),
+                                                                       _health{initHealth} {
     // _health = initHealth;
     // @todo : Update health UI
 

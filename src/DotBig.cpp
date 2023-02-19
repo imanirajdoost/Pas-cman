@@ -4,7 +4,7 @@
 
 SDL_Rect sp_dot_big = { 9,79, 7,7 };
 
-DotBig::DotBig(int x, int y) : Dot(x, y){
+DotBig::DotBig(int x, int y) : Dot(SDL_Rect(), x, y) {
     rect.x = x;
     rect.y = y;
 

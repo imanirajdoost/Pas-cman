@@ -40,7 +40,7 @@ SDL_Rect Clyde::clyde_d2 = { 123,178, 14,14 };
 SDL_Rect Clyde:: clyde_u1 = { 72,178, 14,14 };
 SDL_Rect Clyde:: clyde_u2 = { 89,178, 14,14 };
 
-Ghost::Ghost(int x, int y) {
+Ghost::Ghost(SDL_Rect defaultSprite, int x, int y) : MovableGameObject(defaultSprite) {
     rect.x = x;
     rect.y = y;
 
@@ -52,7 +52,7 @@ Ghost::Ghost(int x, int y) {
 }
 
 
-Blinky::Blinky(int x, int y): Ghost(x, y) {
+Blinky::Blinky(SDL_Rect defaultSprite, int x, int y): Ghost(defaultSprite, x, y)  {
     // Set default animation and sprite and add animations
     addAnimation({"default", {Blinky::blinky_r1, Blinky::blinky_r2}});
     addAnimation({"move_up", {Blinky::blinky_u1, Blinky::blinky_u2}});
@@ -61,6 +61,8 @@ Blinky::Blinky(int x, int y): Ghost(x, y) {
     addAnimation({"move_right", {Blinky::blinky_r1, Blinky::blinky_r2}});
 
     setAnimation("default");
+
+    stopAnimation();
 //    _r_sprite = blinky_r;
 //    _l_sprite = blinky_l;
 //    _d_sprite = blinky_d;
@@ -76,7 +78,7 @@ void Blinky::setNextPos(const std::vector<std::vector<MTYPE>>& map, const MoveDi
     setMoveDirection(direction);
 }
 
-Pinky::Pinky(int x, int y): Ghost(x, y) {
+Pinky::Pinky(SDL_Rect defaultSprite, int x, int y) : Ghost(defaultSprite, x, y) {
     // Set default animation and sprite and add animations
     addAnimation({"default", {Pinky::pinky_r1, Pinky::pinky_r2}});
     addAnimation({"move_up", {Pinky::pinky_u1, Pinky::pinky_u2}});
@@ -85,6 +87,8 @@ Pinky::Pinky(int x, int y): Ghost(x, y) {
     addAnimation({"move_right", {Pinky::pinky_r1, Pinky::pinky_r2}});
 
     setAnimation("default");
+
+    stopAnimation();
 //    _r_sprite = pinky_r;
 //    _l_sprite = pinky_l;
 //    _d_sprite = pinky_d;
@@ -99,7 +103,7 @@ void Pinky::setNextPos(const std::vector<std::vector<MTYPE>>& map, const MoveDir
     setMoveDirection(direction);
 }
 
-Inky::Inky(int x, int y): Ghost(x, y) {
+Inky::Inky(SDL_Rect defaultSprite, int x, int y) : Ghost(defaultSprite, x, y)  {
     // Set default animation and sprite and add animations
     addAnimation({"default", {Inky::inky_r1, Inky::inky_r2}});
     addAnimation({"move_up", {Inky::inky_u1, Inky::inky_u2}});
@@ -108,6 +112,9 @@ Inky::Inky(int x, int y): Ghost(x, y) {
     addAnimation({"move_right", {Inky::inky_r1, Inky::inky_r2}});
 
     setAnimation("default");
+
+
+    stopAnimation();
 //    _r_sprite = inky_r;
 //    _l_sprite = inky_l;
 //    _d_sprite = inky_d;
@@ -122,7 +129,7 @@ void Inky::setNextPos(const std::vector<std::vector<MTYPE>>& map, const MoveDire
     setMoveDirection(direction);
 }
 
-Clyde::Clyde(int x, int y): Ghost(x, y) {
+Clyde::Clyde(SDL_Rect defaultSprite, int x, int y) : Ghost(defaultSprite, x, y)  {
     // Set default animation and sprite and add animations
     addAnimation({"default", {Clyde::clyde_r1, Clyde::clyde_r2}});
     addAnimation({"move_up", {Clyde::clyde_u1, Clyde::clyde_u2}});
@@ -131,6 +138,9 @@ Clyde::Clyde(int x, int y): Ghost(x, y) {
     addAnimation({"move_right", {Clyde::clyde_r1, Clyde::clyde_r2}});
 
     setAnimation("default");
+
+
+    stopAnimation();
 //    _r_sprite = clyde_r;
 //    _l_sprite = clyde_l;
 //    _d_sprite = clyde_d;

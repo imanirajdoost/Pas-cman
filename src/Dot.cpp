@@ -1,6 +1,6 @@
 #include "Dot.h"
 
-Dot::Dot(int x, int y)  {
+Dot::Dot(SDL_Rect defaultSprite, int x, int y) : StaticGameObject(defaultSprite) {
     rect.x = x;
     rect.y = y;
 

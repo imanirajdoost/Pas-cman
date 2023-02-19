@@ -1,12 +1,5 @@
 #include "MovableGameObject.h"
 
-#include <iostream>
-#include <utility>
-
-MovableGameObject::MovableGameObject() {
-    isAnimated = true;
-}
-
 int MovableGameObject::getX() const{
     return rect.x;
 }
@@ -55,6 +48,8 @@ void MovableGameObject::setDirectionSprite(const MoveDirection& newDirection) {
         case MoveDirection::RIGHT:
             setAnimation("move_right");
         default:
+//            setAnimation("default");
+//            current_sp = make_shared<SDL_Rect>(default_sp);
 //            current_sp = &(_r_sprite);
             break;
     }
@@ -76,4 +71,8 @@ void MovableGameObject::resetNextPos() {
 void MovableGameObject::move() {
     rect.x = _next_pos.x;
     rect.y = _next_pos.y;
+}
+
+MovableGameObject::MovableGameObject(SDL_Rect defaultSprite) : GameObject(defaultSprite) {
+    startAnimation();
 }
