@@ -16,7 +16,7 @@ void GameObject::draw(SDL_Surface *plancheSprites, SDL_Surface *win_surf) {
         if (animation_frame >= anim_rects.size())
             animation_frame = 0;
 
-        cout << "Anim frame: " << animation_frame << " rects size: " << anim_rects.size() << " anim counter:" << GameController::animationCounter << endl;
+//        cout << "Anim frame: " << animation_frame << " rects size: " << anim_rects.size() << " anim counter:" << GameController::animationCounter << endl;
 
         current_sp = make_shared<SDL_Rect>(anim_rects[animation_frame]);
         animation_frame++;

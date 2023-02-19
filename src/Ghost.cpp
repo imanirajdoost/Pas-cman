@@ -61,8 +61,6 @@ Blinky::Blinky(SDL_Rect defaultSprite, int x, int y): Ghost(defaultSprite, x, y)
     addAnimation({"move_right", {Blinky::blinky_r1, Blinky::blinky_r2}});
 
     setAnimation("default");
-
-    stopAnimation();
 //    _r_sprite = blinky_r;
 //    _l_sprite = blinky_l;
 //    _d_sprite = blinky_d;
@@ -87,8 +85,6 @@ Pinky::Pinky(SDL_Rect defaultSprite, int x, int y) : Ghost(defaultSprite, x, y) 
     addAnimation({"move_right", {Pinky::pinky_r1, Pinky::pinky_r2}});
 
     setAnimation("default");
-
-    stopAnimation();
 //    _r_sprite = pinky_r;
 //    _l_sprite = pinky_l;
 //    _d_sprite = pinky_d;
@@ -112,9 +108,6 @@ Inky::Inky(SDL_Rect defaultSprite, int x, int y) : Ghost(defaultSprite, x, y)  {
     addAnimation({"move_right", {Inky::inky_r1, Inky::inky_r2}});
 
     setAnimation("default");
-
-
-    stopAnimation();
 //    _r_sprite = inky_r;
 //    _l_sprite = inky_l;
 //    _d_sprite = inky_d;
@@ -138,9 +131,6 @@ Clyde::Clyde(SDL_Rect defaultSprite, int x, int y) : Ghost(defaultSprite, x, y) 
     addAnimation({"move_right", {Clyde::clyde_r1, Clyde::clyde_r2}});
 
     setAnimation("default");
-
-
-    stopAnimation();
 //    _r_sprite = clyde_r;
 //    _l_sprite = clyde_l;
 //    _d_sprite = clyde_d;

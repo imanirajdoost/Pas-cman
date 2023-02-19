@@ -84,6 +84,11 @@ bool GameController::deleteObject(const Dot &dot, uint score) {
         if (dot.getIndex() == i->get()->getIndex() && !dot.hasBeenEaten()) {
             GameController::dots.erase(i);
             GameController::addScore(score);
+//            cout << " remaining dots: " << GameController::dots.size() << endl;
+            if(GameController::dots.empty()) {
+                // @TODO : Win the game
+                cout << "You won !" << endl;
+            }
             return true;
         }
     }

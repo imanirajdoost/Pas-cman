@@ -10,7 +10,7 @@
 #include "GameVars.h"
 #include "UIController.h"
 
-#define DEBUG_MODE 1
+#define DEBUG_MODE 0
 
 SDL_Window *pWindow = nullptr;
 SDL_Surface *win_surf = nullptr;
