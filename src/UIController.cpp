@@ -50,12 +50,18 @@ SDL_Rect UIController::symbol_Slash = {92, 53, 7, 7};
 SDL_Rect UIController::symbol_Exclamation = {100, 53, 7, 7};
 SDL_Rect UIController::symbol_Comma = {109, 50, 8, 8};
 
+SDL_Rect UIController::playerHealth = {169, 76, 10, 12};
+
 map<string, SDL_Rect> UIController::char_map;
 vector<shared_ptr<tuple<string, string, int, int, vector<shared_ptr<SDL_Rect>>>>> UIController::name_txt_maps;
+vector<shared_ptr<SDL_Rect>> UIController::health_list;
 
 string UIController::SCORE_TEXT_DYNAMIC = "score_dynamic";
 int UIController::SCORE_TEXT_DYNAMIC_POSX = 700;
 int UIController::SCORE_TEXT_DYNAMIC_POSY = 50;
+
+int UIController::HEALTH_POSX = 700;
+int UIController::HEALTH_POSY = 100;
 
 void UIController::init() {
     UIController::char_map.emplace("a", letter_a);
@@ -155,6 +161,7 @@ void UIController::writeOnUI(const string &id, const string &text, int posX, int
 }
 
 void UIController::drawUI(SDL_Surface *plancheSprites, SDL_Surface *win_surf) {
+    // Update texts on UI
     for (auto j = UIController::name_txt_maps.begin(); j < UIController::name_txt_maps.end(); j++) {
         auto rects = get<4>(*j->get());
         SDL_Rect posRect;
@@ -167,11 +174,27 @@ void UIController::drawUI(SDL_Surface *plancheSprites, SDL_Surface *win_surf) {
             SDL_BlitScaled(plancheSprites, it->get(), win_surf, &posRect);
             posRect.x += UIController::FONT_SPACE;
         }
+    }
 
+    // Update Health on UI
+    for (auto i = UIController::health_list.begin(); i < UIController::health_list.end(); i++) {
+        SDL_BlitScaled(plancheSprites, &playerHealth, win_surf, i->get());
     }
 }
 
 void UIController::writeScore(uint score) {
     writeOnUI(UIController::SCORE_TEXT_DYNAMIC, to_string(score), UIController::SCORE_TEXT_DYNAMIC_POSX,
               UIController::SCORE_TEXT_DYNAMIC_POSY);
+}
+
+void UIController::setHealthUI(u_short health) {
+    UIController::health_list.clear();
+    for (int i = 0; i < health; ++i) {
+        auto rect = make_shared<SDL_Rect>();
+        rect->x = HEALTH_POSX + (FONT_SPACE * i);
+        rect->y = HEALTH_POSY;
+        rect->w = FONT_SIZE;
+        rect->h = FONT_SIZE;
+        UIController::health_list.push_back(rect);
+    }
 }

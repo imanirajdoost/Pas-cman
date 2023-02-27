@@ -2,11 +2,11 @@
 #include "DotBig.h"
 #include <iostream>
 #include <cmath>
-#include <utility>
 #include "GameController.h"
 #include "CollisionManager.h"
 
 // get pacman's sprite from the sprite sheet
+SDL_Rect Player::player_fill = {4, 90, 14, 14};
 SDL_Rect Player::player_r1 = {21, 90, 14, 14};
 SDL_Rect Player::player_r2 = {34, 90, 14, 14};
 SDL_Rect Player::player_l1 = {47, 90, 14, 14};
@@ -31,11 +31,11 @@ Player::Player(SDL_Rect defaultSprite, int x, int y, int initHealth) : MovableGa
     rect.h = 32;
 
     // Set default animation and sprite and add animations
-    addAnimation({"default", {Player::player_r1, Player::player_r2}});
-    addAnimation({"move_up", {Player::player_u1, Player::player_u2}});
-    addAnimation({"move_down", {Player::player_d1, Player::player_d2}});
-    addAnimation({"move_left", {Player::player_l1, Player::player_l2}});
-    addAnimation({"move_right", {Player::player_r1, Player::player_r2}});
+    addAnimation({"default", {Player::player_fill, Player::player_r1, Player::player_r2}});
+    addAnimation({"move_up", {Player::player_fill, Player::player_u1, Player::player_u2}});
+    addAnimation({"move_down", {Player::player_fill, Player::player_d1, Player::player_d2}});
+    addAnimation({"move_left", {Player::player_fill, Player::player_l1, Player::player_l2}});
+    addAnimation({"move_right", {Player::player_fill, Player::player_r1, Player::player_r2}});
 
     setAnimation("default");
 
@@ -203,4 +203,12 @@ void Player::move() {
             break;
         }
     }
+}
+
+int Player::getHealth() const {
+    return _health;
+}
+
+void Player::setHealth(int health) {
+    _health = health;
 }

@@ -10,7 +10,7 @@
 #include "GameVars.h"
 #include "UIController.h"
 
-#define DEBUG_MODE 0
+#define DEBUG_MODE 1
 
 SDL_Window *pWindow = nullptr;
 SDL_Surface *win_surf = nullptr;
@@ -66,6 +66,8 @@ void init() {
     UIController::writeOnUI(UIController::SCORE_TEXT_DYNAMIC, "0", UIController::SCORE_TEXT_DYNAMIC_POSX,
                             UIController::SCORE_TEXT_DYNAMIC_POSY);
 
+    UIController::setHealthUI(player.getHealth());
+
     player.setMoveIntent(MoveDirection::NONE);
 }
 
@@ -84,7 +86,7 @@ void draw_collider(const GameObject &obj, int r = 255, int g = 0, int b = 9) {
 void draw() {
     SDL_SetColorKey(plancheSprites, false, 0);
     SDL_BlitScaled(plancheSprites, &src_bg, win_surf, &bg);
-    // @TODO: This is a hack to avoid writing on top of the previous rect, improve this
+    // @TODO: This is a hack to avoid writing on top of the previous rect in UI, improve this
     SDL_BlitScaled(plancheSprites, &blackBg, win_surf, &UIRect);
 
     // couleur transparente

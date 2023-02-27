@@ -22,9 +22,14 @@ public:
 
     static void writeScore(uint score);
 
+    static void setHealthUI(u_short health);
+
     static string SCORE_TEXT_DYNAMIC;
     static int SCORE_TEXT_DYNAMIC_POSX;
     static int SCORE_TEXT_DYNAMIC_POSY;
+
+    static int HEALTH_POSX;
+    static int HEALTH_POSY;
 
 private:
     static SDL_Rect letter_a;
@@ -73,6 +78,9 @@ private:
     static SDL_Rect symbol_Exclamation;
     static SDL_Rect symbol_Comma;
 
+    static SDL_Rect playerHealth;
+
+    static vector<shared_ptr<SDL_Rect>> health_list;
     static map<string, SDL_Rect> char_map;
     static vector<shared_ptr<tuple<string, string, int, int, vector<shared_ptr<SDL_Rect>>>>> name_txt_maps;
 
