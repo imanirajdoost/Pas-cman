@@ -16,6 +16,16 @@ SDL_Rect Player::player_d2 = {127, 90, 14, 14};
 SDL_Rect Player::player_u1 = {76, 90, 14, 14};
 SDL_Rect Player::player_u2 = {93, 90, 14, 14};
 
+SDL_Rect Player::player_die1 = {4, 111, 16, 8};
+SDL_Rect Player::player_die2 = {23, 111, 16, 8};
+SDL_Rect Player::player_die3 = {42, 111, 16, 8};
+SDL_Rect Player::player_die4 = {61, 111, 16, 8};
+SDL_Rect Player::player_die5 = {80, 111, 16, 8};
+SDL_Rect Player::player_die6 = {99, 111, 14, 8};
+SDL_Rect Player::player_die7 = {116, 111, 10, 8};
+SDL_Rect Player::player_die8 = {129, 111, 6, 8};
+SDL_Rect Player::player_die9 = {137, 111, 4, 8};
+
 int Player::PLAYER_MOVE_THRESHOLD = 6;
 
 Player::Player(SDL_Rect defaultSprite, int x, int y, int initHealth) : MovableGameObject(defaultSprite),
@@ -36,13 +46,11 @@ Player::Player(SDL_Rect defaultSprite, int x, int y, int initHealth) : MovableGa
     addAnimation({"move_down", {Player::player_fill, Player::player_d1, Player::player_d2}});
     addAnimation({"move_left", {Player::player_fill, Player::player_l1, Player::player_l2}});
     addAnimation({"move_right", {Player::player_fill, Player::player_r1, Player::player_r2}});
+    addAnimation({"die", {Player::player_die1, Player::player_die2, Player::player_die3, Player::player_die4,
+                          Player::player_die5, Player::player_die6, Player::player_die7, Player::player_die8,
+                          Player::player_die9}});
 
     setAnimation("default");
-
-//    _r_sprite = player_r;
-//    _l_sprite = player_l;
-//    _d_sprite = player_d;
-//    _u_sprite = player_u;
 }
 
 void Player::setNextPos(const std::vector<std::vector<MTYPE>> &map, const MoveDirection &direction) {

@@ -31,6 +31,16 @@ private:
     static SDL_Rect player_u1;
     static SDL_Rect player_u2;
 
+    static SDL_Rect player_die1;
+    static SDL_Rect player_die2;
+    static SDL_Rect player_die3;
+    static SDL_Rect player_die4;
+    static SDL_Rect player_die5;
+    static SDL_Rect player_die6;
+    static SDL_Rect player_die7;
+    static SDL_Rect player_die8;
+    static SDL_Rect player_die9;
+
 public:
     Player(SDL_Rect defaultSprite, int x, int y, int initHealth);   // Constructor that initilalizes player with the given health
 
