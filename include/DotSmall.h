@@ -1,16 +1,16 @@
 #ifndef DOTSMALL_H
 #define DOTSMALL_H
 
-#include "Dot.h"
+#include "Eatable.h"
 
 extern SDL_Rect sp_dot_big;
 static int smallDotHeight = 10;
 
-class DotSmall : public Dot {
+class DotSmall : public Eatable {
 public:
     DotSmall(int x, int y);
     static int getRectHeight();
-    void getEaten(const Dot& dot) override;
+    void getEaten(const Eatable& dot) override;
 };
 
 #endif

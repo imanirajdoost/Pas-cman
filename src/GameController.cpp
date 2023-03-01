@@ -13,7 +13,7 @@ using namespace std;
 
 int GameController::animationCounter = 0;
 uint GameController::playerScore = 0;
-std::vector<shared_ptr<Dot>> GameController::dots;
+std::vector<shared_ptr<Eatable>> GameController::dots;
 
 Fruit GameController::fruit {-100,-100};
 
@@ -28,15 +28,15 @@ int GameController::bigDotPositions[4][2] = {
 
 u_short GameController::dotIndex = 0;
 
-void GameController::initDots() {
+void GameController::initItems() {
     GameController::dots = spawnDotObjects();
 }
 
-vector<shared_ptr<Dot>> GameController::spawnDotObjects() {
+vector<shared_ptr<Eatable>> GameController::spawnDotObjects() {
 
     auto map = Map::map;
 
-    vector<shared_ptr<Dot>> mapDots;
+    vector<shared_ptr<Eatable>> mapDots;
 
     for (int i = 0; i < map.size(); i++) {
         for (int j = 0; j < map[i].size(); j++) {
@@ -85,13 +85,13 @@ void GameController::addScore(uint scoreToAdd) {
 //    cout << "Score: " << playerScore << endl;
 }
 
-bool GameController::deleteObject(const Dot &dot, uint score) {
+bool GameController::deleteDot(const Eatable &dot, uint score) {
 //    auto targetToDel = dots[dot.getIndex()].get();
 
     for (auto i = GameController::dots.begin(); i < GameController::dots.end(); ++i) {
         if (dot.getIndex() == i->get()->getIndex() && !dot.hasBeenEaten()) {
             GameController::dots.erase(i);
-            GameController::addScore(score);
+            addScore(score);
 //            cout << " remaining dots: " << GameController::dots.size() << endl;
             if (GameController::dots.empty()) {
                 // @TODO : Win the game
@@ -104,6 +104,13 @@ bool GameController::deleteObject(const Dot &dot, uint score) {
 
 //    if(!dot.hasBeenEaten())
 //        GameController::dots.erase(GameController::dots.begin() + dot.getIndex());
+}
+
+bool GameController::deleteBonus(const Eatable& eatable, uint score) {
+    if(!eatable.hasBeenEaten()) {
+        resetFruitPosition();
+        addScore(score);
+    }
 }
 
 bool GameController::isBigDot(int i, int j) {

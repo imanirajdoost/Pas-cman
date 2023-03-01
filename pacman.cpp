@@ -60,7 +60,7 @@ void init() {
     plancheSprites = SDL_LoadBMP("./pacman_sprites.bmp");
 
     // Initialize dots on the screen
-    GameController::initDots();
+    GameController::initItems();
     UIController::init();
 
     UIController::writeOnUI("score_static", "score", 700, 10);
@@ -209,80 +209,8 @@ int main(int argc, char **argv) {
             clyde.resetNextPos();
         }
 
-//        player.setNextPos(Map::char_map, nextPlayerMove);
-//        SDL_Rect nextPos = player.getNextPos();
-
-//        SDL_Rect collisionOffset;
-//        collisionOffset.w = player.getRect().w;
-//        collisionOffset.w = player.getRect().h;
-//
-//        collisionOffset.x = nextPlayerMove == MoveDirection::RIGHT ? 1 : 0;
-//        collisionOffset.y = nextPlayerMove == MoveDirection::DOWN ? 1 : 0;
-
-//        MTYPE nextCol = CollisionManager::getNextCOLOBJ(Map::char_map, player.getNextPos());
-        // MTYPE nextCol = CollisionManager::getObjectTypeAt(CollisionManager::getRectAtDirection(player.getRect(),nextPlayerMove));
-
-        // player.setNextPos(Map::char_map, nextPlayerMove);
-
         // Control movement of the player based on the given input
         player.controlMove();
-
-//        vector<Collider> colliderList = CollisionManager::getRectsAtDirection(player.getRect(),nextPlayerMove);
-//        bool isCollidingWithWall = false;
-
-//        for (auto collider: colliderList) {
-//            if(collider.getType() == MTYPE::WALL) {
-//                player.resetNextPos();
-//                player.resetMoveDirection();
-//                isCollidingWithWall = true;
-//                break;
-//            }
-//        }
-//
-//        if(!isCollidingWithWall)
-//            player.move();
-//
-//        if(isCollidingWithWall)
-//            cout << "HAS COLLISION WITH WALL" << endl;
-//        else
-//            cout << "NO COLLISION WITH WALL" << endl;
-
-//        if (CollisionManager::hasCollision(player.getRect(), CollisionManager::getRectAtDirection(player.getRect(),nextPlayerMove)) &&
-//                nextCol == MTYPE::WALL) {
-//            cout << "HAS COLLISION" << endl;
-//            player.resetNextPos();
-//        } else {
-//            cout << "NO COLLISION" << endl;
-//            player.move();
-//        }
-
-//        if (!CollisionManager::isCollision(Map::char_map, player, MTYPE::PACMAN, collisionOffset)) {
-//            player.setMoveDirection(nextPlayerMove);
-//            player.move();
-//        } else {
-//            if (nextCol == MTYPE::ITEM) {
-//                //TODO: delete coin
-//                // std::cout << "Coin en (" << nextPos.x / 32 << ", " << nextPos.y / 32 << ")" << std::endl;
-//                player.eat(*GameController::dots.at(0).get());
-//                Map::char_map[nextPos.y / 32][nextPos.x / 32] = MTYPE::EMPTY;
-//            } else if (nextCol == MTYPE::TP) {
-//                SDL_Rect nextPos = player.getNextPos();
-//                if (player.getX() == 0) {
-//                    nextPos.x = 20*TILESIZE;
-//                } else if (player.getX() == 21*TILESIZE) {
-//                    nextPos.x = 0;
-//                }
-//                player.setRawNextPos(nextPos);
-//            }
-//            player.resetMoveDirection();
-//            if (player.getMoveDirection() != nextPlayerMove) {
-//                player.resetNextPos(); // resetting next move
-//                player.setNextPos(Map::char_map, player.getMoveDirection());
-//                player.move();
-//            } else {
-//                player.resetNextPos();
-//            }
-//        }
 
         draw();
         SDL_UpdateWindowSurface(pWindow);

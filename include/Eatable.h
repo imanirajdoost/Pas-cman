@@ -3,14 +3,14 @@
 
 #include "StaticGameObject.h"
 
-class Dot : public StaticGameObject {
+class Eatable : public StaticGameObject {
 
 protected:
     bool isEaten;
 
 public:
-    Dot(SDL_Rect defaultSprite, int x, int y);
-    virtual void getEaten(const Dot& dot) = 0;
+    Eatable(SDL_Rect defaultSprite, int x, int y);
+    virtual void getEaten(const Eatable& dot) = 0;
     void setIndex(u_short indexToSet);
     u_short getIndex() const;
     bool hasBeenEaten() const;

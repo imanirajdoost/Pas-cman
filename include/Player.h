@@ -2,7 +2,7 @@
 #define PLAYER_H
 
 #include "MovableGameObject.h"
-#include "Dot.h"
+#include "Eatable.h"
 
 /**
  * Main pac-man player object
@@ -44,7 +44,7 @@ private:
 public:
     Player(SDL_Rect defaultSprite, int x, int y, int initHealth);   // Constructor that initilalizes player with the given health
 
-    void eat(Dot& dotToEat) const;         // Action to eat a Dot
+    void eat(Eatable& dotToEat) const;         // Action to eat a Eatable
     void die();                                  // Die when hit by a ghost
     void gameOver();                             // Game over when no more health is remaining
     void setNextPos(const std::vector<std::vector<MTYPE>>& map, const MoveDirection& direction) override;

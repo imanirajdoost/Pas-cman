@@ -4,7 +4,7 @@
 
 SDL_Rect sp_dot_big = { 9,79, 7,7 };
 
-DotBig::DotBig(int x, int y) : Dot(sp_dot_big, x, y) {
+DotBig::DotBig(int x, int y) : Eatable(sp_dot_big, x, y) {
     rect.x = x;
     rect.y = y;
 
@@ -19,7 +19,7 @@ int DotBig::getRectHeight() {
     return bigDotHeight;
 }
 
-void DotBig::getEaten(const Dot &dot) {
-    if(GameController::deleteObject(dot, 100))
+void DotBig::getEaten(const Eatable &dot) {
+    if(GameController::deleteDot(dot, 100))
         isEaten = true;
 }

@@ -104,7 +104,7 @@ SDL_Rect Player::getNextStepRect(MoveDirection dir) {
     return nextStepRect;
 }
 
-void Player::eat(Dot &dotToEat) const {
+void Player::eat(Eatable &dotToEat) const {
     dotToEat.getEaten(dotToEat);
 }
 
@@ -211,6 +211,10 @@ void Player::move() {
             break;
         }
     }
+
+    // Check for collision with bonus objs
+    if(CollisionManager::hasCollision(getRect(), GameController::fruit.getRect()))
+        eat(GameController::fruit);
 }
 
 int Player::getHealth() const {
