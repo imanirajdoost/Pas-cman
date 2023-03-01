@@ -5,11 +5,19 @@
 #include "DotBig.h"
 #include "UIController.h"
 
+#include <chrono>
+#include <thread>
+#include <random>
+
 using namespace std;
 
 int GameController::animationCounter = 0;
 uint GameController::playerScore = 0;
 std::vector<shared_ptr<Dot>> GameController::dots;
+
+Fruit GameController::fruit {-100,-100};
+
+bool GameController::exit = false;
 
 int GameController::bigDotPositions[4][2] = {
         {3,  1},
@@ -85,7 +93,7 @@ bool GameController::deleteObject(const Dot &dot, uint score) {
             GameController::dots.erase(i);
             GameController::addScore(score);
 //            cout << " remaining dots: " << GameController::dots.size() << endl;
-            if(GameController::dots.empty()) {
+            if (GameController::dots.empty()) {
                 // @TODO : Win the game
                 cout << "You won !" << endl;
             }
@@ -108,5 +116,66 @@ bool GameController::isBigDot(int i, int j) {
             return true;
     }
     return false;
+}
 
+void GameController::initBonusTimer() {
+
+    int min = 2;
+    int max = 5;
+
+//    short spawnTimes = 10;
+
+    // NOTE: Initialise. Do this once (not for every random number).
+    std::default_random_engine rng(std::random_device{}());
+    std::uniform_int_distribution<int> dist(min, max);
+
+    int random_num;
+
+    do {
+        random_num = dist(rng);
+        cout << "Rand: " << random_num << endl;
+
+        // start counter with current second
+        time_t counter = time(nullptr);
+
+        while(!hasQuit()) {
+            // wait
+            if(time(nullptr) - counter > random_num)
+                break;
+        }
+        if(hasQuit())
+            return;
+
+//        std::this_thread::sleep_for(std::chrono::milliseconds (random_num));
+
+        spawnFruit();
+//        spawnTimes--;
+
+//        std::this_thread::sleep_for(std::chrono::milliseconds (5000ms));
+        int waitTime = 5;
+        counter = time(nullptr);
+        while(!hasQuit()) {
+            // wait
+            if(time(nullptr) - counter > waitTime)
+                break;
+        }
+        if(hasQuit())
+            return;
+
+        resetFruitPosition();
+
+    } while (!hasQuit());
+}
+
+void GameController::spawnFruit() {
+    fruit.setPos(10 * TILESIZE, 15 * TILESIZE);
+    cout << "spawning fruit" << endl;
+}
+
+void GameController::resetFruitPosition() {
+    fruit.setPos(-100, -100);
+}
+
+bool GameController::hasQuit() {
+    return exit;
 }

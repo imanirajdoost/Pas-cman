@@ -1,5 +1,6 @@
 #include <SDL.h>
 #include <iostream>
+#include <thread>
 
 #include "Ghost.h"
 #include "Map.h"
@@ -33,7 +34,7 @@ Blinky blinky{blinky_default, 32, 32};
 Pinky pinky{pinky_default, 64, 32};
 Inky inky{inky_default, 96, 32};
 Clyde clyde{clyde_default, 128, 32};
-Player player{player_default, 32, 32, 2};
+Player player{player_default, 10 * TILESIZE, 20 * TILESIZE, 2};
 
 void draw_grid(int r = 255, int g = 0, int b = 0) {
     SDL_SetRenderDrawColor(renderer, r, g, b, 255);
@@ -106,6 +107,8 @@ void draw() {
         dotSmall->draw(plancheSprites, win_surf);
     }
 
+    GameController::fruit.draw(plancheSprites, win_surf);
+
     if (DEBUG_MODE) {
 
         // draw the level grid
@@ -132,7 +135,7 @@ int main(int argc, char **argv) {
 
     init();
 
-
+    std::thread th1(GameController::initBonusTimer);
 
     // BOUCLE PRINCIPALE
     bool quit = false;
@@ -155,8 +158,12 @@ int main(int argc, char **argv) {
         // Gestion du clavier        
         int nbk;
         const Uint8 *keys = SDL_GetKeyboardState(&nbk);
-        if (keys[SDL_SCANCODE_ESCAPE])
+        if (keys[SDL_SCANCODE_ESCAPE]) {
             quit = true;
+            GameController::exit = true;
+//            std::terminate();
+//            th1.join();
+        }
         if (keys[SDL_SCANCODE_LEFT]) {
             nextPlayerMove = MoveDirection::LEFT;
             player.setMoveIntent(MoveDirection::LEFT);
@@ -283,5 +290,6 @@ int main(int argc, char **argv) {
         SDL_Delay(16); // utiliser SDL_GetTicks64() pour plus de precisions
     }
     SDL_Quit(); // ON SORT
+    th1.join();
     return 0;
 }
