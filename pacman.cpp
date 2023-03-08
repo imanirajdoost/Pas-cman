@@ -135,7 +135,7 @@ int main(int argc, char **argv) {
 
     init();
 
-    std::thread th1(GameController::initBonusTimer);
+    //std::thread th1(GameController::initBonusTimer);
 
     // BOUCLE PRINCIPALE
     bool quit = false;
@@ -180,37 +180,16 @@ int main(int argc, char **argv) {
 
         // AFFICHAGE
 
-        blinky.setNextPos(Map::map, MoveDirection::RIGHT);
-        pinky.setNextPos(Map::map, MoveDirection::RIGHT);
-        inky.setNextPos(Map::map, MoveDirection::RIGHT);
-        clyde.setNextPos(Map::map, MoveDirection::RIGHT);
+        blinky.setMoveIntent(player);
+        pinky.setMoveIntent(player);
+        inky.setMoveIntent(player, blinky);
+        clyde.setMoveIntent(player);
 
-        if (!CollisionManager::isCollision(Map::map, blinky, MTYPE::GHOST, SDL_Rect())) {
-            blinky.move();
-        } else {
-            blinky.resetNextPos();
-        }
-
-        if (!CollisionManager::isCollision(Map::map, pinky, MTYPE::GHOST, SDL_Rect())) {
-            pinky.move();
-        } else {
-            pinky.resetNextPos();
-        }
-
-        if (!CollisionManager::isCollision(Map::map, inky, MTYPE::GHOST, SDL_Rect())) {
-            inky.move();
-        } else {
-            inky.resetNextPos();
-        }
-
-        if (!CollisionManager::isCollision(Map::map, clyde, MTYPE::GHOST, SDL_Rect())) {
-            clyde.move();
-        } else {
-            clyde.resetNextPos();
-        }
-
-        // Control movement of the player based on the given input
         player.controlMove();
+        blinky.controlMove();
+        pinky.controlMove();
+        inky.controlMove();
+        clyde.controlMove();
 
         draw();
         SDL_UpdateWindowSurface(pWindow);
@@ -218,6 +197,6 @@ int main(int argc, char **argv) {
         SDL_Delay(16); // utiliser SDL_GetTicks64() pour plus de precisions
     }
     SDL_Quit(); // ON SORT
-    th1.join();
+    //th1.join();
     return 0;
 }

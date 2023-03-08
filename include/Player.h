@@ -13,11 +13,7 @@ private:
     int _health;
 public:
     int getHealth() const;
-    void setHealth(int health);
-
-private:
-    // Player's health
-    MoveDirection moveIntent = MoveDirection::NONE;
+    void setHealth(int health);              // Player's health
     static int PLAYER_MOVE_THRESHOLD;
 
     // get pacman's sprite from the sprite sheet
@@ -41,22 +37,16 @@ private:
     static SDL_Rect player_die8;
     static SDL_Rect player_die9;
 
-public:
     Player(SDL_Rect defaultSprite, int x, int y, int initHealth);   // Constructor that initilalizes player with the given health
 
     void eat(Eatable& dotToEat) const;         // Action to eat a Eatable
     void die();                                  // Die when hit by a ghost
     void gameOver();                             // Game over when no more health is remaining
-    void setNextPos(const std::vector<std::vector<MTYPE>>& map, const MoveDirection& direction) override;
-    void controlMove();
     SDL_Rect getNextStepRect(MoveDirection dir);
 
     void move() override;
     
     void setRawNextPos(SDL_Rect nextPos);
-
-    MoveDirection getMoveIntent() const;
-    void setMoveIntent(const MoveDirection& direction);
 
 };
 

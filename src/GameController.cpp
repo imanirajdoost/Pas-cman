@@ -111,6 +111,8 @@ bool GameController::deleteBonus(const Eatable& eatable, uint score) {
         resetFruitPosition();
         addScore(score);
     }
+
+    return true;
 }
 
 bool GameController::isBigDot(int i, int j) {

@@ -3,6 +3,7 @@
 
 #include <SDL.h>
 #include "MovableGameObject.h"
+#include "Player.h"
 #include "Map.h"
 
 class Ghost: public MovableGameObject {
@@ -18,7 +19,8 @@ class Blinky: public Ghost {
     public:
     Blinky(SDL_Rect defaultSprite, int x, int y);
 
-    void setNextPos(const std::vector<std::vector<MTYPE>>& map, const MoveDirection& direction) override;
+    void setMoveIntent(Player &player);
+    
 private:
     static SDL_Rect blinky_r1;
     static SDL_Rect blinky_r2;
@@ -33,7 +35,7 @@ private:
 class Pinky: public Ghost {
     public:
         Pinky(SDL_Rect defaultSprite, int x, int y);
-        void setNextPos(const std::vector<std::vector<MTYPE>>& map, const MoveDirection& direction) override;
+        void setMoveIntent(Player &player);
 private:
     static SDL_Rect pinky_r1;
     static SDL_Rect pinky_r2;
@@ -48,7 +50,7 @@ private:
 class Inky: public Ghost {
     public:
         Inky(SDL_Rect defaultSprite, int x, int y);
-        void setNextPos(const std::vector<std::vector<MTYPE>>& map, const MoveDirection& direction) override;
+        void setMoveIntent(Player &player, Blinky &blinky);
 private:
     static SDL_Rect inky_r1;
     static SDL_Rect inky_r2;
@@ -63,7 +65,7 @@ private:
 class Clyde: public Ghost {
     public:
         Clyde(SDL_Rect defaultSprite, int x, int y);
-        void setNextPos(const std::vector<std::vector<MTYPE>>& map, const MoveDirection& direction) override;
+        void setMoveIntent(Player &player);
 private:
     static SDL_Rect clyde_r1;
     static SDL_Rect clyde_r2;
