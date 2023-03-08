@@ -2,14 +2,14 @@
 #include <iostream>
 #include <thread>
 
-#include "Ghost.h"
+#include "model/Ghost.h"
 #include "Map.h"
-#include "CollisionManager.h"
-#include "MovableGameObject.h"
-#include "Player.h"
-#include "GameController.h"
+#include "controller/CollisionController.h"
+#include "model/MovableGameObject.h"
+#include "model/Player.h"
+#include "controller/GameController.h"
 #include "GameVars.h"
-#include "UIController.h"
+#include "view/ViewManager.h"
 
 #define DEBUG_MODE 1
 
@@ -61,13 +61,13 @@ void init() {
 
     // Initialize dots on the screen
     GameController::initItems();
-    UIController::init();
+    ViewManager::init();
 
-    UIController::writeOnUI("score_static", "score", 700, 10);
-    UIController::writeOnUI(UIController::SCORE_TEXT_DYNAMIC, "0", UIController::SCORE_TEXT_DYNAMIC_POSX,
-                            UIController::SCORE_TEXT_DYNAMIC_POSY);
+    ViewManager::writeOnUI("score_static", "score", 700, 10);
+    ViewManager::writeOnUI(ViewManager::SCORE_TEXT_DYNAMIC, "0", ViewManager::SCORE_TEXT_DYNAMIC_POSX,
+                           ViewManager::SCORE_TEXT_DYNAMIC_POSY);
 
-    UIController::setHealthUI(player.getHealth());
+    ViewManager::setHealthUI(player.getHealth());
 
     player.setMoveIntent(MoveDirection::NONE);
 }
@@ -101,7 +101,7 @@ void draw() {
     player.draw(plancheSprites, win_surf);
 
     // Draw UI
-    UIController::drawUI(plancheSprites, win_surf);
+    ViewManager::drawUI(plancheSprites, win_surf);
 
     for (auto &dotSmall: GameController::dots) {
         dotSmall->draw(plancheSprites, win_surf);
@@ -185,25 +185,25 @@ int main(int argc, char **argv) {
         inky.setNextPos(Map::map, MoveDirection::RIGHT);
         clyde.setNextPos(Map::map, MoveDirection::RIGHT);
 
-        if (!CollisionManager::isCollision(Map::map, blinky, MTYPE::GHOST, SDL_Rect())) {
+        if (!CollisionController::isCollision(Map::map, blinky, MTYPE::GHOST, SDL_Rect())) {
             blinky.move();
         } else {
             blinky.resetNextPos();
         }
 
-        if (!CollisionManager::isCollision(Map::map, pinky, MTYPE::GHOST, SDL_Rect())) {
+        if (!CollisionController::isCollision(Map::map, pinky, MTYPE::GHOST, SDL_Rect())) {
             pinky.move();
         } else {
             pinky.resetNextPos();
         }
 
-        if (!CollisionManager::isCollision(Map::map, inky, MTYPE::GHOST, SDL_Rect())) {
+        if (!CollisionController::isCollision(Map::map, inky, MTYPE::GHOST, SDL_Rect())) {
             inky.move();
         } else {
             inky.resetNextPos();
         }
 
-        if (!CollisionManager::isCollision(Map::map, clyde, MTYPE::GHOST, SDL_Rect())) {
+        if (!CollisionController::isCollision(Map::map, clyde, MTYPE::GHOST, SDL_Rect())) {
             clyde.move();
         } else {
             clyde.resetNextPos();
