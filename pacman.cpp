@@ -34,7 +34,7 @@ Blinky blinky{blinky_default, 32, 32};
 Pinky pinky{pinky_default, 64, 32};
 Inky inky{inky_default, 96, 32};
 Clyde clyde{clyde_default, 128, 32};
-Player player{player_default, 10 * TILESIZE, 20 * TILESIZE, 2};
+Player player{0};
 
 void draw_grid(int r = 255, int g = 0, int b = 0) {
     SDL_SetRenderDrawColor(renderer, r, g, b, 255);

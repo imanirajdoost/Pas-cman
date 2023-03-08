@@ -1,9 +1,5 @@
 #include "controller/CollisionController.h"
-#include "model/Ghost.h"
 #include "GameVars.h"
-
-#include <SDL.h>
-#include <iostream>
 
 std::vector<std::vector<int>> CollisionController::collisionMatrix = {
             {0,1,0,1,1,0,1},
@@ -51,9 +47,6 @@ bool CollisionController::isWallDetectedAtDirection(const SDL_Rect& sourceRect, 
     if(nextMapTile == MTYPE::WALL)
         return true;
     return false;
-
-
-    cout << mapX << ", " << mapY << endl;
 }
 
 bool CollisionController::isCollision(const std::vector<std::vector<MTYPE>>& map, const MovableGameObject& targetObj, const MTYPE& obj, const SDL_Rect& collisionOffset) {

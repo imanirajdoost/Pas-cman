@@ -2,7 +2,9 @@
 // Created by iman on 18/02/23.
 //
 
+#include <iostream>
 #include "../../../include/model/component/AnimationComponent.h"
+
 
 std::string AnimationComponent::getName() const {
     return name;
@@ -29,6 +31,8 @@ void AnimationComponent::addSprites(const std::vector<SDL_Rect>& sps) {
 AnimationComponent::AnimationComponent(const string &newName, const vector<SDL_Rect> &sps) {
     setName(newName);
     addSprites(sps);
+    animation_frame = 0;
+    startAnimation();
 }
 
 /**
@@ -76,4 +80,8 @@ void AnimationComponent::addAnimation(const AnimationComponent& anim) {
             return;
     }
     animation_list.push_back(anim);
+}
+
+AnimationComponent::AnimationComponent() {
+
 }

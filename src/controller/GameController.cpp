@@ -1,13 +1,10 @@
-#include "controller/GameController.h"
 
+
+#include <stdexcept>
 #include <iostream>
-#include "GameVars.h"
-#include "model/eatable/DotBig.h"
-#include "view/ViewManager.h"
-
-#include <chrono>
-#include <thread>
 #include <random>
+#include "controller/GameController.h"
+#include "GameVars.h"
 
 using namespace std;
 

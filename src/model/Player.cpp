@@ -1,44 +1,17 @@
-#include "model/Player.h"
-#include "model/eatable/DotBig.h"
+#include "../../include/model/Player.h"
+#include <vector>
 #include <iostream>
-#include <cmath>
+#include "../../include/GameVars.h"
+#include "../../include/Map.h"
+#include "../../include/model/component/MoveComponent.h"
+#include "../../include/controller/CollisionController.h"
 #include "controller/GameController.h"
-#include "controller/CollisionController.h"
 
-// get pacman's sprite from the sprite sheet
-SDL_Rect Player::player_fill = {4, 90, 14, 14};
-SDL_Rect Player::player_r1 = {21, 90, 13, 14};
-SDL_Rect Player::player_r2 = {36, 90, 9, 14};
-SDL_Rect Player::player_l1 = {48, 90, 13, 14};
-SDL_Rect Player::player_l2 = {64, 90, 9, 14};
-SDL_Rect Player::player_d1 = {110, 91, 14, 13};
-SDL_Rect Player::player_d2 = {127, 95, 14, 9};
-SDL_Rect Player::player_u1 = {76, 91, 14, 13};
-SDL_Rect Player::player_u2 = {93, 90, 14, 14};
-
-SDL_Rect Player::player_die1 = {4, 111, 16, 8};
-SDL_Rect Player::player_die2 = {23, 111, 16, 8};
-SDL_Rect Player::player_die3 = {42, 111, 16, 8};
-SDL_Rect Player::player_die4 = {61, 111, 16, 8};
-SDL_Rect Player::player_die5 = {80, 111, 16, 8};
-SDL_Rect Player::player_die6 = {99, 111, 14, 8};
-SDL_Rect Player::player_die7 = {116, 111, 10, 8};
-SDL_Rect Player::player_die8 = {129, 111, 6, 8};
-SDL_Rect Player::player_die9 = {137, 111, 4, 8};
-
-int Player::PLAYER_MOVE_THRESHOLD = 6;
-
-Player::Player(SDL_Rect defaultSprite, int x, int y, int initHealth) : MovableGameObject(defaultSprite),
-                                                                       _health{initHealth} {
-    // _health = initHealth;
-    // @todo : Update health UI
-
-    rect.x = x;
-    rect.y = y;
+Player::Player(short initHealth) : HealthComponent(initHealth) {
 
     // Set the size of the player rect
-    rect.w = 32;
-    rect.h = 32;
+    rect.w = TILESIZE;
+    rect.h = TILESIZE;
 
     // Set default animation and sprite and add animations
     addAnimation({"default", {Player::player_fill, Player::player_r1, Player::player_r2}});
@@ -104,22 +77,9 @@ SDL_Rect Player::getNextStepRect(MoveDirection dir) {
     return nextStepRect;
 }
 
-void Player::eat(EatableComponent &dotToEat) const {
-    dotToEat.getEaten(dotToEat);
-}
-
-void Player::die() {
-    // @todo implement dying
-    _health--;
-
-    if (_health <= 0) {
-        gameOver();
-    }
-}
-
-void Player::gameOver() {
-    // @todo show game over UI or reset the game
-}
+//void Player::eat(EatableComponent &dotToEat) const {
+//    dotToEat.getEaten(dotToEat);
+//}
 
 MoveDirection Player::getMoveIntent() const {
     return moveIntent;
@@ -215,12 +175,4 @@ void Player::move() {
     // Check for collision with bonus objs
     if(CollisionController::hasCollision(getRect(), GameController::fruit.getRect()))
         eat(GameController::fruit);
-}
-
-int Player::getHealth() const {
-    return _health;
-}
-
-void Player::setHealth(int health) {
-    _health = health;
 }

@@ -5,9 +5,9 @@
 #include "../component/EatableComponent.h"
 
 class Fruit : public StaticGameObject ,public EatableComponent {
-public:
-    Fruit(int x, int y);
-    void getEaten(const EatableComponent& dot) override;
+//public:
+//    Fruit(int x, int y);
+//    void getEaten(const EatableComponent& dot) override;
 };
 
 

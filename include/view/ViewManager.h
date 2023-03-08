@@ -13,7 +13,7 @@ using namespace std;
 
 class ViewManager {
 public:
-
+    void draw(SDL_Surface* plancheSprites, SDL_Surface* win_surf);
     static void init();
 
     static void drawUI(SDL_Surface *plancheSprites, SDL_Surface *win_surf);

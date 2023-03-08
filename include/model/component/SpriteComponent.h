@@ -7,16 +7,17 @@
 
 
 #include <memory>
+#include <SDL_rect.h>
 #include "GameComponent.h"
 
 class SpriteComponent : public GameComponent {
 public:
-        SDL_Rect getRect() const;
+    explicit SpriteComponent(SDL_Rect _defaultSprite);
+
+    SpriteComponent();
 
 protected:
-    shared_ptr<SDL_Rect> current_sp = nullptr;
-    SDL_Rect rect;
-
+    std::shared_ptr<SDL_Rect> current_sp = nullptr;
     SDL_Rect default_sp;
 };
 

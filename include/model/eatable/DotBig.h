@@ -7,10 +7,7 @@
 static int bigDotHeight = 20;
 
 class DotBig : public Dot {
-public:
-    DotBig(int x, int y);
-    static int getRectHeight();
-    void getEaten(const EatableComponent &dot) override;
+
 };
 
 #endif

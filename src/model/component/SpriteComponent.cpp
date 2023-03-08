@@ -5,6 +5,10 @@
 #include <SDL2/SDL_rect.h>
 #include "../../../include/model/component/SpriteComponent.h"
 
-SDL_Rect SpriteComponent::getRect() const {
-    return rect;
+SpriteComponent::SpriteComponent(SDL_Rect _defaultSprite) : default_sp{_defaultSprite} {
+
+}
+
+SpriteComponent::SpriteComponent() {
+
 }

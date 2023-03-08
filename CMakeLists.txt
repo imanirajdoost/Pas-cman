@@ -9,12 +9,16 @@ find_package(SDL2 REQUIRED)
 
 include_directories(
         ${PROJECT_SOURCE_DIR}/include
+        ${PROJECT_SOURCE_DIR}/include/*
         ${PROJECT_SOURCE_DIR}/src
+        ${PROJECT_SOURCE_DIR}/src/*
 )
 
 file(GLOB SRCS
         "${PROJECT_SOURCE_DIR}/include/*.h"
+        "${PROJECT_SOURCE_DIR}/include/*/*.h"
         "${PROJECT_SOURCE_DIR}/src/*.cpp"
+        "${PROJECT_SOURCE_DIR}/src/*/*.cpp"
         )
 
 add_executable(${PROJECT_NAME} ${SRCS} src/model/StaticGameObject.cpp src/model/eatable/DotSmall.cpp src/model/GameObject.cpp)

@@ -9,14 +9,18 @@ protected:
     bool isEaten;
 
 public:
-    EatableComponent(SDL_Rect defaultSprite, int x, int y);
-    virtual void getEaten(const EatableComponent& dot) = 0;
-    void setIndex(u_short indexToSet);
-    u_short getIndex() const;
+    EatableComponent();
+
+    void getEaten(const EatableComponent &dot);
+
+    void setIndex(short indexToSet);
+
+    short getIndex() const;
+
     bool hasBeenEaten() const;
 
 private:
-    u_short index;
+    short index;
 };
 
 #endif
