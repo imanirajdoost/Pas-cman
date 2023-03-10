@@ -13,14 +13,6 @@
 
 #define DEBUG_MODE 1
 
-SDL_Window *pWindow = nullptr;
-SDL_Surface *win_surf = nullptr;
-SDL_Surface *plancheSprites = nullptr;
-SDL_Renderer *renderer = nullptr;
-
-SDL_Rect src_bg = {368, 3, 168, 216}; // x,y, w,h (0,0) en haut a gauche
-SDL_Rect bg = {2, 2, 672, 864}; // ici scale x4
-
 SDL_Rect blackBg = {0, 0, 1, 1};
 SDL_Rect UIRect  = {700, 0, 200, 200};
 
@@ -40,15 +32,8 @@ void draw_grid(int r = 255, int g = 0, int b = 0) {
 }
 
 void init() {
-    pWindow = SDL_CreateWindow("PacMan", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 900, 900, SDL_WINDOW_SHOWN);
-    win_surf = SDL_GetWindowSurface(pWindow);
-
-    renderer = SDL_CreateRenderer(pWindow, -1, SDL_RENDERER_SOFTWARE);
-
-    plancheSprites = SDL_LoadBMP("./pacman_sprites.bmp");
 
     // Initialize dots on the screen
-    GameController::initItems();
     ViewManager::init();
 
     ViewManager::writeOnUI("score_static", "score", 700, 10);
@@ -122,11 +107,12 @@ int main(int argc, char **argv) {
     init();
 
 //    std::thread th1(GameController::initBonusTimer);
+    GameController gameController;
+    gameController.startGame();
 
     // BOUCLE PRINCIPALE
     bool quit = false;
     while (!quit) {
-        GameController::animationCounter++;
 
         SDL_Event event;
         while (!quit && SDL_PollEvent(&event)) {
@@ -139,71 +125,46 @@ int main(int argc, char **argv) {
             }
         }
 
-        MoveDirection nextPlayerMove = player.getMoveIntent();
-
-        // Gestion du clavier        
-        int nbk;
-        const Uint8 *keys = SDL_GetKeyboardState(&nbk);
-        if (keys[SDL_SCANCODE_ESCAPE]) {
-            quit = true;
-            GameController::exit = true;
-//            std::terminate();
-//            th1.join();
-        }
-        if (keys[SDL_SCANCODE_LEFT]) {
-            nextPlayerMove = MoveDirection::LEFT;
-            player.setMoveIntent(MoveDirection::LEFT);
-        } else if (keys[SDL_SCANCODE_RIGHT]) {
-            nextPlayerMove = MoveDirection::RIGHT;
-            player.setMoveIntent(MoveDirection::RIGHT);
-        } else if (keys[SDL_SCANCODE_UP]) {
-            nextPlayerMove = MoveDirection::UP;
-            player.setMoveIntent(MoveDirection::UP);
-        } else if (keys[SDL_SCANCODE_DOWN]) {
-            nextPlayerMove = MoveDirection::DOWN;
-            player.setMoveIntent(MoveDirection::DOWN);
-        }
-
         // AFFICHAGE
 
-        blinky.setNextPos(Map::map, MoveDirection::RIGHT);
-        pinky.setNextPos(Map::map, MoveDirection::RIGHT);
-        inky.setNextPos(Map::map, MoveDirection::RIGHT);
-        clyde.setNextPos(Map::map, MoveDirection::RIGHT);
+//        blinky.setNextPos(Map::map, MoveDirection::RIGHT);
+//        pinky.setNextPos(Map::map, MoveDirection::RIGHT);
+//        inky.setNextPos(Map::map, MoveDirection::RIGHT);
+//        clyde.setNextPos(Map::map, MoveDirection::RIGHT);
 
-        if (!CollisionController::isCollision(Map::map, blinky, MTYPE::GHOST, SDL_Rect())) {
-            blinky.move();
-        } else {
-            blinky.resetNextPos();
-        }
+//        if (!CollisionController::isCollision(Map::map, blinky, MTYPE::GHOST, SDL_Rect())) {
+//            blinky.move();
+//        } else {
+//            blinky.resetNextPos();
+//        }
+//
+//        if (!CollisionController::isCollision(Map::map, pinky, MTYPE::GHOST, SDL_Rect())) {
+//            pinky.move();
+//        } else {
+//            pinky.resetNextPos();
+//        }
+//
+//        if (!CollisionController::isCollision(Map::map, inky, MTYPE::GHOST, SDL_Rect())) {
+//            inky.move();
+//        } else {
+//            inky.resetNextPos();
+//        }
+//
+//        if (!CollisionController::isCollision(Map::map, clyde, MTYPE::GHOST, SDL_Rect())) {
+//            clyde.move();
+//        } else {
+//            clyde.resetNextPos();
+//        }
 
-        if (!CollisionController::isCollision(Map::map, pinky, MTYPE::GHOST, SDL_Rect())) {
-            pinky.move();
-        } else {
-            pinky.resetNextPos();
-        }
 
-        if (!CollisionController::isCollision(Map::map, inky, MTYPE::GHOST, SDL_Rect())) {
-            inky.move();
-        } else {
-            inky.resetNextPos();
-        }
-
-        if (!CollisionController::isCollision(Map::map, clyde, MTYPE::GHOST, SDL_Rect())) {
-            clyde.move();
-        } else {
-            clyde.resetNextPos();
-        }
-
-        // Control movement of the player based on the given input
-        player.controlMove();
+//        player.controlMove();
 
         draw();
-        SDL_UpdateWindowSurface(pWindow);
+//        SDL_UpdateWindowSurface(pWindow);
         // LIMITE A 60 FPS
-        SDL_Delay(16); // utiliser SDL_GetTicks64() pour plus de precisions
+//        SDL_Delay(16); // utiliser SDL_GetTicks64() pour plus de precisions
     }
-    SDL_Quit(); // ON SORT
+//    SDL_Quit(); // ON SORT
 //    th1.join();
     return 0;
 }

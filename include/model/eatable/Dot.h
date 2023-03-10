@@ -5,9 +5,7 @@
 #ifndef PAS_CMAN_DOT_H
 #define PAS_CMAN_DOT_H
 
-
-#include "../StaticGameObject.h"
-#include "../component/EatableComponent.h"
+#include "model/StaticGameObject.h"
 
 class Dot : public StaticGameObject, public EatableComponent {
 

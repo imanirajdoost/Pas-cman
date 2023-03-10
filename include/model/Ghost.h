@@ -1,11 +1,8 @@
 #ifndef GHOST_H
 #define GHOST_H
 
-#include <SDL.h>
-#include "model/MovableGameObject.h"
-#include "model/component/TransformComponent.h"
-#include "Map.h"
 
+#include "MovableGameObject.h"
 
 class Ghost : public MovableGameObject {
 protected:

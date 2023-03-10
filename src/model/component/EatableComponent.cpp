@@ -1,3 +1,5 @@
+
+
 #include "../../../include/model/component/EatableComponent.h"
 
 EatableComponent::EatableComponent() {
@@ -16,7 +18,11 @@ bool EatableComponent::hasBeenEaten() const {
     return isEaten;
 }
 
-void EatableComponent::getEaten(const EatableComponent &dot) {
+void EatableComponent::getEaten(const EatableComponent &dot, int score) {
+
+}
+
+//void EatableComponent::getEaten(const EatableComponent &dot) {
 //    if(GameController::deleteDot(dot, 100))
 //        isEaten = true;
-}
+//}

@@ -1,18 +1,17 @@
 #include "controller/CollisionController.h"
 #include "GameVars.h"
 
-
-bool CollisionController::hasCollision(const SDL_Rect& rect1, const SDL_Rect& rect2) {
+bool CollisionController::hasCollision(const SDL_Rect &rect1, const SDL_Rect &rect2) {
     // Checks intersection and puts the intersection rect result in result
 //    SDL_bool SDL_IntersectRect(const SDL_Rect * A, const SDL_Rect * B, SDL_Rect * result);
     SDL_bool result = SDL_HasIntersection(&rect1, &rect2);
 
-    if(result == SDL_TRUE)
+    if (result == SDL_TRUE)
         return true;
     return false;
 }
 
-bool CollisionController::isWallDetectedAtDirection(const SDL_Rect& sourceRect, const MoveDirection& direction) {
+bool CollisionController::isWallDetectedAtDirection(const SDL_Rect &sourceRect, const MoveDirection &direction) {
     int mapX = (sourceRect.x + (sourceRect.w / 2)) / TILESIZE;
     int mapY = (sourceRect.y + (sourceRect.h / 2)) / TILESIZE;
 
@@ -35,12 +34,13 @@ bool CollisionController::isWallDetectedAtDirection(const SDL_Rect& sourceRect, 
 
     MTYPE nextMapTile = Map::map[mapX][mapY];
 
-    if(nextMapTile == MTYPE::WALL)
+    if (nextMapTile == MTYPE::WALL)
         return true;
     return false;
 }
 
-bool CollisionController::isCollision(const std::vector<std::vector<MTYPE>>& map, const MovableGameObject& targetObj, const MTYPE& obj, const SDL_Rect& collisionOffset) {
+bool CollisionController::isCollision(const std::vector<std::vector<MTYPE>> &map, const MovableGameObject &targetObj,
+                                      const MTYPE &obj, const SDL_Rect &collisionOffset) {
 
     SDL_Rect targetPosWithOffset = targetObj.getNextPos();
     MoveDirection direction = targetObj.getMoveDirection();
@@ -54,12 +54,12 @@ bool CollisionController::isCollision(const std::vector<std::vector<MTYPE>>& map
     switch (direction) {
         case MoveDirection::UP:
         case MoveDirection::DOWN:
-            targetPos.x += TILESIZE-1;
+            targetPos.x += TILESIZE - 1;
             offsetColObj = getNextCOLOBJ(map, targetPos);
             break;
         case MoveDirection::RIGHT:
         case MoveDirection::LEFT:
-            targetPos.y += TILESIZE-1;
+            targetPos.y += TILESIZE - 1;
             offsetColObj = getNextCOLOBJ(map, targetPos);
 
             break;
@@ -74,17 +74,17 @@ bool CollisionController::isCollision(const std::vector<std::vector<MTYPE>>& map
            CollisionController::collisionMatrix[static_cast<int>(obj)][static_cast<int>(offsetColObj)];
 }
 
-MTYPE CollisionController::getNextCOLOBJ(const std::vector<std::vector<MTYPE>>& map, const SDL_Rect& targetPos) {
-    
-    int mapX = targetPos.x/TILESIZE;
-    int mapY = targetPos.y/TILESIZE;
+MTYPE CollisionController::getNextCOLOBJ(const std::vector<std::vector<MTYPE>> &map, const SDL_Rect &targetPos) {
+
+    int mapX = targetPos.x / TILESIZE;
+    int mapY = targetPos.y / TILESIZE;
 
     MTYPE nextMapTile = map[mapY][mapX];
 
     return nextMapTile;
 }
 
-MTYPE CollisionController::getObjectTypeAt(const SDL_Rect& targetPos) {
+MTYPE CollisionController::getObjectTypeAt(const SDL_Rect &targetPos) {
 
     int mapX = (targetPos.x + (targetPos.w / 2)) / TILESIZE;
     int mapY = (targetPos.y + (targetPos.h / 2)) / TILESIZE;
@@ -96,7 +96,7 @@ MTYPE CollisionController::getObjectTypeAt(const SDL_Rect& targetPos) {
     return nextMapTile;
 }
 
-SDL_Rect CollisionController::getRectAt(const SDL_Rect& targetPos) {
+SDL_Rect CollisionController::getRectAt(const SDL_Rect &targetPos) {
     int mapX = (targetPos.x + (targetPos.w / 2)) / TILESIZE;
     int mapY = (targetPos.y + (targetPos.h / 2)) / TILESIZE;
 //    int mapX = targetPos.x / TILESIZE;
@@ -109,7 +109,7 @@ SDL_Rect CollisionController::getRectAt(const SDL_Rect& targetPos) {
     return newRect;
 }
 
-Collider CollisionController::getRectAtDirection(const SDL_Rect& targetPos, const MoveDirection& direction) {
+Collider CollisionController::getRectAtDirection(const SDL_Rect &targetPos, const MoveDirection &direction) {
 
     Collider col{};
 
@@ -155,7 +155,7 @@ Collider CollisionController::getRectAtDirection(const SDL_Rect& targetPos, cons
     return col;
 }
 
-vector<Collider> CollisionController::getRectsAtDirection(const SDL_Rect& targetPos, const MoveDirection& direction) {
+vector<Collider> CollisionController::getRectsAtDirection(const SDL_Rect &targetPos, const MoveDirection &direction) {
     vector<Collider> cols;
     cols.push_back(getRectAtDirection(targetPos, direction));
 

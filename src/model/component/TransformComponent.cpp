@@ -6,6 +6,7 @@
 #include "../../../include/model/component/TransformComponent.h"
 #include "../../../include/GameVars.h"
 
+
 void TransformComponent::setPos(int x, int y) {
     rect.x = x;
     rect.y = y;

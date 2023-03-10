@@ -5,16 +5,17 @@
 #ifndef PAS_CMAN_FRUITCONTROLLER_H
 #define PAS_CMAN_FRUITCONTROLLER_H
 
-
-#include "../model/component/EatableComponent.h"
-#include "../model/eatable/Fruit.h"
+#include "model/eatable/Fruit.h"
+#include "model/component/EatableComponent.h"
 
 class FruitController {
 public:
     FruitController();
+
     Fruit fruit;
 
     bool deleteFruit(const EatableComponent &eatable, int score);
+
     void initBonusTimer();
 
 private:

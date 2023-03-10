@@ -6,7 +6,6 @@
 #define PAS_CMAN_TRANSFORMCOMPONENT_H
 
 #include "GameComponent.h"
-#include <SDL_rect.h>
 
 class TransformComponent : public GameComponent {
 public:

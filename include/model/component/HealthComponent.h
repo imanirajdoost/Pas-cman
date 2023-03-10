@@ -5,9 +5,6 @@
 #ifndef PAS_CMAN_HEALTHCOMPONENT_H
 #define PAS_CMAN_HEALTHCOMPONENT_H
 
-
-#include "GameComponent.h"
-
 class HealthComponent : public GameComponent {
 private:
     short _health;

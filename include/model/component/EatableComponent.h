@@ -1,8 +1,6 @@
 #ifndef DOT_H
 #define DOT_H
 
-#include "../StaticGameObject.h"
-
 class EatableComponent : public GameComponent {
 
 protected:
@@ -11,7 +9,7 @@ protected:
 public:
     EatableComponent();
 
-    void getEaten(const EatableComponent &dot);
+    void getEaten(const EatableComponent &dot, int score);
 
     void setIndex(short indexToSet);
 

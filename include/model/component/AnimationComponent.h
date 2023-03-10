@@ -1,12 +1,7 @@
 #ifndef PAS_CMAN_ANIMATIONCOMPONENT_H
 #define PAS_CMAN_ANIMATIONCOMPONENT_H
 
-
 #include <string>
-#include <SDL2/SDL_rect.h>
-#include <vector>
-#include <memory>
-#include "SpriteComponent.h"
 
 using namespace std;
 

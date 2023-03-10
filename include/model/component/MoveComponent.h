@@ -6,9 +6,8 @@
 #define PAS_CMAN_MOVECOMPONENT_H
 
 #include <vector>
-#include "GameComponent.h"
 #include "TransformComponent.h"
-#include "../../Map.h"
+#include "Map.h"
 
 enum class MoveDirection {
     NONE = 0,
@@ -27,6 +26,7 @@ protected:
 
 public:
     MoveComponent();
+
     int getSpeed() const;
 
     MoveDirection getMoveDirection() const;

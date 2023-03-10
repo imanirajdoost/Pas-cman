@@ -1,8 +1,7 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
-#include "model/MovableGameObject.h"
-#include "model/component/EatableComponent.h"
+#include "MovableGameObject.h"
 #include "model/component/HealthComponent.h"
 
 /**

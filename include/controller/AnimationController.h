@@ -9,6 +9,9 @@
 class AnimationController {
 public:
     AnimationController();
+
+    virtual void tick();
+
 private:
     int animationCounter;
 };

@@ -1,8 +1,9 @@
-#include "model/eatable/Fruit.h"
-#include "GameVars.h"
-#include "controller/GameController.h"
 
-SDL_Rect sp_fruit = { 290,238, 12,13 };
+
+#include <SDL2/SDL_rect.h>
+#include "../../../include/model/eatable/Fruit.h"
+
+SDL_Rect sp_fruit = {290, 238, 12, 13 };
 
 Fruit::Fruit(int x, int y) : EatableComponent(sp_fruit, x, y){
     rect.x = x;

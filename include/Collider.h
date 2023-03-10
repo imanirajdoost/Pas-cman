@@ -1,8 +1,8 @@
 #ifndef COLLIDER_H
 #define COLLIDER_H
 
+#include <SDL_rect.h>
 #include "Map.h"
-#include <SDL2/SDL.h>
 
 class Collider {
 private:

@@ -5,9 +5,6 @@
 #ifndef PAS_CMAN_COLLIDERCOMPONENT_H
 #define PAS_CMAN_COLLIDERCOMPONENT_H
 
-
-#include "GameComponent.h"
-
 class ColliderComponent : public GameComponent {
 
 };

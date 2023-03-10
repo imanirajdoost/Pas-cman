@@ -9,7 +9,9 @@
 class ScoreController {
 public:
     ScoreController();
+
     void addScore(int scoreToAdd);
+
 private:
     int playerScore;
 };

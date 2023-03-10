@@ -2,11 +2,10 @@
 // Created by iman on 10/03/23.
 //
 
-#include <stdexcept>
-#include <iostream>
-#include "../../include/controller/DotController.h"
-#include "../../include/Map.h"
-#include "../../include/GameVars.h"
+#include "controller/DotController.h"
+#include "GameVars.h"
+#include "model/component/EatableComponent.h"
+#include "Map.h"
 
 DotController::DotController() {
     dots = spawnDotObjects();
@@ -22,8 +21,8 @@ vector<shared_ptr<EatableComponent>> DotController::spawnDotObjects() {
         for (int j = 0; j < map[i].size(); j++) {
             if (map[i][j] == MTYPE::ITEM) {
                 if (!isBigDot(i, j))
-                    mapDots.push_back(spawnDotSmall(j * TILESIZE + DotSmall::getRectHeight(),
-                                                    i * TILESIZE + DotSmall::getRectHeight()));
+                    mapDots.push_back(spawnDotSmall(j * TILESIZE + SMALL_DOT_SIZE,
+                                                    i * TILESIZE + SMALL_DOT_SIZE));
                 else
                     mapDots.push_back(spawnDotBig(j * TILESIZE,
                                                   i * TILESIZE));

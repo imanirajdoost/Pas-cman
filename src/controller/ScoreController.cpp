@@ -2,8 +2,8 @@
 // Created by iman on 10/03/23.
 //
 
-#include "../../include/controller/ScoreController.h"
-#include "../../include/view/ViewManager.h"
+#include "controller/ScoreController.h"
+#include "view/ViewManager.h"
 
 ScoreController::ScoreController(): playerScore{0} {
 

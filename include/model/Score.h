@@ -5,7 +5,6 @@
 #ifndef PAS_CMAN_SCORE_H
 #define PAS_CMAN_SCORE_H
 
-
 #include "Text.h"
 
 class Score : public Text {

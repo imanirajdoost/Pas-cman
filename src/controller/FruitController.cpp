@@ -2,10 +2,9 @@
 // Created by iman on 10/03/23.
 //
 
-#include <iostream>
+#include "controller/FruitController.h"
 #include <random>
-#include "../../include/controller/FruitController.h"
-#include "../../include/GameVars.h"
+#include "GameVars.h"
 
 FruitController::FruitController() {
     Fruit fruit {-100,-100};

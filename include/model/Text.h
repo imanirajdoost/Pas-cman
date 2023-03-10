@@ -5,7 +5,6 @@
 #ifndef PAS_CMAN_TEXT_H
 #define PAS_CMAN_TEXT_H
 
-
 #include "StaticGameObject.h"
 
 class Text : public StaticGameObject {

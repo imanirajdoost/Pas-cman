@@ -3,6 +3,8 @@
 //
 
 #include <iostream>
+#include <SDL2/SDL_rect.h>
+#include <vector>
 #include "../../../include/model/component/AnimationComponent.h"
 
 
