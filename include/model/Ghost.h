@@ -3,7 +3,9 @@
 
 #include <SDL.h>
 #include "model/MovableGameObject.h"
+#include "model/component/TransformComponent.h"
 #include "Map.h"
+
 
 class Ghost : public MovableGameObject {
 protected:

@@ -4,10 +4,16 @@
 
 #include <SDL2/SDL_rect.h>
 #include "../../../include/model/component/TransformComponent.h"
+#include "../../../include/GameVars.h"
 
 void TransformComponent::setPos(int x, int y) {
     rect.x = x;
     rect.y = y;
+}
+
+void TransformComponent::setSize(int x, int y) {
+    rect.w = x;
+    rect.h = y;
 }
 
 int TransformComponent::getX() const{
@@ -31,5 +37,11 @@ SDL_Rect TransformComponent::getRect() const {
 }
 
 TransformComponent::TransformComponent() {
+    setPos(0,0);
+    setSize(TILESIZE, TILESIZE);
+}
 
+TransformComponent::TransformComponent(int posX, int posY, int sizeWidth, int sizeHeight) {
+    setPos(posX, posY);
+    setSize(sizeWidth, sizeHeight);
 }

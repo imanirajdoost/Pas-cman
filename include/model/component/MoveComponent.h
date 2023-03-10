@@ -26,6 +26,7 @@ protected:
     MoveDirection lastDirection = MoveDirection::NONE;
 
 public:
+    MoveComponent();
     int getSpeed() const;
 
     MoveDirection getMoveDirection() const;

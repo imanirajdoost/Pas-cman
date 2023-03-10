@@ -61,3 +61,7 @@ void MoveComponent::move() {
     rect.x = _next_pos.x;
     rect.y = _next_pos.y;
 }
+
+MoveComponent::MoveComponent() {
+
+}

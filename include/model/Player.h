@@ -14,7 +14,6 @@ private:
     MoveDirection moveIntent = MoveDirection::NONE;
 
     // get pacman's sprite from the sprite sheet
-    // TODO: const, namespaces
     const SDL_Rect player_fill = {4, 90, 14, 14};
     const SDL_Rect player_r1 = {21, 90, 13, 14};
     const SDL_Rect player_r2 = {36, 90, 9, 14};
@@ -38,7 +37,7 @@ private:
     const int PLAYER_MOVE_THRESHOLD = 6;
 
 public:
-    Player(short initHealth);   // Constructor
+    explicit Player(short initHealth);   // Constructor
 
 //    void eat(EatableComponent &dotToEat) const;         // Action to eat a EatableComponent
     void setNextPos(const std::vector<std::vector<MTYPE>> &map, const MoveDirection &direction) override;

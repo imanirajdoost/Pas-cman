@@ -1,15 +1,6 @@
 #include "controller/CollisionController.h"
 #include "GameVars.h"
 
-std::vector<std::vector<int>> CollisionController::collisionMatrix = {
-            {0,1,0,1,1,0,1},
-            {1,0,0,1,0,0,0},
-            {0,0,0,0,0,0,0},
-            {1,1,0,0,0,0,0},
-            {1,1,0,0,0,0,0},
-            {1,0,0,0,0,0,0},
-            {1,0,0,0,0,0,0}, 
-        };
 
 bool CollisionController::hasCollision(const SDL_Rect& rect1, const SDL_Rect& rect2) {
     // Checks intersection and puts the intersection rect result in result

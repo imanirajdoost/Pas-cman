@@ -1,27 +1,21 @@
 #include <iostream>
 #include "model/Ghost.h"
-#include "GameVars.h"
 
 
-Ghost::Ghost(){
-//    rect.x = x;
-//    rect.y = y;
-//
-//    _next_pos.x = x;
-//    _next_pos.y = y;
-
-    rect.w = TILESIZE;
-    rect.h = TILESIZE;
+Ghost::Ghost() {
 }
 
-
 Blinky::Blinky() {
+
+    // Initial pos
+    setPos(32, 32);
+
     // Set default animation and sprite and add animations
-    addAnimation({"default", {Blinky::blinky_r1, Blinky::blinky_r2}});
-    addAnimation({"move_up", {Blinky::blinky_u1, Blinky::blinky_u2}});
-    addAnimation({"move_down", {Blinky::blinky_d1, Blinky::blinky_d2}});
-    addAnimation({"move_left", {Blinky::blinky_l1, Blinky::blinky_l2}});
-    addAnimation({"move_right", {Blinky::blinky_r1, Blinky::blinky_r2}});
+    addAnimation({"default", {blinky_r1, blinky_r2}});
+    addAnimation({"move_up", {blinky_u1, blinky_u2}});
+    addAnimation({"move_down", {blinky_d1, blinky_d2}});
+    addAnimation({"move_left", {blinky_l1, blinky_l2}});
+    addAnimation({"move_right", {blinky_r1, blinky_r2}});
 
     setAnimation("default");
 }
@@ -36,34 +30,46 @@ Blinky::Blinky() {
 //}
 
 Pinky::Pinky() {
+
+    // Initial pos
+    setPos(64, 32);
+
     // Set default animation and sprite and add animations
-    addAnimation({"default", {Pinky::pinky_r1, Pinky::pinky_r2}});
-    addAnimation({"move_up", {Pinky::pinky_u1, Pinky::pinky_u2}});
-    addAnimation({"move_down", {Pinky::pinky_d1, Pinky::pinky_d2}});
-    addAnimation({"move_left", {Pinky::pinky_l1, Pinky::pinky_l2}});
-    addAnimation({"move_right", {Pinky::pinky_r1, Pinky::pinky_r2}});
+    addAnimation({"default", {pinky_r1, pinky_r2}});
+    addAnimation({"move_up", {pinky_u1, pinky_u2}});
+    addAnimation({"move_down", {pinky_d1, pinky_d2}});
+    addAnimation({"move_left", {pinky_l1, pinky_l2}});
+    addAnimation({"move_right", {pinky_r1, pinky_r2}});
 
     setAnimation("default");
 }
 
-Inky::Inky() : Ghost()  {
+Inky::Inky() : Ghost() {
+
+    // Initial pos
+    setPos(96, 32);
+
     // Set default animation and sprite and add animations
-    addAnimation({"default", {Inky::inky_r1, Inky::inky_r2}});
-    addAnimation({"move_up", {Inky::inky_u1, Inky::inky_u2}});
-    addAnimation({"move_down", {Inky::inky_d1, Inky::inky_d2}});
-    addAnimation({"move_left", {Inky::inky_l1, Inky::inky_l2}});
-    addAnimation({"move_right", {Inky::inky_r1, Inky::inky_r2}});
+    addAnimation({"default", {inky_r1, inky_r2}});
+    addAnimation({"move_up", {inky_u1, inky_u2}});
+    addAnimation({"move_down", {inky_d1, inky_d2}});
+    addAnimation({"move_left", {inky_l1, inky_l2}});
+    addAnimation({"move_right", {inky_r1, inky_r2}});
 
     setAnimation("default");
 }
 
 Clyde::Clyde() {
+
+    // Initial pos
+    setPos(128, 32);
+
     // Set default animation and sprite and add animations
-    addAnimation({"default", {Clyde::clyde_r1, Clyde::clyde_r2}});
-    addAnimation({"move_up", {Clyde::clyde_u1, Clyde::clyde_u2}});
-    addAnimation({"move_down", {Clyde::clyde_d1, Clyde::clyde_d2}});
-    addAnimation({"move_left", {Clyde::clyde_l1, Clyde::clyde_l2}});
-    addAnimation({"move_right", {Clyde::clyde_r1, Clyde::clyde_r2}});
+    addAnimation({"default", {clyde_r1, clyde_r2}});
+    addAnimation({"move_up", {clyde_u1, clyde_u2}});
+    addAnimation({"move_down", {clyde_d1, clyde_d2}});
+    addAnimation({"move_left", {clyde_l1, clyde_l2}});
+    addAnimation({"move_right", {clyde_r1, clyde_r2}});
 
     setAnimation("default");
 }

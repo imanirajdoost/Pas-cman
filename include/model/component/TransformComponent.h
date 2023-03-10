@@ -11,6 +11,7 @@
 class TransformComponent : public GameComponent {
 public:
     TransformComponent();
+    TransformComponent(int posX, int posY, int sizeWidth, int sizeHeight);
     void setPos(int x, int y);
 
     SDL_Rect getRect() const;
@@ -25,6 +26,8 @@ public:
 
 protected:
     SDL_Rect rect;
+
+    void setSize(int x, int y);
 };
 
 

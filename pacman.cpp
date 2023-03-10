@@ -21,20 +21,8 @@ SDL_Renderer *renderer = nullptr;
 SDL_Rect src_bg = {368, 3, 168, 216}; // x,y, w,h (0,0) en haut a gauche
 SDL_Rect bg = {2, 2, 672, 864}; // ici scale x4
 
-SDL_Rect blinky_default = {3, 123, 14, 14};
-SDL_Rect pinky_default = {4, 142, 14, 14};
-SDL_Rect inky_default = {4, 160, 14, 14};
-SDL_Rect clyde_default = {4, 178, 14, 14};
-SDL_Rect player_default = {21, 90, 13, 14};
-
 SDL_Rect blackBg = {0, 0, 1, 1};
 SDL_Rect UIRect  = {700, 0, 200, 200};
-
-Blinky blinky{blinky_default, 32, 32};
-Pinky pinky{pinky_default, 64, 32};
-Inky inky{inky_default, 96, 32};
-Clyde clyde{clyde_default, 128, 32};
-Player player{0};
 
 void draw_grid(int r = 255, int g = 0, int b = 0) {
     SDL_SetRenderDrawColor(renderer, r, g, b, 255);
@@ -67,9 +55,7 @@ void init() {
     ViewManager::writeOnUI(ViewManager::SCORE_TEXT_DYNAMIC, "0", ViewManager::SCORE_TEXT_DYNAMIC_POSX,
                            ViewManager::SCORE_TEXT_DYNAMIC_POSY);
 
-    ViewManager::setHealthUI(player.getHealth());
-
-    player.setMoveIntent(MoveDirection::NONE);
+//    ViewManager::setHealthUI(player.getHealth());
 }
 
 void draw_collider(const GameObject &obj, int r = 255, int g = 0, int b = 9) {
@@ -135,7 +121,7 @@ int main(int argc, char **argv) {
 
     init();
 
-    std::thread th1(GameController::initBonusTimer);
+//    std::thread th1(GameController::initBonusTimer);
 
     // BOUCLE PRINCIPALE
     bool quit = false;
@@ -218,6 +204,6 @@ int main(int argc, char **argv) {
         SDL_Delay(16); // utiliser SDL_GetTicks64() pour plus de precisions
     }
     SDL_Quit(); // ON SORT
-    th1.join();
+//    th1.join();
     return 0;
 }

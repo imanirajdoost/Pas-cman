@@ -9,19 +9,20 @@
 
 Player::Player(short initHealth) : HealthComponent(initHealth) {
 
-    // Set the size of the player rect
-    rect.w = TILESIZE;
-    rect.h = TILESIZE;
+    // Set the initial pos
+    setPos(10 * TILESIZE, 13 * TILESIZE);
+
+    setMoveIntent(MoveDirection::NONE);
 
     // Set default animation and sprite and add animations
-    addAnimation({"default", {Player::player_fill, Player::player_r1, Player::player_r2}});
-    addAnimation({"move_up", {Player::player_fill, Player::player_u1, Player::player_u2}});
-    addAnimation({"move_down", {Player::player_fill, Player::player_d1, Player::player_d2}});
-    addAnimation({"move_left", {Player::player_fill, Player::player_l1, Player::player_l2}});
-    addAnimation({"move_right", {Player::player_fill, Player::player_r1, Player::player_r2}});
-    addAnimation({"die", {Player::player_die1, Player::player_die2, Player::player_die3, Player::player_die4,
-                          Player::player_die5, Player::player_die6, Player::player_die7, Player::player_die8,
-                          Player::player_die9}});
+    addAnimation({"default", {player_fill, player_r1, player_r2}});
+    addAnimation({"move_up", {player_fill, player_u1, player_u2}});
+    addAnimation({"move_down", {player_fill, player_d1, player_d2}});
+    addAnimation({"move_left", {player_fill, player_l1, player_l2}});
+    addAnimation({"move_right", {player_fill, player_r1, player_r2}});
+    addAnimation({"die", {player_die1, player_die2, player_die3, player_die4,
+                          player_die5, player_die6, player_die7, player_die8,
+                          player_die9}});
 
     setAnimation("default");
 }
@@ -144,7 +145,8 @@ void Player::controlMove() {
                 setNextPos(Map::map, moveIntent);
                 shouldMove = true;
             } else {
-                if (nextCol.getType() == MTYPE::WALL && CollisionController::hasCollision(nextStep, nextCol.getRect())) {
+                if (nextCol.getType() == MTYPE::WALL &&
+                    CollisionController::hasCollision(nextStep, nextCol.getRect())) {
                     resetNextPos();
                     shouldMove = false;
                 } else {
@@ -173,6 +175,6 @@ void Player::move() {
     }
 
     // Check for collision with bonus objs
-    if(CollisionController::hasCollision(getRect(), GameController::fruit.getRect()))
+    if (CollisionController::hasCollision(getRect(), GameController::fruit.getRect()))
         eat(GameController::fruit);
 }
