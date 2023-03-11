@@ -16,7 +16,7 @@ file(GLOB SRCS
         "${PROJECT_SOURCE_DIR}/*.cpp"
         )
 
-add_executable(${PROJECT_NAME} ${SRCS} src/model/StaticGameObject.cpp src/model/eatable/DotSmall.cpp src/model/GameObject.cpp)
+add_executable(${PROJECT_NAME} ${SRCS} src/cpp/model/StaticGameObject.cpp src/cpp/model/eatable/DotSmall.cpp src/cpp/model/GameObject.cpp)
 
 target_sources(${PROJECT_NAME} PRIVATE pacman.cpp)
 target_include_directories(${PROJECT_NAME} PRIVATE ${SDL2_INCLUDE_DIRS})

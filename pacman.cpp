@@ -1,15 +1,8 @@
 #include <SDL.h>
 #include <iostream>
-#include <thread>
-
-#include "model/Ghost.h"
-#include "Map.h"
-#include "controller/CollisionController.h"
-#include "model/MovableGameObject.h"
-#include "model/Player.h"
-#include "controller/GameController.h"
-#include "GameVars.h"
-#include "view/ViewManager.h"
+#include "src/header/Map.h"
+#include "src/header/GameVars.h"
+#include "src/header/view/ViewManager.h"
 
 #define DEBUG_MODE 1
 
