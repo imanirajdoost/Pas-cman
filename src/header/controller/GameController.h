@@ -2,10 +2,10 @@
 #define GAMECONTROLLER_H
 
 #include "AnimationController.h"
-#include "SDLController.h"
+#include "SDLViewController.h"
 #include "PlayerController.h"
 
-class GameController : public AnimationController, public SDLController, public PlayerController {
+class GameController : public AnimationController, public SDLViewController, public PlayerController {
 public:
     bool exit = false;
 

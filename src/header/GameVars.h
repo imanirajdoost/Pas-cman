@@ -9,6 +9,7 @@ namespace constants {
 #define SMALL_DOT_SCORE 10
 #define BIG_DOT_SCORE 100
 #define ANIMATION_FRAME_RATE 2
+#define DEBUG_MODE 1
 
 }
 #endif

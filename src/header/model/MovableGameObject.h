@@ -6,7 +6,8 @@
 #include "component/AnimationComponent.h"
 
 class MovableGameObject : public GameObject, public MoveComponent, public AnimationComponent {
-
+public:
+    void draw(const SDLViewController& viewController) override;
 };
 
 #endif

@@ -12,8 +12,7 @@ public:
 
     virtual void tick();
 
-private:
-    int animationCounter;
+    static int animationCounter;
 };
 
 

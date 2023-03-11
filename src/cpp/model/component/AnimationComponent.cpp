@@ -6,6 +6,8 @@
 #include <SDL2/SDL_rect.h>
 #include <vector>
 #include "../../../header/model/component/AnimationComponent.h"
+#include "../../../header/GameVars.h"
+#include "../../../header/controller/AnimationController.h"
 
 
 std::string AnimationComponent::getName() const {
@@ -86,4 +88,23 @@ void AnimationComponent::addAnimation(const AnimationComponent& anim) {
 
 AnimationComponent::AnimationComponent() {
 
+}
+
+shared_ptr<SDL_Rect> AnimationComponent::getNextSprite() {
+    if (current_sp == nullptr) {
+        current_sp = make_shared<SDL_Rect>(default_sp);
+    }
+
+    if (isAnimated && current_anim != nullptr && AnimationController::animationCounter % ANIMATION_FRAME_RATE == 0) {
+        const auto &anim_rects = current_anim->getSpritesList();
+        if (animation_frame >= anim_rects.size())
+            animation_frame = 0;
+
+//        cout << "Anim frame: " << animation_frame << " rects size: " << anim_rects.size() << " anim counter:" << GameController::animationCounter << endl;
+
+        current_sp = make_shared<SDL_Rect>(anim_rects[animation_frame]);
+        animation_frame++;
+    }
+
+    return current_sp;
 }

@@ -42,6 +42,8 @@ public:
     AnimationComponent(const string &newName, const vector<SDL_Rect> &sps);
 
     AnimationComponent();
+
+    shared_ptr<SDL_Rect> getNextSprite();
 };
 
 

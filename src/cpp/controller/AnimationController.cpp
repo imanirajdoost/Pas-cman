@@ -5,7 +5,9 @@
 
 #include "../../header/controller/AnimationController.h"
 
-AnimationController::AnimationController(): animationCounter(0) {
+int AnimationController::animationCounter = 0;
+
+AnimationController::AnimationController() {
 
 }
 

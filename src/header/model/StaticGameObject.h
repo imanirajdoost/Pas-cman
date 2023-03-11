@@ -4,7 +4,7 @@
 #include "GameObject.h"
 #include "component/TransformComponent.h"
 
-class StaticGameObject : public GameObject, public TransformComponent {
+class StaticGameObject : public GameObject {
 
 };
 
