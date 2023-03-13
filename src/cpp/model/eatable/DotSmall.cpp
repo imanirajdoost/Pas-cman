@@ -3,7 +3,7 @@
 #include "../../../header/GameVars.h"
 
 
-DotSmall::DotSmall() {
+DotSmall::DotSmall() : Dot() {
     setPos(0, 0);
     setSize(SMALL_DOT_SIZE, SMALL_DOT_SIZE);
 

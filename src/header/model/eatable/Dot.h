@@ -9,7 +9,8 @@
 #include "../component/EatableComponent.h"
 
 class Dot : public StaticGameObject, public EatableComponent {
-
+public:
+    Dot();
 };
 
 

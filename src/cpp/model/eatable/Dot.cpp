@@ -3,3 +3,7 @@
 //
 
 #include "../../../header/model/eatable/Dot.h"
+
+Dot::Dot() {
+
+}

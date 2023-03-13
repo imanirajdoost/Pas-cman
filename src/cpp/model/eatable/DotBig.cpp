@@ -2,7 +2,7 @@
 #include "../../../header/model/eatable/DotBig.h"
 #include "../../../header/GameVars.h"
 
-DotBig::DotBig() {
+DotBig::DotBig() : Dot() {
     setPos(0, 0);
     setSize(SMALL_DOT_SIZE, SMALL_DOT_SIZE);
 
