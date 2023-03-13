@@ -7,10 +7,6 @@ bool GameController::hasQuit() {
     return exit;
 }
 
-void GameController::tick() {
-
-}
-
 void GameController::startGame() {
     while (!hasQuit()) {
         SDL_Event event;
@@ -45,7 +41,17 @@ void GameController::startGame() {
             playerController.setMoveIntent(nextPlayerMove);
         }
 
-        tick();
+        update();
     }
     SDL_Quit();
+}
+
+void GameController::update() {
+    animationController.tick();
+    sdlViewController.tick();
+    playerController.tick(player);
+}
+
+GameController::GameController() {
+
 }

@@ -4,7 +4,8 @@
 
 #include <SDL2/SDL_timer.h>
 #include <SDL2/SDL_system.h>
-#include "../../header/controller/SDLViewController.h"
+#include <list>
+#include "../../header/view/SDLViewController.h"
 #include "../../header/GameVars.h"
 #include "../../header/model/GameObject.h"
 #include "../../header/Map.h"
@@ -25,15 +26,24 @@ void SDLViewController::tick() {
     SDL_Delay(16); // utiliser SDL_GetTicks64() pour plus de precisions
 }
 
-void SDLViewController::draw() {
+void SDLViewController::draw(std::list<GameObject> sprites) {
     SDL_SetColorKey(plancheSprites, false, 0);
     SDL_BlitScaled(plancheSprites, &src_bg, win_surf, &bg);
     // @TODO: This is a hack to avoid writing on top of the previous rect in UI, improve this
     SDL_BlitScaled(plancheSprites, &blackBg, win_surf, &UIRect);
 
+
     // couleur transparente
     SDL_SetColorKey(plancheSprites, true, 0);
+
+
     // copie du sprite zoomé
+
+    for (auto sp : sprites) {
+        sp.getNextSprite();
+        sp.getDrawRect();
+    }
+
     blinky.draw(plancheSprites, win_surf);
     pinky.draw(plancheSprites, win_surf);
     inky.draw(plancheSprites, win_surf);

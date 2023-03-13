@@ -1,7 +1,7 @@
+
+
 #include <SDL.h>
 #include <iostream>
-#include "src/header/Map.h"
-#include "src/header/GameVars.h"
 #include "src/header/view/ViewManager.h"
 #include "src/header/controller/GameController.h"
 
@@ -86,19 +86,19 @@ int main(int argc, char **argv) {
     gameController.startGame();
 
     // BOUCLE PRINCIPALE
-    bool quit = false;
-    while (!quit) {
-
-        SDL_Event event;
-        while (!quit && SDL_PollEvent(&event)) {
-            switch (event.type) {
-                case SDL_QUIT:
-                    quit = true;
-                    break;
-                default:
-                    break;
-            }
-        }
+//    bool quit = false;
+//    while (!quit) {
+//
+//        SDL_Event event;
+//        while (!quit && SDL_PollEvent(&event)) {
+//            switch (event.type) {
+//                case SDL_QUIT:
+//                    quit = true;
+//                    break;
+//                default:
+//                    break;
+//            }
+//        }
 
         // AFFICHAGE
 
@@ -134,11 +134,11 @@ int main(int argc, char **argv) {
 
 //        player.controlMove();
 
-        draw();
+//        draw();
 //        SDL_UpdateWindowSurface(pWindow);
         // LIMITE A 60 FPS
 //        SDL_Delay(16); // utiliser SDL_GetTicks64() pour plus de precisions
-    }
+//    }
 //    SDL_Quit(); // ON SORT
 //    th1.join();
     return 0;

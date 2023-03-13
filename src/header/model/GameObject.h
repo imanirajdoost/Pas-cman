@@ -3,11 +3,9 @@
 
 #include "component/SpriteComponent.h"
 #include "component/ColliderComponent.h"
-#include "../controller/SDLViewController.h"
+#include "component/AnimationComponent.h"
 
-class GameObject : public SpriteComponent, public ColliderComponent {
-public:
-    virtual void draw(const SDLViewController& viewController);
+class GameObject : public AnimationComponent, public ColliderComponent {
 };
 
 #endif

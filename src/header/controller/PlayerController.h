@@ -12,12 +12,9 @@ class PlayerController {
 public:
     PlayerController();
 
-    virtual void tick();
+    void setMoveIntent(Player& player, MoveDirection direction);
 
-    void setMoveIntent(MoveDirection direction);
-
-private:
-    Player player = Player(2);
+    void tick(Player &player);
 };
 
 

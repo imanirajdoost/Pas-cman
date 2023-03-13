@@ -5,6 +5,7 @@
 #include <iostream>
 #include <SDL2/SDL_rect.h>
 #include <vector>
+#include <memory>
 #include "../../../header/model/component/AnimationComponent.h"
 #include "../../../header/GameVars.h"
 #include "../../../header/controller/AnimationController.h"
@@ -90,7 +91,7 @@ AnimationComponent::AnimationComponent() {
 
 }
 
-shared_ptr<SDL_Rect> AnimationComponent::getNextSprite() {
+std::shared_ptr<SDL_Rect> AnimationComponent::getNextSprite() {
     if (current_sp == nullptr) {
         current_sp = make_shared<SDL_Rect>(default_sp);
     }

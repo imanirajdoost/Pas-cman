@@ -36,14 +36,15 @@ protected:
     void addAnimation(const AnimationComponent &anim);
 
     shared_ptr<AnimationComponent> current_anim = nullptr;
+
+    shared_ptr<SDL_Rect> getNextSprite();
+
     bool isAnimated = false;
 
 public:
     AnimationComponent(const string &newName, const vector<SDL_Rect> &sps);
 
     AnimationComponent();
-
-    shared_ptr<SDL_Rect> getNextSprite();
 };
 
 

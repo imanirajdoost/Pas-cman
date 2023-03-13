@@ -5,13 +5,14 @@
 #ifndef PAS_CMAN_SDLVIEWCONTROLLER_H
 #define PAS_CMAN_SDLVIEWCONTROLLER_H
 
+#include <list>
 #include "../model/GameObject.h"
 
 class SDLViewController {
 public:
     SDLViewController();
-    virtual void tick();
-    void draw();
+    void tick();
+    void draw(list<GameObject> sprites);
     void draw_sprite(SDL_Rect *spriteToDraw, SDL_Rect *drawRect);
 private:
     SDL_Window *pWindow = nullptr;

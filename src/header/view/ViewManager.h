@@ -1,19 +1,14 @@
 #ifndef PAS_CMAN_VIEWMANAGER_H
 #define PAS_CMAN_VIEWMANAGER_H
 
-#include <SDL2/SDL_rect.h>
-#include <string>
-#include <map>
-#include <SDL2/SDL_surface.h>
-#include <vector>
-#include <tuple>
 #include <memory>
+#include <map>
+#include <vector>
 
 using namespace std;
 
 class ViewManager {
 public:
-    void draw(SDL_Surface* plancheSprites, SDL_Surface* win_surf);
     static void init();
 
     static void drawUI(SDL_Surface *plancheSprites, SDL_Surface *win_surf);
