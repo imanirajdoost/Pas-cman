@@ -46,3 +46,16 @@ TransformComponent::TransformComponent(int posX, int posY, int sizeWidth, int si
     setPos(posX, posY);
     setSize(sizeWidth, sizeHeight);
 }
+
+SDL_Rect TransformComponent::getDrawRect() const {
+    SDL_Rect drawRect = getRect();
+
+    if (rect.w < TILESIZE) {
+        drawRect.x += rect.w / 2;
+    }
+
+    if (rect.h < TILESIZE) {
+        drawRect.y += rect.h / 2;
+    }
+    return drawRect;
+}

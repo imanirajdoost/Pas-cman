@@ -3,6 +3,7 @@
 
 #include "MovableGameObject.h"
 #include "component/HealthComponent.h"
+#include "../Map.h"
 
 /**
  * Main pac-man player object

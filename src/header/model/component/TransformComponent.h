@@ -24,6 +24,8 @@ public:
 
     void setY(int Y);
 
+    SDL_Rect getDrawRect() const;
+
 protected:
     SDL_Rect rect;
 

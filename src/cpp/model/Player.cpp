@@ -1,11 +1,10 @@
 #include "../../header/model/Player.h"
 #include <vector>
 #include <iostream>
-#include "../../header//model/component/MoveComponent.h"
 #include "../../header/controller/CollisionController.h"
 #include "../../header/GameVars.h"
 
-Player::Player(short initHealth) : HealthComponent(initHealth) {
+Player::Player(short initHealth) : HealthComponent(initHealth), MovableGameObject(player_r1) {
 
     // Set the initial pos
     setPos(10 * TILESIZE, 13 * TILESIZE);

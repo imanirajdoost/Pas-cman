@@ -11,33 +11,14 @@
 #include "../../../header/controller/AnimationController.h"
 
 
-std::string AnimationComponent::getName() const {
-    return name;
-}
-
-void AnimationComponent::setName(const std::string& newName) {
-    name = newName;
-}
-
-std::vector<SDL_Rect> AnimationComponent::getSpritesList() const {
-    return sprites_list;
-}
-
-inline void AnimationComponent::addSprite(const SDL_Rect& sp) {
-    sprites_list.push_back(sp);
-}
-
-void AnimationComponent::addSprites(const std::vector<SDL_Rect>& sps) {
-    for (const auto& sp: sps) {
-        addSprite(sp);
-    }
-}
-
-AnimationComponent::AnimationComponent(const string &newName, const vector<SDL_Rect> &sps) {
-    setName(newName);
-    addSprites(sps);
+AnimationComponent::AnimationComponent(const string &newName, const vector<SDL_Rect> &sps, bool _isAnimated) {
+    AnimationModel anim;
+    anim.setName(newName);
+    anim.addSprites(sps);
+    default_sp = anim.sprites_list[0];
     animation_frame = 0;
-    startAnimation();
+    if (_isAnimated)
+        startAnimation();
 }
 
 /**
@@ -47,7 +28,7 @@ AnimationComponent::AnimationComponent(const string &newName, const vector<SDL_R
  */
 bool AnimationComponent::setAnimation(const std::string &animName) {
     // if the current animation is already playing then ignore it
-    if(current_anim != nullptr && current_anim->getName() == animName)
+    if (current_anim != nullptr && current_anim->getName() == animName)
         return true;
 
     // Go through the list and check for the animation names
@@ -56,7 +37,7 @@ bool AnimationComponent::setAnimation(const std::string &animName) {
             // Reset the animation frame to zero
             animation_frame = 0;
             // Set the current playing animation to the reference anim
-            current_anim = make_shared<AnimationComponent>(anim);
+            current_anim = make_shared<AnimationModel>(anim);
             return true;
         }
     }
@@ -79,16 +60,20 @@ void AnimationComponent::startAnimation() {
     isAnimated = true;
 }
 
-void AnimationComponent::addAnimation(const AnimationComponent& anim) {
-    for (auto& a:animation_list) {
-        if(a.getName() == anim.getName())
+void AnimationComponent::addAnimation(const AnimationModel &anim) {
+    for (auto &a: animation_list) {
+        if (a.getName() == anim.getName())
             return;
     }
     animation_list.push_back(anim);
 }
 
-AnimationComponent::AnimationComponent() {
-
+AnimationComponent::AnimationComponent(SDL_Rect defaultSp) : default_sp{defaultSp} {
+    AnimationModel anim;
+    anim.setName("default");
+    anim.addSprite(defaultSp);
+    current_sp = make_shared<SDL_Rect>(defaultSp);
+    animation_frame = 0;
 }
 
 std::shared_ptr<SDL_Rect> AnimationComponent::getNextSprite() {
@@ -108,4 +93,11 @@ std::shared_ptr<SDL_Rect> AnimationComponent::getNextSprite() {
     }
 
     return current_sp;
+}
+
+AnimationComponent::AnimationComponent() {
+    AnimationModel anim;
+    anim.setName("default");
+    current_sp = nullptr;
+    animation_frame = 0;
 }

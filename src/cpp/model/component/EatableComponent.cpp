@@ -1,3 +1,4 @@
+#include <iostream>
 #include "../../../header/model/component/EatableComponent.h"
 
 EatableComponent::EatableComponent() {
@@ -17,7 +18,8 @@ bool EatableComponent::hasBeenEaten() const {
 }
 
 void EatableComponent::getEaten(const EatableComponent &dot, int score) {
-
+    //@TODO
+    std::cout << "Being eaten: " << dot.getIndex() << std::endl;
 }
 
 //void EatableComponent::getEaten(const EatableComponent &dot) {

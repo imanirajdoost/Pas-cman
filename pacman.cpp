@@ -8,11 +8,11 @@
 void init() {
 
     // Initialize dots on the screen
-    ViewManager::init();
+//    ViewManager::init();
 
-    ViewManager::writeOnUI("score_static", "score", 700, 10);
-    ViewManager::writeOnUI(ViewManager::SCORE_TEXT_DYNAMIC, "0", ViewManager::SCORE_TEXT_DYNAMIC_POSX,
-                           ViewManager::SCORE_TEXT_DYNAMIC_POSY);
+//    ViewManager::writeOnUI("score_static", "score", 700, 10);
+//    ViewManager::writeOnUI(ViewManager::SCORE_TEXT_DYNAMIC, "0", ViewManager::SCORE_TEXT_DYNAMIC_POSX,
+//                           ViewManager::SCORE_TEXT_DYNAMIC_POSY);
 
 //    ViewManager::setHealthUI(player.getHealth());
 }
