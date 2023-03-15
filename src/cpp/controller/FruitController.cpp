@@ -4,8 +4,8 @@
 
 #include <random>
 #include <iostream>
-#include "../../header/controller/FruitController.h"
-#include "../../header/GameVars.h"
+#include "header/controller/FruitController.h"
+#include "header/GameVars.h"
 
 FruitController::FruitController() {
 }

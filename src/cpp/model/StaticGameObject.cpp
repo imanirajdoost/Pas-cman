@@ -1,1 +1,1 @@
-#include "../../header/model/StaticGameObject.h"
+#include "header/model/StaticGameObject.h"

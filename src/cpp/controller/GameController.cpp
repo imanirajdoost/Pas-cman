@@ -1,7 +1,7 @@
 
 #include <SDL2/SDL_events.h>
 #include <SDL2/SDL.h>
-#include "../../header/controller/GameController.h"
+#include "header/controller/GameController.h"
 
 bool GameController::hasQuit() {
     return exit;

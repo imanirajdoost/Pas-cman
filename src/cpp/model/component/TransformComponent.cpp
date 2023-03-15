@@ -3,8 +3,8 @@
 //
 
 #include <SDL2/SDL_rect.h>
-#include "../../../header/model/component/TransformComponent.h"
-#include "../../../header/GameVars.h"
+#include "header/model/component/TransformComponent.h"
+#include "header/GameVars.h"
 
 
 void TransformComponent::setPos(int x, int y) {

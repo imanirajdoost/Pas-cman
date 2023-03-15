@@ -1,4 +1,5 @@
-#include "../../header/controller/PlayerController.h"
+
+#include "header/controller/PlayerController.h"
 
 void PlayerController::tick(Player& player) {
 //    MoveDirection nextPlayerMove = player.getMoveIntent();

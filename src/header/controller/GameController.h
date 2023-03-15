@@ -2,8 +2,8 @@
 #define GAMECONTROLLER_H
 
 #include "AnimationController.h"
-#include "../view/SDLViewController.h"
 #include "PlayerController.h"
+#include "header/view/SDLViewController.h"
 
 class GameController {
 public:

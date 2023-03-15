@@ -4,9 +4,9 @@
 
 #include <stdexcept>
 #include <iostream>
-#include "../../header/controller/DotController.h"
-#include "../../header/GameVars.h"
-#include "../../header/Map.h"
+#include "header/controller/DotController.h"
+#include "header/Map.h"
+#include "header/GameVars.h"
 
 DotController::DotController() {
     dots = spawnDotObjects();

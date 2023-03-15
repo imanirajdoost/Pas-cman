@@ -12,7 +12,7 @@ private:
     short _health;
 public:
     explicit HealthComponent(short initHealth);
-    int getHealth() const;
+    short getHealth() const;
 
     void die();                                  // Die when hit by a ghost
     void gameOver();                             // Game over when no more health is remaining

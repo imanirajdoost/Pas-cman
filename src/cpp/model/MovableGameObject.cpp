@@ -1,6 +1,6 @@
-#include "../../header/model/MovableGameObject.h"
-#include "../../header/view/SDLViewController.h"
-#include "../../header/model/component/AnimationComponent.h"
+
+
+#include "header/model/MovableGameObject.h"
 
 MoveDirection MovableGameObject::getMoveDirection() const {
     return direction;

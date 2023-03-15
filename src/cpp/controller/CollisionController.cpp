@@ -1,7 +1,7 @@
 
 
-#include "../../header/controller/CollisionController.h"
-#include "../../header/GameVars.h"
+#include "header/controller/CollisionController.h"
+#include "header/GameVars.h"
 
 bool CollisionController::hasCollision(const SDL_Rect &rect1, const SDL_Rect &rect2) {
     // Checks intersection and puts the intersection rect result in result

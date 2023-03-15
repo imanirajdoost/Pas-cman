@@ -6,7 +6,7 @@
 #define PAS_CMAN_SDLVIEWCONTROLLER_H
 
 #include <list>
-#include "../model/GameObject.h"
+#include "header/model/GameObject.h"
 
 class SDLViewController {
 public:

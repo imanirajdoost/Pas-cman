@@ -1,7 +1,6 @@
 #ifndef GHOST_H
 #define GHOST_H
 
-
 #include "MovableGameObject.h"
 
 class Ghost : public MovableGameObject {

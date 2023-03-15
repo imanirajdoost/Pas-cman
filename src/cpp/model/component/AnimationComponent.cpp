@@ -6,9 +6,9 @@
 #include <SDL2/SDL_rect.h>
 #include <vector>
 #include <memory>
-#include "../../../header/model/component/AnimationComponent.h"
-#include "../../../header/GameVars.h"
-#include "../../../header/controller/AnimationController.h"
+#include "header/model/component/AnimationComponent.h"
+#include "header/controller/AnimationController.h"
+#include "header/GameVars.h"
 
 
 AnimationComponent::AnimationComponent(const string &newName, const vector<SDL_Rect> &sps, bool _isAnimated) {
@@ -60,11 +60,14 @@ void AnimationComponent::startAnimation() {
     isAnimated = true;
 }
 
-void AnimationComponent::addAnimation(const AnimationModel &anim) {
+void AnimationComponent::addAnimation(const string& animName, const vector<SDL_Rect>& sps) {
     for (auto &a: animation_list) {
-        if (a.getName() == anim.getName())
+        if (a.getName() == animName)
             return;
     }
+    AnimationModel anim;
+    anim.setName(animName);
+    anim.addSprites(sps);
     animation_list.push_back(anim);
 }
 

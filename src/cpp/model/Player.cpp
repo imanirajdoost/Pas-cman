@@ -1,8 +1,8 @@
-#include "../../header/model/Player.h"
 #include <vector>
 #include <iostream>
-#include "../../header/controller/CollisionController.h"
-#include "../../header/GameVars.h"
+#include "header/model/Player.h"
+#include "header/GameVars.h"
+#include "header/controller/CollisionController.h"
 
 Player::Player(short initHealth) : HealthComponent(initHealth), MovableGameObject(player_r1) {
 
@@ -12,14 +12,14 @@ Player::Player(short initHealth) : HealthComponent(initHealth), MovableGameObjec
     setMoveIntent(MoveDirection::NONE);
 
     // Set default animation and sprite and add animations
-    addAnimation({"default", {player_fill, player_r1, player_r2}});
-    addAnimation({"move_up", {player_fill, player_u1, player_u2}});
-    addAnimation({"move_down", {player_fill, player_d1, player_d2}});
-    addAnimation({"move_left", {player_fill, player_l1, player_l2}});
-    addAnimation({"move_right", {player_fill, player_r1, player_r2}});
-    addAnimation({"die", {player_die1, player_die2, player_die3, player_die4,
-                          player_die5, player_die6, player_die7, player_die8,
-                          player_die9}});
+    addAnimation("default", {player_fill, player_r1, player_r2});
+    addAnimation("move_up", {player_fill, player_u1, player_u2});
+    addAnimation("move_down", {player_fill, player_d1, player_d2});
+    addAnimation("move_left", {player_fill, player_l1, player_l2});
+    addAnimation("move_right", {player_fill, player_r1, player_r2});
+    addAnimation("die", {player_die1, player_die2, player_die3, player_die4,
+                         player_die5, player_die6, player_die7, player_die8,
+                         player_die9});
 
     setAnimation("default");
 }
@@ -87,27 +87,23 @@ void Player::setMoveIntent(const MoveDirection &direction) {
     moveIntent = direction;
 }
 
-void Player::setRawNextPos(const SDL_Rect nextPos) {
-    _next_pos = nextPos;
-}
-
-void Player::controlMove() {
+void Player::controlMove(CollisionController collisionController) {
 
     bool shouldMove = true;
 
     if (moveIntent == MoveDirection::NONE)
         shouldMove = false;
 
-    Collider nextCol = CollisionController::getRectAtDirection(rect, direction);
-    Collider intentionCol = CollisionController::getRectAtDirection(rect, moveIntent);
-    SDL_Rect currentRect = CollisionController::getRectAt(rect);
+    Collider nextCol = collisionController.getRectAtDirection(rect, direction);
+    Collider intentionCol = collisionController.getRectAtDirection(rect, moveIntent);
+    SDL_Rect currentRect = collisionController.getRectAt(rect);
     SDL_Rect nextStep = getNextStepRect(direction);
 
     if (moveIntent == direction && nextCol.getType() != MTYPE::WALL) {
         setNextPos(Map::map, direction);
         shouldMove = true;
     } else if (moveIntent == direction && nextCol.getType() == MTYPE::WALL) {
-        if (CollisionController::hasCollision(nextStep, nextCol.getRect())) {
+        if (collisionController.hasCollision(nextStep, nextCol.getRect())) {
             shouldMove = false;
             resetNextPos();
         } else {
@@ -115,7 +111,7 @@ void Player::controlMove() {
             setNextPos(Map::map, direction);
         }
     } else if (moveIntent != direction && intentionCol.getType() == MTYPE::WALL) {
-        if (nextCol.getType() == MTYPE::WALL && CollisionController::hasCollision(nextStep, nextCol.getRect())) {
+        if (nextCol.getType() == MTYPE::WALL && collisionController.hasCollision(nextStep, nextCol.getRect())) {
             resetNextPos();
             shouldMove = false;
         } else {
@@ -143,7 +139,7 @@ void Player::controlMove() {
                 shouldMove = true;
             } else {
                 if (nextCol.getType() == MTYPE::WALL &&
-                    CollisionController::hasCollision(nextStep, nextCol.getRect())) {
+                    collisionController.hasCollision(nextStep, nextCol.getRect())) {
                     resetNextPos();
                     shouldMove = false;
                 } else {
@@ -165,13 +161,13 @@ void Player::move() {
 
     // Check for collision with coins
     for (auto i = GameController::dots.begin(); i < GameController::dots.end(); ++i) {
-        if (CollisionController::hasCollision(getRect(), i->get()->getRect())) {
+        if (collisionController.hasCollision(getRect(), i->get()->getRect())) {
             eat(*i->get());
             break;
         }
     }
 
     // Check for collision with bonus objs
-    if (CollisionController::hasCollision(getRect(), GameController::fruit.getRect()))
+    if (collisionController.hasCollision(getRect(), GameController::fruit.getRect()))
         eat(GameController::fruit);
 }

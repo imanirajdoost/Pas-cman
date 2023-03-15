@@ -1,6 +1,6 @@
 #include <SDL2/SDL_rect.h>
-#include "../../../header/model/eatable/DotBig.h"
-#include "../../../header/GameVars.h"
+#include "header/model/eatable/DotBig.h"
+#include "header/GameVars.h"
 
 DotBig::DotBig() : Dot() {
     setPos(0, 0);

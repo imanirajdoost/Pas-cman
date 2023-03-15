@@ -3,8 +3,8 @@
 
 
 #include <SDL2/SDL_rect.h>
-#include "../Collider.h"
-#include "../model/component/MoveComponent.h"
+#include "header/model/MovableGameObject.h"
+#include "header/Collider.h"
 
 /**
  * Handles collision between two objects

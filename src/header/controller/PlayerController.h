@@ -5,8 +5,7 @@
 #ifndef PAS_CMAN_PLAYERCONTROLLER_H
 #define PAS_CMAN_PLAYERCONTROLLER_H
 
-#include "../model/component/MoveComponent.h"
-#include "../model/Player.h"
+#include "header/model/Player.h"
 
 class PlayerController {
 public:

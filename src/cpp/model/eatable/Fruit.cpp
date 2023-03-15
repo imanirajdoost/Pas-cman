@@ -1,6 +1,7 @@
 #include <SDL2/SDL_rect.h>
-#include "../../../header/model/eatable/Fruit.h"
-#include "../../../header/GameVars.h"
+#include "header/model/component/EatableComponent.h"
+#include "header/model/eatable/Fruit.h"
+#include "header/GameVars.h"
 
 void Fruit::getEaten(const EatableComponent &eatable) {
     if (GameController::deleteBonus(eatable, 200))

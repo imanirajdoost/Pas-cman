@@ -2,7 +2,8 @@
 // Created by iman on 14/03/23.
 //
 
-#include "../../header/model/AnimationModel.h"
+#include <string>
+#include "header/model/AnimationModel.h"
 
 std::string AnimationModel::getName() const {
     return name;

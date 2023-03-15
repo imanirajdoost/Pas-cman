@@ -1,5 +1,5 @@
 #include <iostream>
-#include "../header/Map.h"
+#include "header/Map.h"
 
 
 vector<vector<MTYPE>> Map::map = {

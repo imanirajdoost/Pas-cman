@@ -2,7 +2,7 @@
 // Created by iman on 08/03/23.
 //
 
-#include "../../../header/model/component/HealthComponent.h"
+#include "header/model/component/HealthComponent.h"
 
 void HealthComponent::die() {
     // @todo implement dying
@@ -21,6 +21,6 @@ HealthComponent::HealthComponent(short initHealth) : _health{initHealth} {
 
 }
 
-int HealthComponent::getHealth() const {
+short HealthComponent::getHealth() const {
     return _health;
 }

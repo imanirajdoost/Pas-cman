@@ -7,9 +7,9 @@
 
 #include <vector>
 #include <memory>
-#include "../model/eatable/DotBig.h"
-#include "../model/component/EatableComponent.h"
-#include "../model/eatable/DotSmall.h"
+#include "header/model/component/EatableComponent.h"
+#include "header/model/eatable/DotSmall.h"
+#include "header/model/eatable/DotBig.h"
 
 using namespace std;
 

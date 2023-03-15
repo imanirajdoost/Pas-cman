@@ -1,6 +1,6 @@
 #include <SDL_rect.h>
-#include "../../../header/model/eatable/DotSmall.h"
-#include "../../../header/GameVars.h"
+#include "header/model/eatable/DotSmall.h"
+#include "header/GameVars.h"
 
 
 DotSmall::DotSmall() : Dot() {

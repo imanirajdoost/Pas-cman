@@ -1,5 +1,5 @@
 #include <iostream>
-#include "../../../header/model/component/EatableComponent.h"
+#include "header/model/component/EatableComponent.h"
 
 EatableComponent::EatableComponent() {
     isEaten = false;

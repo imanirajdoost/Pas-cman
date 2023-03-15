@@ -1,5 +1,5 @@
 #include <iostream>
-#include "../../header/view/ViewManager.h"
+#include "header/view/ViewManager.h"
 #include <SDL2/SDL.h>
 
 int ViewManager::FONT_SIZE = 16;

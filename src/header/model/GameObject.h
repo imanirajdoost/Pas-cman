@@ -1,8 +1,8 @@
 #ifndef GAMEOBJECT_H
 #define GAMEOBJECT_H
 
-#include "component/AnimationComponent.h"
-#include "component/TransformComponent.h"
+#include "header/model/component/TransformComponent.h"
+#include "header/model/component/AnimationComponent.h"
 
 class GameObject : public TransformComponent, public AnimationComponent {
 public:

@@ -4,8 +4,9 @@
 #include <string>
 #include <SDL2/SDL_rect.h>
 #include <vector>
-#include "../AnimationModel.h"
+#include <memory>
 #include "GameComponent.h"
+#include "header/model/AnimationModel.h"
 
 using namespace std;
 
@@ -24,8 +25,6 @@ protected:
 
     bool setAnimation(const std::string &animName);
 
-    void addAnimation(const AnimationModel &anim);
-
     shared_ptr<SDL_Rect> getNextSprite();
 
     shared_ptr<AnimationModel> current_anim = nullptr;
@@ -39,6 +38,8 @@ public:
     explicit AnimationComponent(SDL_Rect defaultSp);
 
     AnimationComponent(const string &newName, const vector<SDL_Rect> &sps, bool _isAnimated);
+
+    void addAnimation(const string &animName, const vector<SDL_Rect> &sps);
 };
 
 

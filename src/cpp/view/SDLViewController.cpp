@@ -5,10 +5,8 @@
 #include <SDL2/SDL_timer.h>
 #include <SDL2/SDL_system.h>
 #include <list>
-#include "../../header/view/SDLViewController.h"
-#include "../../header/GameVars.h"
-#include "../../header/model/GameObject.h"
-#include "../../header/Map.h"
+#include "header/view/SDLViewController.h"
+#include "header/GameVars.h"
 
 SDLViewController::SDLViewController() {
     pWindow = SDL_CreateWindow("PacMan", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 900, 900, SDL_WINDOW_SHOWN);

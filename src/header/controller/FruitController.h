@@ -6,8 +6,7 @@
 #define PAS_CMAN_FRUITCONTROLLER_H
 
 
-#include "../model/eatable/Fruit.h"
-#include "../model/component/EatableComponent.h"
+#include "header/model/eatable/Fruit.h"
 
 class FruitController {
 public:

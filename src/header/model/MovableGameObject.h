@@ -2,8 +2,7 @@
 #define MOVABLEGAMEOBJECT_H
 
 #include "GameObject.h"
-#include "component/AnimationComponent.h"
-#include "../Map.h"
+#include "header/Map.h"
 
 enum class MoveDirection {
     NONE = 0,

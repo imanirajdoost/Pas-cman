@@ -1,4 +1,5 @@
-#include "../../header/model/GameObject.h"
+
+#include "header/model/GameObject.h"
 
 GameObject::GameObject() : AnimationComponent(), TransformComponent() {
 

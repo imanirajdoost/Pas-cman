@@ -2,8 +2,8 @@
 #define PLAYER_H
 
 #include "MovableGameObject.h"
-#include "component/HealthComponent.h"
-#include "../Map.h"
+#include "header/model/component/HealthComponent.h"
+#include "header/Map.h"
 
 /**
  * Main pac-man player object

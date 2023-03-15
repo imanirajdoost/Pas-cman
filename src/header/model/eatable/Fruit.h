@@ -1,8 +1,8 @@
 #ifndef PAS_CMAN_FRUIT_H
 #define PAS_CMAN_FRUIT_H
 
-#include "../StaticGameObject.h"
-#include "../component/EatableComponent.h"
+#include "header/model/StaticGameObject.h"
+#include "header/model/component/EatableComponent.h"
 
 class Fruit : public StaticGameObject , public EatableComponent {
 public:
