@@ -17,15 +17,15 @@ class DotController {
 public:
     DotController();
 
-    vector<shared_ptr<EatableComponent>> dots;
+    vector<shared_ptr<Dot>> dots;
 
     shared_ptr<DotSmall> spawnDotSmall(int x, int y);
 
-    vector<shared_ptr<EatableComponent>> spawnDotObjects();
+    vector<shared_ptr<Dot>> spawnDotObjects();
 
     shared_ptr<DotBig> spawnDotBig(int x, int y);
 
-    bool deleteDot(const EatableComponent &dot, uint score);
+    bool deleteDot(const Dot &dot, uint score);
 
 private:
     short dotIndex = 0;

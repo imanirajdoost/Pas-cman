@@ -12,11 +12,11 @@ DotController::DotController() {
     dots = spawnDotObjects();
 }
 
-vector<shared_ptr<EatableComponent>> DotController::spawnDotObjects() {
+vector<shared_ptr<Dot>> DotController::spawnDotObjects() {
 
     auto map = Map::map;
 
-    vector<shared_ptr<EatableComponent>> mapDots;
+    vector<shared_ptr<Dot>> mapDots;
 
     for (int i = 0; i < map.size(); i++) {
         for (int j = 0; j < map[i].size(); j++) {
@@ -60,7 +60,7 @@ bool DotController::isBigDot(int i, int j) {
     return false;
 }
 
-bool DotController::deleteDot(const EatableComponent &dot, uint score) {
+bool DotController::deleteDot(const Dot &dot, uint score) {
 //    auto targetToDel = dots[dot.getIndex()].get();
 
     for (auto i = dots.begin(); i < dots.end(); ++i) {

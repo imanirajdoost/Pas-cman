@@ -22,7 +22,8 @@ void PlayerController::tick() {
         eat(GameController::fruit);
 }
 
-PlayerController::PlayerController(shared_ptr<CollisionController> colController, shared_ptr<Player> p, shared_ptr<DotController> dController) {
+PlayerController::PlayerController(shared_ptr<CollisionController> colController, shared_ptr<Player> p,
+                                   shared_ptr<DotController> dController) {
     collisionController = std::move(colController);
     dotController = std::move(dController);
     player = std::move(p);
