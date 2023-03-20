@@ -11,7 +11,7 @@ protected:
 public:
     EatableComponent();
 
-    void getEaten(const EatableComponent &dot, int score);
+    void getEaten();
 
     void setIndex(short indexToSet);
 

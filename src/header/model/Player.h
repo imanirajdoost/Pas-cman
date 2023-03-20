@@ -4,6 +4,7 @@
 #include "MovableGameObject.h"
 #include "header/model/component/HealthComponent.h"
 #include "header/Map.h"
+#include "header/controller/CollisionController.h"
 
 /**
  * Main pac-man player object
@@ -42,7 +43,7 @@ public:
 //    void eat(EatableComponent &dotToEat) const;         // Action to eat a EatableComponent
     void setNextPos(const std::vector<std::vector<MTYPE>> &map, const MoveDirection &direction) override;
 
-    void controlMove();
+    void controlMove(CollisionController& collisionController);
 
     SDL_Rect getNextStepRect(MoveDirection dir);
 

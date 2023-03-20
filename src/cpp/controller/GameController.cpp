@@ -29,16 +29,16 @@ void GameController::startGame() {
         }
         if (keys[SDL_SCANCODE_LEFT]) {
             nextPlayerMove = MoveDirection::LEFT;
-            playerController.setMoveIntent(nextPlayerMove);
+            playerController->setMoveIntent(nextPlayerMove);
         } else if (keys[SDL_SCANCODE_RIGHT]) {
             nextPlayerMove = MoveDirection::RIGHT;
-            playerController.setMoveIntent(nextPlayerMove);
+            playerController->setMoveIntent(nextPlayerMove);
         } else if (keys[SDL_SCANCODE_UP]) {
             nextPlayerMove = MoveDirection::UP;
-            playerController.setMoveIntent(nextPlayerMove);
+            playerController->setMoveIntent(nextPlayerMove);
         } else if (keys[SDL_SCANCODE_DOWN]) {
             nextPlayerMove = MoveDirection::DOWN;
-            playerController.setMoveIntent(nextPlayerMove);
+            playerController->setMoveIntent(nextPlayerMove);
         }
 
         update();
@@ -47,11 +47,18 @@ void GameController::startGame() {
 }
 
 void GameController::update() {
-    animationController.tick();
-    sdlViewController.tick();
-    playerController.tick(player);
+    animationController->tick();
+    sdlViewController->tick();
+    playerController->tick();
 }
 
 GameController::GameController() {
+    collisionController = make_shared<CollisionController>();
+    animationController = make_shared<AnimationController>();
+    sdlViewController = make_shared<SDLViewController>();
+    dotController = make_shared<DotController>();
 
+    player = make_shared<Player>(2);
+
+    playerController = make_shared<PlayerController>(collisionController, player, dotController);
 }

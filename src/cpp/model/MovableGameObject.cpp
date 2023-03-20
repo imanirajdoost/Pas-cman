@@ -66,3 +66,7 @@ MovableGameObject::MovableGameObject(const string &animName, const vector<SDL_Re
         : GameObject(animName, sprites, _isAnimated) {
 
 }
+
+MovableGameObject::MovableGameObject() {
+
+}

@@ -3,6 +3,7 @@
 //
 
 
+#include <iostream>
 #include "header/controller/ScoreController.h"
 #include "header/view/ViewManager.h"
 
@@ -12,5 +13,6 @@ ScoreController::ScoreController(): playerScore{0} {
 
 void ScoreController::addScore(int scoreToAdd) {
     playerScore += scoreToAdd;
-    ViewManager::writeScore(playerScore);
+    cout << "send score to view" << endl;
+//    ViewManager::writeScore(playerScore);
 }

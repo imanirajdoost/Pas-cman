@@ -87,7 +87,7 @@ void Player::setMoveIntent(const MoveDirection &direction) {
     moveIntent = direction;
 }
 
-void Player::controlMove(CollisionController collisionController) {
+void Player::controlMove(CollisionController& collisionController) {
 
     bool shouldMove = true;
 
@@ -158,16 +158,4 @@ void Player::controlMove(CollisionController collisionController) {
 
 void Player::move() {
     MovableGameObject::move();
-
-    // Check for collision with coins
-    for (auto i = GameController::dots.begin(); i < GameController::dots.end(); ++i) {
-        if (collisionController.hasCollision(getRect(), i->get()->getRect())) {
-            eat(*i->get());
-            break;
-        }
-    }
-
-    // Check for collision with bonus objs
-    if (collisionController.hasCollision(getRect(), GameController::fruit.getRect()))
-        eat(GameController::fruit);
 }

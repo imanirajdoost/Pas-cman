@@ -66,7 +66,7 @@ bool DotController::deleteDot(const EatableComponent &dot, uint score) {
     for (auto i = dots.begin(); i < dots.end(); ++i) {
         if (dot.getIndex() == i->get()->getIndex() && !dot.hasBeenEaten()) {
             dots.erase(i);
-            addScore(score);
+//            addScore(score);
 //            cout << " remaining dots: " << GameController::dots.size() << endl;
             if (dots.empty()) {
                 // @TODO : Win the game

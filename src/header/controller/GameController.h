@@ -4,6 +4,7 @@
 #include "AnimationController.h"
 #include "PlayerController.h"
 #include "header/view/SDLViewController.h"
+#include "DotController.h"
 
 class GameController {
 public:
@@ -18,11 +19,13 @@ public:
 private:
     bool hasQuit();
 
-    PlayerController playerController;
-    SDLViewController sdlViewController;
-    AnimationController animationController;
+    shared_ptr<CollisionController> collisionController;
+    shared_ptr<PlayerController> playerController;
+    shared_ptr<SDLViewController> sdlViewController;
+    shared_ptr<AnimationController> animationController;
+    shared_ptr<DotController> dotController;
 
-    Player player = Player(2);
+    shared_ptr<Player> player;
 };
 
 #endif // GAMECONTROLLER_H

@@ -25,6 +25,8 @@ public:
 
     MovableGameObject(const string &animName, const vector<SDL_Rect> &sprites, bool _isAnimated);
 
+    MovableGameObject();
+
     int getSpeed() const;
 
     MoveDirection getMoveDirection() const;

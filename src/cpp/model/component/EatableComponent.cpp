@@ -17,9 +17,9 @@ bool EatableComponent::hasBeenEaten() const {
     return isEaten;
 }
 
-void EatableComponent::getEaten(const EatableComponent &dot, int score) {
+void EatableComponent::getEaten() {
     //@TODO
-    std::cout << "Being eaten: " << dot.getIndex() << std::endl;
+    std::cout << "Being eaten: " << getIndex() << std::endl;
 }
 
 //void EatableComponent::getEaten(const EatableComponent &dot) {

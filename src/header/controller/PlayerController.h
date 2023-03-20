@@ -6,14 +6,20 @@
 #define PAS_CMAN_PLAYERCONTROLLER_H
 
 #include "header/model/Player.h"
+#include "DotController.h"
 
 class PlayerController {
 public:
-    PlayerController();
+    PlayerController(shared_ptr<CollisionController> colController, shared_ptr<Player> p, shared_ptr<DotController> dController);
 
-    void setMoveIntent(Player& player, MoveDirection direction);
+    void setMoveIntent(MoveDirection direction);
 
-    void tick(Player &player);
+    void tick();
+
+private:
+    shared_ptr<CollisionController> collisionController;
+    shared_ptr<DotController> dotController;
+    shared_ptr<Player> player;
 };
 
 
