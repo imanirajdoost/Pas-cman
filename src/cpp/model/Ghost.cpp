@@ -1,5 +1,6 @@
 #include <iostream>
 #include "header/model/Ghost.h"
+#include "header/GameVars.h"
 
 
 Ghost::Ghost(SDL_Rect default_sp) : MovableGameObject(default_sp) {
@@ -9,7 +10,7 @@ void Ghost::setNextPos(const vector<std::vector<MTYPE>> &map, const MoveDirectio
     // TODO: Implement this
 }
 
-Blinky::Blinky() : Ghost(blinky_r1) {
+Blinky::Blinky() : Ghost(default_sprites::blinky_sp_default) {
 
     // Initial pos
     setPos(32, 32);
@@ -33,7 +34,7 @@ Blinky::Blinky() : Ghost(blinky_r1) {
 //    setMoveDirection(direction);
 //}
 
-Pinky::Pinky() : Ghost(pinky_r1) {
+Pinky::Pinky() : Ghost(default_sprites::pinky_sp_default) {
 
     // Initial pos
     setPos(64, 32);
@@ -48,7 +49,7 @@ Pinky::Pinky() : Ghost(pinky_r1) {
     setAnimation("default");
 }
 
-Inky::Inky() : Ghost(inky_r1) {
+Inky::Inky() : Ghost(default_sprites::inky_sp_default) {
 
     // Initial pos
     setPos(96, 32);
@@ -63,7 +64,7 @@ Inky::Inky() : Ghost(inky_r1) {
     setAnimation("default");
 }
 
-Clyde::Clyde() : Ghost(clyde_r1) {
+Clyde::Clyde() : Ghost(default_sprites::clyde_sp_default) {
 
     // Initial pos
     setPos(128, 32);

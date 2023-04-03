@@ -12,4 +12,12 @@ namespace constants {
 #define DEBUG_MODE 1
 
 }
+
+namespace default_sprites {
+const SDL_Rect player_sp_default{21, 90, 13, 14};
+    const SDL_Rect blinky_sp_default = {4, 124, 14, 14};
+    const SDL_Rect pinky_sp_default = {4, 142, 14, 14};
+    const SDL_Rect inky_sp_default = {4, 160, 14, 14};
+    const SDL_Rect clyde_sp_default = {4, 178, 14, 14};
+}
 #endif

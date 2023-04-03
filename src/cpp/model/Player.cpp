@@ -4,11 +4,12 @@
 #include "header/GameVars.h"
 #include "header/controller/CollisionController.h"
 
-Player::Player(short initHealth) : HealthComponent(initHealth), MovableGameObject(player_r1) {
+Player::Player(short initHealth) : HealthComponent(initHealth), MovableGameObject(default_sprites::player_sp_default) {
 
     // Set the initial pos
     setPos(10 * TILESIZE, 13 * TILESIZE);
 
+    // Set the default move intention
     setMoveIntent(MoveDirection::NONE);
 
     // Set default animation and sprite and add animations
@@ -21,6 +22,7 @@ Player::Player(short initHealth) : HealthComponent(initHealth), MovableGameObjec
                          player_die5, player_die6, player_die7, player_die8,
                          player_die9});
 
+    // Set the default animation
     setAnimation("default");
 }
 
