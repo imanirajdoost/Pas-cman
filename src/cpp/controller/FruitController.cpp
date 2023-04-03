@@ -11,13 +11,15 @@ FruitController::FruitController() {
 }
 
 
-bool FruitController::deleteFruit(const EatableComponent& eatable, int score) {
-    if(!eatable.hasBeenEaten()) {
+bool FruitController::deleteFruit(const EatableComponent &eatable, int score) {
+    if (!eatable.hasBeenEaten()) {
         resetFruitPosition();
         cout << "Adding score: " << score << endl;
         //@TODO
 //        addScore(score);
+        return true;
     }
+    return false;
 }
 
 void FruitController::initBonusTimer() {

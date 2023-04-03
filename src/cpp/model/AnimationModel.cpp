@@ -17,9 +17,6 @@ std::vector<SDL_Rect> AnimationModel::getSpritesList() const {
     return sprites_list;
 }
 
-void AnimationModel::addSprite(const SDL_Rect &sp) {
-    sprites_list.push_back(sp);
-}
 
 void AnimationModel::addSprites(const std::vector<SDL_Rect> &sps) {
     for (const auto &sp: sps) {
@@ -29,4 +26,8 @@ void AnimationModel::addSprites(const std::vector<SDL_Rect> &sps) {
 
 AnimationModel::AnimationModel() {
 
+}
+
+void AnimationModel::addSprite(const SDL_Rect &sp) {
+    sprites_list.push_back(sp);
 }

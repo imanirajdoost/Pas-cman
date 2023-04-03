@@ -21,7 +21,7 @@ public:
 
     vector<SDL_Rect> getSpritesList() const;
 
-    inline void addSprite(const SDL_Rect &sp);
+    void addSprite(const SDL_Rect &sp);
 
     void addSprites(const vector<SDL_Rect> &sps);
 

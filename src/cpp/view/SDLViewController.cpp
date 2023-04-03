@@ -30,9 +30,9 @@ void SDLViewController::drawSprites() {
 
     // copie du sprite zoomé
 
-    for (auto sp: spritesToDraw) {
-        auto nextSp = sp.getNextSprite();
-        auto drawRect = sp.getDrawRect();
+    for (const auto& sp: *spritesToDraw) {
+        auto nextSp = sp->getNextSprite();
+        auto drawRect = sp->getDrawRect();
 
         drawTarget(nextSp.get(), &drawRect);
     }
@@ -95,22 +95,22 @@ void SDLViewController::drawDots() {
 void SDLViewController::drawUI() {
 //    ViewManager::drawUI(plancheSprites, win_surf);
 
-    for (auto j = textViewController.name_txt_maps.begin(); j < textViewController.name_txt_maps.end(); j++) {
+    for (auto j = textViewController->name_txt_maps.begin(); j < textViewController->name_txt_maps.end(); j++) {
         auto rects = get<4>(*j->get());
         SDL_Rect posRect;
         posRect.x = get<2>(*j->get());
         posRect.y = get<3>(*j->get());
-        posRect.w = textViewController.FONT_SIZE;
-        posRect.h = textViewController.FONT_SIZE;
+        posRect.w = textViewController->FONT_SIZE;
+        posRect.h = textViewController->FONT_SIZE;
 
         for (auto it = rects.begin(); it != rects.end(); ++it) {
             drawTarget(it->get(), &posRect);
-            posRect.x += textViewController.FONT_SPACE;
+            posRect.x += textViewController->FONT_SPACE;
         }
     }
 
     // Update Health on UI
-    for (auto i = textViewController.health_list.begin(); i < textViewController.health_list.end(); i++)
+    for (auto i = textViewController->health_list.begin(); i < textViewController->health_list.end(); i++)
         drawTarget(&playerHealth, i->get());
 }
 
@@ -119,7 +119,7 @@ void SDLViewController::drawFruit() {
     drawTarget(fruitController->fruit.getNextSprite().get(), &draw_rect);
 }
 
-SDLViewController::SDLViewController(shared_ptr<list<GameObject>> sps, shared_ptr<TextViewController> tViewController,
+SDLViewController::SDLViewController(shared_ptr<std::list<shared_ptr<GameObject>>> sps, shared_ptr<TextViewController> tViewController,
                                      shared_ptr<DotController> dController,
                                      shared_ptr<FruitController> fController) {
     pWindow = SDL_CreateWindow("PacMan", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 900, 900, SDL_WINDOW_SHOWN);
