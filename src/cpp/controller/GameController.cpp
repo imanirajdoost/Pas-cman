@@ -3,7 +3,7 @@
 #include <SDL2/SDL.h>
 #include "header/controller/GameController.h"
 
-bool GameController::hasQuit() {
+bool GameController::hasQuit() const {
     return exit;
 }
 
@@ -55,10 +55,22 @@ void GameController::update() {
 GameController::GameController() {
     collisionController = make_shared<CollisionController>();
     animationController = make_shared<AnimationController>();
-    sdlViewController = make_shared<SDLViewController>();
     dotController = make_shared<DotController>();
+    fruitController = make_shared<FruitController>();
+    textViewController = make_shared<TextViewController>();
+
 
     player = make_shared<Player>(2);
+    inky = make_shared<Inky>();
+    blinky = make_shared<Blinky>();
+    pinky = make_shared<Pinky>();
+    clyde = make_shared<Clyde>();
 
-    playerController = make_shared<PlayerController>(collisionController, player, dotController);
+    // TODO
+    auto list_sp = make_shared<std::list<shared_ptr<GameObject>>>();
+    list_sp->emplace_back(player);
+
+    playerController = make_shared<PlayerController>(collisionController, player, dotController, fruitController);
+
+    sdlViewController = make_shared<SDLViewController>(list_sp, textViewController, dotController, fruitController);
 }

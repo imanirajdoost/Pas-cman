@@ -18,14 +18,16 @@ void PlayerController::tick() {
     }
 
     // Check for collision with bonus objs
-    if (collisionController.hasCollision(player->getRect(), GameController::fruit.getRect()))
-        eat(GameController::fruit);
+    if (collisionController->hasCollision(player->getRect(), fruitController->fruit.getRect()))
+        fruitController->fruit.getEaten();
+//        eat(fruitController->fruit);
 }
 
 PlayerController::PlayerController(shared_ptr<CollisionController> colController, shared_ptr<Player> p,
-                                   shared_ptr<DotController> dController) {
+                                   shared_ptr<DotController> dController, shared_ptr<FruitController> fController) {
     collisionController = std::move(colController);
     dotController = std::move(dController);
+    fruitController = std::move(fController);
     player = std::move(p);
 }
 

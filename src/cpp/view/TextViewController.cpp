@@ -1,8 +1,8 @@
 #include <iostream>
-#include "header/view/ViewManager.h"
+#include "header/view/TextViewController.h"
 #include <SDL2/SDL.h>
 
-shared_ptr<tuple<string, string, int, int, vector<shared_ptr<SDL_Rect>>>> ViewManager::isIdExists(const string &id) {
+shared_ptr<tuple<string, string, int, int, vector<shared_ptr<SDL_Rect>>>> TextViewController::isIdExists(const string &id) {
     for (auto item: name_txt_maps) {
         auto id_target = get<0>(*item);
         if (id_target == id)
@@ -11,9 +11,9 @@ shared_ptr<tuple<string, string, int, int, vector<shared_ptr<SDL_Rect>>>> ViewMa
     return nullptr;
 }
 
-void ViewManager::writeOnUI(const string &id, const string &text, int posX, int posY) {
+void TextViewController::writeOnUI(const string &id, const string &text, int posX, int posY) {
 
-    // Rectangles that draw the text
+    // Rectangles that drawSprites the text
     vector<shared_ptr<SDL_Rect>> rectsToDraw;
 
     // Get each character of the text as rect
@@ -46,12 +46,12 @@ void ViewManager::writeOnUI(const string &id, const string &text, int posX, int 
         name_txt_maps.push_back(target_tuple);
     }
 
-    // Add the tuple to the list of things to draw to the screen
+    // Add the tuple to the list of things to drawSprites to the screen
 //    if (name_txt_maps.find(id) == name_txt_maps.end())
 //    name_txt_maps.emplace(id, tuple);
 }
 
-//void ViewManager::drawUI(SDL_Surface *plancheSprites, SDL_Surface *win_surf) {
+//void TextViewController::drawUI(SDL_Surface *plancheSprites, SDL_Surface *win_surf) {
 //    // Update texts on UI
 //    for (auto j = name_txt_maps.begin(); j < name_txt_maps.end(); j++) {
 //        auto rects = get<4>(*j->get());
@@ -73,12 +73,12 @@ void ViewManager::writeOnUI(const string &id, const string &text, int posX, int 
 //    }
 //}
 
-void ViewManager::writeScore(int score) {
+void TextViewController::writeScore(int score) {
     writeOnUI(SCORE_TEXT_DYNAMIC, to_string(score), SCORE_TEXT_DYNAMIC_POSX,
               SCORE_TEXT_DYNAMIC_POSY);
 }
 
-void ViewManager::setHealthUI(u_short health) {
+void TextViewController::setHealthUI(u_short health) {
     health_list.clear();
     for (int i = 0; i < health; ++i) {
         auto rect = make_shared<SDL_Rect>();
@@ -90,7 +90,7 @@ void ViewManager::setHealthUI(u_short health) {
     }
 }
 
-ViewManager::ViewManager() {
+TextViewController::TextViewController() {
     char_map.emplace("a", letter_a);
     char_map.emplace("b", letter_b);
     char_map.emplace("c", letter_c);

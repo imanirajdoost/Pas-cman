@@ -25,8 +25,6 @@ protected:
 
     bool setAnimation(const std::string &animName);
 
-    shared_ptr<SDL_Rect> getNextSprite();
-
     shared_ptr<AnimationModel> current_anim = nullptr;
 
     bool isAnimated = false;
@@ -40,6 +38,8 @@ public:
     AnimationComponent(const string &newName, const vector<SDL_Rect> &sps, bool _isAnimated);
 
     void addAnimation(const string &animName, const vector<SDL_Rect> &sps);
+
+    shared_ptr<SDL_Rect> getNextSprite();
 };
 
 

@@ -1,5 +1,5 @@
-#ifndef PAS_CMAN_VIEWMANAGER_H
-#define PAS_CMAN_VIEWMANAGER_H
+#ifndef PAS_CMAN_TEXTVIEWCONTROLLER_H
+#define PAS_CMAN_TEXTVIEWCONTROLLER_H
 
 #include <memory>
 #include <map>
@@ -9,17 +9,21 @@
 
 using namespace std;
 
-class ViewManager {
+class TextViewController {
 public:
-    ViewManager();
-
-//    void drawUI(SDL_Surface *plancheSprites, SDL_Surface *win_surf);
+    TextViewController();
 
     void writeOnUI(const string &id, const string &text, int posX, int posY);
 
     void writeScore(int score);
 
     void setHealthUI(u_short health);
+
+    vector<shared_ptr<tuple<string, string, int, int, vector<shared_ptr<SDL_Rect>>>>> name_txt_maps;
+    vector<shared_ptr<SDL_Rect>> health_list;
+
+    const int FONT_SIZE = 16;
+    const int FONT_SPACE = 22;
 
 private:
     const SDL_Rect letter_a = {12, 61, 7, 7};
@@ -68,11 +72,6 @@ private:
     const SDL_Rect symbol_Exclamation = {100, 53, 7, 7};
     const SDL_Rect symbol_Comma = {109, 50, 8, 8};
 
-    const SDL_Rect playerHealth = {169, 76, 10, 12};
-
-    const int FONT_SIZE = 16;
-    const int FONT_SPACE = 22;
-
     const string SCORE_TEXT_DYNAMIC = "score_dynamic";
     const int SCORE_TEXT_DYNAMIC_POSX = 700;
     const int SCORE_TEXT_DYNAMIC_POSY = 50;
@@ -80,11 +79,9 @@ private:
     const int HEALTH_POSX = 700;
     const int HEALTH_POSY = 100;
 
-    vector<shared_ptr<SDL_Rect>> health_list;
     map<string, SDL_Rect> char_map;
-    vector<shared_ptr<tuple<string, string, int, int, vector<shared_ptr<SDL_Rect>>>>> name_txt_maps;
 
     shared_ptr<tuple<string, string, int, int, vector<shared_ptr<SDL_Rect>>>> isIdExists(const string &id);
 };
 
-#endif //PAS_CMAN_VIEWMANAGER_H
+#endif //PAS_CMAN_TEXTVIEWCONTROLLER_H

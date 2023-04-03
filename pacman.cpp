@@ -2,19 +2,19 @@
 
 #include <SDL.h>
 #include <iostream>
-#include "src/header/view/ViewManager.h"
+#include "src/header/view/TextViewController.h"
 #include "src/header/controller/GameController.h"
 
 void init() {
 
     // Initialize dots on the screen
-//    ViewManager::init();
+//    TextViewController::init();
 
-//    ViewManager::writeOnUI("score_static", "score", 700, 10);
-//    ViewManager::writeOnUI(ViewManager::SCORE_TEXT_DYNAMIC, "0", ViewManager::SCORE_TEXT_DYNAMIC_POSX,
-//                           ViewManager::SCORE_TEXT_DYNAMIC_POSY);
+//    TextViewController::writeOnUI("score_static", "score", 700, 10);
+//    TextViewController::writeOnUI(TextViewController::SCORE_TEXT_DYNAMIC, "0", TextViewController::SCORE_TEXT_DYNAMIC_POSX,
+//                           TextViewController::SCORE_TEXT_DYNAMIC_POSY);
 
-//    ViewManager::setHealthUI(player.getHealth());
+//    TextViewController::setHealthUI(player.getHealth());
 }
 
 //void draw_collider(const GameObject &obj, int r = 255, int g = 0, int b = 9) {
@@ -29,7 +29,7 @@ void init() {
 //}
 
 // fonction qui met à jour la surface de la fenetre "win_surf"
-//void draw() {
+//void drawSprites() {
 //
 //    SDL_SetColorKey(plancheSprites, false, 0);
 //    SDL_BlitScaled(plancheSprites, &src_bg, win_surf, &bg);
@@ -39,25 +39,25 @@ void init() {
 //    // couleur transparente
 //    SDL_SetColorKey(plancheSprites, true, 0);
 //    // copie du sprite zoomé
-//    blinky.draw(plancheSprites, win_surf);
-//    pinky.draw(plancheSprites, win_surf);
-//    inky.draw(plancheSprites, win_surf);
-//    clyde.draw(plancheSprites, win_surf);
+//    blinky.drawSprites(plancheSprites, win_surf);
+//    pinky.drawSprites(plancheSprites, win_surf);
+//    inky.drawSprites(plancheSprites, win_surf);
+//    clyde.drawSprites(plancheSprites, win_surf);
 //
-//    player.draw(plancheSprites, win_surf);
+//    player.drawSprites(plancheSprites, win_surf);
 //
 //    // Draw UI
-//    ViewManager::drawUI(plancheSprites, win_surf);
+//    TextViewController::drawUI(plancheSprites, win_surf);
 //
 //    for (auto &dotSmall: GameController::dots) {
-//        dotSmall->draw(plancheSprites, win_surf);
+//        dotSmall->drawSprites(plancheSprites, win_surf);
 //    }
 //
-//    GameController::fruit.draw(plancheSprites, win_surf);
+//    GameController::fruit.drawSprites(plancheSprites, win_surf);
 //
 //    if (DEBUG_MODE) {
 //
-//        // draw the level grid
+//        // drawSprites the level grid
 //        draw_grid(100, 100, 20);
 //
 //        // Draw the collider boxes on the screen
@@ -134,7 +134,7 @@ int main(int argc, char **argv) {
 
 //        player.controlMove();
 
-//        draw();
+//        drawSprites();
 //        SDL_UpdateWindowSurface(pWindow);
         // LIMITE A 60 FPS
 //        SDL_Delay(16); // utiliser SDL_GetTicks64() pour plus de precisions

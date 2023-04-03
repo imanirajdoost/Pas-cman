@@ -5,7 +5,7 @@
 
 #include <iostream>
 #include "header/controller/ScoreController.h"
-#include "header/view/ViewManager.h"
+#include "header/view/TextViewController.h"
 
 ScoreController::ScoreController(): playerScore{0} {
 
@@ -14,5 +14,5 @@ ScoreController::ScoreController(): playerScore{0} {
 void ScoreController::addScore(int scoreToAdd) {
     playerScore += scoreToAdd;
     cout << "send score to view" << endl;
-//    ViewManager::writeScore(playerScore);
+//    TextViewController::writeScore(playerScore);
 }

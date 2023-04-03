@@ -8,7 +8,8 @@ protected:
     bool isVulnerable = false;
 
 public:
-    Ghost();
+    explicit Ghost(SDL_Rect defaultsp);
+    void setNextPos(const std::vector<std::vector<MTYPE>> &map, const MoveDirection &direction) override;
 
 };
 

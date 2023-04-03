@@ -7,76 +7,53 @@
 #include <list>
 #include "header/view/SDLViewController.h"
 #include "header/GameVars.h"
-
-SDLViewController::SDLViewController() {
-    pWindow = SDL_CreateWindow("PacMan", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 900, 900, SDL_WINDOW_SHOWN);
-    win_surf = SDL_GetWindowSurface(pWindow);
-
-    renderer = SDL_CreateRenderer(pWindow, -1, SDL_RENDERER_SOFTWARE);
-
-    plancheSprites = SDL_LoadBMP("./pacman_sprites.bmp");
-}
+#include "header/Map.h"
 
 void SDLViewController::tick() {
-    draw();
+    drawSprites();
     SDL_UpdateWindowSurface(pWindow);
     // LIMITE A 60 FPS
     SDL_Delay(16); // utiliser SDL_GetTicks64() pour plus de precisions
 }
 
-void SDLViewController::draw(std::list<GameObject> sprites) {
+void SDLViewController::drawSprites() {
     SDL_SetColorKey(plancheSprites, false, 0);
-    SDL_BlitScaled(plancheSprites, &src_bg, win_surf, &bg);
-    // @TODO: This is a hack to avoid writing on top of the previous rect in UI, improve this
-    SDL_BlitScaled(plancheSprites, &blackBg, win_surf, &UIRect);
 
+    drawTarget(&src_bg, &bg);
+
+    // @TODO: This is a hack to avoid writing on top of the previous rect in UI, improve this
+//    SDL_BlitScaled(plancheSprites, &blackBg, win_surf, &UIRect);
+    drawTarget(&blackBg, &UIRect);
 
     // couleur transparente
     SDL_SetColorKey(plancheSprites, true, 0);
 
-
     // copie du sprite zoomé
 
-    for (auto sp : sprites) {
-        sp.getNextSprite();
-        sp.getDrawRect();
+    for (auto sp: spritesToDraw) {
+        auto nextSp = sp.getNextSprite();
+        auto drawRect = sp.getDrawRect();
+
+        drawTarget(nextSp.get(), &drawRect);
     }
 
-    blinky.draw(plancheSprites, win_surf);
-    pinky.draw(plancheSprites, win_surf);
-    inky.draw(plancheSprites, win_surf);
-    clyde.draw(plancheSprites, win_surf);
-
-    player.draw(plancheSprites, win_surf);
+//    blinky.drawSprites(plancheSprites, win_surf);
+//    pinky.drawSprites(plancheSprites, win_surf);
+//    inky.drawSprites(plancheSprites, win_surf);
+//    clyde.drawSprites(plancheSprites, win_surf);
+//
+//    player.drawSprites(plancheSprites, win_surf);
 
     // Draw UI
-    ViewManager::drawUI(plancheSprites, win_surf);
+    drawUI();
 
-    for (auto &dotSmall: GameController::dots) {
-        dotSmall->draw(plancheSprites, win_surf);
-    }
+    drawDots();
+    drawFruit();
 
-    GameController::fruit.draw(plancheSprites, win_surf);
-
-    if (DEBUG_MODE) {
-
-        // draw the level grid
-        draw_grid(100, 100, 20);
-
-        // Draw the collider boxes on the screen
-        draw_collider(player);
-        draw_collider(blinky);
-        draw_collider(pinky);
-        draw_collider(inky);
-        draw_collider(clyde);
-
-//        for (auto & dotSmall : dots) {
-//            draw_collider(*dotSmall);
-//        }
-    }
+//    fruitController::fruit.drawSprites(plancheSprites, win_surf);
 }
 
-void SDLViewController::draw_sprite(SDL_Rect* spriteToDraw, SDL_Rect* drawRect) {
+void SDLViewController::drawTarget(SDL_Rect *spriteToDraw, SDL_Rect *drawRect) {
 
     SDL_BlitScaled(plancheSprites, spriteToDraw, win_surf, drawRect);
 }
@@ -105,4 +82,77 @@ void SDLViewController::draw_grid(int r = 255, int g = 0, int b = 0) {
     }
 
     SDL_RenderPresent(renderer);
+}
+
+void SDLViewController::drawDots() {
+    for (auto &dotSmall: dotController->dots) {
+        auto draw_rect = dotSmall->getDrawRect();
+        drawTarget(dotSmall->getNextSprite().get(), &draw_rect);
+//        dotSmall->drawSprites(plancheSprites, win_surf);
+    }
+}
+
+void SDLViewController::drawUI() {
+//    ViewManager::drawUI(plancheSprites, win_surf);
+
+    for (auto j = textViewController.name_txt_maps.begin(); j < textViewController.name_txt_maps.end(); j++) {
+        auto rects = get<4>(*j->get());
+        SDL_Rect posRect;
+        posRect.x = get<2>(*j->get());
+        posRect.y = get<3>(*j->get());
+        posRect.w = textViewController.FONT_SIZE;
+        posRect.h = textViewController.FONT_SIZE;
+
+        for (auto it = rects.begin(); it != rects.end(); ++it) {
+            drawTarget(it->get(), &posRect);
+            posRect.x += textViewController.FONT_SPACE;
+        }
+    }
+
+    // Update Health on UI
+    for (auto i = textViewController.health_list.begin(); i < textViewController.health_list.end(); i++)
+        drawTarget(&playerHealth, i->get());
+}
+
+void SDLViewController::drawFruit() {
+    auto draw_rect = fruitController->fruit.getDrawRect();
+    drawTarget(fruitController->fruit.getNextSprite().get(), &draw_rect);
+}
+
+SDLViewController::SDLViewController(shared_ptr<list<GameObject>> sps, shared_ptr<TextViewController> tViewController,
+                                     shared_ptr<DotController> dController,
+                                     shared_ptr<FruitController> fController) {
+    pWindow = SDL_CreateWindow("PacMan", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 900, 900, SDL_WINDOW_SHOWN);
+    win_surf = SDL_GetWindowSurface(pWindow);
+
+    renderer = SDL_CreateRenderer(pWindow, -1, SDL_RENDERER_SOFTWARE);
+
+    plancheSprites = SDL_LoadBMP("./pacman_sprites.bmp");
+
+    dotController = std::move(dController);
+    fruitController = std::move(fController);
+    spritesToDraw = std::move(sps);
+    textViewController = std::move(tViewController);
+}
+
+void SDLViewController::drawDebug(std::list<GameObject> &debugList) {
+    if (DEBUG_MODE) {
+
+        // drawSprites the level grid
+        draw_grid(100, 100, 20);
+
+        // Draw the collider boxes on the screen
+        for (auto &sp: debugList) {
+            draw_collider(sp);
+        }
+//        draw_collider(player);
+//        draw_collider(blinky);
+//        draw_collider(pinky);
+//        draw_collider(inky);
+//        draw_collider(clyde);
+
+//        for (auto & dotSmall : dots) {
+//            draw_collider(*dotSmall);
+//        }
+    }
 }
