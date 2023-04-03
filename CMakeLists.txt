@@ -15,7 +15,6 @@ include_directories(
 file(GLOB SRCS
 		"${PROJECT_SOURCE_DIR}/src/*.h"
 		"${PROJECT_SOURCE_DIR}/src/header/*.h"
-		"${PROJECT_SOURCE_DIR}/src/header/*.h"
 		"${PROJECT_SOURCE_DIR}/src/header/controller/*.h"
 		"${PROJECT_SOURCE_DIR}/src/header/model/*.h"
 		"${PROJECT_SOURCE_DIR}/src/header/model/component/*.h"

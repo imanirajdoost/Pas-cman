@@ -76,6 +76,10 @@ private:
     const int SCORE_TEXT_DYNAMIC_POSX = 700;
     const int SCORE_TEXT_DYNAMIC_POSY = 50;
 
+    const string SCORE_TEXT_STATIC = "score_static";
+    const int SCORE_TEXT_STATIC_POSX = 700;
+    const int SCORE_TEXT_STATIC_POSY = 20;
+
     const int HEALTH_POSX = 700;
     const int HEALTH_POSY = 100;
 

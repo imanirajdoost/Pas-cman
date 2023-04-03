@@ -8,6 +8,8 @@ bool GameController::hasQuit() const {
 }
 
 void GameController::startGame() {
+
+    // Repeat until we have not quit the game (Simulation of frame update)
     while (!hasQuit()) {
         SDL_Event event;
         while (!hasQuit() && SDL_PollEvent(&event)) {
@@ -48,29 +50,34 @@ void GameController::startGame() {
 
 void GameController::update() {
     animationController->tick();
-    sdlViewController->tick();
     playerController->tick();
+    sdlViewController->tick();
 }
 
-GameController::GameController() {
-    collisionController = make_shared<CollisionController>();
-    animationController = make_shared<AnimationController>();
-    dotController = make_shared<DotController>();
-    fruitController = make_shared<FruitController>();
-    textViewController = make_shared<TextViewController>();
+GameController::GameController() : exit(false) {
 
-
+    // Initialize game objects
     player = make_shared<Player>(2);
     inky = make_shared<Inky>();
     blinky = make_shared<Blinky>();
     pinky = make_shared<Pinky>();
     clyde = make_shared<Clyde>();
 
-    // TODO
+    // Create a list of all game objects to pass for the view
     auto list_sp = make_shared<std::list<shared_ptr<GameObject>>>();
     list_sp->emplace_back(player);
+    list_sp->emplace_back(inky);
+    list_sp->emplace_back(blinky);
+    list_sp->emplace_back(pinky);
+    list_sp->emplace_back(clyde);
+    // TODO: add other game objects
 
+    // initialize controllers
+    collisionController = make_shared<CollisionController>();
+    animationController = make_shared<AnimationController>();
+    dotController = make_shared<DotController>();
+    fruitController = make_shared<FruitController>();
+    textViewController = make_shared<TextViewController>();
     playerController = make_shared<PlayerController>(collisionController, player, dotController, fruitController);
-
     sdlViewController = make_shared<SDLViewController>(list_sp, textViewController, dotController, fruitController);
 }

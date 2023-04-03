@@ -37,20 +37,11 @@ void SDLViewController::drawSprites() {
         drawTarget(nextSp.get(), &drawRect);
     }
 
-//    blinky.drawSprites(plancheSprites, win_surf);
-//    pinky.drawSprites(plancheSprites, win_surf);
-//    inky.drawSprites(plancheSprites, win_surf);
-//    clyde.drawSprites(plancheSprites, win_surf);
-//
-//    player.drawSprites(plancheSprites, win_surf);
-
     // Draw UI
     drawUI();
 
     drawDots();
     drawFruit();
-
-//    fruitController::fruit.drawSprites(plancheSprites, win_surf);
 }
 
 void SDLViewController::drawTarget(SDL_Rect *spriteToDraw, SDL_Rect *drawRect) {
