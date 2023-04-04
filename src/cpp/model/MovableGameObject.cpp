@@ -1,5 +1,3 @@
-
-
 #include "header/model/MovableGameObject.h"
 
 MoveDirection MovableGameObject::getMoveDirection() const {
@@ -14,7 +12,6 @@ void MovableGameObject::setMoveDirection(const MoveDirection &newDirection) {
 void MovableGameObject::resetMoveDirection() {
     setMoveDirection(lastDirection);
 }
-
 
 void MovableGameObject::setDirectionSprite(const MoveDirection &newDirection) {
     switch (newDirection) {
