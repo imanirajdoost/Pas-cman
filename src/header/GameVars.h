@@ -3,13 +3,20 @@
 
 namespace constants {
 #define TILESIZE 32
-#define SMALL_DOT_SIZE 10
-#define BIG_DOT_SIZE 20
-#define SMALL_DOT_SCORE 10
-#define BIG_DOT_SCORE 50
-#define FRUIT_SCORE 100
-#define ANIMATION_FRAME_RATE 2
 #define DEBUG_MODE 1
+
+#define ANIMATION_FRAME_RATE 2
+
+#define SMALL_DOT_SIZE 10
+#define SMALL_DOT_SCORE 10
+
+#define BIG_DOT_SIZE 20
+#define BIG_DOT_SCORE 50
+
+#define FRUIT_SCORE 100
+#define MIN_TIME_TO_SPAWN_FRUIT 10000
+#define FRUIT_SPAWN_TIME 15000
+#define FRUIT_AVAILABE_TIME 5000
 }
 
 namespace default_sprites {

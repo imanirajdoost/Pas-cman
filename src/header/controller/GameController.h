@@ -8,6 +8,7 @@
 #include "FruitController.h"
 #include "header/model/Ghost.h"
 #include "GhostController.h"
+#include "TimeController.h"
 
 class GameController {
 public:
@@ -31,6 +32,7 @@ private:
     shared_ptr<FruitController> fruitController;
     shared_ptr<TextViewController> textViewController;
     shared_ptr<ScoreController> scoreController;
+    shared_ptr<TimeController> timeController;
 
     shared_ptr<Player> player;
     shared_ptr<Blinky> blinky;

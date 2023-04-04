@@ -64,7 +64,7 @@ bool DotController::deleteDot(const Dot &dot) {
     for (auto i = dots.begin(); i < dots.end(); ++i) {
         if (dot.getIndex() == i->get()->getIndex()) {
             dots.erase(i);
-            cout << " remaining dots: " << dots.size() << endl;
+//            cout << " remaining dots: " << dots.size() << endl;
             if (dots.empty()) {
                 // @TODO : Win the game
                 cout << "You won !" << endl;

@@ -8,6 +8,8 @@ bool GameController::hasQuit() const {
 }
 
 void GameController::startGame() {
+    // start the timer to get the elapsed time of each execution
+    timeController->startTimer();
 
     // Repeat until we have not quit the game (Simulation of frame update)
     while (!hasQuit()) {
@@ -52,7 +54,11 @@ void GameController::update() {
     animationController->tick();
     playerController->tick();
     ghostController->tick();
+    fruitController->tick();
     sdlViewController->tick();
+
+    // Time controller must be in the end of all ticks to capture correctly the updated time
+    timeController->tick();
 }
 
 GameController::GameController() : exit(false) {
@@ -74,10 +80,11 @@ GameController::GameController() : exit(false) {
     // TODO: add other game objects
 
     // initialize controllers
+    timeController = make_shared<TimeController>();
     collisionController = make_shared<CollisionController>();
     animationController = make_shared<AnimationController>();
     dotController = make_shared<DotController>();
-    fruitController = make_shared<FruitController>();
+    fruitController = make_shared<FruitController>(timeController);
     textViewController = make_shared<TextViewController>();
     scoreController = make_shared<ScoreController>(textViewController);
     playerController = make_shared<PlayerController>(collisionController, player, dotController, fruitController,

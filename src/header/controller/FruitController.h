@@ -7,21 +7,28 @@
 
 
 #include "header/model/eatable/Fruit.h"
+#include "TimeController.h"
 
 class FruitController {
 public:
-    FruitController();
+    explicit FruitController(shared_ptr<TimeController> tController);
 
     Fruit fruit;
 
     bool deleteFruit();
 
-    void initBonusTimer();
+    void tick();
 
 private:
     void spawnFruit();
 
     void resetFruitPosition();
+
+    shared_ptr<TimeController> timeController;
+
+    bool fruitAvailable;
+
+    long last_time_fruit_spawned;
 };
 
 

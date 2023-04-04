@@ -7,70 +7,41 @@
 #include "header/controller/FruitController.h"
 #include "header/GameVars.h"
 
-FruitController::FruitController() {
+FruitController::FruitController(shared_ptr<TimeController> tController) {
     resetFruitPosition();
-}
+    last_time_fruit_spawned = 0;
+    fruitAvailable = false;
 
+    timeController = std::move(tController);
+}
 
 bool FruitController::deleteFruit() {
     resetFruitPosition();
     return true;
 }
 
-void FruitController::initBonusTimer() {
-
-//    int min = 2;
-//    int max = 5;
-//
-////    short spawnTimes = 10;
-//
-//    // NOTE: Initialise. Do this once (not for every random number).
-//    std::default_random_engine rng(std::random_device{}());
-//    std::uniform_int_distribution<int> dist(min, max);
-//
-//    int random_num;
-//
-//    do {
-//        random_num = dist(rng);
-//        std::cout << "Rand: " << random_num << std::endl;
-//
-//        // start counter with current second
-//        time_t counter = time(nullptr);
-//
-//        while(!hasQuit()) {
-//            // wait
-//            if(time(nullptr) - counter > random_num)
-//                break;
-//        }
-//        if(hasQuit())
-//            return;
-//
-////        std::this_thread::sleep_for(std::chrono::milliseconds (random_num));
-//
-//        spawnFruit();
-////        spawnTimes--;
-//
-////        std::this_thread::sleep_for(std::chrono::milliseconds (5000ms));
-//        int waitTime = 5;
-//        counter = time(nullptr);
-//        while(!hasQuit()) {
-//            // wait
-//            if(time(nullptr) - counter > waitTime)
-//                break;
-//        }
-//        if(hasQuit())
-//            return;
-//
-//        resetFruitPosition();
-//
-//    } while (!hasQuit());
-}
-
 void FruitController::spawnFruit() {
     fruit.setPos(10 * TILESIZE, 15 * TILESIZE);
-    std::cout << "spawning fruit" << std::endl;
+//    std::cout << "spawning fruit" << std::endl;
+    fruitAvailable = true;
 }
 
 void FruitController::resetFruitPosition() {
     fruit.setPos(-100, -100);
+    fruitAvailable = false;
 }
+
+void FruitController::tick() {
+    long elapsed_time = timeController->getElapsedTime();
+    if(!fruitAvailable && elapsed_time > MIN_TIME_TO_SPAWN_FRUIT && (elapsed_time - last_time_fruit_spawned) >= FRUIT_SPAWN_TIME) {
+        last_time_fruit_spawned = elapsed_time;
+        spawnFruit();
+    }
+
+    if(fruitAvailable && (elapsed_time - last_time_fruit_spawned) >= FRUIT_AVAILABE_TIME) {
+        elapsed_time = last_time_fruit_spawned;
+        resetFruitPosition();
+    }
+}
+
+
