@@ -1,6 +1,7 @@
 #include <iostream>
 #include "header/model/Ghost.h"
 #include "header/GameVars.h"
+#include "header/controller/AnimationController.h"
 
 
 Ghost::Ghost(SDL_Rect default_sp) : MovableGameObject(default_sp) {
@@ -8,6 +9,12 @@ Ghost::Ghost(SDL_Rect default_sp) : MovableGameObject(default_sp) {
 
 void Ghost::setNextPos(const vector<std::vector<MTYPE>> &map, const MoveDirection &direction) {
     // TODO: Implement this
+    if (AnimationController::animationCounter%4 == 0) {
+        _next_pos.x += speed;
+        move();
+    }
+
+    setMoveDirection(direction);
 }
 
 Blinky::Blinky() : Ghost(default_sprites::blinky_sp_default) {
@@ -23,6 +30,8 @@ Blinky::Blinky() : Ghost(default_sprites::blinky_sp_default) {
     addAnimation("move_right", {blinky_r1, blinky_r2});
 
     setAnimation("default");
+
+    startAnimation();
 }
 
 
@@ -47,6 +56,8 @@ Pinky::Pinky() : Ghost(default_sprites::pinky_sp_default) {
     addAnimation("move_right", {pinky_r1, pinky_r2});
 
     setAnimation("default");
+
+    startAnimation();
 }
 
 Inky::Inky() : Ghost(default_sprites::inky_sp_default) {
@@ -62,6 +73,8 @@ Inky::Inky() : Ghost(default_sprites::inky_sp_default) {
     addAnimation("move_right", {inky_r1, inky_r2});
 
     setAnimation("default");
+
+    startAnimation();
 }
 
 Clyde::Clyde() : Ghost(default_sprites::clyde_sp_default) {
@@ -77,4 +90,6 @@ Clyde::Clyde() : Ghost(default_sprites::clyde_sp_default) {
     addAnimation("move_right", {clyde_r1, clyde_r2});
 
     setAnimation("default");
+
+    startAnimation();
 }

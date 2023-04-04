@@ -7,12 +7,11 @@
 #include "header/controller/ScoreController.h"
 #include "header/view/TextViewController.h"
 
-ScoreController::ScoreController(): playerScore{0} {
-
+ScoreController::ScoreController(std::shared_ptr<TextViewController> tController): playerScore{0} {
+    textViewController = std::move(tController);
 }
 
 void ScoreController::addScore(int scoreToAdd) {
     playerScore += scoreToAdd;
-    cout << "send score to view" << endl;
-//    TextViewController::writeScore(playerScore);
+    textViewController->writeScore(playerScore);
 }

@@ -1,8 +1,7 @@
-#include <iostream>
 #include "header/model/component/EatableComponent.h"
 
 EatableComponent::EatableComponent() {
-    isEaten = false;
+    index = -1;
 }
 
 void EatableComponent::setIndex(const short indexToSet) {
@@ -12,17 +11,3 @@ void EatableComponent::setIndex(const short indexToSet) {
 short EatableComponent::getIndex() const {
     return this->index;
 }
-
-bool EatableComponent::hasBeenEaten() const {
-    return isEaten;
-}
-
-void EatableComponent::getEaten() {
-    //@TODO
-    std::cout << "Being eaten: " << getIndex() << std::endl;
-}
-
-//void EatableComponent::getEaten(const EatableComponent &dot) {
-//    if(GameController::deleteDot(dot, 100))
-//        isEaten = true;
-//}

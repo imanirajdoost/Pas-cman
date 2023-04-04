@@ -60,14 +60,11 @@ bool DotController::isBigDot(int i, int j) {
     return false;
 }
 
-bool DotController::deleteDot(const Dot &dot, uint score) {
-//    auto targetToDel = dots[dot.getIndex()].get();
-
+bool DotController::deleteDot(const Dot &dot) {
     for (auto i = dots.begin(); i < dots.end(); ++i) {
-        if (dot.getIndex() == i->get()->getIndex() && !dot.hasBeenEaten()) {
+        if (dot.getIndex() == i->get()->getIndex()) {
             dots.erase(i);
-//            addScore(score);
-//            cout << " remaining dots: " << GameController::dots.size() << endl;
+            cout << " remaining dots: " << dots.size() << endl;
             if (dots.empty()) {
                 // @TODO : Win the game
                 cout << "You won !" << endl;
@@ -76,7 +73,4 @@ bool DotController::deleteDot(const Dot &dot, uint score) {
         }
     }
     return false;
-
-//    if(!dot.hasBeenEaten())
-//        GameController::dots.erase(GameController::dots.begin() + dot.getIndex());
 }

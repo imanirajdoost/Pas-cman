@@ -6,14 +6,18 @@
 #define PAS_CMAN_SCORECONTROLLER_H
 
 
+#include <memory>
+#include "header/view/TextViewController.h"
+
 class ScoreController {
 public:
-    ScoreController();
+    ScoreController(std::shared_ptr<TextViewController> tController);
 
     void addScore(int scoreToAdd);
 
 private:
     int playerScore;
+    std::shared_ptr<TextViewController> textViewController;
 };
 
 

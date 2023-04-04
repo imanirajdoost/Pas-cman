@@ -25,7 +25,9 @@ public:
 
     shared_ptr<DotBig> spawnDotBig(int x, int y);
 
-    bool deleteDot(const Dot &dot, uint score);
+    bool deleteDot(const Dot &dot);
+
+    bool isBigDot(int i, int j);
 
 private:
     short dotIndex = 0;
@@ -35,8 +37,6 @@ private:
             {20, 1},
             {20, 19}
     };
-
-    bool isBigDot(int i, int j);
 };
 
 

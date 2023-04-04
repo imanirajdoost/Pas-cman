@@ -7,7 +7,7 @@
 Player::Player(short initHealth) : HealthComponent(initHealth), MovableGameObject(default_sprites::player_sp_default) {
 
     // Set the initial pos
-    setPos(10 * TILESIZE, 13 * TILESIZE);
+    setPos(10 * TILESIZE, 20 * TILESIZE);
 
     // Set the default move intention
     setMoveIntent(MoveDirection::NONE);
@@ -24,6 +24,8 @@ Player::Player(short initHealth) : HealthComponent(initHealth), MovableGameObjec
 
     // Set the default animation
     setAnimation("default");
+
+    startAnimation();
 }
 
 void Player::setNextPos(const std::vector<std::vector<MTYPE>> &map, const MoveDirection &direction) {

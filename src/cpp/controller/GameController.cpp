@@ -51,6 +51,7 @@ void GameController::startGame() {
 void GameController::update() {
     animationController->tick();
     playerController->tick();
+    ghostController->tick();
     sdlViewController->tick();
 }
 
@@ -78,6 +79,9 @@ GameController::GameController() : exit(false) {
     dotController = make_shared<DotController>();
     fruitController = make_shared<FruitController>();
     textViewController = make_shared<TextViewController>();
-    playerController = make_shared<PlayerController>(collisionController, player, dotController, fruitController);
+    scoreController = make_shared<ScoreController>(textViewController);
+    playerController = make_shared<PlayerController>(collisionController, player, dotController, fruitController,
+                                                     scoreController);
+    ghostController = make_shared<GhostController>(clyde, collisionController);
     sdlViewController = make_shared<SDLViewController>(list_sp, textViewController, dotController, fruitController);
 }

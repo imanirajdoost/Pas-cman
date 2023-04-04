@@ -14,7 +14,7 @@ public:
 
     Fruit fruit;
 
-    bool deleteFruit(const EatableComponent &eatable, int score);
+    bool deleteFruit();
 
     void initBonusTimer();
 

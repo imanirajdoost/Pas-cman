@@ -1,4 +1,4 @@
-#include "../../header/view/TextViewController.h"
+#include "header/view/TextViewController.h"
 #include <iostream>
 #include <SDL2/SDL.h>
 

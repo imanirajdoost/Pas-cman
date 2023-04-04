@@ -59,3 +59,11 @@ SDL_Rect TransformComponent::getDrawRect() const {
     }
     return drawRect;
 }
+
+int TransformComponent::getTileX() const {
+    return getX() / TILESIZE;
+}
+
+int TransformComponent::getTileY() const {
+    return getY() / TILESIZE;
+}

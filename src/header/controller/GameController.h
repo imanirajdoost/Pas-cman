@@ -7,6 +7,7 @@
 #include "DotController.h"
 #include "FruitController.h"
 #include "header/model/Ghost.h"
+#include "GhostController.h"
 
 class GameController {
 public:
@@ -23,11 +24,13 @@ private:
 
     shared_ptr<CollisionController> collisionController;
     shared_ptr<PlayerController> playerController;
+    shared_ptr<GhostController> ghostController;
     shared_ptr<SDLViewController> sdlViewController;
     shared_ptr<AnimationController> animationController;
     shared_ptr<DotController> dotController;
     shared_ptr<FruitController> fruitController;
     shared_ptr<TextViewController> textViewController;
+    shared_ptr<ScoreController> scoreController;
 
     shared_ptr<Player> player;
     shared_ptr<Blinky> blinky;

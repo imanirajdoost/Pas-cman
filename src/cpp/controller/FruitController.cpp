@@ -8,18 +8,13 @@
 #include "header/GameVars.h"
 
 FruitController::FruitController() {
+    resetFruitPosition();
 }
 
 
-bool FruitController::deleteFruit(const EatableComponent &eatable, int score) {
-    if (!eatable.hasBeenEaten()) {
-        resetFruitPosition();
-        cout << "Adding score: " << score << endl;
-        //@TODO
-//        addScore(score);
-        return true;
-    }
-    return false;
+bool FruitController::deleteFruit() {
+    resetFruitPosition();
+    return true;
 }
 
 void FruitController::initBonusTimer() {
