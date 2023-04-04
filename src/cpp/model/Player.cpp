@@ -12,8 +12,6 @@ Player::Player(short initHealth) : HealthComponent(initHealth), MovableGameObjec
     // Set the default move intention
     setMoveIntent(MoveDirection::NONE);
 
-    int PLAYER_MOVE_THRESHOLD = 6;
-
     // Set default animation and sprite and add animations
     addAnimation("default", {player_fill, player_r1, player_r2});
     addAnimation("move_up", {player_fill, player_u1, player_u2});
@@ -26,8 +24,6 @@ Player::Player(short initHealth) : HealthComponent(initHealth), MovableGameObjec
 
     // Set the default animation
     setAnimation("default");
-
-    startAnimation();
 }
 
 void Player::setNextPos(const std::vector<std::vector<MTYPE>> &map, const MoveDirection &direction) {
@@ -81,10 +77,6 @@ SDL_Rect Player::getNextStepRect(MoveDirection dir) {
     return nextStepRect;
 }
 
-//void Player::eat(EatableComponent &dotToEat) const {
-//    dotToEat.getEaten(dotToEat);
-//}
-
 MoveDirection Player::getMoveIntent() const {
     return moveIntent;
 }
@@ -96,6 +88,7 @@ void Player::setMoveIntent(const MoveDirection &direction) {
 void Player::controlMove(CollisionController& collisionController) {
 
     bool shouldMove = true;
+    stopAnimation();
 
     if (moveIntent == MoveDirection::NONE)
         shouldMove = false;
@@ -164,4 +157,6 @@ void Player::controlMove(CollisionController& collisionController) {
 
 void Player::move() {
     MovableGameObject::move();
+    if(getMoveIntent() != MoveDirection::NONE)
+        startAnimation();
 }
