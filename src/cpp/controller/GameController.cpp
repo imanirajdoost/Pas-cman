@@ -81,7 +81,7 @@ GameController::GameController() : exit(false) {
     textViewController = make_shared<TextViewController>();
     scoreController = make_shared<ScoreController>(textViewController);
     playerController = make_shared<PlayerController>(collisionController, player, dotController, fruitController,
-                                                     scoreController);
+                                                     scoreController, textViewController);
     ghostController = make_shared<GhostController>(clyde, collisionController);
     sdlViewController = make_shared<SDLViewController>(list_sp, textViewController, dotController, fruitController);
 }

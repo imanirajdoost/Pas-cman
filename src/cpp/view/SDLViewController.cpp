@@ -30,7 +30,7 @@ void SDLViewController::drawSprites() {
 
     // copie du sprite zoomé
 
-    for (const auto& sp: *spritesToDraw) {
+    for (const auto &sp: *spritesToDraw) {
         auto nextSp = sp->getNextSprite();
         auto drawRect = sp->getDrawRect();
 
@@ -42,6 +42,9 @@ void SDLViewController::drawSprites() {
 
     drawDots();
     drawFruit();
+
+    if (DEBUG_MODE)
+        drawDebug(*spritesToDraw);
 }
 
 void SDLViewController::drawTarget(SDL_Rect *spriteToDraw, SDL_Rect *drawRect) {
@@ -110,7 +113,8 @@ void SDLViewController::drawFruit() {
     drawTarget(fruitController->fruit.getNextSprite().get(), &draw_rect);
 }
 
-SDLViewController::SDLViewController(shared_ptr<std::list<shared_ptr<GameObject>>> sps, shared_ptr<TextViewController> tViewController,
+SDLViewController::SDLViewController(shared_ptr<std::list<shared_ptr<GameObject>>> sps,
+                                     shared_ptr<TextViewController> tViewController,
                                      shared_ptr<DotController> dController,
                                      shared_ptr<FruitController> fController) {
     pWindow = SDL_CreateWindow("PacMan", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 900, 900, SDL_WINDOW_SHOWN);
@@ -126,16 +130,15 @@ SDLViewController::SDLViewController(shared_ptr<std::list<shared_ptr<GameObject>
     textViewController = std::move(tViewController);
 }
 
-void SDLViewController::drawDebug(std::list<GameObject> &debugList) {
-    if (DEBUG_MODE) {
+void SDLViewController::drawDebug(const std::list<shared_ptr<GameObject>> &debugList) {
 
-        // drawSprites the level grid
-        draw_grid(100, 100, 20);
+    // drawSprites the level grid
+    draw_grid(100, 100, 20);
 
-        // Draw the collider boxes on the screen
-        for (auto &sp: debugList) {
-            draw_collider(sp);
-        }
+    // Draw the collider boxes on the screen
+    for (auto &sp: debugList) {
+        draw_collider(*sp);
+    }
 //        draw_collider(player);
 //        draw_collider(blinky);
 //        draw_collider(pinky);
@@ -145,5 +148,5 @@ void SDLViewController::drawDebug(std::list<GameObject> &debugList) {
 //        for (auto & dotSmall : dots) {
 //            draw_collider(*dotSmall);
 //        }
-    }
+
 }

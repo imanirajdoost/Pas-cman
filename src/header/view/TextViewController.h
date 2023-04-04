@@ -17,7 +17,7 @@ public:
 
     void writeScore(int score);
 
-    void setHealthUI(u_short health);
+    void setHealthUI(short health);
 
     vector<shared_ptr<tuple<string, string, int, int, vector<shared_ptr<SDL_Rect>>>>> name_txt_maps;
     vector<shared_ptr<SDL_Rect>> health_list;

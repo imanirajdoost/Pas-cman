@@ -30,7 +30,7 @@ public:
 
     void drawFruit();
 
-    void drawDebug(std::list<GameObject> &debugList);
+    void drawDebug(const std::list<shared_ptr<GameObject>> &debugList);
 
 private:
     SDL_Window *pWindow = nullptr;

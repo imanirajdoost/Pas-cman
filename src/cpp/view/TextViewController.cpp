@@ -53,7 +53,7 @@ void TextViewController::writeScore(int score) {
               SCORE_TEXT_DYNAMIC_POSY);
 }
 
-void TextViewController::setHealthUI(u_short health) {
+void TextViewController::setHealthUI(short health) {
     health_list.clear();
     for (int i = 0; i < health; ++i) {
         auto rect = make_shared<SDL_Rect>();

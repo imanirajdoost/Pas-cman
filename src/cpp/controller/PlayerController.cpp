@@ -37,12 +37,15 @@ void PlayerController::tick() {
 
 PlayerController::PlayerController(shared_ptr<CollisionController> colController, shared_ptr<Player> p,
                                    shared_ptr<DotController> dController, shared_ptr<FruitController> fController,
-                                   shared_ptr<ScoreController> sController) {
+                                   shared_ptr<ScoreController> sController, shared_ptr<TextViewController> tController) {
     collisionController = std::move(colController);
     dotController = std::move(dController);
     fruitController = std::move(fController);
     scoreController = std::move(sController);
+    textViewController = std::move(tController);
     player = std::move(p);
+
+    textViewController->setHealthUI(player->getHealth());
 }
 
 void PlayerController::setMoveIntent(MoveDirection direction) {
