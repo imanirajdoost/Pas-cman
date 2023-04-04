@@ -3,7 +3,7 @@
 
 #include "MovableGameObject.h"
 #include "header/model/component/HealthComponent.h"
-#include "header/Map.h"
+#include "Map.h"
 #include "header/controller/CollisionController.h"
 
 /**

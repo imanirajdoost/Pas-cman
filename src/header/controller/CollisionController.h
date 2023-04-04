@@ -4,7 +4,7 @@
 
 #include <SDL2/SDL_rect.h>
 #include "header/model/MovableGameObject.h"
-#include "header/Collider.h"
+#include "header/model/Collider.h"
 
 /**
  * Handles collision between two objects

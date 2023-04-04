@@ -7,7 +7,7 @@
 #include <list>
 #include "header/view/SDLViewController.h"
 #include "header/GameVars.h"
-#include "header/Map.h"
+#include "header/model/Map.h"
 
 void SDLViewController::tick() {
     drawSprites();

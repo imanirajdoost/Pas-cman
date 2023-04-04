@@ -5,7 +5,7 @@
 #include <stdexcept>
 #include <iostream>
 #include "header/controller/DotController.h"
-#include "header/Map.h"
+#include "header/model/Map.h"
 #include "header/GameVars.h"
 
 DotController::DotController() {

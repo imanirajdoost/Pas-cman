@@ -1,4 +1,4 @@
-#include "header/Collider.h"
+#include "header/model/Collider.h"
 
 void Collider::setType(const MTYPE& typeToSet) {
     type = typeToSet;
