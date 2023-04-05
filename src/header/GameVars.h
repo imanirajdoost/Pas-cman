@@ -3,7 +3,7 @@
 
 namespace constants {
 #define TILESIZE 32
-#define DEBUG_MODE 1
+#define DEBUG_MODE 0
 
 #define ANIMATION_FRAME_RATE 2
 

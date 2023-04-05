@@ -10,12 +10,14 @@
 #include "header/model/component/EatableComponent.h"
 #include "header/model/eatable/DotSmall.h"
 #include "header/model/eatable/DotBig.h"
+#include "PauseController.h"
+#include "header/view/TextViewController.h"
 
 using namespace std;
 
 class DotController {
 public:
-    DotController();
+    explicit DotController(shared_ptr<PauseController> pController, shared_ptr<TextViewController> tController);
 
     vector<shared_ptr<Dot>> dots;
 
@@ -30,6 +32,10 @@ public:
     bool isBigDot(int i, int j);
 
 private:
+
+    shared_ptr<PauseController> pauseController;
+    shared_ptr<TextViewController> textViewController;
+
     short dotIndex = 0;
     const int bigDotPositions[4][2] = {
             {3,  1},

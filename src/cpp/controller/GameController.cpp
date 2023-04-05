@@ -51,7 +51,8 @@ void GameController::startGame() {
 }
 
 void GameController::update() {
-    if (!isPaused) {
+    pauseController->tick();
+    if (!pauseController->hasPaused()) {
         animationController->tick();
         playerController->tick();
         ghostController->tick();
@@ -79,19 +80,19 @@ GameController::GameController() : exit(false) {
     list_sp->emplace_back(blinky);
     list_sp->emplace_back(pinky);
     list_sp->emplace_back(clyde);
-    // TODO: add other game objects
 
     // initialize controllers
     timeController = make_shared<TimeController>();
+    pauseController = make_shared<PauseController>(timeController);
     collisionController = make_shared<CollisionController>();
     animationController = make_shared<AnimationController>();
-    dotController = make_shared<DotController>();
+    textViewController = make_shared<TextViewController>();
+    dotController = make_shared<DotController>(pauseController, textViewController);
     fruitController = make_shared<FruitController>(timeController);
     ghostController = make_shared<GhostController>(inky, pinky, blinky, clyde, collisionController);
-    textViewController = make_shared<TextViewController>();
     scoreController = make_shared<ScoreController>(textViewController);
     playerController = make_shared<PlayerController>(collisionController, player, dotController, fruitController,
-                                                     scoreController, textViewController, ghostController);
+                                                     scoreController, textViewController, ghostController, pauseController);
 
     sdlViewController = make_shared<SDLViewController>(list_sp, textViewController, dotController, fruitController);
 }

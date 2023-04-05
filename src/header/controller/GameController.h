@@ -9,14 +9,13 @@
 #include "header/model/Ghost.h"
 #include "GhostController.h"
 #include "TimeController.h"
+#include "PauseController.h"
 
 class GameController {
 public:
     GameController();
 
     bool exit = false;
-
-    bool isPaused = false;
 
     void update();
 
@@ -35,6 +34,7 @@ private:
     shared_ptr<TextViewController> textViewController;
     shared_ptr<ScoreController> scoreController;
     shared_ptr<TimeController> timeController;
+    shared_ptr<PauseController> pauseController;
 
     shared_ptr<Player> player;
     shared_ptr<Blinky> blinky;

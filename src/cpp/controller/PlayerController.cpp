@@ -32,8 +32,10 @@ void PlayerController::tick() {
 
     // Check for collision with bonus objs
     if (collisionController->hasCollision(player->getRect(), fruitController->fruit.getRect()))
-        if (fruitController->deleteFruit())
+        if (fruitController->deleteFruit()) {
+            pauseController->pauseFor(200);
             scoreController->addScore(FRUIT_SCORE);
+        }
 
     // Check for collision with ghosts
     // TODO: This has two phases, if ghosts are in 'flee mode' they must be eaten, otherwise player dies
@@ -43,6 +45,7 @@ void PlayerController::tick() {
             // TODO: Check if should eat or die
             std::cout << "hit ghost" << std::endl;
             player->die();
+            pauseController->pause();
         }
     }
 
@@ -70,13 +73,14 @@ void PlayerController::tick() {
 
 PlayerController::PlayerController(shared_ptr<CollisionController> colController, shared_ptr<Player> p,
                                    shared_ptr<DotController> dController, shared_ptr<FruitController> fController,
-                                   shared_ptr<ScoreController> sController, shared_ptr<TextViewController> tController, shared_ptr<GhostController> gController) {
+                                   shared_ptr<ScoreController> sController, shared_ptr<TextViewController> tController, shared_ptr<GhostController> gController, shared_ptr<PauseController> pController) {
     collisionController = std::move(colController);
     dotController = std::move(dController);
     fruitController = std::move(fController);
     scoreController = std::move(sController);
     textViewController = std::move(tController);
     ghostController = std::move(gController);
+    pauseController = std::move(pController);
     player = std::move(p);
 
     textViewController->setHealthUI(player->getHealth());

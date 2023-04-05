@@ -8,7 +8,9 @@
 #include "header/model/Map.h"
 #include "header/GameVars.h"
 
-DotController::DotController() {
+DotController::DotController(shared_ptr<PauseController> pController, shared_ptr<TextViewController> tController) {
+    pauseController = std::move(pController);
+    textViewController = std::move(tController);
     dots = spawnDotObjects();
 }
 
@@ -65,9 +67,12 @@ bool DotController::deleteDot(const Dot &dot) {
         if (dot.getIndex() == i->get()->getIndex()) {
             dots.erase(i);
 //            cout << " remaining dots: " << dots.size() << endl;
-            if (dots.empty()) {
+//            if (dots.empty()) {
+            if (dots.size() < 180) {
                 // @TODO : Win the game
                 cout << "You won !" << endl;
+                pauseController->pause();
+                textViewController->writeOnUI("you_won","congratulations!", 6 * TILESIZE, 10 * TILESIZE);
             }
             return true;
         }
