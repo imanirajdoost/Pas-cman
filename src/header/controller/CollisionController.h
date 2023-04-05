@@ -29,6 +29,8 @@ public:
 
     MTYPE getNextCOLOBJ(const std::vector<std::vector<MTYPE>> &map, const SDL_Rect &targetPos);
 
+    int getCollisionWithTeleportDoor(const SDL_Rect &targetPos);
+
     // Variables
     const std::vector<std::vector<int>> collisionMatrix = {
             {0, 1, 0, 1, 1, 0, 1},

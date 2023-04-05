@@ -45,6 +45,27 @@ void PlayerController::tick() {
             player->die();
         }
     }
+
+    // Handle transition between left and right doors
+    int teleportDoor = collisionController->getCollisionWithTeleportDoor(player->getRect());
+    if(teleportDoor >= 0) {
+        switch (teleportDoor) {
+            case 0:
+                if(player->getMoveDirection() == MoveDirection::LEFT) {
+                    // move from left to right
+                    player->setPos(20 * TILESIZE, 13 * TILESIZE);
+                    player->resetNextPos();
+                }
+                break;
+            case 1:
+                if(player->getMoveDirection() == MoveDirection::RIGHT) {
+                    // move from right to left
+                    player->setPos(0 * TILESIZE, 13 * TILESIZE);
+                    player->resetNextPos();
+                }
+                break;
+        }
+    }
 }
 
 PlayerController::PlayerController(shared_ptr<CollisionController> colController, shared_ptr<Player> p,

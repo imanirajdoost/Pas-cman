@@ -180,3 +180,15 @@ vector<Collider> CollisionController::getRectsAtDirection(const SDL_Rect &target
 
     return cols;
 }
+
+int CollisionController::getCollisionWithTeleportDoor(const SDL_Rect &targetPos) {
+    if(getObjectTypeAt(targetPos) == MTYPE::TP) {
+        // TODO: Improve this code (remove the magic number)
+        // Check if it's the left teleport door or right (0: left, 1: right)
+        if(targetPos.x < 350)
+            return 0;
+        else
+            return 1;
+    }
+    return -1;
+}
