@@ -37,7 +37,7 @@ public:
 
     AnimationComponent(const string &newName, const vector<SDL_Rect> &sps, bool _isAnimated);
 
-    void addAnimation(const string &animName, const vector<SDL_Rect> &sps);
+    void addAnimation(const string &animName, const vector<SDL_Rect> &sps, bool shouldLoop = true);
 
     shared_ptr<SDL_Rect> getNextSprite();
 };

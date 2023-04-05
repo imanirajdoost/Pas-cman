@@ -7,14 +7,6 @@
 void HealthComponent::die() {
     // @todo implement dying
     _health--;
-
-    if (_health <= 0) {
-        gameOver();
-    }
-}
-
-void HealthComponent::gameOver() {
-    // @todo show game over UI or reset the game
 }
 
 HealthComponent::HealthComponent(short initHealth) : _health{initHealth} {

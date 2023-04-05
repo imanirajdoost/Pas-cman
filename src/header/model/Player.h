@@ -49,6 +49,8 @@ public:
 
     void move() override;
 
+    void die() override;
+
     MoveDirection getMoveIntent() const;
 
     void setMoveIntent(const MoveDirection &direction);

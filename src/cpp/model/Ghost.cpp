@@ -1,20 +1,40 @@
 #include <iostream>
 #include "header/model/Ghost.h"
 #include "header/GameVars.h"
-#include "header/controller/AnimationController.h"
 
 
 Ghost::Ghost(SDL_Rect default_sp) : MovableGameObject(default_sp) {
+    speed = 1;
 }
 
 void Ghost::setNextPos(const vector<std::vector<MTYPE>> &map, const MoveDirection &direction) {
     // TODO: Implement this
-    if (AnimationController::animationCounter%4 == 0) {
-        _next_pos.x += speed;
-        move();
-    }
 
+    lastDirection = getMoveDirection();
     setMoveDirection(direction);
+
+    switch (direction) {
+        case MoveDirection::LEFT:
+            _next_pos.x -= speed;
+            break;
+        case MoveDirection::RIGHT:
+            _next_pos.x += speed;
+            break;
+        case MoveDirection::UP:
+            _next_pos.y -= speed;
+            break;
+        case MoveDirection::DOWN:
+            _next_pos.y += speed;
+            break;
+        case MoveDirection::NONE:
+            _next_pos.y = getRect().y;
+            _next_pos.x = getRect().x;
+            break;
+    }
+}
+
+void Ghost::move() {
+    MovableGameObject::move();
 }
 
 Blinky::Blinky() : Ghost(default_sprites::blinky_sp_default) {

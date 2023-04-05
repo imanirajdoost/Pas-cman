@@ -12,7 +12,7 @@
 
 
 AnimationComponent::AnimationComponent(const string &newName, const vector<SDL_Rect> &sps, bool _isAnimated) {
-    AnimationModel anim;
+    AnimationModel anim(true);
     anim.setName(newName);
     anim.addSprites(sps);
     default_sp = anim.sprites_list[0];
@@ -60,19 +60,19 @@ void AnimationComponent::startAnimation() {
     isAnimated = true;
 }
 
-void AnimationComponent::addAnimation(const string& animName, const vector<SDL_Rect>& sps) {
+void AnimationComponent::addAnimation(const string& animName, const vector<SDL_Rect>& sps, bool shouldLoop) {
     for (auto &a: animation_list) {
         if (a.getName() == animName)
             return;
     }
-    AnimationModel anim;
+    AnimationModel anim(shouldLoop);
     anim.setName(animName);
     anim.addSprites(sps);
     animation_list.push_back(anim);
 }
 
 AnimationComponent::AnimationComponent(SDL_Rect defaultSp) : default_sp{defaultSp} {
-    AnimationModel anim;
+    AnimationModel anim(true);
     anim.setName("default");
     anim.addSprite(defaultSp);
     current_sp = make_shared<SDL_Rect>(defaultSp);
@@ -86,8 +86,12 @@ std::shared_ptr<SDL_Rect> AnimationComponent::getNextSprite() {
 
     if (isAnimated && current_anim != nullptr && AnimationController::animationCounter % ANIMATION_FRAME_RATE == 0) {
         const auto &anim_rects = current_anim->getSpritesList();
-        if (animation_frame >= anim_rects.size())
-            animation_frame = 0;
+        if (animation_frame >= anim_rects.size()) {
+            if (current_anim->getLoop())
+                animation_frame = 0;
+            else
+                return current_sp = make_shared<SDL_Rect>(anim_rects[animation_frame - 1]);
+        }
 
 //        cout << "Anim frame: " << animation_frame << " rects size: " << anim_rects.size() << " anim counter:" << GameController::animationCounter << endl;
 
@@ -99,7 +103,7 @@ std::shared_ptr<SDL_Rect> AnimationComponent::getNextSprite() {
 }
 
 AnimationComponent::AnimationComponent() {
-    AnimationModel anim;
+    AnimationModel anim(true);
     anim.setName("default");
     current_sp = nullptr;
     animation_frame = 0;

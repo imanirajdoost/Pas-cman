@@ -15,9 +15,10 @@ using namespace std;
 class AnimationModel {
 private:
     string name;
+    bool should_loop;
 
 public:
-    AnimationModel();
+    explicit AnimationModel(bool shouldLoop);
 
     vector<SDL_Rect> getSpritesList() const;
 
@@ -26,6 +27,8 @@ public:
     void addSprites(const vector<SDL_Rect> &sps);
 
     string getName() const;
+
+    bool getLoop() const;
 
     void setName(const string &newName);
 

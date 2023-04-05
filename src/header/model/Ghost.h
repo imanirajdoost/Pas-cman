@@ -10,7 +10,7 @@ protected:
 public:
     explicit Ghost(SDL_Rect defaultsp);
     void setNextPos(const std::vector<std::vector<MTYPE>> &map, const MoveDirection &direction) override;
-
+    void move() override;
 };
 
 class Blinky : public Ghost {

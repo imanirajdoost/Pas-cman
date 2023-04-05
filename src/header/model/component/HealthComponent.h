@@ -14,9 +14,7 @@ public:
     explicit HealthComponent(short initHealth);
     short getHealth() const;
 
-    void die();                                  // Die when hit by a ghost
-    void gameOver();                             // Game over when no more health is remaining
-
+    virtual void die();                                  // Die when hit by a ghost
 };
 
 

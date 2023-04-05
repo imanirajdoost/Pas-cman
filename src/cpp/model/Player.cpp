@@ -20,7 +20,7 @@ Player::Player(short initHealth) : HealthComponent(initHealth), MovableGameObjec
     addAnimation("move_right", {player_fill, player_r1, player_r2});
     addAnimation("die", {player_die1, player_die2, player_die3, player_die4,
                          player_die5, player_die6, player_die7, player_die8,
-                         player_die9});
+                         player_die9}, false);
 
     // Set the default animation
     setAnimation("default");
@@ -159,4 +159,10 @@ void Player::move() {
     MovableGameObject::move();
     if(getMoveIntent() != MoveDirection::NONE)
         startAnimation();
+}
+
+void Player::die() {
+    HealthComponent::die();
+    setAnimation("die");
+    isMoveEnabled = false;
 }

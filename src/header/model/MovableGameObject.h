@@ -19,6 +19,7 @@ protected:
     int speed = 4;
     MoveDirection direction = MoveDirection::NONE;
     MoveDirection lastDirection = MoveDirection::NONE;
+    bool isMoveEnabled;
 
 public:
     explicit MovableGameObject(SDL_Rect defaultSp);

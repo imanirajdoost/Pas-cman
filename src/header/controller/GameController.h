@@ -16,6 +16,8 @@ public:
 
     bool exit = false;
 
+    bool isPaused = false;
+
     void update();
 
     void startGame();

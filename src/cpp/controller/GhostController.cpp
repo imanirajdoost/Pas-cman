@@ -6,13 +6,34 @@
 
 void GhostController::tick() {
     // TODO: Calculate next pos and pass it here
-    ghost->setNextPos(Map::map, MoveDirection::RIGHT);
-//    ghost->move();
+    inky->setNextPos(Map::map, MoveDirection::RIGHT);
+    pinky->setNextPos(Map::map, MoveDirection::RIGHT);
+    blinky->setNextPos(Map::map, MoveDirection::RIGHT);
+    clyde->setNextPos(Map::map, MoveDirection::RIGHT);
 
-    // TODO: Check for collision with player
+    inky->move();
+    pinky->move();
+    blinky->move();
+    clyde->move();
 }
 
-GhostController::GhostController(std::shared_ptr<Ghost> _ghost, std::shared_ptr<CollisionController> colController) {
-    ghost = std::move(_ghost);
+GhostController::GhostController(shared_ptr<Inky> iGhost,shared_ptr<Pinky> pGhost,shared_ptr<Blinky> bGhost,shared_ptr<Clyde> cGhost ,shared_ptr<CollisionController> colController) {
+    inky = std::move(iGhost);
+    pinky = std::move(pGhost);
+    blinky = std::move(bGhost);
+    clyde = std::move(cGhost);
+
+    vector<shared_ptr<Ghost>> ghosts;
+    ghosts.emplace_back(inky);
+    ghosts.emplace_back(pinky);
+    ghosts.emplace_back(blinky);
+    ghosts.emplace_back(clyde);
+
+    allGhosts = make_shared<vector<shared_ptr<Ghost>>>(ghosts);
+
     collisionController = std::move(colController);
+}
+
+shared_ptr<vector<shared_ptr<Ghost>>> GhostController::getAllGhosts() {
+    return allGhosts;
 }

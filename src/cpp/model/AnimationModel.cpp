@@ -24,10 +24,14 @@ void AnimationModel::addSprites(const std::vector<SDL_Rect> &sps) {
     }
 }
 
-AnimationModel::AnimationModel() {
-
+AnimationModel::AnimationModel(bool shouldLoop) {
+    should_loop = shouldLoop;
 }
 
 void AnimationModel::addSprite(const SDL_Rect &sp) {
     sprites_list.push_back(sp);
+}
+
+bool AnimationModel::getLoop() const {
+    return should_loop;
 }

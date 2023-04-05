@@ -14,25 +14,24 @@ void MovableGameObject::resetMoveDirection() {
 }
 
 void MovableGameObject::setDirectionSprite(const MoveDirection &newDirection) {
+
+    if (!isMoveEnabled)
+        return;
+
     switch (newDirection) {
         case MoveDirection::DOWN:
             setAnimation("move_down");
-//            current_sp = &(_d_sprite);
             break;
         case MoveDirection::UP:
             setAnimation("move_up");
-//            current_sp = &(_u_sprite);
             break;
         case MoveDirection::LEFT:
             setAnimation("move_left");
-//            current_sp = &(_l_sprite);
             break;
         case MoveDirection::RIGHT:
             setAnimation("move_right");
         default:
 //            setAnimation("default");
-//            current_sp = make_shared<SDL_Rect>(default_sp);
-//            current_sp = &(_r_sprite);
             break;
     }
 }
@@ -51,19 +50,21 @@ void MovableGameObject::resetNextPos() {
 }
 
 void MovableGameObject::move() {
-    rect.x = _next_pos.x;
-    rect.y = _next_pos.y;
+    if (isMoveEnabled) {
+        rect.x = _next_pos.x;
+        rect.y = _next_pos.y;
+    }
 }
 
 MovableGameObject::MovableGameObject(SDL_Rect defaultSp) : GameObject(defaultSp) {
-
+    isMoveEnabled = true;
 }
 
 MovableGameObject::MovableGameObject(const string &animName, const vector<SDL_Rect> &sprites, bool _isAnimated)
         : GameObject(animName, sprites, _isAnimated) {
-
+    isMoveEnabled = true;
 }
 
 MovableGameObject::MovableGameObject() {
-
+    isMoveEnabled = true;
 }

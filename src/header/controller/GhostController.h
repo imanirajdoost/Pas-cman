@@ -8,17 +8,24 @@
 
 #include <memory>
 #include "CollisionController.h"
-#include "../model/MovableGameObject.h"
-#include "../model/Ghost.h"
+#include "header/model/MovableGameObject.h"
+#include "header/model/Ghost.h"
+
+using namespace std;
 
 class GhostController {
 public:
-    GhostController(std::shared_ptr<Ghost> _ghost,std::shared_ptr<CollisionController> colController);
+    GhostController(shared_ptr<Inky> iGhost,shared_ptr<Pinky> pGhost,shared_ptr<Blinky> bGhost,shared_ptr<Clyde> cGhost ,shared_ptr<CollisionController> colController);
     void tick();
+    shared_ptr<vector<shared_ptr<Ghost>>> getAllGhosts();
 
 private:
-    std::shared_ptr<CollisionController> collisionController;
-    std::shared_ptr<Ghost> ghost;
+    shared_ptr<CollisionController> collisionController;
+    shared_ptr<Inky> inky;
+    shared_ptr<Pinky> pinky;
+    shared_ptr<Clyde> clyde;
+    shared_ptr<Blinky> blinky;
+    shared_ptr<vector<shared_ptr<Ghost>>> allGhosts;
 };
 
 
