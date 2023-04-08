@@ -79,6 +79,13 @@ AnimationComponent::AnimationComponent(SDL_Rect defaultSp) : default_sp{defaultS
     animation_frame = 0;
 }
 
+std::shared_ptr<SDL_Rect> AnimationComponent::getCurrentSprite() {
+    if (current_sp == nullptr) {
+        current_sp = make_shared<SDL_Rect>(default_sp);
+    }
+    return current_sp;
+}
+
 std::shared_ptr<SDL_Rect> AnimationComponent::getNextSprite() {
     if (current_sp == nullptr) {
         current_sp = make_shared<SDL_Rect>(default_sp);

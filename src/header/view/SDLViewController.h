@@ -17,7 +17,7 @@ public:
     SDLViewController(shared_ptr<std::list<shared_ptr<GameObject>>> sps,
                       shared_ptr<TextViewController> tViewController, shared_ptr<DotController>
                       dController,
-                      shared_ptr<FruitController> fController
+                      shared_ptr<FruitController> fController, shared_ptr<PauseController> pController
     );
 
     void tick();
@@ -49,6 +49,7 @@ private:
     shared_ptr<DotController> dotController;
     shared_ptr<FruitController> fruitController;
     shared_ptr<TextViewController> textViewController;
+    shared_ptr<PauseController> pauseController;
     shared_ptr<std::list<shared_ptr<GameObject>>> spritesToDraw;
 
     void draw_collider(const GameObject &obj, int r, int g, int b);

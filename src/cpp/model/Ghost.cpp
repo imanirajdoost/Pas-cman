@@ -41,6 +41,7 @@ Blinky::Blinky() : Ghost(default_sprites::blinky_sp_default) {
 
     // Initial pos
     setPos(32, 32);
+    resetNextPos();
 
     // Set default animation and sprite and add animations
     addAnimation("default", {blinky_r1, blinky_r2});
@@ -67,6 +68,7 @@ Pinky::Pinky() : Ghost(default_sprites::pinky_sp_default) {
 
     // Initial pos
     setPos(64, 32);
+    resetNextPos();
 
     // Set default animation and sprite and add animations
     addAnimation("default", {pinky_r1, pinky_r2});
@@ -84,6 +86,7 @@ Inky::Inky() : Ghost(default_sprites::inky_sp_default) {
 
     // Initial pos
     setPos(96, 32);
+    resetNextPos();
 
     // Set default animation and sprite and add animations
     addAnimation("default", {inky_r1, inky_r2});
@@ -101,6 +104,7 @@ Clyde::Clyde() : Ghost(default_sprites::clyde_sp_default) {
 
     // Initial pos
     setPos(128, 32);
+    resetNextPos();
 
     // Set default animation and sprite and add animations
     addAnimation("default", {clyde_r1, clyde_r2});

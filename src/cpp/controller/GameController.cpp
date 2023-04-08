@@ -53,11 +53,11 @@ void GameController::startGame() {
 void GameController::update() {
     pauseController->tick();
     if (!pauseController->hasPaused()) {
-        animationController->tick();
         playerController->tick();
         ghostController->tick();
         fruitController->tick();
     }
+    animationController->tick();
     sdlViewController->tick();
 
     // Time controller must be in the end of all ticks to capture correctly the updated time
@@ -94,5 +94,5 @@ GameController::GameController() : exit(false) {
     playerController = make_shared<PlayerController>(collisionController, player, dotController, fruitController,
                                                      scoreController, textViewController, ghostController, pauseController);
 
-    sdlViewController = make_shared<SDLViewController>(list_sp, textViewController, dotController, fruitController);
+    sdlViewController = make_shared<SDLViewController>(list_sp, textViewController, dotController, fruitController, pauseController);
 }

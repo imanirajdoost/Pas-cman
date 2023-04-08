@@ -32,6 +32,7 @@ void SDLViewController::drawSprites() {
 
     for (const auto &sp: *spritesToDraw) {
         auto nextSp = sp->getNextSprite();
+
         auto drawRect = sp->getDrawRect();
 
         drawTarget(nextSp.get(), &drawRect);
@@ -116,7 +117,7 @@ void SDLViewController::drawFruit() {
 SDLViewController::SDLViewController(shared_ptr<std::list<shared_ptr<GameObject>>> sps,
                                      shared_ptr<TextViewController> tViewController,
                                      shared_ptr<DotController> dController,
-                                     shared_ptr<FruitController> fController) {
+                                     shared_ptr<FruitController> fController, shared_ptr<PauseController> pController) {
     pWindow = SDL_CreateWindow("PacMan", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 900, 900, SDL_WINDOW_SHOWN);
     win_surf = SDL_GetWindowSurface(pWindow);
 
@@ -128,6 +129,7 @@ SDLViewController::SDLViewController(shared_ptr<std::list<shared_ptr<GameObject>
     fruitController = std::move(fController);
     spritesToDraw = std::move(sps);
     textViewController = std::move(tViewController);
+    pauseController = std::move(pController);
 }
 
 void SDLViewController::drawDebug(const std::list<shared_ptr<GameObject>> &debugList) {

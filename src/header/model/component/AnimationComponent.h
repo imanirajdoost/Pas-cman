@@ -40,6 +40,8 @@ public:
     void addAnimation(const string &animName, const vector<SDL_Rect> &sps, bool shouldLoop = true);
 
     shared_ptr<SDL_Rect> getNextSprite();
+
+    shared_ptr<SDL_Rect> getCurrentSprite();
 };
 
 
