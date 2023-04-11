@@ -1,0 +1,119 @@
+\hypertarget{classCollisionController}{}\doxysection{Collision\+Controller Class Reference}
+\label{classCollisionController}\index{CollisionController@{CollisionController}}
+
+
+{\ttfamily \#include $<$Collision\+Controller.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classCollisionController_a8e2bc05c3336703165ca93e2e4fec4ea}{is\+Wall\+Detected\+At\+Direction}} (const SDL\+\_\+\+Rect \&source\+Rect, const \mbox{\hyperlink{MovableGameObject_8h_a00ec4eba48da32d6cbdf827185fd3d34}{Move\+Direction}} \&direction)
+\item 
+\mbox{\hyperlink{classCollider}{Collider}} \mbox{\hyperlink{classCollisionController_ad57d4e4c154ca944ea3948258af21c54}{get\+Rect\+At\+Direction}} (const SDL\+\_\+\+Rect \&target\+Pos, const \mbox{\hyperlink{MovableGameObject_8h_a00ec4eba48da32d6cbdf827185fd3d34}{Move\+Direction}} \&direction)
+\item 
+vector$<$ \mbox{\hyperlink{classCollider}{Collider}} $>$ \mbox{\hyperlink{classCollisionController_acd64b09eb1c542a0ecaff722adc7322f}{get\+Rects\+At\+Direction}} (const SDL\+\_\+\+Rect \&target\+Pos, const \mbox{\hyperlink{MovableGameObject_8h_a00ec4eba48da32d6cbdf827185fd3d34}{Move\+Direction}} \&direction)
+\item 
+\mbox{\hyperlink{Map_8h_a0dc0d3f05ebf63bd2133199d9429f6ad}{MTYPE}} \mbox{\hyperlink{classCollisionController_a069123b8a3590d561d70c8ec95b07d73}{get\+Object\+Type\+At}} (const SDL\+\_\+\+Rect \&target\+Pos)
+\item 
+SDL\+\_\+\+Rect \mbox{\hyperlink{classCollisionController_a6c1609a06ef6669ebe7d196a2f1e1ca5}{get\+Rect\+At}} (const SDL\+\_\+\+Rect \&target\+Pos)
+\item 
+bool \mbox{\hyperlink{classCollisionController_a6263b0875ce33de2d34348a3f6ea212d}{has\+Collision}} (const SDL\+\_\+\+Rect \&rect1, const SDL\+\_\+\+Rect \&rect2)
+\item 
+bool \mbox{\hyperlink{classCollisionController_a32ffd8aa2b3a1f932745e638b8c02a1a}{is\+Collision}} (const std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{Map_8h_a0dc0d3f05ebf63bd2133199d9429f6ad}{MTYPE}} $>$$>$ \&map, const \mbox{\hyperlink{classMovableGameObject}{Movable\+Game\+Object}} \&target\+Obj, const \mbox{\hyperlink{Map_8h_a0dc0d3f05ebf63bd2133199d9429f6ad}{MTYPE}} \&obj, const SDL\+\_\+\+Rect \&collision\+Offset)
+\item 
+\mbox{\hyperlink{Map_8h_a0dc0d3f05ebf63bd2133199d9429f6ad}{MTYPE}} \mbox{\hyperlink{classCollisionController_a57a758f53c7630ba19cf684a489bd3fc}{get\+Next\+COLOBJ}} (const std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{Map_8h_a0dc0d3f05ebf63bd2133199d9429f6ad}{MTYPE}} $>$$>$ \&map, const SDL\+\_\+\+Rect \&target\+Pos)
+\item 
+int \mbox{\hyperlink{classCollisionController_a238ce02d57634b568a8fbdd0424e943f}{get\+Collision\+With\+Teleport\+Door}} (const SDL\+\_\+\+Rect \&target\+Pos)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \mbox{\hyperlink{classCollisionController_a9732ac987b387fe7b4f4529350e31be0}{collision\+Matrix}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Handles collision between two objects 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCollisionController_a238ce02d57634b568a8fbdd0424e943f}\label{classCollisionController_a238ce02d57634b568a8fbdd0424e943f}} 
+\index{CollisionController@{CollisionController}!getCollisionWithTeleportDoor@{getCollisionWithTeleportDoor}}
+\index{getCollisionWithTeleportDoor@{getCollisionWithTeleportDoor}!CollisionController@{CollisionController}}
+\doxysubsubsection{\texorpdfstring{getCollisionWithTeleportDoor()}{getCollisionWithTeleportDoor()}}
+{\footnotesize\ttfamily int Collision\+Controller\+::get\+Collision\+With\+Teleport\+Door (\begin{DoxyParamCaption}\item[{const SDL\+\_\+\+Rect \&}]{target\+Pos }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classCollisionController_a57a758f53c7630ba19cf684a489bd3fc}\label{classCollisionController_a57a758f53c7630ba19cf684a489bd3fc}} 
+\index{CollisionController@{CollisionController}!getNextCOLOBJ@{getNextCOLOBJ}}
+\index{getNextCOLOBJ@{getNextCOLOBJ}!CollisionController@{CollisionController}}
+\doxysubsubsection{\texorpdfstring{getNextCOLOBJ()}{getNextCOLOBJ()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{Map_8h_a0dc0d3f05ebf63bd2133199d9429f6ad}{MTYPE}} Collision\+Controller\+::get\+Next\+COLOBJ (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{Map_8h_a0dc0d3f05ebf63bd2133199d9429f6ad}{MTYPE}} $>$$>$ \&}]{map,  }\item[{const SDL\+\_\+\+Rect \&}]{target\+Pos }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classCollisionController_a069123b8a3590d561d70c8ec95b07d73}\label{classCollisionController_a069123b8a3590d561d70c8ec95b07d73}} 
+\index{CollisionController@{CollisionController}!getObjectTypeAt@{getObjectTypeAt}}
+\index{getObjectTypeAt@{getObjectTypeAt}!CollisionController@{CollisionController}}
+\doxysubsubsection{\texorpdfstring{getObjectTypeAt()}{getObjectTypeAt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{Map_8h_a0dc0d3f05ebf63bd2133199d9429f6ad}{MTYPE}} Collision\+Controller\+::get\+Object\+Type\+At (\begin{DoxyParamCaption}\item[{const SDL\+\_\+\+Rect \&}]{target\+Pos }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classCollisionController_a6c1609a06ef6669ebe7d196a2f1e1ca5}\label{classCollisionController_a6c1609a06ef6669ebe7d196a2f1e1ca5}} 
+\index{CollisionController@{CollisionController}!getRectAt@{getRectAt}}
+\index{getRectAt@{getRectAt}!CollisionController@{CollisionController}}
+\doxysubsubsection{\texorpdfstring{getRectAt()}{getRectAt()}}
+{\footnotesize\ttfamily SDL\+\_\+\+Rect Collision\+Controller\+::get\+Rect\+At (\begin{DoxyParamCaption}\item[{const SDL\+\_\+\+Rect \&}]{target\+Pos }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classCollisionController_ad57d4e4c154ca944ea3948258af21c54}\label{classCollisionController_ad57d4e4c154ca944ea3948258af21c54}} 
+\index{CollisionController@{CollisionController}!getRectAtDirection@{getRectAtDirection}}
+\index{getRectAtDirection@{getRectAtDirection}!CollisionController@{CollisionController}}
+\doxysubsubsection{\texorpdfstring{getRectAtDirection()}{getRectAtDirection()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCollider}{Collider}} Collision\+Controller\+::get\+Rect\+At\+Direction (\begin{DoxyParamCaption}\item[{const SDL\+\_\+\+Rect \&}]{target\+Pos,  }\item[{const \mbox{\hyperlink{MovableGameObject_8h_a00ec4eba48da32d6cbdf827185fd3d34}{Move\+Direction}} \&}]{direction }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classCollisionController_acd64b09eb1c542a0ecaff722adc7322f}\label{classCollisionController_acd64b09eb1c542a0ecaff722adc7322f}} 
+\index{CollisionController@{CollisionController}!getRectsAtDirection@{getRectsAtDirection}}
+\index{getRectsAtDirection@{getRectsAtDirection}!CollisionController@{CollisionController}}
+\doxysubsubsection{\texorpdfstring{getRectsAtDirection()}{getRectsAtDirection()}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{classCollider}{Collider}}$>$ Collision\+Controller\+::get\+Rects\+At\+Direction (\begin{DoxyParamCaption}\item[{const SDL\+\_\+\+Rect \&}]{target\+Pos,  }\item[{const \mbox{\hyperlink{MovableGameObject_8h_a00ec4eba48da32d6cbdf827185fd3d34}{Move\+Direction}} \&}]{direction }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classCollisionController_a6263b0875ce33de2d34348a3f6ea212d}\label{classCollisionController_a6263b0875ce33de2d34348a3f6ea212d}} 
+\index{CollisionController@{CollisionController}!hasCollision@{hasCollision}}
+\index{hasCollision@{hasCollision}!CollisionController@{CollisionController}}
+\doxysubsubsection{\texorpdfstring{hasCollision()}{hasCollision()}}
+{\footnotesize\ttfamily bool Collision\+Controller\+::has\+Collision (\begin{DoxyParamCaption}\item[{const SDL\+\_\+\+Rect \&}]{rect1,  }\item[{const SDL\+\_\+\+Rect \&}]{rect2 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classCollisionController_a32ffd8aa2b3a1f932745e638b8c02a1a}\label{classCollisionController_a32ffd8aa2b3a1f932745e638b8c02a1a}} 
+\index{CollisionController@{CollisionController}!isCollision@{isCollision}}
+\index{isCollision@{isCollision}!CollisionController@{CollisionController}}
+\doxysubsubsection{\texorpdfstring{isCollision()}{isCollision()}}
+{\footnotesize\ttfamily bool Collision\+Controller\+::is\+Collision (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{Map_8h_a0dc0d3f05ebf63bd2133199d9429f6ad}{MTYPE}} $>$$>$ \&}]{map,  }\item[{const \mbox{\hyperlink{classMovableGameObject}{Movable\+Game\+Object}} \&}]{target\+Obj,  }\item[{const \mbox{\hyperlink{Map_8h_a0dc0d3f05ebf63bd2133199d9429f6ad}{MTYPE}} \&}]{obj,  }\item[{const SDL\+\_\+\+Rect \&}]{collision\+Offset }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classCollisionController_a8e2bc05c3336703165ca93e2e4fec4ea}\label{classCollisionController_a8e2bc05c3336703165ca93e2e4fec4ea}} 
+\index{CollisionController@{CollisionController}!isWallDetectedAtDirection@{isWallDetectedAtDirection}}
+\index{isWallDetectedAtDirection@{isWallDetectedAtDirection}!CollisionController@{CollisionController}}
+\doxysubsubsection{\texorpdfstring{isWallDetectedAtDirection()}{isWallDetectedAtDirection()}}
+{\footnotesize\ttfamily bool Collision\+Controller\+::is\+Wall\+Detected\+At\+Direction (\begin{DoxyParamCaption}\item[{const SDL\+\_\+\+Rect \&}]{source\+Rect,  }\item[{const \mbox{\hyperlink{MovableGameObject_8h_a00ec4eba48da32d6cbdf827185fd3d34}{Move\+Direction}} \&}]{direction }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classCollisionController_a9732ac987b387fe7b4f4529350e31be0}\label{classCollisionController_a9732ac987b387fe7b4f4529350e31be0}} 
+\index{CollisionController@{CollisionController}!collisionMatrix@{collisionMatrix}}
+\index{collisionMatrix@{collisionMatrix}!CollisionController@{CollisionController}}
+\doxysubsubsection{\texorpdfstring{collisionMatrix}{collisionMatrix}}
+{\footnotesize\ttfamily const std\+::vector$<$std\+::vector$<$int$>$ $>$ Collision\+Controller\+::collision\+Matrix}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{            \{0, 1, 0, 1, 1, 0, 1\},}
+\DoxyCodeLine{            \{1, 0, 0, 1, 0, 0, 0\},}
+\DoxyCodeLine{            \{0, 0, 0, 0, 0, 0, 0\},}
+\DoxyCodeLine{            \{1, 1, 0, 0, 0, 0, 0\},}
+\DoxyCodeLine{            \{1, 1, 0, 0, 0, 0, 0\},}
+\DoxyCodeLine{            \{1, 0, 0, 0, 0, 0, 0\},}
+\DoxyCodeLine{            \{1, 0, 0, 0, 0, 0, 0\},}
+\DoxyCodeLine{    \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/header/controller/\mbox{\hyperlink{CollisionController_8h}{Collision\+Controller.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,39 @@
+digraph "TransformComponent"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="TransformComponent",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="GameComponent",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classGameComponent.html",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="GameObject",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classGameObject.html",tooltip=" "];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="MovableGameObject",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classMovableGameObject.html",tooltip=" "];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="Ghost",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classGhost.html",tooltip=" "];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="Blinky",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classBlinky.html",tooltip=" "];
+  Node5 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="Clyde",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classClyde.html",tooltip=" "];
+  Node5 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="Inky",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classInky.html",tooltip=" "];
+  Node5 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node9 [label="Pinky",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classPinky.html",tooltip=" "];
+  Node4 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node10 [label="Player",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classPlayer.html",tooltip=" "];
+  Node3 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node11 [label="StaticGameObject",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classStaticGameObject.html",tooltip=" "];
+  Node11 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node12 [label="Dot",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classDot.html",tooltip=" "];
+  Node12 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node13 [label="DotBig",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classDotBig.html",tooltip=" "];
+  Node12 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node14 [label="DotSmall",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classDotSmall.html",tooltip=" "];
+  Node11 -> Node15 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node15 [label="Fruit",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classFruit.html",tooltip=" "];
+  Node11 -> Node16 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node16 [label="Text",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classText.html",tooltip=" "];
+  Node16 -> Node17 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node17 [label="Score",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classScore.html",tooltip=" "];
+}

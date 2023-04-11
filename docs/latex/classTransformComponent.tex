@@ -1,0 +1,246 @@
+\hypertarget{classTransformComponent}{}\doxysection{Transform\+Component Class Reference}
+\label{classTransformComponent}\index{TransformComponent@{TransformComponent}}
+
+
+{\ttfamily \#include $<$Transform\+Component.\+h$>$}
+
+
+
+Inheritance diagram for Transform\+Component\+:
+% FIG 0
+
+
+Collaboration diagram for Transform\+Component\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTransformComponent_ace1cf2d7d2a7468e9cb3eb0ce382f446}{Transform\+Component}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for \mbox{\hyperlink{classTransformComponent}{Transform\+Component}} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTransformComponent_a6b045851fd8e22fef6183a392b97ea52}{Transform\+Component}} (int posX, int posY, int size\+Width, int size\+Height)
+\begin{DoxyCompactList}\small\item\em Constructor for \mbox{\hyperlink{classTransformComponent}{Transform\+Component}} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTransformComponent_a99b735d8e9a2eff6a94426129920450f}{set\+Pos}} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Setter for the object\textquotesingle{}s position on the screen. \end{DoxyCompactList}\item 
+SDL\+\_\+\+Rect \mbox{\hyperlink{classTransformComponent_a3c8ec1d5952cdb9590c50752504b6cc5}{get\+Rect}} () const
+\begin{DoxyCompactList}\small\item\em Getter for the rectangle that defines the object\textquotesingle{}s position and size. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classTransformComponent_aa12a3b391d53f053e3f42ab00ce6258b}{getX}} () const
+\begin{DoxyCompactList}\small\item\em Getter for the object\textquotesingle{}s x-\/coordinate on the screen. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classTransformComponent_a704cba1e08547ad5dcf0e586e4919f87}{getY}} () const
+\begin{DoxyCompactList}\small\item\em Getter for the object\textquotesingle{}s y-\/coordinate on the screen. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classTransformComponent_a5e1b5c283f1f0f189fad168d9109faae}{get\+TileX}} () const
+\begin{DoxyCompactList}\small\item\em Getter for the x-\/coordinate of the tile that the object is in. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classTransformComponent_a97cdb84792858866fac3f3b2eb402e3f}{get\+TileY}} () const
+\begin{DoxyCompactList}\small\item\em Getter for the y-\/coordinate of the tile that the object is in. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTransformComponent_abf7f22ab859f198ce23312ed6202b415}{setX}} (int x)
+\begin{DoxyCompactList}\small\item\em Setter for the object\textquotesingle{}s x-\/coordinate on the screen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTransformComponent_a35b06608443b07b38bd286ddf9a6bbbd}{setY}} (int Y)
+\begin{DoxyCompactList}\small\item\em Setter for the object\textquotesingle{}s y-\/coordinate on the screen. \end{DoxyCompactList}\item 
+SDL\+\_\+\+Rect \mbox{\hyperlink{classTransformComponent_a043903e0991b04039726c553101d6f74}{get\+Draw\+Rect}} () const
+\begin{DoxyCompactList}\small\item\em Getter for the rectangle that defines the object\textquotesingle{}s position and size after it has been transformed for drawing. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classTransformComponent_aad2424357c3e8d332b81922342165339}{set\+Size}} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Setter for the object\textquotesingle{}s size. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+SDL\+\_\+\+Rect \mbox{\hyperlink{classTransformComponent_aff50d8de849c82214186c1a59925a66b}{rect}}
+\begin{DoxyCompactList}\small\item\em The rectangle that defines the object\textquotesingle{}s position and size. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classTransformComponent_ace1cf2d7d2a7468e9cb3eb0ce382f446}\label{classTransformComponent_ace1cf2d7d2a7468e9cb3eb0ce382f446}} 
+\index{TransformComponent@{TransformComponent}!TransformComponent@{TransformComponent}}
+\index{TransformComponent@{TransformComponent}!TransformComponent@{TransformComponent}}
+\doxysubsubsection{\texorpdfstring{TransformComponent()}{TransformComponent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Transform\+Component\+::\+Transform\+Component (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor for \mbox{\hyperlink{classTransformComponent}{Transform\+Component}} class. 
+
+\mbox{\Hypertarget{classTransformComponent_a6b045851fd8e22fef6183a392b97ea52}\label{classTransformComponent_a6b045851fd8e22fef6183a392b97ea52}} 
+\index{TransformComponent@{TransformComponent}!TransformComponent@{TransformComponent}}
+\index{TransformComponent@{TransformComponent}!TransformComponent@{TransformComponent}}
+\doxysubsubsection{\texorpdfstring{TransformComponent()}{TransformComponent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Transform\+Component\+::\+Transform\+Component (\begin{DoxyParamCaption}\item[{int}]{posX,  }\item[{int}]{posY,  }\item[{int}]{size\+Width,  }\item[{int}]{size\+Height }\end{DoxyParamCaption})}
+
+
+
+Constructor for \mbox{\hyperlink{classTransformComponent}{Transform\+Component}} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em posX} & The x-\/coordinate of the object\textquotesingle{}s position on the screen. \\
+\hline
+{\em posY} & The y-\/coordinate of the object\textquotesingle{}s position on the screen. \\
+\hline
+{\em size\+Width} & The width of the object on the screen. \\
+\hline
+{\em size\+Height} & The height of the object on the screen. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTransformComponent_a043903e0991b04039726c553101d6f74}\label{classTransformComponent_a043903e0991b04039726c553101d6f74}} 
+\index{TransformComponent@{TransformComponent}!getDrawRect@{getDrawRect}}
+\index{getDrawRect@{getDrawRect}!TransformComponent@{TransformComponent}}
+\doxysubsubsection{\texorpdfstring{getDrawRect()}{getDrawRect()}}
+{\footnotesize\ttfamily SDL\+\_\+\+Rect Transform\+Component\+::get\+Draw\+Rect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Getter for the rectangle that defines the object\textquotesingle{}s position and size after it has been transformed for drawing. 
+
+\begin{DoxyReturn}{Returns}
+The rectangle representing the object\textquotesingle{}s position and size after transformation for drawing. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTransformComponent_a3c8ec1d5952cdb9590c50752504b6cc5}\label{classTransformComponent_a3c8ec1d5952cdb9590c50752504b6cc5}} 
+\index{TransformComponent@{TransformComponent}!getRect@{getRect}}
+\index{getRect@{getRect}!TransformComponent@{TransformComponent}}
+\doxysubsubsection{\texorpdfstring{getRect()}{getRect()}}
+{\footnotesize\ttfamily SDL\+\_\+\+Rect Transform\+Component\+::get\+Rect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Getter for the rectangle that defines the object\textquotesingle{}s position and size. 
+
+\begin{DoxyReturn}{Returns}
+The rectangle representing the object\textquotesingle{}s position and size. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTransformComponent_a5e1b5c283f1f0f189fad168d9109faae}\label{classTransformComponent_a5e1b5c283f1f0f189fad168d9109faae}} 
+\index{TransformComponent@{TransformComponent}!getTileX@{getTileX}}
+\index{getTileX@{getTileX}!TransformComponent@{TransformComponent}}
+\doxysubsubsection{\texorpdfstring{getTileX()}{getTileX()}}
+{\footnotesize\ttfamily int Transform\+Component\+::get\+TileX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Getter for the x-\/coordinate of the tile that the object is in. 
+
+\begin{DoxyReturn}{Returns}
+The x-\/coordinate of the tile. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTransformComponent_a97cdb84792858866fac3f3b2eb402e3f}\label{classTransformComponent_a97cdb84792858866fac3f3b2eb402e3f}} 
+\index{TransformComponent@{TransformComponent}!getTileY@{getTileY}}
+\index{getTileY@{getTileY}!TransformComponent@{TransformComponent}}
+\doxysubsubsection{\texorpdfstring{getTileY()}{getTileY()}}
+{\footnotesize\ttfamily int Transform\+Component\+::get\+TileY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Getter for the y-\/coordinate of the tile that the object is in. 
+
+\begin{DoxyReturn}{Returns}
+The y-\/coordinate of the tile. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTransformComponent_aa12a3b391d53f053e3f42ab00ce6258b}\label{classTransformComponent_aa12a3b391d53f053e3f42ab00ce6258b}} 
+\index{TransformComponent@{TransformComponent}!getX@{getX}}
+\index{getX@{getX}!TransformComponent@{TransformComponent}}
+\doxysubsubsection{\texorpdfstring{getX()}{getX()}}
+{\footnotesize\ttfamily int Transform\+Component\+::getX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Getter for the object\textquotesingle{}s x-\/coordinate on the screen. 
+
+\begin{DoxyReturn}{Returns}
+The object\textquotesingle{}s x-\/coordinate. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTransformComponent_a704cba1e08547ad5dcf0e586e4919f87}\label{classTransformComponent_a704cba1e08547ad5dcf0e586e4919f87}} 
+\index{TransformComponent@{TransformComponent}!getY@{getY}}
+\index{getY@{getY}!TransformComponent@{TransformComponent}}
+\doxysubsubsection{\texorpdfstring{getY()}{getY()}}
+{\footnotesize\ttfamily int Transform\+Component\+::getY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Getter for the object\textquotesingle{}s y-\/coordinate on the screen. 
+
+\begin{DoxyReturn}{Returns}
+The object\textquotesingle{}s y-\/coordinate. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTransformComponent_a99b735d8e9a2eff6a94426129920450f}\label{classTransformComponent_a99b735d8e9a2eff6a94426129920450f}} 
+\index{TransformComponent@{TransformComponent}!setPos@{setPos}}
+\index{setPos@{setPos}!TransformComponent@{TransformComponent}}
+\doxysubsubsection{\texorpdfstring{setPos()}{setPos()}}
+{\footnotesize\ttfamily void Transform\+Component\+::set\+Pos (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Setter for the object\textquotesingle{}s position on the screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The new x position. \\
+\hline
+{\em y} & The new y position. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTransformComponent_aad2424357c3e8d332b81922342165339}\label{classTransformComponent_aad2424357c3e8d332b81922342165339}} 
+\index{TransformComponent@{TransformComponent}!setSize@{setSize}}
+\index{setSize@{setSize}!TransformComponent@{TransformComponent}}
+\doxysubsubsection{\texorpdfstring{setSize()}{setSize()}}
+{\footnotesize\ttfamily void Transform\+Component\+::set\+Size (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Setter for the object\textquotesingle{}s size. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The new width of the object. \\
+\hline
+{\em y} & The new height of the object. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTransformComponent_abf7f22ab859f198ce23312ed6202b415}\label{classTransformComponent_abf7f22ab859f198ce23312ed6202b415}} 
+\index{TransformComponent@{TransformComponent}!setX@{setX}}
+\index{setX@{setX}!TransformComponent@{TransformComponent}}
+\doxysubsubsection{\texorpdfstring{setX()}{setX()}}
+{\footnotesize\ttfamily void Transform\+Component\+::setX (\begin{DoxyParamCaption}\item[{int}]{x }\end{DoxyParamCaption})}
+
+
+
+Setter for the object\textquotesingle{}s x-\/coordinate on the screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The new x-\/coordinate. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTransformComponent_a35b06608443b07b38bd286ddf9a6bbbd}\label{classTransformComponent_a35b06608443b07b38bd286ddf9a6bbbd}} 
+\index{TransformComponent@{TransformComponent}!setY@{setY}}
+\index{setY@{setY}!TransformComponent@{TransformComponent}}
+\doxysubsubsection{\texorpdfstring{setY()}{setY()}}
+{\footnotesize\ttfamily void Transform\+Component\+::setY (\begin{DoxyParamCaption}\item[{int}]{Y }\end{DoxyParamCaption})}
+
+
+
+Setter for the object\textquotesingle{}s y-\/coordinate on the screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em y} & The new y-\/coordinate. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classTransformComponent_aff50d8de849c82214186c1a59925a66b}\label{classTransformComponent_aff50d8de849c82214186c1a59925a66b}} 
+\index{TransformComponent@{TransformComponent}!rect@{rect}}
+\index{rect@{rect}!TransformComponent@{TransformComponent}}
+\doxysubsubsection{\texorpdfstring{rect}{rect}}
+{\footnotesize\ttfamily SDL\+\_\+\+Rect Transform\+Component\+::rect\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The rectangle that defines the object\textquotesingle{}s position and size. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/header/model/component/\mbox{\hyperlink{TransformComponent_8h}{Transform\+Component.\+h}}\end{DoxyCompactItemize}

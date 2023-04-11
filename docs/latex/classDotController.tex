@@ -1,0 +1,82 @@
+\hypertarget{classDotController}{}\doxysection{Dot\+Controller Class Reference}
+\label{classDotController}\index{DotController@{DotController}}
+
+
+{\ttfamily \#include $<$Dot\+Controller.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDotController_a1e45e49f2b139f109a1e5601217f11a3}{Dot\+Controller}} (shared\+\_\+ptr$<$ \mbox{\hyperlink{classPauseController}{Pause\+Controller}} $>$ p\+Controller, shared\+\_\+ptr$<$ \mbox{\hyperlink{classTextViewController}{Text\+View\+Controller}} $>$ t\+Controller)
+\item 
+shared\+\_\+ptr$<$ \mbox{\hyperlink{classDotSmall}{Dot\+Small}} $>$ \mbox{\hyperlink{classDotController_a55dc40b0b1cf4fa8d436d25baa07786f}{spawn\+Dot\+Small}} (int x, int y)
+\item 
+vector$<$ shared\+\_\+ptr$<$ \mbox{\hyperlink{classDot}{Dot}} $>$ $>$ \mbox{\hyperlink{classDotController_a8ad3260543faed76259eea94bc280ec3}{spawn\+Dot\+Objects}} ()
+\item 
+shared\+\_\+ptr$<$ \mbox{\hyperlink{classDotBig}{Dot\+Big}} $>$ \mbox{\hyperlink{classDotController_a3f99b80b8d7126877f50af519663da82}{spawn\+Dot\+Big}} (int x, int y)
+\item 
+bool \mbox{\hyperlink{classDotController_a35dd6015736734be62a678e933709aea}{delete\+Dot}} (const \mbox{\hyperlink{classDot}{Dot}} \&dot)
+\item 
+bool \mbox{\hyperlink{classDotController_a23fae90e998a8d72539c6073bbd8bdeb}{is\+Big\+Dot}} (int i, int j)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ shared\+\_\+ptr$<$ \mbox{\hyperlink{classDot}{Dot}} $>$ $>$ \mbox{\hyperlink{classDotController_aa1530ea658bce9f5f34706290df748fa}{dots}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDotController_a1e45e49f2b139f109a1e5601217f11a3}\label{classDotController_a1e45e49f2b139f109a1e5601217f11a3}} 
+\index{DotController@{DotController}!DotController@{DotController}}
+\index{DotController@{DotController}!DotController@{DotController}}
+\doxysubsubsection{\texorpdfstring{DotController()}{DotController()}}
+{\footnotesize\ttfamily Dot\+Controller\+::\+Dot\+Controller (\begin{DoxyParamCaption}\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{classPauseController}{Pause\+Controller}} $>$}]{p\+Controller,  }\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{classTextViewController}{Text\+View\+Controller}} $>$}]{t\+Controller }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDotController_a35dd6015736734be62a678e933709aea}\label{classDotController_a35dd6015736734be62a678e933709aea}} 
+\index{DotController@{DotController}!deleteDot@{deleteDot}}
+\index{deleteDot@{deleteDot}!DotController@{DotController}}
+\doxysubsubsection{\texorpdfstring{deleteDot()}{deleteDot()}}
+{\footnotesize\ttfamily bool Dot\+Controller\+::delete\+Dot (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classDot}{Dot}} \&}]{dot }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classDotController_a23fae90e998a8d72539c6073bbd8bdeb}\label{classDotController_a23fae90e998a8d72539c6073bbd8bdeb}} 
+\index{DotController@{DotController}!isBigDot@{isBigDot}}
+\index{isBigDot@{isBigDot}!DotController@{DotController}}
+\doxysubsubsection{\texorpdfstring{isBigDot()}{isBigDot()}}
+{\footnotesize\ttfamily bool Dot\+Controller\+::is\+Big\+Dot (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{int}]{j }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classDotController_a3f99b80b8d7126877f50af519663da82}\label{classDotController_a3f99b80b8d7126877f50af519663da82}} 
+\index{DotController@{DotController}!spawnDotBig@{spawnDotBig}}
+\index{spawnDotBig@{spawnDotBig}!DotController@{DotController}}
+\doxysubsubsection{\texorpdfstring{spawnDotBig()}{spawnDotBig()}}
+{\footnotesize\ttfamily shared\+\_\+ptr$<$\mbox{\hyperlink{classDotBig}{Dot\+Big}}$>$ Dot\+Controller\+::spawn\+Dot\+Big (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classDotController_a8ad3260543faed76259eea94bc280ec3}\label{classDotController_a8ad3260543faed76259eea94bc280ec3}} 
+\index{DotController@{DotController}!spawnDotObjects@{spawnDotObjects}}
+\index{spawnDotObjects@{spawnDotObjects}!DotController@{DotController}}
+\doxysubsubsection{\texorpdfstring{spawnDotObjects()}{spawnDotObjects()}}
+{\footnotesize\ttfamily vector$<$shared\+\_\+ptr$<$\mbox{\hyperlink{classDot}{Dot}}$>$ $>$ Dot\+Controller\+::spawn\+Dot\+Objects (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classDotController_a55dc40b0b1cf4fa8d436d25baa07786f}\label{classDotController_a55dc40b0b1cf4fa8d436d25baa07786f}} 
+\index{DotController@{DotController}!spawnDotSmall@{spawnDotSmall}}
+\index{spawnDotSmall@{spawnDotSmall}!DotController@{DotController}}
+\doxysubsubsection{\texorpdfstring{spawnDotSmall()}{spawnDotSmall()}}
+{\footnotesize\ttfamily shared\+\_\+ptr$<$\mbox{\hyperlink{classDotSmall}{Dot\+Small}}$>$ Dot\+Controller\+::spawn\+Dot\+Small (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classDotController_aa1530ea658bce9f5f34706290df748fa}\label{classDotController_aa1530ea658bce9f5f34706290df748fa}} 
+\index{DotController@{DotController}!dots@{dots}}
+\index{dots@{dots}!DotController@{DotController}}
+\doxysubsubsection{\texorpdfstring{dots}{dots}}
+{\footnotesize\ttfamily vector$<$shared\+\_\+ptr$<$\mbox{\hyperlink{classDot}{Dot}}$>$ $>$ Dot\+Controller\+::dots}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/header/controller/\mbox{\hyperlink{DotController_8h}{Dot\+Controller.\+h}}\end{DoxyCompactItemize}

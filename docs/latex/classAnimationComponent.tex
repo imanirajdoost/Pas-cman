@@ -1,0 +1,238 @@
+\hypertarget{classAnimationComponent}{}\doxysection{Animation\+Component Class Reference}
+\label{classAnimationComponent}\index{AnimationComponent@{AnimationComponent}}
+
+
+The model for the animation component, which is responsible for handling the animation of sprites and objects in the game.  
+
+
+
+
+{\ttfamily \#include $<$Animation\+Component.\+h$>$}
+
+
+
+Inheritance diagram for Animation\+Component\+:
+% FIG 0
+
+
+Collaboration diagram for Animation\+Component\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classAnimationComponent_a9a05944808632b48959cfa6c3365be3c}{Animation\+Component}} ()
+\begin{DoxyCompactList}\small\item\em Constructs an empty \mbox{\hyperlink{classAnimationComponent}{Animation\+Component}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classAnimationComponent_a549db33dbabb7325e85b850a25219bfe}{Animation\+Component}} (SDL\+\_\+\+Rect default\+Sp)
+\begin{DoxyCompactList}\small\item\em Constructs an \mbox{\hyperlink{classAnimationComponent}{Animation\+Component}} object with a default sprite. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classAnimationComponent_a2f72f29b1fb421575a1ea5d6477f266d}{Animation\+Component}} (const string \&new\+Name, const vector$<$ SDL\+\_\+\+Rect $>$ \&sps, bool \+\_\+is\+Animated)
+\begin{DoxyCompactList}\small\item\em Constructs an \mbox{\hyperlink{classAnimationComponent}{Animation\+Component}} object with a specified name, list of sprites, and animation status. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAnimationComponent_a9ac3a3284c2869c3c6e59a6f177890ea}{add\+Animation}} (const string \&anim\+Name, const vector$<$ SDL\+\_\+\+Rect $>$ \&sps, bool should\+Loop=true)
+\begin{DoxyCompactList}\small\item\em Adds a new animation to the component. \end{DoxyCompactList}\item 
+shared\+\_\+ptr$<$ SDL\+\_\+\+Rect $>$ \mbox{\hyperlink{classAnimationComponent_a221bfb7620a63df0ad4f0e635a3394f3}{get\+Next\+Sprite}} ()
+\begin{DoxyCompactList}\small\item\em Returns the next sprite in the current animation. \end{DoxyCompactList}\item 
+shared\+\_\+ptr$<$ SDL\+\_\+\+Rect $>$ \mbox{\hyperlink{classAnimationComponent_a909d5cdafab59bc25884a53ae37e567a}{get\+Current\+Sprite}} ()
+\begin{DoxyCompactList}\small\item\em Returns the current sprite being displayed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classAnimationComponent_a8005cb2df7a03280653404e937dd88ee}{stop\+Animation}} ()
+\begin{DoxyCompactList}\small\item\em Stops the current animation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAnimationComponent_a8be2939b20bfc206dff3e7d5c4cd8eb6}{start\+Animation}} ()
+\begin{DoxyCompactList}\small\item\em Starts the current animation. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classAnimationComponent_a372a0a2718f816d57c31a89d0550cf22}{set\+Animation}} (const string \&anim\+Name)
+\begin{DoxyCompactList}\small\item\em Sets the current animation based on the given animation name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+shared\+\_\+ptr$<$ SDL\+\_\+\+Rect $>$ \mbox{\hyperlink{classAnimationComponent_ab7cb7a3b9082df3bf100357cf092da17}{current\+\_\+sp}}
+\begin{DoxyCompactList}\small\item\em The current sprite being displayed. \end{DoxyCompactList}\item 
+SDL\+\_\+\+Rect \mbox{\hyperlink{classAnimationComponent_a3849fa09f12362a46bcce4e37c39e1e4}{default\+\_\+sp}}
+\begin{DoxyCompactList}\small\item\em The default sprite to display when not animating. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classAnimationComponent_ad1efc2bcdb8d4a8dd5486aedbbecee94}{is\+Animated}} = false
+\begin{DoxyCompactList}\small\item\em Whether or not this component is currently animating. \end{DoxyCompactList}\item 
+shared\+\_\+ptr$<$ \mbox{\hyperlink{classAnimationModel}{Animation\+Model}} $>$ \mbox{\hyperlink{classAnimationComponent_a09631490ccd6814911c60e79ec9b4253}{current\+\_\+anim}} = nullptr
+\begin{DoxyCompactList}\small\item\em The current animation being played. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The model for the animation component, which is responsible for handling the animation of sprites and objects in the game. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classAnimationComponent_a9a05944808632b48959cfa6c3365be3c}\label{classAnimationComponent_a9a05944808632b48959cfa6c3365be3c}} 
+\index{AnimationComponent@{AnimationComponent}!AnimationComponent@{AnimationComponent}}
+\index{AnimationComponent@{AnimationComponent}!AnimationComponent@{AnimationComponent}}
+\doxysubsubsection{\texorpdfstring{AnimationComponent()}{AnimationComponent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Animation\+Component\+::\+Animation\+Component (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructs an empty \mbox{\hyperlink{classAnimationComponent}{Animation\+Component}} object. 
+
+\mbox{\Hypertarget{classAnimationComponent_a549db33dbabb7325e85b850a25219bfe}\label{classAnimationComponent_a549db33dbabb7325e85b850a25219bfe}} 
+\index{AnimationComponent@{AnimationComponent}!AnimationComponent@{AnimationComponent}}
+\index{AnimationComponent@{AnimationComponent}!AnimationComponent@{AnimationComponent}}
+\doxysubsubsection{\texorpdfstring{AnimationComponent()}{AnimationComponent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Animation\+Component\+::\+Animation\+Component (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Rect}]{default\+Sp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructs an \mbox{\hyperlink{classAnimationComponent}{Animation\+Component}} object with a default sprite. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em default\+Sp} & The default sprite to use. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAnimationComponent_a2f72f29b1fb421575a1ea5d6477f266d}\label{classAnimationComponent_a2f72f29b1fb421575a1ea5d6477f266d}} 
+\index{AnimationComponent@{AnimationComponent}!AnimationComponent@{AnimationComponent}}
+\index{AnimationComponent@{AnimationComponent}!AnimationComponent@{AnimationComponent}}
+\doxysubsubsection{\texorpdfstring{AnimationComponent()}{AnimationComponent()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Animation\+Component\+::\+Animation\+Component (\begin{DoxyParamCaption}\item[{const string \&}]{new\+Name,  }\item[{const vector$<$ SDL\+\_\+\+Rect $>$ \&}]{sps,  }\item[{bool}]{\+\_\+is\+Animated }\end{DoxyParamCaption})}
+
+
+
+Constructs an \mbox{\hyperlink{classAnimationComponent}{Animation\+Component}} object with a specified name, list of sprites, and animation status. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Name} & The name of the component. \\
+\hline
+{\em sps} & The list of sprites to use. \\
+\hline
+{\em \+\_\+is\+Animated} & Whether or not the component should animate. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classAnimationComponent_a9ac3a3284c2869c3c6e59a6f177890ea}\label{classAnimationComponent_a9ac3a3284c2869c3c6e59a6f177890ea}} 
+\index{AnimationComponent@{AnimationComponent}!addAnimation@{addAnimation}}
+\index{addAnimation@{addAnimation}!AnimationComponent@{AnimationComponent}}
+\doxysubsubsection{\texorpdfstring{addAnimation()}{addAnimation()}}
+{\footnotesize\ttfamily void Animation\+Component\+::add\+Animation (\begin{DoxyParamCaption}\item[{const string \&}]{anim\+Name,  }\item[{const vector$<$ SDL\+\_\+\+Rect $>$ \&}]{sps,  }\item[{bool}]{should\+Loop = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+Adds a new animation to the component. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em anim\+Name} & The name of the new animation. \\
+\hline
+{\em sps} & The list of sprites for the animation. \\
+\hline
+{\em should\+Loop} & Whether or not the animation should loop. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAnimationComponent_a909d5cdafab59bc25884a53ae37e567a}\label{classAnimationComponent_a909d5cdafab59bc25884a53ae37e567a}} 
+\index{AnimationComponent@{AnimationComponent}!getCurrentSprite@{getCurrentSprite}}
+\index{getCurrentSprite@{getCurrentSprite}!AnimationComponent@{AnimationComponent}}
+\doxysubsubsection{\texorpdfstring{getCurrentSprite()}{getCurrentSprite()}}
+{\footnotesize\ttfamily shared\+\_\+ptr$<$SDL\+\_\+\+Rect$>$ Animation\+Component\+::get\+Current\+Sprite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the current sprite being displayed. 
+
+\begin{DoxyReturn}{Returns}
+The current sprite. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAnimationComponent_a221bfb7620a63df0ad4f0e635a3394f3}\label{classAnimationComponent_a221bfb7620a63df0ad4f0e635a3394f3}} 
+\index{AnimationComponent@{AnimationComponent}!getNextSprite@{getNextSprite}}
+\index{getNextSprite@{getNextSprite}!AnimationComponent@{AnimationComponent}}
+\doxysubsubsection{\texorpdfstring{getNextSprite()}{getNextSprite()}}
+{\footnotesize\ttfamily shared\+\_\+ptr$<$SDL\+\_\+\+Rect$>$ Animation\+Component\+::get\+Next\+Sprite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the next sprite in the current animation. 
+
+\begin{DoxyReturn}{Returns}
+The next sprite in the animation. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAnimationComponent_a372a0a2718f816d57c31a89d0550cf22}\label{classAnimationComponent_a372a0a2718f816d57c31a89d0550cf22}} 
+\index{AnimationComponent@{AnimationComponent}!setAnimation@{setAnimation}}
+\index{setAnimation@{setAnimation}!AnimationComponent@{AnimationComponent}}
+\doxysubsubsection{\texorpdfstring{setAnimation()}{setAnimation()}}
+{\footnotesize\ttfamily bool Animation\+Component\+::set\+Animation (\begin{DoxyParamCaption}\item[{const string \&}]{anim\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Sets the current animation based on the given animation name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em anim\+Name} & The name of the animation to set. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the animation was successfully set, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAnimationComponent_a8be2939b20bfc206dff3e7d5c4cd8eb6}\label{classAnimationComponent_a8be2939b20bfc206dff3e7d5c4cd8eb6}} 
+\index{AnimationComponent@{AnimationComponent}!startAnimation@{startAnimation}}
+\index{startAnimation@{startAnimation}!AnimationComponent@{AnimationComponent}}
+\doxysubsubsection{\texorpdfstring{startAnimation()}{startAnimation()}}
+{\footnotesize\ttfamily void Animation\+Component\+::start\+Animation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Starts the current animation. 
+
+\mbox{\Hypertarget{classAnimationComponent_a8005cb2df7a03280653404e937dd88ee}\label{classAnimationComponent_a8005cb2df7a03280653404e937dd88ee}} 
+\index{AnimationComponent@{AnimationComponent}!stopAnimation@{stopAnimation}}
+\index{stopAnimation@{stopAnimation}!AnimationComponent@{AnimationComponent}}
+\doxysubsubsection{\texorpdfstring{stopAnimation()}{stopAnimation()}}
+{\footnotesize\ttfamily void Animation\+Component\+::stop\+Animation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Stops the current animation. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classAnimationComponent_a09631490ccd6814911c60e79ec9b4253}\label{classAnimationComponent_a09631490ccd6814911c60e79ec9b4253}} 
+\index{AnimationComponent@{AnimationComponent}!current\_anim@{current\_anim}}
+\index{current\_anim@{current\_anim}!AnimationComponent@{AnimationComponent}}
+\doxysubsubsection{\texorpdfstring{current\_anim}{current\_anim}}
+{\footnotesize\ttfamily shared\+\_\+ptr$<$\mbox{\hyperlink{classAnimationModel}{Animation\+Model}}$>$ Animation\+Component\+::current\+\_\+anim = nullptr\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The current animation being played. 
+
+\mbox{\Hypertarget{classAnimationComponent_ab7cb7a3b9082df3bf100357cf092da17}\label{classAnimationComponent_ab7cb7a3b9082df3bf100357cf092da17}} 
+\index{AnimationComponent@{AnimationComponent}!current\_sp@{current\_sp}}
+\index{current\_sp@{current\_sp}!AnimationComponent@{AnimationComponent}}
+\doxysubsubsection{\texorpdfstring{current\_sp}{current\_sp}}
+{\footnotesize\ttfamily shared\+\_\+ptr$<$SDL\+\_\+\+Rect$>$ Animation\+Component\+::current\+\_\+sp\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The current sprite being displayed. 
+
+\mbox{\Hypertarget{classAnimationComponent_a3849fa09f12362a46bcce4e37c39e1e4}\label{classAnimationComponent_a3849fa09f12362a46bcce4e37c39e1e4}} 
+\index{AnimationComponent@{AnimationComponent}!default\_sp@{default\_sp}}
+\index{default\_sp@{default\_sp}!AnimationComponent@{AnimationComponent}}
+\doxysubsubsection{\texorpdfstring{default\_sp}{default\_sp}}
+{\footnotesize\ttfamily SDL\+\_\+\+Rect Animation\+Component\+::default\+\_\+sp\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The default sprite to display when not animating. 
+
+\mbox{\Hypertarget{classAnimationComponent_ad1efc2bcdb8d4a8dd5486aedbbecee94}\label{classAnimationComponent_ad1efc2bcdb8d4a8dd5486aedbbecee94}} 
+\index{AnimationComponent@{AnimationComponent}!isAnimated@{isAnimated}}
+\index{isAnimated@{isAnimated}!AnimationComponent@{AnimationComponent}}
+\doxysubsubsection{\texorpdfstring{isAnimated}{isAnimated}}
+{\footnotesize\ttfamily bool Animation\+Component\+::is\+Animated = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Whether or not this component is currently animating. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/header/model/component/\mbox{\hyperlink{AnimationComponent_8h}{Animation\+Component.\+h}}\end{DoxyCompactItemize}

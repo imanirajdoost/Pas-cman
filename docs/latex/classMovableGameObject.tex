@@ -1,0 +1,179 @@
+\hypertarget{classMovableGameObject}{}\doxysection{Movable\+Game\+Object Class Reference}
+\label{classMovableGameObject}\index{MovableGameObject@{MovableGameObject}}
+
+
+{\ttfamily \#include $<$Movable\+Game\+Object.\+h$>$}
+
+
+
+Inheritance diagram for Movable\+Game\+Object\+:
+% FIG 0
+
+
+Collaboration diagram for Movable\+Game\+Object\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMovableGameObject_a20bea33d8d0350f558f98bc870b873da}{Movable\+Game\+Object}} (SDL\+\_\+\+Rect default\+Sp)
+\item 
+\mbox{\hyperlink{classMovableGameObject_a6685986af0083eebec77a20d6d9b6401}{Movable\+Game\+Object}} (const string \&anim\+Name, const vector$<$ SDL\+\_\+\+Rect $>$ \&sprites, bool \+\_\+is\+Animated)
+\item 
+\mbox{\hyperlink{classMovableGameObject_a42aa2bfd17893ed2979be6005716592b}{Movable\+Game\+Object}} ()
+\item 
+int \mbox{\hyperlink{classMovableGameObject_a21ae72abde3a3b5db43433f838762c58}{get\+Speed}} () const
+\item 
+\mbox{\hyperlink{MovableGameObject_8h_a00ec4eba48da32d6cbdf827185fd3d34}{Move\+Direction}} \mbox{\hyperlink{classMovableGameObject_a71848cd2657703751c5eadccb8737d39}{get\+Move\+Direction}} () const
+\item 
+void \mbox{\hyperlink{classMovableGameObject_a4baa44d432fcd2345887e71c32131888}{set\+Move\+Direction}} (const \mbox{\hyperlink{MovableGameObject_8h_a00ec4eba48da32d6cbdf827185fd3d34}{Move\+Direction}} \&new\+Direction)
+\item 
+void \mbox{\hyperlink{classMovableGameObject_a5cd7735c6931c7ca63f7ebe8c4c37ec5}{set\+Direction\+Sprite}} (const \mbox{\hyperlink{MovableGameObject_8h_a00ec4eba48da32d6cbdf827185fd3d34}{Move\+Direction}} \&new\+Direction)
+\item 
+void \mbox{\hyperlink{classMovableGameObject_ad11062eda5dc48e94d303530aaa2dbfa}{reset\+Move\+Direction}} ()
+\item 
+SDL\+\_\+\+Rect \mbox{\hyperlink{classMovableGameObject_a36a00f6100ec532ebc15a15123bc70fa}{get\+Next\+Pos}} () const
+\item 
+virtual void \mbox{\hyperlink{classMovableGameObject_aeef74fd11fdb5894d3ea2db0a2a20f99}{set\+Next\+Pos}} (const std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{Map_8h_a0dc0d3f05ebf63bd2133199d9429f6ad}{MTYPE}} $>$$>$ \&map, const \mbox{\hyperlink{MovableGameObject_8h_a00ec4eba48da32d6cbdf827185fd3d34}{Move\+Direction}} \&\mbox{\hyperlink{classMovableGameObject_afd37f5e247bb8e73b5481dcbc509a67d}{direction}})=0
+\item 
+void \mbox{\hyperlink{classMovableGameObject_ad3313b79220210103022f8e00609b592}{reset\+Next\+Pos}} ()
+\item 
+virtual void \mbox{\hyperlink{classMovableGameObject_a7e4411553a799980b15023bb57f31fb9}{move}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+SDL\+\_\+\+Rect \mbox{\hyperlink{classMovableGameObject_a6129f2a6a7f7590032f29992d03f76b1}{\+\_\+next\+\_\+pos}}
+\item 
+int \mbox{\hyperlink{classMovableGameObject_a221f91a6074abae38431251c0a3889ac}{speed}} = 4
+\item 
+\mbox{\hyperlink{MovableGameObject_8h_a00ec4eba48da32d6cbdf827185fd3d34}{Move\+Direction}} \mbox{\hyperlink{classMovableGameObject_afd37f5e247bb8e73b5481dcbc509a67d}{direction}} = \mbox{\hyperlink{MovableGameObject_8h_a00ec4eba48da32d6cbdf827185fd3d34ab50339a10e1de285ac99d4c3990b8693}{Move\+Direction\+::\+NONE}}
+\item 
+\mbox{\hyperlink{MovableGameObject_8h_a00ec4eba48da32d6cbdf827185fd3d34}{Move\+Direction}} \mbox{\hyperlink{classMovableGameObject_a01f3c4ecdd9023b46332079fa56105c7}{last\+Direction}} = \mbox{\hyperlink{MovableGameObject_8h_a00ec4eba48da32d6cbdf827185fd3d34ab50339a10e1de285ac99d4c3990b8693}{Move\+Direction\+::\+NONE}}
+\item 
+bool \mbox{\hyperlink{classMovableGameObject_abcc6488db235ca2ab9f6abc77782907f}{is\+Move\+Enabled}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMovableGameObject_a20bea33d8d0350f558f98bc870b873da}\label{classMovableGameObject_a20bea33d8d0350f558f98bc870b873da}} 
+\index{MovableGameObject@{MovableGameObject}!MovableGameObject@{MovableGameObject}}
+\index{MovableGameObject@{MovableGameObject}!MovableGameObject@{MovableGameObject}}
+\doxysubsubsection{\texorpdfstring{MovableGameObject()}{MovableGameObject()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Movable\+Game\+Object\+::\+Movable\+Game\+Object (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Rect}]{default\+Sp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{classMovableGameObject_a6685986af0083eebec77a20d6d9b6401}\label{classMovableGameObject_a6685986af0083eebec77a20d6d9b6401}} 
+\index{MovableGameObject@{MovableGameObject}!MovableGameObject@{MovableGameObject}}
+\index{MovableGameObject@{MovableGameObject}!MovableGameObject@{MovableGameObject}}
+\doxysubsubsection{\texorpdfstring{MovableGameObject()}{MovableGameObject()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Movable\+Game\+Object\+::\+Movable\+Game\+Object (\begin{DoxyParamCaption}\item[{const string \&}]{anim\+Name,  }\item[{const vector$<$ SDL\+\_\+\+Rect $>$ \&}]{sprites,  }\item[{bool}]{\+\_\+is\+Animated }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMovableGameObject_a42aa2bfd17893ed2979be6005716592b}\label{classMovableGameObject_a42aa2bfd17893ed2979be6005716592b}} 
+\index{MovableGameObject@{MovableGameObject}!MovableGameObject@{MovableGameObject}}
+\index{MovableGameObject@{MovableGameObject}!MovableGameObject@{MovableGameObject}}
+\doxysubsubsection{\texorpdfstring{MovableGameObject()}{MovableGameObject()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Movable\+Game\+Object\+::\+Movable\+Game\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMovableGameObject_a71848cd2657703751c5eadccb8737d39}\label{classMovableGameObject_a71848cd2657703751c5eadccb8737d39}} 
+\index{MovableGameObject@{MovableGameObject}!getMoveDirection@{getMoveDirection}}
+\index{getMoveDirection@{getMoveDirection}!MovableGameObject@{MovableGameObject}}
+\doxysubsubsection{\texorpdfstring{getMoveDirection()}{getMoveDirection()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{MovableGameObject_8h_a00ec4eba48da32d6cbdf827185fd3d34}{Move\+Direction}} Movable\+Game\+Object\+::get\+Move\+Direction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classMovableGameObject_a36a00f6100ec532ebc15a15123bc70fa}\label{classMovableGameObject_a36a00f6100ec532ebc15a15123bc70fa}} 
+\index{MovableGameObject@{MovableGameObject}!getNextPos@{getNextPos}}
+\index{getNextPos@{getNextPos}!MovableGameObject@{MovableGameObject}}
+\doxysubsubsection{\texorpdfstring{getNextPos()}{getNextPos()}}
+{\footnotesize\ttfamily SDL\+\_\+\+Rect Movable\+Game\+Object\+::get\+Next\+Pos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classMovableGameObject_a21ae72abde3a3b5db43433f838762c58}\label{classMovableGameObject_a21ae72abde3a3b5db43433f838762c58}} 
+\index{MovableGameObject@{MovableGameObject}!getSpeed@{getSpeed}}
+\index{getSpeed@{getSpeed}!MovableGameObject@{MovableGameObject}}
+\doxysubsubsection{\texorpdfstring{getSpeed()}{getSpeed()}}
+{\footnotesize\ttfamily int Movable\+Game\+Object\+::get\+Speed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classMovableGameObject_a7e4411553a799980b15023bb57f31fb9}\label{classMovableGameObject_a7e4411553a799980b15023bb57f31fb9}} 
+\index{MovableGameObject@{MovableGameObject}!move@{move}}
+\index{move@{move}!MovableGameObject@{MovableGameObject}}
+\doxysubsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily virtual void Movable\+Game\+Object\+::move (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classPlayer_a1d35b7b1cd1a890042abdfdc55cafb14}{Player}}, and \mbox{\hyperlink{classGhost_a80a82f1dc1b0bd1adee37876f3ed5554}{Ghost}}.
+
+\mbox{\Hypertarget{classMovableGameObject_ad11062eda5dc48e94d303530aaa2dbfa}\label{classMovableGameObject_ad11062eda5dc48e94d303530aaa2dbfa}} 
+\index{MovableGameObject@{MovableGameObject}!resetMoveDirection@{resetMoveDirection}}
+\index{resetMoveDirection@{resetMoveDirection}!MovableGameObject@{MovableGameObject}}
+\doxysubsubsection{\texorpdfstring{resetMoveDirection()}{resetMoveDirection()}}
+{\footnotesize\ttfamily void Movable\+Game\+Object\+::reset\+Move\+Direction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMovableGameObject_ad3313b79220210103022f8e00609b592}\label{classMovableGameObject_ad3313b79220210103022f8e00609b592}} 
+\index{MovableGameObject@{MovableGameObject}!resetNextPos@{resetNextPos}}
+\index{resetNextPos@{resetNextPos}!MovableGameObject@{MovableGameObject}}
+\doxysubsubsection{\texorpdfstring{resetNextPos()}{resetNextPos()}}
+{\footnotesize\ttfamily void Movable\+Game\+Object\+::reset\+Next\+Pos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMovableGameObject_a5cd7735c6931c7ca63f7ebe8c4c37ec5}\label{classMovableGameObject_a5cd7735c6931c7ca63f7ebe8c4c37ec5}} 
+\index{MovableGameObject@{MovableGameObject}!setDirectionSprite@{setDirectionSprite}}
+\index{setDirectionSprite@{setDirectionSprite}!MovableGameObject@{MovableGameObject}}
+\doxysubsubsection{\texorpdfstring{setDirectionSprite()}{setDirectionSprite()}}
+{\footnotesize\ttfamily void Movable\+Game\+Object\+::set\+Direction\+Sprite (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{MovableGameObject_8h_a00ec4eba48da32d6cbdf827185fd3d34}{Move\+Direction}} \&}]{new\+Direction }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMovableGameObject_a4baa44d432fcd2345887e71c32131888}\label{classMovableGameObject_a4baa44d432fcd2345887e71c32131888}} 
+\index{MovableGameObject@{MovableGameObject}!setMoveDirection@{setMoveDirection}}
+\index{setMoveDirection@{setMoveDirection}!MovableGameObject@{MovableGameObject}}
+\doxysubsubsection{\texorpdfstring{setMoveDirection()}{setMoveDirection()}}
+{\footnotesize\ttfamily void Movable\+Game\+Object\+::set\+Move\+Direction (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{MovableGameObject_8h_a00ec4eba48da32d6cbdf827185fd3d34}{Move\+Direction}} \&}]{new\+Direction }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMovableGameObject_aeef74fd11fdb5894d3ea2db0a2a20f99}\label{classMovableGameObject_aeef74fd11fdb5894d3ea2db0a2a20f99}} 
+\index{MovableGameObject@{MovableGameObject}!setNextPos@{setNextPos}}
+\index{setNextPos@{setNextPos}!MovableGameObject@{MovableGameObject}}
+\doxysubsubsection{\texorpdfstring{setNextPos()}{setNextPos()}}
+{\footnotesize\ttfamily virtual void Movable\+Game\+Object\+::set\+Next\+Pos (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{Map_8h_a0dc0d3f05ebf63bd2133199d9429f6ad}{MTYPE}} $>$$>$ \&}]{map,  }\item[{const \mbox{\hyperlink{MovableGameObject_8h_a00ec4eba48da32d6cbdf827185fd3d34}{Move\+Direction}} \&}]{direction }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classPlayer_ae0e4bd8fa5c57275359dc3fe4e4b6027}{Player}}, and \mbox{\hyperlink{classGhost_a2f8f7ed971eae444583d9706d241da62}{Ghost}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classMovableGameObject_a6129f2a6a7f7590032f29992d03f76b1}\label{classMovableGameObject_a6129f2a6a7f7590032f29992d03f76b1}} 
+\index{MovableGameObject@{MovableGameObject}!\_next\_pos@{\_next\_pos}}
+\index{\_next\_pos@{\_next\_pos}!MovableGameObject@{MovableGameObject}}
+\doxysubsubsection{\texorpdfstring{\_next\_pos}{\_next\_pos}}
+{\footnotesize\ttfamily SDL\+\_\+\+Rect Movable\+Game\+Object\+::\+\_\+next\+\_\+pos\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMovableGameObject_afd37f5e247bb8e73b5481dcbc509a67d}\label{classMovableGameObject_afd37f5e247bb8e73b5481dcbc509a67d}} 
+\index{MovableGameObject@{MovableGameObject}!direction@{direction}}
+\index{direction@{direction}!MovableGameObject@{MovableGameObject}}
+\doxysubsubsection{\texorpdfstring{direction}{direction}}
+{\footnotesize\ttfamily \mbox{\hyperlink{MovableGameObject_8h_a00ec4eba48da32d6cbdf827185fd3d34}{Move\+Direction}} Movable\+Game\+Object\+::direction = \mbox{\hyperlink{MovableGameObject_8h_a00ec4eba48da32d6cbdf827185fd3d34ab50339a10e1de285ac99d4c3990b8693}{Move\+Direction\+::\+NONE}}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMovableGameObject_abcc6488db235ca2ab9f6abc77782907f}\label{classMovableGameObject_abcc6488db235ca2ab9f6abc77782907f}} 
+\index{MovableGameObject@{MovableGameObject}!isMoveEnabled@{isMoveEnabled}}
+\index{isMoveEnabled@{isMoveEnabled}!MovableGameObject@{MovableGameObject}}
+\doxysubsubsection{\texorpdfstring{isMoveEnabled}{isMoveEnabled}}
+{\footnotesize\ttfamily bool Movable\+Game\+Object\+::is\+Move\+Enabled\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMovableGameObject_a01f3c4ecdd9023b46332079fa56105c7}\label{classMovableGameObject_a01f3c4ecdd9023b46332079fa56105c7}} 
+\index{MovableGameObject@{MovableGameObject}!lastDirection@{lastDirection}}
+\index{lastDirection@{lastDirection}!MovableGameObject@{MovableGameObject}}
+\doxysubsubsection{\texorpdfstring{lastDirection}{lastDirection}}
+{\footnotesize\ttfamily \mbox{\hyperlink{MovableGameObject_8h_a00ec4eba48da32d6cbdf827185fd3d34}{Move\+Direction}} Movable\+Game\+Object\+::last\+Direction = \mbox{\hyperlink{MovableGameObject_8h_a00ec4eba48da32d6cbdf827185fd3d34ab50339a10e1de285ac99d4c3990b8693}{Move\+Direction\+::\+NONE}}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classMovableGameObject_a221f91a6074abae38431251c0a3889ac}\label{classMovableGameObject_a221f91a6074abae38431251c0a3889ac}} 
+\index{MovableGameObject@{MovableGameObject}!speed@{speed}}
+\index{speed@{speed}!MovableGameObject@{MovableGameObject}}
+\doxysubsubsection{\texorpdfstring{speed}{speed}}
+{\footnotesize\ttfamily int Movable\+Game\+Object\+::speed = 4\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/header/model/\mbox{\hyperlink{MovableGameObject_8h}{Movable\+Game\+Object.\+h}}\end{DoxyCompactItemize}
