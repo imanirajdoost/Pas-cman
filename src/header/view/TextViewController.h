@@ -9,14 +9,36 @@
 
 using namespace std;
 
+/**
+ * @brief This class is responsible for managing the text UI elements.
+ */
 class TextViewController {
 public:
+
+    /**
+     * @brief Constructs the TextViewController object and initializes all the characters.
+     */
     TextViewController();
 
+    /**
+     * @brief Writes text on the screen at the given position and id.
+     * @param id The id of the text to write.
+     * @param text The text to write.
+     * @param posX The x position to write the text.
+     * @param posY The y position to write the text.
+     */
     void writeOnUI(const string &id, const string &text, int posX, int posY);
 
+    /**
+     * @brief Writes the score on the screen.
+     * @param score The score to write.
+     */
     void writeScore(int score);
 
+    /**
+     * @brief Sets the health UI element to the given value.
+     * @param health The health value to set.
+     */
     void setHealthUI(short health);
 
     vector<shared_ptr<tuple<string, string, int, int, vector<shared_ptr<SDL_Rect>>>>> name_txt_maps;

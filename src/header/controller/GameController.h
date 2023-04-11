@@ -1,3 +1,8 @@
+/**
+@file GameController.h
+Main game controller that initializes and manages all other controllers and objects.
+*/
+
 #ifndef GAMECONTROLLER_H
 #define GAMECONTROLLER_H
 
@@ -13,15 +18,25 @@
 
 class GameController {
 public:
+    /**
+Main game controller that initializes and manages all other controllers and objects.
+*/
     GameController();
 
     bool exit = false;
 
     void update();
 
+    /**
+Starts the game and begins the game loop.
+*/
     void startGame();
 
 private:
+    /**
+* Checks if the user has quit the game.
+* @return true if the user has quit, false otherwise.
+*/
     bool hasQuit() const;
 
     shared_ptr<CollisionController> collisionController;

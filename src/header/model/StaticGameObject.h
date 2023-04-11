@@ -3,6 +3,9 @@
 
 #include "GameObject.h"
 
+/**
+ * @brief Base class for static game objects like dots and fruits
+ */
 class StaticGameObject : public GameObject {
 
 };
