@@ -12,7 +12,7 @@
 
 
 AnimationComponent::AnimationComponent(const string &newName, const vector<SDL_Rect> &sps, bool _isAnimated) {
-    AnimationModel anim(true);
+    AnimationModel anim(true, 1);
     anim.setName(newName);
     anim.addSprites(sps);
     default_sp = anim.sprites_list[0];
@@ -60,19 +60,20 @@ void AnimationComponent::startAnimation() {
     isAnimated = true;
 }
 
-void AnimationComponent::addAnimation(const string& animName, const vector<SDL_Rect>& sps, bool shouldLoop) {
+void
+AnimationComponent::addAnimation(const string &animName, const vector<SDL_Rect> &sps, int speed, bool shouldLoop) {
     for (auto &a: animation_list) {
         if (a.getName() == animName)
             return;
     }
-    AnimationModel anim(shouldLoop);
+    AnimationModel anim(shouldLoop, speed);
     anim.setName(animName);
     anim.addSprites(sps);
     animation_list.push_back(anim);
 }
 
 AnimationComponent::AnimationComponent(SDL_Rect defaultSp) : default_sp{defaultSp} {
-    AnimationModel anim(true);
+    AnimationModel anim(true, 1);
     anim.setName("default");
     anim.addSprite(defaultSp);
     current_sp = make_shared<SDL_Rect>(defaultSp);
@@ -91,26 +92,29 @@ std::shared_ptr<SDL_Rect> AnimationComponent::getNextSprite() {
         current_sp = make_shared<SDL_Rect>(default_sp);
     }
 
-    if (isAnimated && current_anim != nullptr && AnimationController::animationCounter % ANIMATION_FRAME_RATE == 0) {
-        const auto &anim_rects = current_anim->getSpritesList();
-        if (animation_frame >= anim_rects.size()) {
-            if (current_anim->getLoop())
-                animation_frame = 0;
-            else
-                return current_sp = make_shared<SDL_Rect>(anim_rects[animation_frame - 1]);
-        }
+    if (isAnimated && current_anim != nullptr) {
+        int animSpeed = AnimationController::animationCounter * current_anim->getSpeed();
+        if ((int) animSpeed % ANIMATION_DEFAULT_SPEED == 0) {
+            const auto &anim_rects = current_anim->getSpritesList();
+            if (animation_frame >= anim_rects.size()) {
+                if (current_anim->getLoop())
+                    animation_frame = 0;
+                else
+                    return current_sp = make_shared<SDL_Rect>(anim_rects[animation_frame - 1]);
+            }
 
 //        cout << "Anim frame: " << animation_frame << " rects size: " << anim_rects.size() << " anim counter:" << GameController::animationCounter << endl;
 
-        current_sp = make_shared<SDL_Rect>(anim_rects[animation_frame]);
-        animation_frame++;
+            current_sp = make_shared<SDL_Rect>(anim_rects[animation_frame]);
+            animation_frame++;
+        }
     }
 
     return current_sp;
 }
 
 AnimationComponent::AnimationComponent() {
-    AnimationModel anim(true);
+    AnimationModel anim(true, 1);
     anim.setName("default");
     current_sp = nullptr;
     animation_frame = 0;

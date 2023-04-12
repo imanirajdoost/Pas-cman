@@ -10,7 +10,7 @@ namespace constants {
 #define DEBUG_MODE 0
 
     /** @brief Animation frame rate in frames per second. */
-#define ANIMATION_FRAME_RATE 2
+#define ANIMATION_DEFAULT_SPEED 4
 
     /** @brief Small dot size in pixels. */
 #define SMALL_DOT_SIZE 10
@@ -54,6 +54,12 @@ namespace default_sprites {
 
     /** @brief Default sprite for Clyde. */
     const SDL_Rect clyde_sp_default = {4, 178, 14, 14};
+
+    /** @brief Default sprite for Dot Big. */
+    const SDL_Rect dot_big_default = { 9,79, 7,7 };
+
+    /** @brief empty black sprite. */
+    const SDL_Rect empty_black_sp = { 184,103, 16,16 };
 }
 
 #endif

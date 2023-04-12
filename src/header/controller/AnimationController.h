@@ -22,7 +22,7 @@ public:
     void tick();
 
     /**
-     * @brief Static counter that keeps track of the number of animations created.
+     * @brief Static counter for animations.
      */
     static int animationCounter;
 };

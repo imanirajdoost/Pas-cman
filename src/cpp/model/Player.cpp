@@ -13,14 +13,14 @@ Player::Player(short initHealth) : HealthComponent(initHealth), MovableGameObjec
     setMoveIntent(MoveDirection::NONE);
 
     // Set default animation and sprite and add animations
-    addAnimation("default", {player_fill, player_r1, player_r2});
-    addAnimation("move_up", {player_fill, player_u1, player_u2});
-    addAnimation("move_down", {player_fill, player_d1, player_d2});
-    addAnimation("move_left", {player_fill, player_l1, player_l2});
-    addAnimation("move_right", {player_fill, player_r1, player_r2});
+    addAnimation("default", {player_fill, player_r1, player_r2}, 2);
+    addAnimation("move_up", {player_fill, player_u1, player_u2}, 2);
+    addAnimation("move_down", {player_fill, player_d1, player_d2}, 2);
+    addAnimation("move_left", {player_fill, player_l1, player_l2}, 2);
+    addAnimation("move_right", {player_fill, player_r1, player_r2}, 2);
     addAnimation("die", {player_die1, player_die2, player_die3, player_die4,
                          player_die5, player_die6, player_die7, player_die8,
-                         player_die9}, false);
+                         player_die9, player_die10}, 1, false);
 
     // Set the default animation
     setAnimation("default");

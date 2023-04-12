@@ -22,12 +22,15 @@ private:
     /** @brief wheather or not the animation should loop */
     bool should_loop;
 
+    /** @brief speed of the animation */
+    int speed = 1;
+
 public:
     /**
      * @brief Constructor for AnimationModel class
      * @param shouldLoop Specifies whether the animation should loop or not
      */
-    explicit AnimationModel(bool shouldLoop);
+    explicit AnimationModel(bool shouldLoop, int _speed);
 
     /**
      * @brief Getter for the list of sprites in the animation
@@ -52,6 +55,12 @@ public:
      * @return String representing the name of the animation
      */
     string getName() const;
+
+    /**
+     * @brief Getter for the speed of the animation
+     * @return int representing the speed of the animation
+     */
+    int getSpeed() const;
 
     /**
      * @brief Getter for the should_loop variable of the animation

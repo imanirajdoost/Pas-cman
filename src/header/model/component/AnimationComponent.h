@@ -96,7 +96,7 @@ public:
      * @param sps The list of sprites for the animation.
      * @param shouldLoop Whether or not the animation should loop.
      */
-    void addAnimation(const string &animName, const vector<SDL_Rect> &sps, bool shouldLoop = true);
+    void addAnimation(const string &animName, const vector<SDL_Rect> &sps,  int speed = 1, bool shouldLoop = true);
 
     /**
      * @brief Returns the next sprite in the current animation.

@@ -9,7 +9,7 @@ GameObject::GameObject(SDL_Rect defaultSp) : AnimationComponent(defaultSp), Tran
 
 }
 
-GameObject::GameObject(const string &newName, const vector<SDL_Rect> &sps, bool _isAnimated) : AnimationComponent(
+GameObject::GameObject(const string &newName, const vector<SDL_Rect> &sps,bool _isAnimated) : AnimationComponent(
         newName, sps, _isAnimated), TransformComponent() {
 
 }

@@ -24,8 +24,9 @@ void AnimationModel::addSprites(const std::vector<SDL_Rect> &sps) {
     }
 }
 
-AnimationModel::AnimationModel(bool shouldLoop) {
+AnimationModel::AnimationModel(bool shouldLoop, int _speed) {
     should_loop = shouldLoop;
+    speed = _speed;
 }
 
 void AnimationModel::addSprite(const SDL_Rect &sp) {
@@ -34,4 +35,8 @@ void AnimationModel::addSprite(const SDL_Rect &sp) {
 
 bool AnimationModel::getLoop() const {
     return should_loop;
+}
+
+int AnimationModel::getSpeed() const {
+    return speed;
 }
