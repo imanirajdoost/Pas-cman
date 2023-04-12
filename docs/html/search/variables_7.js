@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['health_5flist_390',['health_list',['../classTextViewController.html#a817baeed059dcea295447ff5f7f6e4d8',1,'TextViewController']]]
+  ['health_5flist_382',['health_list',['../classTextViewController.html#a817baeed059dcea295447ff5f7f6e4d8',1,'TextViewController']]]
 ];

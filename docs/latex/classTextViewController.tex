@@ -2,19 +2,24 @@
 \label{classTextViewController}\index{TextViewController@{TextViewController}}
 
 
+This class is responsible for managing the text UI elements.  
+
+
+
+
 {\ttfamily \#include $<$Text\+View\+Controller.\+h$>$}
 
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classTextViewController_a3b6f491a4f71615431043c061d537242}{Text\+View\+Controller}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Constructs the \mbox{\hyperlink{classTextViewController}{Text\+View\+Controller}} object and initializes all the characters. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classTextViewController_a6456bd830f59a061f1cb958752aafe94}{write\+On\+UI}} (const string \&id, const string \&text, int posX, int posY)
-\item 
+\begin{DoxyCompactList}\small\item\em Writes text on the screen at the given position and id. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classTextViewController_ad51abbc6370f7dcf1c6db74bb0a4d0f6}{write\+Score}} (int score)
-\item 
+\begin{DoxyCompactList}\small\item\em Writes the score on the screen. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classTextViewController_a411c74dcdab31e71399696978cbd719f}{set\+Health\+UI}} (short health)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Sets the health UI element to the given value. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -28,12 +33,19 @@ const int \mbox{\hyperlink{classTextViewController_af4005610b5d0e7dfb5ebbd3305cd
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+This class is responsible for managing the text UI elements. 
+
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classTextViewController_a3b6f491a4f71615431043c061d537242}\label{classTextViewController_a3b6f491a4f71615431043c061d537242}} 
 \index{TextViewController@{TextViewController}!TextViewController@{TextViewController}}
 \index{TextViewController@{TextViewController}!TextViewController@{TextViewController}}
 \doxysubsubsection{\texorpdfstring{TextViewController()}{TextViewController()}}
 {\footnotesize\ttfamily Text\+View\+Controller\+::\+Text\+View\+Controller (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructs the \mbox{\hyperlink{classTextViewController}{Text\+View\+Controller}} object and initializes all the characters. 
 
 
 
@@ -44,18 +56,51 @@ const int \mbox{\hyperlink{classTextViewController_af4005610b5d0e7dfb5ebbd3305cd
 \doxysubsubsection{\texorpdfstring{setHealthUI()}{setHealthUI()}}
 {\footnotesize\ttfamily void Text\+View\+Controller\+::set\+Health\+UI (\begin{DoxyParamCaption}\item[{short}]{health }\end{DoxyParamCaption})}
 
+
+
+Sets the health UI element to the given value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em health} & The health value to set. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classTextViewController_a6456bd830f59a061f1cb958752aafe94}\label{classTextViewController_a6456bd830f59a061f1cb958752aafe94}} 
 \index{TextViewController@{TextViewController}!writeOnUI@{writeOnUI}}
 \index{writeOnUI@{writeOnUI}!TextViewController@{TextViewController}}
 \doxysubsubsection{\texorpdfstring{writeOnUI()}{writeOnUI()}}
 {\footnotesize\ttfamily void Text\+View\+Controller\+::write\+On\+UI (\begin{DoxyParamCaption}\item[{const string \&}]{id,  }\item[{const string \&}]{text,  }\item[{int}]{posX,  }\item[{int}]{posY }\end{DoxyParamCaption})}
 
+
+
+Writes text on the screen at the given position and id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The id of the text to write. \\
+\hline
+{\em text} & The text to write. \\
+\hline
+{\em posX} & The x position to write the text. \\
+\hline
+{\em posY} & The y position to write the text. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classTextViewController_ad51abbc6370f7dcf1c6db74bb0a4d0f6}\label{classTextViewController_ad51abbc6370f7dcf1c6db74bb0a4d0f6}} 
 \index{TextViewController@{TextViewController}!writeScore@{writeScore}}
 \index{writeScore@{writeScore}!TextViewController@{TextViewController}}
 \doxysubsubsection{\texorpdfstring{writeScore()}{writeScore()}}
 {\footnotesize\ttfamily void Text\+View\+Controller\+::write\+Score (\begin{DoxyParamCaption}\item[{int}]{score }\end{DoxyParamCaption})}
 
+
+
+Writes the score on the screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em score} & The score to write. \\
+\hline
+\end{DoxyParams}
 
 
 \doxysubsection{Member Data Documentation}

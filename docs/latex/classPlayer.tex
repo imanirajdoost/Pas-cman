@@ -2,6 +2,11 @@
 \label{classPlayer}\index{Player@{Player}}
 
 
+Main pac-\/man player object.  
+
+
+
+
 {\ttfamily \#include $<$Player.\+h$>$}
 
 
@@ -16,26 +21,26 @@ Collaboration diagram for Player\+:
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classPlayer_a6f2dca59d73e30b327427076c63c8169}{Player}} (short init\+Health)
-\item 
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classPlayer_ae0e4bd8fa5c57275359dc3fe4e4b6027}{set\+Next\+Pos}} (const std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{Map_8h_a0dc0d3f05ebf63bd2133199d9429f6ad}{MTYPE}} $>$$>$ \&map, const \mbox{\hyperlink{MovableGameObject_8h_a00ec4eba48da32d6cbdf827185fd3d34}{Move\+Direction}} \&\mbox{\hyperlink{classMovableGameObject_afd37f5e247bb8e73b5481dcbc509a67d}{direction}}) override
-\item 
+\begin{DoxyCompactList}\small\item\em Set the next position of the player. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classPlayer_ac6247a19657e6b60302f4cf33452025e}{control\+Move}} (\mbox{\hyperlink{classCollisionController}{Collision\+Controller}} \&collision\+Controller)
-\item 
+\begin{DoxyCompactList}\small\item\em Control the player\textquotesingle{}s movement. \end{DoxyCompactList}\item 
 SDL\+\_\+\+Rect \mbox{\hyperlink{classPlayer_a4ad9959723238961b24afa28d81a55fa}{get\+Next\+Step\+Rect}} (\mbox{\hyperlink{MovableGameObject_8h_a00ec4eba48da32d6cbdf827185fd3d34}{Move\+Direction}} dir)
-\item 
+\begin{DoxyCompactList}\small\item\em Get the next step\textquotesingle{}s rectangle based on the intended direction. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classPlayer_a1d35b7b1cd1a890042abdfdc55cafb14}{move}} () override
-\item 
+\begin{DoxyCompactList}\small\item\em Move the player. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classPlayer_aa2854fa9a73fdc548f7c0afcdd3367fd}{die}} () override
-\begin{DoxyCompactList}\small\item\em Method to handle the object\textquotesingle{}s death when hit by a ghost. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Trigger the player\textquotesingle{}s death. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{MovableGameObject_8h_a00ec4eba48da32d6cbdf827185fd3d34}{Move\+Direction}} \mbox{\hyperlink{classPlayer_a269803fead43b59449be913fcb2d9e08}{get\+Move\+Intent}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Get the player\textquotesingle{}s intended movement direction. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classPlayer_a96e661281fcb15cd971b1b955d9f926e}{set\+Move\+Intent}} (const \mbox{\hyperlink{MovableGameObject_8h_a00ec4eba48da32d6cbdf827185fd3d34}{Move\+Direction}} \&\mbox{\hyperlink{classMovableGameObject_afd37f5e247bb8e73b5481dcbc509a67d}{direction}})
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Set the player\textquotesingle{}s intended movement direction. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
 
 
 \doxysubsection{Detailed Description}
-Main pac-\/man player object 
+Main pac-\/man player object. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classPlayer_a6f2dca59d73e30b327427076c63c8169}\label{classPlayer_a6f2dca59d73e30b327427076c63c8169}} 
@@ -46,6 +51,15 @@ Main pac-\/man player object
 
 
 
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em init\+Health} & Initial health of the player. \\
+\hline
+\end{DoxyParams}
+
+
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classPlayer_ac6247a19657e6b60302f4cf33452025e}\label{classPlayer_ac6247a19657e6b60302f4cf33452025e}} 
 \index{Player@{Player}!controlMove@{controlMove}}
@@ -53,6 +67,15 @@ Main pac-\/man player object
 \doxysubsubsection{\texorpdfstring{controlMove()}{controlMove()}}
 {\footnotesize\ttfamily void Player\+::control\+Move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCollisionController}{Collision\+Controller}} \&}]{collision\+Controller }\end{DoxyParamCaption})}
 
+
+
+Control the player\textquotesingle{}s movement. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em collision\+Controller} & The collision controller for checking collisions with walls. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classPlayer_aa2854fa9a73fdc548f7c0afcdd3367fd}\label{classPlayer_aa2854fa9a73fdc548f7c0afcdd3367fd}} 
 \index{Player@{Player}!die@{die}}
 \index{die@{die}!Player@{Player}}
@@ -61,7 +84,7 @@ Main pac-\/man player object
 
 
 
-Method to handle the object\textquotesingle{}s death when hit by a ghost. 
+Trigger the player\textquotesingle{}s death. 
 
 
 
@@ -73,17 +96,40 @@ Reimplemented from \mbox{\hyperlink{classHealthComponent_acb56069e1cb65afc6ff00d
 \doxysubsubsection{\texorpdfstring{getMoveIntent()}{getMoveIntent()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{MovableGameObject_8h_a00ec4eba48da32d6cbdf827185fd3d34}{Move\+Direction}} Player\+::get\+Move\+Intent (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
+
+
+Get the player\textquotesingle{}s intended movement direction. 
+
+\begin{DoxyReturn}{Returns}
+Move\+Direction The intended movement direction. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classPlayer_a4ad9959723238961b24afa28d81a55fa}\label{classPlayer_a4ad9959723238961b24afa28d81a55fa}} 
 \index{Player@{Player}!getNextStepRect@{getNextStepRect}}
 \index{getNextStepRect@{getNextStepRect}!Player@{Player}}
 \doxysubsubsection{\texorpdfstring{getNextStepRect()}{getNextStepRect()}}
 {\footnotesize\ttfamily SDL\+\_\+\+Rect Player\+::get\+Next\+Step\+Rect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{MovableGameObject_8h_a00ec4eba48da32d6cbdf827185fd3d34}{Move\+Direction}}}]{dir }\end{DoxyParamCaption})}
 
+
+
+Get the next step\textquotesingle{}s rectangle based on the intended direction. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dir} & The intended direction to move. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+SDL\+\_\+\+Rect The next step\textquotesingle{}s rectangle. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classPlayer_a1d35b7b1cd1a890042abdfdc55cafb14}\label{classPlayer_a1d35b7b1cd1a890042abdfdc55cafb14}} 
 \index{Player@{Player}!move@{move}}
 \index{move@{move}!Player@{Player}}
 \doxysubsubsection{\texorpdfstring{move()}{move()}}
 {\footnotesize\ttfamily void Player\+::move (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Move the player. 
 
 
 
@@ -95,12 +141,32 @@ Reimplemented from \mbox{\hyperlink{classMovableGameObject_a7e4411553a799980b150
 \doxysubsubsection{\texorpdfstring{setMoveIntent()}{setMoveIntent()}}
 {\footnotesize\ttfamily void Player\+::set\+Move\+Intent (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{MovableGameObject_8h_a00ec4eba48da32d6cbdf827185fd3d34}{Move\+Direction}} \&}]{direction }\end{DoxyParamCaption})}
 
+
+
+Set the player\textquotesingle{}s intended movement direction. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em direction} & The intended movement direction. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classPlayer_ae0e4bd8fa5c57275359dc3fe4e4b6027}\label{classPlayer_ae0e4bd8fa5c57275359dc3fe4e4b6027}} 
 \index{Player@{Player}!setNextPos@{setNextPos}}
 \index{setNextPos@{setNextPos}!Player@{Player}}
 \doxysubsubsection{\texorpdfstring{setNextPos()}{setNextPos()}}
 {\footnotesize\ttfamily void Player\+::set\+Next\+Pos (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{Map_8h_a0dc0d3f05ebf63bd2133199d9429f6ad}{MTYPE}} $>$$>$ \&}]{map,  }\item[{const \mbox{\hyperlink{MovableGameObject_8h_a00ec4eba48da32d6cbdf827185fd3d34}{Move\+Direction}} \&}]{direction }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
+
+
+Set the next position of the player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em map} & The game map. \\
+\hline
+{\em direction} & The intended direction to move. \\
+\hline
+\end{DoxyParams}
 
 
 Implements \mbox{\hyperlink{classMovableGameObject_aeef74fd11fdb5894d3ea2db0a2a20f99}{Movable\+Game\+Object}}.

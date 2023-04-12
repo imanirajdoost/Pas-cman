@@ -2,6 +2,11 @@
 \label{classFruitController}\index{FruitController@{FruitController}}
 
 
+The \mbox{\hyperlink{classFruitController}{Fruit\+Controller}} class manages the spawn and deletion of the bonus fruit object.  
+
+
+
+
 {\ttfamily \#include $<$Fruit\+Controller.\+h$>$}
 
 
@@ -12,17 +17,20 @@ Collaboration diagram for Fruit\+Controller\+:
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classFruitController_aac04123367be4be617146bb3a16851cf}{Fruit\+Controller}} (shared\+\_\+ptr$<$ \mbox{\hyperlink{classTimeController}{Time\+Controller}} $>$ t\+Controller)
-\item 
+\begin{DoxyCompactList}\small\item\em Constructs a new \mbox{\hyperlink{classFruitController}{Fruit\+Controller}} object. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classFruitController_a1c95a4fed9c7cc624e698a72224492a2}{delete\+Fruit}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Deletes the bonus fruit object. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classFruitController_a01cdf0c800cf08314f0bada460d94ac9}{tick}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The function called by the game loop that handles the logic of the bonus fruit spawn time. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classFruit}{Fruit}} \mbox{\hyperlink{classFruitController_a3152c3d9d59d76f534e0b4a15a3a89fa}{fruit}}
 \end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classFruitController}{Fruit\+Controller}} class manages the spawn and deletion of the bonus fruit object. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classFruitController_aac04123367be4be617146bb3a16851cf}\label{classFruitController_aac04123367be4be617146bb3a16851cf}} 
@@ -33,6 +41,15 @@ void \mbox{\hyperlink{classFruitController_a01cdf0c800cf08314f0bada460d94ac9}{ti
 
 
 
+Constructs a new \mbox{\hyperlink{classFruitController}{Fruit\+Controller}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+Controller} & A shared pointer to the \mbox{\hyperlink{classTimeController}{Time\+Controller}} object. \\
+\hline
+\end{DoxyParams}
+
+
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classFruitController_a1c95a4fed9c7cc624e698a72224492a2}\label{classFruitController_a1c95a4fed9c7cc624e698a72224492a2}} 
 \index{FruitController@{FruitController}!deleteFruit@{deleteFruit}}
@@ -40,11 +57,22 @@ void \mbox{\hyperlink{classFruitController_a01cdf0c800cf08314f0bada460d94ac9}{ti
 \doxysubsubsection{\texorpdfstring{deleteFruit()}{deleteFruit()}}
 {\footnotesize\ttfamily bool Fruit\+Controller\+::delete\+Fruit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Deletes the bonus fruit object. 
+
+\begin{DoxyReturn}{Returns}
+A boolean value indicating if the deletion was successful. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classFruitController_a01cdf0c800cf08314f0bada460d94ac9}\label{classFruitController_a01cdf0c800cf08314f0bada460d94ac9}} 
 \index{FruitController@{FruitController}!tick@{tick}}
 \index{tick@{tick}!FruitController@{FruitController}}
 \doxysubsubsection{\texorpdfstring{tick()}{tick()}}
 {\footnotesize\ttfamily void Fruit\+Controller\+::tick (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+The function called by the game loop that handles the logic of the bonus fruit spawn time. 
 
 
 
@@ -55,7 +83,7 @@ void \mbox{\hyperlink{classFruitController_a01cdf0c800cf08314f0bada460d94ac9}{ti
 \doxysubsubsection{\texorpdfstring{fruit}{fruit}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classFruit}{Fruit}} Fruit\+Controller\+::fruit}
 
-
+The bonus fruit object. 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

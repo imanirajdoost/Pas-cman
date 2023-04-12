@@ -82,7 +82,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab1c27f23585b5f22421e195c37f8d94a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerController.html#ab1c27f23585b5f22421e195c37f8d94a">tick</a> ()</td></tr>
 <tr class="separator:ab1c27f23585b5f22421e195c37f8d94a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p><a class="el" href="classPlayerController.html">PlayerController</a> class manages the Pac-Man player's movements, actions and interactions with other game objects. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="abc81ddad656a9d21a9ebf1cb9dd605df"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abc81ddad656a9d21a9ebf1cb9dd605df">&#9670;&nbsp;</a></span>PlayerController()</h2>
 
@@ -144,6 +146,19 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Constructor for <a class="el" href="classPlayerController.html">PlayerController</a>. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">colController</td><td>A shared pointer to the <a class="el" href="classCollisionController.html" title="Handles collision between two objects.">CollisionController</a> object. </td></tr>
+    <tr><td class="paramname">p</td><td>A shared pointer to the <a class="el" href="classPlayer.html" title="Main pac-man player object.">Player</a> object. </td></tr>
+    <tr><td class="paramname">dController</td><td>A shared pointer to the <a class="el" href="classDotController.html" title="Manages the creation, deletion and tracking of Dots in the game.">DotController</a> object. </td></tr>
+    <tr><td class="paramname">fController</td><td>A shared pointer to the <a class="el" href="classFruitController.html" title="The FruitController class manages the spawn and deletion of the bonus fruit object.">FruitController</a> object. </td></tr>
+    <tr><td class="paramname">sController</td><td>A shared pointer to the <a class="el" href="classScoreController.html">ScoreController</a> object. </td></tr>
+    <tr><td class="paramname">tController</td><td>A shared pointer to the <a class="el" href="classTextViewController.html" title="This class is responsible for managing the text UI elements.">TextViewController</a> object. </td></tr>
+    <tr><td class="paramname">gController</td><td>A shared pointer to the <a class="el" href="classGhostController.html">GhostController</a> object. </td></tr>
+    <tr><td class="paramname">pController</td><td>A shared pointer to the <a class="el" href="classPauseController.html">PauseController</a> object. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -163,6 +178,12 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Sets the move intent for the Pac-Man player. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">direction</td><td>The intended movement direction of the player. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -180,6 +201,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Tick function for the <a class="el" href="classPlayerController.html">PlayerController</a>. Called on every frame. </p>
 
 </div>
 </div>

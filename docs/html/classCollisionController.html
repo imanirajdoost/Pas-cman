@@ -72,27 +72,39 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Handles collision between two objects.  
+ <a href="classCollisionController.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="CollisionController_8h_source.html">CollisionController.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a8e2bc05c3336703165ca93e2e4fec4ea"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCollisionController.html#a8e2bc05c3336703165ca93e2e4fec4ea">isWallDetectedAtDirection</a> (const SDL_Rect &amp;sourceRect, const <a class="el" href="MovableGameObject_8h.html#a00ec4eba48da32d6cbdf827185fd3d34">MoveDirection</a> &amp;direction)</td></tr>
+<tr class="memdesc:a8e2bc05c3336703165ca93e2e4fec4ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if there is a wall detected at given direction from a given source rectangle.  <a href="classCollisionController.html#a8e2bc05c3336703165ca93e2e4fec4ea">More...</a><br /></td></tr>
 <tr class="separator:a8e2bc05c3336703165ca93e2e4fec4ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad57d4e4c154ca944ea3948258af21c54"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCollider.html">Collider</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCollisionController.html#ad57d4e4c154ca944ea3948258af21c54">getRectAtDirection</a> (const SDL_Rect &amp;targetPos, const <a class="el" href="MovableGameObject_8h.html#a00ec4eba48da32d6cbdf827185fd3d34">MoveDirection</a> &amp;direction)</td></tr>
+<tr class="memdesc:ad57d4e4c154ca944ea3948258af21c54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the collider rectangle at given direction from a given target position.  <a href="classCollisionController.html#ad57d4e4c154ca944ea3948258af21c54">More...</a><br /></td></tr>
 <tr class="separator:ad57d4e4c154ca944ea3948258af21c54"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd64b09eb1c542a0ecaff722adc7322f"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="classCollider.html">Collider</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCollisionController.html#acd64b09eb1c542a0ecaff722adc7322f">getRectsAtDirection</a> (const SDL_Rect &amp;targetPos, const <a class="el" href="MovableGameObject_8h.html#a00ec4eba48da32d6cbdf827185fd3d34">MoveDirection</a> &amp;direction)</td></tr>
+<tr class="memdesc:acd64b09eb1c542a0ecaff722adc7322f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a vector of collider rectangles at given direction from a given target position.  <a href="classCollisionController.html#acd64b09eb1c542a0ecaff722adc7322f">More...</a><br /></td></tr>
 <tr class="separator:acd64b09eb1c542a0ecaff722adc7322f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a069123b8a3590d561d70c8ec95b07d73"><td class="memItemLeft" align="right" valign="top"><a class="el" href="Map_8h.html#a0dc0d3f05ebf63bd2133199d9429f6ad">MTYPE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCollisionController.html#a069123b8a3590d561d70c8ec95b07d73">getObjectTypeAt</a> (const SDL_Rect &amp;targetPos)</td></tr>
+<tr class="memdesc:a069123b8a3590d561d70c8ec95b07d73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the object type at a given target position.  <a href="classCollisionController.html#a069123b8a3590d561d70c8ec95b07d73">More...</a><br /></td></tr>
 <tr class="separator:a069123b8a3590d561d70c8ec95b07d73"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6c1609a06ef6669ebe7d196a2f1e1ca5"><td class="memItemLeft" align="right" valign="top">SDL_Rect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCollisionController.html#a6c1609a06ef6669ebe7d196a2f1e1ca5">getRectAt</a> (const SDL_Rect &amp;targetPos)</td></tr>
+<tr class="memdesc:a6c1609a06ef6669ebe7d196a2f1e1ca5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the rectangle at a given target position.  <a href="classCollisionController.html#a6c1609a06ef6669ebe7d196a2f1e1ca5">More...</a><br /></td></tr>
 <tr class="separator:a6c1609a06ef6669ebe7d196a2f1e1ca5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6263b0875ce33de2d34348a3f6ea212d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCollisionController.html#a6263b0875ce33de2d34348a3f6ea212d">hasCollision</a> (const SDL_Rect &amp;rect1, const SDL_Rect &amp;rect2)</td></tr>
+<tr class="memdesc:a6263b0875ce33de2d34348a3f6ea212d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if there is a collision between two rectangles.  <a href="classCollisionController.html#a6263b0875ce33de2d34348a3f6ea212d">More...</a><br /></td></tr>
 <tr class="separator:a6263b0875ce33de2d34348a3f6ea212d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a32ffd8aa2b3a1f932745e638b8c02a1a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCollisionController.html#a32ffd8aa2b3a1f932745e638b8c02a1a">isCollision</a> (const std::vector&lt; std::vector&lt; <a class="el" href="Map_8h.html#a0dc0d3f05ebf63bd2133199d9429f6ad">MTYPE</a> &gt;&gt; &amp;map, const <a class="el" href="classMovableGameObject.html">MovableGameObject</a> &amp;targetObj, const <a class="el" href="Map_8h.html#a0dc0d3f05ebf63bd2133199d9429f6ad">MTYPE</a> &amp;obj, const SDL_Rect &amp;collisionOffset)</td></tr>
+<tr class="memdesc:a32ffd8aa2b3a1f932745e638b8c02a1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if there is a collision between a movable game object and a non-movable game object at given offset.  <a href="classCollisionController.html#a32ffd8aa2b3a1f932745e638b8c02a1a">More...</a><br /></td></tr>
 <tr class="separator:a32ffd8aa2b3a1f932745e638b8c02a1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a57a758f53c7630ba19cf684a489bd3fc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="Map_8h.html#a0dc0d3f05ebf63bd2133199d9429f6ad">MTYPE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCollisionController.html#a57a758f53c7630ba19cf684a489bd3fc">getNextCOLOBJ</a> (const std::vector&lt; std::vector&lt; <a class="el" href="Map_8h.html#a0dc0d3f05ebf63bd2133199d9429f6ad">MTYPE</a> &gt;&gt; &amp;map, const SDL_Rect &amp;targetPos)</td></tr>
+<tr class="memdesc:a57a758f53c7630ba19cf684a489bd3fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the next collision object type at a given target position.  <a href="classCollisionController.html#a57a758f53c7630ba19cf684a489bd3fc">More...</a><br /></td></tr>
 <tr class="separator:a57a758f53c7630ba19cf684a489bd3fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a238ce02d57634b568a8fbdd0424e943f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCollisionController.html#a238ce02d57634b568a8fbdd0424e943f">getCollisionWithTeleportDoor</a> (const SDL_Rect &amp;targetPos)</td></tr>
+<tr class="memdesc:a238ce02d57634b568a8fbdd0424e943f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the collision with teleporter.  <a href="classCollisionController.html#a238ce02d57634b568a8fbdd0424e943f">More...</a><br /></td></tr>
 <tr class="separator:a238ce02d57634b568a8fbdd0424e943f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -101,7 +113,7 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a9732ac987b387fe7b4f4529350e31be0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Handles collision between two objects </p>
+<div class="textblock"><p>Handles collision between two objects. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a238ce02d57634b568a8fbdd0424e943f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a238ce02d57634b568a8fbdd0424e943f">&#9670;&nbsp;</a></span>getCollisionWithTeleportDoor()</h2>
@@ -118,6 +130,15 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Gets the collision with teleporter. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">targetPos</td><td>The target position to get the next collision object type from </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>-1 for nothing, 0 for left collision and 1 for right collision </dd></dl>
 
 </div>
 </div>
@@ -147,6 +168,16 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Gets the next collision object type at a given target position. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">map</td><td>The game map </td></tr>
+    <tr><td class="paramname">targetPos</td><td>The target position to get the next collision object type from </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The next collision object type at the given target position </dd></dl>
+
 </div>
 </div>
 <a id="a069123b8a3590d561d70c8ec95b07d73"></a>
@@ -165,6 +196,15 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Gets the object type at a given target position. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">targetPos</td><td>The target position to get the object type from </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The object type at the given target position </dd></dl>
+
 </div>
 </div>
 <a id="a6c1609a06ef6669ebe7d196a2f1e1ca5"></a>
@@ -182,6 +222,15 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Gets the rectangle at a given target position. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">targetPos</td><td>The target position to get the rectangle from </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The rectangle at the given target position </dd></dl>
 
 </div>
 </div>
@@ -211,6 +260,16 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Gets the collider rectangle at given direction from a given target position. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">targetPos</td><td>The target position to get collider from </td></tr>
+    <tr><td class="paramname">direction</td><td>The direction to get the collider </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The collider rectangle at the given direction </dd></dl>
+
 </div>
 </div>
 <a id="acd64b09eb1c542a0ecaff722adc7322f"></a>
@@ -239,6 +298,16 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Gets a vector of collider rectangles at given direction from a given target position. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">targetPos</td><td>The target position to get colliders from </td></tr>
+    <tr><td class="paramname">direction</td><td>The direction to get the colliders </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A vector of collider rectangles at the given direction </dd></dl>
+
 </div>
 </div>
 <a id="a6263b0875ce33de2d34348a3f6ea212d"></a>
@@ -266,6 +335,16 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Checks if there is a collision between two rectangles. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rect1</td><td>The first rectangle to check for collision </td></tr>
+    <tr><td class="paramname">rect2</td><td>The second rectangle to check for collision </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if there is a collision detected, false otherwise </dd></dl>
 
 </div>
 </div>
@@ -307,6 +386,18 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Checks if there is a collision between a movable game object and a non-movable game object at given offset. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">map</td><td>The game map </td></tr>
+    <tr><td class="paramname">targetObj</td><td>The movable game object to check collision for </td></tr>
+    <tr><td class="paramname">obj</td><td>The non-movable game object to check collision with </td></tr>
+    <tr><td class="paramname">collisionOffset</td><td>The offset to use for collision check </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if there is a collision detected, false otherwise </dd></dl>
+
 </div>
 </div>
 <a id="a8e2bc05c3336703165ca93e2e4fec4ea"></a>
@@ -334,6 +425,16 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Checks if there is a wall detected at given direction from a given source rectangle. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sourceRect</td><td>The source rectangle to check </td></tr>
+    <tr><td class="paramname">direction</td><td>The direction to check for wall </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if there is a wall detected, false otherwise </dd></dl>
 
 </div>
 </div>

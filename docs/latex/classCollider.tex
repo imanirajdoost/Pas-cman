@@ -2,20 +2,28 @@
 \label{classCollider}\index{Collider@{Collider}}
 
 
+The \mbox{\hyperlink{classCollider}{Collider}} class is used for defining the collision properties of an object.  
+
+
+
+
 {\ttfamily \#include $<$Collider.\+h$>$}
 
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{classCollider_aa2747508564564a8f819ac6cf60d7727}{set\+Type}} (const \mbox{\hyperlink{Map_8h_a0dc0d3f05ebf63bd2133199d9429f6ad}{MTYPE}} \&type\+To\+Set)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the type of the collision. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{Map_8h_a0dc0d3f05ebf63bd2133199d9429f6ad}{MTYPE}} \mbox{\hyperlink{classCollider_a8b2d102c1b4339314918d35c19da7712}{get\+Type}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Gets the type of the collision. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classCollider_afc9293710481111623309f8a5294329e}{set\+Rect}} (const SDL\+\_\+\+Rect \&rect\+To\+Set)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the bounding box of the collider. \end{DoxyCompactList}\item 
 SDL\+\_\+\+Rect \mbox{\hyperlink{classCollider_ab5153eebada779dcaa00c76ab6141424}{get\+Rect}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Gets the bounding box of the collider. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classCollider}{Collider}} class is used for defining the collision properties of an object. 
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classCollider_ab5153eebada779dcaa00c76ab6141424}\label{classCollider_ab5153eebada779dcaa00c76ab6141424}} 
@@ -24,24 +32,56 @@ SDL\+\_\+\+Rect \mbox{\hyperlink{classCollider_ab5153eebada779dcaa00c76ab6141424
 \doxysubsubsection{\texorpdfstring{getRect()}{getRect()}}
 {\footnotesize\ttfamily SDL\+\_\+\+Rect Collider\+::get\+Rect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Gets the bounding box of the collider. 
+
+\begin{DoxyReturn}{Returns}
+The bounding box of the collider 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classCollider_a8b2d102c1b4339314918d35c19da7712}\label{classCollider_a8b2d102c1b4339314918d35c19da7712}} 
 \index{Collider@{Collider}!getType@{getType}}
 \index{getType@{getType}!Collider@{Collider}}
 \doxysubsubsection{\texorpdfstring{getType()}{getType()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{Map_8h_a0dc0d3f05ebf63bd2133199d9429f6ad}{MTYPE}} Collider\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
+
+
+Gets the type of the collision. 
+
+\begin{DoxyReturn}{Returns}
+The type of the collision 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classCollider_afc9293710481111623309f8a5294329e}\label{classCollider_afc9293710481111623309f8a5294329e}} 
 \index{Collider@{Collider}!setRect@{setRect}}
 \index{setRect@{setRect}!Collider@{Collider}}
 \doxysubsubsection{\texorpdfstring{setRect()}{setRect()}}
 {\footnotesize\ttfamily void Collider\+::set\+Rect (\begin{DoxyParamCaption}\item[{const SDL\+\_\+\+Rect \&}]{rect\+To\+Set }\end{DoxyParamCaption})}
 
+
+
+Sets the bounding box of the collider. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rect\+To\+Set} & The bounding box of the collider \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classCollider_aa2747508564564a8f819ac6cf60d7727}\label{classCollider_aa2747508564564a8f819ac6cf60d7727}} 
 \index{Collider@{Collider}!setType@{setType}}
 \index{setType@{setType}!Collider@{Collider}}
 \doxysubsubsection{\texorpdfstring{setType()}{setType()}}
 {\footnotesize\ttfamily void Collider\+::set\+Type (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{Map_8h_a0dc0d3f05ebf63bd2133199d9429f6ad}{MTYPE}} \&}]{type\+To\+Set }\end{DoxyParamCaption})}
 
+
+
+Sets the type of the collision. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type\+To\+Set} & The type of the collision \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

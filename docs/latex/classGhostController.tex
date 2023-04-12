@@ -8,11 +8,11 @@
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classGhostController_aa8b7bb6f3bfbe65c9cd9ae40bad1844e}{Ghost\+Controller}} (shared\+\_\+ptr$<$ \mbox{\hyperlink{classInky}{Inky}} $>$ i\+Ghost, shared\+\_\+ptr$<$ \mbox{\hyperlink{classPinky}{Pinky}} $>$ p\+Ghost, shared\+\_\+ptr$<$ \mbox{\hyperlink{classBlinky}{Blinky}} $>$ b\+Ghost, shared\+\_\+ptr$<$ \mbox{\hyperlink{classClyde}{Clyde}} $>$ c\+Ghost, shared\+\_\+ptr$<$ \mbox{\hyperlink{classCollisionController}{Collision\+Controller}} $>$ col\+Controller)
-\item 
+\begin{DoxyCompactList}\small\item\em Constructor for \mbox{\hyperlink{classGhostController}{Ghost\+Controller}}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classGhostController_acc19fa7468f0ac60e74f46cbd958ce48}{tick}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Runs each ghost\textquotesingle{}s individual tick method and checks if any collisions occur. \end{DoxyCompactList}\item 
 shared\+\_\+ptr$<$ vector$<$ shared\+\_\+ptr$<$ \mbox{\hyperlink{classGhost}{Ghost}} $>$ $>$ $>$ \mbox{\hyperlink{classGhostController_a909dffa26b7438a737d7cfe795d774bc}{get\+All\+Ghosts}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Returns all ghosts as a shared pointer to a vector of shared pointers to \mbox{\hyperlink{classGhost}{Ghost}} objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
@@ -24,6 +24,23 @@ shared\+\_\+ptr$<$ vector$<$ shared\+\_\+ptr$<$ \mbox{\hyperlink{classGhost}{Gho
 
 
 
+Constructor for \mbox{\hyperlink{classGhostController}{Ghost\+Controller}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i\+Ghost} & shared pointer to the \mbox{\hyperlink{classInky}{Inky}} ghost \\
+\hline
+{\em p\+Ghost} & shared pointer to the \mbox{\hyperlink{classPinky}{Pinky}} ghost \\
+\hline
+{\em b\+Ghost} & shared pointer to the \mbox{\hyperlink{classBlinky}{Blinky}} ghost \\
+\hline
+{\em c\+Ghost} & shared pointer to the \mbox{\hyperlink{classClyde}{Clyde}} ghost \\
+\hline
+{\em col\+Controller} & shared pointer to the \mbox{\hyperlink{classCollisionController}{Collision\+Controller}} \\
+\hline
+\end{DoxyParams}
+
+
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classGhostController_a909dffa26b7438a737d7cfe795d774bc}\label{classGhostController_a909dffa26b7438a737d7cfe795d774bc}} 
 \index{GhostController@{GhostController}!getAllGhosts@{getAllGhosts}}
@@ -31,11 +48,22 @@ shared\+\_\+ptr$<$ vector$<$ shared\+\_\+ptr$<$ \mbox{\hyperlink{classGhost}{Gho
 \doxysubsubsection{\texorpdfstring{getAllGhosts()}{getAllGhosts()}}
 {\footnotesize\ttfamily shared\+\_\+ptr$<$vector$<$shared\+\_\+ptr$<$\mbox{\hyperlink{classGhost}{Ghost}}$>$ $>$ $>$ Ghost\+Controller\+::get\+All\+Ghosts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Returns all ghosts as a shared pointer to a vector of shared pointers to \mbox{\hyperlink{classGhost}{Ghost}} objects. 
+
+\begin{DoxyReturn}{Returns}
+shared pointer to a vector of shared pointers to \mbox{\hyperlink{classGhost}{Ghost}} objects 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classGhostController_acc19fa7468f0ac60e74f46cbd958ce48}\label{classGhostController_acc19fa7468f0ac60e74f46cbd958ce48}} 
 \index{GhostController@{GhostController}!tick@{tick}}
 \index{tick@{tick}!GhostController@{GhostController}}
 \doxysubsubsection{\texorpdfstring{tick()}{tick()}}
 {\footnotesize\ttfamily void Ghost\+Controller\+::tick (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Runs each ghost\textquotesingle{}s individual tick method and checks if any collisions occur. 
 
 
 

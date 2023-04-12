@@ -72,29 +72,41 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Manages the creation, deletion and tracking of Dots in the game.  
+ <a href="classDotController.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="DotController_8h_source.html">DotController.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a1e45e49f2b139f109a1e5601217f11a3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDotController.html#a1e45e49f2b139f109a1e5601217f11a3">DotController</a> (shared_ptr&lt; <a class="el" href="classPauseController.html">PauseController</a> &gt; pController, shared_ptr&lt; <a class="el" href="classTextViewController.html">TextViewController</a> &gt; tController)</td></tr>
+<tr class="memdesc:a1e45e49f2b139f109a1e5601217f11a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the <a class="el" href="classDotController.html" title="Manages the creation, deletion and tracking of Dots in the game.">DotController</a> class.  <a href="classDotController.html#a1e45e49f2b139f109a1e5601217f11a3">More...</a><br /></td></tr>
 <tr class="separator:a1e45e49f2b139f109a1e5601217f11a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a55dc40b0b1cf4fa8d436d25baa07786f"><td class="memItemLeft" align="right" valign="top">shared_ptr&lt; <a class="el" href="classDotSmall.html">DotSmall</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDotController.html#a55dc40b0b1cf4fa8d436d25baa07786f">spawnDotSmall</a> (int x, int y)</td></tr>
+<tr class="memdesc:a55dc40b0b1cf4fa8d436d25baa07786f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Spawns a <a class="el" href="classDotSmall.html" title="The DotSmall class, which represents the small dots that Pacman can eat.">DotSmall</a> object at the given position.  <a href="classDotController.html#a55dc40b0b1cf4fa8d436d25baa07786f">More...</a><br /></td></tr>
 <tr class="separator:a55dc40b0b1cf4fa8d436d25baa07786f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8ad3260543faed76259eea94bc280ec3"><td class="memItemLeft" align="right" valign="top">vector&lt; shared_ptr&lt; <a class="el" href="classDot.html">Dot</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDotController.html#a8ad3260543faed76259eea94bc280ec3">spawnDotObjects</a> ()</td></tr>
+<tr class="memdesc:a8ad3260543faed76259eea94bc280ec3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Spawns all the <a class="el" href="classDot.html">Dot</a> objects in the game map.  <a href="classDotController.html#a8ad3260543faed76259eea94bc280ec3">More...</a><br /></td></tr>
 <tr class="separator:a8ad3260543faed76259eea94bc280ec3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f99b80b8d7126877f50af519663da82"><td class="memItemLeft" align="right" valign="top">shared_ptr&lt; <a class="el" href="classDotBig.html">DotBig</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDotController.html#a3f99b80b8d7126877f50af519663da82">spawnDotBig</a> (int x, int y)</td></tr>
+<tr class="memdesc:a3f99b80b8d7126877f50af519663da82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Spawns a <a class="el" href="classDotBig.html" title="The DotBig class represents the big dots that are eaten by Pacman.">DotBig</a> object at the given position.  <a href="classDotController.html#a3f99b80b8d7126877f50af519663da82">More...</a><br /></td></tr>
 <tr class="separator:a3f99b80b8d7126877f50af519663da82"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a35dd6015736734be62a678e933709aea"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDotController.html#a35dd6015736734be62a678e933709aea">deleteDot</a> (const <a class="el" href="classDot.html">Dot</a> &amp;dot)</td></tr>
+<tr class="memdesc:a35dd6015736734be62a678e933709aea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes the given <a class="el" href="classDot.html">Dot</a> object from the dots vector.  <a href="classDotController.html#a35dd6015736734be62a678e933709aea">More...</a><br /></td></tr>
 <tr class="separator:a35dd6015736734be62a678e933709aea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a23fae90e998a8d72539c6073bbd8bdeb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDotController.html#a23fae90e998a8d72539c6073bbd8bdeb">isBigDot</a> (int i, int j)</td></tr>
+<tr class="memdesc:a23fae90e998a8d72539c6073bbd8bdeb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a Big <a class="el" href="classDot.html">Dot</a> exists at the given position.  <a href="classDotController.html#a23fae90e998a8d72539c6073bbd8bdeb">More...</a><br /></td></tr>
 <tr class="separator:a23fae90e998a8d72539c6073bbd8bdeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:aa1530ea658bce9f5f34706290df748fa"><td class="memItemLeft" align="right" valign="top">vector&lt; shared_ptr&lt; <a class="el" href="classDot.html">Dot</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDotController.html#aa1530ea658bce9f5f34706290df748fa">dots</a></td></tr>
+<tr class="memdesc:aa1530ea658bce9f5f34706290df748fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">A vector to store all the <a class="el" href="classDot.html">Dot</a> instances.  <a href="classDotController.html#aa1530ea658bce9f5f34706290df748fa">More...</a><br /></td></tr>
 <tr class="separator:aa1530ea658bce9f5f34706290df748fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Manages the creation, deletion and tracking of Dots in the game. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a1e45e49f2b139f109a1e5601217f11a3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1e45e49f2b139f109a1e5601217f11a3">&#9670;&nbsp;</a></span>DotController()</h2>
 
@@ -129,6 +141,15 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Constructor for the <a class="el" href="classDotController.html" title="Manages the creation, deletion and tracking of Dots in the game.">DotController</a> class. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pController</td><td>The <a class="el" href="classPauseController.html">PauseController</a> instance </td></tr>
+    <tr><td class="paramname">tController</td><td>The <a class="el" href="classTextViewController.html" title="This class is responsible for managing the text UI elements.">TextViewController</a> instance </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -147,6 +168,15 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Deletes the given <a class="el" href="classDot.html">Dot</a> object from the dots vector. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dot</td><td>The <a class="el" href="classDot.html">Dot</a> object to be deleted </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the <a class="el" href="classDot.html">Dot</a> was found and deleted, False otherwise </dd></dl>
 
 </div>
 </div>
@@ -176,6 +206,16 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Checks if a Big <a class="el" href="classDot.html">Dot</a> exists at the given position. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i</td><td>The x-coordinate of the position </td></tr>
+    <tr><td class="paramname">j</td><td>The y-coordinate of the position </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if a Big <a class="el" href="classDot.html">Dot</a> exists, False otherwise </dd></dl>
+
 </div>
 </div>
 <a id="a3f99b80b8d7126877f50af519663da82"></a>
@@ -204,6 +244,16 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Spawns a <a class="el" href="classDotBig.html" title="The DotBig class represents the big dots that are eaten by Pacman.">DotBig</a> object at the given position. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>The x-coordinate of the position </td></tr>
+    <tr><td class="paramname">y</td><td>The y-coordinate of the position </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A shared_ptr to the spawned <a class="el" href="classDotBig.html" title="The DotBig class represents the big dots that are eaten by Pacman.">DotBig</a> object </dd></dl>
+
 </div>
 </div>
 <a id="a8ad3260543faed76259eea94bc280ec3"></a>
@@ -220,6 +270,9 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Spawns all the <a class="el" href="classDot.html">Dot</a> objects in the game map. </p>
+<dl class="section return"><dt>Returns</dt><dd>A vector of shared_ptr to the spawned <a class="el" href="classDot.html">Dot</a> objects </dd></dl>
 
 </div>
 </div>
@@ -249,6 +302,16 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Spawns a <a class="el" href="classDotSmall.html" title="The DotSmall class, which represents the small dots that Pacman can eat.">DotSmall</a> object at the given position. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>The x-coordinate of the position </td></tr>
+    <tr><td class="paramname">y</td><td>The y-coordinate of the position </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A shared_ptr to the spawned <a class="el" href="classDotSmall.html" title="The DotSmall class, which represents the small dots that Pacman can eat.">DotSmall</a> object </dd></dl>
+
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -263,6 +326,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>A vector to store all the <a class="el" href="classDot.html">Dot</a> instances. </p>
 
 </div>
 </div>

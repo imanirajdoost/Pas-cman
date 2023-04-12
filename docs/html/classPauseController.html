@@ -76,16 +76,22 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a8492fceb5588ac8c4360edfb3f0f1c92"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPauseController.html#a8492fceb5588ac8c4360edfb3f0f1c92">PauseController</a> (shared_ptr&lt; <a class="el" href="classTimeController.html">TimeController</a> &gt; tController)</td></tr>
+<tr class="memdesc:a8492fceb5588ac8c4360edfb3f0f1c92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for <a class="el" href="classPauseController.html">PauseController</a> class.  <a href="classPauseController.html#a8492fceb5588ac8c4360edfb3f0f1c92">More...</a><br /></td></tr>
 <tr class="separator:a8492fceb5588ac8c4360edfb3f0f1c92"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab1ed280d1b8a4051cc03845992592560"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPauseController.html#ab1ed280d1b8a4051cc03845992592560">pause</a> ()</td></tr>
+<tr class="memdesc:ab1ed280d1b8a4051cc03845992592560"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pauses the game.  <a href="classPauseController.html#ab1ed280d1b8a4051cc03845992592560">More...</a><br /></td></tr>
 <tr class="separator:ab1ed280d1b8a4051cc03845992592560"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa425f26ef9a89de68f43b0c19cc57ce8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPauseController.html#aa425f26ef9a89de68f43b0c19cc57ce8">resume</a> ()</td></tr>
+<tr class="memdesc:aa425f26ef9a89de68f43b0c19cc57ce8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resumes the game.  <a href="classPauseController.html#aa425f26ef9a89de68f43b0c19cc57ce8">More...</a><br /></td></tr>
 <tr class="separator:aa425f26ef9a89de68f43b0c19cc57ce8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae380fee8932a427afb4350a45545da2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPauseController.html#aae380fee8932a427afb4350a45545da2">pauseFor</a> (long milliSec)</td></tr>
+<tr class="memdesc:aae380fee8932a427afb4350a45545da2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pauses the game for a specific amount of time.  <a href="classPauseController.html#aae380fee8932a427afb4350a45545da2">More...</a><br /></td></tr>
 <tr class="separator:aae380fee8932a427afb4350a45545da2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a452cda90feeb6560f14aad7711784b6d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPauseController.html#a452cda90feeb6560f14aad7711784b6d">tick</a> ()</td></tr>
+<tr class="memdesc:a452cda90feeb6560f14aad7711784b6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the pause state.  <a href="classPauseController.html#a452cda90feeb6560f14aad7711784b6d">More...</a><br /></td></tr>
 <tr class="separator:a452cda90feeb6560f14aad7711784b6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a15651570f0ccc4b4ba2057e374b8a7e6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPauseController.html#a15651570f0ccc4b4ba2057e374b8a7e6">hasPaused</a> () const</td></tr>
+<tr class="memdesc:a15651570f0ccc4b4ba2057e374b8a7e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the current pause state.  <a href="classPauseController.html#a15651570f0ccc4b4ba2057e374b8a7e6">More...</a><br /></td></tr>
 <tr class="separator:a15651570f0ccc4b4ba2057e374b8a7e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -113,6 +119,14 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Constructor for <a class="el" href="classPauseController.html">PauseController</a> class. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tController</td><td>A shared pointer to the <a class="el" href="classTimeController.html">TimeController</a> object. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -131,6 +145,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Returns the current pause state. </p>
+<dl class="section return"><dt>Returns</dt><dd>True if the game is paused, false otherwise. </dd></dl>
+
 </div>
 </div>
 <a id="ab1ed280d1b8a4051cc03845992592560"></a>
@@ -147,6 +164,9 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Pauses the game. </p>
+<p>This function pauses the game by setting the 'isPaused' flag to true. It also stores the current time in 'pauseTime'. </p>
 
 </div>
 </div>
@@ -166,6 +186,15 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Pauses the game for a specific amount of time. </p>
+<p>This function pauses the game for a specific amount of time by calling the 'pause' function and then setting a timer using the <a class="el" href="classTimeController.html">TimeController</a> object.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">milliSec</td><td>The amount of time to pause the game for in milliseconds. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="aa425f26ef9a89de68f43b0c19cc57ce8"></a>
@@ -183,6 +212,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Resumes the game. </p>
+<p>This function resumes the game by setting the 'isPaused' flag to false and adding the time elapsed during the pause to 'pauseTime'. </p>
+
 </div>
 </div>
 <a id="a452cda90feeb6560f14aad7711784b6d"></a>
@@ -199,6 +231,9 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Updates the pause state. </p>
+<p>This function updates the pause state of the game. If the game is currently paused, it adds the elapsed time since the last frame to 'pauseTime'. Otherwise, it does nothing. </p>
 
 </div>
 </div>

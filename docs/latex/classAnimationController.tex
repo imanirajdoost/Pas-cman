@@ -2,21 +2,29 @@
 \label{classAnimationController}\index{AnimationController@{AnimationController}}
 
 
+The \mbox{\hyperlink{classAnimationController}{Animation\+Controller}} class, which controls the animation logic of the game.  
+
+
+
+
 {\ttfamily \#include $<$Animation\+Controller.\+h$>$}
 
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classAnimationController_a13976b0254122a71974b37ebc93b8526}{Animation\+Controller}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Constructor for the \mbox{\hyperlink{classAnimationController}{Animation\+Controller}} class. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classAnimationController_a81729a07995ebe94e05e83becfd3ccfe}{tick}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Method that is called each frame to update the animation state. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 static int \mbox{\hyperlink{classAnimationController_ad436d7ef96de48cb6bde86515ee64e76}{animation\+Counter}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Static counter that keeps track of the number of animations created. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classAnimationController}{Animation\+Controller}} class, which controls the animation logic of the game. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classAnimationController_a13976b0254122a71974b37ebc93b8526}\label{classAnimationController_a13976b0254122a71974b37ebc93b8526}} 
@@ -24,6 +32,10 @@ static int \mbox{\hyperlink{classAnimationController_ad436d7ef96de48cb6bde86515e
 \index{AnimationController@{AnimationController}!AnimationController@{AnimationController}}
 \doxysubsubsection{\texorpdfstring{AnimationController()}{AnimationController()}}
 {\footnotesize\ttfamily Animation\+Controller\+::\+Animation\+Controller (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor for the \mbox{\hyperlink{classAnimationController}{Animation\+Controller}} class. 
 
 
 
@@ -36,12 +48,20 @@ static int \mbox{\hyperlink{classAnimationController_ad436d7ef96de48cb6bde86515e
 
 
 
+Method that is called each frame to update the animation state. 
+
+
+
 \doxysubsection{Member Data Documentation}
 \mbox{\Hypertarget{classAnimationController_ad436d7ef96de48cb6bde86515ee64e76}\label{classAnimationController_ad436d7ef96de48cb6bde86515ee64e76}} 
 \index{AnimationController@{AnimationController}!animationCounter@{animationCounter}}
 \index{animationCounter@{animationCounter}!AnimationController@{AnimationController}}
 \doxysubsubsection{\texorpdfstring{animationCounter}{animationCounter}}
 {\footnotesize\ttfamily int Animation\+Controller\+::animation\+Counter\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Static counter that keeps track of the number of animations created. 
 
 
 

@@ -5,7 +5,7 @@ digraph "src/header/model/MovableGameObject.h"
   node [fontname="Helvetica",fontsize="10",shape=record];
   Node1 [label="src/header/model/Movable\lGameObject.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
   Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="src/header/controller\l/CollisionController.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$CollisionController_8h.html",tooltip=" "];
+  Node2 [label="src/header/controller\l/CollisionController.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$CollisionController_8h.html",tooltip="Header file for CollisionController class, which handles collision between two objects."];
   Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node3 [label="src/header/controller\l/GhostController.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$GhostController_8h.html",tooltip=" "];
   Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];

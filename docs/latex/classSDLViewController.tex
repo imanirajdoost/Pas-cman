@@ -2,26 +2,34 @@
 \label{classSDLViewController}\index{SDLViewController@{SDLViewController}}
 
 
+Class to manage connections to SDL library and manage the view.  
+
+
+
+
 {\ttfamily \#include $<$SDLView\+Controller.\+h$>$}
 
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classSDLViewController_aa7899ae58106181d30a35d9c4c0af47d}{SDLView\+Controller}} (shared\+\_\+ptr$<$ std\+::list$<$ shared\+\_\+ptr$<$ \mbox{\hyperlink{classGameObject}{Game\+Object}} $>$$>$$>$ sps, shared\+\_\+ptr$<$ \mbox{\hyperlink{classTextViewController}{Text\+View\+Controller}} $>$ t\+View\+Controller, shared\+\_\+ptr$<$ \mbox{\hyperlink{classDotController}{Dot\+Controller}} $>$ d\+Controller, shared\+\_\+ptr$<$ \mbox{\hyperlink{classFruitController}{Fruit\+Controller}} $>$ f\+Controller, shared\+\_\+ptr$<$ \mbox{\hyperlink{classPauseController}{Pause\+Controller}} $>$ p\+Controller)
-\item 
+\begin{DoxyCompactList}\small\item\em Constructor for \mbox{\hyperlink{classSDLViewController}{SDLView\+Controller}} class. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classSDLViewController_a8be154125d4bdb9225fe54a7bb770279}{tick}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Tick function to manage game update. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classSDLViewController_aeb0bc5dc8260dff73e5ceabb9ba0bcb6}{draw\+Sprites}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Function to draw sprites on the screen. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classSDLViewController_a94443f68a37c6cb43d84d4916b1c425d}{draw\+UI}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Function to draw user interface on the screen. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classSDLViewController_adf6196fdfc4c11aeaab39241f0514741}{draw\+Dots}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Function to draw dots on the screen. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classSDLViewController_a1fb36ac44f5ac017e6acae2a09a58332}{draw\+Fruit}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Function to draw fruit on the screen. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classSDLViewController_a8663c914bb439ed1bbdfada96201ce59}{draw\+Debug}} (const std\+::list$<$ shared\+\_\+ptr$<$ \mbox{\hyperlink{classGameObject}{Game\+Object}} $>$$>$ \&debug\+List)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Function to draw debug objects on the screen. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Class to manage connections to SDL library and manage the view. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classSDLViewController_aa7899ae58106181d30a35d9c4c0af47d}\label{classSDLViewController_aa7899ae58106181d30a35d9c4c0af47d}} 
@@ -32,6 +40,23 @@ void \mbox{\hyperlink{classSDLViewController_a8663c914bb439ed1bbdfada96201ce59}{
 
 
 
+Constructor for \mbox{\hyperlink{classSDLViewController}{SDLView\+Controller}} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sps} & Shared pointer to a list of Game\+Objects. \\
+\hline
+{\em t\+View\+Controller} & Shared pointer to \mbox{\hyperlink{classTextViewController}{Text\+View\+Controller}} object. \\
+\hline
+{\em d\+Controller} & Shared pointer to \mbox{\hyperlink{classDotController}{Dot\+Controller}} object. \\
+\hline
+{\em f\+Controller} & Shared pointer to \mbox{\hyperlink{classFruitController}{Fruit\+Controller}} object. \\
+\hline
+{\em p\+Controller} & Shared pointer to \mbox{\hyperlink{classPauseController}{Pause\+Controller}} object. \\
+\hline
+\end{DoxyParams}
+
+
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classSDLViewController_a8663c914bb439ed1bbdfada96201ce59}\label{classSDLViewController_a8663c914bb439ed1bbdfada96201ce59}} 
 \index{SDLViewController@{SDLViewController}!drawDebug@{drawDebug}}
@@ -39,11 +64,24 @@ void \mbox{\hyperlink{classSDLViewController_a8663c914bb439ed1bbdfada96201ce59}{
 \doxysubsubsection{\texorpdfstring{drawDebug()}{drawDebug()}}
 {\footnotesize\ttfamily void SDLView\+Controller\+::draw\+Debug (\begin{DoxyParamCaption}\item[{const std\+::list$<$ shared\+\_\+ptr$<$ \mbox{\hyperlink{classGameObject}{Game\+Object}} $>$$>$ \&}]{debug\+List }\end{DoxyParamCaption})}
 
+
+
+Function to draw debug objects on the screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em debug\+List} & List of shared pointers to Game\+Objects for which debug objects are to be drawn. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classSDLViewController_adf6196fdfc4c11aeaab39241f0514741}\label{classSDLViewController_adf6196fdfc4c11aeaab39241f0514741}} 
 \index{SDLViewController@{SDLViewController}!drawDots@{drawDots}}
 \index{drawDots@{drawDots}!SDLViewController@{SDLViewController}}
 \doxysubsubsection{\texorpdfstring{drawDots()}{drawDots()}}
 {\footnotesize\ttfamily void SDLView\+Controller\+::draw\+Dots (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Function to draw dots on the screen. 
 
 \mbox{\Hypertarget{classSDLViewController_a1fb36ac44f5ac017e6acae2a09a58332}\label{classSDLViewController_a1fb36ac44f5ac017e6acae2a09a58332}} 
 \index{SDLViewController@{SDLViewController}!drawFruit@{drawFruit}}
@@ -51,11 +89,19 @@ void \mbox{\hyperlink{classSDLViewController_a8663c914bb439ed1bbdfada96201ce59}{
 \doxysubsubsection{\texorpdfstring{drawFruit()}{drawFruit()}}
 {\footnotesize\ttfamily void SDLView\+Controller\+::draw\+Fruit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Function to draw fruit on the screen. 
+
 \mbox{\Hypertarget{classSDLViewController_aeb0bc5dc8260dff73e5ceabb9ba0bcb6}\label{classSDLViewController_aeb0bc5dc8260dff73e5ceabb9ba0bcb6}} 
 \index{SDLViewController@{SDLViewController}!drawSprites@{drawSprites}}
 \index{drawSprites@{drawSprites}!SDLViewController@{SDLViewController}}
 \doxysubsubsection{\texorpdfstring{drawSprites()}{drawSprites()}}
 {\footnotesize\ttfamily void SDLView\+Controller\+::draw\+Sprites (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Function to draw sprites on the screen. 
 
 \mbox{\Hypertarget{classSDLViewController_a94443f68a37c6cb43d84d4916b1c425d}\label{classSDLViewController_a94443f68a37c6cb43d84d4916b1c425d}} 
 \index{SDLViewController@{SDLViewController}!drawUI@{drawUI}}
@@ -63,11 +109,19 @@ void \mbox{\hyperlink{classSDLViewController_a8663c914bb439ed1bbdfada96201ce59}{
 \doxysubsubsection{\texorpdfstring{drawUI()}{drawUI()}}
 {\footnotesize\ttfamily void SDLView\+Controller\+::draw\+UI (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Function to draw user interface on the screen. 
+
 \mbox{\Hypertarget{classSDLViewController_a8be154125d4bdb9225fe54a7bb770279}\label{classSDLViewController_a8be154125d4bdb9225fe54a7bb770279}} 
 \index{SDLViewController@{SDLViewController}!tick@{tick}}
 \index{tick@{tick}!SDLViewController@{SDLViewController}}
 \doxysubsubsection{\texorpdfstring{tick()}{tick()}}
 {\footnotesize\ttfamily void SDLView\+Controller\+::tick (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Tick function to manage game update. 
 
 
 

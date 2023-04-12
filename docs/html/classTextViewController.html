@@ -72,17 +72,24 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>This class is responsible for managing the text UI elements.  
+ <a href="classTextViewController.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="TextViewController_8h_source.html">TextViewController.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a3b6f491a4f71615431043c061d537242"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTextViewController.html#a3b6f491a4f71615431043c061d537242">TextViewController</a> ()</td></tr>
+<tr class="memdesc:a3b6f491a4f71615431043c061d537242"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the <a class="el" href="classTextViewController.html" title="This class is responsible for managing the text UI elements.">TextViewController</a> object and initializes all the characters.  <a href="classTextViewController.html#a3b6f491a4f71615431043c061d537242">More...</a><br /></td></tr>
 <tr class="separator:a3b6f491a4f71615431043c061d537242"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6456bd830f59a061f1cb958752aafe94"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTextViewController.html#a6456bd830f59a061f1cb958752aafe94">writeOnUI</a> (const string &amp;id, const string &amp;text, int posX, int posY)</td></tr>
+<tr class="memdesc:a6456bd830f59a061f1cb958752aafe94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes text on the screen at the given position and id.  <a href="classTextViewController.html#a6456bd830f59a061f1cb958752aafe94">More...</a><br /></td></tr>
 <tr class="separator:a6456bd830f59a061f1cb958752aafe94"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad51abbc6370f7dcf1c6db74bb0a4d0f6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTextViewController.html#ad51abbc6370f7dcf1c6db74bb0a4d0f6">writeScore</a> (int score)</td></tr>
+<tr class="memdesc:ad51abbc6370f7dcf1c6db74bb0a4d0f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the score on the screen.  <a href="classTextViewController.html#ad51abbc6370f7dcf1c6db74bb0a4d0f6">More...</a><br /></td></tr>
 <tr class="separator:ad51abbc6370f7dcf1c6db74bb0a4d0f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a411c74dcdab31e71399696978cbd719f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTextViewController.html#a411c74dcdab31e71399696978cbd719f">setHealthUI</a> (short health)</td></tr>
+<tr class="memdesc:a411c74dcdab31e71399696978cbd719f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the health UI element to the given value.  <a href="classTextViewController.html#a411c74dcdab31e71399696978cbd719f">More...</a><br /></td></tr>
 <tr class="separator:a411c74dcdab31e71399696978cbd719f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -96,7 +103,9 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:af4005610b5d0e7dfb5ebbd3305cd07b9"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTextViewController.html#af4005610b5d0e7dfb5ebbd3305cd07b9">FONT_SPACE</a> = 22</td></tr>
 <tr class="separator:af4005610b5d0e7dfb5ebbd3305cd07b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This class is responsible for managing the text UI elements. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a3b6f491a4f71615431043c061d537242"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3b6f491a4f71615431043c061d537242">&#9670;&nbsp;</a></span>TextViewController()</h2>
 
@@ -111,6 +120,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Constructs the <a class="el" href="classTextViewController.html" title="This class is responsible for managing the text UI elements.">TextViewController</a> object and initializes all the characters. </p>
 
 </div>
 </div>
@@ -130,6 +141,14 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Sets the health UI element to the given value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">health</td><td>The health value to set. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -171,6 +190,17 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Writes text on the screen at the given position and id. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>The id of the text to write. </td></tr>
+    <tr><td class="paramname">text</td><td>The text to write. </td></tr>
+    <tr><td class="paramname">posX</td><td>The x position to write the text. </td></tr>
+    <tr><td class="paramname">posY</td><td>The y position to write the text. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="ad51abbc6370f7dcf1c6db74bb0a4d0f6"></a>
@@ -188,6 +218,14 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Writes the score on the screen. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">score</td><td>The score to write. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

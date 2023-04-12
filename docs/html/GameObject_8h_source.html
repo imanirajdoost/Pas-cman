@@ -71,27 +71,30 @@ $(function() {
 <div class="title">GameObject.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="GameObject_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef GAMEOBJECT_H</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define GAMEOBJECT_H</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="TransformComponent_8h.html">header/model/component/TransformComponent.h</a>&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="AnimationComponent_8h.html">header/model/component/AnimationComponent.h</a>&quot;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="classGameObject.html">    7</a></span>&#160;<span class="keyword">class </span><a class="code" href="classGameObject.html">GameObject</a> : <span class="keyword">public</span> <a class="code" href="classTransformComponent.html">TransformComponent</a>, <span class="keyword">public</span> <a class="code" href="classAnimationComponent.html">AnimationComponent</a> {</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="classGameObject.html#a0348e3ee2e83d56eafca7a3547f432c4">    9</a></span>&#160;    <a class="code" href="classGameObject.html#a0348e3ee2e83d56eafca7a3547f432c4">GameObject</a>();</div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="classGameObject.html#a5f8b0e356240603d9fcf49d95d53b7cc">   10</a></span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classGameObject.html#a5f8b0e356240603d9fcf49d95d53b7cc">GameObject</a>(SDL_Rect defaultSp);</div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classGameObject.html#a82bd17c14b3f45b5e85953d74f031846">   11</a></span>&#160;    <a class="code" href="classGameObject.html#a82bd17c14b3f45b5e85953d74f031846">GameObject</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;newName, <span class="keyword">const</span> vector&lt;SDL_Rect&gt; &amp;sps, <span class="keywordtype">bool</span> _isAnimated);</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;};</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#endif</span></div>
+<a href="GameObject_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#ifndef GAMEOBJECT_H</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#define GAMEOBJECT_H</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="TransformComponent_8h.html">header/model/component/TransformComponent.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="AnimationComponent_8h.html">header/model/component/AnimationComponent.h</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classGameObject.html">   12</a></span>&#160;<span class="keyword">class </span><a class="code" href="classGameObject.html">GameObject</a> : <span class="keyword">public</span> <a class="code" href="classTransformComponent.html">TransformComponent</a>, <span class="keyword">public</span> <a class="code" href="classAnimationComponent.html">AnimationComponent</a> {</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classGameObject.html#a0348e3ee2e83d56eafca7a3547f432c4">   17</a></span>&#160;    <a class="code" href="classGameObject.html#a0348e3ee2e83d56eafca7a3547f432c4">GameObject</a>();</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classGameObject.html#a5f8b0e356240603d9fcf49d95d53b7cc">   23</a></span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classGameObject.html#a5f8b0e356240603d9fcf49d95d53b7cc">GameObject</a>(SDL_Rect defaultSp);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classGameObject.html#a82bd17c14b3f45b5e85953d74f031846">   31</a></span>&#160;    <a class="code" href="classGameObject.html#a82bd17c14b3f45b5e85953d74f031846">GameObject</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;newName, <span class="keyword">const</span> vector&lt;SDL_Rect&gt; &amp;sps, <span class="keywordtype">bool</span> _isAnimated);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;};</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aAnimationComponent_8h_html"><div class="ttname"><a href="AnimationComponent_8h.html">AnimationComponent.h</a></div></div>
 <div class="ttc" id="aTransformComponent_8h_html"><div class="ttname"><a href="TransformComponent_8h.html">TransformComponent.h</a></div><div class="ttdoc">Class that handles an object's size and position on the screen. All game objects have this component ...</div></div>
 <div class="ttc" id="aclassAnimationComponent_html"><div class="ttname"><a href="classAnimationComponent.html">AnimationComponent</a></div><div class="ttdoc">The model for the animation component, which is responsible for handling the animation of sprites and...</div><div class="ttdef"><b>Definition:</b> AnimationComponent.h:22</div></div>
-<div class="ttc" id="aclassGameObject_html"><div class="ttname"><a href="classGameObject.html">GameObject</a></div><div class="ttdef"><b>Definition:</b> GameObject.h:7</div></div>
-<div class="ttc" id="aclassGameObject_html_a0348e3ee2e83d56eafca7a3547f432c4"><div class="ttname"><a href="classGameObject.html#a0348e3ee2e83d56eafca7a3547f432c4">GameObject::GameObject</a></div><div class="ttdeci">GameObject()</div></div>
-<div class="ttc" id="aclassGameObject_html_a5f8b0e356240603d9fcf49d95d53b7cc"><div class="ttname"><a href="classGameObject.html#a5f8b0e356240603d9fcf49d95d53b7cc">GameObject::GameObject</a></div><div class="ttdeci">GameObject(SDL_Rect defaultSp)</div></div>
-<div class="ttc" id="aclassGameObject_html_a82bd17c14b3f45b5e85953d74f031846"><div class="ttname"><a href="classGameObject.html#a82bd17c14b3f45b5e85953d74f031846">GameObject::GameObject</a></div><div class="ttdeci">GameObject(const string &amp;newName, const vector&lt; SDL_Rect &gt; &amp;sps, bool _isAnimated)</div></div>
+<div class="ttc" id="aclassGameObject_html"><div class="ttname"><a href="classGameObject.html">GameObject</a></div><div class="ttdef"><b>Definition:</b> GameObject.h:12</div></div>
+<div class="ttc" id="aclassGameObject_html_a0348e3ee2e83d56eafca7a3547f432c4"><div class="ttname"><a href="classGameObject.html#a0348e3ee2e83d56eafca7a3547f432c4">GameObject::GameObject</a></div><div class="ttdeci">GameObject()</div><div class="ttdoc">Default constructor for GameObject.</div></div>
+<div class="ttc" id="aclassGameObject_html_a5f8b0e356240603d9fcf49d95d53b7cc"><div class="ttname"><a href="classGameObject.html#a5f8b0e356240603d9fcf49d95d53b7cc">GameObject::GameObject</a></div><div class="ttdeci">GameObject(SDL_Rect defaultSp)</div><div class="ttdoc">Constructor for GameObject with default sprite.</div></div>
+<div class="ttc" id="aclassGameObject_html_a82bd17c14b3f45b5e85953d74f031846"><div class="ttname"><a href="classGameObject.html#a82bd17c14b3f45b5e85953d74f031846">GameObject::GameObject</a></div><div class="ttdeci">GameObject(const string &amp;newName, const vector&lt; SDL_Rect &gt; &amp;sps, bool _isAnimated)</div><div class="ttdoc">Constructor for GameObject with animation sprites.</div></div>
 <div class="ttc" id="aclassTransformComponent_html"><div class="ttname"><a href="classTransformComponent.html">TransformComponent</a></div><div class="ttdef"><b>Definition:</b> TransformComponent.h:11</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

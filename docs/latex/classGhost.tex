@@ -2,6 +2,11 @@
 \label{classGhost}\index{Ghost@{Ghost}}
 
 
+The \mbox{\hyperlink{classGhost}{Ghost}} class manages a single ghost in the game.  
+
+
+
+
 {\ttfamily \#include $<$Ghost.\+h$>$}
 
 
@@ -16,11 +21,11 @@ Collaboration diagram for Ghost\+:
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classGhost_a4ba7ea24baf2bc900691765c198a47a3}{Ghost}} (SDL\+\_\+\+Rect defaultsp)
-\item 
+\begin{DoxyCompactList}\small\item\em Constructs a new \mbox{\hyperlink{classGhost}{Ghost}} object with the specified default sprite. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classGhost_a2f8f7ed971eae444583d9706d241da62}{set\+Next\+Pos}} (const std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{Map_8h_a0dc0d3f05ebf63bd2133199d9429f6ad}{MTYPE}} $>$$>$ \&map, const \mbox{\hyperlink{MovableGameObject_8h_a00ec4eba48da32d6cbdf827185fd3d34}{Move\+Direction}} \&\mbox{\hyperlink{classMovableGameObject_afd37f5e247bb8e73b5481dcbc509a67d}{direction}}) override
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the next position of the ghost based on the current direction and the map. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classGhost_a80a82f1dc1b0bd1adee37876f3ed5554}{move}} () override
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Moves the ghost to its next position. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -28,6 +33,9 @@ bool \mbox{\hyperlink{classGhost_a92a0eebf8b22a56037ad908407edeef2}{is\+Vulnerab
 \end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
 
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classGhost}{Ghost}} class manages a single ghost in the game. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classGhost_a4ba7ea24baf2bc900691765c198a47a3}\label{classGhost_a4ba7ea24baf2bc900691765c198a47a3}} 
@@ -38,12 +46,25 @@ bool \mbox{\hyperlink{classGhost_a92a0eebf8b22a56037ad908407edeef2}{is\+Vulnerab
 
 
 
+Constructs a new \mbox{\hyperlink{classGhost}{Ghost}} object with the specified default sprite. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em defaultsp} & The default sprite for the ghost. \\
+\hline
+\end{DoxyParams}
+
+
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classGhost_a80a82f1dc1b0bd1adee37876f3ed5554}\label{classGhost_a80a82f1dc1b0bd1adee37876f3ed5554}} 
 \index{Ghost@{Ghost}!move@{move}}
 \index{move@{move}!Ghost@{Ghost}}
 \doxysubsubsection{\texorpdfstring{move()}{move()}}
 {\footnotesize\ttfamily void Ghost\+::move (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Moves the ghost to its next position. 
 
 
 
@@ -57,6 +78,17 @@ Reimplemented from \mbox{\hyperlink{classMovableGameObject_a7e4411553a799980b150
 
 
 
+Sets the next position of the ghost based on the current direction and the map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em map} & The current game map. \\
+\hline
+{\em direction} & The current direction of the ghost. \\
+\hline
+\end{DoxyParams}
+
+
 Implements \mbox{\hyperlink{classMovableGameObject_aeef74fd11fdb5894d3ea2db0a2a20f99}{Movable\+Game\+Object}}.
 
 
@@ -68,7 +100,7 @@ Implements \mbox{\hyperlink{classMovableGameObject_aeef74fd11fdb5894d3ea2db0a2a2
 \doxysubsubsection{\texorpdfstring{isVulnerable}{isVulnerable}}
 {\footnotesize\ttfamily bool Ghost\+::is\+Vulnerable = false\hspace{0.3cm}{\ttfamily [protected]}}
 
-
+$<$ Whether the ghost is vulnerable or not. 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

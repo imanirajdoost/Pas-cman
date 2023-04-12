@@ -15,6 +15,9 @@ void \mbox{\hyperlink{classPlayerController_ab1c27f23585b5f22421e195c37f8d94a}{t
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classPlayerController}{Player\+Controller}} class manages the Pac-\/\+Man player\textquotesingle{}s movements, actions and interactions with other game objects. 
+
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classPlayerController_abc81ddad656a9d21a9ebf1cb9dd605df}\label{classPlayerController_abc81ddad656a9d21a9ebf1cb9dd605df}} 
 \index{PlayerController@{PlayerController}!PlayerController@{PlayerController}}
@@ -22,6 +25,25 @@ void \mbox{\hyperlink{classPlayerController_ab1c27f23585b5f22421e195c37f8d94a}{t
 \doxysubsubsection{\texorpdfstring{PlayerController()}{PlayerController()}}
 {\footnotesize\ttfamily Player\+Controller\+::\+Player\+Controller (\begin{DoxyParamCaption}\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{classCollisionController}{Collision\+Controller}} $>$}]{col\+Controller,  }\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{classPlayer}{Player}} $>$}]{p,  }\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{classDotController}{Dot\+Controller}} $>$}]{d\+Controller,  }\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{classFruitController}{Fruit\+Controller}} $>$}]{f\+Controller,  }\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{classScoreController}{Score\+Controller}} $>$}]{s\+Controller,  }\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{classTextViewController}{Text\+View\+Controller}} $>$}]{t\+Controller,  }\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{classGhostController}{Ghost\+Controller}} $>$}]{g\+Controller,  }\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{classPauseController}{Pause\+Controller}} $>$}]{p\+Controller }\end{DoxyParamCaption})}
 
+Constructor for \mbox{\hyperlink{classPlayerController}{Player\+Controller}}. 
+\begin{DoxyParams}{Parameters}
+{\em col\+Controller} & A shared pointer to the \mbox{\hyperlink{classCollisionController}{Collision\+Controller}} object. \\
+\hline
+{\em p} & A shared pointer to the \mbox{\hyperlink{classPlayer}{Player}} object. \\
+\hline
+{\em d\+Controller} & A shared pointer to the \mbox{\hyperlink{classDotController}{Dot\+Controller}} object. \\
+\hline
+{\em f\+Controller} & A shared pointer to the \mbox{\hyperlink{classFruitController}{Fruit\+Controller}} object. \\
+\hline
+{\em s\+Controller} & A shared pointer to the \mbox{\hyperlink{classScoreController}{Score\+Controller}} object. \\
+\hline
+{\em t\+Controller} & A shared pointer to the \mbox{\hyperlink{classTextViewController}{Text\+View\+Controller}} object. \\
+\hline
+{\em g\+Controller} & A shared pointer to the \mbox{\hyperlink{classGhostController}{Ghost\+Controller}} object. \\
+\hline
+{\em p\+Controller} & A shared pointer to the \mbox{\hyperlink{classPauseController}{Pause\+Controller}} object. \\
+\hline
+\end{DoxyParams}
 
 
 \doxysubsection{Member Function Documentation}
@@ -31,13 +53,18 @@ void \mbox{\hyperlink{classPlayerController_ab1c27f23585b5f22421e195c37f8d94a}{t
 \doxysubsubsection{\texorpdfstring{setMoveIntent()}{setMoveIntent()}}
 {\footnotesize\ttfamily void Player\+Controller\+::set\+Move\+Intent (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{MovableGameObject_8h_a00ec4eba48da32d6cbdf827185fd3d34}{Move\+Direction}}}]{direction }\end{DoxyParamCaption})}
 
+Sets the move intent for the Pac-\/\+Man player. 
+\begin{DoxyParams}{Parameters}
+{\em direction} & The intended movement direction of the player. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classPlayerController_ab1c27f23585b5f22421e195c37f8d94a}\label{classPlayerController_ab1c27f23585b5f22421e195c37f8d94a}} 
 \index{PlayerController@{PlayerController}!tick@{tick}}
 \index{tick@{tick}!PlayerController@{PlayerController}}
 \doxysubsubsection{\texorpdfstring{tick()}{tick()}}
 {\footnotesize\ttfamily void Player\+Controller\+::tick (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-
+Tick function for the \mbox{\hyperlink{classPlayerController}{Player\+Controller}}. Called on every frame. 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

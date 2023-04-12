@@ -5,7 +5,7 @@ digraph "Dot"
   node [fontname="Helvetica",fontsize="10",shape=record];
   Node1 [label="Dot",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
   Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="StaticGameObject",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classStaticGameObject.html",tooltip=" "];
+  Node2 [label="StaticGameObject",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classStaticGameObject.html",tooltip="Base class for static game objects like dots and fruits."];
   Node3 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node3 [label="GameObject",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classGameObject.html",tooltip=" "];
   Node4 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];

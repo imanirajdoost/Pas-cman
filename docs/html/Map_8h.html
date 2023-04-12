@@ -92,6 +92,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMap.html">Map</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A class representing the map of the game and what item is on each tile.  <a href="classMap.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
@@ -107,6 +108,7 @@ Enumerations</h2></td></tr>
 , <a class="el" href="Map_8h.html#a0dc0d3f05ebf63bd2133199d9429f6ada0a41f2dd923676871312de0e840d302e">TP</a>
 <br />
  }</td></tr>
+<tr class="memdesc:a0dc0d3f05ebf63bd2133199d9429f6ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">An enum representing the possible types of map items that can be found on a tile.  <a href="Map_8h.html#a0dc0d3f05ebf63bd2133199d9429f6ad">More...</a><br /></td></tr>
 <tr class="separator:a0dc0d3f05ebf63bd2133199d9429f6ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
@@ -129,14 +131,23 @@ Enumerations</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>An enum representing the possible types of map items that can be found on a tile. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a0dc0d3f05ebf63bd2133199d9429f6ada1da57b2bd62ddc95d1e91830646a196b"></a>PACMAN&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a0dc0d3f05ebf63bd2133199d9429f6ada30047325d9201304e95ffb83105002de"></a>GHOST&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a0dc0d3f05ebf63bd2133199d9429f6adaba2b45bdc11e2a4a6e86aab2ac693cbb"></a>EMPTY&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a0dc0d3f05ebf63bd2133199d9429f6ada48d536b2de1195d0c9f6ea8ab884085e"></a>WALL&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a0dc0d3f05ebf63bd2133199d9429f6ada37ce845535b7c13f529505fdfdb04942"></a>DOOR&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a0dc0d3f05ebf63bd2133199d9429f6ada2b911c015ed17a423c74ab9987330e60"></a>ITEM&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a0dc0d3f05ebf63bd2133199d9429f6ada0a41f2dd923676871312de0e840d302e"></a>TP&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a0dc0d3f05ebf63bd2133199d9429f6ada1da57b2bd62ddc95d1e91830646a196b"></a>PACMAN&#160;</td><td class="fielddoc"><p>A tile with Pac-Man. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a0dc0d3f05ebf63bd2133199d9429f6ada30047325d9201304e95ffb83105002de"></a>GHOST&#160;</td><td class="fielddoc"><p>A tile with <a class="el" href="classGhost.html" title="The Ghost class manages a single ghost in the game.">Ghost</a>. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a0dc0d3f05ebf63bd2133199d9429f6adaba2b45bdc11e2a4a6e86aab2ac693cbb"></a>EMPTY&#160;</td><td class="fielddoc"><p>An empty tile that is safe to move onto. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a0dc0d3f05ebf63bd2133199d9429f6ada48d536b2de1195d0c9f6ea8ab884085e"></a>WALL&#160;</td><td class="fielddoc"><p>A tile that is blocked and cannot be moved onto. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a0dc0d3f05ebf63bd2133199d9429f6ada37ce845535b7c13f529505fdfdb04942"></a>DOOR&#160;</td><td class="fielddoc"><p>A tile that acts as a door and can be moved through in one direction. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a0dc0d3f05ebf63bd2133199d9429f6ada2b911c015ed17a423c74ab9987330e60"></a>ITEM&#160;</td><td class="fielddoc"><p>A tile that contains an item that can be collected. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a0dc0d3f05ebf63bd2133199d9429f6ada0a41f2dd923676871312de0e840d302e"></a>TP&#160;</td><td class="fielddoc"><p>A tile that acts as a teleporter and moves the player to a different location on the map. </p>
+</td></tr>
 </table>
 
 </div>

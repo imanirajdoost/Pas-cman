@@ -71,27 +71,28 @@ $(function() {
 <div class="title">Fruit.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="Fruit_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef PAS_CMAN_FRUIT_H</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define PAS_CMAN_FRUIT_H</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="StaticGameObject_8h.html">header/model/StaticGameObject.h</a>&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="EatableComponent_8h.html">header/model/component/EatableComponent.h</a>&quot;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="classFruit.html">    7</a></span>&#160;<span class="keyword">class </span><a class="code" href="classFruit.html">Fruit</a> : <span class="keyword">public</span> <a class="code" href="classStaticGameObject.html">StaticGameObject</a> , <span class="keyword">public</span> <a class="code" href="classEatableComponent.html">EatableComponent</a> {</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="classFruit.html#aa40ce1fdb1b361880d27171f05a2ab5a">    9</a></span>&#160;    <a class="code" href="classFruit.html#aa40ce1fdb1b361880d27171f05a2ab5a">Fruit</a>();</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keyword">const</span> SDL_Rect sp_fruit = {290, 238, 12, 13 };</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;};</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//PAS_CMAN_FRUIT_H</span></div>
+<a href="Fruit_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#ifndef PAS_CMAN_FRUIT_H</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#define PAS_CMAN_FRUIT_H</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="StaticGameObject_8h.html">header/model/StaticGameObject.h</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="EatableComponent_8h.html">header/model/component/EatableComponent.h</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classFruit.html">   18</a></span>&#160;<span class="keyword">class </span><a class="code" href="classFruit.html">Fruit</a> : <span class="keyword">public</span> <a class="code" href="classStaticGameObject.html">StaticGameObject</a> , <span class="keyword">public</span> <a class="code" href="classEatableComponent.html">EatableComponent</a> {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classFruit.html#aa40ce1fdb1b361880d27171f05a2ab5a">   23</a></span>&#160;    <a class="code" href="classFruit.html#aa40ce1fdb1b361880d27171f05a2ab5a">Fruit</a>();</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">const</span> SDL_Rect sp_fruit = {290, 238, 12, 13 }; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;};</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//PAS_CMAN_FRUIT_H</span></div>
 <div class="ttc" id="aEatableComponent_8h_html"><div class="ttname"><a href="EatableComponent_8h.html">EatableComponent.h</a></div><div class="ttdoc">This class is placed on all objects that are eatable by Pacman (such as dots on the screen or fruits ...</div></div>
 <div class="ttc" id="aStaticGameObject_8h_html"><div class="ttname"><a href="StaticGameObject_8h.html">StaticGameObject.h</a></div></div>
 <div class="ttc" id="aclassEatableComponent_html"><div class="ttname"><a href="classEatableComponent.html">EatableComponent</a></div><div class="ttdef"><b>Definition:</b> EatableComponent.h:11</div></div>
-<div class="ttc" id="aclassFruit_html"><div class="ttname"><a href="classFruit.html">Fruit</a></div><div class="ttdef"><b>Definition:</b> Fruit.h:7</div></div>
-<div class="ttc" id="aclassFruit_html_aa40ce1fdb1b361880d27171f05a2ab5a"><div class="ttname"><a href="classFruit.html#aa40ce1fdb1b361880d27171f05a2ab5a">Fruit::Fruit</a></div><div class="ttdeci">Fruit()</div></div>
-<div class="ttc" id="aclassStaticGameObject_html"><div class="ttname"><a href="classStaticGameObject.html">StaticGameObject</a></div><div class="ttdef"><b>Definition:</b> StaticGameObject.h:6</div></div>
+<div class="ttc" id="aclassFruit_html"><div class="ttname"><a href="classFruit.html">Fruit</a></div><div class="ttdoc">The Fruit class.</div><div class="ttdef"><b>Definition:</b> Fruit.h:18</div></div>
+<div class="ttc" id="aclassFruit_html_aa40ce1fdb1b361880d27171f05a2ab5a"><div class="ttname"><a href="classFruit.html#aa40ce1fdb1b361880d27171f05a2ab5a">Fruit::Fruit</a></div><div class="ttdeci">Fruit()</div><div class="ttdoc">Constructs a new Fruit object.</div></div>
+<div class="ttc" id="aclassStaticGameObject_html"><div class="ttname"><a href="classStaticGameObject.html">StaticGameObject</a></div><div class="ttdoc">Base class for static game objects like dots and fruits.</div><div class="ttdef"><b>Definition:</b> StaticGameObject.h:9</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

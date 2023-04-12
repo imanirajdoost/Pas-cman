@@ -2,21 +2,29 @@
 \label{classMap}\index{Map@{Map}}
 
 
+A class representing the map of the game and what item is on each tile.  
+
+
+
+
 {\ttfamily \#include $<$Map.\+h$>$}
 
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 {\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{Map_8h_a0dc0d3f05ebf63bd2133199d9429f6ad}{MTYPE}} \mbox{\hyperlink{classMap_a4868df2652173c8557787e6d4e6a8938}{get\+Current\+Tile\+Type}} (const T \&game\+Object) const
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em A template function that takes a game object as a parameter and returns the type of item that is on the tile that the object is currently on. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 static vector$<$ vector$<$ \mbox{\hyperlink{Map_8h_a0dc0d3f05ebf63bd2133199d9429f6ad}{MTYPE}} $>$ $>$ \mbox{\hyperlink{classMap_af9ccaceb9d50c906e79fd2d75e39c930}{map}}
-\item 
+\begin{DoxyCompactList}\small\item\em A vector of vectors representing the map of the game, where each tile contains a map item. \end{DoxyCompactList}\item 
 static vector$<$ tuple$<$ int, int $>$ $>$ \mbox{\hyperlink{classMap_a7f94a618be4a1b4c38f158e30fe50fd5}{intersections}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em A vector of tuples representing the intersections on the map, where Pac-\/\+Man can make a decision on where to move. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+A class representing the map of the game and what item is on each tile. 
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classMap_a4868df2652173c8557787e6d4e6a8938}\label{classMap_a4868df2652173c8557787e6d4e6a8938}} 
@@ -28,12 +36,33 @@ static vector$<$ tuple$<$ int, int $>$ $>$ \mbox{\hyperlink{classMap_a7f94a618be
 
 
 
+A template function that takes a game object as a parameter and returns the type of item that is on the tile that the object is currently on. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of the game object. Must have {\ttfamily get\+Tile\+Position()} method. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em game\+Object} & The game object that is currently on a tile. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The type of item that is on the tile that the object is currently on. 
+\end{DoxyReturn}
+
+
 \doxysubsection{Member Data Documentation}
 \mbox{\Hypertarget{classMap_a7f94a618be4a1b4c38f158e30fe50fd5}\label{classMap_a7f94a618be4a1b4c38f158e30fe50fd5}} 
 \index{Map@{Map}!intersections@{intersections}}
 \index{intersections@{intersections}!Map@{Map}}
 \doxysubsubsection{\texorpdfstring{intersections}{intersections}}
 {\footnotesize\ttfamily vector$<$tuple$<$int, int$>$ $>$ Map\+::intersections\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+A vector of tuples representing the intersections on the map, where Pac-\/\+Man can make a decision on where to move. 
 
 \mbox{\Hypertarget{classMap_af9ccaceb9d50c906e79fd2d75e39c930}\label{classMap_af9ccaceb9d50c906e79fd2d75e39c930}} 
 \index{Map@{Map}!map@{map}}
@@ -42,6 +71,10 @@ static vector$<$ tuple$<$ int, int $>$ $>$ \mbox{\hyperlink{classMap_a7f94a618be
 {\footnotesize\ttfamily vector$<$vector$<$\mbox{\hyperlink{Map_8h_a0dc0d3f05ebf63bd2133199d9429f6ad}{MTYPE}}$>$ $>$ Map\+::map\hspace{0.3cm}{\ttfamily [static]}}
 
 
+
+A vector of vectors representing the map of the game, where each tile contains a map item. 
+
+The original char\+\_\+map size is \mbox{[}27\mbox{]}\mbox{[}21\mbox{]}. 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

@@ -72,6 +72,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>The <a class="el" href="classFruitController.html" title="The FruitController class manages the spawn and deletion of the bonus fruit object.">FruitController</a> class manages the spawn and deletion of the bonus fruit object.  
+ <a href="classFruitController.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="FruitController_8h_source.html">FruitController.h</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for FruitController:</div>
@@ -82,10 +85,13 @@ Collaboration diagram for FruitController:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aac04123367be4be617146bb3a16851cf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFruitController.html#aac04123367be4be617146bb3a16851cf">FruitController</a> (shared_ptr&lt; <a class="el" href="classTimeController.html">TimeController</a> &gt; tController)</td></tr>
+<tr class="memdesc:aac04123367be4be617146bb3a16851cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a new <a class="el" href="classFruitController.html" title="The FruitController class manages the spawn and deletion of the bonus fruit object.">FruitController</a> object.  <a href="classFruitController.html#aac04123367be4be617146bb3a16851cf">More...</a><br /></td></tr>
 <tr class="separator:aac04123367be4be617146bb3a16851cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c95a4fed9c7cc624e698a72224492a2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFruitController.html#a1c95a4fed9c7cc624e698a72224492a2">deleteFruit</a> ()</td></tr>
+<tr class="memdesc:a1c95a4fed9c7cc624e698a72224492a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes the bonus fruit object.  <a href="classFruitController.html#a1c95a4fed9c7cc624e698a72224492a2">More...</a><br /></td></tr>
 <tr class="separator:a1c95a4fed9c7cc624e698a72224492a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a01cdf0c800cf08314f0bada460d94ac9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFruitController.html#a01cdf0c800cf08314f0bada460d94ac9">tick</a> ()</td></tr>
+<tr class="memdesc:a01cdf0c800cf08314f0bada460d94ac9"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function called by the game loop that handles the logic of the bonus fruit spawn time.  <a href="classFruitController.html#a01cdf0c800cf08314f0bada460d94ac9">More...</a><br /></td></tr>
 <tr class="separator:a01cdf0c800cf08314f0bada460d94ac9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -93,7 +99,9 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a3152c3d9d59d76f534e0b4a15a3a89fa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFruit.html">Fruit</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFruitController.html#a3152c3d9d59d76f534e0b4a15a3a89fa">fruit</a></td></tr>
 <tr class="separator:a3152c3d9d59d76f534e0b4a15a3a89fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>The <a class="el" href="classFruitController.html" title="The FruitController class manages the spawn and deletion of the bonus fruit object.">FruitController</a> class manages the spawn and deletion of the bonus fruit object. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aac04123367be4be617146bb3a16851cf"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aac04123367be4be617146bb3a16851cf">&#9670;&nbsp;</a></span>FruitController()</h2>
 
@@ -118,6 +126,14 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Constructs a new <a class="el" href="classFruitController.html" title="The FruitController class manages the spawn and deletion of the bonus fruit object.">FruitController</a> object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tController</td><td>A shared pointer to the <a class="el" href="classTimeController.html">TimeController</a> object. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -136,6 +152,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Deletes the bonus fruit object. </p>
+<dl class="section return"><dt>Returns</dt><dd>A boolean value indicating if the deletion was successful. </dd></dl>
+
 </div>
 </div>
 <a id="a01cdf0c800cf08314f0bada460d94ac9"></a>
@@ -153,6 +172,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>The function called by the game loop that handles the logic of the bonus fruit spawn time. </p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -167,6 +188,7 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>The bonus fruit object. </p>
 
 </div>
 </div>

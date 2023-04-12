@@ -71,53 +71,48 @@ $(function() {
 <div class="title">PlayerController.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="PlayerController_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// Created by iman on 10/03/23.</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#ifndef PAS_CMAN_PLAYERCONTROLLER_H</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#define PAS_CMAN_PLAYERCONTROLLER_H</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Player_8h.html">header/model/Player.h</a>&quot;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="DotController_8h.html">DotController.h</a>&quot;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="FruitController_8h.html">FruitController.h</a>&quot;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ScoreController_8h.html">ScoreController.h</a>&quot;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="SDLViewController_8h.html">header/view/SDLViewController.h</a>&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="GhostController_8h.html">GhostController.h</a>&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="PauseController_8h.html">PauseController.h</a>&quot;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classPlayerController.html">   16</a></span>&#160;<span class="keyword">class </span><a class="code" href="classPlayerController.html">PlayerController</a> {</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classPlayerController.html#abc81ddad656a9d21a9ebf1cb9dd605df">   18</a></span>&#160;    <a class="code" href="classPlayerController.html#abc81ddad656a9d21a9ebf1cb9dd605df">PlayerController</a>(shared_ptr&lt;CollisionController&gt; colController, shared_ptr&lt;Player&gt; p,</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                     shared_ptr&lt;DotController&gt; dController, shared_ptr&lt;FruitController&gt; fController, shared_ptr&lt;ScoreController&gt; sController,</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                     shared_ptr&lt;TextViewController&gt; tController, shared_ptr&lt;GhostController&gt; gController, shared_ptr&lt;PauseController&gt; pController);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classPlayerController.html#a2e4ea9f053ff226d3ff2120f5e5fffbd">   22</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPlayerController.html#a2e4ea9f053ff226d3ff2120f5e5fffbd">setMoveIntent</a>(<a class="code" href="MovableGameObject_8h.html#a00ec4eba48da32d6cbdf827185fd3d34">MoveDirection</a> direction);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classPlayerController.html#ab1c27f23585b5f22421e195c37f8d94a">   24</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPlayerController.html#ab1c27f23585b5f22421e195c37f8d94a">tick</a>();</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    shared_ptr&lt;CollisionController&gt; collisionController;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    shared_ptr&lt;DotController&gt; dotController;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    shared_ptr&lt;FruitController&gt; fruitController;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    shared_ptr&lt;ScoreController&gt; scoreController;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    shared_ptr&lt;TextViewController&gt; textViewController;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    shared_ptr&lt;GhostController&gt; ghostController;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    shared_ptr&lt;PauseController&gt; pauseController;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    shared_ptr&lt;Player&gt; player;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;};</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<a href="PlayerController_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef PAS_CMAN_PLAYERCONTROLLER_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define PAS_CMAN_PLAYERCONTROLLER_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Player_8h.html">header/model/Player.h</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="DotController_8h.html">DotController.h</a>&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="FruitController_8h.html">FruitController.h</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ScoreController_8h.html">ScoreController.h</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="SDLViewController_8h.html">header/view/SDLViewController.h</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="GhostController_8h.html">GhostController.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="PauseController_8h.html">PauseController.h</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classPlayerController.html">   15</a></span>&#160;<span class="keyword">class </span><a class="code" href="classPlayerController.html">PlayerController</a> {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classPlayerController.html#abc81ddad656a9d21a9ebf1cb9dd605df">   28</a></span>&#160;    <a class="code" href="classPlayerController.html#abc81ddad656a9d21a9ebf1cb9dd605df">PlayerController</a>(shared_ptr&lt;CollisionController&gt; colController, shared_ptr&lt;Player&gt; p,</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                     shared_ptr&lt;DotController&gt; dController, shared_ptr&lt;FruitController&gt; fController, shared_ptr&lt;ScoreController&gt; sController,</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                     shared_ptr&lt;TextViewController&gt; tController, shared_ptr&lt;GhostController&gt; gController, shared_ptr&lt;PauseController&gt; pController);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classPlayerController.html#a2e4ea9f053ff226d3ff2120f5e5fffbd">   36</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPlayerController.html#a2e4ea9f053ff226d3ff2120f5e5fffbd">setMoveIntent</a>(<a class="code" href="MovableGameObject_8h.html#a00ec4eba48da32d6cbdf827185fd3d34">MoveDirection</a> direction);</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//PAS_CMAN_PLAYERCONTROLLER_H</span></div>
-<div class="ttc" id="aDotController_8h_html"><div class="ttname"><a href="DotController_8h.html">DotController.h</a></div></div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classPlayerController.html#ab1c27f23585b5f22421e195c37f8d94a">   41</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPlayerController.html#ab1c27f23585b5f22421e195c37f8d94a">tick</a>();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    shared_ptr&lt;CollisionController&gt; collisionController; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    shared_ptr&lt;DotController&gt; dotController; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    shared_ptr&lt;FruitController&gt; fruitController; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    shared_ptr&lt;ScoreController&gt; scoreController; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    shared_ptr&lt;TextViewController&gt; textViewController; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    shared_ptr&lt;GhostController&gt; ghostController; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    shared_ptr&lt;PauseController&gt; pauseController; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    shared_ptr&lt;Player&gt; player; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;};</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//PAS_CMAN_PLAYERCONTROLLER_H</span></div>
+<div class="ttc" id="aDotController_8h_html"><div class="ttname"><a href="DotController_8h.html">DotController.h</a></div><div class="ttdoc">This file contains the declaration of the DotController class.</div></div>
 <div class="ttc" id="aFruitController_8h_html"><div class="ttname"><a href="FruitController_8h.html">FruitController.h</a></div></div>
 <div class="ttc" id="aGhostController_8h_html"><div class="ttname"><a href="GhostController_8h.html">GhostController.h</a></div></div>
 <div class="ttc" id="aMovableGameObject_8h_html_a00ec4eba48da32d6cbdf827185fd3d34"><div class="ttname"><a href="MovableGameObject_8h.html#a00ec4eba48da32d6cbdf827185fd3d34">MoveDirection</a></div><div class="ttdeci">MoveDirection</div><div class="ttdef"><b>Definition:</b> MovableGameObject.h:7</div></div>
-<div class="ttc" id="aPauseController_8h_html"><div class="ttname"><a href="PauseController_8h.html">PauseController.h</a></div></div>
+<div class="ttc" id="aPauseController_8h_html"><div class="ttname"><a href="PauseController_8h.html">PauseController.h</a></div><div class="ttdoc">This class handles pausing and resuming of the game.</div></div>
 <div class="ttc" id="aPlayer_8h_html"><div class="ttname"><a href="Player_8h.html">Player.h</a></div></div>
-<div class="ttc" id="aSDLViewController_8h_html"><div class="ttname"><a href="SDLViewController_8h.html">SDLViewController.h</a></div></div>
-<div class="ttc" id="aScoreController_8h_html"><div class="ttname"><a href="ScoreController_8h.html">ScoreController.h</a></div></div>
-<div class="ttc" id="aclassPlayerController_html"><div class="ttname"><a href="classPlayerController.html">PlayerController</a></div><div class="ttdef"><b>Definition:</b> PlayerController.h:16</div></div>
+<div class="ttc" id="aSDLViewController_8h_html"><div class="ttname"><a href="SDLViewController_8h.html">SDLViewController.h</a></div><div class="ttdoc">Header file for SDLViewController class, which manages connections to SDL library to manage the view ...</div></div>
+<div class="ttc" id="aScoreController_8h_html"><div class="ttname"><a href="ScoreController_8h.html">ScoreController.h</a></div><div class="ttdoc">A class responsible for managing the player's score and updating the text view.</div></div>
+<div class="ttc" id="aclassPlayerController_html"><div class="ttname"><a href="classPlayerController.html">PlayerController</a></div><div class="ttdef"><b>Definition:</b> PlayerController.h:15</div></div>
 <div class="ttc" id="aclassPlayerController_html_a2e4ea9f053ff226d3ff2120f5e5fffbd"><div class="ttname"><a href="classPlayerController.html#a2e4ea9f053ff226d3ff2120f5e5fffbd">PlayerController::setMoveIntent</a></div><div class="ttdeci">void setMoveIntent(MoveDirection direction)</div></div>
 <div class="ttc" id="aclassPlayerController_html_ab1c27f23585b5f22421e195c37f8d94a"><div class="ttname"><a href="classPlayerController.html#ab1c27f23585b5f22421e195c37f8d94a">PlayerController::tick</a></div><div class="ttdeci">void tick()</div></div>
 <div class="ttc" id="aclassPlayerController_html_abc81ddad656a9d21a9ebf1cb9dd605df"><div class="ttname"><a href="classPlayerController.html#abc81ddad656a9d21a9ebf1cb9dd605df">PlayerController::PlayerController</a></div><div class="ttdeci">PlayerController(shared_ptr&lt; CollisionController &gt; colController, shared_ptr&lt; Player &gt; p, shared_ptr&lt; DotController &gt; dController, shared_ptr&lt; FruitController &gt; fController, shared_ptr&lt; ScoreController &gt; sController, shared_ptr&lt; TextViewController &gt; tController, shared_ptr&lt; GhostController &gt; gController, shared_ptr&lt; PauseController &gt; pController)</div></div>

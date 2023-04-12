@@ -71,42 +71,34 @@ $(function() {
 <div class="title">TimeController.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="TimeController_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// Created by iman on 04/04/23.</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#ifndef PAS_CMAN_TIMECONTROLLER_H</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#define PAS_CMAN_TIMECONTROLLER_H</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;chrono&gt;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">using namespace </span>std::chrono;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">// Use auto keyword to avoid typing long</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">// type definitions to get the timepoint</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">// at this instant use function now()</span></div>
+<a href="TimeController_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef PAS_CMAN_TIMECONTROLLER_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define PAS_CMAN_TIMECONTROLLER_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;chrono&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">using namespace </span>std::chrono;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="classTimeController.html">   10</a></span>&#160;<span class="keyword">class </span><a class="code" href="classTimeController.html">TimeController</a> {</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classTimeController.html#a556cfa71086ae3fb76cf79d9da0056e4">   12</a></span>&#160;    <a class="code" href="classTimeController.html#a556cfa71086ae3fb76cf79d9da0056e4">TimeController</a>();</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classTimeController.html">   14</a></span>&#160;<span class="keyword">class </span><a class="code" href="classTimeController.html">TimeController</a> {</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classTimeController.html#a556cfa71086ae3fb76cf79d9da0056e4">   16</a></span>&#160;    <a class="code" href="classTimeController.html#a556cfa71086ae3fb76cf79d9da0056e4">TimeController</a>();</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classTimeController.html#a319e5a9e467bc2d89d546146d608e9d6">   18</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classTimeController.html#a319e5a9e467bc2d89d546146d608e9d6">startTimer</a>();</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classTimeController.html#af5561c6ac8fb236fff19130a71beeb49">   20</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classTimeController.html#af5561c6ac8fb236fff19130a71beeb49">tick</a>();</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classTimeController.html#a39f9e204b1d2d73f4e747570d4c62386">   22</a></span>&#160;    <span class="keywordtype">long</span> <a class="code" href="classTimeController.html#a39f9e204b1d2d73f4e747570d4c62386">getElapsedTime</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classTimeController.html#a319e5a9e467bc2d89d546146d608e9d6">   17</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classTimeController.html#a319e5a9e467bc2d89d546146d608e9d6">startTimer</a>();</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classTimeController.html#af5561c6ac8fb236fff19130a71beeb49">   22</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classTimeController.html#af5561c6ac8fb236fff19130a71beeb49">tick</a>();</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classTimeController.html#a2bf05dfa14209365290972e4b704a629">   24</a></span>&#160;    <span class="keywordtype">long</span> <a class="code" href="classTimeController.html#a2bf05dfa14209365290972e4b704a629">getLastFrameTime</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">long</span> elapsed_time;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">long</span> last_frame_time;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classTimeController.html#a39f9e204b1d2d73f4e747570d4c62386">   28</a></span>&#160;    <span class="keywordtype">long</span> <a class="code" href="classTimeController.html#a39f9e204b1d2d73f4e747570d4c62386">getElapsedTime</a>() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    time_point&lt;high_resolution_clock&gt; start;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    time_point&lt;high_resolution_clock&gt; stop;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;};</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//PAS_CMAN_TIMECONTROLLER_H</span></div>
-<div class="ttc" id="aclassTimeController_html"><div class="ttname"><a href="classTimeController.html">TimeController</a></div><div class="ttdef"><b>Definition:</b> TimeController.h:14</div></div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classTimeController.html#a2bf05dfa14209365290972e4b704a629">   34</a></span>&#160;    <span class="keywordtype">long</span> <a class="code" href="classTimeController.html#a2bf05dfa14209365290972e4b704a629">getLastFrameTime</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">long</span> elapsed_time; <span class="comment">// Elapsed time in milliseconds</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">long</span> last_frame_time; <span class="comment">// Last frame time in milliseconds</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    time_point&lt;high_resolution_clock&gt; start;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    time_point&lt;high_resolution_clock&gt; stop;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;};</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//PAS_CMAN_TIMECONTROLLER_H</span></div>
+<div class="ttc" id="aclassTimeController_html"><div class="ttname"><a href="classTimeController.html">TimeController</a></div><div class="ttdef"><b>Definition:</b> TimeController.h:10</div></div>
 <div class="ttc" id="aclassTimeController_html_a2bf05dfa14209365290972e4b704a629"><div class="ttname"><a href="classTimeController.html#a2bf05dfa14209365290972e4b704a629">TimeController::getLastFrameTime</a></div><div class="ttdeci">long getLastFrameTime() const</div></div>
 <div class="ttc" id="aclassTimeController_html_a319e5a9e467bc2d89d546146d608e9d6"><div class="ttname"><a href="classTimeController.html#a319e5a9e467bc2d89d546146d608e9d6">TimeController::startTimer</a></div><div class="ttdeci">void startTimer()</div></div>
 <div class="ttc" id="aclassTimeController_html_a39f9e204b1d2d73f4e747570d4c62386"><div class="ttname"><a href="classTimeController.html#a39f9e204b1d2d73f4e747570d4c62386">TimeController::getElapsedTime</a></div><div class="ttdeci">long getElapsedTime() const</div></div>

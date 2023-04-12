@@ -8,17 +8,17 @@
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classPauseController_a8492fceb5588ac8c4360edfb3f0f1c92}{Pause\+Controller}} (shared\+\_\+ptr$<$ \mbox{\hyperlink{classTimeController}{Time\+Controller}} $>$ t\+Controller)
-\item 
+\begin{DoxyCompactList}\small\item\em Constructor for \mbox{\hyperlink{classPauseController}{Pause\+Controller}} class. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classPauseController_ab1ed280d1b8a4051cc03845992592560}{pause}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Pauses the game. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classPauseController_aa425f26ef9a89de68f43b0c19cc57ce8}{resume}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Resumes the game. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classPauseController_aae380fee8932a427afb4350a45545da2}{pause\+For}} (long milli\+Sec)
-\item 
+\begin{DoxyCompactList}\small\item\em Pauses the game for a specific amount of time. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classPauseController_a452cda90feeb6560f14aad7711784b6d}{tick}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Updates the pause state. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classPauseController_a15651570f0ccc4b4ba2057e374b8a7e6}{has\+Paused}} () const
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Returns the current pause state. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
@@ -30,6 +30,15 @@ bool \mbox{\hyperlink{classPauseController_a15651570f0ccc4b4ba2057e374b8a7e6}{ha
 
 
 
+Constructor for \mbox{\hyperlink{classPauseController}{Pause\+Controller}} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+Controller} & A shared pointer to the \mbox{\hyperlink{classTimeController}{Time\+Controller}} object. \\
+\hline
+\end{DoxyParams}
+
+
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classPauseController_a15651570f0ccc4b4ba2057e374b8a7e6}\label{classPauseController_a15651570f0ccc4b4ba2057e374b8a7e6}} 
 \index{PauseController@{PauseController}!hasPaused@{hasPaused}}
@@ -37,31 +46,61 @@ bool \mbox{\hyperlink{classPauseController_a15651570f0ccc4b4ba2057e374b8a7e6}{ha
 \doxysubsubsection{\texorpdfstring{hasPaused()}{hasPaused()}}
 {\footnotesize\ttfamily bool Pause\+Controller\+::has\+Paused (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
+
+
+Returns the current pause state. 
+
+\begin{DoxyReturn}{Returns}
+True if the game is paused, false otherwise. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classPauseController_ab1ed280d1b8a4051cc03845992592560}\label{classPauseController_ab1ed280d1b8a4051cc03845992592560}} 
 \index{PauseController@{PauseController}!pause@{pause}}
 \index{pause@{pause}!PauseController@{PauseController}}
 \doxysubsubsection{\texorpdfstring{pause()}{pause()}}
 {\footnotesize\ttfamily void Pause\+Controller\+::pause (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classPauseController_aae380fee8932a427afb4350a45545da2}\label{classPauseController_aae380fee8932a427afb4350a45545da2}} 
+
+
+Pauses the game. 
+
+This function pauses the game by setting the \textquotesingle{}is\+Paused\textquotesingle{} flag to true. It also stores the current time in \textquotesingle{}pause\+Time\textquotesingle{}. \mbox{\Hypertarget{classPauseController_aae380fee8932a427afb4350a45545da2}\label{classPauseController_aae380fee8932a427afb4350a45545da2}} 
 \index{PauseController@{PauseController}!pauseFor@{pauseFor}}
 \index{pauseFor@{pauseFor}!PauseController@{PauseController}}
 \doxysubsubsection{\texorpdfstring{pauseFor()}{pauseFor()}}
 {\footnotesize\ttfamily void Pause\+Controller\+::pause\+For (\begin{DoxyParamCaption}\item[{long}]{milli\+Sec }\end{DoxyParamCaption})}
 
+
+
+Pauses the game for a specific amount of time. 
+
+This function pauses the game for a specific amount of time by calling the \textquotesingle{}pause\textquotesingle{} function and then setting a timer using the \mbox{\hyperlink{classTimeController}{Time\+Controller}} object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em milli\+Sec} & The amount of time to pause the game for in milliseconds. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classPauseController_aa425f26ef9a89de68f43b0c19cc57ce8}\label{classPauseController_aa425f26ef9a89de68f43b0c19cc57ce8}} 
 \index{PauseController@{PauseController}!resume@{resume}}
 \index{resume@{resume}!PauseController@{PauseController}}
 \doxysubsubsection{\texorpdfstring{resume()}{resume()}}
 {\footnotesize\ttfamily void Pause\+Controller\+::resume (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classPauseController_a452cda90feeb6560f14aad7711784b6d}\label{classPauseController_a452cda90feeb6560f14aad7711784b6d}} 
+
+
+Resumes the game. 
+
+This function resumes the game by setting the \textquotesingle{}is\+Paused\textquotesingle{} flag to false and adding the time elapsed during the pause to \textquotesingle{}pause\+Time\textquotesingle{}. \mbox{\Hypertarget{classPauseController_a452cda90feeb6560f14aad7711784b6d}\label{classPauseController_a452cda90feeb6560f14aad7711784b6d}} 
 \index{PauseController@{PauseController}!tick@{tick}}
 \index{tick@{tick}!PauseController@{PauseController}}
 \doxysubsubsection{\texorpdfstring{tick()}{tick()}}
 {\footnotesize\ttfamily void Pause\+Controller\+::tick (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
+
+Updates the pause state. 
+
+This function updates the pause state of the game. If the game is currently paused, it adds the elapsed time since the last frame to \textquotesingle{}pause\+Time\textquotesingle{}. Otherwise, it does nothing. 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
