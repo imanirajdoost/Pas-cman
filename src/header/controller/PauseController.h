@@ -67,7 +67,7 @@ public:
 private:
     bool isPaused; /** < A flag indicating if the game is paused or not. */
 
-    long pauseTime; /**< The time when the game was paused. */
+    ulong pauseTime; /**< The time when the game was paused. */
 
     shared_ptr<TimeController> timeController; /**< A shared pointer to the TimeController object. */
 };

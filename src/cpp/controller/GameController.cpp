@@ -9,7 +9,7 @@ bool GameController::hasQuit() const {
 
 void GameController::startGame() {
     // start the timer to get the elapsed time of each execution
-    timeController->startTimer();
+//    timeController->startTimer();
 
     // Repeat until we have not quit the game (Simulation of frame update)
     while (!hasQuit()) {
@@ -52,7 +52,7 @@ void GameController::startGame() {
 
 
 void GameController::update() {
-
+    timeController->tick_start();
     // Update all controllers
     pauseController->tick();
     if (!pauseController->hasPaused()) {
@@ -64,10 +64,8 @@ void GameController::update() {
     sdlViewController->tick();
 
     // Time controller must be in the end of all ticks to capture correctly the updated time
-    timeController->tick();
-
     // Calculate the time to wait to have the correct frame rate
-    timeController->updateFPS();
+    timeController->tick_end();
 }
 
 GameController::GameController() : exit(false) {

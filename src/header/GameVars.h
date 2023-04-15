@@ -11,7 +11,10 @@ const Uint64 TICK_INTERVAL = 20;
 #define TILESIZE 32
 
     /** @brief Debug mode flag. */
-#define DEBUG_MODE 0
+#define DEBUG_MODE 1
+
+    /** @brief Show FPS flag. */
+#define SHOW_FPS 1
 
     /** @brief Animation frame rate in frames per second. */
 #define ANIMATION_DEFAULT_SPEED 4

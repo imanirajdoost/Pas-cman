@@ -46,7 +46,7 @@ private:
 
     bool fruitAvailable; /**< A boolean value indicating if a bonus fruit is available. */
 
-    long last_time_fruit_spawned; /**< The last time a bonus fruit was spawned. */
+    ulong last_time_fruit_spawned; /**< The last time a bonus fruit was spawned. */
 };
 
 

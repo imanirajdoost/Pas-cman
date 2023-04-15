@@ -15,24 +15,24 @@ public:
     /**
      * Starts the timer.
      */
-    void startTimer();
+    void tick_start();
 
     /**
-     * Calculates elapsed time and last frame time.
+     * captures the frame time and elapsed time.
      */
-    void tick();
+    void tick_end();
 
     /**
      * Gets the elapsed time in milliseconds.
      * @return The elapsed time in milliseconds.
      */
-    long getElapsedTime() const;
+    Uint64 getElapsedTime() const;
 
     /**
      * Gets the last frame time in milliseconds.
      * @return The last frame time in milliseconds.
      */
-    long getLastFrameTime() const;
+    Uint64 getLastFrameTime() const;
 
     /**
      * Updates the FPS to have a consistent speed in game
@@ -40,11 +40,10 @@ public:
     void updateFPS();
 
 private:
-    long elapsed_time; // Elapsed time in milliseconds
-    long last_frame_time; // Last frame time in milliseconds
+    Uint64 elapsed_time; // Elapsed time in milliseconds
+    Uint64 last_frame_time; // Last frame time in milliseconds
 
-    time_point<high_resolution_clock> start;
-    time_point<high_resolution_clock> stop;
+    Uint64 start;
 
     Uint64 next_time;
     Uint64 time_left() const;

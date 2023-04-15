@@ -32,7 +32,7 @@ void FruitController::resetFruitPosition() {
 }
 
 void FruitController::tick() {
-    long elapsed_time = timeController->getElapsedTime();
+    ulong elapsed_time = timeController->getElapsedTime();
     if(!fruitAvailable && elapsed_time > MIN_TIME_TO_SPAWN_FRUIT && (elapsed_time - last_time_fruit_spawned) >= FRUIT_SPAWN_TIME) {
         last_time_fruit_spawned = elapsed_time;
         spawnFruit();
