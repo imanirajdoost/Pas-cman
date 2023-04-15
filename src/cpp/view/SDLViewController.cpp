@@ -29,6 +29,9 @@ void SDLViewController::drawSprites() {
     // couleur transparente
     SDL_SetColorKey(plancheSprites, true, 0);
 
+    // Draw the dots
+    drawDots();
+
     // Draw the sprites
     for (const auto &sp: *spritesToDraw) {
         auto nextSp = sp->getNextSprite();
@@ -41,7 +44,6 @@ void SDLViewController::drawSprites() {
     // Draw UI
     drawUI();
 
-    drawDots();
     drawFruit();
 
     if (DEBUG_MODE)
