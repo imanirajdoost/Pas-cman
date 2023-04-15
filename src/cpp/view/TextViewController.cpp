@@ -53,6 +53,11 @@ void TextViewController::writeScore(int score) {
               SCORE_TEXT_DYNAMIC_POSY);
 }
 
+void TextViewController::writeHighScore(int score) {
+    writeOnUI(HIGH_SCORE_TEXT_DYNAMIC, to_string(score), HIGH_SCORE_TEXT_DYNAMIC_POSX,
+              HIGH_SCORE_TEXT_DYNAMIC_POSY);
+}
+
 void TextViewController::setHealthUI(short health) {
     health_list.clear();
     for (int i = 0; i < health; ++i) {
@@ -65,7 +70,7 @@ void TextViewController::setHealthUI(short health) {
     }
 }
 
-TextViewController::TextViewController() {
+TextViewController::TextViewController(shared_ptr<DataController> dController) {
     char_map.emplace("a", letter_a);
     char_map.emplace("b", letter_b);
     char_map.emplace("c", letter_c);
@@ -112,6 +117,13 @@ TextViewController::TextViewController() {
     char_map.emplace("!", symbol_Exclamation);
     char_map.emplace(",", symbol_Comma);
 
+    dataController = std::move(dController);
+
+    // Write the score text on the UI
     writeOnUI(SCORE_TEXT_STATIC, "score", SCORE_TEXT_STATIC_POSX, SCORE_TEXT_STATIC_POSY);
     writeScore(0);
+
+    // Write the high score text on the UI
+    writeOnUI(HIGH_SCORE_TEXT_STATIC, "highscore", HIGH_SCORE_TEXT_STATIC_POSX, HIGH_SCORE_TEXT_STATIC_POSY);
+    writeHighScore(dataController->loadHighscore());
 }

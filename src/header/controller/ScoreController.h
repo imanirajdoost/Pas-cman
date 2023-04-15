@@ -9,6 +9,7 @@
 
 #include <memory>
 #include "header/view/TextViewController.h"
+#include "DataController.h"
 
 class ScoreController {
 public:
@@ -16,7 +17,7 @@ public:
 * @brief Constructs a new ScoreController object.
 * @param tController A shared pointer to a TextViewController object.
 */
-    ScoreController(std::shared_ptr<TextViewController> tController);
+    ScoreController(std::shared_ptr<TextViewController> tController, std::shared_ptr<DataController> dController);
 
     /**
  * @brief Adds a given amount to the player's score.
@@ -24,9 +25,21 @@ public:
  */
     void addScore(int scoreToAdd);
 
+    /**
+     * @brief Updates the highscore if the player's score is higher than the current highscore.
+     */
+    void updateHighscore();
+
+    /**
+     * @brief Returns the highscore.
+     * @return The highscore.
+     */
+    int getHighscore();
+
 private:
     int playerScore; /**< The current score of the player. */
     std::shared_ptr<TextViewController> textViewController; /**< A shared pointer to a TextViewController object. */
+    std::shared_ptr<DataController> dataController; /**< A shared pointer to a DataController object. */
 };
 
 

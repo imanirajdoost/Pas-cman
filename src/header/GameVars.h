@@ -1,6 +1,8 @@
 #ifndef GAMEVARS_H
 #define GAMEVARS_H
 
+#include <SDL.h>
+
 namespace constants {
 
     /** @brief Update interval of the game.
@@ -42,7 +44,6 @@ const Uint64 TICK_INTERVAL = 20;
 
     /** @brief Time fruit is available for. */
 #define FRUIT_AVAILABE_TIME 5000
-
 }
 
 namespace default_sprites {

@@ -7,3 +7,4 @@ CMakeFiles/*
 .vscode/
 Makefile
 PacMan
+highscore.txt

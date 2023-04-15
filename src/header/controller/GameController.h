@@ -50,6 +50,7 @@ private:
     shared_ptr<ScoreController> scoreController;
     shared_ptr<TimeController> timeController;
     shared_ptr<PauseController> pauseController;
+    shared_ptr<DataController> dataController;
 
     shared_ptr<Player> player;
     shared_ptr<Blinky> blinky;

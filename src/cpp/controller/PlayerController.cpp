@@ -45,6 +45,7 @@ void PlayerController::tick() {
             // TODO: Check if should eat or die
             std::cout << "hit ghost" << std::endl;
             player->die();
+            scoreController->updateHighscore();
             pauseController->pause();
         }
     }

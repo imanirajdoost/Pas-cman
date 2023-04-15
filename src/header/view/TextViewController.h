@@ -6,6 +6,7 @@
 #include <vector>
 #include <SDL.h>
 #include <string>
+#include "header/controller/DataController.h"
 
 using namespace std;
 
@@ -18,7 +19,7 @@ public:
     /**
      * @brief Constructs the TextViewController object and initializes all the characters.
      */
-    TextViewController();
+    TextViewController(shared_ptr<DataController> dController);
 
     /**
      * @brief Writes text on the screen at the given position and id.
@@ -46,6 +47,8 @@ public:
 
     const int FONT_SIZE = 16;
     const int FONT_SPACE = 22;
+
+    shared_ptr<DataController> dataController;
 
 private:
     const SDL_Rect letter_a = {12, 61, 7, 7};
@@ -102,12 +105,22 @@ private:
     const int SCORE_TEXT_STATIC_POSX = 700;
     const int SCORE_TEXT_STATIC_POSY = 20;
 
+    const string HIGH_SCORE_TEXT_STATIC = "high_score_static";
+    const int HIGH_SCORE_TEXT_STATIC_POSX = 700;
+    const int HIGH_SCORE_TEXT_STATIC_POSY = 700;
+
+    const string HIGH_SCORE_TEXT_DYNAMIC = "high_score_dynamic";
+    const int HIGH_SCORE_TEXT_DYNAMIC_POSX = 700;
+    const int HIGH_SCORE_TEXT_DYNAMIC_POSY = 730;
+
     const int HEALTH_POSX = 700;
     const int HEALTH_POSY = 100;
 
     map<string, SDL_Rect> char_map;
 
     shared_ptr<tuple<string, string, int, int, vector<shared_ptr<SDL_Rect>>>> isIdExists(const string &id);
+
+    void writeHighScore(int score);
 };
 
 #endif //PAS_CMAN_TEXTVIEWCONTROLLER_H
