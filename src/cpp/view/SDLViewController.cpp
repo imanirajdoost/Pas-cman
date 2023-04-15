@@ -17,19 +17,19 @@ void SDLViewController::tick() {
 }
 
 void SDLViewController::drawSprites() {
+
+    // create a black rectangle to update the screen for next frame
+    SDL_FillRect(win_surf, nullptr, SDL_MapRGB(win_surf->format, 0, 0, 0));
+
     SDL_SetColorKey(plancheSprites, false, 0);
 
+    // Draw the background
     drawTarget(&src_bg, &bg);
-
-    // @TODO: This is a hack to avoid writing on top of the previous rect in UI, improve this
-//    SDL_BlitScaled(plancheSprites, &blackBg, win_surf, &UIRect);
-    drawTarget(&blackBg, &UIRect);
 
     // couleur transparente
     SDL_SetColorKey(plancheSprites, true, 0);
 
-    // copie du sprite zoomé
-
+    // Draw the sprites
     for (const auto &sp: *spritesToDraw) {
         auto nextSp = sp->getNextSprite();
 
@@ -83,12 +83,10 @@ void SDLViewController::drawDots() {
     for (auto &dotSmall: dotController->dots) {
         auto draw_rect = dotSmall->getDrawRect();
         drawTarget(dotSmall->getNextSprite().get(), &draw_rect);
-//        dotSmall->drawSprites(plancheSprites, win_surf);
     }
 }
 
 void SDLViewController::drawUI() {
-//    ViewManager::drawUI(plancheSprites, win_surf);
 
     for (auto j = textViewController->name_txt_maps.begin(); j < textViewController->name_txt_maps.end(); j++) {
         auto rects = get<4>(*j->get());
