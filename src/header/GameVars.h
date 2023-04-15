@@ -16,7 +16,7 @@ namespace constants {
 #define DEBUG_MODE 0
 
     /** @brief Show FPS flag. */
-#define SHOW_FPS 1
+#define SHOW_FPS 0
 
     /** @brief Animation frame rate in frames per second. */
 #define ANIMATION_DEFAULT_SPEED 4

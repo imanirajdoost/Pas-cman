@@ -3,7 +3,7 @@
 
 #include "header/controller/PauseController.h"
 
-PauseController::PauseController(shared_ptr <TimeController> tController) : isPaused(false) {
+PauseController::PauseController(shared_ptr<TimeController> tController) : isPaused(false) {
     timeController = std::move(tController);
     pauseTime = 0;
 }
@@ -19,7 +19,7 @@ void PauseController::pause() {
 void PauseController::resume() {
     isPaused = false;
     std::cout << "resuming" << std::endl;
-    if(resumeCallback != nullptr) {
+    if (resumeCallback != nullptr) {
         resumeCallback();
         std::cout << "resuming callback" << std::endl;
     }
@@ -33,10 +33,10 @@ void PauseController::pauseFor(long milliSec, function<void()> callback) {
 
 void PauseController::tick() {
 
-    if(isPaused) {
+    if (isPaused) {
         if (pauseTime > 0) {
             pauseTime -= timeController->getLastFrameTime();
-            if (pauseTime < 0) {
+            if (pauseTime <= 0) {
                 resume();
                 pauseTime = 0;
             }

@@ -13,6 +13,7 @@
 #include "header/model/eatable/DotBig.h"
 #include "PauseController.h"
 #include "header/view/TextViewController.h"
+#include "ScoreController.h"
 
 using namespace std;
 
@@ -28,7 +29,8 @@ public:
 @param pController The PauseController instance
 @param tController The TextViewController instance
 */
-    explicit DotController(shared_ptr<PauseController> pController, shared_ptr<TextViewController> tController);
+    explicit DotController(shared_ptr<PauseController> pController, shared_ptr<TextViewController> tController,
+                           shared_ptr<ScoreController> sController);
 
     /**
 @brief A vector to store all the Dot instances
@@ -83,6 +85,8 @@ private:
  * @brief A shared_ptr to the TextViewController instance
  */
     shared_ptr<TextViewController> textViewController;
+
+    shared_ptr<ScoreController> scoreController;
 
     /**
  * @brief An index to keep track of the Dots
