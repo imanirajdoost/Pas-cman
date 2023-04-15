@@ -13,7 +13,7 @@ void SDLViewController::tick() {
     drawSprites();
     SDL_UpdateWindowSurface(pWindow);
     // LIMITE A 60 FPS
-    SDL_Delay(16); // utiliser SDL_GetTicks64() pour plus de precisions
+//    SDL_Delay(16); // utiliser SDL_GetTicks64() pour plus de precisions
 }
 
 void SDLViewController::drawSprites() {

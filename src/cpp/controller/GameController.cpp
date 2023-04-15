@@ -50,7 +50,10 @@ void GameController::startGame() {
     SDL_Quit();
 }
 
+
 void GameController::update() {
+
+    // Update all controllers
     pauseController->tick();
     if (!pauseController->hasPaused()) {
         playerController->tick();
@@ -62,10 +65,12 @@ void GameController::update() {
 
     // Time controller must be in the end of all ticks to capture correctly the updated time
     timeController->tick();
+
+    // Calculate the time to wait to have the correct frame rate
+    timeController->updateFPS();
 }
 
 GameController::GameController() : exit(false) {
-
     // Initialize game objects
     player = make_shared<Player>(2);
     inky = make_shared<Inky>();
@@ -92,7 +97,9 @@ GameController::GameController() : exit(false) {
     ghostController = make_shared<GhostController>(inky, pinky, blinky, clyde, collisionController);
     scoreController = make_shared<ScoreController>(textViewController);
     playerController = make_shared<PlayerController>(collisionController, player, dotController, fruitController,
-                                                     scoreController, textViewController, ghostController, pauseController);
+                                                     scoreController, textViewController, ghostController,
+                                                     pauseController);
 
-    sdlViewController = make_shared<SDLViewController>(list_sp, textViewController, dotController, fruitController, pauseController);
+    sdlViewController = make_shared<SDLViewController>(list_sp, textViewController, dotController, fruitController,
+                                                       pauseController);
 }

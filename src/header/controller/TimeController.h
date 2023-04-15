@@ -2,6 +2,7 @@
 #define PAS_CMAN_TIMECONTROLLER_H
 
 #include <chrono>
+#include <SDL.h>
 using namespace std::chrono;
 
 /**
@@ -33,12 +34,20 @@ public:
      */
     long getLastFrameTime() const;
 
+    /**
+     * Updates the FPS to have a consistent speed in game
+     */
+    void updateFPS();
+
 private:
     long elapsed_time; // Elapsed time in milliseconds
     long last_frame_time; // Last frame time in milliseconds
 
     time_point<high_resolution_clock> start;
     time_point<high_resolution_clock> stop;
+
+    Uint64 next_time;
+    Uint64 time_left() const;
 };
 
 #endif //PAS_CMAN_TIMECONTROLLER_H

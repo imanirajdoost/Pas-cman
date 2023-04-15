@@ -33,7 +33,7 @@ void PlayerController::tick() {
     // Check for collision with bonus objs
     if (collisionController->hasCollision(player->getRect(), fruitController->fruit.getRect()))
         if (fruitController->deleteFruit()) {
-            pauseController->pauseFor(200);
+//            pauseController->pauseFor(200);
             scoreController->addScore(FRUIT_SCORE);
         }
 

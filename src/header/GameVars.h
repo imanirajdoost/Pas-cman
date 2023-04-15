@@ -3,6 +3,10 @@
 
 namespace constants {
 
+    /** @brief Update interval of the game.
+     * Decrease this value to make the game faster */
+const Uint64 TICK_INTERVAL = 20;
+
     /** @brief Tile size in pixels. */
 #define TILESIZE 32
 
