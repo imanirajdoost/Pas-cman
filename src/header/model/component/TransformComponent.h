@@ -16,6 +16,12 @@ public:
     TransformComponent();
 
     /**
+     * @brief Constructor for TransformComponent class.
+     * @param initPos The initial position of the object.
+     */
+    TransformComponent(SDL_Rect initPos);
+
+    /**
     * @brief Constructor for TransformComponent class.
     * @param posX The x-coordinate of the object's position on the screen.
     * @param posY The y-coordinate of the object's position on the screen.

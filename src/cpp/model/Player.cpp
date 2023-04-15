@@ -4,10 +4,7 @@
 #include "header/GameVars.h"
 #include "header/controller/CollisionController.h"
 
-Player::Player(short initHealth) : HealthComponent(initHealth), MovableGameObject(default_sprites::player_sp_default) {
-
-    // Set the initial pos
-    setPos(10 * TILESIZE, 20 * TILESIZE);
+Player::Player(short initHealth, SDL_Rect initPos) : HealthComponent(initHealth), MovableGameObject(default_sprites::player_sp_default, initPos) {
 
     // Set the default move intention
     setMoveIntent(MoveDirection::NONE);
@@ -161,8 +158,15 @@ void Player::move() {
         startAnimation();
 }
 
-void Player::die() {
-    HealthComponent::die();
+short Player::die() {
+    short remainingHealth = HealthComponent::die();
     setAnimation("die");
     isMoveEnabled = false;
+    return remainingHealth;
+}
+
+void Player::reset_state() {
+    MovableGameObject::reset_state();
+    setMoveIntent(MoveDirection::NONE);
+
 }

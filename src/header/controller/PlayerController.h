@@ -9,6 +9,8 @@
 #include "GhostController.h"
 #include "PauseController.h"
 
+using namespace std;
+
 /**
  * PlayerController class manages the Pac-Man player's movements, actions and interactions with other game objects.
  */
@@ -26,8 +28,10 @@ public:
      * @param pController A shared pointer to the PauseController object.
      */
     PlayerController(shared_ptr<CollisionController> colController, shared_ptr<Player> p,
-                     shared_ptr<DotController> dController, shared_ptr<FruitController> fController, shared_ptr<ScoreController> sController,
-                     shared_ptr<TextViewController> tController, shared_ptr<GhostController> gController, shared_ptr<PauseController> pController);
+                     shared_ptr<DotController> dController, shared_ptr<FruitController> fController,
+                     shared_ptr<ScoreController> sController,
+                     shared_ptr<TextViewController> tController, shared_ptr<GhostController> gController,
+                     shared_ptr<PauseController> pController, std::function<void()> resetFunction);
 
     /**
      * Sets the move intent for the Pac-Man player.
@@ -48,7 +52,10 @@ private:
     shared_ptr<TextViewController> textViewController; /**< A shared pointer to the TextViewController object. */
     shared_ptr<GhostController> ghostController; /**< A shared pointer to the GhostController object. */
     shared_ptr<PauseController> pauseController; /**< A shared pointer to the PauseController object. */
+
     shared_ptr<Player> player; /**< A shared pointer to the Player object. */
+
+    std::function<void()> resetGame; /**< A function pointer to the resetGame function in the GameController object. */
 };
 
 #endif //PAS_CMAN_PLAYERCONTROLLER_H

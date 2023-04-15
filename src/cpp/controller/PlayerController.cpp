@@ -40,29 +40,37 @@ void PlayerController::tick() {
     // Check for collision with ghosts
     // TODO: This has two phases, if ghosts are in 'flee mode' they must be eaten, otherwise player dies
     auto ghosts = ghostController->getAllGhosts();
-    for (auto& ghost: *ghosts) {
-        if(collisionController->hasCollision(player->getRect(), ghost->getRect())) {
+    for (auto &ghost: *ghosts) {
+        if (collisionController->hasCollision(player->getRect(), ghost->getRect())) {
             // TODO: Check if should eat or die
             std::cout << "hit ghost" << std::endl;
-            player->die();
-            scoreController->updateHighscore();
-            pauseController->pause();
+            short remainingHealth = player->die();
+            textViewController->setHealthUI(remainingHealth);
+            if (remainingHealth > 0) {
+                pauseController->pauseFor(default_variables::reset_level_time, resetGame);
+            } else {
+                pauseController->pause();
+                scoreController->updateHighscore();
+                textViewController->writeHighScore(scoreController->getHighscore());
+                textViewController->writeOnUI("game_over", "gameover", 270, 350);
+            }
+            break;
         }
     }
 
     // Handle transition between left and right doors
     int teleportDoor = collisionController->getCollisionWithTeleportDoor(player->getRect());
-    if(teleportDoor >= 0) {
+    if (teleportDoor >= 0) {
         switch (teleportDoor) {
             case 0:
-                if(player->getMoveDirection() == MoveDirection::LEFT) {
+                if (player->getMoveDirection() == MoveDirection::LEFT) {
                     // move from left to right
                     player->setPos(20 * TILESIZE, 13 * TILESIZE);
                     player->resetNextPos();
                 }
                 break;
             case 1:
-                if(player->getMoveDirection() == MoveDirection::RIGHT) {
+                if (player->getMoveDirection() == MoveDirection::RIGHT) {
                     // move from right to left
                     player->setPos(0 * TILESIZE, 13 * TILESIZE);
                     player->resetNextPos();
@@ -74,7 +82,9 @@ void PlayerController::tick() {
 
 PlayerController::PlayerController(shared_ptr<CollisionController> colController, shared_ptr<Player> p,
                                    shared_ptr<DotController> dController, shared_ptr<FruitController> fController,
-                                   shared_ptr<ScoreController> sController, shared_ptr<TextViewController> tController, shared_ptr<GhostController> gController, shared_ptr<PauseController> pController) {
+                                   shared_ptr<ScoreController> sController, shared_ptr<TextViewController> tController,
+                                   shared_ptr<GhostController> gController, shared_ptr<PauseController> pController,
+                                   std::function<void()> _resetFunction) {
     collisionController = std::move(colController);
     dotController = std::move(dController);
     fruitController = std::move(fController);
@@ -83,6 +93,8 @@ PlayerController::PlayerController(shared_ptr<CollisionController> colController
     ghostController = std::move(gController);
     pauseController = std::move(pController);
     player = std::move(p);
+
+    resetGame = std::move(_resetFunction);
 
     textViewController->setHealthUI(player->getHealth());
 }

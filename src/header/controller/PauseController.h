@@ -9,6 +9,7 @@
 
 #include <memory>
 #include "TimeController.h"
+#include <functional>
 
 using namespace std;
 
@@ -46,7 +47,7 @@ public:
  *
  * @param milliSec The amount of time to pause the game for in milliseconds.
  */
-    void pauseFor(long milliSec);
+    void pauseFor(long milliSec, function<void()> callback = nullptr);
 
 /**
  * @brief Updates the pause state.
@@ -67,9 +68,11 @@ public:
 private:
     bool isPaused; /** < A flag indicating if the game is paused or not. */
 
-    ulong pauseTime; /**< The time when the game was paused. */
+    long long pauseTime; /**< The time when the game was paused. */
 
     shared_ptr<TimeController> timeController; /**< A shared pointer to the TimeController object. */
+
+    std::function<void()> resumeCallback; /**< A callback function to be called when the game is paused. */
 };
 
 

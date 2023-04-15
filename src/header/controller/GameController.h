@@ -32,6 +32,11 @@ Starts the game and begins the game loop.
 */
     void startGame();
 
+    /**
+     * Resets the game to its initial state.
+     */
+    std::function<void()> resetGame();
+
 private:
     /**
 * Checks if the user has quit the game.

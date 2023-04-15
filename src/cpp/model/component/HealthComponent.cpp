@@ -1,12 +1,9 @@
-//
-// Created by iman on 08/03/23.
-//
 
 #include "header/model/component/HealthComponent.h"
 
-void HealthComponent::die() {
-    // @todo implement dying
+short HealthComponent::die() {
     _health--;
+    return _health;
 }
 
 HealthComponent::HealthComponent(short initHealth) : _health{initHealth} {

@@ -37,6 +37,12 @@ public:
     void writeScore(int score);
 
     /**
+     * @brief Writes the highscore on the screen.
+     * @param score The highscore to write.
+     */
+    void writeHighScore(int score);
+
+    /**
      * @brief Sets the health UI element to the given value.
      * @param health The health value to set.
      */
@@ -119,8 +125,6 @@ private:
     map<string, SDL_Rect> char_map;
 
     shared_ptr<tuple<string, string, int, int, vector<shared_ptr<SDL_Rect>>>> isIdExists(const string &id);
-
-    void writeHighScore(int score);
 };
 
 #endif //PAS_CMAN_TEXTVIEWCONTROLLER_H

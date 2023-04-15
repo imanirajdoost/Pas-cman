@@ -42,8 +42,9 @@ public:
     /**
      * @brief Constructor.
      * @param initHealth Initial health of the player.
+     * @param initPos Initial position of the player.
      */
-    explicit Player(short initHealth);
+    explicit Player(short initHealth, SDL_Rect initPos);
 
     /**
      * @brief Set the next position of the player.
@@ -73,7 +74,7 @@ public:
     /**
      * @brief Trigger the player's death.
      */
-    void die() override;
+    short die() override;
 
     /**
      * @brief Get the player's intended movement direction.
@@ -86,6 +87,8 @@ public:
      * @param direction The intended movement direction.
      */
     void setMoveIntent(const MoveDirection &direction);
+
+    void reset_state() override;
 };
 
 #endif

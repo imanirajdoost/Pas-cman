@@ -1,8 +1,4 @@
-//
-// Created by iman on 10/03/23.
-//
 
-#include <SDL2/SDL_timer.h>
 #include <SDL2/SDL_system.h>
 #include <list>
 #include "header/view/SDLViewController.h"

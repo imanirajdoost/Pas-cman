@@ -2,8 +2,7 @@
 #include "header/model/eatable/Fruit.h"
 #include "header/GameVars.h"
 
-Fruit::Fruit() {
-    setPos(0, 0);
+Fruit::Fruit() : StaticGameObject(default_positions::global_default_pos) {
     setSize(TILESIZE, TILESIZE);
 
     current_sp = std::make_shared<SDL_Rect>(sp_fruit);

@@ -2,6 +2,7 @@
 #include <SDL2/SDL_events.h>
 #include <SDL2/SDL.h>
 #include "header/controller/GameController.h"
+#include "header/GameVars.h"
 
 bool GameController::hasQuit() const {
     return exit;
@@ -68,9 +69,24 @@ void GameController::update() {
     timeController->tick_end();
 }
 
+std::function<void()> GameController::resetGame() {
+    return [this]() {
+        player->reset_state();
+
+        inky->reset_state();
+        blinky->reset_state();
+        pinky->reset_state();
+        clyde->reset_state();
+
+        // fruitController->reset_state();
+        // ghostController->reset_state();
+        // playerController->reset_state();
+    };
+}
+
 GameController::GameController() : exit(false) {
     // Initialize game objects
-    player = make_shared<Player>(2);
+    player = make_shared<Player>(default_variables::player_default_health, default_positions::player_default_pos);
     inky = make_shared<Inky>();
     blinky = make_shared<Blinky>();
     pinky = make_shared<Pinky>();
@@ -97,7 +113,7 @@ GameController::GameController() : exit(false) {
     scoreController = make_shared<ScoreController>(textViewController, dataController);
     playerController = make_shared<PlayerController>(collisionController, player, dotController, fruitController,
                                                      scoreController, textViewController, ghostController,
-                                                     pauseController);
+                                                     pauseController, resetGame());
 
     sdlViewController = make_shared<SDLViewController>(list_sp, textViewController, dotController, fruitController,
                                                        pauseController);

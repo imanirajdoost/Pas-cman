@@ -32,8 +32,9 @@ public:
      * @brief Constructor with default parameters.
      *
      * @param defaultSp The default sprite of the object.
+     * @param initPos The initial position of the object.
      */
-    explicit MovableGameObject(SDL_Rect defaultSp);
+    explicit MovableGameObject(SDL_Rect defaultSp, SDL_Rect initPos);
 
     /**
      * @brief Constructor with specified parameters.
@@ -41,13 +42,15 @@ public:
      * @param animName The name of the animation of the object.
      * @param sprites A vector of SDL_Rect representing the frames of the animation.
      * @param _isAnimated A boolean value indicating whether the object is animated or not.
+     * @param initPos The initial position of the object.
      */
-    MovableGameObject(const string &animName, const vector<SDL_Rect> &sprites, bool _isAnimated);
+    MovableGameObject(const string &animName, const vector<SDL_Rect> &sprites, bool _isAnimated, SDL_Rect initPos);
 
     /**
-     * @brief Default constructor.
+     * @brief Constructor with specified parameters.
+     * @param initPos The initial position of the object.
      */
-    MovableGameObject();
+    explicit MovableGameObject(SDL_Rect initPos);
 
     /**
      * @brief Get the speed of the object.
@@ -106,6 +109,8 @@ public:
      * @brief Move the object to its next position.
      */
     virtual void move();
+
+    void reset_state() override;
 };
 
 #endif

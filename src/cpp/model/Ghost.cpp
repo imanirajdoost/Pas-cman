@@ -3,7 +3,7 @@
 #include "header/GameVars.h"
 
 
-Ghost::Ghost(SDL_Rect default_sp) : MovableGameObject(default_sp) {
+Ghost::Ghost(SDL_Rect default_sp, SDL_Rect initPos) : MovableGameObject(default_sp, initPos) {
     speed = 1;
 }
 
@@ -37,7 +37,7 @@ void Ghost::move() {
     MovableGameObject::move();
 }
 
-Blinky::Blinky() : Ghost(default_sprites::blinky_sp_default) {
+Blinky::Blinky() : Ghost(default_sprites::blinky_sp_default, default_positions::blinky_default_pos) {
 
     // Initial pos
     setPos(32, 32);
@@ -64,10 +64,8 @@ Blinky::Blinky() : Ghost(default_sprites::blinky_sp_default) {
 //    setMoveDirection(direction);
 //}
 
-Pinky::Pinky() : Ghost(default_sprites::pinky_sp_default) {
+Pinky::Pinky() : Ghost(default_sprites::pinky_sp_default, default_positions::pinky_default_pos) {
 
-    // Initial pos
-    setPos(64, 32);
     resetNextPos();
 
     // Set default animation and sprite and add animations
@@ -82,10 +80,8 @@ Pinky::Pinky() : Ghost(default_sprites::pinky_sp_default) {
     startAnimation();
 }
 
-Inky::Inky() : Ghost(default_sprites::inky_sp_default) {
+Inky::Inky() : Ghost(default_sprites::inky_sp_default, default_positions::inky_default_pos) {
 
-    // Initial pos
-    setPos(96, 32);
     resetNextPos();
 
     // Set default animation and sprite and add animations
@@ -100,10 +96,7 @@ Inky::Inky() : Ghost(default_sprites::inky_sp_default) {
     startAnimation();
 }
 
-Clyde::Clyde() : Ghost(default_sprites::clyde_sp_default) {
-
-    // Initial pos
-    setPos(128, 32);
+Clyde::Clyde() : Ghost(default_sprites::clyde_sp_default, default_positions::clyde_default_pos) {
     resetNextPos();
 
     // Set default animation and sprite and add animations

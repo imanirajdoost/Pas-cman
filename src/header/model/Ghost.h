@@ -21,8 +21,9 @@ public:
     /**
      * @brief Constructs a new Ghost object with the specified default sprite.
      * @param defaultsp The default sprite for the ghost.
+     * @param initPos The initial position of the ghost.
      */
-    explicit Ghost(SDL_Rect defaultsp);
+    explicit Ghost(SDL_Rect defaultsp, SDL_Rect initPos);
 
     /**
      * @brief Sets the next position of the ghost based on the current direction and the map.

@@ -1,11 +1,11 @@
-//
-// Created by iman on 05/04/23.
-//
+#include <utility>
+#include <iostream>
 
 #include "header/controller/PauseController.h"
 
 PauseController::PauseController(shared_ptr <TimeController> tController) : isPaused(false) {
     timeController = std::move(tController);
+    pauseTime = 0;
 }
 
 bool PauseController::hasPaused() const {
@@ -18,20 +18,28 @@ void PauseController::pause() {
 
 void PauseController::resume() {
     isPaused = false;
+    std::cout << "resuming" << std::endl;
+    if(resumeCallback != nullptr) {
+        resumeCallback();
+        std::cout << "resuming callback" << std::endl;
+    }
 }
 
-void PauseController::pauseFor(long milliSec) {
+void PauseController::pauseFor(long milliSec, function<void()> callback) {
     pause();
+    resumeCallback = std::move(callback);
     pauseTime = milliSec;
 }
 
 void PauseController::tick() {
 
-    if (pauseTime > 0) {
-        pauseTime -= timeController->getLastFrameTime();
-        if(pauseTime < 0) {
-            resume();
-            pauseTime = 0;
+    if(isPaused) {
+        if (pauseTime > 0) {
+            pauseTime -= timeController->getLastFrameTime();
+            if (pauseTime < 0) {
+                resume();
+                pauseTime = 0;
+            }
         }
     }
 }

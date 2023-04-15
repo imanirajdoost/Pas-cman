@@ -56,15 +56,26 @@ void MovableGameObject::move() {
     }
 }
 
-MovableGameObject::MovableGameObject(SDL_Rect defaultSp) : GameObject(defaultSp) {
+MovableGameObject::MovableGameObject(SDL_Rect defaultSp, SDL_Rect initPos) : GameObject(defaultSp, initPos) {
     isMoveEnabled = true;
 }
 
-MovableGameObject::MovableGameObject(const string &animName, const vector<SDL_Rect> &sprites, bool _isAnimated)
-        : GameObject(animName, sprites, _isAnimated) {
+MovableGameObject::MovableGameObject(const string &animName, const vector<SDL_Rect> &sprites, bool _isAnimated,
+                                     SDL_Rect initPos)
+        : GameObject(animName, sprites, _isAnimated, initPos){
     isMoveEnabled = true;
 }
 
-MovableGameObject::MovableGameObject() {
+MovableGameObject::MovableGameObject(SDL_Rect initPos) : GameObject(initPos) {
     isMoveEnabled = true;
+}
+
+void MovableGameObject::reset_state() {
+    GameObject::reset_state();
+    resetNextPos();
+    resetMoveDirection();
+    setMoveDirection(MoveDirection::NONE);
+    isMoveEnabled = true;
+    setAnimation("default");
+    getNextSprite();
 }

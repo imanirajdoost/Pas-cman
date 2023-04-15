@@ -17,11 +17,11 @@ void TransformComponent::setSize(int x, int y) {
     rect.h = y;
 }
 
-int TransformComponent::getX() const{
+int TransformComponent::getX() const {
     return rect.x;
 }
 
-int TransformComponent::getY() const{
+int TransformComponent::getY() const {
     return rect.y;
 }
 
@@ -38,7 +38,7 @@ SDL_Rect TransformComponent::getRect() const {
 }
 
 TransformComponent::TransformComponent() {
-    setPos(0,0);
+    setPos(0, 0);
     setSize(TILESIZE, TILESIZE);
 }
 
@@ -66,4 +66,9 @@ int TransformComponent::getTileX() const {
 
 int TransformComponent::getTileY() const {
     return getY() / TILESIZE;
+}
+
+TransformComponent::TransformComponent(SDL_Rect initPos) {
+    setPos(initPos.x, initPos.y);
+    setSize(TILESIZE, TILESIZE);
 }

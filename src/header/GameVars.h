@@ -7,7 +7,7 @@ namespace constants {
 
     /** @brief Update interval of the game.
      * Decrease this value to make the game faster */
-const Uint64 TICK_INTERVAL = 20;
+    const Uint64 TICK_INTERVAL = 20;
 
     /** @brief Tile size in pixels. */
 #define TILESIZE 32
@@ -46,6 +46,23 @@ const Uint64 TICK_INTERVAL = 20;
 #define FRUIT_AVAILABE_TIME 5000
 }
 
+namespace default_positions {
+    const SDL_Rect player_default_pos{10 * TILESIZE, 20 * TILESIZE};
+
+    const SDL_Rect blinky_default_pos{TILESIZE, TILESIZE};
+    const SDL_Rect inky_default_pos{2 * TILESIZE, TILESIZE};
+    const SDL_Rect pinky_default_pos{3 * TILESIZE, TILESIZE};
+    const SDL_Rect clyde_default_pos{4 * TILESIZE, TILESIZE};
+
+    const SDL_Rect global_default_pos{-100, -100};
+}
+
+namespace default_variables {
+    const int player_default_health = 2;
+
+    const int reset_level_time = 1000;
+}
+
 namespace default_sprites {
 
     /** @brief Default sprite for the player. */
@@ -64,10 +81,10 @@ namespace default_sprites {
     const SDL_Rect clyde_sp_default = {4, 178, 14, 14};
 
     /** @brief Default sprite for Dot Big. */
-    const SDL_Rect dot_big_default = { 9,79, 7,7 };
+    const SDL_Rect dot_big_default = {9, 79, 7, 7};
 
     /** @brief empty black sprite. */
-    const SDL_Rect empty_black_sp = { 184,103, 16,16 };
+    const SDL_Rect empty_black_sp = {184, 103, 16, 16};
 }
 
 #endif

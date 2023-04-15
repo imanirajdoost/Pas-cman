@@ -27,7 +27,7 @@ public:
     /**
      * @brief Method to handle the object's death when hit by a ghost
      */
-    virtual void die();
+    virtual short die();
 };
 
 #endif //PAS_CMAN_HEALTHCOMPONENT_H
