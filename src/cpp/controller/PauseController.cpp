@@ -18,10 +18,8 @@ void PauseController::pause() {
 
 void PauseController::resume() {
     isPaused = false;
-    std::cout << "resuming" << std::endl;
     if (resumeCallback != nullptr) {
         resumeCallback();
-        std::cout << "resuming callback" << std::endl;
     }
 }
 
