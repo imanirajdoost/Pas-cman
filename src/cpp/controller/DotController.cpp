@@ -19,15 +19,18 @@ vector<shared_ptr<Dot>> DotController::spawnDotObjects() {
 
     vector<shared_ptr<Dot>> mapDots;
 
+    int offsetSmallDot = (TILESIZE / 2) - (SMALL_DOT_SIZE / 2);
+    int offsetBigDot = (TILESIZE / 2) - (BIG_DOT_SIZE / 2);
+
     for (int i = 0; i < map.size(); i++) {
         for (int j = 0; j < map[i].size(); j++) {
             if (map[i][j] == MTYPE::ITEM) {
                 if (!isBigDot(i, j))
-                    mapDots.push_back(spawnDotSmall(j * TILESIZE + ((TILESIZE / 2) - (SMALL_DOT_SIZE / 2)),
-                                                    i * TILESIZE + (TILESIZE / 2) - (SMALL_DOT_SIZE / 2)));
+                    mapDots.push_back(spawnDotSmall(j * TILESIZE + offsetSmallDot,
+                                                    i * TILESIZE + offsetSmallDot));
                 else
-                    mapDots.push_back(spawnDotBig((j * TILESIZE) + ((TILESIZE / 2) - (BIG_DOT_SIZE / 2)),
-                                                  (i * TILESIZE) + (TILESIZE / 2) - (BIG_DOT_SIZE / 2)));
+                    mapDots.push_back(spawnDotBig((j * TILESIZE) + offsetBigDot,
+                                                  (i * TILESIZE) + offsetBigDot));
             }
         }
     }
