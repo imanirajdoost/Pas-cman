@@ -62,6 +62,8 @@ private:
     shared_ptr<Pinky> pinky;
     shared_ptr<Inky> inky;
     shared_ptr<Clyde> clyde;
+
+    function<void(bool)> gameOver();
 };
 
 #endif // GAMECONTROLLER_H

@@ -29,8 +29,7 @@ public:
 @param pController The PauseController instance
 @param tController The TextViewController instance
 */
-    explicit DotController(shared_ptr<PauseController> pController, shared_ptr<TextViewController> tController,
-                           shared_ptr<ScoreController> sController);
+    explicit DotController(std::function<void(bool)> _gameOverFunction);
 
     /**
 @brief A vector to store all the Dot instances
@@ -87,6 +86,8 @@ private:
     shared_ptr<TextViewController> textViewController;
 
     shared_ptr<ScoreController> scoreController;
+
+    std::function<void(bool)> gameOverFunction;
 
     /**
  * @brief An index to keep track of the Dots

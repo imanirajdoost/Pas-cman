@@ -84,6 +84,22 @@ std::function<void()> GameController::resetGame() {
     };
 }
 
+std::function<void(bool)> GameController::gameOver() {
+    return [this](bool won) {
+        pauseController->pause();
+        if (won) {
+            cout << "You won !" << endl;
+            scoreController->updateHighscore();
+            textViewController->writeOnUI("you_won", "congratulations!", 6 * TILESIZE, 10 * TILESIZE);
+        } else {
+            scoreController->updateHighscore();
+            textViewController->writeHighScore(scoreController->getHighscore());
+            textViewController->writeOnUI("game_over", "gameover", 270, 350);
+        }
+    };
+}
+
+
 GameController::GameController() : exit(false) {
     // Initialize game objects
     player = make_shared<Player>(default_variables::player_default_health, default_positions::player_default_pos);
@@ -108,12 +124,12 @@ GameController::GameController() : exit(false) {
     dataController = make_shared<DataController>();
     textViewController = make_shared<TextViewController>(dataController);
     scoreController = make_shared<ScoreController>(textViewController, dataController);
-    dotController = make_shared<DotController>(pauseController, textViewController, scoreController);
+    dotController = make_shared<DotController>(gameOver());
     fruitController = make_shared<FruitController>(timeController, textViewController);
     ghostController = make_shared<GhostController>(inky, pinky, blinky, clyde, collisionController);
     playerController = make_shared<PlayerController>(collisionController, player, dotController, fruitController,
                                                      scoreController, textViewController, ghostController,
-                                                     pauseController, resetGame());
+                                                     pauseController, resetGame(), gameOver());
 
     sdlViewController = make_shared<SDLViewController>(list_sp, textViewController, dotController, fruitController,
                                                        pauseController);

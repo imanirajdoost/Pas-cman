@@ -8,11 +8,8 @@
 #include "header/model/Map.h"
 #include "header/GameVars.h"
 
-DotController::DotController(shared_ptr<PauseController> pController, shared_ptr<TextViewController> tController,
-                             shared_ptr<ScoreController> sController) {
-    pauseController = std::move(pController);
-    textViewController = std::move(tController);
-    scoreController = std::move(sController);
+DotController::DotController(std::function<void(bool)> _gameOverFunction) {
+    gameOverFunction = std::move(_gameOverFunction);
     dots = spawnDotObjects();
 }
 
@@ -71,11 +68,8 @@ bool DotController::deleteDot(const Dot &dot) {
 //            cout << " remaining dots: " << dots.size() << endl;
             if (dots.empty()) {
 //            if (dots.size() < 180) {
-                // @TODO : Win the game
-                cout << "You won !" << endl;
-                pauseController->pause();
-                scoreController->updateHighscore();
-                textViewController->writeOnUI("you_won", "congratulations!", 6 * TILESIZE, 10 * TILESIZE);
+                if (gameOverFunction != nullptr)
+                    gameOverFunction(true);
             }
             return true;
         }

@@ -49,10 +49,8 @@ void PlayerController::tick() {
             if (remainingHealth > 0) {
                 pauseController->pauseFor(default_variables::reset_level_time, resetGame);
             } else {
-                pauseController->pause();
-                scoreController->updateHighscore();
-                textViewController->writeHighScore(scoreController->getHighscore());
-                textViewController->writeOnUI("game_over", "gameover", 270, 350);
+                if(gameOverFunction != nullptr)
+                    gameOverFunction(false);
             }
             break;
         }
@@ -84,7 +82,7 @@ PlayerController::PlayerController(shared_ptr<CollisionController> colController
                                    shared_ptr<DotController> dController, shared_ptr<FruitController> fController,
                                    shared_ptr<ScoreController> sController, shared_ptr<TextViewController> tController,
                                    shared_ptr<GhostController> gController, shared_ptr<PauseController> pController,
-                                   std::function<void()> _resetFunction) {
+                                   std::function<void()> _resetFunction, std::function<void(bool)> _gameOverFunction) {
     collisionController = std::move(colController);
     dotController = std::move(dController);
     fruitController = std::move(fController);
@@ -92,6 +90,7 @@ PlayerController::PlayerController(shared_ptr<CollisionController> colController
     textViewController = std::move(tController);
     ghostController = std::move(gController);
     pauseController = std::move(pController);
+    gameOverFunction = std::move(_gameOverFunction);
     player = std::move(p);
 
     resetGame = std::move(_resetFunction);
