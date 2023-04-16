@@ -33,7 +33,7 @@ private:
     const SDL_Rect player_die7 = {116, 111, 10, 8};
     const SDL_Rect player_die8 = {129, 111, 6, 8};
     const SDL_Rect player_die9 = {137, 111, 4, 8};
-    const SDL_Rect player_die10 = {170, 119, 11, 10};
+    const SDL_Rect player_die10 = {143, 109, 11, 10};
 
     /** @brief Number of pixels to let player change direction if they are not in the middle */
     const int PLAYER_MOVE_THRESHOLD = 6;

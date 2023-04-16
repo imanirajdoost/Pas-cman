@@ -103,6 +103,11 @@ void SDLViewController::drawUI() {
     // Update Health on UI
     for (auto i = textViewController->health_list.begin(); i < textViewController->health_list.end(); i++)
         drawTarget(&playerHealth, i->get());
+
+    // Update fruit UI
+    for (int i = 0; i < textViewController->fruit_list_pos.size(); ++i) {
+        drawTarget(textViewController->fruit_list_sp[i].get(), textViewController->fruit_list_pos[i].get());
+    }
 }
 
 void SDLViewController::drawFruit() {

@@ -109,7 +109,7 @@ GameController::GameController() : exit(false) {
     textViewController = make_shared<TextViewController>(dataController);
     scoreController = make_shared<ScoreController>(textViewController, dataController);
     dotController = make_shared<DotController>(pauseController, textViewController, scoreController);
-    fruitController = make_shared<FruitController>(timeController);
+    fruitController = make_shared<FruitController>(timeController, textViewController);
     ghostController = make_shared<GhostController>(inky, pinky, blinky, clyde, collisionController);
     playerController = make_shared<PlayerController>(collisionController, player, dotController, fruitController,
                                                      scoreController, textViewController, ghostController,

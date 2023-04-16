@@ -48,8 +48,16 @@ public:
      */
     void setHealthUI(short health);
 
+    /**
+     * @brief Sets the fruit UI element to the given value.
+     * @param fruit The fruit value to set.
+     */
+    void setFruitUI(const vector<shared_ptr<SDL_Rect>>& fruit_sp);
+
     vector<shared_ptr<tuple<string, string, int, int, vector<shared_ptr<SDL_Rect>>>>> name_txt_maps;
     vector<shared_ptr<SDL_Rect>> health_list;
+    vector<shared_ptr<SDL_Rect>> fruit_list_pos;
+    vector<shared_ptr<SDL_Rect>> fruit_list_sp;
 
     const int FONT_SIZE = 16;
     const int FONT_SPACE = 22;
@@ -121,6 +129,9 @@ private:
 
     const int HEALTH_POSX = 700;
     const int HEALTH_POSY = 100;
+
+    const int FRUIT_POSX = 700;
+    const int FRUIT_POSY = 800;
 
     map<string, SDL_Rect> char_map;
 

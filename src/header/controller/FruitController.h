@@ -4,6 +4,7 @@
 
 #include "header/model/eatable/Fruit.h"
 #include "TimeController.h"
+#include "header/view/TextViewController.h"
 
 /**
  * @brief The FruitController class manages the spawn and deletion of the bonus fruit object.
@@ -14,8 +15,9 @@ public:
     /**
     * @brief Constructs a new FruitController object.
     * @param tController A shared pointer to the TimeController object.
+     * @param tvController A shared pointer to the TextViewController object.
     */
-    explicit FruitController(shared_ptr<TimeController> tController);
+    explicit FruitController(shared_ptr<TimeController> tController, shared_ptr<TextViewController> tvController);
 
     Fruit fruit; /**< The bonus fruit object. */
 
@@ -43,6 +45,7 @@ private:
     void resetFruitPosition();
 
     shared_ptr<TimeController> timeController; /**< A shared pointer to the TimeController object. */
+    shared_ptr<TextViewController> textViewController; /**< A shared pointer to the TextViewController object. */
 
     bool fruitAvailable; /**< A boolean value indicating if a bonus fruit is available. */
 

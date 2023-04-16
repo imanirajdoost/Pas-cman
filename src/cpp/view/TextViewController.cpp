@@ -127,3 +127,17 @@ TextViewController::TextViewController(shared_ptr<DataController> dController) {
     writeOnUI(HIGH_SCORE_TEXT_STATIC, "highscore", HIGH_SCORE_TEXT_STATIC_POSX, HIGH_SCORE_TEXT_STATIC_POSY);
     writeHighScore(dataController->loadHighscore());
 }
+
+void TextViewController::setFruitUI(const vector<shared_ptr<SDL_Rect>>& fruit_sp) {
+    fruit_list_pos.clear();
+    fruit_list_sp = fruit_sp;
+    // for each fruit sprite in the vector, add it to the UI
+    for (int i = 0; i < fruit_list_sp.size(); ++i) {
+        auto rect = make_shared<SDL_Rect>();
+        rect->x = FRUIT_POSX + ((FONT_SPACE * 2) * i);
+        rect->y = FRUIT_POSY;
+        rect->w = FONT_SIZE * 2;
+        rect->h = FONT_SIZE * 2;
+        fruit_list_pos.push_back(rect);
+    }
+}

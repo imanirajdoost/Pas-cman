@@ -22,8 +22,20 @@ public:
      */
     Fruit();
 
+    /**
+     * @brief Picks a random fruit sprite from the fruit_sprites vector.
+     */
+    void pick_sprite_randomly();
+
+    std::vector<shared_ptr<SDL_Rect>> get_sprites();
+
 private:
-    const SDL_Rect sp_fruit = {290, 238, 12, 13 }; ///< The sprite sheet coordinates for the fruit
+    const SDL_Rect sp_fruit1 = {290, 238, 12, 13 }; ///< The sprite sheet coordinates for the 1st fruit
+    const SDL_Rect sp_fruit2 = {307, 238, 11, 12 }; ///< The sprite sheet coordinates for the 2nd fruit
+    const SDL_Rect sp_fruit3 = {322, 238, 12, 12 }; ///< The sprite sheet coordinates for the 3rd fruit
+    const SDL_Rect sp_fruit4 = {338, 238, 12, 13 }; ///< The sprite sheet coordinates for the 4th fruit
+
+    std::vector<shared_ptr<SDL_Rect>> fruit_sprites; ///< A vector containing all the fruit sprites
 };
 
 #endif //PAS_CMAN_FRUIT_H
