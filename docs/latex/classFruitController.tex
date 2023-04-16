@@ -16,7 +16,7 @@ Collaboration diagram for Fruit\+Controller\+:
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classFruitController_aac04123367be4be617146bb3a16851cf}{Fruit\+Controller}} (shared\+\_\+ptr$<$ \mbox{\hyperlink{classTimeController}{Time\+Controller}} $>$ t\+Controller)
+\mbox{\hyperlink{classFruitController_a42cded7d3b315adc94a6842c7151f63e}{Fruit\+Controller}} (shared\+\_\+ptr$<$ \mbox{\hyperlink{classTimeController}{Time\+Controller}} $>$ t\+Controller, shared\+\_\+ptr$<$ \mbox{\hyperlink{classTextViewController}{Text\+View\+Controller}} $>$ tv\+Controller)
 \begin{DoxyCompactList}\small\item\em Constructs a new \mbox{\hyperlink{classFruitController}{Fruit\+Controller}} object. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classFruitController_a1c95a4fed9c7cc624e698a72224492a2}{delete\+Fruit}} ()
 \begin{DoxyCompactList}\small\item\em Deletes the bonus fruit object. \end{DoxyCompactList}\item 
@@ -33,11 +33,11 @@ void \mbox{\hyperlink{classFruitController_a01cdf0c800cf08314f0bada460d94ac9}{ti
 The \mbox{\hyperlink{classFruitController}{Fruit\+Controller}} class manages the spawn and deletion of the bonus fruit object. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classFruitController_aac04123367be4be617146bb3a16851cf}\label{classFruitController_aac04123367be4be617146bb3a16851cf}} 
+\mbox{\Hypertarget{classFruitController_a42cded7d3b315adc94a6842c7151f63e}\label{classFruitController_a42cded7d3b315adc94a6842c7151f63e}} 
 \index{FruitController@{FruitController}!FruitController@{FruitController}}
 \index{FruitController@{FruitController}!FruitController@{FruitController}}
 \doxysubsubsection{\texorpdfstring{FruitController()}{FruitController()}}
-{\footnotesize\ttfamily Fruit\+Controller\+::\+Fruit\+Controller (\begin{DoxyParamCaption}\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{classTimeController}{Time\+Controller}} $>$}]{t\+Controller }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+{\footnotesize\ttfamily Fruit\+Controller\+::\+Fruit\+Controller (\begin{DoxyParamCaption}\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{classTimeController}{Time\+Controller}} $>$}]{t\+Controller,  }\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{classTextViewController}{Text\+View\+Controller}} $>$}]{tv\+Controller }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
 
 
@@ -46,6 +46,8 @@ Constructs a new \mbox{\hyperlink{classFruitController}{Fruit\+Controller}} obje
 
 \begin{DoxyParams}{Parameters}
 {\em t\+Controller} & A shared pointer to the \mbox{\hyperlink{classTimeController}{Time\+Controller}} object. \\
+\hline
+{\em tv\+Controller} & A shared pointer to the \mbox{\hyperlink{classTextViewController}{Text\+View\+Controller}} object. \\
 \hline
 \end{DoxyParams}
 

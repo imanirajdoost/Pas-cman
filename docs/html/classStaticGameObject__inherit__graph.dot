@@ -13,12 +13,14 @@ digraph "StaticGameObject"
   Node5 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node5 [label="AnimationComponent",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classAnimationComponent.html",tooltip="The model for the animation component, which is responsible for handling the animation of sprites and..."];
   Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node6 [label="Dot",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classDot.html",tooltip=" "];
-  Node6 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node7 [label="DotBig",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classDotBig.html",tooltip="The DotBig class represents the big dots that are eaten by Pacman."];
-  Node6 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node8 [label="DotSmall",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classDotSmall.html",tooltip="The DotSmall class, which represents the small dots that Pacman can eat."];
-  Node1 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node9 [label="Fruit",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classFruit.html",tooltip="The Fruit class."];
+  Node6 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="IResettable",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classIResettable.html",tooltip="The IResettable interface, which is implemented by classes that need to be reset when the game is res..."];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="Dot",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classDot.html",tooltip=" "];
+  Node7 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="DotBig",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classDotBig.html",tooltip="The DotBig class represents the big dots that are eaten by Pacman."];
+  Node7 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="DotSmall",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classDotSmall.html",tooltip="The DotSmall class, which represents the small dots that Pacman can eat."];
+  Node1 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="Fruit",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classFruit.html",tooltip="The Fruit class."];
 }

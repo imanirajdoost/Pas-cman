@@ -11,4 +11,6 @@ digraph "GameObject"
   Node4 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid"];
   Node4 [label="AnimationComponent",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classAnimationComponent.html",tooltip="The model for the animation component, which is responsible for handling the animation of sprites and..."];
   Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="IResettable",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classIResettable.html",tooltip="The IResettable interface, which is implemented by classes that need to be reset when the game is res..."];
 }

@@ -9,13 +9,15 @@
 \item 
 \mbox{\hyperlink{classTimeController_a556cfa71086ae3fb76cf79d9da0056e4}{Time\+Controller}} ()
 \item 
-void \mbox{\hyperlink{classTimeController_a319e5a9e467bc2d89d546146d608e9d6}{start\+Timer}} ()
+void \mbox{\hyperlink{classTimeController_a37807d7290bf862f563e1d6099b5c21b}{tick\+\_\+start}} ()
 \item 
-void \mbox{\hyperlink{classTimeController_af5561c6ac8fb236fff19130a71beeb49}{tick}} ()
+void \mbox{\hyperlink{classTimeController_a5745d2370d904222938a6e75df70b42d}{tick\+\_\+end}} ()
 \item 
-long \mbox{\hyperlink{classTimeController_a39f9e204b1d2d73f4e747570d4c62386}{get\+Elapsed\+Time}} () const
+Uint64 \mbox{\hyperlink{classTimeController_abcb9b9aa7553f5ed5b39857d978787eb}{get\+Elapsed\+Time}} () const
 \item 
-long \mbox{\hyperlink{classTimeController_a2bf05dfa14209365290972e4b704a629}{get\+Last\+Frame\+Time}} () const
+Uint64 \mbox{\hyperlink{classTimeController_a0bcf6f6698e14d5b90f37761cfe11154}{get\+Last\+Frame\+Time}} () const
+\item 
+void \mbox{\hyperlink{classTimeController_afd307036378553b94f5cd57cf6743bdf}{update\+FPS}} ()
 \end{DoxyCompactItemize}
 
 
@@ -32,37 +34,43 @@ A class that manages time-\/related operations and tracking of elapsed and last 
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classTimeController_a39f9e204b1d2d73f4e747570d4c62386}\label{classTimeController_a39f9e204b1d2d73f4e747570d4c62386}} 
+\mbox{\Hypertarget{classTimeController_abcb9b9aa7553f5ed5b39857d978787eb}\label{classTimeController_abcb9b9aa7553f5ed5b39857d978787eb}} 
 \index{TimeController@{TimeController}!getElapsedTime@{getElapsedTime}}
 \index{getElapsedTime@{getElapsedTime}!TimeController@{TimeController}}
 \doxysubsubsection{\texorpdfstring{getElapsedTime()}{getElapsedTime()}}
-{\footnotesize\ttfamily long Time\+Controller\+::get\+Elapsed\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily Uint64 Time\+Controller\+::get\+Elapsed\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 Gets the elapsed time in milliseconds. \begin{DoxyReturn}{Returns}
 The elapsed time in milliseconds. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classTimeController_a2bf05dfa14209365290972e4b704a629}\label{classTimeController_a2bf05dfa14209365290972e4b704a629}} 
+\mbox{\Hypertarget{classTimeController_a0bcf6f6698e14d5b90f37761cfe11154}\label{classTimeController_a0bcf6f6698e14d5b90f37761cfe11154}} 
 \index{TimeController@{TimeController}!getLastFrameTime@{getLastFrameTime}}
 \index{getLastFrameTime@{getLastFrameTime}!TimeController@{TimeController}}
 \doxysubsubsection{\texorpdfstring{getLastFrameTime()}{getLastFrameTime()}}
-{\footnotesize\ttfamily long Time\+Controller\+::get\+Last\+Frame\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily Uint64 Time\+Controller\+::get\+Last\+Frame\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 Gets the last frame time in milliseconds. \begin{DoxyReturn}{Returns}
 The last frame time in milliseconds. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classTimeController_a319e5a9e467bc2d89d546146d608e9d6}\label{classTimeController_a319e5a9e467bc2d89d546146d608e9d6}} 
-\index{TimeController@{TimeController}!startTimer@{startTimer}}
-\index{startTimer@{startTimer}!TimeController@{TimeController}}
-\doxysubsubsection{\texorpdfstring{startTimer()}{startTimer()}}
-{\footnotesize\ttfamily void Time\+Controller\+::start\+Timer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{classTimeController_a5745d2370d904222938a6e75df70b42d}\label{classTimeController_a5745d2370d904222938a6e75df70b42d}} 
+\index{TimeController@{TimeController}!tick\_end@{tick\_end}}
+\index{tick\_end@{tick\_end}!TimeController@{TimeController}}
+\doxysubsubsection{\texorpdfstring{tick\_end()}{tick\_end()}}
+{\footnotesize\ttfamily void Time\+Controller\+::tick\+\_\+end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Starts the timer. \mbox{\Hypertarget{classTimeController_af5561c6ac8fb236fff19130a71beeb49}\label{classTimeController_af5561c6ac8fb236fff19130a71beeb49}} 
-\index{TimeController@{TimeController}!tick@{tick}}
-\index{tick@{tick}!TimeController@{TimeController}}
-\doxysubsubsection{\texorpdfstring{tick()}{tick()}}
-{\footnotesize\ttfamily void Time\+Controller\+::tick (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+captures the frame time and elapsed time. \mbox{\Hypertarget{classTimeController_a37807d7290bf862f563e1d6099b5c21b}\label{classTimeController_a37807d7290bf862f563e1d6099b5c21b}} 
+\index{TimeController@{TimeController}!tick\_start@{tick\_start}}
+\index{tick\_start@{tick\_start}!TimeController@{TimeController}}
+\doxysubsubsection{\texorpdfstring{tick\_start()}{tick\_start()}}
+{\footnotesize\ttfamily void Time\+Controller\+::tick\+\_\+start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Calculates elapsed time and last frame time. 
+Starts the timer. \mbox{\Hypertarget{classTimeController_afd307036378553b94f5cd57cf6743bdf}\label{classTimeController_afd307036378553b94f5cd57cf6743bdf}} 
+\index{TimeController@{TimeController}!updateFPS@{updateFPS}}
+\index{updateFPS@{updateFPS}!TimeController@{TimeController}}
+\doxysubsubsection{\texorpdfstring{updateFPS()}{updateFPS()}}
+{\footnotesize\ttfamily void Time\+Controller\+::update\+FPS (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Updates the FPS to have a consistent speed in game 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

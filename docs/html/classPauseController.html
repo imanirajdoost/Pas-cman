@@ -84,9 +84,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa425f26ef9a89de68f43b0c19cc57ce8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPauseController.html#aa425f26ef9a89de68f43b0c19cc57ce8">resume</a> ()</td></tr>
 <tr class="memdesc:aa425f26ef9a89de68f43b0c19cc57ce8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resumes the game.  <a href="classPauseController.html#aa425f26ef9a89de68f43b0c19cc57ce8">More...</a><br /></td></tr>
 <tr class="separator:aa425f26ef9a89de68f43b0c19cc57ce8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae380fee8932a427afb4350a45545da2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPauseController.html#aae380fee8932a427afb4350a45545da2">pauseFor</a> (long milliSec)</td></tr>
-<tr class="memdesc:aae380fee8932a427afb4350a45545da2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pauses the game for a specific amount of time.  <a href="classPauseController.html#aae380fee8932a427afb4350a45545da2">More...</a><br /></td></tr>
-<tr class="separator:aae380fee8932a427afb4350a45545da2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f3703535a0c89e0e620633a91f13da4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPauseController.html#a1f3703535a0c89e0e620633a91f13da4">pauseFor</a> (long milliSec, function&lt; void()&gt; callback=nullptr)</td></tr>
+<tr class="memdesc:a1f3703535a0c89e0e620633a91f13da4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pauses the game for a specific amount of time.  <a href="classPauseController.html#a1f3703535a0c89e0e620633a91f13da4">More...</a><br /></td></tr>
+<tr class="separator:a1f3703535a0c89e0e620633a91f13da4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a452cda90feeb6560f14aad7711784b6d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPauseController.html#a452cda90feeb6560f14aad7711784b6d">tick</a> ()</td></tr>
 <tr class="memdesc:a452cda90feeb6560f14aad7711784b6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the pause state.  <a href="classPauseController.html#a452cda90feeb6560f14aad7711784b6d">More...</a><br /></td></tr>
 <tr class="separator:a452cda90feeb6560f14aad7711784b6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -170,8 +170,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="aae380fee8932a427afb4350a45545da2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aae380fee8932a427afb4350a45545da2">&#9670;&nbsp;</a></span>pauseFor()</h2>
+<a id="a1f3703535a0c89e0e620633a91f13da4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f3703535a0c89e0e620633a91f13da4">&#9670;&nbsp;</a></span>pauseFor()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -180,8 +180,18 @@ Public Member Functions</h2></td></tr>
           <td class="memname">void PauseController::pauseFor </td>
           <td>(</td>
           <td class="paramtype">long&#160;</td>
-          <td class="paramname"><em>milliSec</em></td><td>)</td>
+          <td class="paramname"><em>milliSec</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">function&lt; void()&gt;&#160;</td>
+          <td class="paramname"><em>callback</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">

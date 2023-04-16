@@ -17,7 +17,9 @@ digraph "DotSmall"
   Node7 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node7 [label="AnimationComponent",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classAnimationComponent.html",tooltip="The model for the animation component, which is responsible for handling the animation of sprites and..."];
   Node6 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node8 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node8 [label="EatableComponent",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classEatableComponent.html",tooltip=" "];
-  Node6 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="IResettable",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classIResettable.html",tooltip="The IResettable interface, which is implemented by classes that need to be reset when the game is res..."];
+  Node9 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="EatableComponent",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classEatableComponent.html",tooltip=" "];
+  Node6 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
 }

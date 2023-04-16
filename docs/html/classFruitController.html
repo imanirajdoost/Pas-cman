@@ -84,9 +84,9 @@ Collaboration diagram for FruitController:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aac04123367be4be617146bb3a16851cf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFruitController.html#aac04123367be4be617146bb3a16851cf">FruitController</a> (shared_ptr&lt; <a class="el" href="classTimeController.html">TimeController</a> &gt; tController)</td></tr>
-<tr class="memdesc:aac04123367be4be617146bb3a16851cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a new <a class="el" href="classFruitController.html" title="The FruitController class manages the spawn and deletion of the bonus fruit object.">FruitController</a> object.  <a href="classFruitController.html#aac04123367be4be617146bb3a16851cf">More...</a><br /></td></tr>
-<tr class="separator:aac04123367be4be617146bb3a16851cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42cded7d3b315adc94a6842c7151f63e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFruitController.html#a42cded7d3b315adc94a6842c7151f63e">FruitController</a> (shared_ptr&lt; <a class="el" href="classTimeController.html">TimeController</a> &gt; tController, shared_ptr&lt; <a class="el" href="classTextViewController.html">TextViewController</a> &gt; tvController)</td></tr>
+<tr class="memdesc:a42cded7d3b315adc94a6842c7151f63e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a new <a class="el" href="classFruitController.html" title="The FruitController class manages the spawn and deletion of the bonus fruit object.">FruitController</a> object.  <a href="classFruitController.html#a42cded7d3b315adc94a6842c7151f63e">More...</a><br /></td></tr>
+<tr class="separator:a42cded7d3b315adc94a6842c7151f63e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c95a4fed9c7cc624e698a72224492a2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFruitController.html#a1c95a4fed9c7cc624e698a72224492a2">deleteFruit</a> ()</td></tr>
 <tr class="memdesc:a1c95a4fed9c7cc624e698a72224492a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes the bonus fruit object.  <a href="classFruitController.html#a1c95a4fed9c7cc624e698a72224492a2">More...</a><br /></td></tr>
 <tr class="separator:a1c95a4fed9c7cc624e698a72224492a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -102,8 +102,8 @@ Public Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The <a class="el" href="classFruitController.html" title="The FruitController class manages the spawn and deletion of the bonus fruit object.">FruitController</a> class manages the spawn and deletion of the bonus fruit object. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="aac04123367be4be617146bb3a16851cf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aac04123367be4be617146bb3a16851cf">&#9670;&nbsp;</a></span>FruitController()</h2>
+<a id="a42cded7d3b315adc94a6842c7151f63e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42cded7d3b315adc94a6842c7151f63e">&#9670;&nbsp;</a></span>FruitController()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -115,8 +115,18 @@ Public Attributes</h2></td></tr>
           <td class="memname">FruitController::FruitController </td>
           <td>(</td>
           <td class="paramtype">shared_ptr&lt; <a class="el" href="classTimeController.html">TimeController</a> &gt;&#160;</td>
-          <td class="paramname"><em>tController</em></td><td>)</td>
+          <td class="paramname"><em>tController</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">shared_ptr&lt; <a class="el" href="classTextViewController.html">TextViewController</a> &gt;&#160;</td>
+          <td class="paramname"><em>tvController</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -130,6 +140,7 @@ Public Attributes</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">tController</td><td>A shared pointer to the <a class="el" href="classTimeController.html">TimeController</a> object. </td></tr>
+    <tr><td class="paramname">tvController</td><td>A shared pointer to the <a class="el" href="classTextViewController.html" title="This class is responsible for managing the text UI elements.">TextViewController</a> object. </td></tr>
   </table>
   </dd>
 </dl>

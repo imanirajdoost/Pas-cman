@@ -29,9 +29,11 @@ digraph "src/header/model/Ghost.h"
   Node11 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
   Node11 -> Node8 [color="midnightblue",fontsize="10",style="solid"];
   Node11 -> Node9 [color="midnightblue",fontsize="10",style="solid"];
-  Node2 -> Node12 [color="midnightblue",fontsize="10",style="solid"];
-  Node12 [label="Map.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Map_8h.html",tooltip=" "];
-  Node12 -> Node9 [color="midnightblue",fontsize="10",style="solid"];
-  Node12 -> Node13 [color="midnightblue",fontsize="10",style="solid"];
-  Node13 [label="tuple",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node3 -> Node12 [color="midnightblue",fontsize="10",style="solid"];
+  Node12 [label="header/controller/IResettable.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$IResettable_8h.html",tooltip=" "];
+  Node2 -> Node13 [color="midnightblue",fontsize="10",style="solid"];
+  Node13 [label="Map.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Map_8h.html",tooltip=" "];
+  Node13 -> Node9 [color="midnightblue",fontsize="10",style="solid"];
+  Node13 -> Node14 [color="midnightblue",fontsize="10",style="solid"];
+  Node14 [label="tuple",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
 }

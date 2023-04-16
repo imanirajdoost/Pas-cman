@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['font_5fsize_379',['FONT_SIZE',['../classTextViewController.html#ab03551d63a5fa98fe1e4003dda769ed0',1,'TextViewController']]],
-  ['font_5fspace_380',['FONT_SPACE',['../classTextViewController.html#af4005610b5d0e7dfb5ebbd3305cd07b9',1,'TextViewController']]],
-  ['fruit_381',['fruit',['../classFruitController.html#a3152c3d9d59d76f534e0b4a15a3a89fa',1,'FruitController']]]
+  ['font_5fsize_440',['FONT_SIZE',['../classTextViewController.html#ab03551d63a5fa98fe1e4003dda769ed0',1,'TextViewController']]],
+  ['font_5fspace_441',['FONT_SPACE',['../classTextViewController.html#af4005610b5d0e7dfb5ebbd3305cd07b9',1,'TextViewController']]],
+  ['fruit_442',['fruit',['../classFruitController.html#a3152c3d9d59d76f534e0b4a15a3a89fa',1,'FruitController']]],
+  ['fruit_5flist_5fpos_443',['fruit_list_pos',['../classTextViewController.html#afd9af1ec63897c2e5618a348b8453727',1,'TextViewController']]],
+  ['fruit_5flist_5fsp_444',['fruit_list_sp',['../classTextViewController.html#af30453dd812941b31e58afcdb48690c0',1,'TextViewController']]]
 ];

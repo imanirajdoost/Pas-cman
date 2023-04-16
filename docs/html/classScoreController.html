@@ -75,16 +75,22 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a9b6db0338059ce6dfbb71696400a0c7f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScoreController.html#a9b6db0338059ce6dfbb71696400a0c7f">ScoreController</a> (std::shared_ptr&lt; <a class="el" href="classTextViewController.html">TextViewController</a> &gt; tController)</td></tr>
-<tr class="memdesc:a9b6db0338059ce6dfbb71696400a0c7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a new <a class="el" href="classScoreController.html">ScoreController</a> object.  <a href="classScoreController.html#a9b6db0338059ce6dfbb71696400a0c7f">More...</a><br /></td></tr>
-<tr class="separator:a9b6db0338059ce6dfbb71696400a0c7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac48ac741f4cda58aec0f9aaf526ad853"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScoreController.html#ac48ac741f4cda58aec0f9aaf526ad853">ScoreController</a> (std::shared_ptr&lt; <a class="el" href="classTextViewController.html">TextViewController</a> &gt; tController, std::shared_ptr&lt; <a class="el" href="classDataController.html">DataController</a> &gt; dController)</td></tr>
+<tr class="memdesc:ac48ac741f4cda58aec0f9aaf526ad853"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a new <a class="el" href="classScoreController.html">ScoreController</a> object.  <a href="classScoreController.html#ac48ac741f4cda58aec0f9aaf526ad853">More...</a><br /></td></tr>
+<tr class="separator:ac48ac741f4cda58aec0f9aaf526ad853"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a464bd88ed247456bfda3f6ec457d217c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScoreController.html#a464bd88ed247456bfda3f6ec457d217c">addScore</a> (int scoreToAdd)</td></tr>
 <tr class="memdesc:a464bd88ed247456bfda3f6ec457d217c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a given amount to the player's score.  <a href="classScoreController.html#a464bd88ed247456bfda3f6ec457d217c">More...</a><br /></td></tr>
 <tr class="separator:a464bd88ed247456bfda3f6ec457d217c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4e28edff5cd10b3a4ddcac6fc150011"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScoreController.html#ad4e28edff5cd10b3a4ddcac6fc150011">updateHighscore</a> ()</td></tr>
+<tr class="memdesc:ad4e28edff5cd10b3a4ddcac6fc150011"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the highscore if the player's score is higher than the current highscore.  <a href="classScoreController.html#ad4e28edff5cd10b3a4ddcac6fc150011">More...</a><br /></td></tr>
+<tr class="separator:ad4e28edff5cd10b3a4ddcac6fc150011"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c36c5e94d6a134347ee5e25e257e0ac"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScoreController.html#a9c36c5e94d6a134347ee5e25e257e0ac">getHighscore</a> ()</td></tr>
+<tr class="memdesc:a9c36c5e94d6a134347ee5e25e257e0ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the highscore.  <a href="classScoreController.html#a9c36c5e94d6a134347ee5e25e257e0ac">More...</a><br /></td></tr>
+<tr class="separator:a9c36c5e94d6a134347ee5e25e257e0ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a9b6db0338059ce6dfbb71696400a0c7f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9b6db0338059ce6dfbb71696400a0c7f">&#9670;&nbsp;</a></span>ScoreController()</h2>
+<a id="ac48ac741f4cda58aec0f9aaf526ad853"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac48ac741f4cda58aec0f9aaf526ad853">&#9670;&nbsp;</a></span>ScoreController()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -93,8 +99,18 @@ Public Member Functions</h2></td></tr>
           <td class="memname">ScoreController::ScoreController </td>
           <td>(</td>
           <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classTextViewController.html">TextViewController</a> &gt;&#160;</td>
-          <td class="paramname"><em>tController</em></td><td>)</td>
+          <td class="paramname"><em>tController</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classDataController.html">DataController</a> &gt;&#160;</td>
+          <td class="paramname"><em>dController</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -133,6 +149,45 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a9c36c5e94d6a134347ee5e25e257e0ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c36c5e94d6a134347ee5e25e257e0ac">&#9670;&nbsp;</a></span>getHighscore()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ScoreController::getHighscore </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the highscore. </p>
+<dl class="section return"><dt>Returns</dt><dd>The highscore. </dd></dl>
+
+</div>
+</div>
+<a id="ad4e28edff5cd10b3a4ddcac6fc150011"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4e28edff5cd10b3a4ddcac6fc150011">&#9670;&nbsp;</a></span>updateHighscore()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ScoreController::updateHighscore </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Updates the highscore if the player's score is higher than the current highscore. </p>
 
 </div>
 </div>

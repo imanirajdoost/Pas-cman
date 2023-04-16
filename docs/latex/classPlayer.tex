@@ -20,7 +20,7 @@ Collaboration diagram for Player\+:
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classPlayer_a6f2dca59d73e30b327427076c63c8169}{Player}} (short init\+Health)
+\mbox{\hyperlink{classPlayer_a7b203da6891c827eca4a5ce0bedafdcb}{Player}} (short init\+Health, SDL\+\_\+\+Rect init\+Pos)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classPlayer_ae0e4bd8fa5c57275359dc3fe4e4b6027}{set\+Next\+Pos}} (const std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{Map_8h_a0dc0d3f05ebf63bd2133199d9429f6ad}{MTYPE}} $>$$>$ \&map, const \mbox{\hyperlink{MovableGameObject_8h_a00ec4eba48da32d6cbdf827185fd3d34}{Move\+Direction}} \&\mbox{\hyperlink{classMovableGameObject_afd37f5e247bb8e73b5481dcbc509a67d}{direction}}) override
 \begin{DoxyCompactList}\small\item\em Set the next position of the player. \end{DoxyCompactList}\item 
@@ -30,12 +30,14 @@ SDL\+\_\+\+Rect \mbox{\hyperlink{classPlayer_a4ad9959723238961b24afa28d81a55fa}{
 \begin{DoxyCompactList}\small\item\em Get the next step\textquotesingle{}s rectangle based on the intended direction. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classPlayer_a1d35b7b1cd1a890042abdfdc55cafb14}{move}} () override
 \begin{DoxyCompactList}\small\item\em Move the player. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classPlayer_aa2854fa9a73fdc548f7c0afcdd3367fd}{die}} () override
+short \mbox{\hyperlink{classPlayer_af6aaec2661b636a3c4fd6d825c0929b6}{die}} () override
 \begin{DoxyCompactList}\small\item\em Trigger the player\textquotesingle{}s death. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{MovableGameObject_8h_a00ec4eba48da32d6cbdf827185fd3d34}{Move\+Direction}} \mbox{\hyperlink{classPlayer_a269803fead43b59449be913fcb2d9e08}{get\+Move\+Intent}} () const
 \begin{DoxyCompactList}\small\item\em Get the player\textquotesingle{}s intended movement direction. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classPlayer_a96e661281fcb15cd971b1b955d9f926e}{set\+Move\+Intent}} (const \mbox{\hyperlink{MovableGameObject_8h_a00ec4eba48da32d6cbdf827185fd3d34}{Move\+Direction}} \&\mbox{\hyperlink{classMovableGameObject_afd37f5e247bb8e73b5481dcbc509a67d}{direction}})
-\begin{DoxyCompactList}\small\item\em Set the player\textquotesingle{}s intended movement direction. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Set the player\textquotesingle{}s intended movement direction. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPlayer_ad43d75b1395998c1a1eea44b9948f1c9}{reset\+\_\+state}} () override
+\end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
 
 
@@ -43,11 +45,11 @@ void \mbox{\hyperlink{classPlayer_a96e661281fcb15cd971b1b955d9f926e}{set\+Move\+
 Main pac-\/man player object. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classPlayer_a6f2dca59d73e30b327427076c63c8169}\label{classPlayer_a6f2dca59d73e30b327427076c63c8169}} 
+\mbox{\Hypertarget{classPlayer_a7b203da6891c827eca4a5ce0bedafdcb}\label{classPlayer_a7b203da6891c827eca4a5ce0bedafdcb}} 
 \index{Player@{Player}!Player@{Player}}
 \index{Player@{Player}!Player@{Player}}
 \doxysubsubsection{\texorpdfstring{Player()}{Player()}}
-{\footnotesize\ttfamily Player\+::\+Player (\begin{DoxyParamCaption}\item[{short}]{init\+Health }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+{\footnotesize\ttfamily Player\+::\+Player (\begin{DoxyParamCaption}\item[{short}]{init\+Health,  }\item[{SDL\+\_\+\+Rect}]{init\+Pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
 
 
@@ -56,6 +58,8 @@ Constructor.
 
 \begin{DoxyParams}{Parameters}
 {\em init\+Health} & Initial health of the player. \\
+\hline
+{\em init\+Pos} & Initial position of the player. \\
 \hline
 \end{DoxyParams}
 
@@ -76,11 +80,11 @@ Control the player\textquotesingle{}s movement.
 {\em collision\+Controller} & The collision controller for checking collisions with walls. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{classPlayer_aa2854fa9a73fdc548f7c0afcdd3367fd}\label{classPlayer_aa2854fa9a73fdc548f7c0afcdd3367fd}} 
+\mbox{\Hypertarget{classPlayer_af6aaec2661b636a3c4fd6d825c0929b6}\label{classPlayer_af6aaec2661b636a3c4fd6d825c0929b6}} 
 \index{Player@{Player}!die@{die}}
 \index{die@{die}!Player@{Player}}
 \doxysubsubsection{\texorpdfstring{die()}{die()}}
-{\footnotesize\ttfamily void Player\+::die (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily short Player\+::die (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
@@ -88,7 +92,7 @@ Trigger the player\textquotesingle{}s death.
 
 
 
-Reimplemented from \mbox{\hyperlink{classHealthComponent_acb56069e1cb65afc6ff00dca3185b80f}{Health\+Component}}.
+Reimplemented from \mbox{\hyperlink{classHealthComponent_a2c32e208a2fbe2347e74cddc2c961e2b}{Health\+Component}}.
 
 \mbox{\Hypertarget{classPlayer_a269803fead43b59449be913fcb2d9e08}\label{classPlayer_a269803fead43b59449be913fcb2d9e08}} 
 \index{Player@{Player}!getMoveIntent@{getMoveIntent}}
@@ -134,6 +138,16 @@ Move the player.
 
 
 Reimplemented from \mbox{\hyperlink{classMovableGameObject_a7e4411553a799980b15023bb57f31fb9}{Movable\+Game\+Object}}.
+
+\mbox{\Hypertarget{classPlayer_ad43d75b1395998c1a1eea44b9948f1c9}\label{classPlayer_ad43d75b1395998c1a1eea44b9948f1c9}} 
+\index{Player@{Player}!reset\_state@{reset\_state}}
+\index{reset\_state@{reset\_state}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{reset\_state()}{reset\_state()}}
+{\footnotesize\ttfamily void Player\+::reset\+\_\+state (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classMovableGameObject_adf39fbbae3476fd1d5e74b9ae6c97717}{Movable\+Game\+Object}}.
 
 \mbox{\Hypertarget{classPlayer_a96e661281fcb15cd971b1b955d9f926e}\label{classPlayer_a96e661281fcb15cd971b1b955d9f926e}} 
 \index{Player@{Player}!setMoveIntent@{setMoveIntent}}

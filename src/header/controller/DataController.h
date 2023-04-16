@@ -8,8 +8,16 @@ class DataController {
 public:
     DataController();
 
+    /**
+     * @brief Saves the given highscore to a file
+     * @param highscore The highscore to save
+     */
     void saveHighscore(int highscore);
 
+    /**
+     * @brief Loads the highscore from a file
+     * @return The highscore
+     */
     int loadHighscore();
 
 private:

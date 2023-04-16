@@ -75,12 +75,22 @@ $(function() {
 <div class="title">GameVars.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-
+<div class="textblock"><code>#include &lt;SDL.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for GameVars.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="GameVars_8h__incl.png" border="0" usemap="#asrc_2header_2GameVars_8h" alt=""/></div>
+</div>
+</div>
 <p><a href="GameVars_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespaceconstants"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconstants.html">constants</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespacedefault__positions"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedefault__positions.html">default_positions</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespacedefault__variables"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedefault__variables.html">default_variables</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespacedefault__sprites"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedefault__sprites.html">default_sprites</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -93,9 +103,12 @@ Macros</h2></td></tr>
 <tr class="memitem:ac80a3592e72fd96b772ee47a7d8e0d0a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GameVars_8h.html#ac80a3592e72fd96b772ee47a7d8e0d0a">DEBUG_MODE</a>&#160;&#160;&#160;0</td></tr>
 <tr class="memdesc:ac80a3592e72fd96b772ee47a7d8e0d0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Debug mode flag.  <a href="GameVars_8h.html#ac80a3592e72fd96b772ee47a7d8e0d0a">More...</a><br /></td></tr>
 <tr class="separator:ac80a3592e72fd96b772ee47a7d8e0d0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a3cc0a73a3a06c9eef99fb21df82a1b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GameVars_8h.html#a9a3cc0a73a3a06c9eef99fb21df82a1b">ANIMATION_DEFAULT_SPEED</a>&#160;&#160;&#160;2</td></tr>
-<tr class="memdesc:a9a3cc0a73a3a06c9eef99fb21df82a1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Animation frame rate in frames per second.  <a href="GameVars_8h.html#a9a3cc0a73a3a06c9eef99fb21df82a1b">More...</a><br /></td></tr>
-<tr class="separator:a9a3cc0a73a3a06c9eef99fb21df82a1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a958c37bf3b24d674daab95749fe80f3d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GameVars_8h.html#a958c37bf3b24d674daab95749fe80f3d">SHOW_FPS</a>&#160;&#160;&#160;0</td></tr>
+<tr class="memdesc:a958c37bf3b24d674daab95749fe80f3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Show FPS flag.  <a href="GameVars_8h.html#a958c37bf3b24d674daab95749fe80f3d">More...</a><br /></td></tr>
+<tr class="separator:a958c37bf3b24d674daab95749fe80f3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aecb8f08e99d98d9108bf70439e709ea6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GameVars_8h.html#aecb8f08e99d98d9108bf70439e709ea6">ANIMATION_DEFAULT_SPEED</a>&#160;&#160;&#160;4</td></tr>
+<tr class="memdesc:aecb8f08e99d98d9108bf70439e709ea6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Animation frame rate in frames per second.  <a href="GameVars_8h.html#aecb8f08e99d98d9108bf70439e709ea6">More...</a><br /></td></tr>
+<tr class="separator:aecb8f08e99d98d9108bf70439e709ea6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff94486a452cab68b933999d0db2c130"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GameVars_8h.html#aff94486a452cab68b933999d0db2c130">SMALL_DOT_SIZE</a>&#160;&#160;&#160;10</td></tr>
 <tr class="memdesc:aff94486a452cab68b933999d0db2c130"><td class="mdescLeft">&#160;</td><td class="mdescRight">Small dot size in pixels.  <a href="GameVars_8h.html#aff94486a452cab68b933999d0db2c130">More...</a><br /></td></tr>
 <tr class="separator:aff94486a452cab68b933999d0db2c130"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -123,6 +136,25 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
+<tr class="memitem:aa565a40f4d1a1d7c439372b7f67af032"><td class="memItemLeft" align="right" valign="top">const Uint64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconstants.html#aa565a40f4d1a1d7c439372b7f67af032">constants::TICK_INTERVAL</a> = 20</td></tr>
+<tr class="memdesc:aa565a40f4d1a1d7c439372b7f67af032"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update interval of the game. Decrease this value to make the game faster.  <a href="namespaceconstants.html#aa565a40f4d1a1d7c439372b7f67af032">More...</a><br /></td></tr>
+<tr class="separator:aa565a40f4d1a1d7c439372b7f67af032"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aefd941f758da1d5b74333bfef2c4bc3f"><td class="memItemLeft" align="right" valign="top">const SDL_Rect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedefault__positions.html#aefd941f758da1d5b74333bfef2c4bc3f">default_positions::player_default_pos</a> {10 * <a class="el" href="GameVars_8h.html#a07ae61ed7dc31e9cddbdf9da244567c7">TILESIZE</a>, 20 * <a class="el" href="GameVars_8h.html#a07ae61ed7dc31e9cddbdf9da244567c7">TILESIZE</a>}</td></tr>
+<tr class="separator:aefd941f758da1d5b74333bfef2c4bc3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a387d267d0ad606e65fc372695fd9ac36"><td class="memItemLeft" align="right" valign="top">const SDL_Rect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedefault__positions.html#a387d267d0ad606e65fc372695fd9ac36">default_positions::blinky_default_pos</a> {<a class="el" href="GameVars_8h.html#a07ae61ed7dc31e9cddbdf9da244567c7">TILESIZE</a>, <a class="el" href="GameVars_8h.html#a07ae61ed7dc31e9cddbdf9da244567c7">TILESIZE</a>}</td></tr>
+<tr class="separator:a387d267d0ad606e65fc372695fd9ac36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac9bb82b0019061f8f72389993489a48"><td class="memItemLeft" align="right" valign="top">const SDL_Rect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedefault__positions.html#aac9bb82b0019061f8f72389993489a48">default_positions::inky_default_pos</a> {2 * <a class="el" href="GameVars_8h.html#a07ae61ed7dc31e9cddbdf9da244567c7">TILESIZE</a>, <a class="el" href="GameVars_8h.html#a07ae61ed7dc31e9cddbdf9da244567c7">TILESIZE</a>}</td></tr>
+<tr class="separator:aac9bb82b0019061f8f72389993489a48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9e9262b8073c6c710401c1fadb293b2"><td class="memItemLeft" align="right" valign="top">const SDL_Rect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedefault__positions.html#ab9e9262b8073c6c710401c1fadb293b2">default_positions::pinky_default_pos</a> {3 * <a class="el" href="GameVars_8h.html#a07ae61ed7dc31e9cddbdf9da244567c7">TILESIZE</a>, <a class="el" href="GameVars_8h.html#a07ae61ed7dc31e9cddbdf9da244567c7">TILESIZE</a>}</td></tr>
+<tr class="separator:ab9e9262b8073c6c710401c1fadb293b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79bb349cd5e9e464b92f03dc54636e8c"><td class="memItemLeft" align="right" valign="top">const SDL_Rect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedefault__positions.html#a79bb349cd5e9e464b92f03dc54636e8c">default_positions::clyde_default_pos</a> {4 * <a class="el" href="GameVars_8h.html#a07ae61ed7dc31e9cddbdf9da244567c7">TILESIZE</a>, <a class="el" href="GameVars_8h.html#a07ae61ed7dc31e9cddbdf9da244567c7">TILESIZE</a>}</td></tr>
+<tr class="separator:a79bb349cd5e9e464b92f03dc54636e8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d919edb6c3550308a4933fe914b7f38"><td class="memItemLeft" align="right" valign="top">const SDL_Rect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedefault__positions.html#a0d919edb6c3550308a4933fe914b7f38">default_positions::global_default_pos</a> {-100, -100}</td></tr>
+<tr class="separator:a0d919edb6c3550308a4933fe914b7f38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fc0c683db228ebc37a65897cfeb9452"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedefault__variables.html#a8fc0c683db228ebc37a65897cfeb9452">default_variables::player_default_health</a> = 2</td></tr>
+<tr class="separator:a8fc0c683db228ebc37a65897cfeb9452"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41d5aa45c455fecb7976b86cc3b9b9c4"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedefault__variables.html#a41d5aa45c455fecb7976b86cc3b9b9c4">default_variables::reset_level_time</a> = 1000</td></tr>
+<tr class="separator:a41d5aa45c455fecb7976b86cc3b9b9c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad8d109ff653dabb6d975530dbd5735f1"><td class="memItemLeft" align="right" valign="top">const SDL_Rect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedefault__sprites.html#ad8d109ff653dabb6d975530dbd5735f1">default_sprites::player_sp_default</a> {4, 90, 14, 14}</td></tr>
 <tr class="memdesc:ad8d109ff653dabb6d975530dbd5735f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default sprite for the player.  <a href="namespacedefault__sprites.html#ad8d109ff653dabb6d975530dbd5735f1">More...</a><br /></td></tr>
 <tr class="separator:ad8d109ff653dabb6d975530dbd5735f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -138,16 +170,22 @@ Variables</h2></td></tr>
 <tr class="memitem:aa2edaee3bf4103098fd75c58fa474ea2"><td class="memItemLeft" align="right" valign="top">const SDL_Rect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedefault__sprites.html#aa2edaee3bf4103098fd75c58fa474ea2">default_sprites::clyde_sp_default</a> = {4, 178, 14, 14}</td></tr>
 <tr class="memdesc:aa2edaee3bf4103098fd75c58fa474ea2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default sprite for <a class="el" href="classClyde.html" title="A class that represents the Clyde ghost in the game.">Clyde</a>.  <a href="namespacedefault__sprites.html#aa2edaee3bf4103098fd75c58fa474ea2">More...</a><br /></td></tr>
 <tr class="separator:aa2edaee3bf4103098fd75c58fa474ea2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a241a00e866ad24dae486a8485f9f5077"><td class="memItemLeft" align="right" valign="top">const SDL_Rect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedefault__sprites.html#a241a00e866ad24dae486a8485f9f5077">default_sprites::dot_big_default</a> = {9, 79, 7, 7}</td></tr>
+<tr class="memdesc:a241a00e866ad24dae486a8485f9f5077"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default sprite for <a class="el" href="classDot.html">Dot</a> Big.  <a href="namespacedefault__sprites.html#a241a00e866ad24dae486a8485f9f5077">More...</a><br /></td></tr>
+<tr class="separator:a241a00e866ad24dae486a8485f9f5077"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3a770aed8e114e47ae37a93d0827a5b"><td class="memItemLeft" align="right" valign="top">const SDL_Rect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedefault__sprites.html#aa3a770aed8e114e47ae37a93d0827a5b">default_sprites::empty_black_sp</a> = {184, 103, 16, 16}</td></tr>
+<tr class="memdesc:aa3a770aed8e114e47ae37a93d0827a5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">empty black sprite.  <a href="namespacedefault__sprites.html#aa3a770aed8e114e47ae37a93d0827a5b">More...</a><br /></td></tr>
+<tr class="separator:aa3a770aed8e114e47ae37a93d0827a5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a9a3cc0a73a3a06c9eef99fb21df82a1b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9a3cc0a73a3a06c9eef99fb21df82a1b">&#9670;&nbsp;</a></span>ANIMATION_DEFAULT_SPEED</h2>
+<a id="aecb8f08e99d98d9108bf70439e709ea6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aecb8f08e99d98d9108bf70439e709ea6">&#9670;&nbsp;</a></span>ANIMATION_DEFAULT_SPEED</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define ANIMATION_DEFAULT_SPEED&#160;&#160;&#160;2</td>
+          <td class="memname">#define ANIMATION_DEFAULT_SPEED&#160;&#160;&#160;4</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -265,6 +303,22 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Minimum time before a fruit can spawn. </p>
+
+</div>
+</div>
+<a id="a958c37bf3b24d674daab95749fe80f3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a958c37bf3b24d674daab95749fe80f3d">&#9670;&nbsp;</a></span>SHOW_FPS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SHOW_FPS&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Show FPS flag. </p>
 
 </div>
 </div>

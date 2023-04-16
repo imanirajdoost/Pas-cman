@@ -7,18 +7,22 @@
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classScoreController_a9b6db0338059ce6dfbb71696400a0c7f}{Score\+Controller}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTextViewController}{Text\+View\+Controller}} $>$ t\+Controller)
+\mbox{\hyperlink{classScoreController_ac48ac741f4cda58aec0f9aaf526ad853}{Score\+Controller}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTextViewController}{Text\+View\+Controller}} $>$ t\+Controller, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classDataController}{Data\+Controller}} $>$ d\+Controller)
 \begin{DoxyCompactList}\small\item\em Constructs a new \mbox{\hyperlink{classScoreController}{Score\+Controller}} object. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classScoreController_a464bd88ed247456bfda3f6ec457d217c}{add\+Score}} (int score\+To\+Add)
-\begin{DoxyCompactList}\small\item\em Adds a given amount to the player\textquotesingle{}s score. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Adds a given amount to the player\textquotesingle{}s score. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classScoreController_ad4e28edff5cd10b3a4ddcac6fc150011}{update\+Highscore}} ()
+\begin{DoxyCompactList}\small\item\em Updates the highscore if the player\textquotesingle{}s score is higher than the current highscore. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classScoreController_a9c36c5e94d6a134347ee5e25e257e0ac}{get\+Highscore}} ()
+\begin{DoxyCompactList}\small\item\em Returns the highscore. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classScoreController_a9b6db0338059ce6dfbb71696400a0c7f}\label{classScoreController_a9b6db0338059ce6dfbb71696400a0c7f}} 
+\mbox{\Hypertarget{classScoreController_ac48ac741f4cda58aec0f9aaf526ad853}\label{classScoreController_ac48ac741f4cda58aec0f9aaf526ad853}} 
 \index{ScoreController@{ScoreController}!ScoreController@{ScoreController}}
 \index{ScoreController@{ScoreController}!ScoreController@{ScoreController}}
 \doxysubsubsection{\texorpdfstring{ScoreController()}{ScoreController()}}
-{\footnotesize\ttfamily Score\+Controller\+::\+Score\+Controller (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTextViewController}{Text\+View\+Controller}} $>$}]{t\+Controller }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Score\+Controller\+::\+Score\+Controller (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTextViewController}{Text\+View\+Controller}} $>$}]{t\+Controller,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classDataController}{Data\+Controller}} $>$}]{d\+Controller }\end{DoxyParamCaption})}
 
 
 
@@ -47,6 +51,29 @@ Adds a given amount to the player\textquotesingle{}s score.
 {\em score\+To\+Add} & The amount of score to add. \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{classScoreController_a9c36c5e94d6a134347ee5e25e257e0ac}\label{classScoreController_a9c36c5e94d6a134347ee5e25e257e0ac}} 
+\index{ScoreController@{ScoreController}!getHighscore@{getHighscore}}
+\index{getHighscore@{getHighscore}!ScoreController@{ScoreController}}
+\doxysubsubsection{\texorpdfstring{getHighscore()}{getHighscore()}}
+{\footnotesize\ttfamily int Score\+Controller\+::get\+Highscore (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the highscore. 
+
+\begin{DoxyReturn}{Returns}
+The highscore. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classScoreController_ad4e28edff5cd10b3a4ddcac6fc150011}\label{classScoreController_ad4e28edff5cd10b3a4ddcac6fc150011}} 
+\index{ScoreController@{ScoreController}!updateHighscore@{updateHighscore}}
+\index{updateHighscore@{updateHighscore}!ScoreController@{ScoreController}}
+\doxysubsubsection{\texorpdfstring{updateHighscore()}{updateHighscore()}}
+{\footnotesize\ttfamily void Score\+Controller\+::update\+Highscore (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Updates the highscore if the player\textquotesingle{}s score is higher than the current highscore. 
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

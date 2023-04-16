@@ -77,14 +77,16 @@ $(function() {
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a556cfa71086ae3fb76cf79d9da0056e4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTimeController.html#a556cfa71086ae3fb76cf79d9da0056e4">TimeController</a> ()</td></tr>
 <tr class="separator:a556cfa71086ae3fb76cf79d9da0056e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a319e5a9e467bc2d89d546146d608e9d6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTimeController.html#a319e5a9e467bc2d89d546146d608e9d6">startTimer</a> ()</td></tr>
-<tr class="separator:a319e5a9e467bc2d89d546146d608e9d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af5561c6ac8fb236fff19130a71beeb49"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTimeController.html#af5561c6ac8fb236fff19130a71beeb49">tick</a> ()</td></tr>
-<tr class="separator:af5561c6ac8fb236fff19130a71beeb49"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a39f9e204b1d2d73f4e747570d4c62386"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTimeController.html#a39f9e204b1d2d73f4e747570d4c62386">getElapsedTime</a> () const</td></tr>
-<tr class="separator:a39f9e204b1d2d73f4e747570d4c62386"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2bf05dfa14209365290972e4b704a629"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTimeController.html#a2bf05dfa14209365290972e4b704a629">getLastFrameTime</a> () const</td></tr>
-<tr class="separator:a2bf05dfa14209365290972e4b704a629"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37807d7290bf862f563e1d6099b5c21b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTimeController.html#a37807d7290bf862f563e1d6099b5c21b">tick_start</a> ()</td></tr>
+<tr class="separator:a37807d7290bf862f563e1d6099b5c21b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5745d2370d904222938a6e75df70b42d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTimeController.html#a5745d2370d904222938a6e75df70b42d">tick_end</a> ()</td></tr>
+<tr class="separator:a5745d2370d904222938a6e75df70b42d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abcb9b9aa7553f5ed5b39857d978787eb"><td class="memItemLeft" align="right" valign="top">Uint64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTimeController.html#abcb9b9aa7553f5ed5b39857d978787eb">getElapsedTime</a> () const</td></tr>
+<tr class="separator:abcb9b9aa7553f5ed5b39857d978787eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0bcf6f6698e14d5b90f37761cfe11154"><td class="memItemLeft" align="right" valign="top">Uint64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTimeController.html#a0bcf6f6698e14d5b90f37761cfe11154">getLastFrameTime</a> () const</td></tr>
+<tr class="separator:a0bcf6f6698e14d5b90f37761cfe11154"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd307036378553b94f5cd57cf6743bdf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTimeController.html#afd307036378553b94f5cd57cf6743bdf">updateFPS</a> ()</td></tr>
+<tr class="separator:afd307036378553b94f5cd57cf6743bdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A class that manages time-related operations and tracking of elapsed and last frame time. </p>
@@ -107,14 +109,14 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a39f9e204b1d2d73f4e747570d4c62386"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a39f9e204b1d2d73f4e747570d4c62386">&#9670;&nbsp;</a></span>getElapsedTime()</h2>
+<a id="abcb9b9aa7553f5ed5b39857d978787eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abcb9b9aa7553f5ed5b39857d978787eb">&#9670;&nbsp;</a></span>getElapsedTime()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">long TimeController::getElapsedTime </td>
+          <td class="memname">Uint64 TimeController::getElapsedTime </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -125,14 +127,14 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a2bf05dfa14209365290972e4b704a629"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2bf05dfa14209365290972e4b704a629">&#9670;&nbsp;</a></span>getLastFrameTime()</h2>
+<a id="a0bcf6f6698e14d5b90f37761cfe11154"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0bcf6f6698e14d5b90f37761cfe11154">&#9670;&nbsp;</a></span>getLastFrameTime()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">long TimeController::getLastFrameTime </td>
+          <td class="memname">Uint64 TimeController::getLastFrameTime </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -143,14 +145,32 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a319e5a9e467bc2d89d546146d608e9d6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a319e5a9e467bc2d89d546146d608e9d6">&#9670;&nbsp;</a></span>startTimer()</h2>
+<a id="a5745d2370d904222938a6e75df70b42d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5745d2370d904222938a6e75df70b42d">&#9670;&nbsp;</a></span>tick_end()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void TimeController::startTimer </td>
+          <td class="memname">void TimeController::tick_end </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>captures the frame time and elapsed time. </p>
+
+</div>
+</div>
+<a id="a37807d7290bf862f563e1d6099b5c21b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37807d7290bf862f563e1d6099b5c21b">&#9670;&nbsp;</a></span>tick_start()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TimeController::tick_start </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -161,21 +181,21 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="af5561c6ac8fb236fff19130a71beeb49"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af5561c6ac8fb236fff19130a71beeb49">&#9670;&nbsp;</a></span>tick()</h2>
+<a id="afd307036378553b94f5cd57cf6743bdf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd307036378553b94f5cd57cf6743bdf">&#9670;&nbsp;</a></span>updateFPS()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void TimeController::tick </td>
+          <td class="memname">void TimeController::updateFPS </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Calculates elapsed time and last frame time. </p>
+<p>Updates the FPS to have a consistent speed in game </p>
 
 </div>
 </div>

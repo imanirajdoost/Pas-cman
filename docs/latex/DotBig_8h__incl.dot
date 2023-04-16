@@ -31,7 +31,9 @@ digraph "src/header/model/eatable/DotBig.h"
   Node12 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
   Node12 -> Node9 [color="midnightblue",fontsize="10",style="solid"];
   Node12 -> Node10 [color="midnightblue",fontsize="10",style="solid"];
-  Node2 -> Node13 [color="midnightblue",fontsize="10",style="solid"];
-  Node13 [label="header/model/component\l/EatableComponent.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$EatableComponent_8h.html",tooltip="This class is placed on all objects that are eatable by Pacman (such as dots on the screen or fruits ..."];
-  Node13 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 -> Node13 [color="midnightblue",fontsize="10",style="solid"];
+  Node13 [label="header/controller/IResettable.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$IResettable_8h.html",tooltip=" "];
+  Node2 -> Node14 [color="midnightblue",fontsize="10",style="solid"];
+  Node14 [label="header/model/component\l/EatableComponent.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$EatableComponent_8h.html",tooltip="This class is placed on all objects that are eatable by Pacman (such as dots on the screen or fruits ..."];
+  Node14 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
 }

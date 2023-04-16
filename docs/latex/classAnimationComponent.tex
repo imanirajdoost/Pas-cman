@@ -26,7 +26,7 @@ Collaboration diagram for Animation\+Component\+:
 \begin{DoxyCompactList}\small\item\em Constructs an \mbox{\hyperlink{classAnimationComponent}{Animation\+Component}} object with a default sprite. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classAnimationComponent_a2f72f29b1fb421575a1ea5d6477f266d}{Animation\+Component}} (const string \&new\+Name, const vector$<$ SDL\+\_\+\+Rect $>$ \&sps, bool \+\_\+is\+Animated)
 \begin{DoxyCompactList}\small\item\em Constructs an \mbox{\hyperlink{classAnimationComponent}{Animation\+Component}} object with a specified name, list of sprites, and animation status. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classAnimationComponent_a9ac3a3284c2869c3c6e59a6f177890ea}{add\+Animation}} (const string \&anim\+Name, const vector$<$ SDL\+\_\+\+Rect $>$ \&sps, bool should\+Loop=true)
+void \mbox{\hyperlink{classAnimationComponent_ac179f6d22aadab741ff74153f578aa42}{add\+Animation}} (const string \&anim\+Name, const vector$<$ SDL\+\_\+\+Rect $>$ \&sps, int speed=1, bool should\+Loop=true)
 \begin{DoxyCompactList}\small\item\em Adds a new animation to the component. \end{DoxyCompactList}\item 
 shared\+\_\+ptr$<$ SDL\+\_\+\+Rect $>$ \mbox{\hyperlink{classAnimationComponent_a221bfb7620a63df0ad4f0e635a3394f3}{get\+Next\+Sprite}} ()
 \begin{DoxyCompactList}\small\item\em Returns the next sprite in the current animation. \end{DoxyCompactList}\item 
@@ -105,11 +105,11 @@ Constructs an \mbox{\hyperlink{classAnimationComponent}{Animation\+Component}} o
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classAnimationComponent_a9ac3a3284c2869c3c6e59a6f177890ea}\label{classAnimationComponent_a9ac3a3284c2869c3c6e59a6f177890ea}} 
+\mbox{\Hypertarget{classAnimationComponent_ac179f6d22aadab741ff74153f578aa42}\label{classAnimationComponent_ac179f6d22aadab741ff74153f578aa42}} 
 \index{AnimationComponent@{AnimationComponent}!addAnimation@{addAnimation}}
 \index{addAnimation@{addAnimation}!AnimationComponent@{AnimationComponent}}
 \doxysubsubsection{\texorpdfstring{addAnimation()}{addAnimation()}}
-{\footnotesize\ttfamily void Animation\+Component\+::add\+Animation (\begin{DoxyParamCaption}\item[{const string \&}]{anim\+Name,  }\item[{const vector$<$ SDL\+\_\+\+Rect $>$ \&}]{sps,  }\item[{bool}]{should\+Loop = {\ttfamily true} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Animation\+Component\+::add\+Animation (\begin{DoxyParamCaption}\item[{const string \&}]{anim\+Name,  }\item[{const vector$<$ SDL\+\_\+\+Rect $>$ \&}]{sps,  }\item[{int}]{speed = {\ttfamily 1},  }\item[{bool}]{should\+Loop = {\ttfamily true} }\end{DoxyParamCaption})}
 
 
 

@@ -99,9 +99,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2f72f29b1fb421575a1ea5d6477f266d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnimationComponent.html#a2f72f29b1fb421575a1ea5d6477f266d">AnimationComponent</a> (const string &amp;newName, const vector&lt; SDL_Rect &gt; &amp;sps, bool _isAnimated)</td></tr>
 <tr class="memdesc:a2f72f29b1fb421575a1ea5d6477f266d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an <a class="el" href="classAnimationComponent.html" title="The model for the animation component, which is responsible for handling the animation of sprites and...">AnimationComponent</a> object with a specified name, list of sprites, and animation status.  <a href="classAnimationComponent.html#a2f72f29b1fb421575a1ea5d6477f266d">More...</a><br /></td></tr>
 <tr class="separator:a2f72f29b1fb421575a1ea5d6477f266d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9ac3a3284c2869c3c6e59a6f177890ea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnimationComponent.html#a9ac3a3284c2869c3c6e59a6f177890ea">addAnimation</a> (const string &amp;animName, const vector&lt; SDL_Rect &gt; &amp;sps, bool shouldLoop=true)</td></tr>
-<tr class="memdesc:a9ac3a3284c2869c3c6e59a6f177890ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a new animation to the component.  <a href="classAnimationComponent.html#a9ac3a3284c2869c3c6e59a6f177890ea">More...</a><br /></td></tr>
-<tr class="separator:a9ac3a3284c2869c3c6e59a6f177890ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac179f6d22aadab741ff74153f578aa42"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnimationComponent.html#ac179f6d22aadab741ff74153f578aa42">addAnimation</a> (const string &amp;animName, const vector&lt; SDL_Rect &gt; &amp;sps, int speed=1, bool shouldLoop=true)</td></tr>
+<tr class="memdesc:ac179f6d22aadab741ff74153f578aa42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a new animation to the component.  <a href="classAnimationComponent.html#ac179f6d22aadab741ff74153f578aa42">More...</a><br /></td></tr>
+<tr class="separator:ac179f6d22aadab741ff74153f578aa42"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a221bfb7620a63df0ad4f0e635a3394f3"><td class="memItemLeft" align="right" valign="top">shared_ptr&lt; SDL_Rect &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnimationComponent.html#a221bfb7620a63df0ad4f0e635a3394f3">getNextSprite</a> ()</td></tr>
 <tr class="memdesc:a221bfb7620a63df0ad4f0e635a3394f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the next sprite in the current animation.  <a href="classAnimationComponent.html#a221bfb7620a63df0ad4f0e635a3394f3">More...</a><br /></td></tr>
 <tr class="separator:a221bfb7620a63df0ad4f0e635a3394f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -237,8 +237,8 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a9ac3a3284c2869c3c6e59a6f177890ea"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9ac3a3284c2869c3c6e59a6f177890ea">&#9670;&nbsp;</a></span>addAnimation()</h2>
+<a id="ac179f6d22aadab741ff74153f578aa42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac179f6d22aadab741ff74153f578aa42">&#9670;&nbsp;</a></span>addAnimation()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -254,6 +254,12 @@ Protected Attributes</h2></td></tr>
           <td></td>
           <td class="paramtype">const vector&lt; SDL_Rect &gt; &amp;&#160;</td>
           <td class="paramname"><em>sps</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>speed</em> = <code>1</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>

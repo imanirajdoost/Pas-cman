@@ -41,7 +41,7 @@ void TimeController::tick_start() {
 void TimeController::tick_end() {
     Uint64 end = SDL_GetTicks();
 
-    if (DEBUG_MODE && SHOW_FPS)
+    if (SHOW_FPS)
         std::cout << "Frame time: " << end - start << "ms" << std::endl;
 
     elapsed_time += end - start;

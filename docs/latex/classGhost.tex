@@ -20,7 +20,7 @@ Collaboration diagram for Ghost\+:
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classGhost_a4ba7ea24baf2bc900691765c198a47a3}{Ghost}} (SDL\+\_\+\+Rect defaultsp)
+\mbox{\hyperlink{classGhost_ae6f0eb03fcfe07c7cbec65197c597cdc}{Ghost}} (SDL\+\_\+\+Rect defaultsp, SDL\+\_\+\+Rect init\+Pos)
 \begin{DoxyCompactList}\small\item\em Constructs a new \mbox{\hyperlink{classGhost}{Ghost}} object with the specified default sprite. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classGhost_a2f8f7ed971eae444583d9706d241da62}{set\+Next\+Pos}} (const std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{Map_8h_a0dc0d3f05ebf63bd2133199d9429f6ad}{MTYPE}} $>$$>$ \&map, const \mbox{\hyperlink{MovableGameObject_8h_a00ec4eba48da32d6cbdf827185fd3d34}{Move\+Direction}} \&\mbox{\hyperlink{classMovableGameObject_afd37f5e247bb8e73b5481dcbc509a67d}{direction}}) override
 \begin{DoxyCompactList}\small\item\em Sets the next position of the ghost based on the current direction and the map. \end{DoxyCompactList}\item 
@@ -38,11 +38,11 @@ bool \mbox{\hyperlink{classGhost_a92a0eebf8b22a56037ad908407edeef2}{is\+Vulnerab
 The \mbox{\hyperlink{classGhost}{Ghost}} class manages a single ghost in the game. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classGhost_a4ba7ea24baf2bc900691765c198a47a3}\label{classGhost_a4ba7ea24baf2bc900691765c198a47a3}} 
+\mbox{\Hypertarget{classGhost_ae6f0eb03fcfe07c7cbec65197c597cdc}\label{classGhost_ae6f0eb03fcfe07c7cbec65197c597cdc}} 
 \index{Ghost@{Ghost}!Ghost@{Ghost}}
 \index{Ghost@{Ghost}!Ghost@{Ghost}}
 \doxysubsubsection{\texorpdfstring{Ghost()}{Ghost()}}
-{\footnotesize\ttfamily Ghost\+::\+Ghost (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Rect}]{defaultsp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+{\footnotesize\ttfamily Ghost\+::\+Ghost (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Rect}]{defaultsp,  }\item[{SDL\+\_\+\+Rect}]{init\+Pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
 
 
@@ -51,6 +51,8 @@ Constructs a new \mbox{\hyperlink{classGhost}{Ghost}} object with the specified 
 
 \begin{DoxyParams}{Parameters}
 {\em defaultsp} & The default sprite for the ghost. \\
+\hline
+{\em init\+Pos} & The initial position of the ghost. \\
 \hline
 \end{DoxyParams}
 

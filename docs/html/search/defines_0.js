@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['animation_5fframe_5frate_410',['ANIMATION_FRAME_RATE',['../GameVars_8h.html#a9a3cc0a73a3a06c9eef99fb21df82a1b',1,'GameVars.h']]]
+  ['animation_5fdefault_5fspeed_480',['ANIMATION_DEFAULT_SPEED',['../GameVars_8h.html#aecb8f08e99d98d9108bf70439e709ea6',1,'GameVars.h']]]
 ];

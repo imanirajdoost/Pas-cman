@@ -1,7 +1,28 @@
 var searchData=
 [
-  ['textviewcontroller_361',['TextViewController',['../classTextViewController.html#a3b6f491a4f71615431043c061d537242',1,'TextViewController']]],
-  ['tick_362',['tick',['../classAnimationController.html#a81729a07995ebe94e05e83becfd3ccfe',1,'AnimationController::tick()'],['../classFruitController.html#a01cdf0c800cf08314f0bada460d94ac9',1,'FruitController::tick()'],['../classGhostController.html#acc19fa7468f0ac60e74f46cbd958ce48',1,'GhostController::tick()'],['../classPauseController.html#a452cda90feeb6560f14aad7711784b6d',1,'PauseController::tick()'],['../classPlayerController.html#ab1c27f23585b5f22421e195c37f8d94a',1,'PlayerController::tick()'],['../classTimeController.html#af5561c6ac8fb236fff19130a71beeb49',1,'TimeController::tick()'],['../classSDLViewController.html#a8be154125d4bdb9225fe54a7bb770279',1,'SDLViewController::tick()']]],
-  ['timecontroller_363',['TimeController',['../classTimeController.html#a556cfa71086ae3fb76cf79d9da0056e4',1,'TimeController']]],
-  ['transformcomponent_364',['TransformComponent',['../classTransformComponent.html#ace1cf2d7d2a7468e9cb3eb0ce382f446',1,'TransformComponent::TransformComponent()'],['../classTransformComponent.html#a6b045851fd8e22fef6183a392b97ea52',1,'TransformComponent::TransformComponent(int posX, int posY, int sizeWidth, int sizeHeight)']]]
+  ['savehighscore_386',['saveHighscore',['../classDataController.html#a60e606610c8bf5072d22c652e578627b',1,'DataController']]],
+  ['scorecontroller_387',['ScoreController',['../classScoreController.html#ac48ac741f4cda58aec0f9aaf526ad853',1,'ScoreController']]],
+  ['sdlviewcontroller_388',['SDLViewController',['../classSDLViewController.html#aa7899ae58106181d30a35d9c4c0af47d',1,'SDLViewController']]],
+  ['setanimation_389',['setAnimation',['../classAnimationComponent.html#a372a0a2718f816d57c31a89d0550cf22',1,'AnimationComponent']]],
+  ['setdirectionsprite_390',['setDirectionSprite',['../classMovableGameObject.html#a5cd7735c6931c7ca63f7ebe8c4c37ec5',1,'MovableGameObject']]],
+  ['setfruitui_391',['setFruitUI',['../classTextViewController.html#a43543dc52bc165b6785203f7a9d01e4e',1,'TextViewController']]],
+  ['sethealthui_392',['setHealthUI',['../classTextViewController.html#a411c74dcdab31e71399696978cbd719f',1,'TextViewController']]],
+  ['setindex_393',['setIndex',['../classEatableComponent.html#a2efd260928a4faaf0a1a3ea5e4dd2ca2',1,'EatableComponent']]],
+  ['setmovedirection_394',['setMoveDirection',['../classMovableGameObject.html#a4baa44d432fcd2345887e71c32131888',1,'MovableGameObject']]],
+  ['setmoveintent_395',['setMoveIntent',['../classPlayerController.html#a2e4ea9f053ff226d3ff2120f5e5fffbd',1,'PlayerController::setMoveIntent()'],['../classPlayer.html#a96e661281fcb15cd971b1b955d9f926e',1,'Player::setMoveIntent()']]],
+  ['setname_396',['setName',['../classAnimationModel.html#a98c2dbc8353ee7c7927839ec4329bf7a',1,'AnimationModel']]],
+  ['setnextpos_397',['setNextPos',['../classPlayer.html#ae0e4bd8fa5c57275359dc3fe4e4b6027',1,'Player::setNextPos()'],['../classMovableGameObject.html#aeef74fd11fdb5894d3ea2db0a2a20f99',1,'MovableGameObject::setNextPos()'],['../classGhost.html#a2f8f7ed971eae444583d9706d241da62',1,'Ghost::setNextPos()']]],
+  ['setpos_398',['setPos',['../classTransformComponent.html#a99b735d8e9a2eff6a94426129920450f',1,'TransformComponent']]],
+  ['setrect_399',['setRect',['../classCollider.html#afc9293710481111623309f8a5294329e',1,'Collider']]],
+  ['setsize_400',['setSize',['../classTransformComponent.html#aad2424357c3e8d332b81922342165339',1,'TransformComponent']]],
+  ['settype_401',['setType',['../classCollider.html#aa2747508564564a8f819ac6cf60d7727',1,'Collider']]],
+  ['setx_402',['setX',['../classTransformComponent.html#abf7f22ab859f198ce23312ed6202b415',1,'TransformComponent']]],
+  ['sety_403',['setY',['../classTransformComponent.html#a35b06608443b07b38bd286ddf9a6bbbd',1,'TransformComponent']]],
+  ['spawndotbig_404',['spawnDotBig',['../classDotController.html#a3f99b80b8d7126877f50af519663da82',1,'DotController']]],
+  ['spawndotobjects_405',['spawnDotObjects',['../classDotController.html#a8ad3260543faed76259eea94bc280ec3',1,'DotController']]],
+  ['spawndotsmall_406',['spawnDotSmall',['../classDotController.html#a55dc40b0b1cf4fa8d436d25baa07786f',1,'DotController']]],
+  ['startanimation_407',['startAnimation',['../classAnimationComponent.html#a8be2939b20bfc206dff3e7d5c4cd8eb6',1,'AnimationComponent']]],
+  ['startgame_408',['startGame',['../classGameController.html#a8f30ab3ff471ac0a5c8b88dc7fea45f4',1,'GameController']]],
+  ['staticgameobject_409',['StaticGameObject',['../classStaticGameObject.html#aec30b88f36d63d8ed02fb3bcf2c745da',1,'StaticGameObject::StaticGameObject(SDL_Rect defaultSp, SDL_Rect initPos)'],['../classStaticGameObject.html#af8215b3ea8f5c13357087dcb419c8f07',1,'StaticGameObject::StaticGameObject(SDL_Rect initPos)']]],
+  ['stopanimation_410',['stopAnimation',['../classAnimationComponent.html#a8005cb2df7a03280653404e937dd88ee',1,'AnimationComponent']]]
 ];

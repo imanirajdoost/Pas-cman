@@ -75,8 +75,8 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:abc81ddad656a9d21a9ebf1cb9dd605df"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerController.html#abc81ddad656a9d21a9ebf1cb9dd605df">PlayerController</a> (shared_ptr&lt; <a class="el" href="classCollisionController.html">CollisionController</a> &gt; colController, shared_ptr&lt; <a class="el" href="classPlayer.html">Player</a> &gt; p, shared_ptr&lt; <a class="el" href="classDotController.html">DotController</a> &gt; dController, shared_ptr&lt; <a class="el" href="classFruitController.html">FruitController</a> &gt; fController, shared_ptr&lt; <a class="el" href="classScoreController.html">ScoreController</a> &gt; sController, shared_ptr&lt; <a class="el" href="classTextViewController.html">TextViewController</a> &gt; tController, shared_ptr&lt; <a class="el" href="classGhostController.html">GhostController</a> &gt; gController, shared_ptr&lt; <a class="el" href="classPauseController.html">PauseController</a> &gt; pController)</td></tr>
-<tr class="separator:abc81ddad656a9d21a9ebf1cb9dd605df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af038f4a57fbbdf9f1d17dd4868e7bb00"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerController.html#af038f4a57fbbdf9f1d17dd4868e7bb00">PlayerController</a> (shared_ptr&lt; <a class="el" href="classCollisionController.html">CollisionController</a> &gt; colController, shared_ptr&lt; <a class="el" href="classPlayer.html">Player</a> &gt; p, shared_ptr&lt; <a class="el" href="classDotController.html">DotController</a> &gt; dController, shared_ptr&lt; <a class="el" href="classFruitController.html">FruitController</a> &gt; fController, shared_ptr&lt; <a class="el" href="classScoreController.html">ScoreController</a> &gt; sController, shared_ptr&lt; <a class="el" href="classTextViewController.html">TextViewController</a> &gt; tController, shared_ptr&lt; <a class="el" href="classGhostController.html">GhostController</a> &gt; gController, shared_ptr&lt; <a class="el" href="classPauseController.html">PauseController</a> &gt; pController, std::function&lt; void()&gt; resetFunction)</td></tr>
+<tr class="separator:af038f4a57fbbdf9f1d17dd4868e7bb00"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e4ea9f053ff226d3ff2120f5e5fffbd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerController.html#a2e4ea9f053ff226d3ff2120f5e5fffbd">setMoveIntent</a> (<a class="el" href="MovableGameObject_8h.html#a00ec4eba48da32d6cbdf827185fd3d34">MoveDirection</a> direction)</td></tr>
 <tr class="separator:a2e4ea9f053ff226d3ff2120f5e5fffbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab1c27f23585b5f22421e195c37f8d94a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerController.html#ab1c27f23585b5f22421e195c37f8d94a">tick</a> ()</td></tr>
@@ -85,8 +85,8 @@ Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classPlayerController.html">PlayerController</a> class manages the Pac-Man player's movements, actions and interactions with other game objects. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="abc81ddad656a9d21a9ebf1cb9dd605df"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abc81ddad656a9d21a9ebf1cb9dd605df">&#9670;&nbsp;</a></span>PlayerController()</h2>
+<a id="af038f4a57fbbdf9f1d17dd4868e7bb00"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af038f4a57fbbdf9f1d17dd4868e7bb00">&#9670;&nbsp;</a></span>PlayerController()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -137,7 +137,13 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">shared_ptr&lt; <a class="el" href="classPauseController.html">PauseController</a> &gt;&#160;</td>
-          <td class="paramname"><em>pController</em>&#160;</td>
+          <td class="paramname"><em>pController</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::function&lt; void()&gt;&#160;</td>
+          <td class="paramname"><em>resetFunction</em>&#160;</td>
         </tr>
         <tr>
           <td></td>

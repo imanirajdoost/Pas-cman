@@ -12,7 +12,7 @@ Class that represents a single animation for a game object.
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classAnimationModel_ab6464a00e9f1de4e18a4048535adbd15}{Animation\+Model}} (bool should\+Loop)
+\mbox{\hyperlink{classAnimationModel_a8e7f8868fa159adfad6c2beb05a7a3f3}{Animation\+Model}} (bool should\+Loop, int \+\_\+speed)
 \begin{DoxyCompactList}\small\item\em Constructor for \mbox{\hyperlink{classAnimationModel}{Animation\+Model}} class. \end{DoxyCompactList}\item 
 vector$<$ SDL\+\_\+\+Rect $>$ \mbox{\hyperlink{classAnimationModel_abbbd7158bd3f2a83efb4dea582ec7bfc}{get\+Sprites\+List}} () const
 \begin{DoxyCompactList}\small\item\em Getter for the list of sprites in the animation. \end{DoxyCompactList}\item 
@@ -22,6 +22,8 @@ void \mbox{\hyperlink{classAnimationModel_a1bcc9af59b07b819b6fd61e3ee41efca}{add
 \begin{DoxyCompactList}\small\item\em Add multiple sprites to the animation. \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{classAnimationModel_a4446d911ec2b1de82acda8aadb192a8a}{get\+Name}} () const
 \begin{DoxyCompactList}\small\item\em Getter for the name of the animation. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classAnimationModel_a5238b220e054ac0adaece93d43527211}{get\+Speed}} () const
+\begin{DoxyCompactList}\small\item\em Getter for the speed of the animation. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classAnimationModel_a4cd0ba35de288651ef4ffad5bbe3f5d0}{get\+Loop}} () const
 \begin{DoxyCompactList}\small\item\em Getter for the should\+\_\+loop variable of the animation. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classAnimationModel_a98c2dbc8353ee7c7927839ec4329bf7a}{set\+Name}} (const string \&new\+Name)
@@ -37,11 +39,11 @@ vector$<$ SDL\+\_\+\+Rect $>$ \mbox{\hyperlink{classAnimationModel_a6bcf9d5ee226
 Class that represents a single animation for a game object. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classAnimationModel_ab6464a00e9f1de4e18a4048535adbd15}\label{classAnimationModel_ab6464a00e9f1de4e18a4048535adbd15}} 
+\mbox{\Hypertarget{classAnimationModel_a8e7f8868fa159adfad6c2beb05a7a3f3}\label{classAnimationModel_a8e7f8868fa159adfad6c2beb05a7a3f3}} 
 \index{AnimationModel@{AnimationModel}!AnimationModel@{AnimationModel}}
 \index{AnimationModel@{AnimationModel}!AnimationModel@{AnimationModel}}
 \doxysubsubsection{\texorpdfstring{AnimationModel()}{AnimationModel()}}
-{\footnotesize\ttfamily Animation\+Model\+::\+Animation\+Model (\begin{DoxyParamCaption}\item[{bool}]{should\+Loop }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+{\footnotesize\ttfamily Animation\+Model\+::\+Animation\+Model (\begin{DoxyParamCaption}\item[{bool}]{should\+Loop,  }\item[{int}]{\+\_\+speed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
 
 
@@ -110,6 +112,19 @@ Getter for the name of the animation.
 
 \begin{DoxyReturn}{Returns}
 String representing the name of the animation 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAnimationModel_a5238b220e054ac0adaece93d43527211}\label{classAnimationModel_a5238b220e054ac0adaece93d43527211}} 
+\index{AnimationModel@{AnimationModel}!getSpeed@{getSpeed}}
+\index{getSpeed@{getSpeed}!AnimationModel@{AnimationModel}}
+\doxysubsubsection{\texorpdfstring{getSpeed()}{getSpeed()}}
+{\footnotesize\ttfamily int Animation\+Model\+::get\+Speed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Getter for the speed of the animation. 
+
+\begin{DoxyReturn}{Returns}
+int representing the speed of the animation 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classAnimationModel_abbbd7158bd3f2a83efb4dea582ec7bfc}\label{classAnimationModel_abbbd7158bd3f2a83efb4dea582ec7bfc}} 
 \index{AnimationModel@{AnimationModel}!getSpritesList@{getSpritesList}}

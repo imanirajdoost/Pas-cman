@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['pinky_5fsp_5fdefault_391',['pinky_sp_default',['../namespacedefault__sprites.html#a76a96fa75f3e2f2ea5fde3a2468c6c3c',1,'default_sprites']]],
-  ['player_5fsp_5fdefault_392',['player_sp_default',['../namespacedefault__sprites.html#ad8d109ff653dabb6d975530dbd5735f1',1,'default_sprites']]]
+  ['name_5ftxt_5fmaps_455',['name_txt_maps',['../classTextViewController.html#a4a58041a7c56cf105debc9ac1a3a6aa6',1,'TextViewController']]]
 ];

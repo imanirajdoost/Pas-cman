@@ -89,15 +89,15 @@ Collaboration diagram for MovableGameObject:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a20bea33d8d0350f558f98bc870b873da"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMovableGameObject.html#a20bea33d8d0350f558f98bc870b873da">MovableGameObject</a> (SDL_Rect defaultSp)</td></tr>
-<tr class="memdesc:a20bea33d8d0350f558f98bc870b873da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor with default parameters.  <a href="classMovableGameObject.html#a20bea33d8d0350f558f98bc870b873da">More...</a><br /></td></tr>
-<tr class="separator:a20bea33d8d0350f558f98bc870b873da"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6685986af0083eebec77a20d6d9b6401"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMovableGameObject.html#a6685986af0083eebec77a20d6d9b6401">MovableGameObject</a> (const string &amp;animName, const vector&lt; SDL_Rect &gt; &amp;sprites, bool _isAnimated)</td></tr>
-<tr class="memdesc:a6685986af0083eebec77a20d6d9b6401"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor with specified parameters.  <a href="classMovableGameObject.html#a6685986af0083eebec77a20d6d9b6401">More...</a><br /></td></tr>
-<tr class="separator:a6685986af0083eebec77a20d6d9b6401"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a42aa2bfd17893ed2979be6005716592b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMovableGameObject.html#a42aa2bfd17893ed2979be6005716592b">MovableGameObject</a> ()</td></tr>
-<tr class="memdesc:a42aa2bfd17893ed2979be6005716592b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor.  <a href="classMovableGameObject.html#a42aa2bfd17893ed2979be6005716592b">More...</a><br /></td></tr>
-<tr class="separator:a42aa2bfd17893ed2979be6005716592b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ad4289b5013760ccdf468dc40ee399a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMovableGameObject.html#a0ad4289b5013760ccdf468dc40ee399a">MovableGameObject</a> (SDL_Rect defaultSp, SDL_Rect initPos)</td></tr>
+<tr class="memdesc:a0ad4289b5013760ccdf468dc40ee399a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor with default parameters.  <a href="classMovableGameObject.html#a0ad4289b5013760ccdf468dc40ee399a">More...</a><br /></td></tr>
+<tr class="separator:a0ad4289b5013760ccdf468dc40ee399a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09da77bb914c6604efb2951e5de7d53b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMovableGameObject.html#a09da77bb914c6604efb2951e5de7d53b">MovableGameObject</a> (const string &amp;animName, const vector&lt; SDL_Rect &gt; &amp;sprites, bool _isAnimated, SDL_Rect initPos)</td></tr>
+<tr class="memdesc:a09da77bb914c6604efb2951e5de7d53b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor with specified parameters.  <a href="classMovableGameObject.html#a09da77bb914c6604efb2951e5de7d53b">More...</a><br /></td></tr>
+<tr class="separator:a09da77bb914c6604efb2951e5de7d53b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6e2fb856cd15a7b83c2ca9a76f1257e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMovableGameObject.html#ae6e2fb856cd15a7b83c2ca9a76f1257e">MovableGameObject</a> (SDL_Rect initPos)</td></tr>
+<tr class="memdesc:ae6e2fb856cd15a7b83c2ca9a76f1257e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor with specified parameters.  <a href="classMovableGameObject.html#ae6e2fb856cd15a7b83c2ca9a76f1257e">More...</a><br /></td></tr>
+<tr class="separator:ae6e2fb856cd15a7b83c2ca9a76f1257e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a21ae72abde3a3b5db43433f838762c58"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMovableGameObject.html#a21ae72abde3a3b5db43433f838762c58">getSpeed</a> () const</td></tr>
 <tr class="memdesc:a21ae72abde3a3b5db43433f838762c58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the speed of the object.  <a href="classMovableGameObject.html#a21ae72abde3a3b5db43433f838762c58">More...</a><br /></td></tr>
 <tr class="separator:a21ae72abde3a3b5db43433f838762c58"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -125,20 +125,25 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7e4411553a799980b15023bb57f31fb9"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMovableGameObject.html#a7e4411553a799980b15023bb57f31fb9">move</a> ()</td></tr>
 <tr class="memdesc:a7e4411553a799980b15023bb57f31fb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move the object to its next position.  <a href="classMovableGameObject.html#a7e4411553a799980b15023bb57f31fb9">More...</a><br /></td></tr>
 <tr class="separator:a7e4411553a799980b15023bb57f31fb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf39fbbae3476fd1d5e74b9ae6c97717"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMovableGameObject.html#adf39fbbae3476fd1d5e74b9ae6c97717">reset_state</a> () override</td></tr>
+<tr class="separator:adf39fbbae3476fd1d5e74b9ae6c97717"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classGameObject"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classGameObject')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classGameObject.html">GameObject</a></td></tr>
-<tr class="memitem:a0348e3ee2e83d56eafca7a3547f432c4 inherit pub_methods_classGameObject"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameObject.html#a0348e3ee2e83d56eafca7a3547f432c4">GameObject</a> ()</td></tr>
-<tr class="memdesc:a0348e3ee2e83d56eafca7a3547f432c4 inherit pub_methods_classGameObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor for <a class="el" href="classGameObject.html">GameObject</a>.  <a href="classGameObject.html#a0348e3ee2e83d56eafca7a3547f432c4">More...</a><br /></td></tr>
-<tr class="separator:a0348e3ee2e83d56eafca7a3547f432c4 inherit pub_methods_classGameObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f8b0e356240603d9fcf49d95d53b7cc inherit pub_methods_classGameObject"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameObject.html#a5f8b0e356240603d9fcf49d95d53b7cc">GameObject</a> (SDL_Rect defaultSp)</td></tr>
-<tr class="memdesc:a5f8b0e356240603d9fcf49d95d53b7cc inherit pub_methods_classGameObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for <a class="el" href="classGameObject.html">GameObject</a> with default sprite.  <a href="classGameObject.html#a5f8b0e356240603d9fcf49d95d53b7cc">More...</a><br /></td></tr>
-<tr class="separator:a5f8b0e356240603d9fcf49d95d53b7cc inherit pub_methods_classGameObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a82bd17c14b3f45b5e85953d74f031846 inherit pub_methods_classGameObject"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameObject.html#a82bd17c14b3f45b5e85953d74f031846">GameObject</a> (const string &amp;newName, const vector&lt; SDL_Rect &gt; &amp;sps, bool _isAnimated)</td></tr>
-<tr class="memdesc:a82bd17c14b3f45b5e85953d74f031846 inherit pub_methods_classGameObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for <a class="el" href="classGameObject.html">GameObject</a> with animation sprites.  <a href="classGameObject.html#a82bd17c14b3f45b5e85953d74f031846">More...</a><br /></td></tr>
-<tr class="separator:a82bd17c14b3f45b5e85953d74f031846 inherit pub_methods_classGameObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae93733d1299e70fefca26d6c050f14c0 inherit pub_methods_classGameObject"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameObject.html#ae93733d1299e70fefca26d6c050f14c0">GameObject</a> (SDL_Rect initPos)</td></tr>
+<tr class="memdesc:ae93733d1299e70fefca26d6c050f14c0 inherit pub_methods_classGameObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor for <a class="el" href="classGameObject.html">GameObject</a>.  <a href="classGameObject.html#ae93733d1299e70fefca26d6c050f14c0">More...</a><br /></td></tr>
+<tr class="separator:ae93733d1299e70fefca26d6c050f14c0 inherit pub_methods_classGameObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8d2402154241aa0c879bb02630dd57e inherit pub_methods_classGameObject"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameObject.html#ab8d2402154241aa0c879bb02630dd57e">GameObject</a> (SDL_Rect defaultSp, SDL_Rect initPos)</td></tr>
+<tr class="memdesc:ab8d2402154241aa0c879bb02630dd57e inherit pub_methods_classGameObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for <a class="el" href="classGameObject.html">GameObject</a> with default sprite.  <a href="classGameObject.html#ab8d2402154241aa0c879bb02630dd57e">More...</a><br /></td></tr>
+<tr class="separator:ab8d2402154241aa0c879bb02630dd57e inherit pub_methods_classGameObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3d1ca8270638271624d78b5c3c0aca2 inherit pub_methods_classGameObject"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameObject.html#aa3d1ca8270638271624d78b5c3c0aca2">GameObject</a> (const string &amp;newName, const vector&lt; SDL_Rect &gt; &amp;sps, bool _isAnimated, SDL_Rect initPos)</td></tr>
+<tr class="memdesc:aa3d1ca8270638271624d78b5c3c0aca2 inherit pub_methods_classGameObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for <a class="el" href="classGameObject.html">GameObject</a> with animation sprites.  <a href="classGameObject.html#aa3d1ca8270638271624d78b5c3c0aca2">More...</a><br /></td></tr>
+<tr class="separator:aa3d1ca8270638271624d78b5c3c0aca2 inherit pub_methods_classGameObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classTransformComponent"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classTransformComponent')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classTransformComponent.html">TransformComponent</a></td></tr>
 <tr class="memitem:ace1cf2d7d2a7468e9cb3eb0ce382f446 inherit pub_methods_classTransformComponent"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTransformComponent.html#ace1cf2d7d2a7468e9cb3eb0ce382f446">TransformComponent</a> ()</td></tr>
 <tr class="memdesc:ace1cf2d7d2a7468e9cb3eb0ce382f446 inherit pub_methods_classTransformComponent"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor for <a class="el" href="classTransformComponent.html">TransformComponent</a> class.  <a href="classTransformComponent.html#ace1cf2d7d2a7468e9cb3eb0ce382f446">More...</a><br /></td></tr>
 <tr class="separator:ace1cf2d7d2a7468e9cb3eb0ce382f446 inherit pub_methods_classTransformComponent"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2aa6244ca9ed516173b67e213e547efa inherit pub_methods_classTransformComponent"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTransformComponent.html#a2aa6244ca9ed516173b67e213e547efa">TransformComponent</a> (SDL_Rect initPos)</td></tr>
+<tr class="memdesc:a2aa6244ca9ed516173b67e213e547efa inherit pub_methods_classTransformComponent"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for <a class="el" href="classTransformComponent.html">TransformComponent</a> class.  <a href="classTransformComponent.html#a2aa6244ca9ed516173b67e213e547efa">More...</a><br /></td></tr>
+<tr class="separator:a2aa6244ca9ed516173b67e213e547efa inherit pub_methods_classTransformComponent"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b045851fd8e22fef6183a392b97ea52 inherit pub_methods_classTransformComponent"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTransformComponent.html#a6b045851fd8e22fef6183a392b97ea52">TransformComponent</a> (int posX, int posY, int sizeWidth, int sizeHeight)</td></tr>
 <tr class="memdesc:a6b045851fd8e22fef6183a392b97ea52 inherit pub_methods_classTransformComponent"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for <a class="el" href="classTransformComponent.html">TransformComponent</a> class.  <a href="classTransformComponent.html#a6b045851fd8e22fef6183a392b97ea52">More...</a><br /></td></tr>
 <tr class="separator:a6b045851fd8e22fef6183a392b97ea52 inherit pub_methods_classTransformComponent"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -179,9 +184,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2f72f29b1fb421575a1ea5d6477f266d inherit pub_methods_classAnimationComponent"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnimationComponent.html#a2f72f29b1fb421575a1ea5d6477f266d">AnimationComponent</a> (const string &amp;newName, const vector&lt; SDL_Rect &gt; &amp;sps, bool _isAnimated)</td></tr>
 <tr class="memdesc:a2f72f29b1fb421575a1ea5d6477f266d inherit pub_methods_classAnimationComponent"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an <a class="el" href="classAnimationComponent.html" title="The model for the animation component, which is responsible for handling the animation of sprites and...">AnimationComponent</a> object with a specified name, list of sprites, and animation status.  <a href="classAnimationComponent.html#a2f72f29b1fb421575a1ea5d6477f266d">More...</a><br /></td></tr>
 <tr class="separator:a2f72f29b1fb421575a1ea5d6477f266d inherit pub_methods_classAnimationComponent"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9ac3a3284c2869c3c6e59a6f177890ea inherit pub_methods_classAnimationComponent"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnimationComponent.html#a9ac3a3284c2869c3c6e59a6f177890ea">addAnimation</a> (const string &amp;animName, const vector&lt; SDL_Rect &gt; &amp;sps, bool shouldLoop=true)</td></tr>
-<tr class="memdesc:a9ac3a3284c2869c3c6e59a6f177890ea inherit pub_methods_classAnimationComponent"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a new animation to the component.  <a href="classAnimationComponent.html#a9ac3a3284c2869c3c6e59a6f177890ea">More...</a><br /></td></tr>
-<tr class="separator:a9ac3a3284c2869c3c6e59a6f177890ea inherit pub_methods_classAnimationComponent"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac179f6d22aadab741ff74153f578aa42 inherit pub_methods_classAnimationComponent"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnimationComponent.html#ac179f6d22aadab741ff74153f578aa42">addAnimation</a> (const string &amp;animName, const vector&lt; SDL_Rect &gt; &amp;sps, int speed=1, bool shouldLoop=true)</td></tr>
+<tr class="memdesc:ac179f6d22aadab741ff74153f578aa42 inherit pub_methods_classAnimationComponent"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a new animation to the component.  <a href="classAnimationComponent.html#ac179f6d22aadab741ff74153f578aa42">More...</a><br /></td></tr>
+<tr class="separator:ac179f6d22aadab741ff74153f578aa42 inherit pub_methods_classAnimationComponent"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a221bfb7620a63df0ad4f0e635a3394f3 inherit pub_methods_classAnimationComponent"><td class="memItemLeft" align="right" valign="top">shared_ptr&lt; SDL_Rect &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnimationComponent.html#a221bfb7620a63df0ad4f0e635a3394f3">getNextSprite</a> ()</td></tr>
 <tr class="memdesc:a221bfb7620a63df0ad4f0e635a3394f3 inherit pub_methods_classAnimationComponent"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the next sprite in the current animation.  <a href="classAnimationComponent.html#a221bfb7620a63df0ad4f0e635a3394f3">More...</a><br /></td></tr>
 <tr class="separator:a221bfb7620a63df0ad4f0e635a3394f3 inherit pub_methods_classAnimationComponent"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -206,6 +211,10 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:abcc6488db235ca2ab9f6abc77782907f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMovableGameObject.html#abcc6488db235ca2ab9f6abc77782907f">isMoveEnabled</a></td></tr>
 <tr class="memdesc:abcc6488db235ca2ab9f6abc77782907f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether movement is enabled for the object or not.  <a href="classMovableGameObject.html#abcc6488db235ca2ab9f6abc77782907f">More...</a><br /></td></tr>
 <tr class="separator:abcc6488db235ca2ab9f6abc77782907f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_classGameObject"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classGameObject')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classGameObject.html">GameObject</a></td></tr>
+<tr class="memitem:a71e1373e0fc0b1ff658a24ff12b7684c inherit pro_attribs_classGameObject"><td class="memItemLeft" align="right" valign="top">SDL_Rect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGameObject.html#a71e1373e0fc0b1ff658a24ff12b7684c">_init_pos</a></td></tr>
+<tr class="memdesc:a71e1373e0fc0b1ff658a24ff12b7684c inherit pro_attribs_classGameObject"><td class="mdescLeft">&#160;</td><td class="mdescRight">The initial position of the object.  <a href="classGameObject.html#a71e1373e0fc0b1ff658a24ff12b7684c">More...</a><br /></td></tr>
+<tr class="separator:a71e1373e0fc0b1ff658a24ff12b7684c inherit pro_attribs_classGameObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classTransformComponent"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classTransformComponent')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classTransformComponent.html">TransformComponent</a></td></tr>
 <tr class="memitem:aff50d8de849c82214186c1a59925a66b inherit pro_attribs_classTransformComponent"><td class="memItemLeft" align="right" valign="top">SDL_Rect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTransformComponent.html#aff50d8de849c82214186c1a59925a66b">rect</a></td></tr>
 <tr class="memdesc:aff50d8de849c82214186c1a59925a66b inherit pro_attribs_classTransformComponent"><td class="mdescLeft">&#160;</td><td class="mdescRight">The rectangle that defines the object's position and size.  <a href="classTransformComponent.html#aff50d8de849c82214186c1a59925a66b">More...</a><br /></td></tr>
@@ -245,8 +254,8 @@ Additional Inherited Members</h2></td></tr>
 <div class="textblock"><p>A class representing a game object that can move. </p>
 <p>This class inherits from <a class="el" href="classGameObject.html">GameObject</a> and adds features to represent the next position of the object, its speed and direction of movement. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a20bea33d8d0350f558f98bc870b873da"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a20bea33d8d0350f558f98bc870b873da">&#9670;&nbsp;</a></span>MovableGameObject() <span class="overload">[1/3]</span></h2>
+<a id="a0ad4289b5013760ccdf468dc40ee399a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ad4289b5013760ccdf468dc40ee399a">&#9670;&nbsp;</a></span>MovableGameObject() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -258,8 +267,18 @@ Additional Inherited Members</h2></td></tr>
           <td class="memname">MovableGameObject::MovableGameObject </td>
           <td>(</td>
           <td class="paramtype">SDL_Rect&#160;</td>
-          <td class="paramname"><em>defaultSp</em></td><td>)</td>
+          <td class="paramname"><em>defaultSp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">SDL_Rect&#160;</td>
+          <td class="paramname"><em>initPos</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -273,14 +292,15 @@ Additional Inherited Members</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">defaultSp</td><td>The default sprite of the object. </td></tr>
+    <tr><td class="paramname">initPos</td><td>The initial position of the object. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="a6685986af0083eebec77a20d6d9b6401"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6685986af0083eebec77a20d6d9b6401">&#9670;&nbsp;</a></span>MovableGameObject() <span class="overload">[2/3]</span></h2>
+<a id="a09da77bb914c6604efb2951e5de7d53b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09da77bb914c6604efb2951e5de7d53b">&#9670;&nbsp;</a></span>MovableGameObject() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -301,7 +321,13 @@ Additional Inherited Members</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>_isAnimated</em>&#160;</td>
+          <td class="paramname"><em>_isAnimated</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SDL_Rect&#160;</td>
+          <td class="paramname"><em>initPos</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -317,28 +343,44 @@ Additional Inherited Members</h2></td></tr>
     <tr><td class="paramname">animName</td><td>The name of the animation of the object. </td></tr>
     <tr><td class="paramname">sprites</td><td>A vector of SDL_Rect representing the frames of the animation. </td></tr>
     <tr><td class="paramname">_isAnimated</td><td>A boolean value indicating whether the object is animated or not. </td></tr>
+    <tr><td class="paramname">initPos</td><td>The initial position of the object. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="a42aa2bfd17893ed2979be6005716592b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a42aa2bfd17893ed2979be6005716592b">&#9670;&nbsp;</a></span>MovableGameObject() <span class="overload">[3/3]</span></h2>
+<a id="ae6e2fb856cd15a7b83c2ca9a76f1257e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6e2fb856cd15a7b83c2ca9a76f1257e">&#9670;&nbsp;</a></span>MovableGameObject() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">MovableGameObject::MovableGameObject </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">SDL_Rect&#160;</td>
+          <td class="paramname"><em>initPos</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Default constructor. </p>
+<p>Constructor with specified parameters. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">initPos</td><td>The initial position of the object. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -429,6 +471,35 @@ Additional Inherited Members</h2></td></tr>
 <p>Move the object to its next position. </p>
 
 <p>Reimplemented in <a class="el" href="classPlayer.html#a1d35b7b1cd1a890042abdfdc55cafb14">Player</a>, and <a class="el" href="classGhost.html#a80a82f1dc1b0bd1adee37876f3ed5554">Ghost</a>.</p>
+
+</div>
+</div>
+<a id="adf39fbbae3476fd1d5e74b9ae6c97717"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf39fbbae3476fd1d5e74b9ae6c97717">&#9670;&nbsp;</a></span>reset_state()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MovableGameObject::reset_state </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="classGameObject.html#a84fa557ccf95f12678f0f2992b707fda">GameObject</a>.</p>
+
+<p>Reimplemented in <a class="el" href="classPlayer.html#ad43d75b1395998c1a1eea44b9948f1c9">Player</a>.</p>
 
 </div>
 </div>

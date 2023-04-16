@@ -83,94 +83,94 @@ $(function() {
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classGhost.html#a4ba7ea24baf2bc900691765c198a47a3">   25</a></span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classGhost.html#a4ba7ea24baf2bc900691765c198a47a3">Ghost</a>(SDL_Rect defaultsp);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classGhost.html#a2f8f7ed971eae444583d9706d241da62">   33</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classGhost.html#a2f8f7ed971eae444583d9706d241da62">setNextPos</a>(<span class="keyword">const</span> std::vector&lt;std::vector&lt;MTYPE&gt;&gt; &amp;map, <span class="keyword">const</span> <a class="code" href="MovableGameObject_8h.html#a00ec4eba48da32d6cbdf827185fd3d34">MoveDirection</a> &amp;<a class="code" href="classMovableGameObject.html#afd37f5e247bb8e73b5481dcbc509a67d">direction</a>) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classGhost.html#a80a82f1dc1b0bd1adee37876f3ed5554">   38</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classGhost.html#a80a82f1dc1b0bd1adee37876f3ed5554">move</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;};</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classBlinky.html">   44</a></span>&#160;<span class="keyword">class </span><a class="code" href="classBlinky.html">Blinky</a> : <span class="keyword">public</span> <a class="code" href="classGhost.html">Ghost</a> {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="classBlinky.html#ab947447170df60ba261ae1e0675469f2">   52</a></span>&#160;    <a class="code" href="classBlinky.html#ab947447170df60ba261ae1e0675469f2">Blinky</a>();</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">const</span> SDL_Rect blinky_r1 = {4, 124, 14, 14};</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keyword">const</span> SDL_Rect blinky_r2 = {21, 124, 14, 14}; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keyword">const</span> SDL_Rect blinky_l1 = {38, 124, 14, 14}; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keyword">const</span> SDL_Rect blinky_l2 = {55, 124, 14, 14};</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keyword">const</span> SDL_Rect blinky_d1 = {106, 124, 14, 14};  </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keyword">const</span> SDL_Rect blinky_d2 = {123, 124, 14, 14};  </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keyword">const</span> SDL_Rect blinky_u1 = {72, 124, 14, 14};</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keyword">const</span> SDL_Rect blinky_u2 = {89, 124, 14, 14};</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;};</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="classPinky.html">   68</a></span>&#160;<span class="keyword">class </span><a class="code" href="classPinky.html">Pinky</a> : <span class="keyword">public</span> <a class="code" href="classGhost.html">Ghost</a> {</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="classPinky.html#a64188dfed1d08cd85171d1b9add2ff91">   74</a></span>&#160;    <a class="code" href="classPinky.html#a64188dfed1d08cd85171d1b9add2ff91">Pinky</a>();</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keyword">const</span> SDL_Rect pinky_r1 = {4, 142, 14, 14};</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keyword">const</span> SDL_Rect pinky_r2 = {21, 142, 14, 14}; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keyword">const</span> SDL_Rect pinky_l1 = {38, 142, 14, 14}; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keyword">const</span> SDL_Rect pinky_l2 = {55, 142, 14, 14};</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keyword">const</span> SDL_Rect pinky_d1 = {106, 142, 14, 14};  </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keyword">const</span> SDL_Rect pinky_d2 = {123, 142, 14, 14};  </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keyword">const</span> SDL_Rect pinky_u1 = {72, 142, 14, 14};</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keyword">const</span> SDL_Rect pinky_u2 = {89, 142, 14, 14};</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;};</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="classInky.html">   92</a></span>&#160;<span class="keyword">class </span><a class="code" href="classInky.html">Inky</a> : <span class="keyword">public</span> <a class="code" href="classGhost.html">Ghost</a> {</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="classInky.html#ac89eac80c3f12f5e004550d43c3ff405">   98</a></span>&#160;    <a class="code" href="classInky.html#ac89eac80c3f12f5e004550d43c3ff405">Inky</a>();</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keyword">const</span> SDL_Rect inky_r1 = {4, 160, 14, 14};  </div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keyword">const</span> SDL_Rect inky_r2 = {21, 160, 14, 14};  </div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keyword">const</span> SDL_Rect inky_l1 = {38, 160, 14, 14};  </div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keyword">const</span> SDL_Rect inky_l2 = {55, 160, 14, 14}; </div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keyword">const</span> SDL_Rect inky_d1 = {106, 160, 14, 14};  </div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keyword">const</span> SDL_Rect inky_d2 = {123, 160, 14, 14};  </div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keyword">const</span> SDL_Rect inky_u1 = {72, 160, 14, 14}; </div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keyword">const</span> SDL_Rect inky_u2 = {89, 160, 14, 14}; </div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;};</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
-<div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="classClyde.html">  118</a></span>&#160;<span class="keyword">class </span><a class="code" href="classClyde.html">Clyde</a> : <span class="keyword">public</span> <a class="code" href="classGhost.html">Ghost</a> {</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
-<div class="line"><a name="l00124"></a><span class="lineno"><a class="line" href="classClyde.html#a5aaba99f74a178858256422bc5435c0b">  124</a></span>&#160;    <a class="code" href="classClyde.html#a5aaba99f74a178858256422bc5435c0b">Clyde</a>();</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keyword">const</span> SDL_Rect clyde_r1 = {4, 178, 14, 14}; </div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keyword">const</span> SDL_Rect clyde_r2 = {21, 178, 14, 14}; </div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keyword">const</span> SDL_Rect clyde_l1 = {38, 178, 14, 14}; </div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keyword">const</span> SDL_Rect clyde_l2 = {55, 178, 14, 14};</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="keyword">const</span> SDL_Rect clyde_d1 = {106, 178, 14, 14};  </div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="keyword">const</span> SDL_Rect clyde_d2 = {123, 178, 14, 14};  </div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keyword">const</span> SDL_Rect clyde_u1 = {72, 178, 14, 14};</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="keyword">const</span> SDL_Rect clyde_u2 = {89, 178, 14, 14};</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;};</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classGhost.html#ae6f0eb03fcfe07c7cbec65197c597cdc">   26</a></span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classGhost.html#ae6f0eb03fcfe07c7cbec65197c597cdc">Ghost</a>(SDL_Rect defaultsp, SDL_Rect initPos);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classGhost.html#a2f8f7ed971eae444583d9706d241da62">   34</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classGhost.html#a2f8f7ed971eae444583d9706d241da62">setNextPos</a>(<span class="keyword">const</span> std::vector&lt;std::vector&lt;MTYPE&gt;&gt; &amp;map, <span class="keyword">const</span> <a class="code" href="MovableGameObject_8h.html#a00ec4eba48da32d6cbdf827185fd3d34">MoveDirection</a> &amp;<a class="code" href="classMovableGameObject.html#afd37f5e247bb8e73b5481dcbc509a67d">direction</a>) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classGhost.html#a80a82f1dc1b0bd1adee37876f3ed5554">   39</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classGhost.html#a80a82f1dc1b0bd1adee37876f3ed5554">move</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;};</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classBlinky.html">   45</a></span>&#160;<span class="keyword">class </span><a class="code" href="classBlinky.html">Blinky</a> : <span class="keyword">public</span> <a class="code" href="classGhost.html">Ghost</a> {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classBlinky.html#ab947447170df60ba261ae1e0675469f2">   53</a></span>&#160;    <a class="code" href="classBlinky.html#ab947447170df60ba261ae1e0675469f2">Blinky</a>();</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keyword">const</span> SDL_Rect blinky_r1 = {4, 124, 14, 14};</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keyword">const</span> SDL_Rect blinky_r2 = {21, 124, 14, 14}; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keyword">const</span> SDL_Rect blinky_l1 = {38, 124, 14, 14}; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keyword">const</span> SDL_Rect blinky_l2 = {55, 124, 14, 14};</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keyword">const</span> SDL_Rect blinky_d1 = {106, 124, 14, 14};  </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keyword">const</span> SDL_Rect blinky_d2 = {123, 124, 14, 14};  </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keyword">const</span> SDL_Rect blinky_u1 = {72, 124, 14, 14};</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keyword">const</span> SDL_Rect blinky_u2 = {89, 124, 14, 14};</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;};</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="classPinky.html">   69</a></span>&#160;<span class="keyword">class </span><a class="code" href="classPinky.html">Pinky</a> : <span class="keyword">public</span> <a class="code" href="classGhost.html">Ghost</a> {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="classPinky.html#a64188dfed1d08cd85171d1b9add2ff91">   75</a></span>&#160;    <a class="code" href="classPinky.html#a64188dfed1d08cd85171d1b9add2ff91">Pinky</a>();</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keyword">const</span> SDL_Rect pinky_r1 = {4, 142, 14, 14};</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keyword">const</span> SDL_Rect pinky_r2 = {21, 142, 14, 14}; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keyword">const</span> SDL_Rect pinky_l1 = {38, 142, 14, 14}; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keyword">const</span> SDL_Rect pinky_l2 = {55, 142, 14, 14};</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keyword">const</span> SDL_Rect pinky_d1 = {106, 142, 14, 14};  </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keyword">const</span> SDL_Rect pinky_d2 = {123, 142, 14, 14};  </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keyword">const</span> SDL_Rect pinky_u1 = {72, 142, 14, 14};</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keyword">const</span> SDL_Rect pinky_u2 = {89, 142, 14, 14};</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;};</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="classInky.html">   93</a></span>&#160;<span class="keyword">class </span><a class="code" href="classInky.html">Inky</a> : <span class="keyword">public</span> <a class="code" href="classGhost.html">Ghost</a> {</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="classInky.html#ac89eac80c3f12f5e004550d43c3ff405">   99</a></span>&#160;    <a class="code" href="classInky.html#ac89eac80c3f12f5e004550d43c3ff405">Inky</a>();</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keyword">const</span> SDL_Rect inky_r1 = {4, 160, 14, 14};  </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keyword">const</span> SDL_Rect inky_r2 = {21, 160, 14, 14};  </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keyword">const</span> SDL_Rect inky_l1 = {38, 160, 14, 14};  </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keyword">const</span> SDL_Rect inky_l2 = {55, 160, 14, 14}; </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keyword">const</span> SDL_Rect inky_d1 = {106, 160, 14, 14};  </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keyword">const</span> SDL_Rect inky_d2 = {123, 160, 14, 14};  </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keyword">const</span> SDL_Rect inky_u1 = {72, 160, 14, 14}; </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keyword">const</span> SDL_Rect inky_u2 = {89, 160, 14, 14}; </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;};</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno"><a class="line" href="classClyde.html">  119</a></span>&#160;<span class="keyword">class </span><a class="code" href="classClyde.html">Clyde</a> : <span class="keyword">public</span> <a class="code" href="classGhost.html">Ghost</a> {</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
+<div class="line"><a name="l00125"></a><span class="lineno"><a class="line" href="classClyde.html#a5aaba99f74a178858256422bc5435c0b">  125</a></span>&#160;    <a class="code" href="classClyde.html#a5aaba99f74a178858256422bc5435c0b">Clyde</a>();</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keyword">const</span> SDL_Rect clyde_r1 = {4, 178, 14, 14}; </div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keyword">const</span> SDL_Rect clyde_r2 = {21, 178, 14, 14}; </div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keyword">const</span> SDL_Rect clyde_l1 = {38, 178, 14, 14}; </div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="keyword">const</span> SDL_Rect clyde_l2 = {55, 178, 14, 14};</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="keyword">const</span> SDL_Rect clyde_d1 = {106, 178, 14, 14};  </div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keyword">const</span> SDL_Rect clyde_d2 = {123, 178, 14, 14};  </div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="keyword">const</span> SDL_Rect clyde_u1 = {72, 178, 14, 14};</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keyword">const</span> SDL_Rect clyde_u2 = {89, 178, 14, 14};</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;};</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aMovableGameObject_8h_html"><div class="ttname"><a href="MovableGameObject_8h.html">MovableGameObject.h</a></div></div>
 <div class="ttc" id="aMovableGameObject_8h_html_a00ec4eba48da32d6cbdf827185fd3d34"><div class="ttname"><a href="MovableGameObject_8h.html#a00ec4eba48da32d6cbdf827185fd3d34">MoveDirection</a></div><div class="ttdeci">MoveDirection</div><div class="ttdef"><b>Definition:</b> MovableGameObject.h:7</div></div>
-<div class="ttc" id="aclassBlinky_html"><div class="ttname"><a href="classBlinky.html">Blinky</a></div><div class="ttdoc">The Blinky class represents the red ghost in the game.</div><div class="ttdef"><b>Definition:</b> Ghost.h:44</div></div>
+<div class="ttc" id="aclassBlinky_html"><div class="ttname"><a href="classBlinky.html">Blinky</a></div><div class="ttdoc">The Blinky class represents the red ghost in the game.</div><div class="ttdef"><b>Definition:</b> Ghost.h:45</div></div>
 <div class="ttc" id="aclassBlinky_html_ab947447170df60ba261ae1e0675469f2"><div class="ttname"><a href="classBlinky.html#ab947447170df60ba261ae1e0675469f2">Blinky::Blinky</a></div><div class="ttdeci">Blinky()</div><div class="ttdoc">Constructs a new Blinky object with its predefined sprite rectangles. Inherits from the Ghost class a...</div></div>
-<div class="ttc" id="aclassClyde_html"><div class="ttname"><a href="classClyde.html">Clyde</a></div><div class="ttdoc">A class that represents the Clyde ghost in the game.</div><div class="ttdef"><b>Definition:</b> Ghost.h:118</div></div>
+<div class="ttc" id="aclassClyde_html"><div class="ttname"><a href="classClyde.html">Clyde</a></div><div class="ttdoc">A class that represents the Clyde ghost in the game.</div><div class="ttdef"><b>Definition:</b> Ghost.h:119</div></div>
 <div class="ttc" id="aclassClyde_html_a5aaba99f74a178858256422bc5435c0b"><div class="ttname"><a href="classClyde.html#a5aaba99f74a178858256422bc5435c0b">Clyde::Clyde</a></div><div class="ttdeci">Clyde()</div><div class="ttdoc">Construct a new Clyde object with default sprite rectangle.</div></div>
 <div class="ttc" id="aclassGhost_html"><div class="ttname"><a href="classGhost.html">Ghost</a></div><div class="ttdoc">The Ghost class manages a single ghost in the game.</div><div class="ttdef"><b>Definition:</b> Ghost.h:14</div></div>
 <div class="ttc" id="aclassGhost_html_a2f8f7ed971eae444583d9706d241da62"><div class="ttname"><a href="classGhost.html#a2f8f7ed971eae444583d9706d241da62">Ghost::setNextPos</a></div><div class="ttdeci">void setNextPos(const std::vector&lt; std::vector&lt; MTYPE &gt;&gt; &amp;map, const MoveDirection &amp;direction) override</div><div class="ttdoc">Sets the next position of the ghost based on the current direction and the map.</div></div>
-<div class="ttc" id="aclassGhost_html_a4ba7ea24baf2bc900691765c198a47a3"><div class="ttname"><a href="classGhost.html#a4ba7ea24baf2bc900691765c198a47a3">Ghost::Ghost</a></div><div class="ttdeci">Ghost(SDL_Rect defaultsp)</div><div class="ttdoc">Constructs a new Ghost object with the specified default sprite.</div></div>
 <div class="ttc" id="aclassGhost_html_a80a82f1dc1b0bd1adee37876f3ed5554"><div class="ttname"><a href="classGhost.html#a80a82f1dc1b0bd1adee37876f3ed5554">Ghost::move</a></div><div class="ttdeci">void move() override</div><div class="ttdoc">Moves the ghost to its next position.</div></div>
 <div class="ttc" id="aclassGhost_html_a92a0eebf8b22a56037ad908407edeef2"><div class="ttname"><a href="classGhost.html#a92a0eebf8b22a56037ad908407edeef2">Ghost::isVulnerable</a></div><div class="ttdeci">bool isVulnerable</div><div class="ttdef"><b>Definition:</b> Ghost.h:17</div></div>
-<div class="ttc" id="aclassInky_html"><div class="ttname"><a href="classInky.html">Inky</a></div><div class="ttdoc">The Inky class represents the cyan ghost in the game. Inherits from the Ghost class and defines the s...</div><div class="ttdef"><b>Definition:</b> Ghost.h:92</div></div>
+<div class="ttc" id="aclassGhost_html_ae6f0eb03fcfe07c7cbec65197c597cdc"><div class="ttname"><a href="classGhost.html#ae6f0eb03fcfe07c7cbec65197c597cdc">Ghost::Ghost</a></div><div class="ttdeci">Ghost(SDL_Rect defaultsp, SDL_Rect initPos)</div><div class="ttdoc">Constructs a new Ghost object with the specified default sprite.</div></div>
+<div class="ttc" id="aclassInky_html"><div class="ttname"><a href="classInky.html">Inky</a></div><div class="ttdoc">The Inky class represents the cyan ghost in the game. Inherits from the Ghost class and defines the s...</div><div class="ttdef"><b>Definition:</b> Ghost.h:93</div></div>
 <div class="ttc" id="aclassInky_html_ac89eac80c3f12f5e004550d43c3ff405"><div class="ttname"><a href="classInky.html#ac89eac80c3f12f5e004550d43c3ff405">Inky::Inky</a></div><div class="ttdeci">Inky()</div><div class="ttdoc">Constructs a new Inky object with its predefined sprite rectangles.</div></div>
 <div class="ttc" id="aclassMovableGameObject_html"><div class="ttname"><a href="classMovableGameObject.html">MovableGameObject</a></div><div class="ttdoc">A class representing a game object that can move.</div><div class="ttdef"><b>Definition:</b> MovableGameObject.h:21</div></div>
 <div class="ttc" id="aclassMovableGameObject_html_afd37f5e247bb8e73b5481dcbc509a67d"><div class="ttname"><a href="classMovableGameObject.html#afd37f5e247bb8e73b5481dcbc509a67d">MovableGameObject::direction</a></div><div class="ttdeci">MoveDirection direction</div><div class="ttdoc">The current direction of movement of the object.</div><div class="ttdef"><b>Definition:</b> MovableGameObject.h:26</div></div>
-<div class="ttc" id="aclassPinky_html"><div class="ttname"><a href="classPinky.html">Pinky</a></div><div class="ttdoc">The Pinky class represents the pink ghost in the game.</div><div class="ttdef"><b>Definition:</b> Ghost.h:68</div></div>
+<div class="ttc" id="aclassPinky_html"><div class="ttname"><a href="classPinky.html">Pinky</a></div><div class="ttdoc">The Pinky class represents the pink ghost in the game.</div><div class="ttdef"><b>Definition:</b> Ghost.h:69</div></div>
 <div class="ttc" id="aclassPinky_html_a64188dfed1d08cd85171d1b9add2ff91"><div class="ttname"><a href="classPinky.html#a64188dfed1d08cd85171d1b9add2ff91">Pinky::Pinky</a></div><div class="ttdeci">Pinky()</div><div class="ttdoc">Constructs a new Pinky object with its predefined sprite rectangles.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

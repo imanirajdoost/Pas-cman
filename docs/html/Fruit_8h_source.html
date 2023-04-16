@@ -82,15 +82,26 @@ $(function() {
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classFruit.html#aa40ce1fdb1b361880d27171f05a2ab5a">   23</a></span>&#160;    <a class="code" href="classFruit.html#aa40ce1fdb1b361880d27171f05a2ab5a">Fruit</a>();</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">const</span> SDL_Rect sp_fruit = {290, 238, 12, 13 }; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;};</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//PAS_CMAN_FRUIT_H</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classFruit.html#a78cf8bba964ddc10ea38461e3db69719">   28</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classFruit.html#a78cf8bba964ddc10ea38461e3db69719">pick_sprite_randomly</a>();</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classFruit.html#a11758a0777060f75bc5402aae14155c2">   30</a></span>&#160;    std::vector&lt;shared_ptr&lt;SDL_Rect&gt;&gt; <a class="code" href="classFruit.html#a11758a0777060f75bc5402aae14155c2">get_sprites</a>();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">const</span> SDL_Rect sp_fruit1 = {290, 238, 12, 13 }; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">const</span> SDL_Rect sp_fruit2 = {307, 238, 11, 12 }; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">const</span> SDL_Rect sp_fruit3 = {322, 238, 12, 12 }; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">const</span> SDL_Rect sp_fruit4 = {338, 238, 12, 13 }; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    std::vector&lt;shared_ptr&lt;SDL_Rect&gt;&gt; fruit_sprites; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;};</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//PAS_CMAN_FRUIT_H</span></div>
 <div class="ttc" id="aEatableComponent_8h_html"><div class="ttname"><a href="EatableComponent_8h.html">EatableComponent.h</a></div><div class="ttdoc">This class is placed on all objects that are eatable by Pacman (such as dots on the screen or fruits ...</div></div>
 <div class="ttc" id="aStaticGameObject_8h_html"><div class="ttname"><a href="StaticGameObject_8h.html">StaticGameObject.h</a></div></div>
 <div class="ttc" id="aclassEatableComponent_html"><div class="ttname"><a href="classEatableComponent.html">EatableComponent</a></div><div class="ttdef"><b>Definition:</b> EatableComponent.h:11</div></div>
 <div class="ttc" id="aclassFruit_html"><div class="ttname"><a href="classFruit.html">Fruit</a></div><div class="ttdoc">The Fruit class.</div><div class="ttdef"><b>Definition:</b> Fruit.h:18</div></div>
+<div class="ttc" id="aclassFruit_html_a11758a0777060f75bc5402aae14155c2"><div class="ttname"><a href="classFruit.html#a11758a0777060f75bc5402aae14155c2">Fruit::get_sprites</a></div><div class="ttdeci">std::vector&lt; shared_ptr&lt; SDL_Rect &gt; &gt; get_sprites()</div></div>
+<div class="ttc" id="aclassFruit_html_a78cf8bba964ddc10ea38461e3db69719"><div class="ttname"><a href="classFruit.html#a78cf8bba964ddc10ea38461e3db69719">Fruit::pick_sprite_randomly</a></div><div class="ttdeci">void pick_sprite_randomly()</div><div class="ttdoc">Picks a random fruit sprite from the fruit_sprites vector.</div></div>
 <div class="ttc" id="aclassFruit_html_aa40ce1fdb1b361880d27171f05a2ab5a"><div class="ttname"><a href="classFruit.html#aa40ce1fdb1b361880d27171f05a2ab5a">Fruit::Fruit</a></div><div class="ttdeci">Fruit()</div><div class="ttdoc">Constructs a new Fruit object.</div></div>
 <div class="ttc" id="aclassStaticGameObject_html"><div class="ttname"><a href="classStaticGameObject.html">StaticGameObject</a></div><div class="ttdoc">Base class for static game objects like dots and fruits.</div><div class="ttdef"><b>Definition:</b> StaticGameObject.h:9</div></div>
 </div><!-- fragment --></div><!-- contents -->

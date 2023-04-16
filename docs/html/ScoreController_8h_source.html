@@ -78,24 +78,33 @@ $(function() {
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="TextViewController_8h.html">header/view/TextViewController.h</a>&quot;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classScoreController.html">   13</a></span>&#160;<span class="keyword">class </span><a class="code" href="classScoreController.html">ScoreController</a> {</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classScoreController.html#a9b6db0338059ce6dfbb71696400a0c7f">   19</a></span>&#160;    <a class="code" href="classScoreController.html#a9b6db0338059ce6dfbb71696400a0c7f">ScoreController</a>(std::shared_ptr&lt;TextViewController&gt; tController);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classScoreController.html#a464bd88ed247456bfda3f6ec457d217c">   25</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classScoreController.html#a464bd88ed247456bfda3f6ec457d217c">addScore</a>(<span class="keywordtype">int</span> scoreToAdd);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">int</span> playerScore; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    std::shared_ptr&lt;TextViewController&gt; textViewController; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;};</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="DataController_8h.html">DataController.h</a>&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classScoreController.html">   14</a></span>&#160;<span class="keyword">class </span><a class="code" href="classScoreController.html">ScoreController</a> {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classScoreController.html#ac48ac741f4cda58aec0f9aaf526ad853">   20</a></span>&#160;    <a class="code" href="classScoreController.html#ac48ac741f4cda58aec0f9aaf526ad853">ScoreController</a>(std::shared_ptr&lt;TextViewController&gt; tController, std::shared_ptr&lt;DataController&gt; dController);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classScoreController.html#a464bd88ed247456bfda3f6ec457d217c">   26</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classScoreController.html#a464bd88ed247456bfda3f6ec457d217c">addScore</a>(<span class="keywordtype">int</span> scoreToAdd);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classScoreController.html#ad4e28edff5cd10b3a4ddcac6fc150011">   31</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classScoreController.html#ad4e28edff5cd10b3a4ddcac6fc150011">updateHighscore</a>();</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//PAS_CMAN_SCORECONTROLLER_H</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classScoreController.html#a9c36c5e94d6a134347ee5e25e257e0ac">   37</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classScoreController.html#a9c36c5e94d6a134347ee5e25e257e0ac">getHighscore</a>();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">int</span> playerScore; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    std::shared_ptr&lt;TextViewController&gt; textViewController; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    std::shared_ptr&lt;DataController&gt; dataController; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;};</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//PAS_CMAN_SCORECONTROLLER_H</span></div>
+<div class="ttc" id="aDataController_8h_html"><div class="ttname"><a href="DataController_8h.html">DataController.h</a></div></div>
 <div class="ttc" id="aTextViewController_8h_html"><div class="ttname"><a href="TextViewController_8h.html">TextViewController.h</a></div></div>
-<div class="ttc" id="aclassScoreController_html"><div class="ttname"><a href="classScoreController.html">ScoreController</a></div><div class="ttdef"><b>Definition:</b> ScoreController.h:13</div></div>
+<div class="ttc" id="aclassScoreController_html"><div class="ttname"><a href="classScoreController.html">ScoreController</a></div><div class="ttdef"><b>Definition:</b> ScoreController.h:14</div></div>
 <div class="ttc" id="aclassScoreController_html_a464bd88ed247456bfda3f6ec457d217c"><div class="ttname"><a href="classScoreController.html#a464bd88ed247456bfda3f6ec457d217c">ScoreController::addScore</a></div><div class="ttdeci">void addScore(int scoreToAdd)</div><div class="ttdoc">Adds a given amount to the player's score.</div></div>
-<div class="ttc" id="aclassScoreController_html_a9b6db0338059ce6dfbb71696400a0c7f"><div class="ttname"><a href="classScoreController.html#a9b6db0338059ce6dfbb71696400a0c7f">ScoreController::ScoreController</a></div><div class="ttdeci">ScoreController(std::shared_ptr&lt; TextViewController &gt; tController)</div><div class="ttdoc">Constructs a new ScoreController object.</div></div>
+<div class="ttc" id="aclassScoreController_html_a9c36c5e94d6a134347ee5e25e257e0ac"><div class="ttname"><a href="classScoreController.html#a9c36c5e94d6a134347ee5e25e257e0ac">ScoreController::getHighscore</a></div><div class="ttdeci">int getHighscore()</div><div class="ttdoc">Returns the highscore.</div></div>
+<div class="ttc" id="aclassScoreController_html_ac48ac741f4cda58aec0f9aaf526ad853"><div class="ttname"><a href="classScoreController.html#ac48ac741f4cda58aec0f9aaf526ad853">ScoreController::ScoreController</a></div><div class="ttdeci">ScoreController(std::shared_ptr&lt; TextViewController &gt; tController, std::shared_ptr&lt; DataController &gt; dController)</div><div class="ttdoc">Constructs a new ScoreController object.</div></div>
+<div class="ttc" id="aclassScoreController_html_ad4e28edff5cd10b3a4ddcac6fc150011"><div class="ttname"><a href="classScoreController.html#ad4e28edff5cd10b3a4ddcac6fc150011">ScoreController::updateHighscore</a></div><div class="ttdeci">void updateHighscore()</div><div class="ttdoc">Updates the highscore if the player's score is higher than the current highscore.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -79,9 +79,9 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a1e45e49f2b139f109a1e5601217f11a3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDotController.html#a1e45e49f2b139f109a1e5601217f11a3">DotController</a> (shared_ptr&lt; <a class="el" href="classPauseController.html">PauseController</a> &gt; pController, shared_ptr&lt; <a class="el" href="classTextViewController.html">TextViewController</a> &gt; tController)</td></tr>
-<tr class="memdesc:a1e45e49f2b139f109a1e5601217f11a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the <a class="el" href="classDotController.html" title="Manages the creation, deletion and tracking of Dots in the game.">DotController</a> class.  <a href="classDotController.html#a1e45e49f2b139f109a1e5601217f11a3">More...</a><br /></td></tr>
-<tr class="separator:a1e45e49f2b139f109a1e5601217f11a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afced0e67bd19f61e4beda9f9cac81fe3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDotController.html#afced0e67bd19f61e4beda9f9cac81fe3">DotController</a> (shared_ptr&lt; <a class="el" href="classPauseController.html">PauseController</a> &gt; pController, shared_ptr&lt; <a class="el" href="classTextViewController.html">TextViewController</a> &gt; tController, shared_ptr&lt; <a class="el" href="classScoreController.html">ScoreController</a> &gt; sController)</td></tr>
+<tr class="memdesc:afced0e67bd19f61e4beda9f9cac81fe3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the <a class="el" href="classDotController.html" title="Manages the creation, deletion and tracking of Dots in the game.">DotController</a> class.  <a href="classDotController.html#afced0e67bd19f61e4beda9f9cac81fe3">More...</a><br /></td></tr>
+<tr class="separator:afced0e67bd19f61e4beda9f9cac81fe3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a55dc40b0b1cf4fa8d436d25baa07786f"><td class="memItemLeft" align="right" valign="top">shared_ptr&lt; <a class="el" href="classDotSmall.html">DotSmall</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDotController.html#a55dc40b0b1cf4fa8d436d25baa07786f">spawnDotSmall</a> (int x, int y)</td></tr>
 <tr class="memdesc:a55dc40b0b1cf4fa8d436d25baa07786f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Spawns a <a class="el" href="classDotSmall.html" title="The DotSmall class, which represents the small dots that Pacman can eat.">DotSmall</a> object at the given position.  <a href="classDotController.html#a55dc40b0b1cf4fa8d436d25baa07786f">More...</a><br /></td></tr>
 <tr class="separator:a55dc40b0b1cf4fa8d436d25baa07786f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -107,8 +107,8 @@ Public Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Manages the creation, deletion and tracking of Dots in the game. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a1e45e49f2b139f109a1e5601217f11a3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1e45e49f2b139f109a1e5601217f11a3">&#9670;&nbsp;</a></span>DotController()</h2>
+<a id="afced0e67bd19f61e4beda9f9cac81fe3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afced0e67bd19f61e4beda9f9cac81fe3">&#9670;&nbsp;</a></span>DotController()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -126,7 +126,13 @@ Public Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">shared_ptr&lt; <a class="el" href="classTextViewController.html">TextViewController</a> &gt;&#160;</td>
-          <td class="paramname"><em>tController</em>&#160;</td>
+          <td class="paramname"><em>tController</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">shared_ptr&lt; <a class="el" href="classScoreController.html">ScoreController</a> &gt;&#160;</td>
+          <td class="paramname"><em>sController</em>&#160;</td>
         </tr>
         <tr>
           <td></td>

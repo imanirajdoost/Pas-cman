@@ -15,31 +15,43 @@ Collaboration diagram for Game\+Object\+:
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classGameObject_a0348e3ee2e83d56eafca7a3547f432c4}{Game\+Object}} ()
+\mbox{\hyperlink{classGameObject_ae93733d1299e70fefca26d6c050f14c0}{Game\+Object}} (SDL\+\_\+\+Rect init\+Pos)
 \begin{DoxyCompactList}\small\item\em Default constructor for \mbox{\hyperlink{classGameObject}{Game\+Object}}. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classGameObject_a5f8b0e356240603d9fcf49d95d53b7cc}{Game\+Object}} (SDL\+\_\+\+Rect default\+Sp)
+\mbox{\hyperlink{classGameObject_ab8d2402154241aa0c879bb02630dd57e}{Game\+Object}} (SDL\+\_\+\+Rect default\+Sp, SDL\+\_\+\+Rect init\+Pos)
 \begin{DoxyCompactList}\small\item\em Constructor for \mbox{\hyperlink{classGameObject}{Game\+Object}} with default sprite. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classGameObject_a82bd17c14b3f45b5e85953d74f031846}{Game\+Object}} (const string \&new\+Name, const vector$<$ SDL\+\_\+\+Rect $>$ \&sps, bool \+\_\+is\+Animated)
-\begin{DoxyCompactList}\small\item\em Constructor for \mbox{\hyperlink{classGameObject}{Game\+Object}} with animation sprites. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\mbox{\hyperlink{classGameObject_aa3d1ca8270638271624d78b5c3c0aca2}{Game\+Object}} (const string \&new\+Name, const vector$<$ SDL\+\_\+\+Rect $>$ \&sps, bool \+\_\+is\+Animated, SDL\+\_\+\+Rect init\+Pos)
+\begin{DoxyCompactList}\small\item\em Constructor for \mbox{\hyperlink{classGameObject}{Game\+Object}} with animation sprites. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGameObject_a84fa557ccf95f12678f0f2992b707fda}{reset\+\_\+state}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+SDL\+\_\+\+Rect \mbox{\hyperlink{classGameObject_a71e1373e0fc0b1ff658a24ff12b7684c}{\+\_\+init\+\_\+pos}}
+\begin{DoxyCompactList}\small\item\em The initial position of the object. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classGameObject_a0348e3ee2e83d56eafca7a3547f432c4}\label{classGameObject_a0348e3ee2e83d56eafca7a3547f432c4}} 
+\mbox{\Hypertarget{classGameObject_ae93733d1299e70fefca26d6c050f14c0}\label{classGameObject_ae93733d1299e70fefca26d6c050f14c0}} 
 \index{GameObject@{GameObject}!GameObject@{GameObject}}
 \index{GameObject@{GameObject}!GameObject@{GameObject}}
 \doxysubsubsection{\texorpdfstring{GameObject()}{GameObject()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
-{\footnotesize\ttfamily Game\+Object\+::\+Game\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Game\+Object\+::\+Game\+Object (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Rect}]{init\+Pos }\end{DoxyParamCaption})}
 
 
 
 Default constructor for \mbox{\hyperlink{classGameObject}{Game\+Object}}. 
 
-\mbox{\Hypertarget{classGameObject_a5f8b0e356240603d9fcf49d95d53b7cc}\label{classGameObject_a5f8b0e356240603d9fcf49d95d53b7cc}} 
+
+\begin{DoxyParams}{Parameters}
+{\em init\+Pos} & The initial position of the \mbox{\hyperlink{classGameObject}{Game\+Object}}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGameObject_ab8d2402154241aa0c879bb02630dd57e}\label{classGameObject_ab8d2402154241aa0c879bb02630dd57e}} 
 \index{GameObject@{GameObject}!GameObject@{GameObject}}
 \index{GameObject@{GameObject}!GameObject@{GameObject}}
 \doxysubsubsection{\texorpdfstring{GameObject()}{GameObject()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
-{\footnotesize\ttfamily Game\+Object\+::\+Game\+Object (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Rect}]{default\+Sp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+{\footnotesize\ttfamily Game\+Object\+::\+Game\+Object (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Rect}]{default\+Sp,  }\item[{SDL\+\_\+\+Rect}]{init\+Pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
 
 
@@ -49,12 +61,14 @@ Constructor for \mbox{\hyperlink{classGameObject}{Game\+Object}} with default sp
 \begin{DoxyParams}{Parameters}
 {\em default\+Sp} & The default sprite for the \mbox{\hyperlink{classGameObject}{Game\+Object}}. \\
 \hline
+{\em init\+Pos} & The initial position of the \mbox{\hyperlink{classGameObject}{Game\+Object}}. \\
+\hline
 \end{DoxyParams}
-\mbox{\Hypertarget{classGameObject_a82bd17c14b3f45b5e85953d74f031846}\label{classGameObject_a82bd17c14b3f45b5e85953d74f031846}} 
+\mbox{\Hypertarget{classGameObject_aa3d1ca8270638271624d78b5c3c0aca2}\label{classGameObject_aa3d1ca8270638271624d78b5c3c0aca2}} 
 \index{GameObject@{GameObject}!GameObject@{GameObject}}
 \index{GameObject@{GameObject}!GameObject@{GameObject}}
 \doxysubsubsection{\texorpdfstring{GameObject()}{GameObject()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
-{\footnotesize\ttfamily Game\+Object\+::\+Game\+Object (\begin{DoxyParamCaption}\item[{const string \&}]{new\+Name,  }\item[{const vector$<$ SDL\+\_\+\+Rect $>$ \&}]{sps,  }\item[{bool}]{\+\_\+is\+Animated }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Game\+Object\+::\+Game\+Object (\begin{DoxyParamCaption}\item[{const string \&}]{new\+Name,  }\item[{const vector$<$ SDL\+\_\+\+Rect $>$ \&}]{sps,  }\item[{bool}]{\+\_\+is\+Animated,  }\item[{SDL\+\_\+\+Rect}]{init\+Pos }\end{DoxyParamCaption})}
 
 
 
@@ -68,7 +82,39 @@ Constructor for \mbox{\hyperlink{classGameObject}{Game\+Object}} with animation 
 \hline
 {\em \+\_\+is\+Animated} & Whether the \mbox{\hyperlink{classGameObject}{Game\+Object}} is animated. \\
 \hline
+{\em init\+Pos} & The initial position of the \mbox{\hyperlink{classGameObject}{Game\+Object}}. \\
+\hline
 \end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGameObject_a84fa557ccf95f12678f0f2992b707fda}\label{classGameObject_a84fa557ccf95f12678f0f2992b707fda}} 
+\index{GameObject@{GameObject}!reset\_state@{reset\_state}}
+\index{reset\_state@{reset\_state}!GameObject@{GameObject}}
+\doxysubsubsection{\texorpdfstring{reset\_state()}{reset\_state()}}
+{\footnotesize\ttfamily void Game\+Object\+::reset\+\_\+state (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classIResettable_a8181b1aa3a2f2220aa846b3dee81ac28}{IResettable}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classPlayer_ad43d75b1395998c1a1eea44b9948f1c9}{Player}}, and \mbox{\hyperlink{classMovableGameObject_adf39fbbae3476fd1d5e74b9ae6c97717}{Movable\+Game\+Object}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classGameObject_a71e1373e0fc0b1ff658a24ff12b7684c}\label{classGameObject_a71e1373e0fc0b1ff658a24ff12b7684c}} 
+\index{GameObject@{GameObject}!\_init\_pos@{\_init\_pos}}
+\index{\_init\_pos@{\_init\_pos}!GameObject@{GameObject}}
+\doxysubsubsection{\texorpdfstring{\_init\_pos}{\_init\_pos}}
+{\footnotesize\ttfamily SDL\+\_\+\+Rect Game\+Object\+::\+\_\+init\+\_\+pos\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The initial position of the object. 
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

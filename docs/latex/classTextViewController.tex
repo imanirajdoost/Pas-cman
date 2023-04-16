@@ -12,14 +12,18 @@ This class is responsible for managing the text UI elements.
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classTextViewController_a3b6f491a4f71615431043c061d537242}{Text\+View\+Controller}} ()
+\mbox{\hyperlink{classTextViewController_a5166025143562867e2a4fbc4bfa9dd9b}{Text\+View\+Controller}} (shared\+\_\+ptr$<$ \mbox{\hyperlink{classDataController}{Data\+Controller}} $>$ d\+Controller)
 \begin{DoxyCompactList}\small\item\em Constructs the \mbox{\hyperlink{classTextViewController}{Text\+View\+Controller}} object and initializes all the characters. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classTextViewController_a6456bd830f59a061f1cb958752aafe94}{write\+On\+UI}} (const string \&id, const string \&text, int posX, int posY)
 \begin{DoxyCompactList}\small\item\em Writes text on the screen at the given position and id. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classTextViewController_ad51abbc6370f7dcf1c6db74bb0a4d0f6}{write\+Score}} (int score)
 \begin{DoxyCompactList}\small\item\em Writes the score on the screen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTextViewController_a9d77a4c2c1632f11038fde32bae79a89}{write\+High\+Score}} (int score)
+\begin{DoxyCompactList}\small\item\em Writes the highscore on the screen. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classTextViewController_a411c74dcdab31e71399696978cbd719f}{set\+Health\+UI}} (short health)
-\begin{DoxyCompactList}\small\item\em Sets the health UI element to the given value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Sets the health UI element to the given value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTextViewController_a43543dc52bc165b6785203f7a9d01e4e}{set\+Fruit\+UI}} (const vector$<$ shared\+\_\+ptr$<$ SDL\+\_\+\+Rect $>$$>$ \&fruit\+\_\+sp)
+\begin{DoxyCompactList}\small\item\em Sets the fruit UI element to the given value. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -27,9 +31,15 @@ vector$<$ shared\+\_\+ptr$<$ tuple$<$ string, string, int, int, vector$<$ shared
 \item 
 vector$<$ shared\+\_\+ptr$<$ SDL\+\_\+\+Rect $>$ $>$ \mbox{\hyperlink{classTextViewController_a817baeed059dcea295447ff5f7f6e4d8}{health\+\_\+list}}
 \item 
+vector$<$ shared\+\_\+ptr$<$ SDL\+\_\+\+Rect $>$ $>$ \mbox{\hyperlink{classTextViewController_afd9af1ec63897c2e5618a348b8453727}{fruit\+\_\+list\+\_\+pos}}
+\item 
+vector$<$ shared\+\_\+ptr$<$ SDL\+\_\+\+Rect $>$ $>$ \mbox{\hyperlink{classTextViewController_af30453dd812941b31e58afcdb48690c0}{fruit\+\_\+list\+\_\+sp}}
+\item 
 const int \mbox{\hyperlink{classTextViewController_ab03551d63a5fa98fe1e4003dda769ed0}{FONT\+\_\+\+SIZE}} = 16
 \item 
 const int \mbox{\hyperlink{classTextViewController_af4005610b5d0e7dfb5ebbd3305cd07b9}{FONT\+\_\+\+SPACE}} = 22
+\item 
+shared\+\_\+ptr$<$ \mbox{\hyperlink{classDataController}{Data\+Controller}} $>$ \mbox{\hyperlink{classTextViewController_a1839e92435a8ae196d5925577958a6ed}{data\+Controller}}
 \end{DoxyCompactItemize}
 
 
@@ -37,11 +47,11 @@ const int \mbox{\hyperlink{classTextViewController_af4005610b5d0e7dfb5ebbd3305cd
 This class is responsible for managing the text UI elements. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classTextViewController_a3b6f491a4f71615431043c061d537242}\label{classTextViewController_a3b6f491a4f71615431043c061d537242}} 
+\mbox{\Hypertarget{classTextViewController_a5166025143562867e2a4fbc4bfa9dd9b}\label{classTextViewController_a5166025143562867e2a4fbc4bfa9dd9b}} 
 \index{TextViewController@{TextViewController}!TextViewController@{TextViewController}}
 \index{TextViewController@{TextViewController}!TextViewController@{TextViewController}}
 \doxysubsubsection{\texorpdfstring{TextViewController()}{TextViewController()}}
-{\footnotesize\ttfamily Text\+View\+Controller\+::\+Text\+View\+Controller (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Text\+View\+Controller\+::\+Text\+View\+Controller (\begin{DoxyParamCaption}\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{classDataController}{Data\+Controller}} $>$}]{d\+Controller }\end{DoxyParamCaption})}
 
 
 
@@ -50,6 +60,21 @@ Constructs the \mbox{\hyperlink{classTextViewController}{Text\+View\+Controller}
 
 
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTextViewController_a43543dc52bc165b6785203f7a9d01e4e}\label{classTextViewController_a43543dc52bc165b6785203f7a9d01e4e}} 
+\index{TextViewController@{TextViewController}!setFruitUI@{setFruitUI}}
+\index{setFruitUI@{setFruitUI}!TextViewController@{TextViewController}}
+\doxysubsubsection{\texorpdfstring{setFruitUI()}{setFruitUI()}}
+{\footnotesize\ttfamily void Text\+View\+Controller\+::set\+Fruit\+UI (\begin{DoxyParamCaption}\item[{const vector$<$ shared\+\_\+ptr$<$ SDL\+\_\+\+Rect $>$$>$ \&}]{fruit\+\_\+sp }\end{DoxyParamCaption})}
+
+
+
+Sets the fruit UI element to the given value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fruit} & The fruit value to set. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classTextViewController_a411c74dcdab31e71399696978cbd719f}\label{classTextViewController_a411c74dcdab31e71399696978cbd719f}} 
 \index{TextViewController@{TextViewController}!setHealthUI@{setHealthUI}}
 \index{setHealthUI@{setHealthUI}!TextViewController@{TextViewController}}
@@ -63,6 +88,21 @@ Sets the health UI element to the given value.
 
 \begin{DoxyParams}{Parameters}
 {\em health} & The health value to set. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTextViewController_a9d77a4c2c1632f11038fde32bae79a89}\label{classTextViewController_a9d77a4c2c1632f11038fde32bae79a89}} 
+\index{TextViewController@{TextViewController}!writeHighScore@{writeHighScore}}
+\index{writeHighScore@{writeHighScore}!TextViewController@{TextViewController}}
+\doxysubsubsection{\texorpdfstring{writeHighScore()}{writeHighScore()}}
+{\footnotesize\ttfamily void Text\+View\+Controller\+::write\+High\+Score (\begin{DoxyParamCaption}\item[{int}]{score }\end{DoxyParamCaption})}
+
+
+
+Writes the highscore on the screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em score} & The highscore to write. \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classTextViewController_a6456bd830f59a061f1cb958752aafe94}\label{classTextViewController_a6456bd830f59a061f1cb958752aafe94}} 
@@ -104,6 +144,12 @@ Writes the score on the screen.
 
 
 \doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classTextViewController_a1839e92435a8ae196d5925577958a6ed}\label{classTextViewController_a1839e92435a8ae196d5925577958a6ed}} 
+\index{TextViewController@{TextViewController}!dataController@{dataController}}
+\index{dataController@{dataController}!TextViewController@{TextViewController}}
+\doxysubsubsection{\texorpdfstring{dataController}{dataController}}
+{\footnotesize\ttfamily shared\+\_\+ptr$<$\mbox{\hyperlink{classDataController}{Data\+Controller}}$>$ Text\+View\+Controller\+::data\+Controller}
+
 \mbox{\Hypertarget{classTextViewController_ab03551d63a5fa98fe1e4003dda769ed0}\label{classTextViewController_ab03551d63a5fa98fe1e4003dda769ed0}} 
 \index{TextViewController@{TextViewController}!FONT\_SIZE@{FONT\_SIZE}}
 \index{FONT\_SIZE@{FONT\_SIZE}!TextViewController@{TextViewController}}
@@ -115,6 +161,18 @@ Writes the score on the screen.
 \index{FONT\_SPACE@{FONT\_SPACE}!TextViewController@{TextViewController}}
 \doxysubsubsection{\texorpdfstring{FONT\_SPACE}{FONT\_SPACE}}
 {\footnotesize\ttfamily const int Text\+View\+Controller\+::\+FONT\+\_\+\+SPACE = 22}
+
+\mbox{\Hypertarget{classTextViewController_afd9af1ec63897c2e5618a348b8453727}\label{classTextViewController_afd9af1ec63897c2e5618a348b8453727}} 
+\index{TextViewController@{TextViewController}!fruit\_list\_pos@{fruit\_list\_pos}}
+\index{fruit\_list\_pos@{fruit\_list\_pos}!TextViewController@{TextViewController}}
+\doxysubsubsection{\texorpdfstring{fruit\_list\_pos}{fruit\_list\_pos}}
+{\footnotesize\ttfamily vector$<$shared\+\_\+ptr$<$SDL\+\_\+\+Rect$>$ $>$ Text\+View\+Controller\+::fruit\+\_\+list\+\_\+pos}
+
+\mbox{\Hypertarget{classTextViewController_af30453dd812941b31e58afcdb48690c0}\label{classTextViewController_af30453dd812941b31e58afcdb48690c0}} 
+\index{TextViewController@{TextViewController}!fruit\_list\_sp@{fruit\_list\_sp}}
+\index{fruit\_list\_sp@{fruit\_list\_sp}!TextViewController@{TextViewController}}
+\doxysubsubsection{\texorpdfstring{fruit\_list\_sp}{fruit\_list\_sp}}
+{\footnotesize\ttfamily vector$<$shared\+\_\+ptr$<$SDL\+\_\+\+Rect$>$ $>$ Text\+View\+Controller\+::fruit\+\_\+list\+\_\+sp}
 
 \mbox{\Hypertarget{classTextViewController_a817baeed059dcea295447ff5f7f6e4d8}\label{classTextViewController_a817baeed059dcea295447ff5f7f6e4d8}} 
 \index{TextViewController@{TextViewController}!health\_list@{health\_list}}

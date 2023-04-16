@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['map_389',['map',['../classMap.html#af9ccaceb9d50c906e79fd2d75e39c930',1,'Map']]]
+  ['lastdirection_453',['lastDirection',['../classMovableGameObject.html#a01f3c4ecdd9023b46332079fa56105c7',1,'MovableGameObject']]]
 ];

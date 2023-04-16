@@ -46,6 +46,11 @@ private:
     Uint64 start;
 
     Uint64 next_time;
+
+    /**
+     * Calculates the time left until the next frame.
+     * @return The time left in milliseconds.
+     */
     Uint64 time_left() const;
 };
 

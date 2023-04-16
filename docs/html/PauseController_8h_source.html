@@ -78,38 +78,40 @@ $(function() {
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="TimeController_8h.html">TimeController.h</a>&quot;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">using namespace </span>std;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classPauseController.html">   15</a></span>&#160;<span class="keyword">class </span><a class="code" href="classPauseController.html">PauseController</a> {</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classPauseController.html#a8492fceb5588ac8c4360edfb3f0f1c92">   22</a></span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classPauseController.html#a8492fceb5588ac8c4360edfb3f0f1c92">PauseController</a>(shared_ptr&lt;TimeController&gt; tController);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classPauseController.html#ab1ed280d1b8a4051cc03845992592560">   30</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPauseController.html#ab1ed280d1b8a4051cc03845992592560">pause</a>();</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classPauseController.html#aa425f26ef9a89de68f43b0c19cc57ce8">   38</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPauseController.html#aa425f26ef9a89de68f43b0c19cc57ce8">resume</a>();</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classPauseController.html#aae380fee8932a427afb4350a45545da2">   49</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPauseController.html#aae380fee8932a427afb4350a45545da2">pauseFor</a>(<span class="keywordtype">long</span> milliSec);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="classPauseController.html#a452cda90feeb6560f14aad7711784b6d">   58</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPauseController.html#a452cda90feeb6560f14aad7711784b6d">tick</a>();</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="classPauseController.html#a15651570f0ccc4b4ba2057e374b8a7e6">   65</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classPauseController.html#a15651570f0ccc4b4ba2057e374b8a7e6">hasPaused</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">bool</span> isPaused; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordtype">long</span> pauseTime; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    shared_ptr&lt;TimeController&gt; timeController; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;};</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//PAS_CMAN_PAUSECONTROLLER_H</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;functional&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classPauseController.html">   16</a></span>&#160;<span class="keyword">class </span><a class="code" href="classPauseController.html">PauseController</a> {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classPauseController.html#a8492fceb5588ac8c4360edfb3f0f1c92">   23</a></span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classPauseController.html#a8492fceb5588ac8c4360edfb3f0f1c92">PauseController</a>(shared_ptr&lt;TimeController&gt; tController);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classPauseController.html#ab1ed280d1b8a4051cc03845992592560">   31</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPauseController.html#ab1ed280d1b8a4051cc03845992592560">pause</a>();</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classPauseController.html#aa425f26ef9a89de68f43b0c19cc57ce8">   39</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPauseController.html#aa425f26ef9a89de68f43b0c19cc57ce8">resume</a>();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classPauseController.html#a1f3703535a0c89e0e620633a91f13da4">   50</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPauseController.html#a1f3703535a0c89e0e620633a91f13da4">pauseFor</a>(<span class="keywordtype">long</span> milliSec, <span class="keyword">function</span>&lt;<span class="keywordtype">void</span>()&gt; callback = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="classPauseController.html#a452cda90feeb6560f14aad7711784b6d">   59</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPauseController.html#a452cda90feeb6560f14aad7711784b6d">tick</a>();</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="classPauseController.html#a15651570f0ccc4b4ba2057e374b8a7e6">   66</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classPauseController.html#a15651570f0ccc4b4ba2057e374b8a7e6">hasPaused</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">bool</span> isPaused; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordtype">long</span> <span class="keywordtype">long</span> pauseTime; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    shared_ptr&lt;TimeController&gt; timeController; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    std::function&lt;void()&gt; resumeCallback; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;};</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//PAS_CMAN_PAUSECONTROLLER_H</span></div>
 <div class="ttc" id="aTimeController_8h_html"><div class="ttname"><a href="TimeController_8h.html">TimeController.h</a></div></div>
-<div class="ttc" id="aclassPauseController_html"><div class="ttname"><a href="classPauseController.html">PauseController</a></div><div class="ttdef"><b>Definition:</b> PauseController.h:15</div></div>
+<div class="ttc" id="aclassPauseController_html"><div class="ttname"><a href="classPauseController.html">PauseController</a></div><div class="ttdef"><b>Definition:</b> PauseController.h:16</div></div>
 <div class="ttc" id="aclassPauseController_html_a15651570f0ccc4b4ba2057e374b8a7e6"><div class="ttname"><a href="classPauseController.html#a15651570f0ccc4b4ba2057e374b8a7e6">PauseController::hasPaused</a></div><div class="ttdeci">bool hasPaused() const</div><div class="ttdoc">Returns the current pause state.</div></div>
+<div class="ttc" id="aclassPauseController_html_a1f3703535a0c89e0e620633a91f13da4"><div class="ttname"><a href="classPauseController.html#a1f3703535a0c89e0e620633a91f13da4">PauseController::pauseFor</a></div><div class="ttdeci">void pauseFor(long milliSec, function&lt; void()&gt; callback=nullptr)</div><div class="ttdoc">Pauses the game for a specific amount of time.</div></div>
 <div class="ttc" id="aclassPauseController_html_a452cda90feeb6560f14aad7711784b6d"><div class="ttname"><a href="classPauseController.html#a452cda90feeb6560f14aad7711784b6d">PauseController::tick</a></div><div class="ttdeci">void tick()</div><div class="ttdoc">Updates the pause state.</div></div>
 <div class="ttc" id="aclassPauseController_html_a8492fceb5588ac8c4360edfb3f0f1c92"><div class="ttname"><a href="classPauseController.html#a8492fceb5588ac8c4360edfb3f0f1c92">PauseController::PauseController</a></div><div class="ttdeci">PauseController(shared_ptr&lt; TimeController &gt; tController)</div><div class="ttdoc">Constructor for PauseController class.</div></div>
 <div class="ttc" id="aclassPauseController_html_aa425f26ef9a89de68f43b0c19cc57ce8"><div class="ttname"><a href="classPauseController.html#aa425f26ef9a89de68f43b0c19cc57ce8">PauseController::resume</a></div><div class="ttdeci">void resume()</div><div class="ttdoc">Resumes the game.</div></div>
-<div class="ttc" id="aclassPauseController_html_aae380fee8932a427afb4350a45545da2"><div class="ttname"><a href="classPauseController.html#aae380fee8932a427afb4350a45545da2">PauseController::pauseFor</a></div><div class="ttdeci">void pauseFor(long milliSec)</div><div class="ttdoc">Pauses the game for a specific amount of time.</div></div>
 <div class="ttc" id="aclassPauseController_html_ab1ed280d1b8a4051cc03845992592560"><div class="ttname"><a href="classPauseController.html#ab1ed280d1b8a4051cc03845992592560">PauseController::pause</a></div><div class="ttdeci">void pause()</div><div class="ttdoc">Pauses the game.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
