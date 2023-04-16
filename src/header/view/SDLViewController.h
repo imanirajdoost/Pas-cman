@@ -71,12 +71,6 @@ private:
     SDL_Surface *plancheSprites = nullptr; ///< SDL surface pointer to the sprite sheet.
     SDL_Renderer *renderer = nullptr; ///< SDL renderer pointer.
 
-    SDL_Rect src_bg = {368, 3, 168, 216}; ///< Source rectangle for the background sprite.
-    SDL_Rect bg = {2, 2, 672, 864}; ///< Destination rectangle for the background sprite.
-
-    SDL_Rect blackBg = {0, 0, 1, 1}; ///< Black background rectangle.
-    SDL_Rect UIRect = {700, 0, 200, 200}; ///< Rectangle for the UI.
-
     SDL_Rect playerHealth = {169, 76, 10, 12}; ///< Sprite rectangle for the player's health.
 
     shared_ptr<DotController> dotController; ///< Shared pointer to the DotController.

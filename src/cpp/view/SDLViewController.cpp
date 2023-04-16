@@ -19,9 +19,6 @@ void SDLViewController::drawSprites() {
 
     SDL_SetColorKey(plancheSprites, false, 0);
 
-    // Draw the background
-    drawTarget(&src_bg, &bg);
-
     // couleur transparente
     SDL_SetColorKey(plancheSprites, true, 0);
 

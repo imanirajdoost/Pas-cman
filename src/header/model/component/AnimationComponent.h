@@ -48,16 +48,6 @@ protected:
     bool isAnimated = false;
 
     /**
-     * @brief Stops the current animation.
-     */
-    void stopAnimation();
-
-    /**
-     * @brief Starts the current animation.
-     */
-    void startAnimation();
-
-    /**
      * @brief Sets the current animation based on the given animation name.
      * @param animName The name of the animation to set.
      * @return True if the animation was successfully set, false otherwise.
@@ -75,6 +65,16 @@ public:
      * @brief Constructs an empty AnimationComponent object.
      */
     AnimationComponent();
+
+    /**
+ * @brief Stops the current animation.
+ */
+    void stopAnimation();
+
+    /**
+     * @brief Starts the current animation.
+     */
+    void startAnimation();
 
     /**
      * @brief Constructs an AnimationComponent object with a default sprite.
@@ -96,7 +96,7 @@ public:
      * @param sps The list of sprites for the animation.
      * @param shouldLoop Whether or not the animation should loop.
      */
-    void addAnimation(const string &animName, const vector<SDL_Rect> &sps,  int speed = 1, bool shouldLoop = true);
+    void addAnimation(const string &animName, const vector<SDL_Rect> &sps, int speed = 1, bool shouldLoop = true);
 
     /**
      * @brief Returns the next sprite in the current animation.

@@ -89,6 +89,7 @@ std::function<void(bool)> GameController::gameOver() {
         pauseController->pause();
         if (won) {
             cout << "You won !" << endl;
+            gameBackground->startAnimation();
             scoreController->updateHighscore();
             textViewController->writeOnUI("you_won", "congratulations!", 6 * TILESIZE, 10 * TILESIZE);
         } else {
@@ -107,9 +108,11 @@ GameController::GameController() : exit(false) {
     blinky = make_shared<Blinky>();
     pinky = make_shared<Pinky>();
     clyde = make_shared<Clyde>();
+    gameBackground = make_shared<GameBackground>();
 
     // Create a list of all game objects to pass for the view
     auto list_sp = make_shared<std::list<shared_ptr<GameObject>>>();
+    list_sp->emplace_back(gameBackground);
     list_sp->emplace_back(player);
     list_sp->emplace_back(inky);
     list_sp->emplace_back(blinky);

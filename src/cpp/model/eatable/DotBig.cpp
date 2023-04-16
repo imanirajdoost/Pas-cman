@@ -9,7 +9,7 @@ DotBig::DotBig() : Dot() {
     current_sp = std::make_shared<SDL_Rect>(sp_dot_big);
     default_sp = default_sprites::dot_big_default;
 
-    addAnimation("default", {default_sp, default_sprites::empty_black_sp}, 1, true);
+    addAnimation("default", {default_sp, default_sprites::empty_black_sp}, BIG_DOT_ANIMATION_SPEED, true);
 
     setAnimation("default");
     startAnimation();

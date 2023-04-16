@@ -44,11 +44,11 @@ Blinky::Blinky() : Ghost(default_sprites::blinky_sp_default, default_positions::
     resetNextPos();
 
     // Set default animation and sprite and add animations
-    addAnimation("default", {blinky_r1, blinky_r2});
-    addAnimation("move_up", {blinky_u1, blinky_u2});
-    addAnimation("move_down", {blinky_d1, blinky_d2});
-    addAnimation("move_left", {blinky_l1, blinky_l2});
-    addAnimation("move_right", {blinky_r1, blinky_r2});
+    addAnimation("default", {blinky_r1, blinky_r2}, GHOST_ANIMATION_SPEED);
+    addAnimation("move_up", {blinky_u1, blinky_u2}, GHOST_ANIMATION_SPEED);
+    addAnimation("move_down", {blinky_d1, blinky_d2}, GHOST_ANIMATION_SPEED);
+    addAnimation("move_left", {blinky_l1, blinky_l2}, GHOST_ANIMATION_SPEED);
+    addAnimation("move_right", {blinky_r1, blinky_r2}, GHOST_ANIMATION_SPEED);
 
     setAnimation("default");
 
@@ -69,11 +69,11 @@ Pinky::Pinky() : Ghost(default_sprites::pinky_sp_default, default_positions::pin
     resetNextPos();
 
     // Set default animation and sprite and add animations
-    addAnimation("default", {pinky_r1, pinky_r2});
-    addAnimation("move_up", {pinky_u1, pinky_u2});
-    addAnimation("move_down", {pinky_d1, pinky_d2});
-    addAnimation("move_left", {pinky_l1, pinky_l2});
-    addAnimation("move_right", {pinky_r1, pinky_r2});
+    addAnimation("default", {pinky_r1, pinky_r2}, GHOST_ANIMATION_SPEED);
+    addAnimation("move_up", {pinky_u1, pinky_u2}, GHOST_ANIMATION_SPEED);
+    addAnimation("move_down", {pinky_d1, pinky_d2}, GHOST_ANIMATION_SPEED);
+    addAnimation("move_left", {pinky_l1, pinky_l2}, GHOST_ANIMATION_SPEED);
+    addAnimation("move_right", {pinky_r1, pinky_r2}, GHOST_ANIMATION_SPEED);
 
     setAnimation("default");
 
@@ -85,11 +85,11 @@ Inky::Inky() : Ghost(default_sprites::inky_sp_default, default_positions::inky_d
     resetNextPos();
 
     // Set default animation and sprite and add animations
-    addAnimation("default", {inky_r1, inky_r2});
-    addAnimation("move_up", {inky_u1, inky_u2});
-    addAnimation("move_down", {inky_d1, inky_d2});
-    addAnimation("move_left", {inky_l1, inky_l2});
-    addAnimation("move_right", {inky_r1, inky_r2});
+    addAnimation("default", {inky_r1, inky_r2}, GHOST_ANIMATION_SPEED);
+    addAnimation("move_up", {inky_u1, inky_u2}, GHOST_ANIMATION_SPEED);
+    addAnimation("move_down", {inky_d1, inky_d2}, GHOST_ANIMATION_SPEED);
+    addAnimation("move_left", {inky_l1, inky_l2}, GHOST_ANIMATION_SPEED);
+    addAnimation("move_right", {inky_r1, inky_r2}, GHOST_ANIMATION_SPEED);
 
     setAnimation("default");
 
@@ -100,11 +100,11 @@ Clyde::Clyde() : Ghost(default_sprites::clyde_sp_default, default_positions::cly
     resetNextPos();
 
     // Set default animation and sprite and add animations
-    addAnimation("default", {clyde_r1, clyde_r2});
-    addAnimation("move_up", {clyde_u1, clyde_u2});
-    addAnimation("move_down", {clyde_d1, clyde_d2});
-    addAnimation("move_left", {clyde_l1, clyde_l2});
-    addAnimation("move_right", {clyde_r1, clyde_r2});
+    addAnimation("default", {clyde_r1, clyde_r2}, GHOST_ANIMATION_SPEED);
+    addAnimation("move_up", {clyde_u1, clyde_u2}, GHOST_ANIMATION_SPEED);
+    addAnimation("move_down", {clyde_d1, clyde_d2}, GHOST_ANIMATION_SPEED);
+    addAnimation("move_left", {clyde_l1, clyde_l2}, GHOST_ANIMATION_SPEED);
+    addAnimation("move_right", {clyde_r1, clyde_r2}, GHOST_ANIMATION_SPEED);
 
     setAnimation("default");
 

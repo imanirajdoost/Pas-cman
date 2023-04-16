@@ -19,7 +19,7 @@ namespace constants {
 #define SHOW_FPS 0
 
     /** @brief Animation frame rate in frames per second. */
-#define ANIMATION_DEFAULT_SPEED 4
+#define ANIMATION_DEFAULT_SPEED 30
 
     /** @brief Small dot size in pixels. */
 #define SMALL_DOT_SIZE 10
@@ -46,6 +46,16 @@ namespace constants {
 #define FRUIT_AVAILABE_TIME 5000
 }
 
+namespace default_animation_speed {
+#define GHOST_ANIMATION_SPEED 10
+
+#define PLAYER_ANIMATION_SPEED 10
+
+#define PLAYER_DEATH_ANIMATION_SPEED 5
+
+#define BIG_DOT_ANIMATION_SPEED 5
+}
+
 namespace default_positions {
     const SDL_Rect player_default_pos{10 * TILESIZE, 20 * TILESIZE};
 
@@ -53,6 +63,8 @@ namespace default_positions {
     const SDL_Rect inky_default_pos{2 * TILESIZE, TILESIZE};
     const SDL_Rect pinky_default_pos{3 * TILESIZE, TILESIZE};
     const SDL_Rect clyde_default_pos{4 * TILESIZE, TILESIZE};
+
+    const SDL_Rect background_default_pos = {2, 2, 672, 864}; ///< Destination rectangle for the background sprite.
 
     const SDL_Rect global_default_pos{-100, -100};
 }
@@ -85,6 +97,8 @@ namespace default_sprites {
 
     /** @brief empty black sprite. */
     const SDL_Rect empty_black_sp = {184, 103, 16, 16};
+
+    const SDL_Rect background_sp_default = {370, 4, 166, 214};
 }
 
 #endif

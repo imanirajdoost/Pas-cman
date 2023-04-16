@@ -15,6 +15,7 @@ Main game controller that initializes and manages all other controllers and obje
 #include "GhostController.h"
 #include "TimeController.h"
 #include "PauseController.h"
+#include "header/model/GameBackground.h"
 
 class GameController {
 public:
@@ -62,6 +63,7 @@ private:
     shared_ptr<Pinky> pinky;
     shared_ptr<Inky> inky;
     shared_ptr<Clyde> clyde;
+    shared_ptr<GameBackground> gameBackground;
 
     function<void(bool)> gameOver();
 };
