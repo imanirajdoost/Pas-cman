@@ -23,11 +23,11 @@ vector<shared_ptr<Dot>> DotController::spawnDotObjects() {
         for (int j = 0; j < map[i].size(); j++) {
             if (map[i][j] == MTYPE::ITEM) {
                 if (!isBigDot(i, j))
-                    mapDots.push_back(spawnDotSmall(j * TILESIZE + SMALL_DOT_SIZE,
-                                                    i * TILESIZE + SMALL_DOT_SIZE));
+                    mapDots.push_back(spawnDotSmall(j * TILESIZE + ((TILESIZE / 2) - (SMALL_DOT_SIZE / 2)),
+                                                    i * TILESIZE + (TILESIZE / 2) - (SMALL_DOT_SIZE / 2)));
                 else
-                    mapDots.push_back(spawnDotBig(j * TILESIZE,
-                                                  i * TILESIZE));
+                    mapDots.push_back(spawnDotBig((j * TILESIZE) + ((TILESIZE / 2) - (BIG_DOT_SIZE / 2)),
+                                                  (i * TILESIZE) + (TILESIZE / 2) - (BIG_DOT_SIZE / 2)));
             }
         }
     }

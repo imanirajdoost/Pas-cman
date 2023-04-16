@@ -22,7 +22,7 @@ namespace constants {
 #define ANIMATION_DEFAULT_SPEED 30
 
     /** @brief Small dot size in pixels. */
-#define SMALL_DOT_SIZE 10
+#define SMALL_DOT_SIZE 8
 
     /** @brief Score awarded for eating a small dot. */
 #define SMALL_DOT_SCORE 10
@@ -64,7 +64,7 @@ namespace default_positions {
     const SDL_Rect pinky_default_pos{3 * TILESIZE, TILESIZE};
     const SDL_Rect clyde_default_pos{4 * TILESIZE, TILESIZE};
 
-    const SDL_Rect background_default_pos = {2, 2, 672, 864}; ///< Destination rectangle for the background sprite.
+    const SDL_Rect background_default_pos = {0, 0, 672, 864}; ///< Destination rectangle for the background sprite.
 
     const SDL_Rect global_default_pos{-100, -100};
 }
