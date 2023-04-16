@@ -20,6 +20,12 @@ public:
      */
     DotSmall();
 
+    /**
+ * @brief Returns the type of the dot
+ * @return The type of the dot
+ */
+    DotType getDotType() const override;
+
 private:
     const SDL_Rect sp_dot_small = {4, 81, 2, 2}; /**< The sprite sheet coordinates for the small dot. */
 };

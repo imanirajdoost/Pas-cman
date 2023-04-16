@@ -14,3 +14,7 @@ DotBig::DotBig() : Dot() {
     setAnimation("default");
     startAnimation();
 }
+
+DotType DotBig::getDotType() const {
+    return DotType::BIG;
+}

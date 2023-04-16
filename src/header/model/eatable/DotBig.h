@@ -13,6 +13,12 @@ public:
      */
     DotBig();
 
+    /**
+     * @brief Returns the type of the dot
+     * @return The type of the dot
+     */
+    DotType getDotType() const override;
+
 private:
     /**
      * @brief The sprite rectangle of a big dot

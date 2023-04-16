@@ -67,6 +67,11 @@ bool DotController::isBigDot(int i, int j) {
 bool DotController::deleteDot(const Dot &dot) {
     for (auto i = dots.begin(); i < dots.end(); ++i) {
         if (dot.getIndex() == i->get()->getIndex()) {
+            //TODO: remove this
+            if(dot.getDotType() == DotType::BIG)
+                cout << "Big dot eaten" << endl;
+            else
+                cout << "Small dot eaten" << endl;
             dots.erase(i);
 //            cout << " remaining dots: " << dots.size() << endl;
             if (dots.empty()) {

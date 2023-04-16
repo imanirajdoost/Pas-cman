@@ -9,3 +9,7 @@ DotSmall::DotSmall() : Dot() {
 
     current_sp = std::make_shared<SDL_Rect>(sp_dot_small);
 }
+
+DotType DotSmall::getDotType() const {
+    return DotType::SMALL;
+}
