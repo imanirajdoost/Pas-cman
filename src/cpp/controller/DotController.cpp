@@ -64,7 +64,7 @@ bool DotController::isBigDot(int i, int j) {
     return false;
 }
 
-bool DotController::deleteDot(const Dot &dot) {
+void DotController::deleteDot(const Dot &dot) {
     for (auto i = dots.begin(); i < dots.end(); ++i) {
         if (dot.getIndex() == i->get()->getIndex()) {
             //TODO: remove this
@@ -79,8 +79,6 @@ bool DotController::deleteDot(const Dot &dot) {
                 if (gameOverFunction != nullptr)
                     gameOverFunction(true);
             }
-            return true;
         }
     }
-    return false;
 }

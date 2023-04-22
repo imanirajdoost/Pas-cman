@@ -8,3 +8,4 @@ CMakeFiles/*
 Makefile
 PacMan
 highscore.txt
+cmake-build-debug/

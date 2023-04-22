@@ -61,9 +61,8 @@ public:
     /**
 @brief Deletes the given Dot object from the dots vector
 @param dot The Dot object to be deleted
-@return True if the Dot was found and deleted, False otherwise
 */
-    bool deleteDot(const Dot &dot);
+    void deleteDot(const Dot &dot);
 
     /**
 @brief Checks if a Big Dot exists at the given position

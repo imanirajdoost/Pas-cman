@@ -23,8 +23,9 @@ void PlayerController::tick() {
                 if (dotController->isBigDot(y, x))
                     score = BIG_DOT_SCORE;
 
-                if (dotController->deleteDot(*i->get()))
-                    scoreController->addScore(score);
+                scoreController->addScore(score);
+                dotController->deleteDot(*i->get());
+
                 break;
             }
         }
