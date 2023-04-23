@@ -21,7 +21,7 @@ using namespace std;
 @class DotController
 @brief Manages the creation, deletion and tracking of Dots in the game
 */
-class DotController {
+class DotController: IResettable {
 public:
 
     /**
@@ -71,6 +71,11 @@ public:
 @return True if a Big Dot exists, False otherwise
 */
     bool isBigDot(int i, int j);
+
+    /**
+     * @brief Resets the state of the DotController
+     */
+    void reset_state() override;
 
 private:
 

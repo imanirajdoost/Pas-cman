@@ -9,6 +9,9 @@ namespace constants {
      * Decrease this value to make the game faster */
     const Uint64 TICK_INTERVAL = 20;
 
+    /** @brief Maximum game speed (calculated from TICK_INTERVAL and LevelController.levelIndex) */
+    const int MAX_GAME_SPEED = 5;
+
     /** @brief Tile size in pixels. */
 #define TILESIZE 32
 

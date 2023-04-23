@@ -47,7 +47,7 @@ public:
  *
  * @param milliSec The amount of time to pause the game for in milliseconds.
  */
-    void pauseFor(long milliSec, function<void()> callback = nullptr);
+    void pauseFor(long milliSec, function<void(bool)> callback = nullptr, bool cbackBool = false);
 
 /**
  * @brief Updates the pause state.
@@ -72,7 +72,9 @@ private:
 
     shared_ptr<TimeController> timeController; /**< A shared pointer to the TimeController object. */
 
-    std::function<void()> resumeCallback; /**< A callback function to be called when the game is paused. */
+    std::function<void(bool)> resumeCallback; /**< A callback function to be called when the game is paused. */
+
+    bool callBackBool; /**< A boolean value to be passed to the callback function. */
 };
 
 

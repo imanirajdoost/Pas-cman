@@ -31,7 +31,7 @@ public:
                      shared_ptr<DotController> dController, shared_ptr<FruitController> fController,
                      shared_ptr<ScoreController> sController,
                      shared_ptr<TextViewController> tController, shared_ptr<GhostController> gController,
-                     shared_ptr<PauseController> pController, std::function<void()> resetFunction, std::function<void(bool)> _gameOverFunction);
+                     shared_ptr<PauseController> pController, std::function<void(bool)> resetFunction, std::function<void(bool)> _gameOverFunction);
 
     /**
      * Sets the move intent for the Pac-Man player.
@@ -55,7 +55,7 @@ private:
 
     shared_ptr<Player> player; /**< A shared pointer to the Player object. */
 
-    std::function<void()> resetGame; /**< A function pointer to the resetGame function in the GameController object. */
+    std::function<void(bool)> resetGame; /**< A function pointer to the resetGame function in the GameController object. */
     std::function<void(bool)> gameOverFunction; /**< A function pointer to the gameOver function in the GameController object. */
 };
 

@@ -141,3 +141,13 @@ void TextViewController::setFruitUI(const vector<shared_ptr<SDL_Rect>>& fruit_sp
         fruit_list_pos.push_back(rect);
     }
 }
+
+void TextViewController::removeFromUI(const string &id) {
+    for (int i = 0; i < name_txt_maps.size(); ++i) {
+        auto id_target = get<0>(*name_txt_maps.at(i));
+        if (id_target == id) {
+            name_txt_maps.erase(name_txt_maps.begin() + i);
+            break;
+        }
+    }
+}

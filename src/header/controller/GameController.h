@@ -16,6 +16,7 @@ Main game controller that initializes and manages all other controllers and obje
 #include "TimeController.h"
 #include "PauseController.h"
 #include "header/model/GameBackground.h"
+#include "LevelController.h"
 
 class GameController {
 public:
@@ -36,7 +37,7 @@ Starts the game and begins the game loop.
     /**
      * Resets the game to its initial state.
      */
-    std::function<void()> resetGame();
+    std::function<void(bool)> resetGame();
 
 private:
     /**
@@ -57,6 +58,7 @@ private:
     shared_ptr<TimeController> timeController;
     shared_ptr<PauseController> pauseController;
     shared_ptr<DataController> dataController;
+    shared_ptr<LevelController> levelController;
 
     shared_ptr<Player> player;
     shared_ptr<Blinky> blinky;

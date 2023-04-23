@@ -1,6 +1,3 @@
-//
-// Created by iman on 10/03/23.
-//
 
 
 #include <iostream>
@@ -20,6 +17,7 @@ void ScoreController::addScore(int scoreToAdd) {
 void ScoreController::updateHighscore() {
     if (playerScore > dataController->loadHighscore()) {
         dataController->saveHighscore(playerScore);
+        textViewController->writeHighScore(playerScore);
     }
 }
 

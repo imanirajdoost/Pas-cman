@@ -69,8 +69,8 @@ void GameController::update() {
     timeController->tick_end();
 }
 
-std::function<void()> GameController::resetGame() {
-    return [this]() {
+std::function<void(bool)> GameController::resetGame() {
+    return [this](bool respawnDots) {
         player->reset_state();
 
         inky->reset_state();
@@ -78,23 +78,28 @@ std::function<void()> GameController::resetGame() {
         pinky->reset_state();
         clyde->reset_state();
 
-        // fruitController->reset_state();
-        // ghostController->reset_state();
-        // playerController->reset_state();
+        scoreController->updateHighscore();
+
+        if (respawnDots) {
+            dotController->reset_state();
+            gameBackground->stopAnimation();
+            gameBackground->setDefaultSprite();
+            textViewController->removeFromUI("you_won");
+        }
     };
 }
 
 std::function<void(bool)> GameController::gameOver() {
     return [this](bool won) {
         pauseController->pause();
+        scoreController->updateHighscore();
         if (won) {
             cout << "You won !" << endl;
             gameBackground->startAnimation();
-            scoreController->updateHighscore();
             textViewController->writeOnUI("you_won", "congratulations!", 6 * TILESIZE, 10 * TILESIZE);
+            levelController->goToNextLevel();
+            pauseController->pauseFor(3000, resetGame(), true);
         } else {
-            scoreController->updateHighscore();
-            textViewController->writeHighScore(scoreController->getHighscore());
             textViewController->writeOnUI("game_over", "gameover", 270, 350);
         }
     };
@@ -120,7 +125,8 @@ GameController::GameController() : exit(false) {
     list_sp->emplace_back(clyde);
 
     // initialize controllers
-    timeController = make_shared<TimeController>();
+    levelController = make_shared<LevelController>();
+    timeController = make_shared<TimeController>(levelController);
     pauseController = make_shared<PauseController>(timeController);
     collisionController = make_shared<CollisionController>();
     animationController = make_shared<AnimationController>();

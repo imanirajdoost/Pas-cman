@@ -3,14 +3,17 @@
 
 #include <chrono>
 #include <SDL.h>
-using namespace std::chrono;
+#include <memory>
+#include "LevelController.h"
+
+using namespace std;
 
 /**
  * A class that manages time-related operations and tracking of elapsed and last frame time.
  */
 class TimeController {
 public:
-    TimeController();
+    TimeController(shared_ptr<LevelController> lController);
 
     /**
      * Starts the timer.
@@ -40,18 +43,23 @@ public:
     void updateFPS();
 
 private:
-    Uint64 elapsed_time; // Elapsed time in milliseconds
-    Uint64 last_frame_time; // Last frame time in milliseconds
+    ulong elapsed_time; // Elapsed time in milliseconds
+    ulong last_frame_time; // Last frame time in milliseconds
 
     Uint64 start;
-
     Uint64 next_time;
+
+    chrono::time_point<chrono::steady_clock> last;
+
+    shared_ptr<LevelController> levelController;
 
     /**
      * Calculates the time left until the next frame.
      * @return The time left in milliseconds.
      */
     Uint64 time_left() const;
+
+    ulong getTimeSpeed();
 };
 
 #endif //PAS_CMAN_TIMECONTROLLER_H

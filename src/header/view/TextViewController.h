@@ -31,6 +31,12 @@ public:
     void writeOnUI(const string &id, const string &text, int posX, int posY);
 
     /**
+     * @brief Removes the text with the given id from the screen.
+     * @param id The id of the text to remove.
+     */
+    void removeFromUI(const string &id);
+
+    /**
      * @brief Writes the score on the screen.
      * @param score The score to write.
      */

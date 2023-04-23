@@ -119,3 +119,8 @@ AnimationComponent::AnimationComponent() {
     current_sp = nullptr;
     animation_frame = 0;
 }
+
+void AnimationComponent::setDefaultSprite() {
+    if (current_sp == nullptr)
+        current_sp = make_shared<SDL_Rect>(default_sp);
+}

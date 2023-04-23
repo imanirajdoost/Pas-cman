@@ -48,13 +48,6 @@ protected:
     bool isAnimated = false;
 
     /**
-     * @brief Sets the current animation based on the given animation name.
-     * @param animName The name of the animation to set.
-     * @return True if the animation was successfully set, false otherwise.
-     */
-    bool setAnimation(const string &animName);
-
-    /**
      * @brief The current animation being played.
      */
     shared_ptr<AnimationModel> current_anim = nullptr;
@@ -77,6 +70,13 @@ public:
     void startAnimation();
 
     /**
+ * @brief Sets the current animation based on the given animation name.
+ * @param animName The name of the animation to set.
+ * @return True if the animation was successfully set, false otherwise.
+ */
+    bool setAnimation(const string &animName);
+
+    /**
      * @brief Constructs an AnimationComponent object with a default sprite.
      * @param defaultSp The default sprite to use.
      */
@@ -97,6 +97,11 @@ public:
      * @param shouldLoop Whether or not the animation should loop.
      */
     void addAnimation(const string &animName, const vector<SDL_Rect> &sps, int speed = 1, bool shouldLoop = true);
+
+    /**
+     * @brief Sets the default sprite to the first sprite in the current animation.
+     */
+    void setDefaultSprite();
 
     /**
      * @brief Returns the next sprite in the current animation.

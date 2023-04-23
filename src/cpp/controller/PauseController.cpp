@@ -19,13 +19,14 @@ void PauseController::pause() {
 void PauseController::resume() {
     isPaused = false;
     if (resumeCallback != nullptr) {
-        resumeCallback();
+        resumeCallback(callBackBool);
     }
 }
 
-void PauseController::pauseFor(long milliSec, function<void()> callback) {
+void PauseController::pauseFor(long milliSec, function<void(bool)> callback, bool cbackBool) {
     pause();
     resumeCallback = std::move(callback);
+    callBackBool = cbackBool;
     pauseTime = milliSec;
 }
 
