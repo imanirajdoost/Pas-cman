@@ -19,7 +19,7 @@ using namespace std;
  * @class AnimationComponent
  * @brief The model for the animation component, which is responsible for handling the animation of sprites and objects in the game.
  */
-class AnimationComponent : public GameComponent {
+class AnimationComponent : public GameComponent, public enable_shared_from_this<AnimationComponent> {
 private:
     /**
     * @brief The vector of AnimationModel objects that represents the different animations available for this component.
@@ -114,6 +114,12 @@ public:
      * @return The current sprite.
      */
     shared_ptr<SDL_Rect> getCurrentSprite();
+
+    /**
+     * @brief Returns the current animation.
+     * @return The current animation.
+     */
+    shared_ptr<AnimationComponent> getAnimatorComponent();
 };
 
 

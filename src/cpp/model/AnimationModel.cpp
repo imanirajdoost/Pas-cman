@@ -1,6 +1,3 @@
-//
-// Created by iman on 14/03/23.
-//
 
 #include <string>
 #include "header/model/AnimationModel.h"

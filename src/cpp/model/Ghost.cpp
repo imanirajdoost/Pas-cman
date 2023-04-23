@@ -37,6 +37,11 @@ void Ghost::move() {
     MovableGameObject::move();
 }
 
+void Ghost::reset_state() {
+    MovableGameObject::reset_state();
+    startAnimation();
+}
+
 Blinky::Blinky() : Ghost(default_sprites::blinky_sp_default, default_positions::blinky_default_pos) {
 
     // Initial pos

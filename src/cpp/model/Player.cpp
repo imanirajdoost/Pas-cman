@@ -167,6 +167,6 @@ short Player::die() {
 
 void Player::reset_state() {
     MovableGameObject::reset_state();
+    setDefaultSprite();
     setMoveIntent(MoveDirection::NONE);
-
 }

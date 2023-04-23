@@ -6,6 +6,11 @@
 #ifndef PAS_CMAN_ANIMATIONCONTROLLER_H
 #define PAS_CMAN_ANIMATIONCONTROLLER_H
 
+#include <vector>
+#include "header/model/component/AnimationComponent.h"
+
+using namespace std;
+
 /**
  * @brief The AnimationController class, which controls the animation logic of the game.
  */
@@ -14,7 +19,7 @@ public:
     /**
      * @brief Constructor for the AnimationController class.
      */
-    AnimationController();
+    explicit AnimationController(shared_ptr<vector<shared_ptr<AnimationComponent>>>& anims); // Initialize the class member with the shared_ptr
 
     /**
      * @brief Method that is called each frame to update the animation state.
@@ -22,9 +27,33 @@ public:
     void tick();
 
     /**
+     * @brief Method that is called when the game is reset.
+     */
+    void stopAllAnimations();
+
+    /**
+     * @brief Method that starts all animations.
+     */
+    void startAllAnimations();
+
+    /**
+     * @brief Method that is called when the game is reset.
+     */
+    void resetAllAnimations();
+
+    /**
+     * @brief Method that stops a specific animation.
+     */
+    void stopAnimation(const shared_ptr<AnimationComponent>& anim);
+
+    /**
      * @brief Static counter for animations.
      */
     static int animationCounter;
+
+    shared_ptr<vector<shared_ptr<AnimationComponent>>> animations; // Declare the class member as a shared_ptr
+
+    void startAnimation(const shared_ptr<AnimationComponent> &anim);
 };
 
 #endif //PAS_CMAN_ANIMATIONCONTROLLER_H

@@ -10,7 +10,7 @@ namespace constants {
     const Uint64 TICK_INTERVAL = 20;
 
     /** @brief Maximum game speed (calculated from TICK_INTERVAL and LevelController.levelIndex) */
-    const int MAX_GAME_SPEED = 5;
+    const int MAX_GAME_SPEED = 10;
 
     /** @brief Tile size in pixels. */
 #define TILESIZE 32
@@ -75,7 +75,7 @@ namespace default_positions {
 namespace default_variables {
     const int player_default_health = 2;
 
-    const int reset_level_time = 1000;
+    const int reset_level_time = 2000;
 }
 
 namespace default_sprites {

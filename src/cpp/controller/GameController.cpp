@@ -71,6 +71,9 @@ void GameController::update() {
 
 std::function<void(bool)> GameController::resetGame() {
     return [this](bool respawnDots) {
+        animationController->stopAllAnimations();
+        animationController->resetAllAnimations();
+
         player->reset_state();
 
         inky->reset_state();
@@ -93,14 +96,24 @@ std::function<void(bool)> GameController::gameOver() {
     return [this](bool won) {
         pauseController->pause();
         scoreController->updateHighscore();
+
+        animationController->stopAnimation(inky->getAnimatorComponent());
+        animationController->stopAnimation(blinky->getAnimatorComponent());
+        animationController->stopAnimation(pinky->getAnimatorComponent());
+        animationController->stopAnimation(clyde->getAnimatorComponent());
+
         if (won) {
             cout << "You won !" << endl;
-            gameBackground->startAnimation();
+            animationController->stopAnimation(player->getAnimatorComponent());
+            animationController->startAnimation(gameBackground->getAnimatorComponent());
             textViewController->writeOnUI("you_won", "congratulations!", 6 * TILESIZE, 10 * TILESIZE);
             levelController->goToNextLevel();
             pauseController->pauseFor(3000, resetGame(), true);
         } else {
             textViewController->writeOnUI("game_over", "gameover", 270, 350);
+
+            // TODO: do a full reset to restart the game
+//            pauseController->pauseFor(default_variables::reset_level_time + 1000, resetGame(), true);
         }
     };
 }
@@ -114,6 +127,14 @@ GameController::GameController() : exit(false) {
     pinky = make_shared<Pinky>();
     clyde = make_shared<Clyde>();
     gameBackground = make_shared<GameBackground>();
+
+    auto list_anim = make_shared<std::vector<shared_ptr<AnimationComponent>>>();
+    list_anim->emplace_back(player->getAnimatorComponent());
+    list_anim->emplace_back(inky->getAnimatorComponent());
+    list_anim->emplace_back(blinky->getAnimatorComponent());
+    list_anim->emplace_back(pinky->getAnimatorComponent());
+    list_anim->emplace_back(clyde->getAnimatorComponent());
+    list_anim->emplace_back(gameBackground->getAnimatorComponent());
 
     // Create a list of all game objects to pass for the view
     auto list_sp = make_shared<std::list<shared_ptr<GameObject>>>();
@@ -129,7 +150,7 @@ GameController::GameController() : exit(false) {
     timeController = make_shared<TimeController>(levelController);
     pauseController = make_shared<PauseController>(timeController);
     collisionController = make_shared<CollisionController>();
-    animationController = make_shared<AnimationController>();
+    animationController = make_shared<AnimationController>(list_anim);
     dataController = make_shared<DataController>();
     textViewController = make_shared<TextViewController>(dataController);
     scoreController = make_shared<ScoreController>(textViewController, dataController);

@@ -37,6 +37,11 @@ public:
      * @brief Moves the ghost to its next position.
      */
     void move() override;
+
+    /**
+ * @brief Resets the state of the ghost.
+ */
+    void reset_state() override;
 };
 
 /**
