@@ -11,10 +11,12 @@ void GhostController::tick() {
     blinky->setNextPos(Map::map, MoveDirection::RIGHT);
     clyde->setNextPos(Map::map, MoveDirection::RIGHT);
 
-    inky->move();
-    pinky->move();
-    blinky->move();
-    clyde->move();
+    inky->setMoveIntent(MoveDirection::RIGHT);
+
+    inky->controlMove(*collisionController);
+    pinky->controlMove(*collisionController);
+    blinky->controlMove(*collisionController);
+    clyde->controlMove(*collisionController);
 }
 
 GhostController::GhostController(shared_ptr<Inky> iGhost,shared_ptr<Pinky> pGhost,shared_ptr<Blinky> bGhost,shared_ptr<Clyde> cGhost ,shared_ptr<CollisionController> colController) {

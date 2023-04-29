@@ -7,6 +7,7 @@
 #define GHOST_H
 
 #include "MovableGameObject.h"
+#include "header/controller/CollisionController.h"
 
 /**
  * @brief The Ghost class manages a single ghost in the game.
@@ -42,6 +43,15 @@ public:
  * @brief Resets the state of the ghost.
  */
     void reset_state() override;
+
+    void controlMove(CollisionController &collisionController);
+
+    MoveDirection moveIntent = MoveDirection::NONE; /**< The next direction the ghost will move to. */
+    SDL_Rect getNextStepRect(MoveDirection dir);
+
+    const int GHOST_MOVE_THRESHOLD = 1;
+
+    void setMoveIntent(const MoveDirection &direction);
 };
 
 /**

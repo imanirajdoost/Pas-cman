@@ -1,6 +1,7 @@
 #include <iostream>
 #include "header/model/Ghost.h"
 #include "header/GameVars.h"
+#include "header/controller/CollisionController.h"
 
 
 Ghost::Ghost(SDL_Rect default_sp, SDL_Rect initPos) : MovableGameObject(default_sp, initPos) {
@@ -35,11 +36,112 @@ void Ghost::setNextPos(const vector<std::vector<MTYPE>> &map, const MoveDirectio
 
 void Ghost::move() {
     MovableGameObject::move();
+    if(getMoveDirection() != MoveDirection::NONE)
+        startAnimation();
 }
 
 void Ghost::reset_state() {
     MovableGameObject::reset_state();
     startAnimation();
+}
+
+SDL_Rect Ghost::getNextStepRect(MoveDirection dir) {
+
+    SDL_Rect nextStepRect = getRect();
+
+    switch (dir) {
+        case MoveDirection::LEFT:
+            nextStepRect.x -= speed;
+            break;
+        case MoveDirection::RIGHT:
+            nextStepRect.x += speed;
+            break;
+        case MoveDirection::UP:
+            nextStepRect.y -= speed;
+            break;
+        case MoveDirection::DOWN:
+            nextStepRect.y += speed;
+            break;
+        case MoveDirection::NONE:
+            nextStepRect.y = getRect().y;
+            nextStepRect.x = getRect().x;
+            break;
+    }
+    return nextStepRect;
+}
+
+void Ghost::setMoveIntent(const MoveDirection &direction) {
+    moveIntent = direction;
+}
+
+void Ghost::controlMove(CollisionController& collisionController) {
+
+    bool shouldMove = true;
+    stopAnimation();
+
+    if (moveIntent == MoveDirection::NONE)
+        shouldMove = false;
+
+    Collider nextCol = collisionController.getRectAtDirection(rect, direction);
+    Collider intentionCol = collisionController.getRectAtDirection(rect, moveIntent);
+    SDL_Rect currentRect = collisionController.getRectAt(rect);
+    SDL_Rect nextStep = getNextStepRect(direction);
+
+    if (moveIntent == direction && nextCol.getType() != MTYPE::WALL) {
+        setNextPos(Map::map, direction);
+        shouldMove = true;
+    } else if (moveIntent == direction && nextCol.getType() == MTYPE::WALL) {
+        if (collisionController.hasCollision(nextStep, nextCol.getRect())) {
+            shouldMove = false;
+            resetNextPos();
+        } else {
+            shouldMove = true;
+            setNextPos(Map::map, direction);
+        }
+    } else if (moveIntent != direction && intentionCol.getType() == MTYPE::WALL) {
+        if (nextCol.getType() == MTYPE::WALL && collisionController.hasCollision(nextStep, nextCol.getRect())) {
+            resetNextPos();
+            shouldMove = false;
+        } else {
+            setNextPos(Map::map, direction);
+            shouldMove = true;
+        }
+    } else if (moveIntent != direction && intentionCol.getType() != MTYPE::WALL) {
+        if ((direction == MoveDirection::LEFT && moveIntent == MoveDirection::RIGHT) ||
+            (direction == MoveDirection::RIGHT && moveIntent == MoveDirection::LEFT) ||
+            (direction == MoveDirection::UP && moveIntent == MoveDirection::DOWN) ||
+            (direction == MoveDirection::DOWN && moveIntent == MoveDirection::UP)) {
+            // Can change direction instantly
+            setNextPos(Map::map, moveIntent);
+            shouldMove = true;
+        } else {
+            // Check for center to change vertical or horizontal axis
+            // Add a threshold so that the position changing is not pixel perfect
+            if (abs((rect.x + (rect.w / 2)) - (currentRect.x + (currentRect.w / 2))) <= Ghost::GHOST_MOVE_THRESHOLD &&
+                abs((rect.y + (rect.h / 2)) - (currentRect.y + (currentRect.h / 2))) <= Ghost::GHOST_MOVE_THRESHOLD) {
+                // Reset position of the player if it has been changed based on the margin
+                setX(currentRect.x);
+                setY(currentRect.y);
+                resetNextPos();
+                setNextPos(Map::map, moveIntent);
+                shouldMove = true;
+            } else {
+                if (nextCol.getType() == MTYPE::WALL &&
+                    collisionController.hasCollision(nextStep, nextCol.getRect())) {
+                    resetNextPos();
+                    shouldMove = false;
+                } else {
+                    setNextPos(Map::map, direction);
+                    shouldMove = true;
+                }
+            }
+        }
+    } else {
+        std::cout << "ERROR : Case not handled" << endl;
+    }
+
+    if (shouldMove)
+        move();
 }
 
 Blinky::Blinky() : Ghost(default_sprites::blinky_sp_default, default_positions::blinky_default_pos) {
