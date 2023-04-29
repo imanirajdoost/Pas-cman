@@ -48,6 +48,11 @@ void TextViewController::writeOnUI(const string &id, const string &text, int pos
     }
 }
 
+void TextViewController::setLevelOnUI(int level) {
+    writeOnUI(LEVEL_TEXT_DYNAMIC, to_string(level), LEVEL_DYNAMIC_POSX,
+              LEVEL_DYNAMIC_POSY);
+}
+
 void TextViewController::writeScore(int score) {
     writeOnUI(SCORE_TEXT_DYNAMIC, to_string(score), SCORE_TEXT_DYNAMIC_POSX,
               SCORE_TEXT_DYNAMIC_POSY);
@@ -126,6 +131,11 @@ TextViewController::TextViewController(shared_ptr<DataController> dController) {
     // Write the high score text on the UI
     writeOnUI(HIGH_SCORE_TEXT_STATIC, "highscore", HIGH_SCORE_TEXT_STATIC_POSX, HIGH_SCORE_TEXT_STATIC_POSY);
     writeHighScore(dataController->loadHighscore());
+
+    // Write the level text on the UI
+    writeOnUI(LEVEL_TEXT_STATIC, "level", LEVEL_STATIC_POSX, LEVEL_STATIC_POSY);
+
+    setLevelOnUI(1);
 }
 
 void TextViewController::setFruitUI(const vector<shared_ptr<SDL_Rect>>& fruit_sp) {

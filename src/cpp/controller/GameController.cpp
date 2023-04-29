@@ -88,6 +88,7 @@ std::function<void(bool)> GameController::resetGame() {
             gameBackground->stopAnimation();
             gameBackground->setDefaultSprite();
             textViewController->removeFromUI("you_won");
+            textViewController->setLevelOnUI(levelController->getCurrentLevelIndex() + 1);
         }
     };
 }

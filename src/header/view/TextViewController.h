@@ -55,6 +55,12 @@ public:
     void setHealthUI(short health);
 
     /**
+     * @brief Sets the level UI element to the given value.
+     * @param level The level value to set.
+     */
+    void setLevelOnUI(int level);
+
+    /**
      * @brief Sets the fruit UI element to the given value.
      * @param fruit The fruit value to set.
      */
@@ -138,6 +144,14 @@ private:
 
     const int FRUIT_POSX = 700;
     const int FRUIT_POSY = 800;
+
+    const string LEVEL_TEXT_STATIC = "level_static";
+    const int LEVEL_STATIC_POSX = 700;
+    const int LEVEL_STATIC_POSY = 600;
+
+    const string LEVEL_TEXT_DYNAMIC = "level_dynamic";
+    const int LEVEL_DYNAMIC_POSX = 700;
+    const int LEVEL_DYNAMIC_POSY = 630;
 
     map<string, SDL_Rect> char_map;
 
