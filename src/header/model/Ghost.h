@@ -61,6 +61,10 @@ public:
     void reset_state() override;
 
     void setMode(Mode mode);
+
+    void setDirectionSprite(const MoveDirection &newDirection) override;
+
+    Mode getMode();
 };
 
 /**

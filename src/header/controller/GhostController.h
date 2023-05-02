@@ -6,6 +6,7 @@
 #include "CollisionController.h"
 #include "header/model/MovableGameObject.h"
 #include "header/model/Ghost.h"
+#include "TimeController.h"
 
 using namespace std;
 
@@ -19,7 +20,7 @@ public:
      * @param cGhost shared pointer to the Clyde ghost
      * @param colController shared pointer to the CollisionController
      */
-    GhostController(shared_ptr<Inky> iGhost,shared_ptr<Pinky> pGhost,shared_ptr<Blinky> bGhost,shared_ptr<Clyde> cGhost ,shared_ptr<CollisionController> colController);
+    GhostController(shared_ptr<Inky> iGhost,shared_ptr<Pinky> pGhost,shared_ptr<Blinky> bGhost,shared_ptr<Clyde> cGhost ,shared_ptr<CollisionController> colController, shared_ptr<TimeController> tController);
 
     /**
      * @brief Runs each ghost's individual tick method and checks if any collisions occur
@@ -41,6 +42,15 @@ private:
     shared_ptr<Clyde> clyde;
     shared_ptr<Blinky> blinky;
     shared_ptr<vector<shared_ptr<Ghost>>> allGhosts;
+    shared_ptr<TimeController> timeController;
+
+    ulong elapedTime;
+
+    void resetGhostMode();
+
+    Mode getGhostsMode();
+
+    void setAnimation(const string &animation);
 };
 
 

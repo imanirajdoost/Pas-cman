@@ -7,7 +7,7 @@ Ghost::Ghost(SDL_Rect default_sp, SDL_Rect initPos) : MovableGameObject(default_
     speed = 1;
 
     addAnimation("afraid", {afraid_sp, afraid_sp2}, GHOST_ANIMATION_SPEED);
-    addAnimation("afraid_white", {afraid_white_sp, afraid_white_sp2}, GHOST_ANIMATION_SPEED);
+    addAnimation("afraid_white", {afraid_white_sp, afraid_white_sp2, afraid_sp, afraid_sp2}, GHOST_ANIMATION_SPEED);
 
     setMode(Mode::CHASE);
 }
@@ -61,6 +61,17 @@ void Ghost::setMode(Mode mode) {
             setAnimation("afraid");
             break;
     }
+}
+
+void Ghost::setDirectionSprite(const MoveDirection &newDirection) {
+    if(ghostMode == Mode::FRIGHTENED)
+        return;
+    else
+        MovableGameObject::setDirectionSprite(newDirection);
+}
+
+Mode Ghost::getMode() {
+    return ghostMode;
 }
 
 Blinky::Blinky() : Ghost(default_sprites::blinky_sp_default, default_positions::blinky_default_pos) {

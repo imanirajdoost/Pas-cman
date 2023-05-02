@@ -78,7 +78,7 @@ public:
      *
      * @param newDirection The new direction of movement to set the sprite for.
      */
-    void setDirectionSprite(const MoveDirection &newDirection);
+    virtual void setDirectionSprite(const MoveDirection &newDirection);
 
     /**
      * @brief Reset the current direction of movement of the object to NONE.
