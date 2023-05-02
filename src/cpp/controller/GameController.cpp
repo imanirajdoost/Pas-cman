@@ -111,7 +111,7 @@ std::function<void(bool)> GameController::gameOver() {
             levelController->goToNextLevel();
             pauseController->pauseFor(3000, resetGame(), true);
         } else {
-            textViewController->writeOnUI("game_over", "gameover", 270, 350);
+            textViewController->writeOnUI("game_over", "gameover", 8 * TILESIZE, 10 * TILESIZE);
 
             // TODO: do a full reset to restart the game
 //            pauseController->pauseFor(default_variables::reset_level_time + 1000, resetGame(), true);
