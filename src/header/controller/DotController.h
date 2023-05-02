@@ -14,6 +14,7 @@
 #include "PauseController.h"
 #include "header/view/TextViewController.h"
 #include "ScoreController.h"
+#include "GhostController.h"
 
 using namespace std;
 
@@ -29,7 +30,7 @@ public:
 @param pController The PauseController instance
 @param tController The TextViewController instance
 */
-    explicit DotController(std::function<void(bool)> _gameOverFunction);
+    explicit DotController(std::function<void(bool)> _gameOverFunction, shared_ptr<GhostController> gController);
 
     /**
 @brief A vector to store all the Dot instances
@@ -79,17 +80,7 @@ public:
 
 private:
 
-    /**
-* @brief A shared_ptr to the PauseController instance
-*/
-    shared_ptr<PauseController> pauseController;
-
-    /**
- * @brief A shared_ptr to the TextViewController instance
- */
-    shared_ptr<TextViewController> textViewController;
-
-    shared_ptr<ScoreController> scoreController;
+    shared_ptr<GhostController> ghostController;
 
     std::function<void(bool)> gameOverFunction;
 

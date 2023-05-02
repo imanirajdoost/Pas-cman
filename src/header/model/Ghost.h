@@ -9,12 +9,29 @@
 #include "MovableGameObject.h"
 
 /**
+ * @brief The Mode enum represents the different modes a ghost can be in.
+ */
+enum class Mode {
+    CHASE,
+    SCATTER,
+    FRIGHTENED
+};
+
+/**
  * @brief The Ghost class manages a single ghost in the game.
  */
 class Ghost : public MovableGameObject {
 protected:
     /**< Whether the ghost is vulnerable or not. */
-    bool isVulnerable = false;
+    bool isAfraid = false;
+
+    const SDL_Rect afraid_sp = {4, 196, 14, 14};/**< afraid sprite for ghost. */
+    const SDL_Rect afraid_sp2 = {21, 196, 14, 14};/**< afraid sprite for ghost. */
+
+    const SDL_Rect afraid_white_sp = {38, 196, 14, 14};/**< afraid sprite for ghost. */
+    const SDL_Rect afraid_white_sp2 = {55, 196, 14, 14};/**< afraid sprite for ghost. */
+
+    Mode ghostMode; /**< The current mode of the ghost. */
 
 public:
 
@@ -42,6 +59,8 @@ public:
  * @brief Resets the state of the ghost.
  */
     void reset_state() override;
+
+    void setMode(Mode mode);
 };
 
 /**

@@ -37,3 +37,12 @@ GhostController::GhostController(shared_ptr<Inky> iGhost,shared_ptr<Pinky> pGhos
 shared_ptr<vector<shared_ptr<Ghost>>> GhostController::getAllGhosts() {
     return allGhosts;
 }
+
+void GhostController::changeMode(Mode mode) {
+    auto ghosts = getAllGhosts();
+
+    // set mode for all ghosts
+    for (auto &ghost : *ghosts) {
+        ghost->setMode(mode);
+    }
+}

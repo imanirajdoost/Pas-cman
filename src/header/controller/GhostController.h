@@ -26,6 +26,8 @@ public:
      */
     void tick();
 
+    void changeMode(Mode mode);
+
     /**
      * @brief Returns all ghosts as a shared pointer to a vector of shared pointers to Ghost objects
      * @return shared pointer to a vector of shared pointers to Ghost objects

@@ -1,15 +1,12 @@
-//
-// Created by iman on 10/03/23.
-//
-
 #include <stdexcept>
 #include <iostream>
 #include "header/controller/DotController.h"
 #include "header/model/Map.h"
 #include "header/GameVars.h"
 
-DotController::DotController(std::function<void(bool)> _gameOverFunction) {
+DotController::DotController(std::function<void(bool)> _gameOverFunction, shared_ptr<GhostController> gController) {
     gameOverFunction = std::move(_gameOverFunction);
+    ghostController = std::move(gController);
     dots = spawnDotObjects();
 }
 
@@ -68,10 +65,8 @@ void DotController::deleteDot(const Dot &dot) {
     for (auto i = dots.begin(); i < dots.end(); ++i) {
         if (dot.getIndex() == i->get()->getIndex()) {
             //TODO: remove this
-//            if(dot.getDotType() == DotType::BIG)
-//                cout << "Big dot eaten" << endl;
-//            else
-//                cout << "Small dot eaten" << endl;
+            if(dot.getDotType() == DotType::BIG)
+                ghostController->changeMode(Mode::FRIGHTENED);
             dots.erase(i);
 //            cout << " remaining dots: " << dots.size() << endl;
             if (dots.empty()) {
