@@ -110,6 +110,9 @@ public:
      */
     virtual void move();
 
+    /**
+     * @brief resets the state of the object
+     */
     void reset_state() override;
 };
 

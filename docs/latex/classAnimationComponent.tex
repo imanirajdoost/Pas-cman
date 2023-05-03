@@ -22,25 +22,26 @@ Collaboration diagram for Animation\+Component\+:
 \item 
 \mbox{\hyperlink{classAnimationComponent_a9a05944808632b48959cfa6c3365be3c}{Animation\+Component}} ()
 \begin{DoxyCompactList}\small\item\em Constructs an empty \mbox{\hyperlink{classAnimationComponent}{Animation\+Component}} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAnimationComponent_a8005cb2df7a03280653404e937dd88ee}{stop\+Animation}} ()
+\begin{DoxyCompactList}\small\item\em Stops the current animation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAnimationComponent_a8be2939b20bfc206dff3e7d5c4cd8eb6}{start\+Animation}} ()
+\begin{DoxyCompactList}\small\item\em Starts the current animation. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classAnimationComponent_a372a0a2718f816d57c31a89d0550cf22}{set\+Animation}} (const string \&anim\+Name)
+\begin{DoxyCompactList}\small\item\em Sets the current animation based on the given animation name. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classAnimationComponent_a549db33dbabb7325e85b850a25219bfe}{Animation\+Component}} (SDL\+\_\+\+Rect default\+Sp)
 \begin{DoxyCompactList}\small\item\em Constructs an \mbox{\hyperlink{classAnimationComponent}{Animation\+Component}} object with a default sprite. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classAnimationComponent_a2f72f29b1fb421575a1ea5d6477f266d}{Animation\+Component}} (const string \&new\+Name, const vector$<$ SDL\+\_\+\+Rect $>$ \&sps, bool \+\_\+is\+Animated)
 \begin{DoxyCompactList}\small\item\em Constructs an \mbox{\hyperlink{classAnimationComponent}{Animation\+Component}} object with a specified name, list of sprites, and animation status. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classAnimationComponent_ac179f6d22aadab741ff74153f578aa42}{add\+Animation}} (const string \&anim\+Name, const vector$<$ SDL\+\_\+\+Rect $>$ \&sps, int speed=1, bool should\+Loop=true)
 \begin{DoxyCompactList}\small\item\em Adds a new animation to the component. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAnimationComponent_aa81c62d3c469f9596618677241d0ceb7}{set\+Default\+Sprite}} ()
+\begin{DoxyCompactList}\small\item\em Sets the default sprite to the first sprite in the current animation. \end{DoxyCompactList}\item 
 shared\+\_\+ptr$<$ SDL\+\_\+\+Rect $>$ \mbox{\hyperlink{classAnimationComponent_a221bfb7620a63df0ad4f0e635a3394f3}{get\+Next\+Sprite}} ()
 \begin{DoxyCompactList}\small\item\em Returns the next sprite in the current animation. \end{DoxyCompactList}\item 
 shared\+\_\+ptr$<$ SDL\+\_\+\+Rect $>$ \mbox{\hyperlink{classAnimationComponent_a909d5cdafab59bc25884a53ae37e567a}{get\+Current\+Sprite}} ()
-\begin{DoxyCompactList}\small\item\em Returns the current sprite being displayed. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Protected Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-void \mbox{\hyperlink{classAnimationComponent_a8005cb2df7a03280653404e937dd88ee}{stop\+Animation}} ()
-\begin{DoxyCompactList}\small\item\em Stops the current animation. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classAnimationComponent_a8be2939b20bfc206dff3e7d5c4cd8eb6}{start\+Animation}} ()
-\begin{DoxyCompactList}\small\item\em Starts the current animation. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{classAnimationComponent_a372a0a2718f816d57c31a89d0550cf22}{set\+Animation}} (const string \&anim\+Name)
-\begin{DoxyCompactList}\small\item\em Sets the current animation based on the given animation name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Returns the current sprite being displayed. \end{DoxyCompactList}\item 
+shared\+\_\+ptr$<$ \mbox{\hyperlink{classAnimationComponent}{Animation\+Component}} $>$ \mbox{\hyperlink{classAnimationComponent_a6e0297b32ee351ae98b7633a3787ad9d}{get\+Animator\+Component}} ()
+\begin{DoxyCompactList}\small\item\em Returns the current animation. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -124,6 +125,19 @@ Adds a new animation to the component.
 {\em should\+Loop} & Whether or not the animation should loop. \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{classAnimationComponent_a6e0297b32ee351ae98b7633a3787ad9d}\label{classAnimationComponent_a6e0297b32ee351ae98b7633a3787ad9d}} 
+\index{AnimationComponent@{AnimationComponent}!getAnimatorComponent@{getAnimatorComponent}}
+\index{getAnimatorComponent@{getAnimatorComponent}!AnimationComponent@{AnimationComponent}}
+\doxysubsubsection{\texorpdfstring{getAnimatorComponent()}{getAnimatorComponent()}}
+{\footnotesize\ttfamily shared\+\_\+ptr$<$\mbox{\hyperlink{classAnimationComponent}{Animation\+Component}}$>$ Animation\+Component\+::get\+Animator\+Component (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the current animation. 
+
+\begin{DoxyReturn}{Returns}
+The current animation. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classAnimationComponent_a909d5cdafab59bc25884a53ae37e567a}\label{classAnimationComponent_a909d5cdafab59bc25884a53ae37e567a}} 
 \index{AnimationComponent@{AnimationComponent}!getCurrentSprite@{getCurrentSprite}}
 \index{getCurrentSprite@{getCurrentSprite}!AnimationComponent@{AnimationComponent}}
@@ -154,7 +168,7 @@ The next sprite in the animation.
 \index{AnimationComponent@{AnimationComponent}!setAnimation@{setAnimation}}
 \index{setAnimation@{setAnimation}!AnimationComponent@{AnimationComponent}}
 \doxysubsubsection{\texorpdfstring{setAnimation()}{setAnimation()}}
-{\footnotesize\ttfamily bool Animation\+Component\+::set\+Animation (\begin{DoxyParamCaption}\item[{const string \&}]{anim\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily bool Animation\+Component\+::set\+Animation (\begin{DoxyParamCaption}\item[{const string \&}]{anim\+Name }\end{DoxyParamCaption})}
 
 
 
@@ -168,11 +182,21 @@ Sets the current animation based on the given animation name.
 \begin{DoxyReturn}{Returns}
 True if the animation was successfully set, false otherwise. 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classAnimationComponent_aa81c62d3c469f9596618677241d0ceb7}\label{classAnimationComponent_aa81c62d3c469f9596618677241d0ceb7}} 
+\index{AnimationComponent@{AnimationComponent}!setDefaultSprite@{setDefaultSprite}}
+\index{setDefaultSprite@{setDefaultSprite}!AnimationComponent@{AnimationComponent}}
+\doxysubsubsection{\texorpdfstring{setDefaultSprite()}{setDefaultSprite()}}
+{\footnotesize\ttfamily void Animation\+Component\+::set\+Default\+Sprite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Sets the default sprite to the first sprite in the current animation. 
+
 \mbox{\Hypertarget{classAnimationComponent_a8be2939b20bfc206dff3e7d5c4cd8eb6}\label{classAnimationComponent_a8be2939b20bfc206dff3e7d5c4cd8eb6}} 
 \index{AnimationComponent@{AnimationComponent}!startAnimation@{startAnimation}}
 \index{startAnimation@{startAnimation}!AnimationComponent@{AnimationComponent}}
 \doxysubsubsection{\texorpdfstring{startAnimation()}{startAnimation()}}
-{\footnotesize\ttfamily void Animation\+Component\+::start\+Animation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily void Animation\+Component\+::start\+Animation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
@@ -182,7 +206,7 @@ Starts the current animation.
 \index{AnimationComponent@{AnimationComponent}!stopAnimation@{stopAnimation}}
 \index{stopAnimation@{stopAnimation}!AnimationComponent@{AnimationComponent}}
 \doxysubsubsection{\texorpdfstring{stopAnimation()}{stopAnimation()}}
-{\footnotesize\ttfamily void Animation\+Component\+::stop\+Animation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily void Animation\+Component\+::stop\+Animation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 

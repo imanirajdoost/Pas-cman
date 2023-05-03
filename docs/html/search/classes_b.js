@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['scorecontroller_261',['ScoreController',['../classScoreController.html',1,'']]],
-  ['sdlviewcontroller_262',['SDLViewController',['../classSDLViewController.html',1,'']]],
-  ['staticgameobject_263',['StaticGameObject',['../classStaticGameObject.html',1,'']]]
+  ['pausecontroller_299',['PauseController',['../classPauseController.html',1,'']]],
+  ['pinky_300',['Pinky',['../classPinky.html',1,'']]],
+  ['player_301',['Player',['../classPlayer.html',1,'']]],
+  ['playercontroller_302',['PlayerController',['../classPlayerController.html',1,'']]]
 ];

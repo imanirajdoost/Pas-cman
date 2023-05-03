@@ -25,11 +25,29 @@ Collaboration diagram for Ghost\+:
 void \mbox{\hyperlink{classGhost_a2f8f7ed971eae444583d9706d241da62}{set\+Next\+Pos}} (const std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{Map_8h_a0dc0d3f05ebf63bd2133199d9429f6ad}{MTYPE}} $>$$>$ \&map, const \mbox{\hyperlink{MovableGameObject_8h_a00ec4eba48da32d6cbdf827185fd3d34}{Move\+Direction}} \&\mbox{\hyperlink{classMovableGameObject_afd37f5e247bb8e73b5481dcbc509a67d}{direction}}) override
 \begin{DoxyCompactList}\small\item\em Sets the next position of the ghost based on the current direction and the map. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classGhost_a80a82f1dc1b0bd1adee37876f3ed5554}{move}} () override
-\begin{DoxyCompactList}\small\item\em Moves the ghost to its next position. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Moves the ghost to its next position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGhost_ab74ef78e9635730def798ec5a5163cd6}{reset\+\_\+state}} () override
+\begin{DoxyCompactList}\small\item\em Resets the state of the ghost. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGhost_ac729f7259245beb6fecc30cb829623c8}{set\+Mode}} (\mbox{\hyperlink{Ghost_8h_a46c8a310cf4c094f8c80e1cb8dc1f911}{Mode}} mode)
+\begin{DoxyCompactList}\small\item\em Sets the mode of the ghost. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGhost_a01d2472fcfffc8f83ca881b0c9d3f119}{set\+Direction\+Sprite}} (const \mbox{\hyperlink{MovableGameObject_8h_a00ec4eba48da32d6cbdf827185fd3d34}{Move\+Direction}} \&new\+Direction) override
+\begin{DoxyCompactList}\small\item\em Sets the sprite of the ghost based on its current direction. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{Ghost_8h_a46c8a310cf4c094f8c80e1cb8dc1f911}{Mode}} \mbox{\hyperlink{classGhost_a9794cf32d091a847611b88d89431dfdc}{get\+Mode}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current mode of the ghost. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-bool \mbox{\hyperlink{classGhost_a92a0eebf8b22a56037ad908407edeef2}{is\+Vulnerable}} = false
+bool \mbox{\hyperlink{classGhost_a7563048aa98346a7365281020c6df621}{is\+Afraid}} = false
+\item 
+const SDL\+\_\+\+Rect \mbox{\hyperlink{classGhost_ab7c8e0a20b0744f38fd586f047447a9e}{afraid\+\_\+sp}} = \{4, 196, 14, 14\}
+\item 
+const SDL\+\_\+\+Rect \mbox{\hyperlink{classGhost_a2dc466997ebe4e8799ffa922d8fe435a}{afraid\+\_\+sp2}} = \{21, 196, 14, 14\}
+\item 
+const SDL\+\_\+\+Rect \mbox{\hyperlink{classGhost_aade3b6aa6d99d50631c53df455e2c4c6}{afraid\+\_\+white\+\_\+sp}} = \{38, 196, 14, 14\}
+\item 
+const SDL\+\_\+\+Rect \mbox{\hyperlink{classGhost_a60cd2cca6830ad36974cfb421aac37b3}{afraid\+\_\+white\+\_\+sp2}} = \{55, 196, 14, 14\}
+\item 
+\mbox{\hyperlink{Ghost_8h_a46c8a310cf4c094f8c80e1cb8dc1f911}{Mode}} \mbox{\hyperlink{classGhost_ae1c169c2bb9b98920f205ea7971e4055}{ghost\+Mode}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
 
@@ -58,6 +76,19 @@ Constructs a new \mbox{\hyperlink{classGhost}{Ghost}} object with the specified 
 
 
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGhost_a9794cf32d091a847611b88d89431dfdc}\label{classGhost_a9794cf32d091a847611b88d89431dfdc}} 
+\index{Ghost@{Ghost}!getMode@{getMode}}
+\index{getMode@{getMode}!Ghost@{Ghost}}
+\doxysubsubsection{\texorpdfstring{getMode()}{getMode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{Ghost_8h_a46c8a310cf4c094f8c80e1cb8dc1f911}{Mode}} Ghost\+::get\+Mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the current mode of the ghost. 
+
+\begin{DoxyReturn}{Returns}
+The current mode of the ghost. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classGhost_a80a82f1dc1b0bd1adee37876f3ed5554}\label{classGhost_a80a82f1dc1b0bd1adee37876f3ed5554}} 
 \index{Ghost@{Ghost}!move@{move}}
 \index{move@{move}!Ghost@{Ghost}}
@@ -72,6 +103,54 @@ Moves the ghost to its next position.
 
 Reimplemented from \mbox{\hyperlink{classMovableGameObject_a7e4411553a799980b15023bb57f31fb9}{Movable\+Game\+Object}}.
 
+\mbox{\Hypertarget{classGhost_ab74ef78e9635730def798ec5a5163cd6}\label{classGhost_ab74ef78e9635730def798ec5a5163cd6}} 
+\index{Ghost@{Ghost}!reset\_state@{reset\_state}}
+\index{reset\_state@{reset\_state}!Ghost@{Ghost}}
+\doxysubsubsection{\texorpdfstring{reset\_state()}{reset\_state()}}
+{\footnotesize\ttfamily void Ghost\+::reset\+\_\+state (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Resets the state of the ghost. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classGameObject_a84fa557ccf95f12678f0f2992b707fda}{Game\+Object}}.
+
+\mbox{\Hypertarget{classGhost_a01d2472fcfffc8f83ca881b0c9d3f119}\label{classGhost_a01d2472fcfffc8f83ca881b0c9d3f119}} 
+\index{Ghost@{Ghost}!setDirectionSprite@{setDirectionSprite}}
+\index{setDirectionSprite@{setDirectionSprite}!Ghost@{Ghost}}
+\doxysubsubsection{\texorpdfstring{setDirectionSprite()}{setDirectionSprite()}}
+{\footnotesize\ttfamily void Ghost\+::set\+Direction\+Sprite (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{MovableGameObject_8h_a00ec4eba48da32d6cbdf827185fd3d34}{Move\+Direction}} \&}]{new\+Direction }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Sets the sprite of the ghost based on its current direction. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Direction} & The new direction of the ghost. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classMovableGameObject_ab315879eb86562fb817aeb2e0fdba001}{Movable\+Game\+Object}}.
+
+\mbox{\Hypertarget{classGhost_ac729f7259245beb6fecc30cb829623c8}\label{classGhost_ac729f7259245beb6fecc30cb829623c8}} 
+\index{Ghost@{Ghost}!setMode@{setMode}}
+\index{setMode@{setMode}!Ghost@{Ghost}}
+\doxysubsubsection{\texorpdfstring{setMode()}{setMode()}}
+{\footnotesize\ttfamily void Ghost\+::set\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Ghost_8h_a46c8a310cf4c094f8c80e1cb8dc1f911}{Mode}}}]{mode }\end{DoxyParamCaption})}
+
+
+
+Sets the mode of the ghost. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mode} & The new mode of the ghost. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classGhost_a2f8f7ed971eae444583d9706d241da62}\label{classGhost_a2f8f7ed971eae444583d9706d241da62}} 
 \index{Ghost@{Ghost}!setNextPos@{setNextPos}}
 \index{setNextPos@{setNextPos}!Ghost@{Ghost}}
@@ -96,11 +175,41 @@ Implements \mbox{\hyperlink{classMovableGameObject_aeef74fd11fdb5894d3ea2db0a2a2
 
 
 \doxysubsection{Member Data Documentation}
-\mbox{\Hypertarget{classGhost_a92a0eebf8b22a56037ad908407edeef2}\label{classGhost_a92a0eebf8b22a56037ad908407edeef2}} 
-\index{Ghost@{Ghost}!isVulnerable@{isVulnerable}}
-\index{isVulnerable@{isVulnerable}!Ghost@{Ghost}}
-\doxysubsubsection{\texorpdfstring{isVulnerable}{isVulnerable}}
-{\footnotesize\ttfamily bool Ghost\+::is\+Vulnerable = false\hspace{0.3cm}{\ttfamily [protected]}}
+\mbox{\Hypertarget{classGhost_ab7c8e0a20b0744f38fd586f047447a9e}\label{classGhost_ab7c8e0a20b0744f38fd586f047447a9e}} 
+\index{Ghost@{Ghost}!afraid\_sp@{afraid\_sp}}
+\index{afraid\_sp@{afraid\_sp}!Ghost@{Ghost}}
+\doxysubsubsection{\texorpdfstring{afraid\_sp}{afraid\_sp}}
+{\footnotesize\ttfamily const SDL\+\_\+\+Rect Ghost\+::afraid\+\_\+sp = \{4, 196, 14, 14\}\hspace{0.3cm}{\ttfamily [protected]}}
+
+afraid sprite for ghost. \mbox{\Hypertarget{classGhost_a2dc466997ebe4e8799ffa922d8fe435a}\label{classGhost_a2dc466997ebe4e8799ffa922d8fe435a}} 
+\index{Ghost@{Ghost}!afraid\_sp2@{afraid\_sp2}}
+\index{afraid\_sp2@{afraid\_sp2}!Ghost@{Ghost}}
+\doxysubsubsection{\texorpdfstring{afraid\_sp2}{afraid\_sp2}}
+{\footnotesize\ttfamily const SDL\+\_\+\+Rect Ghost\+::afraid\+\_\+sp2 = \{21, 196, 14, 14\}\hspace{0.3cm}{\ttfamily [protected]}}
+
+afraid sprite for ghost. \mbox{\Hypertarget{classGhost_aade3b6aa6d99d50631c53df455e2c4c6}\label{classGhost_aade3b6aa6d99d50631c53df455e2c4c6}} 
+\index{Ghost@{Ghost}!afraid\_white\_sp@{afraid\_white\_sp}}
+\index{afraid\_white\_sp@{afraid\_white\_sp}!Ghost@{Ghost}}
+\doxysubsubsection{\texorpdfstring{afraid\_white\_sp}{afraid\_white\_sp}}
+{\footnotesize\ttfamily const SDL\+\_\+\+Rect Ghost\+::afraid\+\_\+white\+\_\+sp = \{38, 196, 14, 14\}\hspace{0.3cm}{\ttfamily [protected]}}
+
+afraid sprite for ghost. \mbox{\Hypertarget{classGhost_a60cd2cca6830ad36974cfb421aac37b3}\label{classGhost_a60cd2cca6830ad36974cfb421aac37b3}} 
+\index{Ghost@{Ghost}!afraid\_white\_sp2@{afraid\_white\_sp2}}
+\index{afraid\_white\_sp2@{afraid\_white\_sp2}!Ghost@{Ghost}}
+\doxysubsubsection{\texorpdfstring{afraid\_white\_sp2}{afraid\_white\_sp2}}
+{\footnotesize\ttfamily const SDL\+\_\+\+Rect Ghost\+::afraid\+\_\+white\+\_\+sp2 = \{55, 196, 14, 14\}\hspace{0.3cm}{\ttfamily [protected]}}
+
+afraid sprite for ghost. \mbox{\Hypertarget{classGhost_ae1c169c2bb9b98920f205ea7971e4055}\label{classGhost_ae1c169c2bb9b98920f205ea7971e4055}} 
+\index{Ghost@{Ghost}!ghostMode@{ghostMode}}
+\index{ghostMode@{ghostMode}!Ghost@{Ghost}}
+\doxysubsubsection{\texorpdfstring{ghostMode}{ghostMode}}
+{\footnotesize\ttfamily \mbox{\hyperlink{Ghost_8h_a46c8a310cf4c094f8c80e1cb8dc1f911}{Mode}} Ghost\+::ghost\+Mode\hspace{0.3cm}{\ttfamily [protected]}}
+
+The current mode of the ghost. \mbox{\Hypertarget{classGhost_a7563048aa98346a7365281020c6df621}\label{classGhost_a7563048aa98346a7365281020c6df621}} 
+\index{Ghost@{Ghost}!isAfraid@{isAfraid}}
+\index{isAfraid@{isAfraid}!Ghost@{Ghost}}
+\doxysubsubsection{\texorpdfstring{isAfraid}{isAfraid}}
+{\footnotesize\ttfamily bool Ghost\+::is\+Afraid = false\hspace{0.3cm}{\ttfamily [protected]}}
 
 $<$ Whether the ghost is vulnerable or not. 
 

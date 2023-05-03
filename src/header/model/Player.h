@@ -88,6 +88,9 @@ public:
      */
     void setMoveIntent(const MoveDirection &direction);
 
+    /**
+     * @brief Reset the player's state.
+     */
     void reset_state() override;
 };
 

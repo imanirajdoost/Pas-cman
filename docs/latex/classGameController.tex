@@ -10,10 +10,10 @@
 \mbox{\hyperlink{classGameController_a7d72ff3f639acb68578e20fee3649b42}{Game\+Controller}} ()
 \item 
 void \mbox{\hyperlink{classGameController_a0cfefdd78ee1b2b61ad1050b3bedf49b}{update}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em The function called by the game loop that handles the logic of the game. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classGameController_a8f30ab3ff471ac0a5c8b88dc7fea45f4}{start\+Game}} ()
 \item 
-std\+::function$<$ void()$>$ \mbox{\hyperlink{classGameController_a2abf715feeb9d42a16088356e69935b9}{reset\+Game}} ()
+std\+::function$<$ void(bool)$>$ \mbox{\hyperlink{classGameController_ae8b3d0c378158447b303acb43ce9d13e}{reset\+Game}} ()
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
@@ -32,11 +32,11 @@ bool \mbox{\hyperlink{classGameController_a4c37b467a7df4d3ecb43d92391dc0c73}{exi
 Main game controller that initializes and manages all other controllers and objects. 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classGameController_a2abf715feeb9d42a16088356e69935b9}\label{classGameController_a2abf715feeb9d42a16088356e69935b9}} 
+\mbox{\Hypertarget{classGameController_ae8b3d0c378158447b303acb43ce9d13e}\label{classGameController_ae8b3d0c378158447b303acb43ce9d13e}} 
 \index{GameController@{GameController}!resetGame@{resetGame}}
 \index{resetGame@{resetGame}!GameController@{GameController}}
 \doxysubsubsection{\texorpdfstring{resetGame()}{resetGame()}}
-{\footnotesize\ttfamily std\+::function$<$void()$>$ Game\+Controller\+::reset\+Game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily std\+::function$<$void(bool)$>$ Game\+Controller\+::reset\+Game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 Resets the game to its initial state. \mbox{\Hypertarget{classGameController_a8f30ab3ff471ac0a5c8b88dc7fea45f4}\label{classGameController_a8f30ab3ff471ac0a5c8b88dc7fea45f4}} 
 \index{GameController@{GameController}!startGame@{startGame}}
@@ -49,6 +49,10 @@ Starts the game and begins the game loop. \mbox{\Hypertarget{classGameController
 \index{update@{update}!GameController@{GameController}}
 \doxysubsubsection{\texorpdfstring{update()}{update()}}
 {\footnotesize\ttfamily void Game\+Controller\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+The function called by the game loop that handles the logic of the game. 
 
 
 

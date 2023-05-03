@@ -15,9 +15,11 @@ digraph "Player"
   Node6 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node6 [label="AnimationComponent",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classAnimationComponent.html",tooltip="The model for the animation component, which is responsible for handling the animation of sprites and..."];
   Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node7 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node7 [label="IResettable",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classIResettable.html",tooltip="The IResettable interface, which is implemented by classes that need to be reset when the game is res..."];
-  Node8 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node8 [label="HealthComponent",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classHealthComponent.html",tooltip=" "];
-  Node5 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="enable_shared_from\l_this\< AnimationComponent \>",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node8 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="IResettable",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classIResettable.html",tooltip="The IResettable interface, which is implemented by classes that need to be reset when the game is res..."];
+  Node9 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="HealthComponent",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classHealthComponent.html",tooltip=" "];
+  Node5 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
 }

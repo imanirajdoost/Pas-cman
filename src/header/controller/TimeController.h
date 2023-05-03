@@ -59,6 +59,10 @@ private:
      */
     Uint64 time_left() const;
 
+    /**
+     * Gets the game speed in milliseconds.
+     * @return The current game speed in milliseconds.
+     */
     ulong getTimeSpeed();
 };
 

@@ -60,10 +60,22 @@ public:
  */
     void reset_state() override;
 
+    /**
+     * @brief Sets the mode of the ghost.
+     * @param mode The new mode of the ghost.
+     */
     void setMode(Mode mode);
 
+    /**
+     * @brief Sets the sprite of the ghost based on its current direction.
+     * @param newDirection The new direction of the ghost.
+     */
     void setDirectionSprite(const MoveDirection &newDirection) override;
 
+    /**
+     * @brief Gets the current mode of the ghost.
+     * @return The current mode of the ghost.
+     */
     Mode getMode();
 };
 

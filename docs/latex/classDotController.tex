@@ -9,10 +9,18 @@ Manages the creation, deletion and tracking of Dots in the game.
 
 {\ttfamily \#include $<$Dot\+Controller.\+h$>$}
 
+
+
+Inheritance diagram for Dot\+Controller\+:
+% FIG 0
+
+
+Collaboration diagram for Dot\+Controller\+:
+% FIG 1
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classDotController_afced0e67bd19f61e4beda9f9cac81fe3}{Dot\+Controller}} (shared\+\_\+ptr$<$ \mbox{\hyperlink{classPauseController}{Pause\+Controller}} $>$ p\+Controller, shared\+\_\+ptr$<$ \mbox{\hyperlink{classTextViewController}{Text\+View\+Controller}} $>$ t\+Controller, shared\+\_\+ptr$<$ \mbox{\hyperlink{classScoreController}{Score\+Controller}} $>$ s\+Controller)
+\mbox{\hyperlink{classDotController_af8a4e8145f81aa5ac3b86d64e1002099}{Dot\+Controller}} (std\+::function$<$ void(bool)$>$ \+\_\+game\+Over\+Function, shared\+\_\+ptr$<$ \mbox{\hyperlink{classGhostController}{Ghost\+Controller}} $>$ g\+Controller)
 \begin{DoxyCompactList}\small\item\em Constructor for the \mbox{\hyperlink{classDotController}{Dot\+Controller}} class. \end{DoxyCompactList}\item 
 shared\+\_\+ptr$<$ \mbox{\hyperlink{classDotSmall}{Dot\+Small}} $>$ \mbox{\hyperlink{classDotController_a55dc40b0b1cf4fa8d436d25baa07786f}{spawn\+Dot\+Small}} (int x, int y)
 \begin{DoxyCompactList}\small\item\em Spawns a \mbox{\hyperlink{classDotSmall}{Dot\+Small}} object at the given position. \end{DoxyCompactList}\item 
@@ -20,10 +28,12 @@ vector$<$ shared\+\_\+ptr$<$ \mbox{\hyperlink{classDot}{Dot}} $>$ $>$ \mbox{\hyp
 \begin{DoxyCompactList}\small\item\em Spawns all the \mbox{\hyperlink{classDot}{Dot}} objects in the game map. \end{DoxyCompactList}\item 
 shared\+\_\+ptr$<$ \mbox{\hyperlink{classDotBig}{Dot\+Big}} $>$ \mbox{\hyperlink{classDotController_a3f99b80b8d7126877f50af519663da82}{spawn\+Dot\+Big}} (int x, int y)
 \begin{DoxyCompactList}\small\item\em Spawns a \mbox{\hyperlink{classDotBig}{Dot\+Big}} object at the given position. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{classDotController_a35dd6015736734be62a678e933709aea}{delete\+Dot}} (const \mbox{\hyperlink{classDot}{Dot}} \&dot)
+void \mbox{\hyperlink{classDotController_a0ade0c153ca53f9c23ccbb07d4b6396e}{delete\+Dot}} (const \mbox{\hyperlink{classDot}{Dot}} \&dot)
 \begin{DoxyCompactList}\small\item\em Deletes the given \mbox{\hyperlink{classDot}{Dot}} object from the dots vector. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classDotController_a23fae90e998a8d72539c6073bbd8bdeb}{is\+Big\+Dot}} (int i, int j)
-\begin{DoxyCompactList}\small\item\em Checks if a Big \mbox{\hyperlink{classDot}{Dot}} exists at the given position. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Checks if a Big \mbox{\hyperlink{classDot}{Dot}} exists at the given position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDotController_aa27ec3ebe40db20ce95c6f0785379c64}{reset\+\_\+state}} () override
+\begin{DoxyCompactList}\small\item\em Resets the state of the \mbox{\hyperlink{classDotController}{Dot\+Controller}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -35,11 +45,11 @@ vector$<$ shared\+\_\+ptr$<$ \mbox{\hyperlink{classDot}{Dot}} $>$ $>$ \mbox{\hyp
 Manages the creation, deletion and tracking of Dots in the game. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classDotController_afced0e67bd19f61e4beda9f9cac81fe3}\label{classDotController_afced0e67bd19f61e4beda9f9cac81fe3}} 
+\mbox{\Hypertarget{classDotController_af8a4e8145f81aa5ac3b86d64e1002099}\label{classDotController_af8a4e8145f81aa5ac3b86d64e1002099}} 
 \index{DotController@{DotController}!DotController@{DotController}}
 \index{DotController@{DotController}!DotController@{DotController}}
 \doxysubsubsection{\texorpdfstring{DotController()}{DotController()}}
-{\footnotesize\ttfamily Dot\+Controller\+::\+Dot\+Controller (\begin{DoxyParamCaption}\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{classPauseController}{Pause\+Controller}} $>$}]{p\+Controller,  }\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{classTextViewController}{Text\+View\+Controller}} $>$}]{t\+Controller,  }\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{classScoreController}{Score\+Controller}} $>$}]{s\+Controller }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+{\footnotesize\ttfamily Dot\+Controller\+::\+Dot\+Controller (\begin{DoxyParamCaption}\item[{std\+::function$<$ void(bool)$>$}]{\+\_\+game\+Over\+Function,  }\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{classGhostController}{Ghost\+Controller}} $>$}]{g\+Controller }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
 
 
@@ -55,11 +65,11 @@ Constructor for the \mbox{\hyperlink{classDotController}{Dot\+Controller}} class
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classDotController_a35dd6015736734be62a678e933709aea}\label{classDotController_a35dd6015736734be62a678e933709aea}} 
+\mbox{\Hypertarget{classDotController_a0ade0c153ca53f9c23ccbb07d4b6396e}\label{classDotController_a0ade0c153ca53f9c23ccbb07d4b6396e}} 
 \index{DotController@{DotController}!deleteDot@{deleteDot}}
 \index{deleteDot@{deleteDot}!DotController@{DotController}}
 \doxysubsubsection{\texorpdfstring{deleteDot()}{deleteDot()}}
-{\footnotesize\ttfamily bool Dot\+Controller\+::delete\+Dot (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classDot}{Dot}} \&}]{dot }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Dot\+Controller\+::delete\+Dot (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classDot}{Dot}} \&}]{dot }\end{DoxyParamCaption})}
 
 
 
@@ -70,9 +80,6 @@ Deletes the given \mbox{\hyperlink{classDot}{Dot}} object from the dots vector.
 {\em dot} & The \mbox{\hyperlink{classDot}{Dot}} object to be deleted \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-True if the \mbox{\hyperlink{classDot}{Dot}} was found and deleted, False otherwise 
-\end{DoxyReturn}
 \mbox{\Hypertarget{classDotController_a23fae90e998a8d72539c6073bbd8bdeb}\label{classDotController_a23fae90e998a8d72539c6073bbd8bdeb}} 
 \index{DotController@{DotController}!isBigDot@{isBigDot}}
 \index{isBigDot@{isBigDot}!DotController@{DotController}}
@@ -93,6 +100,20 @@ Checks if a Big \mbox{\hyperlink{classDot}{Dot}} exists at the given position.
 \begin{DoxyReturn}{Returns}
 True if a Big \mbox{\hyperlink{classDot}{Dot}} exists, False otherwise 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classDotController_aa27ec3ebe40db20ce95c6f0785379c64}\label{classDotController_aa27ec3ebe40db20ce95c6f0785379c64}} 
+\index{DotController@{DotController}!reset\_state@{reset\_state}}
+\index{reset\_state@{reset\_state}!DotController@{DotController}}
+\doxysubsubsection{\texorpdfstring{reset\_state()}{reset\_state()}}
+{\footnotesize\ttfamily void Dot\+Controller\+::reset\+\_\+state (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Resets the state of the \mbox{\hyperlink{classDotController}{Dot\+Controller}}. 
+
+
+
+Implements \mbox{\hyperlink{classIResettable_a8181b1aa3a2f2220aa846b3dee81ac28}{IResettable}}.
+
 \mbox{\Hypertarget{classDotController_a3f99b80b8d7126877f50af519663da82}\label{classDotController_a3f99b80b8d7126877f50af519663da82}} 
 \index{DotController@{DotController}!spawnDotBig@{spawnDotBig}}
 \index{spawnDotBig@{spawnDotBig}!DotController@{DotController}}

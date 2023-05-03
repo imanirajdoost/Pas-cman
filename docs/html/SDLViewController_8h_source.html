@@ -107,29 +107,23 @@ $(function() {
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    SDL_Surface *plancheSprites = <span class="keyword">nullptr</span>; </div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    SDL_Renderer *renderer = <span class="keyword">nullptr</span>; </div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    SDL_Rect src_bg = {368, 3, 168, 216}; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    SDL_Rect bg = {2, 2, 672, 864}; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    SDL_Rect blackBg = {0, 0, 1, 1}; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    SDL_Rect UIRect = {700, 0, 200, 200}; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    SDL_Rect playerHealth = {169, 76, 10, 12}; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    SDL_Rect playerHealth = {169, 76, 10, 12}; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    shared_ptr&lt;DotController&gt; dotController; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    shared_ptr&lt;FruitController&gt; fruitController; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    shared_ptr&lt;TextViewController&gt; textViewController; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    shared_ptr&lt;PauseController&gt; pauseController; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    shared_ptr&lt;std::list&lt;shared_ptr&lt;GameObject&gt;&gt;&gt; spritesToDraw; </div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    shared_ptr&lt;DotController&gt; dotController; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    shared_ptr&lt;FruitController&gt; fruitController; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    shared_ptr&lt;TextViewController&gt; textViewController; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    shared_ptr&lt;PauseController&gt; pauseController; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    shared_ptr&lt;std::list&lt;shared_ptr&lt;GameObject&gt;&gt;&gt; spritesToDraw; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordtype">void</span> draw_collider(<span class="keyword">const</span> <a class="code" href="classGameObject.html">GameObject</a> &amp;obj, <span class="keywordtype">int</span> r, <span class="keywordtype">int</span> g, <span class="keywordtype">int</span> b);</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordtype">void</span> draw_grid(<span class="keywordtype">int</span> r, <span class="keywordtype">int</span> g, <span class="keywordtype">int</span> b);</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keywordtype">void</span> drawTarget(SDL_Rect *spriteToDraw, SDL_Rect *drawRect);</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;};</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//PAS_CMAN_SDLVIEWCONTROLLER_H</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordtype">void</span> draw_collider(<span class="keyword">const</span> <a class="code" href="classGameObject.html">GameObject</a> &amp;obj, <span class="keywordtype">int</span> r, <span class="keywordtype">int</span> g, <span class="keywordtype">int</span> b);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordtype">void</span> draw_grid(<span class="keywordtype">int</span> r, <span class="keywordtype">int</span> g, <span class="keywordtype">int</span> b);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordtype">void</span> drawTarget(SDL_Rect *spriteToDraw, SDL_Rect *drawRect);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;};</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//PAS_CMAN_SDLVIEWCONTROLLER_H</span></div>
 <div class="ttc" id="aDotController_8h_html"><div class="ttname"><a href="DotController_8h.html">DotController.h</a></div><div class="ttdoc">This file contains the declaration of the DotController class.</div></div>
 <div class="ttc" id="aFruitController_8h_html"><div class="ttname"><a href="FruitController_8h.html">FruitController.h</a></div></div>
 <div class="ttc" id="aGameObject_8h_html"><div class="ttname"><a href="GameObject_8h.html">GameObject.h</a></div><div class="ttdoc">Base class for all game objects in the game, with transform and animation components.</div></div>

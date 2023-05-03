@@ -7,20 +7,22 @@
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classGhostController_aa8b7bb6f3bfbe65c9cd9ae40bad1844e}{Ghost\+Controller}} (shared\+\_\+ptr$<$ \mbox{\hyperlink{classInky}{Inky}} $>$ i\+Ghost, shared\+\_\+ptr$<$ \mbox{\hyperlink{classPinky}{Pinky}} $>$ p\+Ghost, shared\+\_\+ptr$<$ \mbox{\hyperlink{classBlinky}{Blinky}} $>$ b\+Ghost, shared\+\_\+ptr$<$ \mbox{\hyperlink{classClyde}{Clyde}} $>$ c\+Ghost, shared\+\_\+ptr$<$ \mbox{\hyperlink{classCollisionController}{Collision\+Controller}} $>$ col\+Controller)
+\mbox{\hyperlink{classGhostController_ad2f146d5089a5519f3ff305fa8b16008}{Ghost\+Controller}} (shared\+\_\+ptr$<$ \mbox{\hyperlink{classInky}{Inky}} $>$ i\+Ghost, shared\+\_\+ptr$<$ \mbox{\hyperlink{classPinky}{Pinky}} $>$ p\+Ghost, shared\+\_\+ptr$<$ \mbox{\hyperlink{classBlinky}{Blinky}} $>$ b\+Ghost, shared\+\_\+ptr$<$ \mbox{\hyperlink{classClyde}{Clyde}} $>$ c\+Ghost, shared\+\_\+ptr$<$ \mbox{\hyperlink{classCollisionController}{Collision\+Controller}} $>$ col\+Controller, shared\+\_\+ptr$<$ \mbox{\hyperlink{classTimeController}{Time\+Controller}} $>$ t\+Controller)
 \begin{DoxyCompactList}\small\item\em Constructor for \mbox{\hyperlink{classGhostController}{Ghost\+Controller}}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classGhostController_acc19fa7468f0ac60e74f46cbd958ce48}{tick}} ()
 \begin{DoxyCompactList}\small\item\em Runs each ghost\textquotesingle{}s individual tick method and checks if any collisions occur. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGhostController_aea6b7dcc73cfb198c69e1c4d17fdac6f}{change\+Mode}} (\mbox{\hyperlink{Ghost_8h_a46c8a310cf4c094f8c80e1cb8dc1f911}{Mode}} mode)
+\begin{DoxyCompactList}\small\item\em Changes the mode of all ghosts. \end{DoxyCompactList}\item 
 shared\+\_\+ptr$<$ vector$<$ shared\+\_\+ptr$<$ \mbox{\hyperlink{classGhost}{Ghost}} $>$ $>$ $>$ \mbox{\hyperlink{classGhostController_a909dffa26b7438a737d7cfe795d774bc}{get\+All\+Ghosts}} ()
 \begin{DoxyCompactList}\small\item\em Returns all ghosts as a shared pointer to a vector of shared pointers to \mbox{\hyperlink{classGhost}{Ghost}} objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classGhostController_aa8b7bb6f3bfbe65c9cd9ae40bad1844e}\label{classGhostController_aa8b7bb6f3bfbe65c9cd9ae40bad1844e}} 
+\mbox{\Hypertarget{classGhostController_ad2f146d5089a5519f3ff305fa8b16008}\label{classGhostController_ad2f146d5089a5519f3ff305fa8b16008}} 
 \index{GhostController@{GhostController}!GhostController@{GhostController}}
 \index{GhostController@{GhostController}!GhostController@{GhostController}}
 \doxysubsubsection{\texorpdfstring{GhostController()}{GhostController()}}
-{\footnotesize\ttfamily Ghost\+Controller\+::\+Ghost\+Controller (\begin{DoxyParamCaption}\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{classInky}{Inky}} $>$}]{i\+Ghost,  }\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{classPinky}{Pinky}} $>$}]{p\+Ghost,  }\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{classBlinky}{Blinky}} $>$}]{b\+Ghost,  }\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{classClyde}{Clyde}} $>$}]{c\+Ghost,  }\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{classCollisionController}{Collision\+Controller}} $>$}]{col\+Controller }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Ghost\+Controller\+::\+Ghost\+Controller (\begin{DoxyParamCaption}\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{classInky}{Inky}} $>$}]{i\+Ghost,  }\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{classPinky}{Pinky}} $>$}]{p\+Ghost,  }\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{classBlinky}{Blinky}} $>$}]{b\+Ghost,  }\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{classClyde}{Clyde}} $>$}]{c\+Ghost,  }\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{classCollisionController}{Collision\+Controller}} $>$}]{col\+Controller,  }\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{classTimeController}{Time\+Controller}} $>$}]{t\+Controller }\end{DoxyParamCaption})}
 
 
 
@@ -42,6 +44,21 @@ Constructor for \mbox{\hyperlink{classGhostController}{Ghost\+Controller}}.
 
 
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGhostController_aea6b7dcc73cfb198c69e1c4d17fdac6f}\label{classGhostController_aea6b7dcc73cfb198c69e1c4d17fdac6f}} 
+\index{GhostController@{GhostController}!changeMode@{changeMode}}
+\index{changeMode@{changeMode}!GhostController@{GhostController}}
+\doxysubsubsection{\texorpdfstring{changeMode()}{changeMode()}}
+{\footnotesize\ttfamily void Ghost\+Controller\+::change\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Ghost_8h_a46c8a310cf4c094f8c80e1cb8dc1f911}{Mode}}}]{mode }\end{DoxyParamCaption})}
+
+
+
+Changes the mode of all ghosts. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mode} & new mode for the ghosts \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classGhostController_a909dffa26b7438a737d7cfe795d774bc}\label{classGhostController_a909dffa26b7438a737d7cfe795d774bc}} 
 \index{GhostController@{GhostController}!getAllGhosts@{getAllGhosts}}
 \index{getAllGhosts@{getAllGhosts}!GhostController@{GhostController}}

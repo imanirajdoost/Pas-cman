@@ -32,7 +32,7 @@ int \mbox{\hyperlink{classMovableGameObject_a21ae72abde3a3b5db43433f838762c58}{g
 \begin{DoxyCompactList}\small\item\em Get the current direction of movement of the object. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classMovableGameObject_a4baa44d432fcd2345887e71c32131888}{set\+Move\+Direction}} (const \mbox{\hyperlink{MovableGameObject_8h_a00ec4eba48da32d6cbdf827185fd3d34}{Move\+Direction}} \&new\+Direction)
 \begin{DoxyCompactList}\small\item\em Set the current direction of movement of the object. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classMovableGameObject_a5cd7735c6931c7ca63f7ebe8c4c37ec5}{set\+Direction\+Sprite}} (const \mbox{\hyperlink{MovableGameObject_8h_a00ec4eba48da32d6cbdf827185fd3d34}{Move\+Direction}} \&new\+Direction)
+virtual void \mbox{\hyperlink{classMovableGameObject_ab315879eb86562fb817aeb2e0fdba001}{set\+Direction\+Sprite}} (const \mbox{\hyperlink{MovableGameObject_8h_a00ec4eba48da32d6cbdf827185fd3d34}{Move\+Direction}} \&new\+Direction)
 \begin{DoxyCompactList}\small\item\em Set the sprite of the object based on its current direction. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classMovableGameObject_ad11062eda5dc48e94d303530aaa2dbfa}{reset\+Move\+Direction}} ()
 \begin{DoxyCompactList}\small\item\em Reset the current direction of movement of the object to NONE. \end{DoxyCompactList}\item 
@@ -45,7 +45,7 @@ void \mbox{\hyperlink{classMovableGameObject_ad3313b79220210103022f8e00609b592}{
 virtual void \mbox{\hyperlink{classMovableGameObject_a7e4411553a799980b15023bb57f31fb9}{move}} ()
 \begin{DoxyCompactList}\small\item\em Move the object to its next position. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classMovableGameObject_adf39fbbae3476fd1d5e74b9ae6c97717}{reset\+\_\+state}} () override
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em resets the state of the object \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -185,6 +185,10 @@ Reimplemented in \mbox{\hyperlink{classPlayer_a1d35b7b1cd1a890042abdfdc55cafb14}
 
 
 
+resets the state of the object 
+
+
+
 Reimplemented from \mbox{\hyperlink{classGameObject_a84fa557ccf95f12678f0f2992b707fda}{Game\+Object}}.
 
 
@@ -211,11 +215,11 @@ Reset the current direction of movement of the object to NONE.
 
 Reset the next position of the object to its current position. 
 
-\mbox{\Hypertarget{classMovableGameObject_a5cd7735c6931c7ca63f7ebe8c4c37ec5}\label{classMovableGameObject_a5cd7735c6931c7ca63f7ebe8c4c37ec5}} 
+\mbox{\Hypertarget{classMovableGameObject_ab315879eb86562fb817aeb2e0fdba001}\label{classMovableGameObject_ab315879eb86562fb817aeb2e0fdba001}} 
 \index{MovableGameObject@{MovableGameObject}!setDirectionSprite@{setDirectionSprite}}
 \index{setDirectionSprite@{setDirectionSprite}!MovableGameObject@{MovableGameObject}}
 \doxysubsubsection{\texorpdfstring{setDirectionSprite()}{setDirectionSprite()}}
-{\footnotesize\ttfamily void Movable\+Game\+Object\+::set\+Direction\+Sprite (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{MovableGameObject_8h_a00ec4eba48da32d6cbdf827185fd3d34}{Move\+Direction}} \&}]{new\+Direction }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily virtual void Movable\+Game\+Object\+::set\+Direction\+Sprite (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{MovableGameObject_8h_a00ec4eba48da32d6cbdf827185fd3d34}{Move\+Direction}} \&}]{new\+Direction }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 
@@ -226,6 +230,10 @@ Set the sprite of the object based on its current direction.
 {\em new\+Direction} & The new direction of movement to set the sprite for. \\
 \hline
 \end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classGhost_a01d2472fcfffc8f83ca881b0c9d3f119}{Ghost}}.
+
 \mbox{\Hypertarget{classMovableGameObject_a4baa44d432fcd2345887e71c32131888}\label{classMovableGameObject_a4baa44d432fcd2345887e71c32131888}} 
 \index{MovableGameObject@{MovableGameObject}!setMoveDirection@{setMoveDirection}}
 \index{setMoveDirection@{setMoveDirection}!MovableGameObject@{MovableGameObject}}

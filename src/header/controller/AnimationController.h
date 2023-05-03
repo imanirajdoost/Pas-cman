@@ -19,7 +19,8 @@ public:
     /**
      * @brief Constructor for the AnimationController class.
      */
-    explicit AnimationController(shared_ptr<vector<shared_ptr<AnimationComponent>>>& anims); // Initialize the class member with the shared_ptr
+    explicit AnimationController(
+            shared_ptr<vector<shared_ptr<AnimationComponent>>> &anims); // Initialize the class member with the shared_ptr
 
     /**
      * @brief Method that is called each frame to update the animation state.
@@ -42,9 +43,14 @@ public:
     void resetAllAnimations();
 
     /**
+    * @brief Method that starts a specific animation.
+    */
+    void startAnimation(const shared_ptr<AnimationComponent> &anim);
+
+    /**
      * @brief Method that stops a specific animation.
      */
-    void stopAnimation(const shared_ptr<AnimationComponent>& anim);
+    void stopAnimation(const shared_ptr<AnimationComponent> &anim);
 
     /**
      * @brief Static counter for animations.
@@ -53,7 +59,6 @@ public:
 
     shared_ptr<vector<shared_ptr<AnimationComponent>>> animations; // Declare the class member as a shared_ptr
 
-    void startAnimation(const shared_ptr<AnimationComponent> &anim);
 };
 
 #endif //PAS_CMAN_ANIMATIONCONTROLLER_H

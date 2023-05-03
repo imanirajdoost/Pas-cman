@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['door_468',['DOOR',['../Map_8h.html#a0dc0d3f05ebf63bd2133199d9429f6ada37ce845535b7c13f529505fdfdb04942',1,'Map.h']]],
-  ['down_469',['DOWN',['../MovableGameObject_8h.html#a00ec4eba48da32d6cbdf827185fd3d34ac4e0e4e3118472beeb2ae75827450f1f',1,'MovableGameObject.h']]]
+  ['big_541',['BIG',['../Dot_8h.html#ad32f47e8222a48927ca77a0920670c2eaa60c6c694491d75b439073b8cb05b139',1,'Dot.h']]]
 ];

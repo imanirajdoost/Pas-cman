@@ -27,6 +27,10 @@ public:
      */
     void tick();
 
+    /**
+     * @brief Changes the mode of all ghosts
+     * @param mode new mode for the ghosts
+     */
     void changeMode(Mode mode);
 
     /**
@@ -46,10 +50,21 @@ private:
 
     ulong elapedTime;
 
+    /**
+     * @brief Resets the ghost mode to CHASE
+     */
     void resetGhostMode();
 
+    /**
+     * @brief Returns the current mode of the ghosts
+     * @return current mode of the ghosts
+     */
     Mode getGhostsMode();
 
+    /**
+     * @brief Sets the animation of all ghosts
+     * @param animation new animation for the ghosts
+     */
     void setAnimation(const string &animation);
 };
 

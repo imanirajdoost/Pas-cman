@@ -76,12 +76,22 @@ $(function() {
  <a href="classDotController.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="DotController_8h_source.html">DotController.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for DotController:</div>
+<div class="dyncontent">
+<div class="center"><img src="classDotController__inherit__graph.png" border="0" usemap="#aDotController_inherit__map" alt="Inheritance graph"/></div>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<div class="dynheader">
+Collaboration diagram for DotController:</div>
+<div class="dyncontent">
+<div class="center"><img src="classDotController__coll__graph.png" border="0" usemap="#aDotController_coll__map" alt="Collaboration graph"/></div>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:afced0e67bd19f61e4beda9f9cac81fe3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDotController.html#afced0e67bd19f61e4beda9f9cac81fe3">DotController</a> (shared_ptr&lt; <a class="el" href="classPauseController.html">PauseController</a> &gt; pController, shared_ptr&lt; <a class="el" href="classTextViewController.html">TextViewController</a> &gt; tController, shared_ptr&lt; <a class="el" href="classScoreController.html">ScoreController</a> &gt; sController)</td></tr>
-<tr class="memdesc:afced0e67bd19f61e4beda9f9cac81fe3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the <a class="el" href="classDotController.html" title="Manages the creation, deletion and tracking of Dots in the game.">DotController</a> class.  <a href="classDotController.html#afced0e67bd19f61e4beda9f9cac81fe3">More...</a><br /></td></tr>
-<tr class="separator:afced0e67bd19f61e4beda9f9cac81fe3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8a4e8145f81aa5ac3b86d64e1002099"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDotController.html#af8a4e8145f81aa5ac3b86d64e1002099">DotController</a> (std::function&lt; void(bool)&gt; _gameOverFunction, shared_ptr&lt; <a class="el" href="classGhostController.html">GhostController</a> &gt; gController)</td></tr>
+<tr class="memdesc:af8a4e8145f81aa5ac3b86d64e1002099"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the <a class="el" href="classDotController.html" title="Manages the creation, deletion and tracking of Dots in the game.">DotController</a> class.  <a href="classDotController.html#af8a4e8145f81aa5ac3b86d64e1002099">More...</a><br /></td></tr>
+<tr class="separator:af8a4e8145f81aa5ac3b86d64e1002099"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a55dc40b0b1cf4fa8d436d25baa07786f"><td class="memItemLeft" align="right" valign="top">shared_ptr&lt; <a class="el" href="classDotSmall.html">DotSmall</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDotController.html#a55dc40b0b1cf4fa8d436d25baa07786f">spawnDotSmall</a> (int x, int y)</td></tr>
 <tr class="memdesc:a55dc40b0b1cf4fa8d436d25baa07786f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Spawns a <a class="el" href="classDotSmall.html" title="The DotSmall class, which represents the small dots that Pacman can eat.">DotSmall</a> object at the given position.  <a href="classDotController.html#a55dc40b0b1cf4fa8d436d25baa07786f">More...</a><br /></td></tr>
 <tr class="separator:a55dc40b0b1cf4fa8d436d25baa07786f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -91,12 +101,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a3f99b80b8d7126877f50af519663da82"><td class="memItemLeft" align="right" valign="top">shared_ptr&lt; <a class="el" href="classDotBig.html">DotBig</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDotController.html#a3f99b80b8d7126877f50af519663da82">spawnDotBig</a> (int x, int y)</td></tr>
 <tr class="memdesc:a3f99b80b8d7126877f50af519663da82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Spawns a <a class="el" href="classDotBig.html" title="The DotBig class represents the big dots that are eaten by Pacman.">DotBig</a> object at the given position.  <a href="classDotController.html#a3f99b80b8d7126877f50af519663da82">More...</a><br /></td></tr>
 <tr class="separator:a3f99b80b8d7126877f50af519663da82"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a35dd6015736734be62a678e933709aea"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDotController.html#a35dd6015736734be62a678e933709aea">deleteDot</a> (const <a class="el" href="classDot.html">Dot</a> &amp;dot)</td></tr>
-<tr class="memdesc:a35dd6015736734be62a678e933709aea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes the given <a class="el" href="classDot.html">Dot</a> object from the dots vector.  <a href="classDotController.html#a35dd6015736734be62a678e933709aea">More...</a><br /></td></tr>
-<tr class="separator:a35dd6015736734be62a678e933709aea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ade0c153ca53f9c23ccbb07d4b6396e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDotController.html#a0ade0c153ca53f9c23ccbb07d4b6396e">deleteDot</a> (const <a class="el" href="classDot.html">Dot</a> &amp;dot)</td></tr>
+<tr class="memdesc:a0ade0c153ca53f9c23ccbb07d4b6396e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes the given <a class="el" href="classDot.html">Dot</a> object from the dots vector.  <a href="classDotController.html#a0ade0c153ca53f9c23ccbb07d4b6396e">More...</a><br /></td></tr>
+<tr class="separator:a0ade0c153ca53f9c23ccbb07d4b6396e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a23fae90e998a8d72539c6073bbd8bdeb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDotController.html#a23fae90e998a8d72539c6073bbd8bdeb">isBigDot</a> (int i, int j)</td></tr>
 <tr class="memdesc:a23fae90e998a8d72539c6073bbd8bdeb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a Big <a class="el" href="classDot.html">Dot</a> exists at the given position.  <a href="classDotController.html#a23fae90e998a8d72539c6073bbd8bdeb">More...</a><br /></td></tr>
 <tr class="separator:a23fae90e998a8d72539c6073bbd8bdeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa27ec3ebe40db20ce95c6f0785379c64"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDotController.html#aa27ec3ebe40db20ce95c6f0785379c64">reset_state</a> () override</td></tr>
+<tr class="memdesc:aa27ec3ebe40db20ce95c6f0785379c64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the state of the <a class="el" href="classDotController.html" title="Manages the creation, deletion and tracking of Dots in the game.">DotController</a>.  <a href="classDotController.html#aa27ec3ebe40db20ce95c6f0785379c64">More...</a><br /></td></tr>
+<tr class="separator:aa27ec3ebe40db20ce95c6f0785379c64"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -107,8 +120,8 @@ Public Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Manages the creation, deletion and tracking of Dots in the game. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="afced0e67bd19f61e4beda9f9cac81fe3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afced0e67bd19f61e4beda9f9cac81fe3">&#9670;&nbsp;</a></span>DotController()</h2>
+<a id="af8a4e8145f81aa5ac3b86d64e1002099"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8a4e8145f81aa5ac3b86d64e1002099">&#9670;&nbsp;</a></span>DotController()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -119,20 +132,14 @@ Public Attributes</h2></td></tr>
         <tr>
           <td class="memname">DotController::DotController </td>
           <td>(</td>
-          <td class="paramtype">shared_ptr&lt; <a class="el" href="classPauseController.html">PauseController</a> &gt;&#160;</td>
-          <td class="paramname"><em>pController</em>, </td>
+          <td class="paramtype">std::function&lt; void(bool)&gt;&#160;</td>
+          <td class="paramname"><em>_gameOverFunction</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">shared_ptr&lt; <a class="el" href="classTextViewController.html">TextViewController</a> &gt;&#160;</td>
-          <td class="paramname"><em>tController</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">shared_ptr&lt; <a class="el" href="classScoreController.html">ScoreController</a> &gt;&#160;</td>
-          <td class="paramname"><em>sController</em>&#160;</td>
+          <td class="paramtype">shared_ptr&lt; <a class="el" href="classGhostController.html">GhostController</a> &gt;&#160;</td>
+          <td class="paramname"><em>gController</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -159,14 +166,14 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a35dd6015736734be62a678e933709aea"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a35dd6015736734be62a678e933709aea">&#9670;&nbsp;</a></span>deleteDot()</h2>
+<a id="a0ade0c153ca53f9c23ccbb07d4b6396e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ade0c153ca53f9c23ccbb07d4b6396e">&#9670;&nbsp;</a></span>deleteDot()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool DotController::deleteDot </td>
+          <td class="memname">void DotController::deleteDot </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classDot.html">Dot</a> &amp;&#160;</td>
           <td class="paramname"><em>dot</em></td><td>)</td>
@@ -182,7 +189,6 @@ Public Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>True if the <a class="el" href="classDot.html">Dot</a> was found and deleted, False otherwise </dd></dl>
 
 </div>
 </div>
@@ -221,6 +227,35 @@ Public Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if a Big <a class="el" href="classDot.html">Dot</a> exists, False otherwise </dd></dl>
+
+</div>
+</div>
+<a id="aa27ec3ebe40db20ce95c6f0785379c64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa27ec3ebe40db20ce95c6f0785379c64">&#9670;&nbsp;</a></span>reset_state()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DotController::reset_state </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Resets the state of the <a class="el" href="classDotController.html" title="Manages the creation, deletion and tracking of Dots in the game.">DotController</a>. </p>
+
+<p>Implements <a class="el" href="classIResettable.html#a8181b1aa3a2f2220aa846b3dee81ac28">IResettable</a>.</p>
 
 </div>
 </div>

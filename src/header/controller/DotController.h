@@ -82,6 +82,9 @@ private:
 
     shared_ptr<GhostController> ghostController;
 
+    /**
+     * @brief The function to be called when the game is over
+     */
     std::function<void(bool)> gameOverFunction;
 
     /**

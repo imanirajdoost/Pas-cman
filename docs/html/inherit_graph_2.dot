@@ -4,5 +4,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node0 [label="Collider",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCollider.html",tooltip="The Collider class is used for defining the collision properties of an object."];
+  Node0 [label="AnimationModel",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classAnimationModel.html",tooltip="Class that represents a single animation for a game object."];
 }

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['scorecontroller_2eh_297',['ScoreController.h',['../ScoreController_8h.html',1,'']]],
-  ['sdlviewcontroller_2eh_298',['SDLViewController.h',['../SDLViewController_8h.html',1,'']]],
-  ['staticgameobject_2eh_299',['StaticGameObject.h',['../StaticGameObject_8h.html',1,'']]]
+  ['pausecontroller_2eh_339',['PauseController.h',['../PauseController_8h.html',1,'']]],
+  ['player_2eh_340',['Player.h',['../Player_8h.html',1,'']]],
+  ['playercontroller_2eh_341',['PlayerController.h',['../PlayerController_8h.html',1,'']]]
 ];

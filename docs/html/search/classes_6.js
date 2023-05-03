@@ -1,8 +1,9 @@
 var searchData=
 [
-  ['gamecomponent_247',['GameComponent',['../classGameComponent.html',1,'']]],
-  ['gamecontroller_248',['GameController',['../classGameController.html',1,'']]],
-  ['gameobject_249',['GameObject',['../classGameObject.html',1,'']]],
-  ['ghost_250',['Ghost',['../classGhost.html',1,'']]],
-  ['ghostcontroller_251',['GhostController',['../classGhostController.html',1,'']]]
+  ['gamebackground_287',['GameBackground',['../classGameBackground.html',1,'']]],
+  ['gamecomponent_288',['GameComponent',['../classGameComponent.html',1,'']]],
+  ['gamecontroller_289',['GameController',['../classGameController.html',1,'']]],
+  ['gameobject_290',['GameObject',['../classGameObject.html',1,'']]],
+  ['ghost_291',['Ghost',['../classGhost.html',1,'']]],
+  ['ghostcontroller_292',['GhostController',['../classGhostController.html',1,'']]]
 ];

@@ -86,11 +86,11 @@ $(function() {
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
 <div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classPlayerController.html">   17</a></span>&#160;<span class="keyword">class </span><a class="code" href="classPlayerController.html">PlayerController</a> {</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classPlayerController.html#af038f4a57fbbdf9f1d17dd4868e7bb00">   30</a></span>&#160;    <a class="code" href="classPlayerController.html#af038f4a57fbbdf9f1d17dd4868e7bb00">PlayerController</a>(shared_ptr&lt;CollisionController&gt; colController, shared_ptr&lt;Player&gt; p,</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classPlayerController.html#aa61a6535d3eca7fa9025eb9f357657fc">   30</a></span>&#160;    <a class="code" href="classPlayerController.html#aa61a6535d3eca7fa9025eb9f357657fc">PlayerController</a>(shared_ptr&lt;CollisionController&gt; colController, shared_ptr&lt;Player&gt; p,</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                     shared_ptr&lt;DotController&gt; dController, shared_ptr&lt;FruitController&gt; fController,</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                     shared_ptr&lt;ScoreController&gt; sController,</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                     shared_ptr&lt;TextViewController&gt; tController, shared_ptr&lt;GhostController&gt; gController,</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                     shared_ptr&lt;PauseController&gt; pController, std::function&lt;<span class="keywordtype">void</span>()&gt; resetFunction);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                     shared_ptr&lt;PauseController&gt; pController, std::function&lt;<span class="keywordtype">void</span>(<span class="keywordtype">bool</span>)&gt; resetFunction, std::function&lt;<span class="keywordtype">void</span>(<span class="keywordtype">bool</span>)&gt; _gameOverFunction);</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
 <div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classPlayerController.html#a2e4ea9f053ff226d3ff2120f5e5fffbd">   40</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPlayerController.html#a2e4ea9f053ff226d3ff2120f5e5fffbd">setMoveIntent</a>(<a class="code" href="MovableGameObject_8h.html#a00ec4eba48da32d6cbdf827185fd3d34">MoveDirection</a> direction);</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
@@ -105,10 +105,11 @@ $(function() {
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    shared_ptr&lt;GhostController&gt; ghostController; </div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    shared_ptr&lt;PauseController&gt; pauseController; </div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    shared_ptr&lt;Player&gt; player; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    std::function&lt;void()&gt; resetGame; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;};</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//PAS_CMAN_PLAYERCONTROLLER_H</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    std::function&lt;void(<span class="keywordtype">bool</span>)&gt; resetGame; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    std::function&lt;void(<span class="keywordtype">bool</span>)&gt; gameOverFunction; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;};</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//PAS_CMAN_PLAYERCONTROLLER_H</span></div>
 <div class="ttc" id="aDotController_8h_html"><div class="ttname"><a href="DotController_8h.html">DotController.h</a></div><div class="ttdoc">This file contains the declaration of the DotController class.</div></div>
 <div class="ttc" id="aFruitController_8h_html"><div class="ttname"><a href="FruitController_8h.html">FruitController.h</a></div></div>
 <div class="ttc" id="aGhostController_8h_html"><div class="ttname"><a href="GhostController_8h.html">GhostController.h</a></div></div>
@@ -119,8 +120,8 @@ $(function() {
 <div class="ttc" id="aScoreController_8h_html"><div class="ttname"><a href="ScoreController_8h.html">ScoreController.h</a></div><div class="ttdoc">A class responsible for managing the player's score and updating the text view.</div></div>
 <div class="ttc" id="aclassPlayerController_html"><div class="ttname"><a href="classPlayerController.html">PlayerController</a></div><div class="ttdef"><b>Definition:</b> PlayerController.h:17</div></div>
 <div class="ttc" id="aclassPlayerController_html_a2e4ea9f053ff226d3ff2120f5e5fffbd"><div class="ttname"><a href="classPlayerController.html#a2e4ea9f053ff226d3ff2120f5e5fffbd">PlayerController::setMoveIntent</a></div><div class="ttdeci">void setMoveIntent(MoveDirection direction)</div></div>
+<div class="ttc" id="aclassPlayerController_html_aa61a6535d3eca7fa9025eb9f357657fc"><div class="ttname"><a href="classPlayerController.html#aa61a6535d3eca7fa9025eb9f357657fc">PlayerController::PlayerController</a></div><div class="ttdeci">PlayerController(shared_ptr&lt; CollisionController &gt; colController, shared_ptr&lt; Player &gt; p, shared_ptr&lt; DotController &gt; dController, shared_ptr&lt; FruitController &gt; fController, shared_ptr&lt; ScoreController &gt; sController, shared_ptr&lt; TextViewController &gt; tController, shared_ptr&lt; GhostController &gt; gController, shared_ptr&lt; PauseController &gt; pController, std::function&lt; void(bool)&gt; resetFunction, std::function&lt; void(bool)&gt; _gameOverFunction)</div></div>
 <div class="ttc" id="aclassPlayerController_html_ab1c27f23585b5f22421e195c37f8d94a"><div class="ttname"><a href="classPlayerController.html#ab1c27f23585b5f22421e195c37f8d94a">PlayerController::tick</a></div><div class="ttdeci">void tick()</div></div>
-<div class="ttc" id="aclassPlayerController_html_af038f4a57fbbdf9f1d17dd4868e7bb00"><div class="ttname"><a href="classPlayerController.html#af038f4a57fbbdf9f1d17dd4868e7bb00">PlayerController::PlayerController</a></div><div class="ttdeci">PlayerController(shared_ptr&lt; CollisionController &gt; colController, shared_ptr&lt; Player &gt; p, shared_ptr&lt; DotController &gt; dController, shared_ptr&lt; FruitController &gt; fController, shared_ptr&lt; ScoreController &gt; sController, shared_ptr&lt; TextViewController &gt; tController, shared_ptr&lt; GhostController &gt; gController, shared_ptr&lt; PauseController &gt; pController, std::function&lt; void()&gt; resetFunction)</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

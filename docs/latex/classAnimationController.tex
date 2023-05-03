@@ -12,10 +12,25 @@ The \mbox{\hyperlink{classAnimationController}{Animation\+Controller}} class, wh
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classAnimationController_a13976b0254122a71974b37ebc93b8526}{Animation\+Controller}} ()
+\mbox{\hyperlink{classAnimationController_a97b0abbbf6b01f6845b5e4a338fe8b61}{Animation\+Controller}} (shared\+\_\+ptr$<$ vector$<$ shared\+\_\+ptr$<$ \mbox{\hyperlink{classAnimationComponent}{Animation\+Component}} $>$$>$$>$ \&anims)
 \begin{DoxyCompactList}\small\item\em Constructor for the \mbox{\hyperlink{classAnimationController}{Animation\+Controller}} class. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classAnimationController_a81729a07995ebe94e05e83becfd3ccfe}{tick}} ()
-\begin{DoxyCompactList}\small\item\em Method that is called each frame to update the animation state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Method that is called each frame to update the animation state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAnimationController_aeccee7c73a964b9168536ac8ea98c5ba}{stop\+All\+Animations}} ()
+\begin{DoxyCompactList}\small\item\em Method that is called when the game is reset. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAnimationController_aec1b57c55064584e9b557004d99696fb}{start\+All\+Animations}} ()
+\begin{DoxyCompactList}\small\item\em Method that starts all animations. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAnimationController_a9b7a0894372ad3a064e33eb97d61c1c0}{reset\+All\+Animations}} ()
+\begin{DoxyCompactList}\small\item\em Method that is called when the game is reset. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAnimationController_aec4d32bcb6ff73385c1486c7a9b4ee25}{start\+Animation}} (const shared\+\_\+ptr$<$ \mbox{\hyperlink{classAnimationComponent}{Animation\+Component}} $>$ \&anim)
+\begin{DoxyCompactList}\small\item\em Method that starts a specific animation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAnimationController_ab2b7ba3756191e4c939267986d65e3cd}{stop\+Animation}} (const shared\+\_\+ptr$<$ \mbox{\hyperlink{classAnimationComponent}{Animation\+Component}} $>$ \&anim)
+\begin{DoxyCompactList}\small\item\em Method that stops a specific animation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+shared\+\_\+ptr$<$ vector$<$ shared\+\_\+ptr$<$ \mbox{\hyperlink{classAnimationComponent}{Animation\+Component}} $>$ $>$ $>$ \mbox{\hyperlink{classAnimationController_a8d7493e6f650d126107292e8c7db224a}{animations}}
+\end{DoxyCompactItemize}
 \doxysubsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -27,11 +42,11 @@ static int \mbox{\hyperlink{classAnimationController_ad436d7ef96de48cb6bde86515e
 The \mbox{\hyperlink{classAnimationController}{Animation\+Controller}} class, which controls the animation logic of the game. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classAnimationController_a13976b0254122a71974b37ebc93b8526}\label{classAnimationController_a13976b0254122a71974b37ebc93b8526}} 
+\mbox{\Hypertarget{classAnimationController_a97b0abbbf6b01f6845b5e4a338fe8b61}\label{classAnimationController_a97b0abbbf6b01f6845b5e4a338fe8b61}} 
 \index{AnimationController@{AnimationController}!AnimationController@{AnimationController}}
 \index{AnimationController@{AnimationController}!AnimationController@{AnimationController}}
 \doxysubsubsection{\texorpdfstring{AnimationController()}{AnimationController()}}
-{\footnotesize\ttfamily Animation\+Controller\+::\+Animation\+Controller (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Animation\+Controller\+::\+Animation\+Controller (\begin{DoxyParamCaption}\item[{shared\+\_\+ptr$<$ vector$<$ shared\+\_\+ptr$<$ \mbox{\hyperlink{classAnimationComponent}{Animation\+Component}} $>$$>$$>$ \&}]{anims }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
 
 
@@ -40,6 +55,56 @@ Constructor for the \mbox{\hyperlink{classAnimationController}{Animation\+Contro
 
 
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classAnimationController_a9b7a0894372ad3a064e33eb97d61c1c0}\label{classAnimationController_a9b7a0894372ad3a064e33eb97d61c1c0}} 
+\index{AnimationController@{AnimationController}!resetAllAnimations@{resetAllAnimations}}
+\index{resetAllAnimations@{resetAllAnimations}!AnimationController@{AnimationController}}
+\doxysubsubsection{\texorpdfstring{resetAllAnimations()}{resetAllAnimations()}}
+{\footnotesize\ttfamily void Animation\+Controller\+::reset\+All\+Animations (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Method that is called when the game is reset. 
+
+\mbox{\Hypertarget{classAnimationController_aec1b57c55064584e9b557004d99696fb}\label{classAnimationController_aec1b57c55064584e9b557004d99696fb}} 
+\index{AnimationController@{AnimationController}!startAllAnimations@{startAllAnimations}}
+\index{startAllAnimations@{startAllAnimations}!AnimationController@{AnimationController}}
+\doxysubsubsection{\texorpdfstring{startAllAnimations()}{startAllAnimations()}}
+{\footnotesize\ttfamily void Animation\+Controller\+::start\+All\+Animations (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Method that starts all animations. 
+
+\mbox{\Hypertarget{classAnimationController_aec4d32bcb6ff73385c1486c7a9b4ee25}\label{classAnimationController_aec4d32bcb6ff73385c1486c7a9b4ee25}} 
+\index{AnimationController@{AnimationController}!startAnimation@{startAnimation}}
+\index{startAnimation@{startAnimation}!AnimationController@{AnimationController}}
+\doxysubsubsection{\texorpdfstring{startAnimation()}{startAnimation()}}
+{\footnotesize\ttfamily void Animation\+Controller\+::start\+Animation (\begin{DoxyParamCaption}\item[{const shared\+\_\+ptr$<$ \mbox{\hyperlink{classAnimationComponent}{Animation\+Component}} $>$ \&}]{anim }\end{DoxyParamCaption})}
+
+
+
+Method that starts a specific animation. 
+
+\mbox{\Hypertarget{classAnimationController_aeccee7c73a964b9168536ac8ea98c5ba}\label{classAnimationController_aeccee7c73a964b9168536ac8ea98c5ba}} 
+\index{AnimationController@{AnimationController}!stopAllAnimations@{stopAllAnimations}}
+\index{stopAllAnimations@{stopAllAnimations}!AnimationController@{AnimationController}}
+\doxysubsubsection{\texorpdfstring{stopAllAnimations()}{stopAllAnimations()}}
+{\footnotesize\ttfamily void Animation\+Controller\+::stop\+All\+Animations (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Method that is called when the game is reset. 
+
+\mbox{\Hypertarget{classAnimationController_ab2b7ba3756191e4c939267986d65e3cd}\label{classAnimationController_ab2b7ba3756191e4c939267986d65e3cd}} 
+\index{AnimationController@{AnimationController}!stopAnimation@{stopAnimation}}
+\index{stopAnimation@{stopAnimation}!AnimationController@{AnimationController}}
+\doxysubsubsection{\texorpdfstring{stopAnimation()}{stopAnimation()}}
+{\footnotesize\ttfamily void Animation\+Controller\+::stop\+Animation (\begin{DoxyParamCaption}\item[{const shared\+\_\+ptr$<$ \mbox{\hyperlink{classAnimationComponent}{Animation\+Component}} $>$ \&}]{anim }\end{DoxyParamCaption})}
+
+
+
+Method that stops a specific animation. 
+
 \mbox{\Hypertarget{classAnimationController_a81729a07995ebe94e05e83becfd3ccfe}\label{classAnimationController_a81729a07995ebe94e05e83becfd3ccfe}} 
 \index{AnimationController@{AnimationController}!tick@{tick}}
 \index{tick@{tick}!AnimationController@{AnimationController}}
@@ -62,6 +127,12 @@ Method that is called each frame to update the animation state.
 
 
 Static counter for animations. 
+
+\mbox{\Hypertarget{classAnimationController_a8d7493e6f650d126107292e8c7db224a}\label{classAnimationController_a8d7493e6f650d126107292e8c7db224a}} 
+\index{AnimationController@{AnimationController}!animations@{animations}}
+\index{animations@{animations}!AnimationController@{AnimationController}}
+\doxysubsubsection{\texorpdfstring{animations}{animations}}
+{\footnotesize\ttfamily shared\+\_\+ptr$<$vector$<$shared\+\_\+ptr$<$\mbox{\hyperlink{classAnimationComponent}{Animation\+Component}}$>$ $>$ $>$ Animation\+Controller\+::animations}
 
 
 

@@ -16,12 +16,16 @@ This class is responsible for managing the text UI elements.
 \begin{DoxyCompactList}\small\item\em Constructs the \mbox{\hyperlink{classTextViewController}{Text\+View\+Controller}} object and initializes all the characters. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classTextViewController_a6456bd830f59a061f1cb958752aafe94}{write\+On\+UI}} (const string \&id, const string \&text, int posX, int posY)
 \begin{DoxyCompactList}\small\item\em Writes text on the screen at the given position and id. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTextViewController_a341fab57822c76955eb07d8ff23de2f2}{remove\+From\+UI}} (const string \&id)
+\begin{DoxyCompactList}\small\item\em Removes the text with the given id from the screen. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classTextViewController_ad51abbc6370f7dcf1c6db74bb0a4d0f6}{write\+Score}} (int score)
 \begin{DoxyCompactList}\small\item\em Writes the score on the screen. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classTextViewController_a9d77a4c2c1632f11038fde32bae79a89}{write\+High\+Score}} (int score)
 \begin{DoxyCompactList}\small\item\em Writes the highscore on the screen. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classTextViewController_a411c74dcdab31e71399696978cbd719f}{set\+Health\+UI}} (short health)
 \begin{DoxyCompactList}\small\item\em Sets the health UI element to the given value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTextViewController_a9d78513d4f9b391089f0c1571d764d03}{set\+Level\+On\+UI}} (int level)
+\begin{DoxyCompactList}\small\item\em Sets the level UI element to the given value. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classTextViewController_a43543dc52bc165b6785203f7a9d01e4e}{set\+Fruit\+UI}} (const vector$<$ shared\+\_\+ptr$<$ SDL\+\_\+\+Rect $>$$>$ \&fruit\+\_\+sp)
 \begin{DoxyCompactList}\small\item\em Sets the fruit UI element to the given value. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
@@ -60,6 +64,21 @@ Constructs the \mbox{\hyperlink{classTextViewController}{Text\+View\+Controller}
 
 
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTextViewController_a341fab57822c76955eb07d8ff23de2f2}\label{classTextViewController_a341fab57822c76955eb07d8ff23de2f2}} 
+\index{TextViewController@{TextViewController}!removeFromUI@{removeFromUI}}
+\index{removeFromUI@{removeFromUI}!TextViewController@{TextViewController}}
+\doxysubsubsection{\texorpdfstring{removeFromUI()}{removeFromUI()}}
+{\footnotesize\ttfamily void Text\+View\+Controller\+::remove\+From\+UI (\begin{DoxyParamCaption}\item[{const string \&}]{id }\end{DoxyParamCaption})}
+
+
+
+Removes the text with the given id from the screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The id of the text to remove. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classTextViewController_a43543dc52bc165b6785203f7a9d01e4e}\label{classTextViewController_a43543dc52bc165b6785203f7a9d01e4e}} 
 \index{TextViewController@{TextViewController}!setFruitUI@{setFruitUI}}
 \index{setFruitUI@{setFruitUI}!TextViewController@{TextViewController}}
@@ -88,6 +107,21 @@ Sets the health UI element to the given value.
 
 \begin{DoxyParams}{Parameters}
 {\em health} & The health value to set. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTextViewController_a9d78513d4f9b391089f0c1571d764d03}\label{classTextViewController_a9d78513d4f9b391089f0c1571d764d03}} 
+\index{TextViewController@{TextViewController}!setLevelOnUI@{setLevelOnUI}}
+\index{setLevelOnUI@{setLevelOnUI}!TextViewController@{TextViewController}}
+\doxysubsubsection{\texorpdfstring{setLevelOnUI()}{setLevelOnUI()}}
+{\footnotesize\ttfamily void Text\+View\+Controller\+::set\+Level\+On\+UI (\begin{DoxyParamCaption}\item[{int}]{level }\end{DoxyParamCaption})}
+
+
+
+Sets the level UI element to the given value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & The level value to set. \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classTextViewController_a9d77a4c2c1632f11038fde32bae79a89}\label{classTextViewController_a9d77a4c2c1632f11038fde32bae79a89}} 

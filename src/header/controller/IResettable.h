@@ -7,6 +7,9 @@
  */
 class IResettable {
 public:
+    /**
+     * @brief Method that is called when the game is reset.
+     */
     virtual void reset_state() = 0;
 };
 

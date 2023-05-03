@@ -50,35 +50,54 @@ namespace constants {
 }
 
 namespace default_animation_speed {
+    /** @brief Animation speed for the ghosts. */
 #define GHOST_ANIMATION_SPEED 10
 
+    /** @brief Animation speed for the player. */
 #define PLAYER_ANIMATION_SPEED 10
 
+    /** @brief Animation speed for the player death. */
 #define PLAYER_DEATH_ANIMATION_SPEED 5
 
+    /** @brief Animation speed for the big dot. */
 #define BIG_DOT_ANIMATION_SPEED 5
 }
 
+
 namespace default_positions {
+    /** @brief Default position for the player. */
     const SDL_Rect player_default_pos{10 * TILESIZE, 20 * TILESIZE};
 
+    /** @brief Default position for Blinky. */
     const SDL_Rect blinky_default_pos{TILESIZE, TILESIZE};
+
+    /** @brief Default position for Inky. */
     const SDL_Rect inky_default_pos{2 * TILESIZE, TILESIZE};
+
+    /** @brief Default position for Pinky. */
     const SDL_Rect pinky_default_pos{3 * TILESIZE, TILESIZE};
+
+    /** @brief Default position for Clyde. */
     const SDL_Rect clyde_default_pos{4 * TILESIZE, TILESIZE};
 
-    const SDL_Rect background_default_pos = {0, 0, 672, 864}; ///< Destination rectangle for the background sprite.
+    /** @brief Default position for the background sprite. */
+    const SDL_Rect background_default_pos = {0, 0, 672, 864};
 
+    /** @brief Default position for the global objects out of the view of the scene. */
     const SDL_Rect global_default_pos{-100, -100};
 }
 
 namespace default_variables {
+    /** @brief Default health for the player. */
     const int player_default_health = 2;
 
+    /** @brief Default time to reset level. */
     const int reset_level_time = 2000;
 
+    /** @brief Default time to reset ghost to chase mode. */
     const int reset_ghost_time = 10000;
 
+    /** @brief Default time to blink white while in Frightened mode. */
     const int time_to_blink_white = 3000;
 }
 
@@ -105,6 +124,7 @@ namespace default_sprites {
     /** @brief empty black sprite. */
     const SDL_Rect empty_black_sp = {184, 103, 16, 16};
 
+    /** @brief Default sprite for the background. */
     const SDL_Rect background_sp_default = {370, 4, 166, 214};
 }
 

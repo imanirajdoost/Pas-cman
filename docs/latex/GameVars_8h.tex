@@ -8,6 +8,8 @@ Include dependency graph for Game\+Vars.\+h\+:
 \item 
  \mbox{\hyperlink{namespaceconstants}{constants}}
 \item 
+ \mbox{\hyperlink{namespacedefault__animation__speed}{default\+\_\+animation\+\_\+speed}}
+\item 
  \mbox{\hyperlink{namespacedefault__positions}{default\+\_\+positions}}
 \item 
  \mbox{\hyperlink{namespacedefault__variables}{default\+\_\+variables}}
@@ -23,9 +25,9 @@ Include dependency graph for Game\+Vars.\+h\+:
 \begin{DoxyCompactList}\small\item\em Debug mode flag. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{GameVars_8h_a958c37bf3b24d674daab95749fe80f3d}{SHOW\+\_\+\+FPS}}~0
 \begin{DoxyCompactList}\small\item\em Show FPS flag. \end{DoxyCompactList}\item 
-\#define \mbox{\hyperlink{GameVars_8h_aecb8f08e99d98d9108bf70439e709ea6}{ANIMATION\+\_\+\+DEFAULT\+\_\+\+SPEED}}~4
+\#define \mbox{\hyperlink{GameVars_8h_aecb8f08e99d98d9108bf70439e709ea6}{ANIMATION\+\_\+\+DEFAULT\+\_\+\+SPEED}}~30
 \begin{DoxyCompactList}\small\item\em Animation frame rate in frames per second. \end{DoxyCompactList}\item 
-\#define \mbox{\hyperlink{GameVars_8h_aff94486a452cab68b933999d0db2c130}{SMALL\+\_\+\+DOT\+\_\+\+SIZE}}~10
+\#define \mbox{\hyperlink{GameVars_8h_aff94486a452cab68b933999d0db2c130}{SMALL\+\_\+\+DOT\+\_\+\+SIZE}}~8
 \begin{DoxyCompactList}\small\item\em Small dot size in pixels. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{GameVars_8h_ab35fb80872406f36f2a128f5ca1b55ef}{SMALL\+\_\+\+DOT\+\_\+\+SCORE}}~10
 \begin{DoxyCompactList}\small\item\em Score awarded for eating a small dot. \end{DoxyCompactList}\item 
@@ -40,28 +42,44 @@ Include dependency graph for Game\+Vars.\+h\+:
 \#define \mbox{\hyperlink{GameVars_8h_ae70d1c815cfcc47cc985b49d750ecffa}{FRUIT\+\_\+\+SPAWN\+\_\+\+TIME}}~15000
 \begin{DoxyCompactList}\small\item\em Time between fruit spawns. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{GameVars_8h_a5f08e3c116e41c3e37823883b4a7c5c9}{FRUIT\+\_\+\+AVAILABE\+\_\+\+TIME}}~5000
-\begin{DoxyCompactList}\small\item\em Time fruit is available for. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Time fruit is available for. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{GameVars_8h_a21519ed25fbb324b61543a9226bfb76a}{GHOST\+\_\+\+ANIMATION\+\_\+\+SPEED}}~10
+\begin{DoxyCompactList}\small\item\em Animation speed for the ghosts. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{GameVars_8h_a9002621a825b2db74ab2228ddafdc3fe}{PLAYER\+\_\+\+ANIMATION\+\_\+\+SPEED}}~10
+\begin{DoxyCompactList}\small\item\em Animation speed for the player. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{GameVars_8h_affeed8338b036afd40f86a43a2ef4556}{PLAYER\+\_\+\+DEATH\+\_\+\+ANIMATION\+\_\+\+SPEED}}~5
+\begin{DoxyCompactList}\small\item\em Animation speed for the player death. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{GameVars_8h_a0612cce02548528b046c5ac48abc187c}{BIG\+\_\+\+DOT\+\_\+\+ANIMATION\+\_\+\+SPEED}}~5
+\begin{DoxyCompactList}\small\item\em Animation speed for the big dot. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
 const Uint64 \mbox{\hyperlink{namespaceconstants_aa565a40f4d1a1d7c439372b7f67af032}{constants\+::\+TICK\+\_\+\+INTERVAL}} = 20
 \begin{DoxyCompactList}\small\item\em Update interval of the game. Decrease this value to make the game faster. \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{namespaceconstants_a9b27d3932a7f2bacc63784fb31ab384d}{constants\+::\+MAX\+\_\+\+GAME\+\_\+\+SPEED}} = 10
+\begin{DoxyCompactList}\small\item\em Maximum game speed (calculated from TICK\+\_\+\+INTERVAL and Level\+Controller.\+level\+Index) \end{DoxyCompactList}\item 
 const SDL\+\_\+\+Rect \mbox{\hyperlink{namespacedefault__positions_aefd941f758da1d5b74333bfef2c4bc3f}{default\+\_\+positions\+::player\+\_\+default\+\_\+pos}} \{10 $\ast$ \mbox{\hyperlink{GameVars_8h_a07ae61ed7dc31e9cddbdf9da244567c7}{TILESIZE}}, 20 $\ast$ \mbox{\hyperlink{GameVars_8h_a07ae61ed7dc31e9cddbdf9da244567c7}{TILESIZE}}\}
-\item 
+\begin{DoxyCompactList}\small\item\em Default position for the player. \end{DoxyCompactList}\item 
 const SDL\+\_\+\+Rect \mbox{\hyperlink{namespacedefault__positions_a387d267d0ad606e65fc372695fd9ac36}{default\+\_\+positions\+::blinky\+\_\+default\+\_\+pos}} \{\mbox{\hyperlink{GameVars_8h_a07ae61ed7dc31e9cddbdf9da244567c7}{TILESIZE}}, \mbox{\hyperlink{GameVars_8h_a07ae61ed7dc31e9cddbdf9da244567c7}{TILESIZE}}\}
-\item 
+\begin{DoxyCompactList}\small\item\em Default position for \mbox{\hyperlink{classBlinky}{Blinky}}. \end{DoxyCompactList}\item 
 const SDL\+\_\+\+Rect \mbox{\hyperlink{namespacedefault__positions_aac9bb82b0019061f8f72389993489a48}{default\+\_\+positions\+::inky\+\_\+default\+\_\+pos}} \{2 $\ast$ \mbox{\hyperlink{GameVars_8h_a07ae61ed7dc31e9cddbdf9da244567c7}{TILESIZE}}, \mbox{\hyperlink{GameVars_8h_a07ae61ed7dc31e9cddbdf9da244567c7}{TILESIZE}}\}
-\item 
+\begin{DoxyCompactList}\small\item\em Default position for \mbox{\hyperlink{classInky}{Inky}}. \end{DoxyCompactList}\item 
 const SDL\+\_\+\+Rect \mbox{\hyperlink{namespacedefault__positions_ab9e9262b8073c6c710401c1fadb293b2}{default\+\_\+positions\+::pinky\+\_\+default\+\_\+pos}} \{3 $\ast$ \mbox{\hyperlink{GameVars_8h_a07ae61ed7dc31e9cddbdf9da244567c7}{TILESIZE}}, \mbox{\hyperlink{GameVars_8h_a07ae61ed7dc31e9cddbdf9da244567c7}{TILESIZE}}\}
-\item 
+\begin{DoxyCompactList}\small\item\em Default position for \mbox{\hyperlink{classPinky}{Pinky}}. \end{DoxyCompactList}\item 
 const SDL\+\_\+\+Rect \mbox{\hyperlink{namespacedefault__positions_a79bb349cd5e9e464b92f03dc54636e8c}{default\+\_\+positions\+::clyde\+\_\+default\+\_\+pos}} \{4 $\ast$ \mbox{\hyperlink{GameVars_8h_a07ae61ed7dc31e9cddbdf9da244567c7}{TILESIZE}}, \mbox{\hyperlink{GameVars_8h_a07ae61ed7dc31e9cddbdf9da244567c7}{TILESIZE}}\}
-\item 
+\begin{DoxyCompactList}\small\item\em Default position for \mbox{\hyperlink{classClyde}{Clyde}}. \end{DoxyCompactList}\item 
+const SDL\+\_\+\+Rect \mbox{\hyperlink{namespacedefault__positions_abaafb2acd2a0b5a372179d9d776c9af0}{default\+\_\+positions\+::background\+\_\+default\+\_\+pos}} = \{0, 0, 672, 864\}
+\begin{DoxyCompactList}\small\item\em Default position for the background sprite. \end{DoxyCompactList}\item 
 const SDL\+\_\+\+Rect \mbox{\hyperlink{namespacedefault__positions_a0d919edb6c3550308a4933fe914b7f38}{default\+\_\+positions\+::global\+\_\+default\+\_\+pos}} \{-\/100, -\/100\}
-\item 
+\begin{DoxyCompactList}\small\item\em Default position for the global objects out of the view of the scene. \end{DoxyCompactList}\item 
 const int \mbox{\hyperlink{namespacedefault__variables_a8fc0c683db228ebc37a65897cfeb9452}{default\+\_\+variables\+::player\+\_\+default\+\_\+health}} = 2
-\item 
-const int \mbox{\hyperlink{namespacedefault__variables_a41d5aa45c455fecb7976b86cc3b9b9c4}{default\+\_\+variables\+::reset\+\_\+level\+\_\+time}} = 1000
-\item 
+\begin{DoxyCompactList}\small\item\em Default health for the player. \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{namespacedefault__variables_a41d5aa45c455fecb7976b86cc3b9b9c4}{default\+\_\+variables\+::reset\+\_\+level\+\_\+time}} = 2000
+\begin{DoxyCompactList}\small\item\em Default time to reset level. \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{namespacedefault__variables_a2dcfdd9f091919deb41507bcd4f2e0bd}{default\+\_\+variables\+::reset\+\_\+ghost\+\_\+time}} = 10000
+\begin{DoxyCompactList}\small\item\em Default time to reset ghost to chase mode. \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{namespacedefault__variables_ac2698590ddcae021c4cabb2d26fd4aeb}{default\+\_\+variables\+::time\+\_\+to\+\_\+blink\+\_\+white}} = 3000
+\begin{DoxyCompactList}\small\item\em Default time to blink white while in Frightened mode. \end{DoxyCompactList}\item 
 const SDL\+\_\+\+Rect \mbox{\hyperlink{namespacedefault__sprites_ad8d109ff653dabb6d975530dbd5735f1}{default\+\_\+sprites\+::player\+\_\+sp\+\_\+default}} \{4, 90, 14, 14\}
 \begin{DoxyCompactList}\small\item\em Default sprite for the player. \end{DoxyCompactList}\item 
 const SDL\+\_\+\+Rect \mbox{\hyperlink{namespacedefault__sprites_a88a99e90e9e910093b4f1f9ecd61c96e}{default\+\_\+sprites\+::blinky\+\_\+sp\+\_\+default}} = \{4, 124, 14, 14\}
@@ -75,7 +93,9 @@ const SDL\+\_\+\+Rect \mbox{\hyperlink{namespacedefault__sprites_aa2edaee3bf4103
 const SDL\+\_\+\+Rect \mbox{\hyperlink{namespacedefault__sprites_a241a00e866ad24dae486a8485f9f5077}{default\+\_\+sprites\+::dot\+\_\+big\+\_\+default}} = \{9, 79, 7, 7\}
 \begin{DoxyCompactList}\small\item\em Default sprite for \mbox{\hyperlink{classDot}{Dot}} Big. \end{DoxyCompactList}\item 
 const SDL\+\_\+\+Rect \mbox{\hyperlink{namespacedefault__sprites_aa3a770aed8e114e47ae37a93d0827a5b}{default\+\_\+sprites\+::empty\+\_\+black\+\_\+sp}} = \{184, 103, 16, 16\}
-\begin{DoxyCompactList}\small\item\em empty black sprite. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em empty black sprite. \end{DoxyCompactList}\item 
+const SDL\+\_\+\+Rect \mbox{\hyperlink{namespacedefault__sprites_a47f15c0b563ad804300099ae2e8d60b7}{default\+\_\+sprites\+::background\+\_\+sp\+\_\+default}} = \{370, 4, 166, 214\}
+\begin{DoxyCompactList}\small\item\em Default sprite for the background. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Macro Definition Documentation}
@@ -83,11 +103,21 @@ const SDL\+\_\+\+Rect \mbox{\hyperlink{namespacedefault__sprites_aa3a770aed8e114
 \index{GameVars.h@{GameVars.h}!ANIMATION\_DEFAULT\_SPEED@{ANIMATION\_DEFAULT\_SPEED}}
 \index{ANIMATION\_DEFAULT\_SPEED@{ANIMATION\_DEFAULT\_SPEED}!GameVars.h@{GameVars.h}}
 \doxysubsubsection{\texorpdfstring{ANIMATION\_DEFAULT\_SPEED}{ANIMATION\_DEFAULT\_SPEED}}
-{\footnotesize\ttfamily \#define ANIMATION\+\_\+\+DEFAULT\+\_\+\+SPEED~4}
+{\footnotesize\ttfamily \#define ANIMATION\+\_\+\+DEFAULT\+\_\+\+SPEED~30}
 
 
 
 Animation frame rate in frames per second. 
+
+\mbox{\Hypertarget{GameVars_8h_a0612cce02548528b046c5ac48abc187c}\label{GameVars_8h_a0612cce02548528b046c5ac48abc187c}} 
+\index{GameVars.h@{GameVars.h}!BIG\_DOT\_ANIMATION\_SPEED@{BIG\_DOT\_ANIMATION\_SPEED}}
+\index{BIG\_DOT\_ANIMATION\_SPEED@{BIG\_DOT\_ANIMATION\_SPEED}!GameVars.h@{GameVars.h}}
+\doxysubsubsection{\texorpdfstring{BIG\_DOT\_ANIMATION\_SPEED}{BIG\_DOT\_ANIMATION\_SPEED}}
+{\footnotesize\ttfamily \#define BIG\+\_\+\+DOT\+\_\+\+ANIMATION\+\_\+\+SPEED~5}
+
+
+
+Animation speed for the big dot. 
 
 \mbox{\Hypertarget{GameVars_8h_a3eaf2a67bc0733da34eafe5bbdc331bb}\label{GameVars_8h_a3eaf2a67bc0733da34eafe5bbdc331bb}} 
 \index{GameVars.h@{GameVars.h}!BIG\_DOT\_SCORE@{BIG\_DOT\_SCORE}}
@@ -149,6 +179,16 @@ Score awarded for eating a fruit.
 
 Time between fruit spawns. 
 
+\mbox{\Hypertarget{GameVars_8h_a21519ed25fbb324b61543a9226bfb76a}\label{GameVars_8h_a21519ed25fbb324b61543a9226bfb76a}} 
+\index{GameVars.h@{GameVars.h}!GHOST\_ANIMATION\_SPEED@{GHOST\_ANIMATION\_SPEED}}
+\index{GHOST\_ANIMATION\_SPEED@{GHOST\_ANIMATION\_SPEED}!GameVars.h@{GameVars.h}}
+\doxysubsubsection{\texorpdfstring{GHOST\_ANIMATION\_SPEED}{GHOST\_ANIMATION\_SPEED}}
+{\footnotesize\ttfamily \#define GHOST\+\_\+\+ANIMATION\+\_\+\+SPEED~10}
+
+
+
+Animation speed for the ghosts. 
+
 \mbox{\Hypertarget{GameVars_8h_a92e4e2e3d2a0ebf3dca7483b40bbb38d}\label{GameVars_8h_a92e4e2e3d2a0ebf3dca7483b40bbb38d}} 
 \index{GameVars.h@{GameVars.h}!MIN\_TIME\_TO\_SPAWN\_FRUIT@{MIN\_TIME\_TO\_SPAWN\_FRUIT}}
 \index{MIN\_TIME\_TO\_SPAWN\_FRUIT@{MIN\_TIME\_TO\_SPAWN\_FRUIT}!GameVars.h@{GameVars.h}}
@@ -158,6 +198,26 @@ Time between fruit spawns.
 
 
 Minimum time before a fruit can spawn. 
+
+\mbox{\Hypertarget{GameVars_8h_a9002621a825b2db74ab2228ddafdc3fe}\label{GameVars_8h_a9002621a825b2db74ab2228ddafdc3fe}} 
+\index{GameVars.h@{GameVars.h}!PLAYER\_ANIMATION\_SPEED@{PLAYER\_ANIMATION\_SPEED}}
+\index{PLAYER\_ANIMATION\_SPEED@{PLAYER\_ANIMATION\_SPEED}!GameVars.h@{GameVars.h}}
+\doxysubsubsection{\texorpdfstring{PLAYER\_ANIMATION\_SPEED}{PLAYER\_ANIMATION\_SPEED}}
+{\footnotesize\ttfamily \#define PLAYER\+\_\+\+ANIMATION\+\_\+\+SPEED~10}
+
+
+
+Animation speed for the player. 
+
+\mbox{\Hypertarget{GameVars_8h_affeed8338b036afd40f86a43a2ef4556}\label{GameVars_8h_affeed8338b036afd40f86a43a2ef4556}} 
+\index{GameVars.h@{GameVars.h}!PLAYER\_DEATH\_ANIMATION\_SPEED@{PLAYER\_DEATH\_ANIMATION\_SPEED}}
+\index{PLAYER\_DEATH\_ANIMATION\_SPEED@{PLAYER\_DEATH\_ANIMATION\_SPEED}!GameVars.h@{GameVars.h}}
+\doxysubsubsection{\texorpdfstring{PLAYER\_DEATH\_ANIMATION\_SPEED}{PLAYER\_DEATH\_ANIMATION\_SPEED}}
+{\footnotesize\ttfamily \#define PLAYER\+\_\+\+DEATH\+\_\+\+ANIMATION\+\_\+\+SPEED~5}
+
+
+
+Animation speed for the player death. 
 
 \mbox{\Hypertarget{GameVars_8h_a958c37bf3b24d674daab95749fe80f3d}\label{GameVars_8h_a958c37bf3b24d674daab95749fe80f3d}} 
 \index{GameVars.h@{GameVars.h}!SHOW\_FPS@{SHOW\_FPS}}
@@ -183,7 +243,7 @@ Score awarded for eating a small dot.
 \index{GameVars.h@{GameVars.h}!SMALL\_DOT\_SIZE@{SMALL\_DOT\_SIZE}}
 \index{SMALL\_DOT\_SIZE@{SMALL\_DOT\_SIZE}!GameVars.h@{GameVars.h}}
 \doxysubsubsection{\texorpdfstring{SMALL\_DOT\_SIZE}{SMALL\_DOT\_SIZE}}
-{\footnotesize\ttfamily \#define SMALL\+\_\+\+DOT\+\_\+\+SIZE~10}
+{\footnotesize\ttfamily \#define SMALL\+\_\+\+DOT\+\_\+\+SIZE~8}
 
 
 

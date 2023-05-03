@@ -76,39 +76,48 @@ $(function() {
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;chrono&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;SDL.h&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">using namespace </span>std::chrono;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classTimeController.html">   11</a></span>&#160;<span class="keyword">class </span><a class="code" href="classTimeController.html">TimeController</a> {</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classTimeController.html#a556cfa71086ae3fb76cf79d9da0056e4">   13</a></span>&#160;    <a class="code" href="classTimeController.html#a556cfa71086ae3fb76cf79d9da0056e4">TimeController</a>();</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classTimeController.html#a37807d7290bf862f563e1d6099b5c21b">   18</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classTimeController.html#a37807d7290bf862f563e1d6099b5c21b">tick_start</a>();</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classTimeController.html#a5745d2370d904222938a6e75df70b42d">   23</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classTimeController.html#a5745d2370d904222938a6e75df70b42d">tick_end</a>();</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classTimeController.html#abcb9b9aa7553f5ed5b39857d978787eb">   29</a></span>&#160;    Uint64 <a class="code" href="classTimeController.html#abcb9b9aa7553f5ed5b39857d978787eb">getElapsedTime</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classTimeController.html#a0bcf6f6698e14d5b90f37761cfe11154">   35</a></span>&#160;    Uint64 <a class="code" href="classTimeController.html#a0bcf6f6698e14d5b90f37761cfe11154">getLastFrameTime</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classTimeController.html#afd307036378553b94f5cd57cf6743bdf">   40</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classTimeController.html#afd307036378553b94f5cd57cf6743bdf">updateFPS</a>();</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    Uint64 elapsed_time; <span class="comment">// Elapsed time in milliseconds</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    Uint64 last_frame_time; <span class="comment">// Last frame time in milliseconds</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    Uint64 start;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    Uint64 next_time;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    Uint64 time_left() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;};</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//PAS_CMAN_TIMECONTROLLER_H</span></div>
-<div class="ttc" id="aclassTimeController_html"><div class="ttname"><a href="classTimeController.html">TimeController</a></div><div class="ttdef"><b>Definition:</b> TimeController.h:11</div></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="LevelController_8h.html">LevelController.h</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classTimeController.html">   14</a></span>&#160;<span class="keyword">class </span><a class="code" href="classTimeController.html">TimeController</a> {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classTimeController.html#ab93343c84a9b5dad28a77a6cd9beef31">   16</a></span>&#160;    <a class="code" href="classTimeController.html#ab93343c84a9b5dad28a77a6cd9beef31">TimeController</a>(shared_ptr&lt;LevelController&gt; lController);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classTimeController.html#a37807d7290bf862f563e1d6099b5c21b">   21</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classTimeController.html#a37807d7290bf862f563e1d6099b5c21b">tick_start</a>();</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classTimeController.html#a5745d2370d904222938a6e75df70b42d">   26</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classTimeController.html#a5745d2370d904222938a6e75df70b42d">tick_end</a>();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classTimeController.html#abcb9b9aa7553f5ed5b39857d978787eb">   32</a></span>&#160;    Uint64 <a class="code" href="classTimeController.html#abcb9b9aa7553f5ed5b39857d978787eb">getElapsedTime</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classTimeController.html#a0bcf6f6698e14d5b90f37761cfe11154">   38</a></span>&#160;    Uint64 <a class="code" href="classTimeController.html#a0bcf6f6698e14d5b90f37761cfe11154">getLastFrameTime</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classTimeController.html#afd307036378553b94f5cd57cf6743bdf">   43</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classTimeController.html#afd307036378553b94f5cd57cf6743bdf">updateFPS</a>();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    ulong elapsed_time; <span class="comment">// Elapsed time in milliseconds</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    ulong last_frame_time; <span class="comment">// Last frame time in milliseconds</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    Uint64 start;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    Uint64 next_time;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    chrono::time_point&lt;chrono::steady_clock&gt; last;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    shared_ptr&lt;LevelController&gt; levelController;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    Uint64 time_left() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    ulong getTimeSpeed();</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;};</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//PAS_CMAN_TIMECONTROLLER_H</span></div>
+<div class="ttc" id="aLevelController_8h_html"><div class="ttname"><a href="LevelController_8h.html">LevelController.h</a></div></div>
+<div class="ttc" id="aclassTimeController_html"><div class="ttname"><a href="classTimeController.html">TimeController</a></div><div class="ttdef"><b>Definition:</b> TimeController.h:14</div></div>
 <div class="ttc" id="aclassTimeController_html_a0bcf6f6698e14d5b90f37761cfe11154"><div class="ttname"><a href="classTimeController.html#a0bcf6f6698e14d5b90f37761cfe11154">TimeController::getLastFrameTime</a></div><div class="ttdeci">Uint64 getLastFrameTime() const</div></div>
 <div class="ttc" id="aclassTimeController_html_a37807d7290bf862f563e1d6099b5c21b"><div class="ttname"><a href="classTimeController.html#a37807d7290bf862f563e1d6099b5c21b">TimeController::tick_start</a></div><div class="ttdeci">void tick_start()</div></div>
-<div class="ttc" id="aclassTimeController_html_a556cfa71086ae3fb76cf79d9da0056e4"><div class="ttname"><a href="classTimeController.html#a556cfa71086ae3fb76cf79d9da0056e4">TimeController::TimeController</a></div><div class="ttdeci">TimeController()</div></div>
 <div class="ttc" id="aclassTimeController_html_a5745d2370d904222938a6e75df70b42d"><div class="ttname"><a href="classTimeController.html#a5745d2370d904222938a6e75df70b42d">TimeController::tick_end</a></div><div class="ttdeci">void tick_end()</div></div>
+<div class="ttc" id="aclassTimeController_html_ab93343c84a9b5dad28a77a6cd9beef31"><div class="ttname"><a href="classTimeController.html#ab93343c84a9b5dad28a77a6cd9beef31">TimeController::TimeController</a></div><div class="ttdeci">TimeController(shared_ptr&lt; LevelController &gt; lController)</div></div>
 <div class="ttc" id="aclassTimeController_html_abcb9b9aa7553f5ed5b39857d978787eb"><div class="ttname"><a href="classTimeController.html#abcb9b9aa7553f5ed5b39857d978787eb">TimeController::getElapsedTime</a></div><div class="ttdeci">Uint64 getElapsedTime() const</div></div>
 <div class="ttc" id="aclassTimeController_html_afd307036378553b94f5cd57cf6743bdf"><div class="ttname"><a href="classTimeController.html#afd307036378553b94f5cd57cf6743bdf">TimeController::updateFPS</a></div><div class="ttdeci">void updateFPS()</div></div>
 </div><!-- fragment --></div><!-- contents -->

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['left_473',['LEFT',['../MovableGameObject_8h.html#a00ec4eba48da32d6cbdf827185fd3d34a684d325a7303f52e64011467ff5c5758',1,'MovableGameObject.h']]]
+  ['frightened_546',['FRIGHTENED',['../Ghost_8h.html#a46c8a310cf4c094f8c80e1cb8dc1f911a96973e305544bd55d493cc425d4dfe3c',1,'Ghost.h']]]
 ];

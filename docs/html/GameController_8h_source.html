@@ -84,58 +84,66 @@ $(function() {
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="GhostController_8h.html">GhostController.h</a>&quot;</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="TimeController_8h.html">TimeController.h</a>&quot;</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="PauseController_8h.html">PauseController.h</a>&quot;</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classGameController.html">   19</a></span>&#160;<span class="keyword">class </span><a class="code" href="classGameController.html">GameController</a> {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classGameController.html#a7d72ff3f639acb68578e20fee3649b42">   24</a></span>&#160;    <a class="code" href="classGameController.html#a7d72ff3f639acb68578e20fee3649b42">GameController</a>();</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classGameController.html#a4c37b467a7df4d3ecb43d92391dc0c73">   26</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classGameController.html#a4c37b467a7df4d3ecb43d92391dc0c73">exit</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="GameBackground_8h.html">header/model/GameBackground.h</a>&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="LevelController_8h.html">LevelController.h</a>&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classGameController.html">   21</a></span>&#160;<span class="keyword">class </span><a class="code" href="classGameController.html">GameController</a> {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classGameController.html#a7d72ff3f639acb68578e20fee3649b42">   26</a></span>&#160;    <a class="code" href="classGameController.html#a7d72ff3f639acb68578e20fee3649b42">GameController</a>();</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classGameController.html#a0cfefdd78ee1b2b61ad1050b3bedf49b">   28</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classGameController.html#a0cfefdd78ee1b2b61ad1050b3bedf49b">update</a>();</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classGameController.html#a4c37b467a7df4d3ecb43d92391dc0c73">   28</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classGameController.html#a4c37b467a7df4d3ecb43d92391dc0c73">exit</a> = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classGameController.html#a8f30ab3ff471ac0a5c8b88dc7fea45f4">   33</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classGameController.html#a8f30ab3ff471ac0a5c8b88dc7fea45f4">startGame</a>();</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classGameController.html#a0cfefdd78ee1b2b61ad1050b3bedf49b">   33</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classGameController.html#a0cfefdd78ee1b2b61ad1050b3bedf49b">update</a>();</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classGameController.html#a2abf715feeb9d42a16088356e69935b9">   38</a></span>&#160;    std::function&lt;void()&gt; <a class="code" href="classGameController.html#a2abf715feeb9d42a16088356e69935b9">resetGame</a>();</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classGameController.html#a8f30ab3ff471ac0a5c8b88dc7fea45f4">   38</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classGameController.html#a8f30ab3ff471ac0a5c8b88dc7fea45f4">startGame</a>();</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">bool</span> hasQuit() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    shared_ptr&lt;CollisionController&gt; collisionController;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    shared_ptr&lt;PlayerController&gt; playerController;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    shared_ptr&lt;GhostController&gt; ghostController;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    shared_ptr&lt;SDLViewController&gt; sdlViewController;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    shared_ptr&lt;AnimationController&gt; animationController;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    shared_ptr&lt;DotController&gt; dotController;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    shared_ptr&lt;FruitController&gt; fruitController;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    shared_ptr&lt;TextViewController&gt; textViewController;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    shared_ptr&lt;ScoreController&gt; scoreController;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    shared_ptr&lt;TimeController&gt; timeController;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    shared_ptr&lt;PauseController&gt; pauseController;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    shared_ptr&lt;DataController&gt; dataController;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    shared_ptr&lt;Player&gt; player;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    shared_ptr&lt;Blinky&gt; blinky;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    shared_ptr&lt;Pinky&gt; pinky;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    shared_ptr&lt;Inky&gt; inky;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    shared_ptr&lt;Clyde&gt; clyde;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;};</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// GAMECONTROLLER_H</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classGameController.html#ae8b3d0c378158447b303acb43ce9d13e">   43</a></span>&#160;    std::function&lt;void(<span class="keywordtype">bool</span>)&gt; <a class="code" href="classGameController.html#ae8b3d0c378158447b303acb43ce9d13e">resetGame</a>();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">bool</span> hasQuit() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    shared_ptr&lt;CollisionController&gt; collisionController;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    shared_ptr&lt;PlayerController&gt; playerController;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    shared_ptr&lt;GhostController&gt; ghostController;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    shared_ptr&lt;SDLViewController&gt; sdlViewController;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    shared_ptr&lt;AnimationController&gt; animationController;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    shared_ptr&lt;DotController&gt; dotController;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    shared_ptr&lt;FruitController&gt; fruitController;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    shared_ptr&lt;TextViewController&gt; textViewController;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    shared_ptr&lt;ScoreController&gt; scoreController;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    shared_ptr&lt;TimeController&gt; timeController;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    shared_ptr&lt;PauseController&gt; pauseController;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    shared_ptr&lt;DataController&gt; dataController;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    shared_ptr&lt;LevelController&gt; levelController;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    shared_ptr&lt;Player&gt; player;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    shared_ptr&lt;Blinky&gt; blinky;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    shared_ptr&lt;Pinky&gt; pinky;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    shared_ptr&lt;Inky&gt; inky;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    shared_ptr&lt;Clyde&gt; clyde;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    shared_ptr&lt;GameBackground&gt; gameBackground;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keyword">function</span>&lt;void(<span class="keywordtype">bool</span>)&gt; gameOver();</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;};</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// GAMECONTROLLER_H</span></div>
 <div class="ttc" id="aAnimationController_8h_html"><div class="ttname"><a href="AnimationController_8h.html">AnimationController.h</a></div><div class="ttdoc">The header file for the AnimationController class, which controls the animation logic of the game.</div></div>
 <div class="ttc" id="aDotController_8h_html"><div class="ttname"><a href="DotController_8h.html">DotController.h</a></div><div class="ttdoc">This file contains the declaration of the DotController class.</div></div>
 <div class="ttc" id="aFruitController_8h_html"><div class="ttname"><a href="FruitController_8h.html">FruitController.h</a></div></div>
+<div class="ttc" id="aGameBackground_8h_html"><div class="ttname"><a href="GameBackground_8h.html">GameBackground.h</a></div></div>
 <div class="ttc" id="aGhostController_8h_html"><div class="ttname"><a href="GhostController_8h.html">GhostController.h</a></div></div>
 <div class="ttc" id="aGhost_8h_html"><div class="ttname"><a href="Ghost_8h.html">Ghost.h</a></div></div>
+<div class="ttc" id="aLevelController_8h_html"><div class="ttname"><a href="LevelController_8h.html">LevelController.h</a></div></div>
 <div class="ttc" id="aPauseController_8h_html"><div class="ttname"><a href="PauseController_8h.html">PauseController.h</a></div><div class="ttdoc">This class handles pausing and resuming of the game.</div></div>
 <div class="ttc" id="aPlayerController_8h_html"><div class="ttname"><a href="PlayerController_8h.html">PlayerController.h</a></div></div>
 <div class="ttc" id="aSDLViewController_8h_html"><div class="ttname"><a href="SDLViewController_8h.html">SDLViewController.h</a></div><div class="ttdoc">Header file for SDLViewController class, which manages connections to SDL library to manage the view ...</div></div>
 <div class="ttc" id="aTimeController_8h_html"><div class="ttname"><a href="TimeController_8h.html">TimeController.h</a></div></div>
-<div class="ttc" id="aclassGameController_html"><div class="ttname"><a href="classGameController.html">GameController</a></div><div class="ttdef"><b>Definition:</b> GameController.h:19</div></div>
-<div class="ttc" id="aclassGameController_html_a0cfefdd78ee1b2b61ad1050b3bedf49b"><div class="ttname"><a href="classGameController.html#a0cfefdd78ee1b2b61ad1050b3bedf49b">GameController::update</a></div><div class="ttdeci">void update()</div></div>
-<div class="ttc" id="aclassGameController_html_a2abf715feeb9d42a16088356e69935b9"><div class="ttname"><a href="classGameController.html#a2abf715feeb9d42a16088356e69935b9">GameController::resetGame</a></div><div class="ttdeci">std::function&lt; void()&gt; resetGame()</div></div>
-<div class="ttc" id="aclassGameController_html_a4c37b467a7df4d3ecb43d92391dc0c73"><div class="ttname"><a href="classGameController.html#a4c37b467a7df4d3ecb43d92391dc0c73">GameController::exit</a></div><div class="ttdeci">bool exit</div><div class="ttdef"><b>Definition:</b> GameController.h:26</div></div>
+<div class="ttc" id="aclassGameController_html"><div class="ttname"><a href="classGameController.html">GameController</a></div><div class="ttdef"><b>Definition:</b> GameController.h:21</div></div>
+<div class="ttc" id="aclassGameController_html_a0cfefdd78ee1b2b61ad1050b3bedf49b"><div class="ttname"><a href="classGameController.html#a0cfefdd78ee1b2b61ad1050b3bedf49b">GameController::update</a></div><div class="ttdeci">void update()</div><div class="ttdoc">The function called by the game loop that handles the logic of the game.</div></div>
+<div class="ttc" id="aclassGameController_html_a4c37b467a7df4d3ecb43d92391dc0c73"><div class="ttname"><a href="classGameController.html#a4c37b467a7df4d3ecb43d92391dc0c73">GameController::exit</a></div><div class="ttdeci">bool exit</div><div class="ttdef"><b>Definition:</b> GameController.h:28</div></div>
 <div class="ttc" id="aclassGameController_html_a7d72ff3f639acb68578e20fee3649b42"><div class="ttname"><a href="classGameController.html#a7d72ff3f639acb68578e20fee3649b42">GameController::GameController</a></div><div class="ttdeci">GameController()</div></div>
 <div class="ttc" id="aclassGameController_html_a8f30ab3ff471ac0a5c8b88dc7fea45f4"><div class="ttname"><a href="classGameController.html#a8f30ab3ff471ac0a5c8b88dc7fea45f4">GameController::startGame</a></div><div class="ttdeci">void startGame()</div></div>
+<div class="ttc" id="aclassGameController_html_ae8b3d0c378158447b303acb43ce9d13e"><div class="ttname"><a href="classGameController.html#ae8b3d0c378158447b303acb43ce9d13e">GameController::resetGame</a></div><div class="ttdeci">std::function&lt; void(bool)&gt; resetGame()</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

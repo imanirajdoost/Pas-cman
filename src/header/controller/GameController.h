@@ -27,6 +27,9 @@ Main game controller that initializes and manages all other controllers and obje
 
     bool exit = false;
 
+    /**
+     * @brief The function called by the game loop that handles the logic of the game.
+     */
     void update();
 
     /**

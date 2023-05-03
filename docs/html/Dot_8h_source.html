@@ -77,16 +77,27 @@ $(function() {
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="StaticGameObject_8h.html">header/model/StaticGameObject.h</a>&quot;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="EatableComponent_8h.html">header/model/component/EatableComponent.h</a>&quot;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="classDot.html">   10</a></span>&#160;<span class="keyword">class </span><a class="code" href="classDot.html">Dot</a> : <span class="keyword">public</span> <a class="code" href="classStaticGameObject.html">StaticGameObject</a>, <span class="keyword">public</span> <a class="code" href="classEatableComponent.html">EatableComponent</a> {</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classDot.html#a1de0408a16ffbccad057952afd9c852d">   15</a></span>&#160;    <a class="code" href="classDot.html#a1de0408a16ffbccad057952afd9c852d">Dot</a>();</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;};</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//PAS_CMAN_DOT_H</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="Dot_8h.html#ad32f47e8222a48927ca77a0920670c2e">    7</a></span>&#160;<span class="keyword">enum class</span> <a class="code" href="Dot_8h.html#ad32f47e8222a48927ca77a0920670c2e">DotType</a> {</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <a class="code" href="Dot_8h.html#ad32f47e8222a48927ca77a0920670c2ea9b9c17e13f0e3dc9860a26e08b59b2a7">SMALL</a>,</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <a class="code" href="Dot_8h.html#ad32f47e8222a48927ca77a0920670c2eaa60c6c694491d75b439073b8cb05b139">BIG</a></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;};</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classDot.html">   15</a></span>&#160;<span class="keyword">class </span><a class="code" href="classDot.html">Dot</a> : <span class="keyword">public</span> <a class="code" href="classStaticGameObject.html">StaticGameObject</a>, <span class="keyword">public</span> <a class="code" href="classEatableComponent.html">EatableComponent</a> {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classDot.html#a1de0408a16ffbccad057952afd9c852d">   20</a></span>&#160;    <a class="code" href="classDot.html#a1de0408a16ffbccad057952afd9c852d">Dot</a>();</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classDot.html#ac958dfeec1435b5d0a8da90e074111d0">   26</a></span>&#160;    <span class="keyword">virtual</span> <a class="code" href="Dot_8h.html#ad32f47e8222a48927ca77a0920670c2e">DotType</a> <a class="code" href="classDot.html#ac958dfeec1435b5d0a8da90e074111d0">getDotType</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;};</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//PAS_CMAN_DOT_H</span></div>
+<div class="ttc" id="aDot_8h_html_ad32f47e8222a48927ca77a0920670c2e"><div class="ttname"><a href="Dot_8h.html#ad32f47e8222a48927ca77a0920670c2e">DotType</a></div><div class="ttdeci">DotType</div><div class="ttdef"><b>Definition:</b> Dot.h:7</div></div>
+<div class="ttc" id="aDot_8h_html_ad32f47e8222a48927ca77a0920670c2ea9b9c17e13f0e3dc9860a26e08b59b2a7"><div class="ttname"><a href="Dot_8h.html#ad32f47e8222a48927ca77a0920670c2ea9b9c17e13f0e3dc9860a26e08b59b2a7">DotType::SMALL</a></div><div class="ttdeci">@ SMALL</div></div>
+<div class="ttc" id="aDot_8h_html_ad32f47e8222a48927ca77a0920670c2eaa60c6c694491d75b439073b8cb05b139"><div class="ttname"><a href="Dot_8h.html#ad32f47e8222a48927ca77a0920670c2eaa60c6c694491d75b439073b8cb05b139">DotType::BIG</a></div><div class="ttdeci">@ BIG</div></div>
 <div class="ttc" id="aEatableComponent_8h_html"><div class="ttname"><a href="EatableComponent_8h.html">EatableComponent.h</a></div><div class="ttdoc">This class is placed on all objects that are eatable by Pacman (such as dots on the screen or fruits ...</div></div>
 <div class="ttc" id="aStaticGameObject_8h_html"><div class="ttname"><a href="StaticGameObject_8h.html">StaticGameObject.h</a></div></div>
-<div class="ttc" id="aclassDot_html"><div class="ttname"><a href="classDot.html">Dot</a></div><div class="ttdef"><b>Definition:</b> Dot.h:10</div></div>
+<div class="ttc" id="aclassDot_html"><div class="ttname"><a href="classDot.html">Dot</a></div><div class="ttdef"><b>Definition:</b> Dot.h:15</div></div>
 <div class="ttc" id="aclassDot_html_a1de0408a16ffbccad057952afd9c852d"><div class="ttname"><a href="classDot.html#a1de0408a16ffbccad057952afd9c852d">Dot::Dot</a></div><div class="ttdeci">Dot()</div></div>
+<div class="ttc" id="aclassDot_html_ac958dfeec1435b5d0a8da90e074111d0"><div class="ttname"><a href="classDot.html#ac958dfeec1435b5d0a8da90e074111d0">Dot::getDotType</a></div><div class="ttdeci">virtual DotType getDotType() const =0</div></div>
 <div class="ttc" id="aclassEatableComponent_html"><div class="ttname"><a href="classEatableComponent.html">EatableComponent</a></div><div class="ttdef"><b>Definition:</b> EatableComponent.h:11</div></div>
 <div class="ttc" id="aclassStaticGameObject_html"><div class="ttname"><a href="classStaticGameObject.html">StaticGameObject</a></div><div class="ttdoc">Base class for static game objects like dots and fruits.</div><div class="ttdef"><b>Definition:</b> StaticGameObject.h:9</div></div>
 </div><!-- fragment --></div><!-- contents -->

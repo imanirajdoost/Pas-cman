@@ -83,14 +83,14 @@ $(function() {
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="PauseController_8h.html">PauseController.h</a>&quot;</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="TextViewController_8h.html">header/view/TextViewController.h</a>&quot;</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ScoreController_8h.html">ScoreController.h</a>&quot;</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">using namespace </span>std;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classDotController.html">   24</a></span>&#160;<span class="keyword">class </span><a class="code" href="classDotController.html">DotController</a> {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classDotController.html#afced0e67bd19f61e4beda9f9cac81fe3">   32</a></span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classDotController.html#afced0e67bd19f61e4beda9f9cac81fe3">DotController</a>(shared_ptr&lt;PauseController&gt; pController, shared_ptr&lt;TextViewController&gt; tController,</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                           shared_ptr&lt;ScoreController&gt; sController);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="GhostController_8h.html">GhostController.h</a>&quot;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classDotController.html">   25</a></span>&#160;<span class="keyword">class </span><a class="code" href="classDotController.html">DotController</a>: <a class="code" href="classIResettable.html">IResettable</a> {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classDotController.html#af8a4e8145f81aa5ac3b86d64e1002099">   33</a></span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classDotController.html#af8a4e8145f81aa5ac3b86d64e1002099">DotController</a>(std::function&lt;<span class="keywordtype">void</span>(<span class="keywordtype">bool</span>)&gt; _gameOverFunction, shared_ptr&lt;GhostController&gt; gController);</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
 <div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classDotController.html#aa1530ea658bce9f5f34706290df748fa">   38</a></span>&#160;    vector&lt;shared_ptr&lt;Dot&gt;&gt; <a class="code" href="classDotController.html#aa1530ea658bce9f5f34706290df748fa">dots</a>;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
@@ -100,45 +100,48 @@ $(function() {
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
 <div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="classDotController.html#a3f99b80b8d7126877f50af519663da82">   60</a></span>&#160;    shared_ptr&lt;DotBig&gt; <a class="code" href="classDotController.html#a3f99b80b8d7126877f50af519663da82">spawnDotBig</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y);</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="classDotController.html#a35dd6015736734be62a678e933709aea">   67</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classDotController.html#a35dd6015736734be62a678e933709aea">deleteDot</a>(<span class="keyword">const</span> <a class="code" href="classDot.html">Dot</a> &amp;dot);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="classDotController.html#a23fae90e998a8d72539c6073bbd8bdeb">   75</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classDotController.html#a23fae90e998a8d72539c6073bbd8bdeb">isBigDot</a>(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    shared_ptr&lt;PauseController&gt; pauseController;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    shared_ptr&lt;TextViewController&gt; textViewController;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    shared_ptr&lt;ScoreController&gt; scoreController;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordtype">short</span> dotIndex = 0;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> bigDotPositions[4][2] = {</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            {3,  1},</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            {3,  19},</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            {20, 1},</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            {20, 19}</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    };</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;};</div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="classDotController.html#a0ade0c153ca53f9c23ccbb07d4b6396e">   66</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classDotController.html#a0ade0c153ca53f9c23ccbb07d4b6396e">deleteDot</a>(<span class="keyword">const</span> <a class="code" href="classDot.html">Dot</a> &amp;dot);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="classDotController.html#a23fae90e998a8d72539c6073bbd8bdeb">   74</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classDotController.html#a23fae90e998a8d72539c6073bbd8bdeb">isBigDot</a>(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="classDotController.html#aa27ec3ebe40db20ce95c6f0785379c64">   79</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classDotController.html#aa27ec3ebe40db20ce95c6f0785379c64">reset_state</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    shared_ptr&lt;GhostController&gt; ghostController;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    std::function&lt;void(<span class="keywordtype">bool</span>)&gt; gameOverFunction;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordtype">short</span> dotIndex = 0;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> bigDotPositions[4][2] = {</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            {3,  1},</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            {3,  19},</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            {20, 1},</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            {20, 19}</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    };</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;};</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//PAS_CMAN_DOTCONTROLLER_H</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//PAS_CMAN_DOTCONTROLLER_H</span></div>
 <div class="ttc" id="aDotBig_8h_html"><div class="ttname"><a href="DotBig_8h.html">DotBig.h</a></div></div>
 <div class="ttc" id="aDotSmall_8h_html"><div class="ttname"><a href="DotSmall_8h.html">DotSmall.h</a></div><div class="ttdoc">The header file for the DotSmall class, which represents the small dots that Pacman can eat.</div></div>
 <div class="ttc" id="aEatableComponent_8h_html"><div class="ttname"><a href="EatableComponent_8h.html">EatableComponent.h</a></div><div class="ttdoc">This class is placed on all objects that are eatable by Pacman (such as dots on the screen or fruits ...</div></div>
+<div class="ttc" id="aGhostController_8h_html"><div class="ttname"><a href="GhostController_8h.html">GhostController.h</a></div></div>
 <div class="ttc" id="aPauseController_8h_html"><div class="ttname"><a href="PauseController_8h.html">PauseController.h</a></div><div class="ttdoc">This class handles pausing and resuming of the game.</div></div>
 <div class="ttc" id="aScoreController_8h_html"><div class="ttname"><a href="ScoreController_8h.html">ScoreController.h</a></div><div class="ttdoc">A class responsible for managing the player's score and updating the text view.</div></div>
 <div class="ttc" id="aTextViewController_8h_html"><div class="ttname"><a href="TextViewController_8h.html">TextViewController.h</a></div></div>
-<div class="ttc" id="aclassDotController_html"><div class="ttname"><a href="classDotController.html">DotController</a></div><div class="ttdoc">Manages the creation, deletion and tracking of Dots in the game.</div><div class="ttdef"><b>Definition:</b> DotController.h:24</div></div>
+<div class="ttc" id="aclassDotController_html"><div class="ttname"><a href="classDotController.html">DotController</a></div><div class="ttdoc">Manages the creation, deletion and tracking of Dots in the game.</div><div class="ttdef"><b>Definition:</b> DotController.h:25</div></div>
+<div class="ttc" id="aclassDotController_html_a0ade0c153ca53f9c23ccbb07d4b6396e"><div class="ttname"><a href="classDotController.html#a0ade0c153ca53f9c23ccbb07d4b6396e">DotController::deleteDot</a></div><div class="ttdeci">void deleteDot(const Dot &amp;dot)</div><div class="ttdoc">Deletes the given Dot object from the dots vector.</div></div>
 <div class="ttc" id="aclassDotController_html_a23fae90e998a8d72539c6073bbd8bdeb"><div class="ttname"><a href="classDotController.html#a23fae90e998a8d72539c6073bbd8bdeb">DotController::isBigDot</a></div><div class="ttdeci">bool isBigDot(int i, int j)</div><div class="ttdoc">Checks if a Big Dot exists at the given position.</div></div>
-<div class="ttc" id="aclassDotController_html_a35dd6015736734be62a678e933709aea"><div class="ttname"><a href="classDotController.html#a35dd6015736734be62a678e933709aea">DotController::deleteDot</a></div><div class="ttdeci">bool deleteDot(const Dot &amp;dot)</div><div class="ttdoc">Deletes the given Dot object from the dots vector.</div></div>
 <div class="ttc" id="aclassDotController_html_a3f99b80b8d7126877f50af519663da82"><div class="ttname"><a href="classDotController.html#a3f99b80b8d7126877f50af519663da82">DotController::spawnDotBig</a></div><div class="ttdeci">shared_ptr&lt; DotBig &gt; spawnDotBig(int x, int y)</div><div class="ttdoc">Spawns a DotBig object at the given position.</div></div>
 <div class="ttc" id="aclassDotController_html_a55dc40b0b1cf4fa8d436d25baa07786f"><div class="ttname"><a href="classDotController.html#a55dc40b0b1cf4fa8d436d25baa07786f">DotController::spawnDotSmall</a></div><div class="ttdeci">shared_ptr&lt; DotSmall &gt; spawnDotSmall(int x, int y)</div><div class="ttdoc">Spawns a DotSmall object at the given position.</div></div>
 <div class="ttc" id="aclassDotController_html_a8ad3260543faed76259eea94bc280ec3"><div class="ttname"><a href="classDotController.html#a8ad3260543faed76259eea94bc280ec3">DotController::spawnDotObjects</a></div><div class="ttdeci">vector&lt; shared_ptr&lt; Dot &gt; &gt; spawnDotObjects()</div><div class="ttdoc">Spawns all the Dot objects in the game map.</div></div>
 <div class="ttc" id="aclassDotController_html_aa1530ea658bce9f5f34706290df748fa"><div class="ttname"><a href="classDotController.html#aa1530ea658bce9f5f34706290df748fa">DotController::dots</a></div><div class="ttdeci">vector&lt; shared_ptr&lt; Dot &gt; &gt; dots</div><div class="ttdoc">A vector to store all the Dot instances.</div><div class="ttdef"><b>Definition:</b> DotController.h:38</div></div>
-<div class="ttc" id="aclassDotController_html_afced0e67bd19f61e4beda9f9cac81fe3"><div class="ttname"><a href="classDotController.html#afced0e67bd19f61e4beda9f9cac81fe3">DotController::DotController</a></div><div class="ttdeci">DotController(shared_ptr&lt; PauseController &gt; pController, shared_ptr&lt; TextViewController &gt; tController, shared_ptr&lt; ScoreController &gt; sController)</div><div class="ttdoc">Constructor for the DotController class.</div></div>
-<div class="ttc" id="aclassDot_html"><div class="ttname"><a href="classDot.html">Dot</a></div><div class="ttdef"><b>Definition:</b> Dot.h:10</div></div>
+<div class="ttc" id="aclassDotController_html_aa27ec3ebe40db20ce95c6f0785379c64"><div class="ttname"><a href="classDotController.html#aa27ec3ebe40db20ce95c6f0785379c64">DotController::reset_state</a></div><div class="ttdeci">void reset_state() override</div><div class="ttdoc">Resets the state of the DotController.</div></div>
+<div class="ttc" id="aclassDotController_html_af8a4e8145f81aa5ac3b86d64e1002099"><div class="ttname"><a href="classDotController.html#af8a4e8145f81aa5ac3b86d64e1002099">DotController::DotController</a></div><div class="ttdeci">DotController(std::function&lt; void(bool)&gt; _gameOverFunction, shared_ptr&lt; GhostController &gt; gController)</div><div class="ttdoc">Constructor for the DotController class.</div></div>
+<div class="ttc" id="aclassDot_html"><div class="ttname"><a href="classDot.html">Dot</a></div><div class="ttdef"><b>Definition:</b> Dot.h:15</div></div>
+<div class="ttc" id="aclassIResettable_html"><div class="ttname"><a href="classIResettable.html">IResettable</a></div><div class="ttdoc">The IResettable interface, which is implemented by classes that need to be reset when the game is res...</div><div class="ttdef"><b>Definition:</b> IResettable.h:8</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

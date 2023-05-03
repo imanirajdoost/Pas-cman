@@ -34,6 +34,9 @@ public:
      */
     GameObject(const string &newName, const vector<SDL_Rect> &sps, bool _isAnimated, SDL_Rect initPos);
 
+    /**
+     * @brief resets the state of the object
+     */
     void reset_state() override;
 
 protected:

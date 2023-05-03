@@ -22,7 +22,7 @@ Collaboration diagram for Game\+Object\+:
 \mbox{\hyperlink{classGameObject_aa3d1ca8270638271624d78b5c3c0aca2}{Game\+Object}} (const string \&new\+Name, const vector$<$ SDL\+\_\+\+Rect $>$ \&sps, bool \+\_\+is\+Animated, SDL\+\_\+\+Rect init\+Pos)
 \begin{DoxyCompactList}\small\item\em Constructor for \mbox{\hyperlink{classGameObject}{Game\+Object}} with animation sprites. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classGameObject_a84fa557ccf95f12678f0f2992b707fda}{reset\+\_\+state}} () override
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em resets the state of the object \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -96,11 +96,15 @@ Constructor for \mbox{\hyperlink{classGameObject}{Game\+Object}} with animation 
 
 
 
+resets the state of the object 
+
+
+
 Implements \mbox{\hyperlink{classIResettable_a8181b1aa3a2f2220aa846b3dee81ac28}{IResettable}}.
 
 
 
-Reimplemented in \mbox{\hyperlink{classPlayer_ad43d75b1395998c1a1eea44b9948f1c9}{Player}}, and \mbox{\hyperlink{classMovableGameObject_adf39fbbae3476fd1d5e74b9ae6c97717}{Movable\+Game\+Object}}.
+Reimplemented in \mbox{\hyperlink{classPlayer_ad43d75b1395998c1a1eea44b9948f1c9}{Player}}, \mbox{\hyperlink{classMovableGameObject_adf39fbbae3476fd1d5e74b9ae6c97717}{Movable\+Game\+Object}}, and \mbox{\hyperlink{classGhost_ab74ef78e9635730def798ec5a5163cd6}{Ghost}}.
 
 
 
