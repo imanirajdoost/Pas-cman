@@ -1,17 +1,18 @@
-//
-// Created by iman on 04/04/23.
-//
-
+#include <iostream>
 #include "header/controller/GhostController.h"
 #include "header/GameVars.h"
 
 void GhostController::tick() {
 
     if(getGhostsMode() == Mode::FRIGHTENED) {
-        elapedTime += timeController->getElapsedTime();
+        elapedTime += timeController->getLastFrameTime();
+
+        std::cout << "elapedTime: " << elapedTime << std::endl;
 
         if(elapedTime > default_variables::reset_ghost_time - default_variables::time_to_blink_white)
             setAnimation("afraid_white");
+        else
+            setAnimation("afraid");
 
         if(elapedTime > default_variables::reset_ghost_time)
             resetGhostMode();
@@ -72,6 +73,7 @@ shared_ptr<vector<shared_ptr<Ghost>>> GhostController::getAllGhosts() {
 
 void GhostController::changeMode(Mode mode) {
     auto ghosts = getAllGhosts();
+    elapedTime = 0;
 
     // set mode for all ghosts
     for (auto &ghost: *ghosts) {

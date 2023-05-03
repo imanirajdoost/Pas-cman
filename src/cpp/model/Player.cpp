@@ -95,10 +95,10 @@ void Player::controlMove(CollisionController& collisionController) {
     SDL_Rect currentRect = collisionController.getRectAt(rect);
     SDL_Rect nextStep = getNextStepRect(direction);
 
-    if (moveIntent == direction && nextCol.getType() != MTYPE::WALL) {
+    if (moveIntent == direction && (nextCol.getType() != MTYPE::WALL && nextCol.getType() != MTYPE::DOOR)) {
         setNextPos(Map::map, direction);
         shouldMove = true;
-    } else if (moveIntent == direction && nextCol.getType() == MTYPE::WALL) {
+    } else if (moveIntent == direction && (nextCol.getType() == MTYPE::WALL || nextCol.getType() == MTYPE::DOOR)) {
         if (collisionController.hasCollision(nextStep, nextCol.getRect())) {
             shouldMove = false;
             resetNextPos();
@@ -106,15 +106,15 @@ void Player::controlMove(CollisionController& collisionController) {
             shouldMove = true;
             setNextPos(Map::map, direction);
         }
-    } else if (moveIntent != direction && intentionCol.getType() == MTYPE::WALL) {
-        if (nextCol.getType() == MTYPE::WALL && collisionController.hasCollision(nextStep, nextCol.getRect())) {
+    } else if (moveIntent != direction && (intentionCol.getType() == MTYPE::WALL || intentionCol.getType() == MTYPE::DOOR)) {
+        if ((nextCol.getType() == MTYPE::WALL || nextCol.getType() == MTYPE::DOOR) && collisionController.hasCollision(nextStep, nextCol.getRect())) {
             resetNextPos();
             shouldMove = false;
         } else {
             setNextPos(Map::map, direction);
             shouldMove = true;
         }
-    } else if (moveIntent != direction && intentionCol.getType() != MTYPE::WALL) {
+    } else if (moveIntent != direction && (intentionCol.getType() != MTYPE::WALL && intentionCol.getType() != MTYPE::DOOR)) {
         if ((direction == MoveDirection::LEFT && moveIntent == MoveDirection::RIGHT) ||
             (direction == MoveDirection::RIGHT && moveIntent == MoveDirection::LEFT) ||
             (direction == MoveDirection::UP && moveIntent == MoveDirection::DOWN) ||
@@ -134,7 +134,7 @@ void Player::controlMove(CollisionController& collisionController) {
                 setNextPos(Map::map, moveIntent);
                 shouldMove = true;
             } else {
-                if (nextCol.getType() == MTYPE::WALL &&
+                if ((nextCol.getType() == MTYPE::WALL || nextCol.getType() == MTYPE::DOOR) &&
                     collisionController.hasCollision(nextStep, nextCol.getRect())) {
                     resetNextPos();
                     shouldMove = false;

@@ -77,9 +77,9 @@ namespace default_variables {
 
     const int reset_level_time = 2000;
 
-    const int reset_ghost_time = 2000000;
+    const int reset_ghost_time = 10000;
 
-    const int time_to_blink_white = 500000;
+    const int time_to_blink_white = 3000;
 }
 
 namespace default_sprites {

@@ -11,7 +11,7 @@ TimeController::TimeController(shared_ptr<LevelController> lController) {
     last = std::chrono::steady_clock::now();
 
     // Initialize SDL
-    next_time = SDL_GetTicks64() + getTimeSpeed();
+    next_time = SDL_GetTicks() + getTimeSpeed();
 }
 
 ulong TimeController::getTimeSpeed() {
@@ -32,7 +32,7 @@ Uint64 TimeController::getLastFrameTime() const {
 }
 
 Uint64 TimeController::time_left() const {
-    Uint64 now = SDL_GetTicks64();
+    Uint64 now = SDL_GetTicks();
     if (next_time <= now)
         return 0;
     else
@@ -45,7 +45,7 @@ void TimeController::updateFPS() {
 }
 
 void TimeController::tick_start() {
-    start = SDL_GetTicks64();
+    start = SDL_GetTicks();
 }
 
 void TimeController::tick_end() {
