@@ -48,7 +48,7 @@ private:
     shared_ptr<vector<shared_ptr<Ghost>>> allGhosts;
     shared_ptr<TimeController> timeController;
 
-    ulong elapedTime;
+    ulong elapsedTime;
 
     /**
      * @brief Resets the ghost mode to CHASE
