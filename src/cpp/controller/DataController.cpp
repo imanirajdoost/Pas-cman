@@ -1,9 +1,7 @@
 #include "header/controller/DataController.h"
 #include "header/GameVars.h"
 
-DataController::DataController() {
-
-}
+DataController::DataController() = default;
 
 void DataController::saveHighscore(int highscore) {
     std::ofstream outputFile(HIGH_SCORE_FILE_NAME);

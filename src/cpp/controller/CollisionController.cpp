@@ -5,7 +5,6 @@
 
 bool CollisionController::hasCollision(const SDL_Rect &rect1, const SDL_Rect &rect2) {
     // Checks intersection and puts the intersection rect result in result
-//    SDL_bool SDL_IntersectRect(const SDL_Rect * A, const SDL_Rect * B, SDL_Rect * result);
     SDL_bool result = SDL_HasIntersection(&rect1, &rect2);
 
     if (result == SDL_TRUE)
@@ -14,8 +13,8 @@ bool CollisionController::hasCollision(const SDL_Rect &rect1, const SDL_Rect &re
 }
 
 bool CollisionController::isWallDetectedAtDirection(const SDL_Rect &sourceRect, const MoveDirection &direction) {
-    int mapX = (sourceRect.x + (sourceRect.w / 2)) / TILESIZE;
-    int mapY = (sourceRect.y + (sourceRect.h / 2)) / TILESIZE;
+    int mapX = getMapX(sourceRect);
+    int mapY = getMapY(sourceRect);
 
     switch (direction) {
         case MoveDirection::RIGHT:
@@ -86,12 +85,18 @@ MTYPE CollisionController::getNextCOLOBJ(const std::vector<std::vector<MTYPE>> &
     return nextMapTile;
 }
 
+int CollisionController::getMapX(SDL_Rect targetPos) {
+    return (targetPos.x + (targetPos.w / 2)) / TILESIZE;
+}
+
+int CollisionController::getMapY(SDL_Rect targetPos) {
+    return (targetPos.y + (targetPos.h / 2)) / TILESIZE;
+}
+
 MTYPE CollisionController::getObjectTypeAt(const SDL_Rect &targetPos) {
 
-    int mapX = (targetPos.x + (targetPos.w / 2)) / TILESIZE;
-    int mapY = (targetPos.y + (targetPos.h / 2)) / TILESIZE;
-//    int mapX = targetPos.x / TILESIZE;
-//    int mapY = targetPos.y / TILESIZE;
+    int mapX = getMapX(targetPos);
+    int mapY = getMapY(targetPos);
 
     MTYPE nextMapTile = Map::map[mapY][mapX];
 
@@ -99,10 +104,8 @@ MTYPE CollisionController::getObjectTypeAt(const SDL_Rect &targetPos) {
 }
 
 SDL_Rect CollisionController::getRectAt(const SDL_Rect &targetPos) {
-    int mapX = (targetPos.x + (targetPos.w / 2)) / TILESIZE;
-    int mapY = (targetPos.y + (targetPos.h / 2)) / TILESIZE;
-//    int mapX = targetPos.x / TILESIZE;
-//    int mapY = targetPos.y / TILESIZE;
+    int mapX = getMapX(targetPos);
+    int mapY = getMapY(targetPos);
 
     SDL_Rect newRect;
     newRect.x = mapX * TILESIZE;
@@ -117,10 +120,8 @@ Collider CollisionController::getRectAtDirection(const SDL_Rect &targetPos, cons
 
     SDL_Rect tempRect = targetPos;
 
-    int mapX = (targetPos.x + (targetPos.w / 2)) / TILESIZE;
-    int mapY = (targetPos.y + (targetPos.h / 2)) / TILESIZE;
-//    int mapX = targetPos.x / TILESIZE;
-//    int mapY = targetPos.y / TILESIZE;
+    int mapX = getMapX(targetPos);
+    int mapY = getMapY(targetPos);
 
     switch (direction) {
         case MoveDirection::RIGHT:

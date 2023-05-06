@@ -4,8 +4,8 @@
 #include "header/model/Map.h"
 #include "header/GameVars.h"
 
-DotController::DotController(std::function<void(bool)> _gameOverFunction, shared_ptr<GhostController> gController) {
-    gameOverFunction = std::move(_gameOverFunction);
+DotController::DotController(function<void(bool)> gOverFunction, shared_ptr<GhostController> gController) {
+    gameOverFunction = std::move(gOverFunction);
     ghostController = std::move(gController);
     dots = spawnDotObjects();
 }
@@ -54,11 +54,11 @@ bool DotController::isBigDot(int i, int j) {
         std::cout << "FATAL ERROR : Big dot position is not valid: " << i << ", " << j << std::endl;
         throw invalid_argument("i or j values are not valid");
     }
-    for (auto dot: bigDotPositions) {
-        if (dot[0] == i && dot[1] == j)
-            return true;
-    }
-    return false;
+    bool found = std::any_of(bigDotPositions.begin(), bigDotPositions.end(),
+                             [i, j](const auto& dot) {
+                                 return dot[0] == i && dot[1] == j;
+                             });
+    return found;
 }
 
 void DotController::deleteDot(const Dot &dot) {
@@ -70,7 +70,6 @@ void DotController::deleteDot(const Dot &dot) {
             dots.erase(i);
 //            cout << " remaining dots: " << dots.size() << endl;
             if (dots.empty()) {
-//            if (dots.size() < 180) {
                 if (gameOverFunction != nullptr)
                     gameOverFunction(true);
             }

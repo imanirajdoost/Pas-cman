@@ -30,12 +30,7 @@ public:
 @param pController The PauseController instance
 @param tController The TextViewController instance
 */
-    explicit DotController(std::function<void(bool)> _gameOverFunction, shared_ptr<GhostController> gController);
-
-    /**
-@brief A vector to store all the Dot instances
-*/
-    vector<shared_ptr<Dot>> dots;
+    explicit DotController(function<void(bool)> gOverFunction, shared_ptr<GhostController> gController);
 
     /**
 @brief Spawns a DotSmall object at the given position
@@ -78,14 +73,23 @@ public:
      */
     void reset_state() override;
 
+
+    /**
+@brief A vector to store all the Dot instances
+*/
+    vector<shared_ptr<Dot>> dots;
+
 private:
 
+    /**
+     * @brief The GhostController instance
+     */
     shared_ptr<GhostController> ghostController;
 
     /**
      * @brief The function to be called when the game is over
      */
-    std::function<void(bool)> gameOverFunction;
+    function<void(bool)> gameOverFunction;
 
     /**
  * @brief An index to keep track of the Dots
@@ -95,7 +99,7 @@ private:
     /**
  * @brief The positions of the Big Dots in the game map
  */
-    const int bigDotPositions[4][2] = {
+    const vector<vector<int>> bigDotPositions = {
             {3,  1},
             {3,  19},
             {20, 1},

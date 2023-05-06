@@ -15,6 +15,22 @@
 @brief Handles collision between two objects
 */
 class CollisionController {
+private:
+
+    /**
+     * @brief Get the Map X object
+     * @param targetPos target position
+     * @return int map x
+     */
+    int getMapX(SDL_Rect targetPos);
+
+    /**
+     * @brief Get the Map Y object
+     * @param targetPos target position
+     * @return int map y
+     */
+    int getMapY(SDL_Rect targetPos);
+
 public:
     // Methods
     /**
