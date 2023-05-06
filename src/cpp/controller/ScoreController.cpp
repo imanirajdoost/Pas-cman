@@ -4,7 +4,7 @@
 #include "header/controller/ScoreController.h"
 #include "header/view/TextViewController.h"
 
-ScoreController::ScoreController(std::shared_ptr<TextViewController> tController, std::shared_ptr<DataController> dController): playerScore{0} {
+ScoreController::ScoreController(shared_ptr<TextViewController> tController, shared_ptr<DataController> dController): playerScore{0} {
     textViewController = std::move(tController);
     dataController = std::move(dController);
 }

@@ -11,13 +11,15 @@
 #include "header/view/TextViewController.h"
 #include "DataController.h"
 
+using namespace std;
+
 class ScoreController {
 public:
     /**
 * @brief Constructs a new ScoreController object.
 * @param tController A shared pointer to a TextViewController object.
 */
-    ScoreController(std::shared_ptr<TextViewController> tController, std::shared_ptr<DataController> dController);
+    ScoreController(shared_ptr<TextViewController> tController, shared_ptr<DataController> dController);
 
     /**
  * @brief Adds a given amount to the player's score.
@@ -38,8 +40,8 @@ public:
 
 private:
     int playerScore; /**< The current score of the player. */
-    std::shared_ptr<TextViewController> textViewController; /**< A shared pointer to a TextViewController object. */
-    std::shared_ptr<DataController> dataController; /**< A shared pointer to a DataController object. */
+    shared_ptr<TextViewController> textViewController; /**< A shared pointer to a TextViewController object. */
+    shared_ptr<DataController> dataController; /**< A shared pointer to a DataController object. */
 };
 
 
