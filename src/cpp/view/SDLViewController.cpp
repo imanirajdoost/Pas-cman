@@ -115,7 +115,7 @@ void SDLViewController::drawFruit() {
 SDLViewController::SDLViewController(shared_ptr<std::list<shared_ptr<GameObject>>> sps,
                                      shared_ptr<TextViewController> tViewController,
                                      shared_ptr<DotController> dController,
-                                     shared_ptr<FruitController> fController, shared_ptr<PauseController> pController) {
+                                     shared_ptr<FruitController> fController) {
     pWindow = SDL_CreateWindow("PacMan", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 900, 900, SDL_WINDOW_SHOWN);
     win_surf = SDL_GetWindowSurface(pWindow);
 
@@ -127,7 +127,6 @@ SDLViewController::SDLViewController(shared_ptr<std::list<shared_ptr<GameObject>
     fruitController = std::move(fController);
     spritesToDraw = std::move(sps);
     textViewController = std::move(tViewController);
-    pauseController = std::move(pController);
 }
 
 void SDLViewController::drawDebug(const std::list<shared_ptr<GameObject>> &debugList) {
@@ -139,14 +138,5 @@ void SDLViewController::drawDebug(const std::list<shared_ptr<GameObject>> &debug
     for (auto &sp: debugList) {
         draw_collider(*sp);
     }
-//        draw_collider(player);
-//        draw_collider(blinky);
-//        draw_collider(pinky);
-//        draw_collider(inky);
-//        draw_collider(clyde);
-
-//        for (auto & dotSmall : dots) {
-//            draw_collider(*dotSmall);
-//        }
 
 }

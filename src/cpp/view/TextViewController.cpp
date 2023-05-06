@@ -2,8 +2,7 @@
 #include <iostream>
 #include <SDL2/SDL.h>
 
-shared_ptr<tuple<string, string, int, int, vector<shared_ptr<SDL_Rect>>>>
-TextViewController::isIdExists(const string &id) {
+TextViewController::LetterClassPointer TextViewController::isIdExists(const string &id) {
     for (auto item: name_txt_maps) {
         auto id_target = get<0>(*item);
         if (id_target == id)
@@ -41,8 +40,7 @@ void TextViewController::writeOnUI(const string &id, const string &text, int pos
 
     } else {
         // create a tuple with text string and its rects
-        target_tuple = make_shared<tuple<string, string, int, int, vector<shared_ptr<SDL_Rect>>>>(
-                make_tuple(id, text, posX, posY, rectsToDraw));
+        target_tuple = make_shared<LetterClass>(make_tuple(id, text, posX, posY, rectsToDraw));
 
         name_txt_maps.push_back(target_tuple);
     }

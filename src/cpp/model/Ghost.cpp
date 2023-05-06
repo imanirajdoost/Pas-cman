@@ -57,7 +57,6 @@ void Ghost::setMode(Mode mode) {
             setAnimation("default");
             break;
         case Mode::FRIGHTENED:
-            //TODO
             setAnimation("afraid");
             break;
     }

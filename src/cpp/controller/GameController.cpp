@@ -161,6 +161,5 @@ GameController::GameController() : exit(false) {
                                                      scoreController, textViewController, ghostController,
                                                      pauseController, resetGame(), gameOver());
 
-    sdlViewController = make_shared<SDLViewController>(list_sp, textViewController, dotController, fruitController,
-                                                       pauseController);
+    sdlViewController = make_shared<SDLViewController>(list_sp, textViewController, dotController, fruitController);
 }

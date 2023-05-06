@@ -8,6 +8,8 @@
 
 #include "MovableGameObject.h"
 
+using namespace std;
+
 /**
  * @brief The Mode enum represents the different modes a ghost can be in.
  */
@@ -22,8 +24,6 @@ enum class Mode {
  */
 class Ghost : public MovableGameObject {
 protected:
-    /**< Whether the ghost is vulnerable or not. */
-    bool isAfraid = false;
 
     const SDL_Rect afraid_sp = {4, 196, 14, 14};/**< afraid sprite for ghost. */
     const SDL_Rect afraid_sp2 = {21, 196, 14, 14};/**< afraid sprite for ghost. */
@@ -48,7 +48,7 @@ public:
      * @param map The current game map.
      * @param direction The current direction of the ghost.
      */
-    void setNextPos(const std::vector<std::vector<MTYPE>> &map, const MoveDirection &direction) override;
+    void setNextPos(const vector<vector<MTYPE>> &map, const MoveDirection &direction) override;
 
     /**
      * @brief Moves the ghost to its next position.

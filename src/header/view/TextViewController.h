@@ -155,7 +155,9 @@ private:
 
     map<string, SDL_Rect> char_map;
 
-    shared_ptr<tuple<string, string, int, int, vector<shared_ptr<SDL_Rect>>>> isIdExists(const string &id);
+    using LetterClassPointer = shared_ptr<tuple<string, string, int, int, vector<shared_ptr<SDL_Rect>>>>;
+    using LetterClass = tuple<string, string, int, int, vector<shared_ptr<SDL_Rect>>>;
+    LetterClassPointer isIdExists(const string &id);
 };
 
 #endif //PAS_CMAN_TEXTVIEWCONTROLLER_H

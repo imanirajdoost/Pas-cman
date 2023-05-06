@@ -29,7 +29,7 @@ public:
     SDLViewController(shared_ptr<std::list<shared_ptr<GameObject>>> sps,
                       shared_ptr<TextViewController> tViewController, shared_ptr<DotController>
                       dController,
-                      shared_ptr<FruitController> fController, shared_ptr<PauseController> pController
+                      shared_ptr<FruitController> fController
     );
 
     /**
@@ -76,7 +76,6 @@ private:
     shared_ptr<DotController> dotController; ///< Shared pointer to the DotController.
     shared_ptr<FruitController> fruitController; ///< Shared pointer to the FruitController.
     shared_ptr<TextViewController> textViewController; ///< Shared pointer to the TextViewController.
-    shared_ptr<PauseController> pauseController; ///< Shared pointer to the PauseController.
     shared_ptr<std::list<shared_ptr<GameObject>>> spritesToDraw; ///< List of shared pointers to all the sprites to be drawn.
 
     /**
