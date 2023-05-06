@@ -54,6 +54,8 @@ bool DotController::isBigDot(int i, int j) {
         std::cout << "FATAL ERROR : Big dot position is not valid: " << i << ", " << j << std::endl;
         throw invalid_argument("i or j values are not valid");
     }
+
+    // check if the position of the given dot exist in the array of bigDotPositions
     bool found = std::any_of(bigDotPositions.begin(), bigDotPositions.end(),
                              [i, j](const auto& dot) {
                                  return dot[0] == i && dot[1] == j;
@@ -62,17 +64,24 @@ bool DotController::isBigDot(int i, int j) {
 }
 
 void DotController::deleteDot(const Dot &dot) {
-    for (auto i = dots.begin(); i < dots.end(); ++i) {
-        if (dot.getIndex() == i->get()->getIndex()) {
-            //TODO: remove this
-            if(dot.getDotType() == DotType::BIG)
-                ghostController->changeMode(Mode::FRIGHTENED);
-            dots.erase(i);
-//            cout << " remaining dots: " << dots.size() << endl;
-            if (dots.empty()) {
-                if (gameOverFunction != nullptr)
-                    gameOverFunction(true);
-            }
+    auto it = std::find_if(dots.begin(), dots.end(), [&dot](const auto &d) {
+        return dot.getIndex() == d->getIndex();
+    });
+
+    // If the dot exists
+    if (it != dots.end()) {
+
+        // if the type of the dot is "Big"
+        if (dot.getDotType() == DotType::BIG) {
+            ghostController->changeMode(Mode::FRIGHTENED);
+        }
+
+        // remove the dot from the list
+        dots.erase(it);
+
+        // if no more dots remain, call the game over function
+        if (dots.empty() && gameOverFunction != nullptr) {
+            gameOverFunction(true);
         }
     }
 }

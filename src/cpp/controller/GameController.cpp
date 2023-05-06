@@ -73,6 +73,7 @@ std::function<void(bool)> GameController::resetGame() {
     return [this](bool respawnDots) {
         animationController->stopAllAnimations();
         animationController->resetAllAnimations();
+        ghostController->changeMode(Mode::CHASE);
 
         player->reset_state();
 
