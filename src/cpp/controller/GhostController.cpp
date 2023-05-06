@@ -6,17 +6,17 @@
 
 void GhostController::tick() {
     // TODO: Calculate next pos and pass it here
-    inky->setNextPos(Map::map, MoveDirection::RIGHT);
-    pinky->setNextPos(Map::map, MoveDirection::RIGHT);
-    blinky->setNextPos(Map::map, MoveDirection::RIGHT);
-    clyde->setNextPos(Map::map, MoveDirection::RIGHT);
+//    inky->setNextPos(Map::map, MoveDirection::RIGHT);
+//    pinky->setNextPos(Map::map, MoveDirection::RIGHT);
+//    blinky->setNextPos(Map::map, MoveDirection::RIGHT);
+//    clyde->setNextPos(Map::map, MoveDirection::RIGHT);
 
-    inky->setMoveIntent(MoveDirection::RIGHT);
+//    inky->setMoveIntent(MoveDirection::RIGHT);
 
     inky->controlMove(*collisionController);
-    pinky->controlMove(*collisionController);
-    blinky->controlMove(*collisionController);
-    clyde->controlMove(*collisionController);
+//    pinky->controlMove(*collisionController);
+//    blinky->controlMove(*collisionController);
+//    clyde->controlMove(*collisionController);
 }
 
 GhostController::GhostController(shared_ptr<Inky> iGhost,shared_ptr<Pinky> pGhost,shared_ptr<Blinky> bGhost,shared_ptr<Clyde> cGhost ,shared_ptr<CollisionController> colController) {

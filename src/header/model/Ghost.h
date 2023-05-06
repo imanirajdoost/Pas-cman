@@ -49,9 +49,13 @@ public:
     MoveDirection moveIntent = MoveDirection::NONE; /**< The next direction the ghost will move to. */
     SDL_Rect getNextStepRect(MoveDirection dir);
 
-    const int GHOST_MOVE_THRESHOLD = 1;
+    const int GHOST_MOVE_THRESHOLD = 0;
 
     void setMoveIntent(const MoveDirection &direction);
+
+    MoveDirection getRandomMove() const;
+
+    MoveDirection getRandomMoveExcept(vector<MoveDirection> &exceptDirections);
 };
 
 /**

@@ -15,8 +15,8 @@ class AIController {
 public:
     AIController();
 private:
-    Graph<TileModel>  generate_path_graph();
-    Graph<TileModel> pathGraph;
+//    Graph<TileModel>  generate_path_graph();
+//    Graph<TileModel> pathGraph;
 };
 
 
