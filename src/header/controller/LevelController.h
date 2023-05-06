@@ -21,6 +21,9 @@ public:
      */
     void goToNextLevel();
 private:
+    /**
+     * @brief current level index
+     */
     int levelIndex;
 };
 

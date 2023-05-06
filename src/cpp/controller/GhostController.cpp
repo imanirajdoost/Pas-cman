@@ -4,15 +4,15 @@
 
 void GhostController::tick() {
 
-    if(getGhostsMode() == Mode::FRIGHTENED) {
+    if (getGhostsMode() == Mode::FRIGHTENED) {
         elapsedTime += timeController->getLastFrameTime();
 
-        if(elapsedTime > default_variables::reset_ghost_time - default_variables::time_to_blink_white)
+        if (elapsedTime > default_variables::reset_ghost_time - default_variables::time_to_blink_white)
             setAnimation("afraid_white");
         else
             setAnimation("afraid");
 
-        if(elapsedTime > default_variables::reset_ghost_time)
+        if (elapsedTime > default_variables::reset_ghost_time)
             resetGhostMode();
     }
 
@@ -28,14 +28,12 @@ void GhostController::tick() {
     clyde->move();
 }
 
-void GhostController::resetGhostMode()
-{
+void GhostController::resetGhostMode() {
     elapsedTime = 0;
     changeMode(Mode::CHASE);
 }
 
-Mode GhostController::getGhostsMode()
-{
+Mode GhostController::getGhostsMode() {
     return inky->getMode();
 }
 
@@ -46,7 +44,7 @@ void GhostController::setAnimation(const string &animation) {
 }
 
 GhostController::GhostController(shared_ptr<Inky> iGhost, shared_ptr<Pinky> pGhost, shared_ptr<Blinky> bGhost,
-                                 shared_ptr<Clyde> cGhost, shared_ptr<CollisionController> colController,
+                                 shared_ptr<Clyde> cGhost,
                                  shared_ptr<TimeController> tController) {
     inky = std::move(iGhost);
     pinky = std::move(pGhost);
@@ -61,7 +59,6 @@ GhostController::GhostController(shared_ptr<Inky> iGhost, shared_ptr<Pinky> pGho
 
     allGhosts = make_shared<vector<shared_ptr<Ghost>>>(ghosts);
 
-    collisionController = std::move(colController);
     timeController = std::move(tController);
 }
 
@@ -77,4 +74,8 @@ void GhostController::changeMode(Mode mode) {
     for (auto &ghost: *ghosts) {
         ghost->setMode(mode);
     }
+}
+
+void GhostController::reset_state() {
+    changeMode(Mode::CHASE);
 }

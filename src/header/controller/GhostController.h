@@ -10,7 +10,7 @@
 
 using namespace std;
 
-class GhostController {
+class GhostController: IResettable {
 public:
     /**
      * @brief Constructor for GhostController
@@ -20,7 +20,7 @@ public:
      * @param cGhost shared pointer to the Clyde ghost
      * @param colController shared pointer to the CollisionController
      */
-    GhostController(shared_ptr<Inky> iGhost,shared_ptr<Pinky> pGhost,shared_ptr<Blinky> bGhost,shared_ptr<Clyde> cGhost ,shared_ptr<CollisionController> colController, shared_ptr<TimeController> tController);
+    GhostController(shared_ptr<Inky> iGhost,shared_ptr<Pinky> pGhost,shared_ptr<Blinky> bGhost,shared_ptr<Clyde> cGhost, shared_ptr<TimeController> tController);
 
     /**
      * @brief Runs each ghost's individual tick method and checks if any collisions occur
@@ -32,6 +32,11 @@ public:
      * @param mode new mode for the ghosts
      */
     void changeMode(Mode mode);
+
+    /**
+     * @brief reset controller state
+     */
+    void reset_state() override;
 
     /**
      * @brief Returns all ghosts as a shared pointer to a vector of shared pointers to Ghost objects

@@ -6,7 +6,6 @@
 #include "header/GameVars.h"
 
 void PlayerController::tick() {
-//    MoveDirection nextPlayerMove = player.getMoveIntent();
     // Control movement of the player based on the given input
     player->controlMove(*collisionController);
 
@@ -43,17 +42,21 @@ void PlayerController::tick() {
     auto ghosts = ghostController->getAllGhosts();
     for (auto &ghost: *ghosts) {
         if (collisionController->hasCollision(player->getRect(), ghost->getRect())) {
-            // TODO: Check if should eat or die
             std::cout << "hit ghost" << std::endl;
-            short remainingHealth = player->die();
-            textViewController->setHealthUI(remainingHealth);
-            if (remainingHealth > 0) {
-                pauseController->pauseFor(default_variables::reset_level_time, resetGame);
+            if(ghost->getMode() == Mode::FRIGHTENED) {
+                // TODO
+                continue;
             } else {
-                if(gameOverFunction != nullptr)
-                    gameOverFunction(false);
+                short remainingHealth = player->die();
+                textViewController->setHealthUI(remainingHealth);
+                if (remainingHealth > 0) {
+                    pauseController->pauseFor(default_variables::reset_level_time, resetGame);
+                } else {
+                    if (gameOverFunction != nullptr)
+                        gameOverFunction(false);
+                }
+                break;
             }
-            break;
         }
     }
 

@@ -55,8 +55,8 @@ private:
 
     shared_ptr<Player> player; /**< A shared pointer to the Player object. */
 
-    std::function<void(bool)> resetGame; /**< A function pointer to the resetGame function in the GameController object. */
-    std::function<void(bool)> gameOverFunction; /**< A function pointer to the gameOver function in the GameController object. */
+    function<void(bool)> resetGame; /**< A function pointer to the resetGame function in the GameController object. */
+    function<void(bool)> gameOverFunction; /**< A function pointer to the gameOver function in the GameController object. */
 };
 
 #endif //PAS_CMAN_PLAYERCONTROLLER_H

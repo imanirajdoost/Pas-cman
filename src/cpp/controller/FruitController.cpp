@@ -22,7 +22,6 @@ bool FruitController::deleteFruit() {
 void FruitController::spawnFruit() {
     fruit.pick_sprite_randomly();
     fruit.setPos(10 * TILESIZE, 15 * TILESIZE);
-//    std::cout << "spawning fruit" << std::endl;
     fruitAvailable = true;
 }
 

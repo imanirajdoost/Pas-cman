@@ -9,8 +9,6 @@ bool GameController::hasQuit() const {
 }
 
 void GameController::startGame() {
-    // start the timer to get the elapsed time of each execution
-//    timeController->startTimer();
 
     // Repeat until we have not quit the game (Simulation of frame update)
     while (!hasQuit()) {
@@ -73,7 +71,7 @@ std::function<void(bool)> GameController::resetGame() {
     return [this](bool respawnDots) {
         animationController->stopAllAnimations();
         animationController->resetAllAnimations();
-        ghostController->changeMode(Mode::CHASE);
+        ghostController->reset_state();
 
         player->reset_state();
 
@@ -156,7 +154,7 @@ GameController::GameController() : exit(false) {
     dataController = make_shared<DataController>();
     textViewController = make_shared<TextViewController>(dataController);
     scoreController = make_shared<ScoreController>(textViewController, dataController);
-    ghostController = make_shared<GhostController>(inky, pinky, blinky, clyde, collisionController, timeController);
+    ghostController = make_shared<GhostController>(inky, pinky, blinky, clyde, timeController);
     dotController = make_shared<DotController>(gameOver(), ghostController);
     fruitController = make_shared<FruitController>(timeController, textViewController);
     playerController = make_shared<PlayerController>(collisionController, player, dotController, fruitController,

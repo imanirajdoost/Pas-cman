@@ -19,8 +19,6 @@ public:
     */
     explicit FruitController(shared_ptr<TimeController> tController, shared_ptr<TextViewController> tvController);
 
-    Fruit fruit; /**< The bonus fruit object. */
-
     /**
      * @brief Deletes the bonus fruit object.
      * @return A boolean value indicating if the deletion was successful.
@@ -31,6 +29,8 @@ public:
     * @brief The function called by the game loop that handles the logic of the bonus fruit spawn time.
     */
     void tick();
+
+    Fruit fruit; /**< The bonus fruit object. */
 
 private:
 

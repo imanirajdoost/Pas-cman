@@ -72,7 +72,7 @@ private:
 
     shared_ptr<TimeController> timeController; /**< A shared pointer to the TimeController object. */
 
-    std::function<void(bool)> resumeCallback; /**< A callback function to be called when the game is paused. */
+    function<void(bool)> resumeCallback; /**< A callback function to be called when the game is paused. */
 
     bool callBackBool; /**< A boolean value to be passed to the callback function. */
 };
