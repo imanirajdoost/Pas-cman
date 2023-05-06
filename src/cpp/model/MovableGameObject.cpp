@@ -4,9 +4,21 @@ MoveDirection MovableGameObject::getMoveDirection() const {
     return direction;
 }
 
+SDL_Rect MovableGameObject::getNextPos() const {
+    return _next_pos;
+}
+
 void MovableGameObject::setMoveDirection(const MoveDirection &newDirection) {
     direction = newDirection;
     setDirectionSprite(newDirection);
+}
+
+MoveDirection MovableGameObject::getMoveIntent() const {
+    return moveIntent;
+}
+    
+void MovableGameObject::setMoveIntent(const MoveDirection &direction) {
+    moveIntent = direction;
 }
 
 void MovableGameObject::resetMoveDirection() {
@@ -36,17 +48,37 @@ void MovableGameObject::setDirectionSprite(const MoveDirection &newDirection) {
     }
 }
 
-
-SDL_Rect MovableGameObject::getNextPos() const {
-    return _next_pos;
-}
-
 int MovableGameObject::getSpeed() const {
     return speed;
 }
 
 void MovableGameObject::resetNextPos() {
     _next_pos = rect;
+}
+
+SDL_Rect MovableGameObject::getNextStepRect(MoveDirection dir) {
+
+    SDL_Rect nextStepRect = getRect();
+
+    switch (dir) {
+        case MoveDirection::LEFT:
+            nextStepRect.x -= speed;
+            break;
+        case MoveDirection::RIGHT:
+            nextStepRect.x += speed;
+            break;
+        case MoveDirection::UP:
+            nextStepRect.y -= speed;
+            break;
+        case MoveDirection::DOWN:
+            nextStepRect.y += speed;
+            break;
+        case MoveDirection::NONE:
+            nextStepRect.y = getRect().y;
+            nextStepRect.x = getRect().x;
+            break;
+    }
+    return nextStepRect;
 }
 
 void MovableGameObject::move() {

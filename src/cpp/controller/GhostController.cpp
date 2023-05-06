@@ -21,11 +21,12 @@ void GhostController::tick() {
     pinky->setNextPos(Map::map, MoveDirection::RIGHT);
     blinky->setNextPos(Map::map, MoveDirection::RIGHT);
     clyde->setNextPos(Map::map, MoveDirection::RIGHT);
+    
 
-    inky->move();
-    pinky->move();
-    blinky->move();
-    clyde->move();
+    inky->controlMove(*collisionController);
+    pinky->controlMove(*collisionController);
+    blinky->controlMove(*collisionController);
+    clyde->controlMove(*collisionController);
 }
 
 void GhostController::resetGhostMode() {

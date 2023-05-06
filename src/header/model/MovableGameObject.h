@@ -1,8 +1,8 @@
 #ifndef MOVABLEGAMEOBJECT_H
 #define MOVABLEGAMEOBJECT_H
 
-#include "GameObject.h"
-#include "Map.h"
+#include "header/model/GameObject.h"
+#include "header/model/Map.h"
 
 enum class MoveDirection {
     NONE = 0,
@@ -21,6 +21,7 @@ enum class MoveDirection {
 class MovableGameObject : public GameObject {
 
 protected:
+    MoveDirection moveIntent = MoveDirection::NONE;
     SDL_Rect _next_pos; ///< The next position of the object.
     int speed = 4; ///< The speed at which the object moves.
     MoveDirection direction = MoveDirection::NONE; ///< The current direction of movement of the object.
@@ -106,6 +107,18 @@ public:
     void resetNextPos();
 
     /**
+     * @brief Get the player's intended movement direction.
+     * @return MoveDirection The intended movement direction.
+     */
+    MoveDirection getMoveIntent() const;
+
+    /**
+     * @brief Set the player's intended movement direction.
+     * @param direction The intended movement direction.
+     */
+    void setMoveIntent(const MoveDirection &direction);
+
+    /**
      * @brief Move the object to its next position.
      */
     virtual void move();
@@ -114,6 +127,13 @@ public:
      * @brief resets the state of the object
      */
     void reset_state() override;
+
+    /**
+     * @brief Get the next step's rectangle based on the intended direction.
+     * @param dir The intended direction to move.
+     * @return SDL_Rect The next step's rectangle.
+     */
+    SDL_Rect getNextStepRect(MoveDirection dir);
 };
 
 #endif

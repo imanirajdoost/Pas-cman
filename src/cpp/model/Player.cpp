@@ -49,46 +49,16 @@ void Player::setNextPos(const std::vector<std::vector<MTYPE>> &map, const MoveDi
 
 }
 
-SDL_Rect Player::getNextStepRect(MoveDirection dir) {
-
-    SDL_Rect nextStepRect = getRect();
-
-    switch (dir) {
-        case MoveDirection::LEFT:
-            nextStepRect.x -= speed;
-            break;
-        case MoveDirection::RIGHT:
-            nextStepRect.x += speed;
-            break;
-        case MoveDirection::UP:
-            nextStepRect.y -= speed;
-            break;
-        case MoveDirection::DOWN:
-            nextStepRect.y += speed;
-            break;
-        case MoveDirection::NONE:
-            nextStepRect.y = getRect().y;
-            nextStepRect.x = getRect().x;
-            break;
-    }
-    return nextStepRect;
-}
-
-MoveDirection Player::getMoveIntent() const {
-    return moveIntent;
-}
-
-void Player::setMoveIntent(const MoveDirection &direction) {
-    moveIntent = direction;
-}
-
 void Player::controlMove(CollisionController& collisionController) {
+
+    moveIntent = getMoveIntent();
 
     bool shouldMove = true;
     stopAnimation();
 
-    if (moveIntent == MoveDirection::NONE)
+    if (moveIntent == MoveDirection::NONE) {
         shouldMove = false;
+    }
 
     Collider nextCol = collisionController.getRectAtDirection(rect, direction);
     Collider intentionCol = collisionController.getRectAtDirection(rect, moveIntent);

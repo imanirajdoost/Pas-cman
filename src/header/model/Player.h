@@ -60,13 +60,6 @@ public:
     void controlMove(CollisionController &collisionController);
 
     /**
-     * @brief Get the next step's rectangle based on the intended direction.
-     * @param dir The intended direction to move.
-     * @return SDL_Rect The next step's rectangle.
-     */
-    SDL_Rect getNextStepRect(MoveDirection dir);
-
-    /**
      * @brief Move the player.
      */
     void move() override;
@@ -75,18 +68,6 @@ public:
      * @brief Trigger the player's death.
      */
     short die() override;
-
-    /**
-     * @brief Get the player's intended movement direction.
-     * @return MoveDirection The intended movement direction.
-     */
-    MoveDirection getMoveIntent() const;
-
-    /**
-     * @brief Set the player's intended movement direction.
-     * @param direction The intended movement direction.
-     */
-    void setMoveIntent(const MoveDirection &direction);
 
     /**
      * @brief Reset the player's state.

@@ -7,6 +7,7 @@
 #define GHOST_H
 
 #include "MovableGameObject.h"
+#include "header/controller/CollisionController.h"
 
 using namespace std;
 
@@ -33,6 +34,9 @@ protected:
 
     Mode ghostMode; /**< The current mode of the ghost. */
 
+    /** @brief Number of pixels to let ghost change direction if they are not in the middle */
+    const int GHOST_MOVE_THRESHOLD = 6;
+
 public:
 
     /**
@@ -49,6 +53,12 @@ public:
      * @param direction The current direction of the ghost.
      */
     void setNextPos(const vector<vector<MTYPE>> &map, const MoveDirection &direction) override;
+
+    /**
+     * @brief Control the player's movement.
+     * @param collisionController The collision controller for checking collisions with walls.
+     */
+    void controlMove(CollisionController &collisionController);
 
     /**
      * @brief Moves the ghost to its next position.

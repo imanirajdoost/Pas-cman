@@ -26,22 +26,17 @@ void GameController::startGame() {
         // Gestion du clavier
         int nbk;
         const Uint8 *keys = SDL_GetKeyboardState(&nbk);
-        MoveDirection nextPlayerMove;
         if (keys[SDL_SCANCODE_ESCAPE]) {
             exit = true;
         }
         if (keys[SDL_SCANCODE_LEFT]) {
-            nextPlayerMove = MoveDirection::LEFT;
-            playerController->setMoveIntent(nextPlayerMove);
+            playerController->setMoveIntent(MoveDirection::LEFT);
         } else if (keys[SDL_SCANCODE_RIGHT]) {
-            nextPlayerMove = MoveDirection::RIGHT;
-            playerController->setMoveIntent(nextPlayerMove);
+            playerController->setMoveIntent(MoveDirection::RIGHT);
         } else if (keys[SDL_SCANCODE_UP]) {
-            nextPlayerMove = MoveDirection::UP;
-            playerController->setMoveIntent(nextPlayerMove);
+            playerController->setMoveIntent(MoveDirection::UP);
         } else if (keys[SDL_SCANCODE_DOWN]) {
-            nextPlayerMove = MoveDirection::DOWN;
-            playerController->setMoveIntent(nextPlayerMove);
+            playerController->setMoveIntent(MoveDirection::DOWN);
         }
 
         update();
