@@ -18,7 +18,6 @@ Graph::Graph(const std::vector<std::vector<MTYPE>>& map) {
 
                             if (x >= 0 && x < map.size() && y >= 0 && y < map[x].size() && map[x][y] != MTYPE::WALL) {
                                 adjList[currentId].push_back(TilePosition(x, y));
-                                std::cout << "Added edge from " << currentId << " to " << x * map[0].size() + y << "X: " << x << " Y: " << y << std::endl;
                             }
                         }
                     }

@@ -7,6 +7,8 @@
 #include "header/model/MovableGameObject.h"
 #include "header/model/Ghost.h"
 #include "TimeController.h"
+#include "AIController.h"
+#include "header/model/Player.h"
 
 using namespace std;
 
@@ -20,7 +22,8 @@ public:
      * @param cGhost shared pointer to the Clyde ghost
      * @param colController shared pointer to the CollisionController
      */
-    GhostController(shared_ptr<Inky> iGhost,shared_ptr<Pinky> pGhost,shared_ptr<Blinky> bGhost,shared_ptr<Clyde> cGhost, shared_ptr<TimeController> tController);
+    GhostController(shared_ptr<Inky> iGhost,shared_ptr<Pinky> pGhost,shared_ptr<Blinky> bGhost,shared_ptr<Clyde> cGhost, shared_ptr<TimeController> tController,
+                    shared_ptr<CollisionController> colController, shared_ptr<AIController> ghostAIController, shared_ptr<Player> p);
 
     /**
      * @brief Runs each ghost's individual tick method and checks if any collisions occur
@@ -52,6 +55,8 @@ private:
     shared_ptr<Blinky> blinky;
     shared_ptr<vector<shared_ptr<Ghost>>> allGhosts;
     shared_ptr<TimeController> timeController;
+    shared_ptr<AIController> aiController;
+    shared_ptr<Player> player;
 
     ulong elapsedTime;
 

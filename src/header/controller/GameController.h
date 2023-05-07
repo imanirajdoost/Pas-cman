@@ -62,6 +62,7 @@ private:
     shared_ptr<PauseController> pauseController;
     shared_ptr<DataController> dataController;
     shared_ptr<LevelController> levelController;
+    shared_ptr<AIController> aiController;
 
     shared_ptr<Player> player;
     shared_ptr<Blinky> blinky;

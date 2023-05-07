@@ -7,6 +7,7 @@
 #define GHOST_H
 
 #include "MovableGameObject.h"
+#include "header/controller/CollisionController.h"
 
 using namespace std;
 
@@ -32,6 +33,10 @@ protected:
     const SDL_Rect afraid_white_sp2 = {55, 196, 14, 14};/**< afraid sprite for ghost. */
 
     Mode ghostMode; /**< The current mode of the ghost. */
+
+    const int GHOST_MOVE_THRESHOLD = 0;
+
+    MoveDirection moveIntent = MoveDirection::NONE;
 
 public:
 
@@ -77,6 +82,12 @@ public:
      * @return The current mode of the ghost.
      */
     Mode getMode();
+
+    void controlMove(CollisionController &collisionController);
+
+    SDL_Rect getNextStepRect(MoveDirection dir);
+
+    void setMoveIntent(MoveDirection dir);
 };
 
 /**

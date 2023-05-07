@@ -151,11 +151,12 @@ GameController::GameController() : exit(false) {
     timeController = make_shared<TimeController>(levelController);
     pauseController = make_shared<PauseController>(timeController);
     collisionController = make_shared<CollisionController>();
+    aiController = make_shared<AIController>();
     animationController = make_shared<AnimationController>(list_anim);
     dataController = make_shared<DataController>();
     textViewController = make_shared<TextViewController>(dataController);
     scoreController = make_shared<ScoreController>(textViewController, dataController);
-    ghostController = make_shared<GhostController>(inky, pinky, blinky, clyde, timeController);
+    ghostController = make_shared<GhostController>(inky, pinky, blinky, clyde, timeController, collisionController, aiController, player);
     dotController = make_shared<DotController>(gameOver(), ghostController);
     fruitController = make_shared<FruitController>(timeController, textViewController);
     playerController = make_shared<PlayerController>(collisionController, player, dotController, fruitController,

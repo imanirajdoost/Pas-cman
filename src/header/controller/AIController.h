@@ -14,12 +14,15 @@ class AIController {
 
 public:
     AIController();
-    vector<TilePosition> bfs(const Graph& graph, const TilePosition& start, const TilePosition& target, const vector<vector<MTYPE>>& map);
+
+    vector<TilePosition> getPath(const TilePosition &from, const TilePosition &to);
+
 
 private:
+    vector<TilePosition> bfs(const Graph& graph, const TilePosition& start, const TilePosition& target, const vector<vector<MTYPE>>& map);
+
     shared_ptr<Graph> graph;
 
-    void tick();
 };
 
 
