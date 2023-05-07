@@ -3,6 +3,7 @@
 #include <SDL2/SDL.h>
 #include "header/controller/GameController.h"
 #include "header/GameVars.h"
+#include "header/controller/AIController.h"
 
 bool GameController::hasQuit() const {
     return exit;
@@ -162,4 +163,6 @@ GameController::GameController() : exit(false) {
                                                      pauseController, resetGame(), gameOver());
 
     sdlViewController = make_shared<SDLViewController>(list_sp, textViewController, dotController, fruitController);
+
+    AIController aiController;
 }

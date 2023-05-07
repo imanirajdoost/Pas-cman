@@ -9,11 +9,12 @@
 #include <vector>
 #include <queue>
 #include <unordered_map>
-#include "Position.h"
+#include "Map.h"
+#include "TilePosition.h"
 
 class Graph {
 public:
-    std::unordered_map<int, std::vector<Position>> adjList;
+    std::unordered_map<int, std::vector<TilePosition>> adjList;
 
     Graph(const std::vector<std::vector<MTYPE>>& map);
 };

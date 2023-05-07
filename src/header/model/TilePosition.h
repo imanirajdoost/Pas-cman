@@ -4,10 +4,11 @@
 
 class TilePosition {
 public:
+    TilePosition();
     TilePosition(int x, int y);
 
-    int indexX;
-    int indexY;
+    int indexX{};
+    int indexY{};
 };
 
 
