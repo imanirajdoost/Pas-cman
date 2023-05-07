@@ -44,8 +44,8 @@ void PlayerController::tick() {
         if (collisionController->hasCollision(player->getRect(), ghost->getRect())) {
             std::cout << "hit ghost" << std::endl;
             if(ghost->getMode() == Mode::FRIGHTENED) {
-                // TODO
-                continue;
+                scoreController->addScore(GHOST_SCORE);
+                ghost->setEaten();
             } else {
                 short remainingHealth = player->die();
                 textViewController->setHealthUI(remainingHealth);

@@ -8,7 +8,7 @@ namespace constants {
 
     /** @brief Update interval of the game.
      * Decrease this value to make the game faster */
-    const Uint64 TICK_INTERVAL = 20;
+    const Uint64 TICK_INTERVAL = 24;
 
     /** @brief Maximum game speed (calculated from TICK_INTERVAL and LevelController.levelIndex) */
     const int MAX_GAME_SPEED = 10;
@@ -39,6 +39,9 @@ namespace constants {
 
     /** @brief Score awarded for eating a fruit. */
 #define FRUIT_SCORE 100
+
+    /** @brief Score awarded for eating a ghost. */
+#define GHOST_SCORE 200
 
     /** @brief Minimum time before a fruit can spawn. */
 #define MIN_TIME_TO_SPAWN_FRUIT 10000

@@ -78,6 +78,8 @@ public:
      */
     void setDirectionSprite(const MoveDirection &newDirection) override;
 
+    void setEaten();
+
     /**
      * @brief Gets the current mode of the ghost.
      * @return The current mode of the ghost.

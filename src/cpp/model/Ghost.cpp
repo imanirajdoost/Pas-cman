@@ -101,7 +101,6 @@ void Ghost::setMoveIntent(MoveDirection dir){
 void Ghost::controlMove(CollisionController& collisionController) {
 
     bool shouldMove = true;
-    stopAnimation();
 
     if (moveIntent == MoveDirection::NONE)
         shouldMove = false;
@@ -170,6 +169,12 @@ void Ghost::controlMove(CollisionController& collisionController) {
 
 void Ghost::setDirectionSprite(const MoveDirection &newDirection) {
     MovableGameObject::setDirectionSprite(newDirection);
+}
+
+void Ghost::setEaten() {
+    setPos(10 * TILESIZE, 13 * TILESIZE);
+    resetNextPos();
+    setMode(Mode::CHASE);
 }
 
 Blinky::Blinky() : Ghost(default_sprites::blinky_sp_default, default_positions::blinky_default_pos) {
