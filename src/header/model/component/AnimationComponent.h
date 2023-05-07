@@ -91,6 +91,12 @@ public:
     AnimationComponent(const string &newName, const vector<SDL_Rect> &sps, bool _isAnimated);
 
     /**
+     * @brief returns the name of the current animation
+     * @return
+     */
+    string getCurrentAnimation();
+
+    /**
      * @brief Adds a new animation to the component.
      * @param animName The name of the new animation.
      * @param sps The list of sprites for the animation.

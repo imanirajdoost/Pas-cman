@@ -88,16 +88,16 @@ namespace default_positions {
     const SDL_Rect global_default_pos{-100, -100};
 
     /** @brief blinky scatter position. */
-    const TilePosition blinky_scatter_pos{19, 1};
+    const TilePosition blinky_scatter_pos{1, 19};
 
     /** @brief pinky scatter position. */
     const TilePosition pinky_scatter_pos{1, 1};
 
     /** @brief inky scatter position. */
-    const TilePosition inky_scatter_pos{19, 25};
+    const TilePosition inky_scatter_pos{25, 19};
 
     /** @brief clyde scatter position. */
-    const TilePosition clyde_scatter_pos{1, 25};
+    const TilePosition clyde_scatter_pos{25, 1};
 }
 
 namespace default_variables {

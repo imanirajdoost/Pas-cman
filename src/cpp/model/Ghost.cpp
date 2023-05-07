@@ -70,10 +70,6 @@ void Ghost::setDirectionSprite(const MoveDirection &newDirection) {
         MovableGameObject::setDirectionSprite(newDirection);
 }
 
-Mode Ghost::getMode() {
-    return ghostMode;
-}
-
 SDL_Rect Ghost::getNextStepRect(MoveDirection dir) {
 
     SDL_Rect nextStepRect = getRect();
@@ -194,6 +190,10 @@ TilePosition Blinky::getScatterTile() {
     return default_positions::blinky_scatter_pos;
 }
 
+Mode Blinky::getMode() {
+    return ghostMode;
+}
+
 
 //void Blinky::setNextPos(const std::vector<std::vector<MTYPE>>& map, const MoveDirection& direction) {
 //    if (GameController::animationCounter%4 == 0) {
@@ -223,6 +223,10 @@ TilePosition Pinky::getScatterTile() {
     return default_positions::pinky_scatter_pos;
 }
 
+Mode Pinky::getMode() {
+    return ghostMode;
+}
+
 Inky::Inky() : Ghost(default_sprites::inky_sp_default, default_positions::inky_default_pos) {
 
     resetNextPos();
@@ -243,6 +247,10 @@ TilePosition Inky::getScatterTile() {
     return default_positions::inky_scatter_pos;
 }
 
+Mode Inky::getMode() {
+    return ghostMode;
+}
+
 Clyde::Clyde() : Ghost(default_sprites::clyde_sp_default, default_positions::clyde_default_pos) {
     resetNextPos();
 
@@ -260,4 +268,8 @@ Clyde::Clyde() : Ghost(default_sprites::clyde_sp_default, default_positions::cly
 
 TilePosition Clyde::getScatterTile() {
     return default_positions::clyde_scatter_pos;
+}
+
+Mode Clyde::getMode() {
+    return ghostMode;
 }

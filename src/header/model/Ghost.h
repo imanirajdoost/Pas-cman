@@ -82,7 +82,7 @@ public:
      * @brief Gets the current mode of the ghost.
      * @return The current mode of the ghost.
      */
-    Mode getMode();
+    virtual Mode getMode() = 0;
 
     void controlMove(CollisionController &collisionController);
 
@@ -120,6 +120,7 @@ private:
 
 public:
     TilePosition getScatterTile() override;
+    Mode getMode() override;
 };
 
 /**
@@ -145,6 +146,7 @@ private:
 
 public:
     TilePosition getScatterTile() override;
+    Mode getMode() override;
 };
 
 /**
@@ -172,6 +174,7 @@ private:
 
 public:
     TilePosition getScatterTile() override;
+    Mode getMode() override;
 };
 
 /**
@@ -201,6 +204,7 @@ private:
 
 public:
     TilePosition getScatterTile() override;
+    Mode getMode() override;
 };
 
 #endif

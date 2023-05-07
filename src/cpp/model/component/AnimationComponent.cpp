@@ -128,3 +128,9 @@ void AnimationComponent::setDefaultSprite() {
 shared_ptr<AnimationComponent> AnimationComponent::getAnimatorComponent() {
     return shared_from_this();
 }
+
+string AnimationComponent::getCurrentAnimation() {
+    if(current_anim != nullptr)
+        return current_anim->getName();
+    return "";
+}

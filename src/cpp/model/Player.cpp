@@ -164,6 +164,7 @@ short Player::die() {
     short remainingHealth = HealthComponent::die();
     setAnimation("die");
     isMoveEnabled = false;
+    startAnimation();
     return remainingHealth;
 }
 

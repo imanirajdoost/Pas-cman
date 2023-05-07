@@ -34,7 +34,7 @@ void GhostController::tick() {
                     updatePath(*g, TilePosition(g->getTileY(), g->getTileX()),
                                TilePosition(player->getTileY(), player->getTileX()));
                 } else {
-                    if (rand() % 10 < 5) {
+                    if (rand() % 10 < 9) {
                         updatePath(*g, TilePosition(g->getTileY(), g->getTileX()),
                                    TilePosition(player->getTileY(), player->getTileX()));
                     } else {
@@ -51,11 +51,7 @@ void GhostController::tick() {
                 g->setMode(Mode::CHASE);
                 updatePath(*g, TilePosition(g->getTileY(), g->getTileX()),
                            TilePosition(player->getTileY(), player->getTileX()));
-
-                continue;
-            }
-
-            if (rand() % 10 < 2) {
+            } else if (rand() % 10 < 2) {
                 g->setMode(Mode::CHASE);
                 updatePath(*g, TilePosition(g->getTileY(), g->getTileX()),
                            TilePosition(player->getTileY(), player->getTileX()));
