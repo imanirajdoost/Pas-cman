@@ -9,7 +9,7 @@ void GhostController::tick() {
 
         // for each ghost, control the animation
         for (auto &g: *getAllGhosts()) {
-            if(g->getMode() == Mode::FRIGHTENED ) {
+            if (g->getMode() == Mode::FRIGHTENED) {
                 if (elapsedTime > default_variables::reset_ghost_time - default_variables::time_to_blink_white)
                     g->setAnimation("afraid_white");
                 else
@@ -24,33 +24,44 @@ void GhostController::tick() {
     // for each ghost, with a chance of 8/10 go to chase mode and follow player, with a chance of 2/10 go to scatter mode and go to scatter position
     for (auto &g: *getAllGhosts()) {
         if (g->getMode() == Mode::FRIGHTENED) {
-            g->pathList = aiController->getPath(TilePosition(g->getTileY(), g->getTileX()),
-                                                g->getScatterTile());
+            updatePath(*g, TilePosition(player->getTileY(), player->getTileX()), g->getScatterTile());
+
         } else if (g->getMode() == Mode::CHASE) {
             if (rand() % 10 < 8) {
                 // if path is empty, then calculate a new path.
                 // if not, then randomly keep the current path or calculate a new one
                 if (g->pathList.empty()) {
-                    g->pathList = aiController->getPath(TilePosition(g->getTileY(), g->getTileX()),
-                                                        TilePosition(player->getTileY(), player->getTileX()));
+                    updatePath(*g, TilePosition(g->getTileY(), g->getTileX()),
+                               TilePosition(player->getTileY(), player->getTileX()));
                 } else {
                     if (rand() % 10 < 5) {
-                        g->pathList = aiController->getPath(TilePosition(g->getTileY(), g->getTileX()),
-                                                           TilePosition(player->getTileY(), player->getTileX()));
+                        updatePath(*g, TilePosition(g->getTileY(), g->getTileX()),
+                                   TilePosition(player->getTileY(), player->getTileX()));
                     } else {
-                        g->setMode(Mode::CHASE);
+                        // do nothing, just use what is already in the pathlist
                     }
                 }
             } else {
                 g->setMode(Mode::SCATTER);
-                g->pathList = aiController->getPath(TilePosition(g->getTileY(), g->getTileX()),
-                                                    g->getScatterTile());
+                updatePath(*g, TilePosition(g->getTileY(), g->getTileX()), g->getScatterTile());
             }
         } else if (g->getMode() == Mode::SCATTER) {
+            // if in the scatter mode, the ghost is close to the scatter tile, then change the mode
+            if (g->getTileX() == g->getScatterTile().indexY && g->getTileY() == g->getScatterTile().indexX) {
+                g->setMode(Mode::CHASE);
+                updatePath(*g, TilePosition(g->getTileY(), g->getTileX()),
+                           TilePosition(player->getTileY(), player->getTileX()));
+
+                continue;
+            }
+
             if (rand() % 10 < 2) {
                 g->setMode(Mode::CHASE);
+                updatePath(*g, TilePosition(g->getTileY(), g->getTileX()),
+                           TilePosition(player->getTileY(), player->getTileX()));
             } else {
                 g->setMode(Mode::SCATTER);
+                updatePath(*g, TilePosition(g->getTileY(), g->getTileX()), g->getScatterTile());
             }
         }
 
@@ -73,6 +84,10 @@ void GhostController::tick() {
 
         g->controlMove(*collisionController);
     }
+}
+
+void GhostController::updatePath(Ghost &ghost, const TilePosition &from, const TilePosition &to) {
+    ghost.pathList = aiController->getPath(from, to);
 }
 
 Mode GhostController::getWorldMode() {

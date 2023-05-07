@@ -85,6 +85,8 @@ private:
     Mode getGhostsMode(Ghost &ghost);
 
     Mode getWorldMode();
+
+    void updatePath(Ghost &ghost, const TilePosition &from, const TilePosition &to);
 };
 
 
