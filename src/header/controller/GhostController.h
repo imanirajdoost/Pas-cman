@@ -6,11 +6,12 @@
 #include "CollisionController.h"
 #include "header/model/MovableGameObject.h"
 #include "header/model/Ghost.h"
+#include "header/model/Player.h"
 #include "TimeController.h"
 
 using namespace std;
 
-class GhostController: IResettable {
+class GhostController {
 public:
     /**
      * @brief Constructor for GhostController
@@ -20,7 +21,7 @@ public:
      * @param cGhost shared pointer to the Clyde ghost
      * @param colController shared pointer to the CollisionController
      */
-    GhostController(shared_ptr<Inky> iGhost,shared_ptr<Pinky> pGhost,shared_ptr<Blinky> bGhost,shared_ptr<Clyde> cGhost, shared_ptr<TimeController> tController);
+    GhostController(shared_ptr<Inky> iGhost,shared_ptr<Pinky> pGhost,shared_ptr<Blinky> bGhost,shared_ptr<Clyde> cGhost ,shared_ptr<CollisionController> colController, shared_ptr<TimeController> tController, shared_ptr<Player> player_ptr);
 
     /**
      * @brief Runs each ghost's individual tick method and checks if any collisions occur
@@ -32,11 +33,6 @@ public:
      * @param mode new mode for the ghosts
      */
     void changeMode(Mode mode);
-
-    /**
-     * @brief reset controller state
-     */
-    void reset_state() override;
 
     /**
      * @brief Returns all ghosts as a shared pointer to a vector of shared pointers to Ghost objects
@@ -52,6 +48,7 @@ private:
     shared_ptr<Blinky> blinky;
     shared_ptr<vector<shared_ptr<Ghost>>> allGhosts;
     shared_ptr<TimeController> timeController;
+    shared_ptr<Player> player;
 
     ulong elapsedTime;
 

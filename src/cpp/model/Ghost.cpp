@@ -1,7 +1,7 @@
 #include <iostream>
 #include "header/model/Ghost.h"
 #include "header/GameVars.h"
-
+#include "header/model/Player.h"
 
 Ghost::Ghost(SDL_Rect default_sp, SDL_Rect initPos) : MovableGameObject(default_sp, initPos) {
     speed = 1;
@@ -104,8 +104,9 @@ void Ghost::controlMove(CollisionController& collisionController) {
         std::cout << "ERROR : Case not handled" << endl;
     }
 
-    if (shouldMove)
+    if (shouldMove) {
         move();
+    }
 }
 
 void Ghost::move() {
@@ -161,6 +162,9 @@ Blinky::Blinky() : Ghost(default_sprites::blinky_sp_default, default_positions::
     startAnimation();
 }
 
+void Blinky::think(Player &player) {
+    
+}
 
 Pinky::Pinky() : Ghost(default_sprites::pinky_sp_default, default_positions::pinky_default_pos) {
 
@@ -178,6 +182,11 @@ Pinky::Pinky() : Ghost(default_sprites::pinky_sp_default, default_positions::pin
     startAnimation();
 }
 
+void Pinky::think(Player &player) {
+    setMoveIntent(MoveDirection::RIGHT);
+}
+
+
 Inky::Inky() : Ghost(default_sprites::inky_sp_default, default_positions::inky_default_pos) {
 
     resetNextPos();
@@ -194,6 +203,10 @@ Inky::Inky() : Ghost(default_sprites::inky_sp_default, default_positions::inky_d
     startAnimation();
 }
 
+void Inky::think(Player &player) {
+    setMoveIntent(MoveDirection::RIGHT);
+}
+
 Clyde::Clyde() : Ghost(default_sprites::clyde_sp_default, default_positions::clyde_default_pos) {
     resetNextPos();
 
@@ -207,4 +220,8 @@ Clyde::Clyde() : Ghost(default_sprites::clyde_sp_default, default_positions::cly
     setAnimation("default");
 
     startAnimation();
+}
+
+void Clyde::think(Player &player) {
+    setMoveIntent(MoveDirection::RIGHT);
 }

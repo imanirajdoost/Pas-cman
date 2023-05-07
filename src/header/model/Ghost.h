@@ -8,6 +8,7 @@
 
 #include "MovableGameObject.h"
 #include "header/controller/CollisionController.h"
+#include "header/model/Player.h"
 
 using namespace std;
 
@@ -102,6 +103,8 @@ public:
      */
     Blinky();
 
+    void think(Player &player);
+
 private:
     const SDL_Rect blinky_r1 = {4, 124, 14, 14};/**< Right-facing sprite rectangle 1. */
     const SDL_Rect blinky_r2 = {21, 124, 14, 14}; /**< Right-facing sprite rectangle 2. */
@@ -123,6 +126,8 @@ public:
      * @brief Constructs a new Pinky object with its predefined sprite rectangles.
      */
     Pinky();
+
+    void think(Player &player);
 
 private:
     const SDL_Rect pinky_r1 = {4, 142, 14, 14};/**< Right-facing sprite rectangle 1. */
@@ -147,6 +152,8 @@ public:
     * @brief Constructs a new Inky object with its predefined sprite rectangles.
     */
     Inky();
+
+    void think(Player &player);
 
 private:
     const SDL_Rect inky_r1 = {4, 160, 14, 14};  /**< Right-facing sprite rectangle 1. */
@@ -174,7 +181,10 @@ public:
      */
     Clyde();
 
+    void think(Player &player);
+
 private:
+
     const SDL_Rect clyde_r1 = {4, 178, 14, 14}; /**< Right-facing sprite rectangle 1. */
     const SDL_Rect clyde_r2 = {21, 178, 14, 14}; /**< Right-facing sprite rectangle 2. */
     const SDL_Rect clyde_l1 = {38, 178, 14, 14}; /**< Left-facing sprite rectangle 1. */

@@ -17,11 +17,14 @@ void GhostController::tick() {
     }
 
     // TODO: Calculate next pos and pass it here
-    inky->setNextPos(Map::map, MoveDirection::RIGHT);
-    pinky->setNextPos(Map::map, MoveDirection::RIGHT);
-    blinky->setNextPos(Map::map, MoveDirection::RIGHT);
-    clyde->setNextPos(Map::map, MoveDirection::RIGHT);
-    
+    //inky->setNextPos(Map::map, MoveDirection::RIGHT);
+    //pinky->setNextPos(Map::map, MoveDirection::RIGHT);
+    //blinky->setNextPos(Map::map, MoveDirection::RIGHT);
+    //clyde->setNextPos(Map::map, MoveDirection::RIGHT);
+    inky->think(*player);
+    pinky->think(*player);
+    blinky->think(*player);
+    clyde->think(*player);
 
     inky->controlMove(*collisionController);
     pinky->controlMove(*collisionController);
@@ -45,8 +48,8 @@ void GhostController::setAnimation(const string &animation) {
 }
 
 GhostController::GhostController(shared_ptr<Inky> iGhost, shared_ptr<Pinky> pGhost, shared_ptr<Blinky> bGhost,
-                                 shared_ptr<Clyde> cGhost,
-                                 shared_ptr<TimeController> tController) {
+                                 shared_ptr<Clyde> cGhost, shared_ptr<CollisionController> colController,
+                                 shared_ptr<TimeController> tController, shared_ptr<Player> player_ptr) {
     inky = std::move(iGhost);
     pinky = std::move(pGhost);
     blinky = std::move(bGhost);
@@ -61,6 +64,7 @@ GhostController::GhostController(shared_ptr<Inky> iGhost, shared_ptr<Pinky> pGho
     allGhosts = make_shared<vector<shared_ptr<Ghost>>>(ghosts);
 
     timeController = std::move(tController);
+    player = std::move(player_ptr);
 }
 
 shared_ptr<vector<shared_ptr<Ghost>>> GhostController::getAllGhosts() {
