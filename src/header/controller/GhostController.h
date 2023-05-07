@@ -5,13 +5,15 @@
 #include <memory>
 #include "CollisionController.h"
 #include "header/model/MovableGameObject.h"
+#include "header/controller/IResettable.h"
 #include "header/model/Ghost.h"
 #include "header/model/Player.h"
 #include "TimeController.h"
+#include "AIController.h"
 
 using namespace std;
 
-class GhostController {
+class GhostController: IResettable {
 public:
     /**
      * @brief Constructor for GhostController
@@ -21,7 +23,7 @@ public:
      * @param cGhost shared pointer to the Clyde ghost
      * @param colController shared pointer to the CollisionController
      */
-    GhostController(shared_ptr<Inky> iGhost,shared_ptr<Pinky> pGhost,shared_ptr<Blinky> bGhost,shared_ptr<Clyde> cGhost ,shared_ptr<CollisionController> colController, shared_ptr<TimeController> tController, shared_ptr<Player> player_ptr);
+    GhostController(shared_ptr<Inky> iGhost,shared_ptr<Pinky> pGhost,shared_ptr<Blinky> bGhost,shared_ptr<Clyde> cGhost ,shared_ptr<CollisionController> colController, shared_ptr<TimeController> tController, shared_ptr<Player> player_ptr, shared_ptr<AIController> aiController_ptr);
 
     /**
      * @brief Runs each ghost's individual tick method and checks if any collisions occur
@@ -35,6 +37,11 @@ public:
     void changeMode(Mode mode);
 
     /**
+     * @brief reset controller state
+     */
+    void reset_state() override;
+
+    /**
      * @brief Returns all ghosts as a shared pointer to a vector of shared pointers to Ghost objects
      * @return shared pointer to a vector of shared pointers to Ghost objects
      */
@@ -42,6 +49,7 @@ public:
 
 private:
     shared_ptr<CollisionController> collisionController;
+    shared_ptr<AIController> aiController;
     shared_ptr<Inky> inky;
     shared_ptr<Pinky> pinky;
     shared_ptr<Clyde> clyde;

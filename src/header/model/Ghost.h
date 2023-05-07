@@ -8,6 +8,7 @@
 
 #include "MovableGameObject.h"
 #include "header/controller/CollisionController.h"
+#include "header/controller/AIController.h"
 #include "header/model/Player.h"
 
 using namespace std;
@@ -34,6 +35,43 @@ protected:
     const SDL_Rect afraid_white_sp2 = {55, 196, 14, 14};/**< afraid sprite for ghost. */
 
     Mode ghostMode; /**< The current mode of the ghost. */
+    int scatterCount = 0;
+
+    const vector<SDL_Rect> blinkyScatterCorner = {
+        {1, 25, 0, 0},
+        {1, 21, 0, 0},
+        {5, 21, 0, 0},
+        {5, 25, 0, 0}
+    };
+
+    const vector<SDL_Rect> inkyScatterCorner = {
+        {20, 25, 0, 0},
+        {12, 25, 0, 0},
+        {12, 23, 0, 0},
+        {14, 23, 0, 0},
+        {14, 20, 0, 0},
+        {16, 20, 0, 0},
+        {16, 23, 0, 0},
+        {20, 23, 0, 0},
+    };
+
+    const vector<SDL_Rect> pinkyScatterCorner = {
+        {1, 1, 0, 0},
+        {1, 5, 0, 0},
+        {5, 5, 0, 0},
+        {5, 1, 0, 0}
+    };
+
+    const vector<SDL_Rect> clydeScatterCorner = {
+        {1, 25, 0, 0},
+        {9, 25, 0, 0},
+        {9, 23, 0, 0},
+        {7, 23, 0, 0},
+        {7, 20, 0, 0},
+        {5, 20, 0, 0},
+        {5, 23, 0, 0},
+        {1, 23, 0, 0},
+    };
 
     /** @brief Number of pixels to let ghost change direction if they are not in the middle */
     const int GHOST_MOVE_THRESHOLD = 6;
@@ -65,6 +103,8 @@ public:
      * @brief Moves the ghost to its next position.
      */
     void move() override;
+
+    MoveDirection getDirectionOfNextStep(SDL_Rect nextStep);
 
     /**
  * @brief Resets the state of the ghost.
@@ -103,7 +143,7 @@ public:
      */
     Blinky();
 
-    void think(Player &player);
+    void think(Player &player, AIController &aiController);
 
 private:
     const SDL_Rect blinky_r1 = {4, 124, 14, 14};/**< Right-facing sprite rectangle 1. */
@@ -127,7 +167,7 @@ public:
      */
     Pinky();
 
-    void think(Player &player);
+    void think(Player &player, AIController &aiController);
 
 private:
     const SDL_Rect pinky_r1 = {4, 142, 14, 14};/**< Right-facing sprite rectangle 1. */
@@ -153,7 +193,7 @@ public:
     */
     Inky();
 
-    void think(Player &player);
+    void think(Player &player, AIController &aiController);
 
 private:
     const SDL_Rect inky_r1 = {4, 160, 14, 14};  /**< Right-facing sprite rectangle 1. */
@@ -181,7 +221,7 @@ public:
      */
     Clyde();
 
-    void think(Player &player);
+    void think(Player &player, AIController &aiController);
 
 private:
 

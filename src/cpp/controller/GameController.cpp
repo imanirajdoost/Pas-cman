@@ -143,6 +143,7 @@ GameController::GameController() : exit(false) {
 
     // initialize controllers
     levelController = make_shared<LevelController>();
+    aiController = make_shared<AIController>(Map::map);
     timeController = make_shared<TimeController>(levelController);
     pauseController = make_shared<PauseController>(timeController);
     collisionController = make_shared<CollisionController>();
@@ -150,13 +151,12 @@ GameController::GameController() : exit(false) {
     dataController = make_shared<DataController>();
     textViewController = make_shared<TextViewController>(dataController);
     scoreController = make_shared<ScoreController>(textViewController, dataController);
-    ghostController = make_shared<GhostController>(inky, pinky, blinky, clyde, collisionController, timeController, player);
+    ghostController = make_shared<GhostController>(inky, pinky, blinky, clyde, collisionController, timeController, player, aiController);
     dotController = make_shared<DotController>(gameOver(), ghostController);
     fruitController = make_shared<FruitController>(timeController, textViewController);
     playerController = make_shared<PlayerController>(collisionController, player, dotController, fruitController,
                                                      scoreController, textViewController, ghostController,
                                                      pauseController, resetGame(), gameOver());
 
-    sdlViewController = make_shared<SDLViewController>(list_sp, textViewController, dotController, fruitController,
-                                                       pauseController);
+    sdlViewController = make_shared<SDLViewController>(list_sp, textViewController, dotController, fruitController);
 }

@@ -17,6 +17,7 @@ Main game controller that initializes and manages all other controllers and obje
 #include "PauseController.h"
 #include "header/model/GameBackground.h"
 #include "LevelController.h"
+#include "header/controller/AIController.h"
 
 class GameController {
 public:
@@ -62,6 +63,7 @@ private:
     shared_ptr<PauseController> pauseController;
     shared_ptr<DataController> dataController;
     shared_ptr<LevelController> levelController;
+    shared_ptr<AIController> aiController;
 
     shared_ptr<Player> player;
     shared_ptr<Blinky> blinky;

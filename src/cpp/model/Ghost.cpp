@@ -40,6 +40,8 @@ void Ghost::setNextPos(const vector<std::vector<MTYPE>> &map, const MoveDirectio
 
 void Ghost::controlMove(CollisionController& collisionController) {
 
+    std::cout << static_cast<int>(moveIntent) << std::endl;
+
     bool shouldMove = true;
     stopAnimation();
 
@@ -120,6 +122,7 @@ void Ghost::reset_state() {
 
 void Ghost::setMode(Mode mode) {
     ghostMode = mode;
+    scatterCount = 0;
     switch (mode) {
         case Mode::CHASE:
             setAnimation("default");
@@ -144,6 +147,21 @@ Mode Ghost::getMode() {
     return ghostMode;
 }
 
+MoveDirection Ghost::getDirectionOfNextStep(SDL_Rect nextStep) {
+    int gX = getX() / 32;
+    int gY = getY() / 32;
+
+    int dX = abs(gX - nextStep.x);
+    int dY = abs(gY - nextStep.y);
+
+    if (dX < dY) {
+        return gY < nextStep.y ? MoveDirection::DOWN : MoveDirection::UP;
+    } else {
+        return gX < nextStep.x ? MoveDirection::RIGHT : MoveDirection::LEFT;
+    }
+}
+
+
 Blinky::Blinky() : Ghost(default_sprites::blinky_sp_default, default_positions::blinky_default_pos) {
 
     // Initial pos
@@ -162,8 +180,31 @@ Blinky::Blinky() : Ghost(default_sprites::blinky_sp_default, default_positions::
     startAnimation();
 }
 
-void Blinky::think(Player &player) {
-    
+void Blinky::think(Player &player, AIController &aiController) {
+    Point start;
+    Point end;    
+
+    start.x = getX() / TILESIZE;
+    start.y = getY() / TILESIZE;
+
+    MoveDirection nextMovDir;
+    SDL_Rect nextStep;
+
+    switch (ghostMode) {
+        case Mode::CHASE:
+            end.x = player.getX() / TILESIZE;
+            end.y = player.getY() / TILESIZE;
+            break;
+        case Mode::SCATTER: 
+            break;
+        case Mode::FRIGHTENED:
+            break;
+    }
+
+    nextStep = aiController.getNextStep(start, end);
+    nextMovDir = getDirectionOfNextStep(nextStep);
+
+    setMoveIntent(nextMovDir);
 }
 
 Pinky::Pinky() : Ghost(default_sprites::pinky_sp_default, default_positions::pinky_default_pos) {
@@ -182,7 +223,7 @@ Pinky::Pinky() : Ghost(default_sprites::pinky_sp_default, default_positions::pin
     startAnimation();
 }
 
-void Pinky::think(Player &player) {
+void Pinky::think(Player &player, AIController &aiController) {
     setMoveIntent(MoveDirection::RIGHT);
 }
 
@@ -203,7 +244,7 @@ Inky::Inky() : Ghost(default_sprites::inky_sp_default, default_positions::inky_d
     startAnimation();
 }
 
-void Inky::think(Player &player) {
+void Inky::think(Player &player, AIController &aiController) {
     setMoveIntent(MoveDirection::RIGHT);
 }
 
@@ -222,6 +263,6 @@ Clyde::Clyde() : Ghost(default_sprites::clyde_sp_default, default_positions::cly
     startAnimation();
 }
 
-void Clyde::think(Player &player) {
+void Clyde::think(Player &player, AIController &aiController) {
     setMoveIntent(MoveDirection::RIGHT);
 }

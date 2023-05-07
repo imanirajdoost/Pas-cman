@@ -4,49 +4,51 @@
 #include <list>
 #include <algorithm>
 #include <iostream>
-
+#include <SDL.h>
 #include "header/model/Map.h"
 
-class point {
+class Point {
 public:
-    point( int a = 0, int b = 0 ) { x = a; y = b; }
-    bool operator ==( const point& o ) { return o.x == x && o.y == y; }
-    point operator +( const point& o ) { return point( o.x + x, o.y + y ); }
+    Point( int a = 0, int b = 0 ) { x = a; y = b; }
+    bool operator ==( const Point& o ) { return o.x == x && o.y == y; }
+    Point operator +( const Point& o ) { return Point( o.x + x, o.y + y ); }
     int x, y;
 };
 
-class node {
+class Node {
 public:
-    bool operator == (const node& o ) { return pos == o.pos; }
-    bool operator == (const point& o ) { return pos == o; }
-    bool operator < (const node& o ) { return dist + cost < o.dist + o.cost; }
-    point pos, parent;
+    bool operator == (const Node& o ) { return pos == o.pos; }
+    bool operator == (const Point& o ) { return pos == o; }
+    bool operator < (const Node& o ) { return dist + cost < o.dist + o.cost; }
+    Point pos, parent;
     int dist, cost;
 };
 
-class aStar {
+class AIController {
 public:
-    aStar();
+    AIController(vector<vector<MTYPE>> &map);
 
-    int calcDist( point& p );
+    int calcDist( Point& p );
 
-    bool isValid( point& p );
+    bool isValid( Point& p );
 
-    bool existPoint( point& p, int cost );
+    bool existPoint( Point& p, int cost );
 
-    bool fillOpen( node& n );
+    bool fillOpen( Node& n );
 
-    bool search( point& s, point& e, vector<vector<MTYPE>> mp );
+    bool search( Point& s, Point& e );
 
-    int path(std::list<point>& path);
+    int path(std::list<Point>& path);
 
-    int find_path( point& s, point& e);
+    SDL_Rect getNextStep( Point& s, Point& e);
+
+    bool canPassThrough(Point& p);
 
     vector<vector<MTYPE>> m; 
-    point end, start;
-    point neighbours[8];
-    std::list<node> open;
-    std::list<node> closed;
+    Point end, start;
+    Point neighbours[4];
+    std::list<Node> open;
+    std::list<Node> closed;
 };
 
 /*int main( int argc, char* argv[] ) {

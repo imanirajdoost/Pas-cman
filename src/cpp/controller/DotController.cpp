@@ -1,5 +1,6 @@
 #include <stdexcept>
 #include <iostream>
+#include <algorithm>
 #include "header/controller/DotController.h"
 #include "header/model/Map.h"
 #include "header/GameVars.h"
