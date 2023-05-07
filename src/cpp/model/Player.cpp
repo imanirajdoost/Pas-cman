@@ -6,6 +6,8 @@
 
 Player::Player(short initHealth, SDL_Rect initPos) : HealthComponent(initHealth), MovableGameObject(default_sprites::player_sp_default, initPos) {
 
+    speed = default_variables::PLAYER_SPEED;
+
     // Set the default move intention
     setMoveIntent(MoveDirection::NONE);
 

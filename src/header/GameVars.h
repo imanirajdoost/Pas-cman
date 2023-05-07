@@ -99,6 +99,12 @@ namespace default_variables {
 
     /** @brief Default time to blink white while in Frightened mode. */
     const int time_to_blink_white = 3000;
+
+    /** @brief Default ghost speed */
+    const int GHOST_SPEED = 4;
+
+    /** @brief Default player speed */
+    const int PLAYER_SPEED = 4;
 }
 
 namespace default_sprites {

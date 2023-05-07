@@ -5,7 +5,7 @@
 
 
 Ghost::Ghost(SDL_Rect default_sp, SDL_Rect initPos) : MovableGameObject(default_sp, initPos) {
-    speed = 4;
+    speed = default_variables::GHOST_SPEED;
 
     addAnimation("afraid", {afraid_sp, afraid_sp2}, GHOST_ANIMATION_SPEED);
     addAnimation("afraid_white", {afraid_white_sp, afraid_white_sp2, afraid_sp, afraid_sp2}, GHOST_ANIMATION_SPEED);
