@@ -8,6 +8,7 @@
 
 #include "MovableGameObject.h"
 #include "header/controller/CollisionController.h"
+#include "TilePosition.h"
 
 using namespace std;
 
@@ -88,6 +89,10 @@ public:
     SDL_Rect getNextStepRect(MoveDirection dir);
 
     void setMoveIntent(MoveDirection dir);
+
+    virtual TilePosition getScatterTile() = 0;
+
+    vector<TilePosition> pathList;
 };
 
 /**
@@ -112,6 +117,9 @@ private:
     const SDL_Rect blinky_d2 = {123, 124, 14, 14};  /**< Down-facing sprite rectangle 2. */
     const SDL_Rect blinky_u1 = {72, 124, 14, 14};/**< Up-facing sprite rectangle 1. */
     const SDL_Rect blinky_u2 = {89, 124, 14, 14};/**< Up-facing sprite rectangle 2. */
+
+public:
+    TilePosition getScatterTile() override;
 };
 
 /**
@@ -134,6 +142,9 @@ private:
     const SDL_Rect pinky_d2 = {123, 142, 14, 14};  /**< Down-facing sprite rectangle 2. */
     const SDL_Rect pinky_u1 = {72, 142, 14, 14};/**< Up-facing sprite rectangle 1. */
     const SDL_Rect pinky_u2 = {89, 142, 14, 14};/**< Up-facing sprite rectangle 2. */
+
+public:
+    TilePosition getScatterTile() override;
 };
 
 /**
@@ -158,6 +169,9 @@ private:
     const SDL_Rect inky_d2 = {123, 160, 14, 14};  /**< Down-facing sprite rectangle 2. */
     const SDL_Rect inky_u1 = {72, 160, 14, 14}; /**< Up-facing sprite rectangle 1. */
     const SDL_Rect inky_u2 = {89, 160, 14, 14}; /**< Up-facing sprite rectangle 2. */
+
+public:
+    TilePosition getScatterTile() override;
 };
 
 /**
@@ -184,6 +198,9 @@ private:
     const SDL_Rect clyde_d2 = {123, 178, 14, 14};  /**< Down-facing sprite rectangle 2. */
     const SDL_Rect clyde_u1 = {72, 178, 14, 14};/**< Up-facing sprite rectangle 1. */
     const SDL_Rect clyde_u2 = {89, 178, 14, 14};/**< Up-facing sprite rectangle 2. */
+
+public:
+    TilePosition getScatterTile() override;
 };
 
 #endif

@@ -2,6 +2,7 @@
 #define GAMEVARS_H
 
 #include <SDL.h>
+#include "header/model/TilePosition.h"
 
 namespace constants {
 
@@ -85,6 +86,18 @@ namespace default_positions {
 
     /** @brief Default position for the global objects out of the view of the scene. */
     const SDL_Rect global_default_pos{-100, -100};
+
+    /** @brief blinky scatter position. */
+    const TilePosition blinky_scatter_pos{19, 1};
+
+    /** @brief pinky scatter position. */
+    const TilePosition pinky_scatter_pos{1, 1};
+
+    /** @brief inky scatter position. */
+    const TilePosition inky_scatter_pos{19, 25};
+
+    /** @brief clyde scatter position. */
+    const TilePosition clyde_scatter_pos{1, 25};
 }
 
 namespace default_variables {

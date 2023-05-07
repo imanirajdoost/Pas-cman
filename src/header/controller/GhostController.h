@@ -60,22 +60,31 @@ private:
 
     ulong elapsedTime;
 
+    vector<TilePosition> blinkyPath;
+    vector<TilePosition> inkyPath;
+    vector<TilePosition> clydePath;
+    vector<TilePosition> pinkyPath;
+
+    Mode worldMode;
+
     /**
      * @brief Resets the ghost mode to CHASE
      */
     void resetGhostMode();
 
     /**
-     * @brief Returns the current mode of the ghosts
-     * @return current mode of the ghosts
-     */
-    Mode getGhostsMode();
-
-    /**
      * @brief Sets the animation of all ghosts
      * @param animation new animation for the ghosts
      */
     void setAnimation(const string &animation);
+
+    /**
+ * @brief Returns the current mode of the ghost
+ * @return current mode of the ghost
+ */
+    Mode getGhostsMode(Ghost &ghost);
+
+    Mode getWorldMode();
 };
 
 

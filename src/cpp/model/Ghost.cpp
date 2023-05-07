@@ -190,6 +190,10 @@ Blinky::Blinky() : Ghost(default_sprites::blinky_sp_default, default_positions::
     startAnimation();
 }
 
+TilePosition Blinky::getScatterTile() {
+    return default_positions::blinky_scatter_pos;
+}
+
 
 //void Blinky::setNextPos(const std::vector<std::vector<MTYPE>>& map, const MoveDirection& direction) {
 //    if (GameController::animationCounter%4 == 0) {
@@ -215,6 +219,10 @@ Pinky::Pinky() : Ghost(default_sprites::pinky_sp_default, default_positions::pin
     startAnimation();
 }
 
+TilePosition Pinky::getScatterTile() {
+    return default_positions::pinky_scatter_pos;
+}
+
 Inky::Inky() : Ghost(default_sprites::inky_sp_default, default_positions::inky_default_pos) {
 
     resetNextPos();
@@ -231,6 +239,10 @@ Inky::Inky() : Ghost(default_sprites::inky_sp_default, default_positions::inky_d
     startAnimation();
 }
 
+TilePosition Inky::getScatterTile() {
+    return default_positions::inky_scatter_pos;
+}
+
 Clyde::Clyde() : Ghost(default_sprites::clyde_sp_default, default_positions::clyde_default_pos) {
     resetNextPos();
 
@@ -244,4 +256,8 @@ Clyde::Clyde() : Ghost(default_sprites::clyde_sp_default, default_positions::cly
     setAnimation("default");
 
     startAnimation();
+}
+
+TilePosition Clyde::getScatterTile() {
+    return default_positions::clyde_scatter_pos;
 }

@@ -4,52 +4,79 @@
 
 void GhostController::tick() {
 
-    if (getGhostsMode() == Mode::FRIGHTENED) {
+    if (getWorldMode() == Mode::FRIGHTENED) {
         elapsedTime += timeController->getLastFrameTime();
 
-        if (elapsedTime > default_variables::reset_ghost_time - default_variables::time_to_blink_white)
-            setAnimation("afraid_white");
-        else
-            setAnimation("afraid");
+        // for each ghost, control the animation
+        for (auto &g: *getAllGhosts()) {
+            if(g->getMode() == Mode::FRIGHTENED ) {
+                if (elapsedTime > default_variables::reset_ghost_time - default_variables::time_to_blink_white)
+                    g->setAnimation("afraid_white");
+                else
+                    g->setAnimation("afraid");
+            }
+        }
 
         if (elapsedTime > default_variables::reset_ghost_time)
             resetGhostMode();
     }
 
-    // TODO: Calculate next pos and pass it here
-    auto path = aiController->getPath(TilePosition(inky->getTileY(), inky->getTileX()),
-                          TilePosition(player->getTileY(), player->getTileX()));
+    // for each ghost, with a chance of 8/10 go to chase mode and follow player, with a chance of 2/10 go to scatter mode and go to scatter position
+    for (auto &g: *getAllGhosts()) {
+        if (g->getMode() == Mode::FRIGHTENED) {
+            g->pathList = aiController->getPath(TilePosition(g->getTileY(), g->getTileX()),
+                                                g->getScatterTile());
+        } else if (g->getMode() == Mode::CHASE) {
+            if (rand() % 10 < 8) {
+                // if path is empty, then calculate a new path.
+                // if not, then randomly keep the current path or calculate a new one
+                if (g->pathList.empty()) {
+                    g->pathList = aiController->getPath(TilePosition(g->getTileY(), g->getTileX()),
+                                                        TilePosition(player->getTileY(), player->getTileX()));
+                } else {
+                    if (rand() % 10 < 5) {
+                        g->pathList = aiController->getPath(TilePosition(g->getTileY(), g->getTileX()),
+                                                           TilePosition(player->getTileY(), player->getTileX()));
+                    } else {
+                        g->setMode(Mode::CHASE);
+                    }
+                }
+            } else {
+                g->setMode(Mode::SCATTER);
+                g->pathList = aiController->getPath(TilePosition(g->getTileY(), g->getTileX()),
+                                                    g->getScatterTile());
+            }
+        } else if (g->getMode() == Mode::SCATTER) {
+            if (rand() % 10 < 2) {
+                g->setMode(Mode::CHASE);
+            } else {
+                g->setMode(Mode::SCATTER);
+            }
+        }
 
-    // if path is not empty, then set next moveIntent based on the next path tile
-    if (!path.empty()) {
-        auto nextTile = path.front();
-        std::cout << "Next tile: " << nextTile.indexX << ", " << nextTile.indexY << std::endl;
 
-        // !!!! ATTENTION: X and Y are inversed in the MAP !!!!
-        if(nextTile.indexY > inky->getTileX() && nextTile.indexX  == inky->getTileY())
-            inky->setMoveIntent(MoveDirection::RIGHT);
-        else if(nextTile.indexY < inky->getTileX() && nextTile.indexX  == inky->getTileY())
-            inky->setMoveIntent(MoveDirection::LEFT);
-        else if(nextTile.indexX > inky->getTileY() && nextTile.indexY  == inky->getTileX())
-            inky->setMoveIntent(MoveDirection::DOWN);
-        else if(nextTile.indexX < inky->getTileY() && nextTile.indexY  == inky->getTileX())
-            inky->setMoveIntent(MoveDirection::UP);
+        // if path is not empty, then set next moveIntent based on the next path tile
+        if (!g->pathList.empty()) {
+            auto nextTile = g->pathList.front();
+//            std::cout << "Next tile: " << nextTile.indexX << ", " << nextTile.indexY << std::endl;
+
+            // !!!! ATTENTION: X and Y are inversed in the MAP !!!!
+            if (nextTile.indexY > g->getTileX() && nextTile.indexX == g->getTileY())
+                g->setMoveIntent(MoveDirection::RIGHT);
+            else if (nextTile.indexY < g->getTileX() && nextTile.indexX == g->getTileY())
+                g->setMoveIntent(MoveDirection::LEFT);
+            else if (nextTile.indexX > g->getTileY() && nextTile.indexY == g->getTileX())
+                g->setMoveIntent(MoveDirection::DOWN);
+            else if (nextTile.indexX < g->getTileY() && nextTile.indexY == g->getTileX())
+                g->setMoveIntent(MoveDirection::UP);
+        }
+
+        g->controlMove(*collisionController);
     }
+}
 
-
-    inky->controlMove(*collisionController);
-    pinky->controlMove(*collisionController);
-    blinky->controlMove(*collisionController);
-    clyde->controlMove(*collisionController);
-//    inky->setNextPos(Map::map, MoveDirection::RIGHT);
-//    pinky->setNextPos(Map::map, MoveDirection::RIGHT);
-//    blinky->setNextPos(Map::map, MoveDirection::RIGHT);
-//    clyde->setNextPos(Map::map, MoveDirection::RIGHT);
-//
-//    inky->move();
-//    pinky->move();
-//    blinky->move();
-//    clyde->move();
+Mode GhostController::getWorldMode() {
+    return worldMode;
 }
 
 void GhostController::resetGhostMode() {
@@ -57,8 +84,8 @@ void GhostController::resetGhostMode() {
     changeMode(Mode::CHASE);
 }
 
-Mode GhostController::getGhostsMode() {
-    return inky->getMode();
+Mode GhostController::getGhostsMode(Ghost &ghost) {
+    return ghost.getMode();
 }
 
 void GhostController::setAnimation(const string &animation) {
@@ -88,6 +115,8 @@ GhostController::GhostController(shared_ptr<Inky> iGhost, shared_ptr<Pinky> pGho
     collisionController = std::move(colController);
     aiController = std::move(ghostAIController);
     player = std::move(p);
+
+    worldMode = Mode::CHASE;
 }
 
 shared_ptr<vector<shared_ptr<Ghost>>> GhostController::getAllGhosts() {
@@ -96,6 +125,7 @@ shared_ptr<vector<shared_ptr<Ghost>>> GhostController::getAllGhosts() {
 
 void GhostController::changeMode(Mode mode) {
     auto ghosts = getAllGhosts();
+    worldMode = mode;
     elapsedTime = 0;
 
     // set mode for all ghosts
