@@ -121,6 +121,7 @@ private:
 public:
     TilePosition getScatterTile() override;
     Mode getMode() override;
+    void setDirectionSprite(const MoveDirection &newDirection) override;
 };
 
 /**
@@ -147,6 +148,7 @@ private:
 public:
     TilePosition getScatterTile() override;
     Mode getMode() override;
+    void setDirectionSprite(const MoveDirection &newDirection) override;
 };
 
 /**
@@ -175,6 +177,7 @@ private:
 public:
     TilePosition getScatterTile() override;
     Mode getMode() override;
+    void setDirectionSprite(const MoveDirection &newDirection) override;
 };
 
 /**
@@ -205,6 +208,7 @@ private:
 public:
     TilePosition getScatterTile() override;
     Mode getMode() override;
+    void setDirectionSprite(const MoveDirection &newDirection) override;
 };
 
 #endif

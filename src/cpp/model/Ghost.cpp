@@ -14,7 +14,6 @@ Ghost::Ghost(SDL_Rect default_sp, SDL_Rect initPos) : MovableGameObject(default_
 }
 
 void Ghost::setNextPos(const vector<std::vector<MTYPE>> &map, const MoveDirection &direction) {
-    // TODO: Implement this
 
     lastDirection = getMoveDirection();
     setMoveDirection(direction);
@@ -63,11 +62,11 @@ void Ghost::setMode(Mode mode) {
     }
 }
 
-void Ghost::setDirectionSprite(const MoveDirection &newDirection) {
+void Blinky::setDirectionSprite(const MoveDirection &newDirection) {
     if(ghostMode == Mode::FRIGHTENED)
         return;
     else
-        MovableGameObject::setDirectionSprite(newDirection);
+        Ghost::setDirectionSprite(newDirection);
 }
 
 SDL_Rect Ghost::getNextStepRect(MoveDirection dir) {
@@ -112,10 +111,10 @@ void Ghost::controlMove(CollisionController& collisionController) {
     SDL_Rect currentRect = collisionController.getRectAt(rect);
     SDL_Rect nextStep = getNextStepRect(direction);
 
-    if (moveIntent == direction && nextCol.getType() != MTYPE::WALL) {
+    if (moveIntent == direction && (nextCol.getType() != MTYPE::WALL && nextCol.getType() != MTYPE::TP)) {
         setNextPos(Map::map, direction);
         shouldMove = true;
-    } else if (moveIntent == direction && nextCol.getType() == MTYPE::WALL) {
+    } else if (moveIntent == direction && (nextCol.getType() == MTYPE::WALL || nextCol.getType() == MTYPE::TP)) {
         if (collisionController.hasCollision(nextStep, nextCol.getRect())) {
             shouldMove = false;
             resetNextPos();
@@ -123,15 +122,15 @@ void Ghost::controlMove(CollisionController& collisionController) {
             shouldMove = true;
             setNextPos(Map::map, direction);
         }
-    } else if (moveIntent != direction && intentionCol.getType() == MTYPE::WALL) {
-        if (nextCol.getType() == MTYPE::WALL && collisionController.hasCollision(nextStep, nextCol.getRect())) {
+    } else if (moveIntent != direction && (intentionCol.getType() == MTYPE::WALL || intentionCol.getType() == MTYPE::TP)) {
+        if ((nextCol.getType() == MTYPE::WALL || nextCol.getType() == MTYPE::TP) && collisionController.hasCollision(nextStep, nextCol.getRect())) {
             resetNextPos();
             shouldMove = false;
         } else {
             setNextPos(Map::map, direction);
             shouldMove = true;
         }
-    } else if (moveIntent != direction && intentionCol.getType() != MTYPE::WALL) {
+    } else if (moveIntent != direction && (intentionCol.getType() != MTYPE::WALL && intentionCol.getType() != MTYPE::TP)) {
         if ((direction == MoveDirection::LEFT && moveIntent == MoveDirection::RIGHT) ||
             (direction == MoveDirection::RIGHT && moveIntent == MoveDirection::LEFT) ||
             (direction == MoveDirection::UP && moveIntent == MoveDirection::DOWN) ||
@@ -151,7 +150,7 @@ void Ghost::controlMove(CollisionController& collisionController) {
                 setNextPos(Map::map, moveIntent);
                 shouldMove = true;
             } else {
-                if (nextCol.getType() == MTYPE::WALL &&
+                if ((nextCol.getType() == MTYPE::WALL || nextCol.getType() == MTYPE::TP) &&
                     collisionController.hasCollision(nextStep, nextCol.getRect())) {
                     resetNextPos();
                     shouldMove = false;
@@ -168,6 +167,11 @@ void Ghost::controlMove(CollisionController& collisionController) {
     if (shouldMove)
         move();
 }
+
+void Ghost::setDirectionSprite(const MoveDirection &newDirection) {
+    MovableGameObject::setDirectionSprite(newDirection);
+}
+
 Blinky::Blinky() : Ghost(default_sprites::blinky_sp_default, default_positions::blinky_default_pos) {
 
     // Initial pos
@@ -227,6 +231,13 @@ Mode Pinky::getMode() {
     return ghostMode;
 }
 
+void Pinky::setDirectionSprite(const MoveDirection &newDirection) {
+    if(ghostMode == Mode::FRIGHTENED)
+        return;
+    else
+        Ghost::setDirectionSprite(newDirection);
+}
+
 Inky::Inky() : Ghost(default_sprites::inky_sp_default, default_positions::inky_default_pos) {
 
     resetNextPos();
@@ -251,6 +262,13 @@ Mode Inky::getMode() {
     return ghostMode;
 }
 
+void Inky::setDirectionSprite(const MoveDirection &newDirection) {
+    if(ghostMode == Mode::FRIGHTENED)
+        return;
+    else
+        Ghost::setDirectionSprite(newDirection);
+}
+
 Clyde::Clyde() : Ghost(default_sprites::clyde_sp_default, default_positions::clyde_default_pos) {
     resetNextPos();
 
@@ -272,4 +290,11 @@ TilePosition Clyde::getScatterTile() {
 
 Mode Clyde::getMode() {
     return ghostMode;
+}
+
+void Clyde::setDirectionSprite(const MoveDirection &newDirection) {
+    if(ghostMode == Mode::FRIGHTENED)
+        return;
+    else
+        Ghost::setDirectionSprite(newDirection);
 }

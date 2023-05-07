@@ -27,14 +27,14 @@ void GhostController::tick() {
             updatePath(*g, TilePosition(player->getTileY(), player->getTileX()), g->getScatterTile());
 
         } else if (g->getMode() == Mode::CHASE) {
-            if (rand() % 10 < 8) {
+            if (rand() % 10 < 9) {
                 // if path is empty, then calculate a new path.
                 // if not, then randomly keep the current path or calculate a new one
                 if (g->pathList.empty()) {
                     updatePath(*g, TilePosition(g->getTileY(), g->getTileX()),
                                TilePosition(player->getTileY(), player->getTileX()));
                 } else {
-                    if (rand() % 10 < 9) {
+                    if (rand() % 10 < 2) {
                         updatePath(*g, TilePosition(g->getTileY(), g->getTileX()),
                                    TilePosition(player->getTileY(), player->getTileX()));
                     } else {
@@ -56,8 +56,7 @@ void GhostController::tick() {
                 updatePath(*g, TilePosition(g->getTileY(), g->getTileX()),
                            TilePosition(player->getTileY(), player->getTileX()));
             } else {
-                g->setMode(Mode::SCATTER);
-                updatePath(*g, TilePosition(g->getTileY(), g->getTileX()), g->getScatterTile());
+                // do nothing, just use what is already in the pathlist
             }
         }
 
